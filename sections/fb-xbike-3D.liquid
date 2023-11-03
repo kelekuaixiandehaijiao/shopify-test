@@ -1,0 +1,393 @@
+<div id="section-{{ section.id }}">
+    <div class="fb_xbike3Dnew">
+        {% assign color_circle_img = section.settings.color_circle_img | img_url: '' %}
+        {%- capture color_img_div -%}
+            <img 
+                class="Image--lazyLoad Image--fadeIn" 
+                data-size="auto"
+                data-src="{{ color_circle_img }}" 
+                    alt="">
+        {%- endcapture -%}
+        {% assign white_circle_img = section.settings.white_circle_img | img_url: '' %}
+        {%- capture white_img_div -%}
+             <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                   data-src="{{ white_circle_img }}"
+                            alt="">
+        {%- endcapture -%}            
+        {%- if section.settings.xbike_3d_title != blank -%}
+            <div class="xbike3Dnew_title">
+                {{ section.settings.xbike_3d_title }}
+                {% comment %} Premium <span>Design</span><br />and <span>Features</span> {% endcomment %}
+            </div>
+        {%- endif -%}
+       {%- if section.settings.xbike_3d_subtitle != blank -%}
+            <div class="xbike3Dnew_sub pc-display-block">
+                {{ section.settings.xbike_3d_subtitle }}
+            </div>
+            <div class="xbike3Dnew_sub m-display-block">
+                {{ section.settings.xbike_3d_subtitle | strip_html }}
+            </div>
+        {%- endif -%}
+        <div class="xbike3Dnew_button {{ section.settings.view_button_style }} " onclick="fb_xbike3Dnew_pop()">
+            {% comment %} VIEW IN 3D {% endcomment %}
+            {{ section.settings.xbike_view_3d }}
+        </div>
+        <div class="xbike3Dnew_img">
+            {% assign xbike_3d_show_img = section.settings.xbike_3d_show_img | img_url: '' %}
+            <img class="Image--lazyLoad Image--fadeIn" 
+                data-size="auto"
+                data-src="{{ xbike_3d_show_img }}" 
+                alt=""
+            >
+            <div class="xbike3Dnew_img_introduce_1">
+                <div class="xbike3Dnew_img_introduce_1_point" id="xbike3Dnew_img_introduce_1_point"
+                    onclick="fb_xbike3Dnew_introduce_point('1', true)">
+                    {%- if template == 'page.lit-bike-klarna'  -%}
+                        <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                        data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221272035.png?v=1643286976"
+                        alt="">
+                    {%- else -%}
+                        {{- color_img_div -}} 
+                    {%- endif -%}
+                </div>
+                <div class="xbike3Dnew_img_introduce_1_icon xbike3Dnew_img_introduce_1_iconM"
+                    id="xbike3Dnew_img_introduce_1_icon">
+                    <div class="introduce_1_icon_1" onclick="fb_xbike3Dnew_introduce_point('1', false)">
+                         {{- white_img_div -}}
+                        {% comment %} <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20221714502.png?v=1641538300"
+                            alt=""> {% endcomment %}
+                    </div>
+                    <div class="introduce_1_icon_2">
+                        <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20221714501.png?v=1641538301"
+                            alt="">
+                    </div>
+                    {% comment %} https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/lit-bike_detect.mp4?v=1642761648 {% endcomment %}
+                    {% comment %} xbike_video_url_one {% endcomment %}
+                    <div class="introduce_1_icon_3 introduce_1_icon_3M"
+                        onclick="fb_xbike3Dnew_introduce_point('1', false)">
+                        <div class="introduce_1_icon_3_1">
+                                <video webkit-playsinline="true" playsinline="true"
+                                    autoplay="autoplay" muted="muted" loop="loop"
+                                    class="js-videoAutoPlayer"
+                                    src="{{ section.settings.xbike_video_url_one }}">
+                                </video>
+                        </div>
+                        <div class="introduce_1_icon_3_2">
+                            {% comment %} Smart Saddle Detection+ {% endcomment %}
+                             {{ section.settings.xbike_video_text_one }}
+                        </div>
+                        <div class="introduce_1_icon_3_3">
+                            {% comment %} Vertical and horizontal saddle adjustment,
+                            features with unique seat sensor that detects whether you’re pushing your limits to
+                            ride out of the saddle. {% endcomment %}
+                            {{ section.settings.xbike_video_subtext_one }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xbike3Dnew_img_introduce_2">
+                <div class="xbike3Dnew_img_introduce_2_point" id="xbike3Dnew_img_introduce_2_point"
+                    onclick="fb_xbike3Dnew_introduce_point('2', true)">
+                    {% comment %} <img
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20211511151.png?v=1641352586" alt=""> {% endcomment %}
+                   
+                    {%- if template == 'page.lit-bike-klarna'  -%}
+                        <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                        data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221272035.png?v=1643286976"
+                        alt="">
+                    {%- else -%}
+                        {{- color_img_div -}} 
+                    {%- endif -%}
+                
+
+                </div>
+                <div class="xbike3Dnew_img_introduce_2_icon xbike3Dnew_img_introduce_2_iconM"
+                    id="xbike3Dnew_img_introduce_2_icon">
+                    <div class="introduce_2_icon_1" onclick="fb_xbike3Dnew_introduce_point('2', false)">
+                         {{- white_img_div -}}
+                    </div>
+                    <div class="introduce_2_icon_2">
+                        <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2022191758.png?v=1641722404"
+                            alt="">
+                    </div>
+                   
+                    <div class="introduce_2_icon_3 introduce_2_icon_3M"
+                        onclick="fb_xbike3Dnew_introduce_point('2', false)">
+                        <div class="introduce_2_icon_3_1">
+                                <video webkit-playsinline="true" playsinline="true"
+                                autoplay="autoplay" muted="muted" loop="loop"
+                                class="js-videoAutoPlayer"
+                                src="{{ section.settings.xbike_video_url_two }}">
+                                </video>
+                                 {% comment %} src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/lit-bike_resistance.mp4?v=1642761648"> {% endcomment %}
+                        </div>
+                        <div class="introduce_2_icon_3_2">
+                            {{ section.settings.xbike_video_text_two }}
+                            {% comment %} Auto Resistance System {% endcomment %}
+                        </div>
+                        <div class="introduce_2_icon_3_3">
+                            {{ section.settings.xbike_video_subtext_two }}
+                            {% comment %} Challenge yourself to work harder and do better
+                            each time. The resistance level can be adjusted manually or automatically based on
+                            the instructors’ cue. {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xbike3Dnew_img_introduce_3">
+                <div class="xbike3Dnew_img_introduce_3_point" id="xbike3Dnew_img_introduce_3_point"
+                    onclick="fb_xbike3Dnew_introduce_point('3', true)">
+                    {% comment %} <img
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20211511151.png?v=1641352586" alt=""> {% endcomment %}
+                         {{- color_img_div -}}
+                   
+                </div>
+                <div class="xbike3Dnew_img_introduce_3_icon xbike3Dnew_img_introduce_3_iconM"
+                    id="xbike3Dnew_img_introduce_3_icon">
+                    <div class="introduce_3_icon_1" onclick="fb_xbike3Dnew_introduce_point('3', false)">
+                            {% comment %} <img
+                            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20221714502.png?v=1641538300"
+                            alt=""> {% endcomment %}
+                         {{- white_img_div -}}
+                    </div>
+                    <div class="introduce_3_icon_2">
+                        <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2022191758.png?v=1641722404"
+                            alt="">
+                    </div>
+                    <div class="introduce_3_icon_3 introduce_3_icon_3M"
+                        onclick="fb_xbike3Dnew_introduce_point('3', false)">
+                        <div class="introduce_3_icon_3_1">
+                            {% assign xbike_img_three = section.settings.xbike_img_three | img_url: '' %}
+                            <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                                data-src="{{ xbike_img_three }}"
+                                alt="">
+                            {% comment %} https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20221121601.jpg?v=1641974533 {% endcomment %}
+                        </div>
+                        <div class="introduce_3_icon_3_2">
+                            
+                             {{ section.settings.xbike_image_text_three }}
+                        </div>
+                        <div class="introduce_3_icon_3_3">
+                            {{ section.settings.xbike_image_subtext_three }}
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xbike3Dnew_buttonM {{ section.settings.view_button_style }}" onclick="fb_xbike3Dnew_pop()">
+            {{ section.settings.xbike_view_3d }}
+        </div>
+        {% comment %} <div class="xbike3Dnew_buttonM" onclick="fb_xbike3Dnew_pop()">VIEW IN 3D</div> {% endcomment %}
+    </div>
+    <div class="fb_xbike3Dnew_pop" id="fb_xbike3Dnew_pop" data-foldername="{{ section.settings.xbike_3d_pop_folderName }}">
+        <div class="fb_xbike3Dnew_pop_close" id="fb_xbike3Dnew_pop_close" onclick="fb_xbike3Dnew_popClose()">
+            {%- if template == 'page.lit-bike'  -%}
+                <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                    data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20221141050.png?v=1642128682" alt="">
+                {% comment %} https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221281535.png?v=1643355361 {% endcomment %}
+            {%- else -%}
+                <img class="Image--lazyLoad Image--fadeIn" data-size="auto"
+                    data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221281535.png?v=1643355361" alt="">    
+                {%- endif -%}
+        </div>
+        <div class="fb_xbike3Dnew_placeholderM"></div>
+        <div id="KeyShotXR"></div>
+    </div>
+</div>
+<style>
+    #section-{{ section.id }} {
+        background-color: {{ section.settings.xbike_3d_backgroundcolor }};
+        color:  {{ section.settings.xbike_3d_textcolor }}; 
+        margin-top: -2px;
+    }
+    #section-{{ section.id }} .fb_xbike3Dnew{
+        background: url({{ section.settings.xbike_3d_backimage | img_url: '' }}) no-repeat;
+        background-size: cover;
+    }
+    #section-{{ section.id }} .xbike3Dnew_title p strong {
+        font-weight: 800;
+        color: {{ section.settings.xbike_3d_strong_textcolor }};
+    }
+    #section-{{ section.id }} .fb_xbike3Dnew_pop {
+        background-image: url({{ section.settings.xbike_3d_pop_backimage | img_url: '' }});
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (max-width: 414px) {
+        {%- if section.settings.xbike_3d_mobile_backimage != blank -%}
+            #section-{{ section.id }} .fb_xbike3Dnew{
+                background: url({{ section.settings.xbike_3d_mobile_backimage | img_url: '' }}) no-repeat;
+                background-size: cover;
+            } 
+        {%- endif -%}
+        {%- if template == 'page.lit-bike'  -%}
+            #section-{{ section.id }} .fb_xbike3Dnew_pop {
+                background: #000;
+                background-image: url("https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212110401.png?v=1642732910");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position-y: center;
+            }
+        {%- endif -%}
+        {%- if template == 'page.lit-bike-klarna'  -%}
+            #section-{{ section.id }} .fb_xbike3Dnew_pop {
+                background-image: url(https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221281346.png?v=1643348859)!important;
+                background-size: 100% 100%!important;
+                background-repeat: no-repeat!important;
+            }
+         {%- endif -%}
+    }
+</style>
+{% schema %}
+  {
+    "name": "FbXbike3Dnew",
+    "presets": [
+      {
+        "name": "fb-xbike-3D",
+        "category": "xbike-description",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "xbike_3d_backgroundcolor",
+            "label": "Background color"
+        },
+        {
+            "type": "color",
+            "id": "xbike_3d_textcolor",
+            "label": "Text color"
+        },
+        {
+            "type": "color",
+            "id": "xbike_3d_strong_textcolor",
+            "label": "strong color"
+        },
+        {
+            "type": "image_picker",
+            "id": "xbike_3d_backimage",
+            "label": "Background  Pc Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "xbike_3d_mobile_backimage",
+            "label": "Background  Mboile Image"
+        },
+        {
+            "type": "richtext",
+            "id": "xbike_3d_title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "xbike_3d_subtitle",
+            "label": "Sub Title"
+        },
+        {
+            "type": "text",
+            "id": "xbike_view_3d",
+            "label": "view btn Text",
+            "default": "VIEW IN 3D"
+        },
+        {
+              "type": "select",
+              "id": "view_button_style",
+              "label": "Button Style",
+              "options": [
+                {
+                  "value": "xbike-black-view-button",
+                  "label": "black theme view button"
+                },
+                {
+                  "value": "xbike-pink-view-button",
+                  "label": "pink theme view button"
+                }
+              ],
+              "default": "xbike-black-view-button"
+        },
+        {
+            "type": "image_picker",
+            "id": "xbike_3d_show_img",
+            "label": "Center Img"
+        },
+        {
+            "type": "image_picker",
+            "id": "color_circle_img",
+            "label": "color circleimg"
+        },
+        {
+            "type": "image_picker",
+            "id": "white_circle_img",
+            "label": "white circleimg"
+        },
+        {
+            "type": "url",
+            "id": "xbike_video_url_one",
+            "label": "Open Circle Video url one"
+        },
+        {
+            "type": "text",
+            "id": "xbike_video_text_one",
+            "label": "Open Circle Text one",
+            "default": "Smart Saddle Detection+"
+        },
+        {
+            "type": "text",
+            "id": "xbike_video_subtext_one",
+            "label": "Open Circle Sub Text one",
+            "default": "Vertical and horizontal saddle adjustment, features with unique seat sensor that detects whether you’re pushing your limits to ride out of the saddle."
+        },
+         {
+            "type": "url",
+            "id": "xbike_video_url_two",
+            "label": "Open Circle Video url two"
+        },
+        {
+            "type": "text",
+            "id": "xbike_video_text_two",
+            "label": "Open Circle Text two",
+            "default": "Auto Resistance System"
+        },
+        {
+            "type": "text",
+            "id": "xbike_video_subtext_two",
+            "label": "Open Circle Sub Text two",
+             "default": "Challenge yourself to work harder and do better each time. The resistance level can be adjusted manually or automatically based on the instructors’ cue."
+        },
+        {
+            "type": "image_picker",
+            "id": "xbike_img_three",
+            "label": "Open Circle Image three"
+        },
+        {
+            "type": "text",
+            "id": "xbike_image_text_three",
+            "label": "Open Circle Text three",
+            "default": "22” HD Rotatable Touchscreen"
+        },
+        {
+            "type": "text",
+            "id": "xbike_image_subtext_three",
+            "label": "Open Circle Sub Text three",
+            "default": "180-degree flip rotation to explore hundreds of diverse exercises on our daily updated on-demand library ranging from cycling, HIIT and more."
+        },
+        {
+            "type": "image_picker",
+            "id": "xbike_3d_pop_backimage",
+            "label": "Pop Background Image"
+        },
+        {
+            "type": "text",
+            "id": "xbike_3d_pop_folderName",
+            "label": "FolderName"
+        }
+        
+    ]
+}
+{% endschema %}

@@ -1,0 +1,47 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div class="fb-dimens-dialog js-dimens-dialog">
+    <div class="fb-dimens-container">
+        <div class="fb-dimens-content">
+            <div class="fb-dimens-close">
+                <svg class="js-dimens-close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M0.800049 0.799999L15.2 15.2M0.800049 15.2L15.2 0.799999" stroke="#333333" stroke-width="1.2"/>
+                </svg>
+            </div>
+            {%- for block in section.blocks -%}
+                {%- if block.type == 'product_kinds'  -%}
+                    <div class="js-show-dimensionimg show-dimens-dialog-{{block.settings.product_slect_type}}">
+                        <div class="fb-dimens-box">
+                            <div class="fb-dimens-mainimg">
+                                        {% assign dimess_image_url =  block.settings.fpc_dimension_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                                        {% assign gbdimess_image_url =  block.settings.fpc_dimension_gbimg | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                                        {%- if country_code_var == 'gb' -%}
+                                            <img class="Image--lazyLoad Image--fadeIn" data-src="{{ gbdimess_image_url }}"  data-sizes="auto"
+                                                alt="{{ block.settings.fpc_dimension_gbimg.alt }}"
+                                            >
+                                        {%- else -%}
+                                            <img class="Image--lazyLoad Image--fadeIn" data-src="{{ dimess_image_url }}"  data-sizes="auto"
+                                                alt="{{ block.settings.fpc_dimension_img.alt }}"
+                                            >
+                                        {%- endif -%}
+                                <span class="Image__Loader"></span>
+                            </div>
+                            <div class="fb-dimens-textbox">
+                                <p class="textbox-title">{{ block.settings.fpc_dimension_title }} </p>
+                                {%- if country_code_var == 'ca' -%}
+                                    {{ block.settings.fpc_cadimension_desc }}
+                                {%- elsif country_code_var == 'gb' -%}
+                                    {{ block.settings.fpc_gbdimension_desc }}
+                                {%- elsif country_code_var == 'au' -%}
+                                    {{ block.settings.fpc_audimension_desc }}
+                                {%- else -%}
+                                    {{ block.settings.fpc_dimension_desc }}
+                                {%- endif -%}
+                            </div>
+                        </div>
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}  
+        </div>
+    </div>
+</div>
+

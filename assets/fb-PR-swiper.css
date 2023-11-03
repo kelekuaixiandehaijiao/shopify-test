@@ -1,0 +1,207 @@
+.fb-PR-swiper {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.fb-PR-swiper .activity-content {
+      width:64%;
+    height: auto;
+}
+.fb-PR-swiper .activity .PRimg {
+    display: block; 
+    width: 100%;
+    height: auto;
+}
+.fb-PR-swiper .activity-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 33px;
+    line-height: 33px;
+    padding: 16px 0 40px;
+}
+.fb-PR-swiper .activity-des {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1c1c1b;
+    line-height: 21px;
+}
+.activity-des-mobi {
+    display: none;
+}
+.swiperContainer {
+    width: 50%;
+    padding: 110px 0 0;
+}
+.fb-PR-swiper .swiper {
+    position: relative;
+    max-width: 500px;
+    height: 190px;
+  margin:0;
+}
+.fb-PR-swiper .swiper-slide{
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.fb-PR-swiper .swiper-slide {
+    height:130px !important;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1c1c1b;
+    line-height: 24px; 
+    flex-direction: column;
+    justify-content: flex-start !important;
+}
+.fb-PR-swiper .swiper-slide a {
+    text-decoration: none;
+    color: #1c1c1b;
+}
+.fb-PR-swiper .swiper-slide .text {
+    padding-bottom: 0px;
+}
+#swiperDes{
+    min-height: 70px;
+}
+.imgWrapper{
+    min-height:67.5px;
+    position: relative;
+}
+#swiper3-scrollbar {
+    width: 120px;
+    height: 2px;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+    left: 25%;
+    bottom: 11%;
+    right:25%;
+    margin:auto;
+}
+.fb-PR-swiper .swiper-slide .swiperImg {
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 120px;
+    height: auto;
+}
+@media screen and (max-width: 768px){
+  .fb-PR-swiper {
+    position: relative;
+    height: 490px;
+    width: 100%;
+    flex-direction: column;
+  }
+  .fb-PR-swiper .activity {
+    width: 100%;
+    padding: 25px 0px 0px;
+    height: 275px;
+  }
+  .fb-PR-swiper .activity-content {
+    margin: 0 auto;
+    width: 325px;
+    height: 100%;
+  }
+  .fb-PR-swiper .activity .PRimg {
+    width: 100%;
+    height: auto;
+  }
+  .activity-title {
+    font-size: 20px;
+    line-height: 27px;
+    padding: 16px 0 10px;
+    text-align: center;
+  }
+  .activity-des {
+    display: none;
+  }
+  .activity-des-mobi {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .fb-PR-swiper .swiperContainer {
+    width: 100%;
+    padding: 10px 0 0;
+    justify-content: center;
+  }
+  .fb-PR-swiper .swiper {
+    width: 300px;
+    height: 160px;
+  }
+  .fb-PR-swiper .swiper-slide {
+    font-size: 14px;
+    line-height: 20px;
+  }
+ .fb-PR-swiper .swiper-slide .text {
+    padding-bottom: 0px;
+    padding-top: 15px;
+
+  }
+  .fb-PR-swiper #swiper3-scrollbar {
+    width: 60px;
+    height: 2px;
+    color: #000;
+    left: 25%;
+    right: 25%;
+    bottom: 0;
+    margin:auto;
+    text-align: center;
+    justify-content: center;
+  }
+  .fb-PR-swiper .swiper-slide .swiperImg {
+    width: 100px;
+    max-height: 56px;
+  }
+  .fb-PR-swiper .swiper-slide .add-padding {
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1023px) and (max-width:1439px){
+    .fb-PR-swiper .swiperContainer{
+        padding: 90px 0 0;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width:1024px){
+    .fb-PR-swiper .activity-content {
+        width: 70%;
+    }
+    .fb-PR-swiper .swiperContainer{
+        padding: 70px 0 0;
+    }
+    .fb-PR-swiper .swiper-slide{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .fb-PR-swiper .swiper {
+        height: 190px;
+        max-width: 375px;
+    }
+    #swiperDes{
+        min-height: 70px;
+    }
+    #swiper3-scrollbar {
+        left: 25%;
+        bottom: 10%;
+        right: 25%;
+        margin: auto;
+    }
+}

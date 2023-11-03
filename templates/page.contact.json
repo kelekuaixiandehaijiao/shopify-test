@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-contact",
+      "blocks": {
+        "724118ee-1fe9-44df-b1f4-545ff01242a1": {
+          "type": "dropdown",
+          "settings": {
+            "title": "Select a topic",
+            "values": "General Inquiry, Customer Care, Become a Business Partner, PR & Communications"
+          }
+        },
+        "68ea45a0-8a82-4f80-8727-79b912eaada5": {
+          "type": "text",
+          "settings": {
+            "title": "Custom field",
+            "use_long_text": false,
+            "is_required": false
+          }
+        }
+      },
+      "block_order": [
+        "724118ee-1fe9-44df-b1f4-545ff01242a1",
+        "68ea45a0-8a82-4f80-8727-79b912eaada5"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

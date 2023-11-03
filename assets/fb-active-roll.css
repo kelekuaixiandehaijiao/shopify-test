@@ -1,0 +1,221 @@
+.fb-activeroll-section{
+    padding-bottom: 150px;
+}
+.fb-activeroll-content{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 480px;
+}
+
+
+@keyframes fgrollhide{
+    0% {opacity: 1;}
+    10% {opacity: 0.8;}
+    100% {opacity: 0;}
+}
+@keyframes fgrollshow{
+    0%{opacity:0;}
+    100%{opacity: 1;}
+    
+}
+.fgShowVideo {
+    display: block;
+    animation: fgrollshow 0.3s 1;
+}
+.fgHideVideo {
+    display: none;
+    animation: fgrollhide 0.3s 1;
+}
+.fb-activeroll-content .swiper-scrollbar{
+    /* bottom: -26px; */
+    left: 0;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    z-index: 2;
+    cursor: pointer;
+}
+.fb-activeroll-content .swiper-scrollbar-drag{
+    border-radius: 3px;
+}
+/* .fb-activeroll_scroll {
+    overflow-x: scroll;
+    padding-bottom: 26px;
+} */
+/* .fb-activeroll_scroll ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+} */
+/*  
+.fb-activeroll_scroll ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background-color: #99a9bf;
+}
+ 
+.fb-activeroll_scroll ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+} */
+
+.fb-activeroll_scroll .swiper-slide{
+  height: 444px;
+}
+.fb-activeroll_item{
+    width: 290px;
+    /* padding: 0px 24px; */
+    /* padding: 0px 40px 0px 0px; */
+    padding: 0px 20px 0px 20px;
+}
+.fb-activeroll_item:first-child{
+    width: 270px;
+    /* padding: 0px 24px; */
+    padding: 0px 20px 0px 0px;
+}
+.fb-activeroll_item:last-child{
+    width: 270px;
+    /* padding: 0px 24px; */
+    padding: 0px 0px 0px 20px;
+}
+.fb-activeroll_imgblock{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.fb-activeroll-imgbackground{
+  background: #d4cdcd;
+}
+.fb-activeroll_imgblock .fb-img-box-active {
+    position: absolute;
+    left:  50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+.activeroll-img-block2{
+    width: 100%;
+    height: auto;
+}
+.fb-activeroll_imgblock .fb-img-box-active img{
+   width: 100%;
+   height: 100%;
+}
+.js-activevideo-btn{
+    display: none;
+}
+.fb-activeroll_imgblock:hover .js-activevideo-btn{
+    display: block;
+}
+.activeroll-button-prev, .activeroll-button-next{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 1;
+    cursor: pointer;
+}
+.activeroll-button-prev img, .activeroll-button-next img{
+    width: 30px;
+    height: 30px;
+}
+
+.activeroll-button-prev{
+    left: 30px;
+}
+.activeroll-button-next{
+    right: 30px;
+}
+@media only screen and (max-width: 768px){
+    .activeroll-button-prev, .activeroll-button-next{
+        display: none;
+     }
+    .fb-activeroll-content{
+        height: 342px;
+    }
+    .fb-activeroll_imgblock{
+        border-radius: 7px;
+    }
+    .fb-activeroll_scroll .swiper-slide{
+        height: 320px;
+      }
+      .fb-activeroll_item{
+          /* img 180px */
+          width: 200px;
+          /* padding: 0px 24px; */
+          padding: 0px 10px 0px 10px;
+      }
+      .fb-activeroll_item:first-child{
+        /* img 180px */
+        width: 190px;
+        /* padding: 0px 24px; */
+        padding: 0px 10px 0px 0px;
+    }
+      .fb-activeroll_item:last-child{
+        /* img 180px */
+        width: 190px;
+        /* padding: 0px 24px; */
+        padding: 0px 0px 0px 10px;
+    }
+    .fb-activeroll_imgblock .fb-img-box-active {
+        height: 40px;
+        width: 40px;
+    }
+    .fb-activeroll-section{
+        padding-bottom: 60px;
+    }
+    .fb-activeroll-content .swiper-scrollbar{
+        /* bottom: -26px; */
+        height: 3px;
+    }
+    .fb-activeroll-content .swiper-scrollbar-drag{
+        border-radius: 3px;
+    }
+    .activeroll-mobile-img-block{
+        /* video width 180 */
+        width: 180px;
+        height: 320px;
+    }
+}
+.fb-activeroll_imgblock .activeroll-img-block{
+  width: 250px;
+  height: 444px;
+}
+.fb-activeroll-section video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+.fb-activeroll-section video::-webkit-media-controls-play-button {
+    display: none;
+}
+/* .activeroll-swiper-pagination{
+    text-align: center;
+    margin-top: 10px;
+} */
+@media only screen and (max-width: 768px){
+    /* .activeroll-swiper-pagination{
+        text-align: center;
+        margin-top: 10px;
+    } */
+}
+.fb-activeroll-content  .swiper-button-disabled{
+    opacity:0 !important;
+}
+/* .activeroll-swiper-pagination .swiper-pagination-bullet-active{
+    background: #02C0D9!important;
+}
+.activeroll-swiper-pagination .swiper-pagination-bullet{
+    background: #fff;
+} */
+@media only screen and (min-width: 1451px) {
+    .fb-activeroll-content{
+        width: 100%;
+    }
+}

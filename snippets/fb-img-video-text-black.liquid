@@ -1,0 +1,79 @@
+<div class="fb_black_slideshow_maskM">
+    {%- assign product =  block.settings.product  -%}
+    {%- if block.settings.subheading != blank -%}
+        <div class="fb_black_slideshow_1_1" style="{% if block.settings.subheading_color %} color: {{ block.settings.subheading_color }}; {% endif %} "
+        >
+            {{ block.settings.subheading }}
+        </div>
+    {%- endif -%}
+     {% comment %} <div class="fb_lit-bike_slideshow_1_2">The future of<br>indoor cycling<br>just got LIT!</div> {% endcomment %}
+     
+    {%- assign title_oprichtext  = block.settings.title | strip_html -%}
+    {%- if title_oprichtext != blank -%}
+        <div class="fb_black_slideshow_1_2"
+            style="{% if block.settings.title_color %}color: {{ block.settings.title_color }}; {% endif %}"
+        >
+            {{ block.settings.title }}
+        </div>
+    {%- endif -%}
+    <div class="fb_black_starting_at">
+        Starting at
+    </div>
+    <div class="fb_black_slideshow_1_3">
+        {%- if product != blank -%}
+            <span class="fb_black_variant_price fb_black_variant_clip_price" style="{% if block.settings.current_price_background %} background-image: {{ block.settings.current_price_background }}; {% endif %}">
+                {%- render 'customer-price-control', type:'sale', cpc_product: product -%}
+            </span>
+             <div class="fb_black_flex-item" style="{% if block.settings.original_price_color %}color:{{ block.settings.original_price_color }}; {%- endif -%}">
+                <span class="fb_black_compare_price">{%- render 'customer-price-control', type:'origin', cpc_product: product -%}</span>
+                <span class="fb_black_off">{% render 'customer-price-control', type:'off', cpc_product: product %} OFF</span>
+            </div> 
+        {%- endif -%}
+
+    </div>
+    {% comment %} <div class="fb_black_slideshow_1_4" >
+        <span id="fb-black-lb" style="color: {{ block.settings.bottom_desc_color }}">
+            {{ block.settings.bottom_desc_price_pc }}
+        </span>
+    </div>
+    <div id="fb-black-lb-mb" style="color: {{ block.settings.bottom_desc_color }}">
+        {{ block.settings.bottom_desc_price_mobile }}
+    </div> {% endcomment %}
+</div>
+
+{%- if block.settings.button_1_text != blank and block.settings.button_2_text != blank -%}
+    {%- assign has_two_buttons = true -%}
+    {%- else -%}
+    {%- assign has_two_buttons = false -%}
+{%- endif -%}
+
+{%- if block.settings.button_1_text != blank or block.settings.button_2_text != blank -%}
+    <div class="SectionHeader__ButtonWrapper">
+        <div class="ButtonGroup ButtonGroup--spacingSmall fb_black__ButtonGroupM {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}" >
+        {%- if block.settings.button_1_text != blank -%}
+            <a href="{{ block.settings.button_1_link }}" class="ButtonGroup__Item Button js-public-gtm-btn"
+                style="{% if block.settings.button_1_text_bordercolor %}border-color:{{ block.settings.button_1_text_bordercolor }};{% endif %}{% if block.settings.button_1_text_color %}color: {{ block.settings.button_1_text_color }}; {% endif %}{% if block.settings.button_1_text_backgroundcolor %}background-color: {{ block.settings.button_1_text_backgroundcolor }};border-color:{{ block.settings.button_1_text_backgroundcolor }};{% endif %}"
+                data-number="{{ forloop.index }}"
+                data-btntext="{{ block.settings.button_1_text }}"
+                id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_1_text | escape }}"
+            >
+                {{ block.settings.button_1_text | escape }}
+            </a>
+        {%- endif -%}
+
+        {%- if block.settings.button_2_text != blank -%}
+            <a  class="ButtonGroup__Item_2 Button js-public-gtm-btn js-open-videodialog fb-img-video-btnvideo"
+                style="{% if block.settings.button_2_text_bordercolor %}border-color:{{ block.settings.button_2_text_bordercolor }};{% endif %}{% if block.settings.button_2_text_color %}color: {{ block.settings.button_2_text_color }}; {% endif %}{% if block.settings.button_2_text_backgroundcolor %}background-color: {{ block.settings.button_2_text_backgroundcolor }};border-color:{{ block.settings.button_2_text_backgroundcolor }};{% endif %}"
+                data-number="{{ forloop.index }}"
+                data-btntext="{{ block.settings.button_2_text }}"
+                data-type="playvideo"
+                data-section-id="{{ section.id }}"
+                data-videourl="{{ block.settings.open_dialog_video_link }}"
+                id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_2_text | escape }}"
+            >
+                {{ block.settings.button_2_text | escape }}
+            </a>
+        {%- endif -%}
+        </div>
+    </div>
+{%- endif -%}

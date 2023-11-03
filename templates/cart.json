@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "show_shipping_estimator": false,
+        "shipping_estimator_default_country": "United States"
+      }
+    },
+    "16449095622c6426f1": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "title": "Recently viewed",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16449095622c6426f1",
+    "recently-viewed-products"
+  ]
+}

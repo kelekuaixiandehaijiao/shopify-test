@@ -1,0 +1,705 @@
+<div class="fb-with-draw-invite" id="section-{{ section.id }}">
+    {% assign imgPiker =section.settings.bg_image | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+
+    <img class="Image--lazyLoad Image--fadeIn fb-with-draw-invite-bg" 
+    data-src="{{ imgPiker }}" 
+    data-sizes="auto"
+    data-optimumx="1.2"
+    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+    <div class="fb-with-card-invite">
+        <div class="with-card-name">{{section.settings.cash_des}}</div>
+        <div class="u-money" id="cashBonus">$0</div>
+        <a href="" class="u-btn"></a>
+    </div>
+    <div class="fbFriendbuyActive fb-with-card-swiper">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                <div class="fb-with-card-center swiper-slide">
+                    <div class="with-card-des"><span style="font-weight: 700;">{{block.settings.name}} </span><br class="fb-br"/>{{block.settings.des_pre}} <span style="font-weight: 700;">${{block.settings.money}} </span>{{block.settings.des_next}}</div>
+                    <div class="u-date">{{block.settings.date}}</div>
+                </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+    
+    <div class="fb-with-card-bottom">
+        <div class="with-card-name">{{'Invite Friends to Earn'}}</div>
+        <div class="u-money comon ">{{section.settings.total_money}} <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/PAYPAL_2x_7d17a12d-f32b-4ac2-a531-6b234ebb5cb0.png?v=1667732889" alt="" class="u-img" ></div>
+        <div class="invite-list invite-list-one invite-position">
+            <div class="invite-list-top">
+                <div class="invite-list-top-des">{{section.settings.invite_Des}}</div>
+                <div class="invite-list-top-right"><span class="up-to">up to</span>{{section.settings.up_one_money}}</div>
+            </div>
+            <div class="invite-box-list invite-box-list-first" id="invite-box-list-first">
+            </div>
+            <div class="invite-des">{{section.settings.invite_one_des}}</div>
+            <div class="invite-des mobile-des" >{{section.settings.invite_one_two_des}}</div>
+            <div class="invite-des mobile-des" >{{section.settings.invite_one_three_des}}</div>
+            {%- if section.settings.is_cancel_email -%}
+                <div class="invite-fade-des">
+                    {{ section.settings.cancel_email_desc }}
+                </div>
+            {%- endif -%}
+        </div>
+        <div class="invite-list mb-list invite-list-two" >
+            <div class="invite-list-top">
+                <div class="invite-list-top-des des-mb">{{section.settings.invite_two_Des}}</div>
+                <div class="invite-list-top-right"><span class="up-to">up to</span>{{section.settings.up_two_money}}</div>
+            </div>
+            <div class="draw-swiper">
+                <div class="invite-box-list swiper-wrapper" id="invite-box-list-two">
+                    
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+            
+           
+            <div class="invite-des invite-box-list-two-des">{{section.settings.invite_two_bottom_des}}</div>
+        </div>
+        <div class="m-btn invite-common">Invite Friends</div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var Performswiper = new Swiper(".draw-swiper", {
+            slidesPerView: 'auto',
+            loopedSlides :2,
+            centeredSlides: false,
+            slidesPerGroupSkip: 1,
+            grabCursor: true,
+            keyboard: {
+                enabled: true,
+            },
+            breakpoints: {
+                769: {
+                slidesPerView: 5,
+                slidesPerGroup: 2,
+                },
+            },
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    })
+  </script>
+{% schema %}
+  {
+    "name": "FbWithDrawInvite",
+    "presets": [
+      {
+        "name": "fb-with-draw-invite",
+        "category": "Fb Sections"
+      }
+    ],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Bg Image"
+        },
+        {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Btn Url"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Btn text"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_cancel_email",
+            "label": "Is Cancel email rewards?",
+            "default": false
+        },
+        {
+            "type": "richtext",
+            "id": "cancel_email_desc",
+            "label": "Cancel Email Desc"
+        },
+        {
+            "type": "text",
+            "id": "invite_Des",
+            "label": "Invite Des"
+        },
+        {
+            "type": "text",
+            "id": "invite_one_des",
+            "label": "Invite One Bottom Des"
+        },
+        {
+            "type": "text",
+            "id": "invite_one_two_des",
+            "label": "Invite One Two Bottom Des"
+        },
+        {
+            "type": "text",
+            "id": "invite_one_three_des",
+            "label": "Invite One Three Bottom Des"
+        },
+        {
+            "type": "text",
+            "id": "cash_des",
+            "label": "Cash Des",
+            "default":"Cash Rewards Earned"
+        },
+        {
+            "type": "text",
+            "id": "up_one_money",
+            "label": "Up One Money",
+            "default":"$10"
+        },
+        {
+            "type": "text",
+            "id": "up_two_money",
+            "label": "Up Two Money",
+            "default":"$1200"
+        },
+        {
+            "type": "text",
+            "id": "invite_two_Des",
+            "label": "Invite Two Des"
+        },
+        {
+            "type": "text",
+            "id": "invite_two_bottom_des",
+            "label": "Invite Two Bottom Des"
+        },
+        {
+            "type": "text",
+            "id": "total_money",
+            "label": "Total Money",
+            "default":"$1210"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "rewardList",
+            "name": "rewardList",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Name",
+                    "default":"Lee**"
+                },
+                {
+                    "type": "text",
+                    "id": "money",
+                    "label": "Money",
+                    "default":"10"
+                },
+                {
+                    "type": "text",
+                    "id": "date",
+                    "label": "Date",
+                    "default":"Nov.01 13:27"
+                },
+                {
+                    "type": "text",
+                    "id": "des_pre",
+                    "label": "Des Pre",
+                    "default":"has withdrawn"
+                },
+                {
+                    "type": "text",
+                    "id": "des_next",
+                    "label": "Des Next",
+                    "default":"to PayPal."
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}
+<style>
+    .fb-with-draw-invite-bg{
+        width: 100%;
+        /* height: 620px; */
+        height: 315px;
+        position: relative;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .fb-with-card-invite{
+        width:calc(100% - 400px);
+        height: 360px;
+        margin: 0 auto;
+        margin-top: -255px;
+        margin-bottom: 32px;
+        background: #FFFFFF;
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 60px 0px;
+        box-sizing: border-box;
+    }
+    
+    .with-card-name{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        /* identical to box height */
+        color: #000000;
+    }
+    .fb-with-draw-invite .u-money{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 59px;
+        text-align: center;
+        color: #000000;
+    }
+    .fb-with-draw-invite  .u-btn{
+        width: 268px;
+        height: 64px;  
+        background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Withdraw_2x_6ff3d594-7a80-4ae2-a509-23d64cde24f3.png?v=1667724768');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        cursor: pointer;
+    }
+    .fb-with-card-swiper{
+        width:calc(100% - 400px);
+        height: 84px;
+        margin: 0 auto;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .fb-with-card-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .fb-with-card-center .u-date{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .fb-with-card-center .with-card-des{
+        font-family: 'Montserrat';
+        font-style: normal;
+        /* font-weight: 700; */
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        margin-right: 34px;
+    }
+    .fb-br{
+        display: none;
+    }
+    .fb-with-card-bottom{
+        width:calc(100% - 400px);
+        height: 1015px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 100px;
+        box-sizing: border-box;
+
+    }
+    .fb-with-card-bottom .m-btn{
+        width: 400px;
+        height: 64px;
+        background: linear-gradient(90deg, #8003FE 0%, #FC5EA6 100%);
+        border-radius: 10px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #FFFFFF;
+    }
+    .u-money .u-img{
+        width: 104px;
+        height: 32px;
+        margin-left: 16px;
+    }
+    .fb-with-card-bottom .comon{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 100px;
+    }
+    .fb-with-card-bottom .invite-list{
+        width:100%;
+        /* height:274px; */
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(25px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 20px;
+        padding: 48px 50px 16px 60px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-around; */
+        /* width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden; */
+        overflow: hidden;
+    }
+    .invite-position {
+        position: relative;
+    }
+    .invite-fade-des{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 5%;
+    }
+    .invite-fade-des p {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 28px;
+        color: #747474;
+    }
+    .fb-with-card-bottom  .invite-list-one{
+        height: 316px;
+    }
+    .fb-with-card-bottom .invite-list-two{
+        height: 310px;
+    }
+    
+    .fb-with-card-bottom .invite-list-top{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .invite-list-top-des{
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: -4px;
+
+        color: #000000;
+    }
+    .invite-common{
+        display: block;
+        cursor: pointer;
+    }
+    .invite-list-top-right{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: right;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .up-to{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 10px;
+        /* margin-bottom: 6px; */
+    }
+
+    .invite-des{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #747474;
+    }
+    .invite-box-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        /* margin: 15px 0 20px 0; */
+        position: relative;
+
+    }
+    .invite-box-list-first{
+        margin: 15px 0 20px 0;
+    }
+    .invite-box-icon{
+        width: 100px!important;
+        height: 100px;
+        /* margin-right:calc( calc( 100% - 500px ) / 4 ); */
+        /* margin-right: 96px; */
+        margin-right: 6%;
+        /* background-image: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_197_2x_3c0c59cb-2d8c-4eb4-b68f-e21496bd719a.png?v=1667738853');
+        background-repeat: no-repeat; */
+        /* margin-top: 40px; */
+        /* background-size: 100%; */
+    }
+     .invite-box-list-two-des{
+        margin-top: 56px;
+    }
+    .draw-swiper {
+        position: relative;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    .draw-swiper .swiper-horizontal>.swiper-scrollbar {
+            margin: 0 auto;
+            width: 200px!important;
+            height: 4px;
+            background: #DDDDDD;
+            border-radius: 5px;
+           
+    }
+    
+    .draw-swiper .swiper-scrollbar {
+            width: 200px!important;
+            height: 4px;
+            background: #DDDDDD;
+            border-radius: 5px;
+            bottom: -36px;
+            z-index: 1!important;
+            left: calc(calc( 100% - 200px )/2);
+    }
+    .draw-swiper .swiper-scrollbar-drag {
+        background: #000000;
+        height: 4px;
+        border-radius: 5px;
+        
+    }
+    .draw-swiper .invite-box-list{
+        margin-top: 15px;
+    }
+    .mobile-des{
+        margin-left:5.5px;
+        margin-top: 4px;
+    }
+ @media screen and (max-width: 769px)  {
+    .fb-with-card-bottom .comon{
+        margin-left: 60px;
+    }
+    .fb-br{
+        display: block;
+    }
+    .fb-with-draw-invite-bg{
+        width: 100%;
+        height: 180px;
+    }
+    .fb-with-card-invite{
+        width:calc(100% - 50px);
+        height:211px;
+        margin-top: -150px;
+        margin-bottom: 20px;
+        padding: 32px 20px;
+        border-radius: 12px;
+    }
+    .with-card-name{
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .fb-with-draw-invite .u-money{
+        font-size: 32px;
+        line-height: 39px;
+    }
+    .fb-with-draw-invite  .u-btn{
+        width: 160px;
+        height: 40px; 
+        background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20221110-230617.png?v=1668092815');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        
+    }
+    .invite-fade-des p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .fb-with-card-swiper{
+        width:calc(100% - 50px);
+        height: 48px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 8px;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    .fb-with-card-center{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        justify-content: center;
+    }
+    .fb-with-card-center .u-date{
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .fb-with-card-center .with-card-des{
+        font-size: 12px;
+        line-height: 16px;
+        margin-right: 26px;
+
+    }
+    .fb-with-card-bottom{
+        width:calc(100% - 50px);
+        height: 549px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 32px 20px;
+
+    }
+
+    .fb-with-card-bottom .m-btn{
+        width: 240px;
+        height: 40px;
+        background: linear-gradient(90deg, #8003FE 0%, #FC5EA6 100%);
+        border-radius: 10px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+    }
+    .u-money .u-img{
+        width: 52px;
+        height: 16px;
+        margin-left: 8px;
+    }
+    .invite-box-list-first{
+        margin: 24px 0 12px 0;
+        justify-content: space-between!important;
+    }
+    .fb-with-card-bottom .invite-list{
+        width:100%;
+        /* height:152px; */
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(16.45px);
+        border-radius: 8px;
+        padding: 16px 16px 8px 16px;
+        box-sizing: border-box;
+    }
+    .fb-with-card-bottom  .invite-list-one{
+        height: 158px
+    }
+    .fb-with-card-bottom .invite-list-two{
+        height: 160px;
+    }
+    .invite-list-top-des{
+        width: 170px;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 0;
+        
+
+    }
+    .invite-list-top-right{
+        /* display: flex;
+        flex-direction: column;
+        align-items: flex-end; */
+        font-size: 20px;
+        line-height: 24px
+    }
+    .mobile-des{
+        margin-left: 2.5px;
+        margin-top: 2px;
+    }
+    .up-to{
+        font-size: 10px;
+        line-height: 10px;
+        /* margin-bottom: 0px; */
+     }
+     .invite-box-icon{
+        width: 40px!important;
+        height: 40px;
+        margin-right:calc( calc( 100% - 200px ) / 4 );
+    }
+    .invite-des{
+        font-size: 6px;
+        line-height: 6px;
+        white-space: nowrap;
+    }
+   .invite-box-list-two-des{
+        margin-top: 24px;
+    }
+    .des-mb{
+        width: 150px;
+    }
+    .draw-swiper .swiper-scrollbar {
+            width: 100px!important;
+            height: 2px;
+            background: #DDDDDD;
+            border-radius: 5px;
+            left: calc(calc( 100% - 100px )/2);
+            bottom: -14px!important;
+    }
+    .draw-swiper .swiper-scrollbar-drag {
+        background: #000000;
+        height: 2px;
+        border-radius: 5px;
+        
+    }
+    .invite-box-common{
+        margin-right: 0px;
+    }
+    .mb-list{
+        height: 160px !important;
+        margin-top: -10px;
+    }
+    .draw-swiper .invite-box-list{
+        margin-top: 12px;
+        margin-bottom: 16px;
+    }
+ }
+
+</style>

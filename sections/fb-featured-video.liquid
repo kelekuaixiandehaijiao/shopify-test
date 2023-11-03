@@ -1,0 +1,236 @@
+<section class="Section fb-featured-video" id="section-{{ section.id }}">
+    {%- if section.settings.fcv_title -%}
+        <div class="fcv-box-title">
+            {{ section.settings.fcv_title }}
+        </div>
+    {%- endif -%}
+    <div class="FlexboxIeFix">
+      {%- capture mobile_size -%}750x{% if section.settings.image.height >= 960 %}960{% else %}{{ section.settings.image.height }}{% endif %}{%- endcapture -%}
+      <div class="ImageHero {% if section.settings.section_size != 'normal' %}ImageHero--{{ section.settings.section_size }}{% endif %}" {% if section.settings.image %}style="background: url({{ section.settings.image | img_url: '1x1', format: 'jpg' }})"{% endif %}>
+        <div class="ImageHero__ImageWrapper">
+          <div class="ImageHero__Image Image--lazyLoad Image--zoomOut"
+               data-optimumx="1.4"
+               data-expand="-150"
+               {% if section.settings.image %}data-bgset="{{ section.settings.image | img_url: mobile_size, crop: 'center' }} 750w, {{ section.settings.image | img_url: '1000x' }} 1000w, {{ section.settings.image | img_url: '1500x' }} 1500w"{% endif %}>
+          </div>
+  
+          <noscript>
+            <div class="ImageHero__Image" style="background-image: url({{ section.settings.image | img_url: '1000x' }})"></div>
+          </noscript>
+  
+          {%- unless section.settings.image != blank -%}
+            <div class="PlaceholderBackground">
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+            </div>
+          {%- endunless -%}
+        </div>
+  
+        <div class="ImageHero__ContentOverlay">
+          <header class="SectionHeader">
+            {%- if section.settings.subheading != blank -%}
+              <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+            {%- endif -%}
+  
+            {%- if section.settings.title != blank -%}
+              <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+            {%- endif -%}
+  
+            <div class="SectionHeader__IconHolder">
+              <button type="button" class="Video__PlayButton" data-action="open-modal" aria-label="{{ 'home_page.featured_video.play' | t }}" aria-controls="modal-{{ section.id }}">{% render 'icon' with 'play' %}</button>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+    {%- if section.settings.kelcee_text -%}
+        <div class="fcv-box-link">
+            <a href="{{ section.settings.kelcee_text_url }}">{{ section.settings.kelcee_text | escape }}</a>
+        </div>
+      {%- endif -%}
+  </section>
+  
+  <div id="modal-{{ section.id }}" class="Modal Modal--fullScreen Modal--videoContent" aria-hidden="true" role="dialog" data-scrollable>
+    <div class="Modal__Content">
+      <div class="Container Container--narrow">
+        <div class="VideoWrapper">
+          {% if section.settings.video_url.type == 'youtube' %}
+            <iframe class="Image--lazyLoad" data-src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?autoplay=1&showinfo=0&controls=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+          {% elsif section.settings.video_url.type == 'vimeo' %}
+            <iframe class="Image--lazyLoad" data-src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?autoplay=1&portrait=0&byline=0&color={{ settings.accent_color | remove_first: '#' }}" frameborder="0"></iframe>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  
+    <button class="Modal__Close Modal__Close--outside" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
+  </div>
+  
+  <style>
+    #section-{{ section.id }},
+    #section-{{ section.id }} .Heading {
+      color: {{ section.settings.text_color }};
+    }
+  </style>
+  
+  {% schema %}
+  {
+    "name": "Fb Featured video",
+    "settings": [
+      {
+        "type": "select",
+        "id": "section_size",
+        "label": "Section size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "large"
+      },
+      {
+        "type": "text",
+        "id": "fcv_title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "kelcee_text",
+        "label": "Video by Kelcee"
+    },
+    {
+        "type": "url",
+        "id": "kelcee_text_url",
+        "label": "Video by Kelcee url"
+    },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Sub-heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Your video"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "1500 x 800px .jpg recommended."
+      },
+      {
+        "type": "video_url",
+        "accept": ["vimeo", "youtube"],
+        "id": "video_url",
+        "label": "Video URL",
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Video",
+        "name": "Fb Featured video",
+        "settings": {}
+      }
+    ]
+  }
+  {% endschema %}
+<style>
+    .fcv-box-title{
+        font-size: 36px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 44px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .fcv-box-link{
+        text-align: right;
+        padding-top: 20px;
+        margin-bottom: 180px;
+        padding-right: 15px;
+    }
+    .fcv-box-link a{
+        font-size: 16px;
+        font-weight: 500;
+        color: #02C0D9;
+        line-height: 19px;
+    }
+    @media only screen and (min-width: 1550px) {
+        .fb-featured-video .FlexboxIeFix{
+            width: 1520px;
+            margin: 0 auto;
+        }
+        .fcv-box-link{
+            width: 1520px;
+            padding-top: 20px;
+            margin: 0 auto;
+            margin-bottom: 180px;
+            padding-right: 0px;
+        }
+        .fb-featured-video .ImageHero--large{
+            min-height: 855px;
+        }
+    }
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        .fcv-box-title{
+            font-size: 28px;
+            line-height: 34px;
+            margin-bottom: 50px;
+        }
+        .fcv-box-link{
+            text-align: right;
+            padding-top: 10px;
+            margin-bottom: 120px;
+        }
+        .fcv-box-link a{
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .fcv-box-title{
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 22px;
+        }
+        .fcv-box-link{
+            text-align: right;
+            padding-top: 9px;
+            margin-bottom: 65px;
+            padding-right: 15px;
+        }
+        .fcv-box-link a{
+            font-size: 11px;
+            line-height: 14px;
+        }
+        .fb-featured-video .ImageHero--large{
+            min-height: 233px;
+        }
+        .fb-featured-video .Video__PlayButton, .fb-featured-video .Video__PlayButton svg{
+            width: 40px;
+            height: 40px;
+        }
+       .fb-featured-video .SectionHeader__IconHolder{
+            margin-top: 0px;
+        }
+    
+    }
+   
+</style>

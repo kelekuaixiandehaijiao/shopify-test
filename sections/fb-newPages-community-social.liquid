@@ -1,0 +1,296 @@
+{%- assign Social = section.blocks | where: 'type', 'Social' | first -%}
+<div class="fb-newPages-social home-community" id="section-{{ section.id }}">
+    <div class="home-social-content">
+      <div class="home-social-left">
+        <div class="home-social-title">{{section.settings.socialTitle}}</div>
+        {%- if section.settings.subTitle1 != blank -%}
+         <div class="home-social-subtitle">{{section.settings.subTitle1}}</div>
+        {%- endif -%}
+        {%- if section.settings.socialDes1 != blank -%}
+          <div class="home-social-des1 deslink">
+            {{section.settings.socialDes1}}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="home-social-right">
+        <div class="iconWrapper">
+            {%- for block in section.blocks -%}
+          <a href="{{ block.settings.social_url}}" target="_blank"
+            ><div class="Instagram">
+              {% assign imgPiker = block.settings.social_img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+              <img class="Image--lazyLoad Image--fadeIn social_img" data-src="{{ imgPiker }}" 
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    data-sizes="auto"
+                >
+              </div
+          ></a>
+          {%- endfor -%}
+        </div>
+        <div class="tips">*Click on icon to check us out</div>
+      </div>
+    </div>
+    <div class="double">
+      {%- if section.settings.subTitle2 != blank -%}
+        <div class="home-social-subtitle">{{section.settings.subTitle2}}</div>
+      {%- endif -%}
+      {%- if section.settings.socialDes2 != blank -%}
+        <div class="home-social-des2 deslink">
+          {{section.settings.socialDes2}}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+<style>
+  #section-{{ section.id }} {
+    background: url({{section.settings.litBike-color}}) no-repeat;
+    background-size:100% 100%;
+    margin-bottom: -2px;
+    margin-top: -2px;
+  }
+  .fb-newPages-social {
+    padding-top: 150px;
+    background:{{section.settings.socialColor}};
+  }
+  .home-social-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .home-social-left {
+    width: 50%;
+    color: {{ section.settings.textColor }};
+  }
+  .home-social-title {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 44px;
+    padding: 0 0 60px;
+  }
+  .home-social-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29px;
+    padding-bottom: 10px;
+  }
+  .home-social-des1, .home-social-des2 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #666;
+  }
+  .home-social-des1{
+    padding-bottom: 20px;
+  }
+  .home-social-des2 {
+    padding-bottom: 40px;
+  }
+  .home-social-right {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    width: 353px;
+  }
+  .iconWrapper div {
+    width: 33px;
+  }
+  .iconWrapper img {
+    display: block;
+    width: 100%;
+  }
+  .tips {
+    font-size: 12px;
+    font-weight: 400;
+    color: {{section.settings.tipsColor }};
+    line-height: 28px;
+  }
+  .double {
+    width: 50%;
+    color: {{ section.settings.textColor }};
+  }
+  .deslink a{
+      color: {{ section.settings.linkColor }};
+      text-decoration:underline;
+  }
+  @media only screen and (min-width: 1550px) {
+    .fb-newPages-social {
+      padding-top: 150px;
+    }
+    .iconWrapper {
+      width: 437px;
+    }
+    .iconWrapper div {
+      width: 44px;
+    }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .fb-newPages-social {
+        padding-top: 100px;
+    }
+    .iconWrapper {
+      width: 270px;
+    }
+    .iconWrapper div {
+      width: 33px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    #section-{{ section.id }} {
+    background: url({{section.settings.litBike-color-mb}}) no-repeat;
+    background-size: 100% 100%;
+  }
+    .fb-newPages-social {
+      padding: 66px 20px 0 !important;
+    }
+    .home-social-content {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .home-social-left {
+      width: 100%;
+      text-align: left;
+    }
+    .home-social-title {
+      font-size: 30px;
+      line-height: 36px;
+      padding: 0 0 30px;
+    }
+    .home-social-subtitle {
+      font-size: 14px;
+      line-height: 14px;
+      padding-bottom: 12px;
+    }
+    .home-social-des1,.home-social-des2 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    .home-social-des1{
+      padding-bottom: 19px;
+    }
+    .home-social-des2 {
+      padding-bottom: 30px;
+    }
+    .home-social-right {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .iconWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    .iconWrapper div {
+      width: 31px;
+    }
+    .tips {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      padding-bottom: 33px;
+    }
+    .double {
+      text-align: center;
+      width: 100%;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "FbNewPagesSocial",
+  "presets": [
+    {
+      "name": "fb-newPages-social",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+      {
+        "type": "color",
+        "id": "socialColor",
+        "label": "Background"
+      },
+       {
+        "type": "color",
+        "id": "textColor",
+        "label": "Text Color",
+        "default": "#1c1b1b"
+       },
+       {
+        "type": "color",
+        "id": "tipsColor",
+        "label": "Tips Color",
+        "default": "#888888"
+       },
+       {
+        "type": "color",
+        "id": "linkColor",
+        "label": "Link Color",
+        "default": "#891af5"
+       },
+       {
+        "type": "text",
+        "id": "litBike-color",
+        "label": "Background Color"
+      },
+      {
+        "type": "text",
+        "id": "litBike-color-mb",
+        "label": "Background Color Mb"
+      },
+       {
+        "type": "text",
+        "id": "socialTitle",
+        "label": "Title"
+      },
+      {
+          "type": "text",
+          "id": "subTitle1",
+          "label": "SubTitle 1"
+      },
+      {
+          "type": "richtext",
+          "id": "socialDes1",
+          "label": "Description 1"
+      },
+      {
+        "type": "text",
+        "id": "subTitle2",
+        "label": "SubTitle 2"
+    },
+    {
+        "type": "richtext",
+        "id": "socialDes2",
+        "label": "Description 2"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "Social",
+        "name": "Social Share",
+        "settings": [
+          {
+            "type": "url",
+            "id": "social_url",
+            "label": "Social URL"
+          },
+          {
+              "type": "image_picker",
+              "id": "social_img",
+              "label": "Social Image"
+          }
+       ]
+      }
+    ]
+}
+{% endschema %}

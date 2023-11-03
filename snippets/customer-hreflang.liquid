@@ -1,0 +1,95 @@
+{%- capture hreflang_code -%}
+    {% if request.path contains '/en-uk' %}
+    <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com{{ request.path | remove: '/en-uk' }}" >
+    <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com{{ request.path  }}" > 
+    <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au{{ request.path | remove: '/en-uk' }}" > 
+    {% elsif request.path contains '/en-au' %}
+    <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com{{ request.path | remove: '/en-au' }}" >
+    <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk{{ request.path | remove: '/en-au'  }}" > 
+    <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com{{ request.path  }}" > 
+    {% else %}
+    <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com{{ request.path }}" >
+    <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk{{ request.path  }}" >
+    <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au{{ request.path  }}" > 
+    {% endif %}
+    <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com{{ request.path | remove: '/en-uk' | remove: '/en-au' }}">
+    <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com{{ request.path | remove: '/en-uk' | remove: '/en-au' }}">
+{%- endcapture -%}
+{%- assign template_alternate = 'product.lit-bike-black,product.lit-bike-beige,product.boom-bike-first,collection.exercise-bikes-collection,page.classes,page.community,page.about-us,page.customer-shop,page.customer-shop-boom-bike,article.none-bikes,article.blog-litbike,article.blog-lit-boom,article.blog-boombike,blog.boom-bike-blog'
+    | remove: ' '
+-%}
+{% if template == 'index' %}
+    <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/">
+    <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/">
+    <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk">
+    <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au">
+    <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/">
+{% elsif template == "product.lit-bike-pink" %}
+    <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/products/lit-bike-klarna-limited-edition">
+    <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/products/lit-bike-klarna-limited-edition">
+    <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/products/lit-bike-klarna-limited-edition">
+    {% comment %} en-au en-uk {% endcomment %}
+{% elsif template == "product.lit-bike-white" %}
+    <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/products/lit-bike-snowpeak-white">
+    <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/products/lit-bike-snowpeak-white">
+    <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/products/lit-bike-snowpeak-white">
+     {% comment %} en-au en-uk {% endcomment %}
+{% elsif template == "product.boom-bike-grey" %}
+    <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/products/boom-bike-mist-grey">
+    <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk/products/boom-bike-mist-grey"> 
+    <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au/products/boom-bike-mist-grey">
+    <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/products/boom-bike-mist-grey">
+    {% comment %} en-ca {% endcomment %}
+{% elsif template == "product.boom-bike-yellow" %}
+    <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/products/boom-bike-tuscany-yellow">
+    <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/products/boom-bike-tuscany-yellow">
+{% else %}
+    {% if template_alternate contains template %}
+        {%- if template == 'product' or template == 'page' or template == 'collection' -%}
+        {%- else -%}
+         {{ hreflang_code }}
+        {%- endif -%}
+    {% endif %}
+    {% if request.path contains '/user-manual' %} 
+        <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/pages/user-manual">
+        <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/pages/user-manual">
+        <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk/pages/user-manual">
+        <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au/pages/user-manual">
+        <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/pages/user-manual">
+    {% endif %}
+    {% if request.path contains '/faqs' %} 
+        <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/pages/faqs">
+        <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/pages/faqs">
+        <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk/pages/faqs-uk">
+        <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au/pages/faqs-au">
+        <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/pages/faqs">
+    {% endif %}
+    {% if request.path contains '/pages/return-policy' %} 
+        <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/pages/return-policy">
+        <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/pages/return-policy">
+        <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk/pages/return-policy-uk"> 
+        <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au/pages/return-policy-au">
+        <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/pages/return-policy">
+    {% endif %}
+    {% if request.path contains '/pages/shipping-policy' %} 
+        <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/policies/shipping-policy">
+        <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/policies/shipping-policy">
+        <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk/pages/shipping-policy-uk"> 
+        <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au/pages/shipping-policy-au">
+        <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/policies/shipping-policy">
+    {% endif %}
+    {% if request.path contains '/pages/payment-method' %} 
+        <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/pages/payment-method">
+        <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/pages/payment-method">
+        <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk/pages/payment-method-uk"> 
+        <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au/pages/payment-method-au">
+        <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/pages/payment-method">
+    {% endif %}
+    {% if request.path contains '/pages/terms-of-service' %} 
+        <link rel="alternate" hreflang="en-US" href="https://www.freebeatfit.com/policies/terms-of-service">
+        <link rel="alternate" hreflang="en-CA" href="https://global.freebeatfit.com/policies/terms-of-service">
+        <link rel="alternate" hreflang="en-GB" href="https://global.freebeatfit.com/en-uk/pages/terms-of-service-uk"> 
+        <link rel="alternate" hreflang="en-AU" href="https://global.freebeatfit.com/en-au/pages/terms-of-service-au">
+        <link rel="alternate" hreflang="x-default" href="https://www.freebeatfit.com/policies/terms-of-service">
+    {% endif %}
+{% endif %}

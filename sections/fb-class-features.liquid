@@ -1,0 +1,445 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-features-main">
+    <div class="fb-features-content">
+      <div class="features-left">
+        <div class="features-left-item item-showtext" data-slidecontent="0">Features</div>
+        {% comment %}
+        <div class="features-left-item">Class Types</div>
+        <div class="features-left-item">Motivation Activites</div>
+        <div class="features-left-item">Price</div> {% endcomment %}
+        {%- for block in section.blocks -%}
+          <div class="features-left-item item-show-{{ forloop.index }}" data-slidecontent="{{forloop.index}}">{{ block.settings.fb_features_type }}</div>
+        {%- endfor -%}
+      </div>
+      <div class="features-right"><a href="{{ section.settings.fb_features_link }}">{{ section.settings.fb_features_button }}</a></div>
+    </div>
+  </div>
+  <div class="fb-features-main-mob">
+    <div class="fb-features-content-mob">
+      <div class="features-info">
+        <div class="features-left">
+          <div class="features-wrapper-item left-text" data-index="0" style="border-bottom:none;">Features</div>
+          <div class="left-image">
+            <img 
+              class="feature-left-image"
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/updaown.png?v=1668668770" 
+              alt=""
+              loading="lazy"
+              width="10"
+              height="10"
+            />
+          </div>
+        </div>
+        <div class="features-right"><a href="{{ section.settings.fb_features_link }}">{{ section.settings.fb_features_button }}</a></div>
+      </div>
+      <div class="features-wrapper">
+        <div class="features-wrapper-item feature-item-teshu wrapper-item-click" data-index="0" data-text="Features">Features</div>
+        {%- for block in section.blocks -%}
+        <div class="features-wrapper-item wrapper-item-click" data-index="{{ forloop.index }}" data-text="{{ block.settings.fb_features_type }}">{{ block.settings.fb_features_type }}</div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+ {% comment %} <script>
+  $('.features-left-item').click(function(){
+    $(this).addClass('item-showtext')
+    $(this).siblings().removeClass('item-showtext')
+    let getContentLocation = $(this).attr('data-slidecontent')
+    let allHeaderHeightDom = $('#shopify-section-announcement').height() + $('#section-header').height() + $('.fb-features-main').height()
+    if(getContentLocation == 0){
+      $("html,body").scrollTop(Math.trunc($('.fb-class-exercise-type').offset().top - $('#shopify-section-announcement').height() - $('#section-header').height()));
+      {% comment %} $("html,body").scrollTop(Math.trunc($('.fb-class-exercise-type').offset().top - allHeaderHeightDom)); {% endcomment %}
+    }else if(getContentLocation == 1){
+      $("html,body").scrollTop(Math.trunc($('.fb-class-extended').offset().top - allHeaderHeightDom));
+    }else if(getContentLocation == 2){
+      $("html,body").scrollTop(Math.trunc($('.fb-class-freebeat').offset().top - allHeaderHeightDom)); 
+    }else if(getContentLocation == 3){
+      $("html,body").scrollTop(Math.trunc($('.fb-savings-calculator').offset().top - allHeaderHeightDom)); 
+    }else{
+      console.log('没有模块了')
+    }
+  })
+  $('.features-left').click(function(){
+    $('.features-wrapper').toggle()
+    if($('.features-wrapper').css('display') == 'none'){
+      $('.feature-left-image').removeClass('open')
+    }else{
+      $('.feature-left-image').addClass('open')
+    }
+    
+  })
+  $('.wrapper-item-click').click(function(){
+    let headerStickyTopMob = Number($('.headerPadding').height()) + Number($('.announcement-content-box').height())
+    {% comment %} downToUp {% endcomment %}
+    $('.left-text').text($(this).attr('data-text'))
+    $('.features-wrapper').css('display','none')
+    $('.feature-left-image').removeClass('open')
+    {% comment %} if($('.left-text').text() == 'Features'){
+      $('.feature-item-teshu').css('display','none')
+    }else{
+      $('.feature-item-teshu').css('display','block')
+    } {% endcomment %}
+  })
+  $('.wrapper-item-click').click(function(){
+    let currentSelectIndex = $(this).attr('data-index')
+    let headerHeigthMob = $('.headerPadding').height() + $('.announcement-content-box').height()
+    if(currentSelectIndex == 0){
+      {% comment %} $("html,body").scrollTop(Math.trunc($('.fb-class-exercise-type').offset().top - $('.fb-features-main').height())); {% endcomment %}
+      {% comment %} $("html,body").scrollTop(Math.trunc($('.fb-class-exercise-type').offset().top - headerHeigthMob + 100));  {% endcomment %}
+      $("html,body").scrollTop(Math.trunc($('.fb-class-exercise-type').offset().top - headerHeigthMob + 100)); 
+    }else if(currentSelectIndex == 1){
+      $("html,body").scrollTop(Math.trunc($('.fb-class-extended').offset().top - headerHeigthMob));
+    }else if(currentSelectIndex == 2){
+      $("html,body").scrollTop(Math.trunc($('.fb-class-freebeat').offset().top - headerHeigthMob));
+    }else if(currentSelectIndex == 3){
+      $("html,body").scrollTop(Math.trunc($('.fb-savings-calculator').offset().top - headerHeigthMob));
+    }else{
+      console.log('没有模块了')
+    }
+  })
+  let screenWidth = window.screen.width;
+  let isMobile = (screenWidth > 325 && screenWidth < 769);
+  let classFeaturesAnchor = 0;
+  let classTypesAnchor = 0;
+  let motivationAnchor = 0;
+  let priceAnchor = 0;
+  let status = 0
+  let headerSlideTopMob = Number($('.headerdownToUp').height()) + Number($('.downToUp').height())
+
+  var startX, startY;
+  $(document).on('touchstart', function(event) {
+    startX = event.originalEvent.touches[0].clientX;
+    startY = event.originalEvent.touches[0].clientY;
+  });
+
+  $(document).on('touchmove', function(event) {
+    var currentX = event.originalEvent.touches[0].clientX;
+    var currentY = event.originalEvent.touches[0].clientY;
+    var diffX = startX - currentX;
+    var diffY = startY - currentY;
+    var headerSlideTopMob = Number($('.headerdownToUp').height()) + Number($('.downToUp').height())
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      {% comment %} 左右滑动 {% endcomment %}
+      if(headerSlideTopMob == 0){
+        $('.headerupTodown').css('transform','translateY(-155px)')
+      }else{
+        $('.headerupTodown').css('transform','translateY(0)')
+      }
+    } else {
+      {% comment %} 上下滑动 {% endcomment %}
+      if(headerSlideTopMob == 0){
+        $('.headerupTodown').css('transform','translateY(-155px)')
+        $('.headerdownToUp').css('transform','translateY(-155px)')
+      }else{
+        $('.headerupTodown').css('transform','translateY(0)')
+        $('.headerdownToUp').css('transform','translateY(0)')
+      }
+    }
+  });
+  
+  window.addEventListener('scroll', () => {
+    let topValue = document.documentElement.scrollTop; 
+    classRangeLocationName(topValue)
+    let headerStickyTop = Number($('#shopify-section-announcement').height()) + Number($('#section-header').height())
+    if(!isMobile){
+      {% comment %} if(topValue > $('.fb-features-main').offset().top) {% endcomment %}
+      if((topValue>900 && window.screen.width > 1440) || (topValue>754 && window.screen.width <= 1440)){ 
+        $('.fb-features-top').css('top',headerStickyTop)
+        $('.fb-features-main').addClass('fb-features-top')
+      }else{
+        $('.fb-features-main').removeClass('fb-features-top')
+      }
+    }else{
+      let headerStickyTopMob = Number($('.headerdownToUp').height()) + Number($('.downToUp').height())
+      {% comment %} let headerStickyTopMob = $('.headerPadding').height() + $('.announcement-content-box').height() {% endcomment %}
+      if(topValue>636){
+        $('#shopify-section-{{ section.id }}').css('top',`${headerStickyTopMob}px`)
+        {% comment %} if((headerStickyTopMob == 0 && slideDirection == 'left') || (headerStickyTopMob == 0 && slideDirection == 'right')){
+          console.log('取消展示导航')
+          $("#shopify-section-announcement").removeClass('downToUp')
+          $("#shopify-section-announcement").addClass('upTodown')
+        }else{
+          console.log('展示导航')
+        } {% endcomment %}
+        
+        {% comment %} $('.fb-features-main-mob').addClass('fb-features-top-mob') 
+        $('.fb-features-top-mob').css('top',headerStickyTopMob) {% endcomment %}
+        {% comment %} $('.exercise-type-title').css('marginTop','114px') {% endcomment %}
+      }
+      {% comment %} else{
+        $('.fb-features-main-mob').removeClass('fb-features-top-mob')
+        $('.exercise-type-title').css('marginTop','60px')
+      } {% endcomment %}
+    }
+  })
+
+  function classGetDomLocation(){
+    let featuresTypesDom = $('.fb-class-exercise-type').offset()
+    {% comment %} let featuresTypesDom = $('.fb-class-exercise-type').eq(0).offset() {% endcomment %}
+    let classTypesDom = $('.fb-class-extended').offset() 
+    let motivationDom = $('.fb-class-freebeat').offset()
+    let priceDom = $('.fb-savings-calculator').offset()
+    let classAllHeaderHeight = $('#shopify-section-announcement').height() + $('#section-header').height() + $('.fb-features-main').height()
+    if(featuresTypesDom) classFeaturesAnchor = Math.trunc(featuresTypesDom.top - classAllHeaderHeight);
+    if(classTypesDom) classTypesAnchor = Math.trunc(classTypesDom.top - classAllHeaderHeight);
+    if(motivationDom) motivationAnchor = Math.trunc(motivationDom.top - classAllHeaderHeight);
+    if(priceDom) priceAnchor = Math.trunc(priceDom.top - classAllHeaderHeight);
+  }
+
+  function classSetActiveStyle(activeIndex) {
+    if (activeIndex === undefined) {
+    }
+    for (let index = 0; index < $('.features-left-item').length; index++) {
+      let dom = $('.features-left-item')[index];
+      if (activeIndex === undefined) {
+        $(dom).removeClass('item-showtext');
+      } else {
+        if (activeIndex === index) {
+          $(dom).addClass('item-showtext');
+        } else {
+          $(dom).removeClass('item-showtext');
+        }
+      }
+    }
+  }
+
+  function classRangeLocationName(topValue){
+    classGetDomLocation()
+    if(topValue >= classFeaturesAnchor || topValue < classFeaturesAnchor){
+      if(isMobile) $(".left-text").text("Features");
+      classSetActiveStyle(0)
+    }
+    if(Math.ceil(topValue) >= classTypesAnchor){
+      if(isMobile) $(".left-text").text("Class Types");
+      classSetActiveStyle(1)
+    }
+    if(Math.ceil(topValue) >= motivationAnchor){
+      if(isMobile) $(".left-text").text("Motivation Activites");
+      classSetActiveStyle(2)
+    }
+    if(Math.ceil(topValue) >= priceAnchor){
+      if(isMobile) $(".left-text").text("Price");
+      classSetActiveStyle(3)
+    }
+  }
+  $(function(){
+    
+  })
+</script>  {% endcomment %}
+<style>
+  #section-{{ section.id }}{
+    width:100%;
+    height:100%;
+  }
+  .fb-features-main{
+    width:100%;
+    height:78px;
+    background: rgba(255,255,255,0.9);
+    padding-left:198px;
+    padding-right:198px;
+  }
+  .fb-features-main-mob{
+    display:none;
+  }
+  .fb-features-content{
+    width:100%;
+    {% comment %} width:1448px; {% endcomment %}
+    height:78px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .fb-features-top{
+    position:fixed;
+    top:127px;
+    {% comment %} top:128px; {% endcomment %}
+    left:0;
+    z-index:4;
+  }
+  .features-left{
+    display:flex;
+  }
+  
+  .features-left-item{
+    margin-right:88px;
+    font-size: 16px;
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    color: #000000;
+    line-height: 78px;
+    height:78px;
+    cursor:pointer;
+  }
+  .item-showtext{
+    font-weight: bold;
+    border-bottom:3px solid #000000;
+  }
+  .features-right{
+    width: 300px;
+    height: 48px;
+    background: #000000;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 48px;
+    text-align:center;
+  }
+  @media screen and (max-width: 1450px) and (min-width: 1366px){
+    .features-left-item{
+      margin-right:60px;
+    }
+  } 
+  @media screen and (max-width: 1365px) and (min-width: 1000px){
+    .features-left-item{
+      margin-right:30px;
+    }
+  } 
+  @media screen and (max-width: 768px){
+    .feature-item-teshu{
+      display:block;
+    }
+    #shopify-section-{{ section.id }}{
+      position:sticky;
+      z-index:10;
+    }
+    .fb-features-main{
+      display:none
+    }
+    .fb-features-main-mob{
+      display:block;
+      width:100%;
+      background: rgba(255,255,255,0.9);
+    }
+    .fb-features-content-mob{
+      width:100%;
+      {% comment %} width:340px; {% endcomment %}
+      height:100%;
+      {% comment %} margin-left:20px; {% endcomment %}
+    }
+    .features-info{
+      width:100%;
+      height:100%;
+      {% comment %} display:flex; {% endcomment %}
+      {% comment %} display:flex; {% endcomment %}
+      {% comment %} justify-content:space-between; {% endcomment %}
+      {% comment %} align-items:center; {% endcomment %}
+    }
+    .features-left{
+      display:flex;
+      align-items:center;
+      float:left;
+      margin-left:20px;
+    }
+    .left-text{
+      font-size: 14px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #000000;
+      max-width:100px;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+    }
+    .left-image{
+      width:10px;
+      height:10px;
+      display:flex;
+    }
+    .features-wrapper{
+      width:100%;
+      height:100%;
+      {% comment %} width:100%; {% endcomment %}
+      padding-top:16px;
+      display:none;
+      {% comment %} display:flex; {% endcomment %}
+      flex-direction:column;
+      justify-content:flex-start;
+      padding-left:20px;
+    }
+    .features-wrapper-item{
+      {% comment %} width:100%; {% endcomment %}
+      width:335px;
+      height:54px;
+      border-bottom: 1px solid #E6E6E6;
+      line-height:54px!important;
+      font-size: 14px;
+      font-family: Montserrat-Medium, Montserrat;
+      font-weight: 500;
+      color: #000000;
+      line-height: 14px;
+    }
+    .features-wrapper-item:last-child{
+      border-bottom:none;
+    }
+    .features-right{
+      width: 204px;
+      height: 32px;
+      background: #000000;
+      border-radius: 0px;
+      font-size: 12px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 32px;
+      text-align:center;
+      float:right;
+      margin-right:15px;
+      margin-top:11px;
+    }
+    .fb-features-top-mob{
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:99;
+    }
+    .feature-left-image{
+      transform: rotate(180deg);
+      margin-left: 6px;
+      transition: all .4s;
+    }
+    .feature-left-image.open{
+      transform: rotate(0deg);
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbClassesfeatures",
+    "presets": [
+      {
+        "name": "fb-classes-features",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings":[
+      {
+        "type": "text",
+        "id": "fb_features_button",
+        "label": "Button"
+      },
+      {
+        "type": "url",
+        "id": "fb_features_link",
+        "label": "Link"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "features_list",
+        "name": "features list",
+        "settings":[
+          {
+            "type": "text",
+            "id": "fb_features_type",
+            "label": "Features Type"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

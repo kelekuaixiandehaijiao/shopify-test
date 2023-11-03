@@ -1,0 +1,384 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "b4537d72-e4e2-4cac-9721-7ec7fbd9dde7": {
+      "type": "fb-friendbuy-invite",
+      "settings": {
+      }
+    },
+    "4885b782-1d85-4eb8-8b5b-ff1492c3bf3a": {
+      "type": "fb-withdraw-invite",
+      "blocks": {
+        "28050b02-29c4-413c-89a7-22eb42391645": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Le**o",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "4486770f-0d3d-406e-9074-17d6803b6b0b": {
+          "type": "rewardList",
+          "settings": {
+            "name": "te**o",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "3abfc28a-2a2a-4aef-aad7-5ac176d6e2bf": {
+          "type": "rewardList",
+          "settings": {
+            "name": "ch**s",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "364583e4-6a1b-40ca-8e1f-fe612e690836": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ja**s",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "1163974f-92bc-4023-ad65-19ce6e8f518a": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ol**er",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "85cc006f-fcb4-4bb6-b846-c5d22337905c": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Da**el",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "4f93c53a-43dd-4709-a01f-da8173063b30": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ge**ge",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "ccf81b27-0a4f-4d09-a73c-d463a800d702": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ch**lie",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "014f5dee-16f5-4b27-a8c7-f81792b0b4c6": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Al**rt",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "be9e0462-04ea-4238-af5f-95f52cb8f35d": {
+          "type": "rewardList",
+          "settings": {
+            "name": "An**ony",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "ee185f2b-abd5-4f35-b03d-bd3fd285e2c8": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Lu**s",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "c1a44781-49b6-4fbb-b8d8-4bc93c765357": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ca**er",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "ade65840-bdbe-44b9-8a2b-ae688e6d8e20": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ja**er",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "fd8b8256-16dd-406a-8f2f-eb4333f7fbc7": {
+          "type": "rewardList",
+          "settings": {
+            "name": "He**y",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "bad49db3-4b72-4eb5-b39b-27f3cc506463": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ar**ur",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "bc46589d-6c4d-4978-8025-a6e2f3306010": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Th**as",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "beb867dd-8606-4329-81b0-be05e60a66fd": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Mi**s",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "49ca4746-4719-45de-8b2d-8ab64ed28b77": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Al**ed",
+            "money": "10",
+            "date": "2022.11.10",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "92a40cb1-29df-4fb1-9227-6eb61f59a582": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Lo**n",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "6aee225c-8751-4a4d-8f41-0827abd7fd9b": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ju**an",
+            "money": "10",
+            "date": "2022.11.11",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "ad9369a7-7010-41fd-ae2b-eed63b4bb370": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Be**l",
+            "money": "10",
+            "date": "2022.11.13",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "f85c7cfd-8101-44c8-8113-0d9058fa8a5f": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Ca**y",
+            "money": "10",
+            "date": "2022.11.13",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "fd85208a-a798-477e-84ee-ce540562c4fa": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Es**er",
+            "money": "10",
+            "date": "2022.11.14",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "eddea265-7608-4df3-b4da-1741cc96681d": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Fr**a",
+            "money": "10",
+            "date": "2022.11.14",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        },
+        "d32af8d5-4f12-4b50-80c0-46cfb984a30c": {
+          "type": "rewardList",
+          "settings": {
+            "name": "Gr**e",
+            "money": "10",
+            "date": "2022.11.14",
+            "des_pre": "has withdrawn",
+            "des_next": "to PayPal."
+          }
+        }
+      },
+      "block_order": [
+        "28050b02-29c4-413c-89a7-22eb42391645",
+        "4486770f-0d3d-406e-9074-17d6803b6b0b",
+        "3abfc28a-2a2a-4aef-aad7-5ac176d6e2bf",
+        "364583e4-6a1b-40ca-8e1f-fe612e690836",
+        "1163974f-92bc-4023-ad65-19ce6e8f518a",
+        "85cc006f-fcb4-4bb6-b846-c5d22337905c",
+        "4f93c53a-43dd-4709-a01f-da8173063b30",
+        "ccf81b27-0a4f-4d09-a73c-d463a800d702",
+        "014f5dee-16f5-4b27-a8c7-f81792b0b4c6",
+        "be9e0462-04ea-4238-af5f-95f52cb8f35d",
+        "ee185f2b-abd5-4f35-b03d-bd3fd285e2c8",
+        "c1a44781-49b6-4fbb-b8d8-4bc93c765357",
+        "ade65840-bdbe-44b9-8a2b-ae688e6d8e20",
+        "fd8b8256-16dd-406a-8f2f-eb4333f7fbc7",
+        "bad49db3-4b72-4eb5-b39b-27f3cc506463",
+        "bc46589d-6c4d-4978-8025-a6e2f3306010",
+        "beb867dd-8606-4329-81b0-be05e60a66fd",
+        "49ca4746-4719-45de-8b2d-8ab64ed28b77",
+        "92a40cb1-29df-4fb1-9227-6eb61f59a582",
+        "6aee225c-8751-4a4d-8f41-0827abd7fd9b",
+        "ad9369a7-7010-41fd-ae2b-eed63b4bb370",
+        "f85c7cfd-8101-44c8-8113-0d9058fa8a5f",
+        "fd85208a-a798-477e-84ee-ce540562c4fa",
+        "eddea265-7608-4df3-b4da-1741cc96681d",
+        "d32af8d5-4f12-4b50-80c0-46cfb984a30c"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Background-PC-PlanB_1.png",
+        "btn_url": "",
+        "btn_text": "",
+        "invite_Des": "Invite friends to subscribe to our newsletter to earn",
+        "invite_one_des": "*Email subscriber invitation reward can be instantly redeemed through PayPal.",
+        "invite_one_two_des": "Reward is earned only when new signups are invited.",
+        "invite_one_three_des": "Reward is earned only when the invitees' emails are verified.",
+        "cash_des": "Cash Rewards Earned",
+        "up_one_money": "$10",
+        "up_two_money": "$1200",
+        "invite_two_Des": "Invite friends to purchase bikes to earn",
+        "invite_two_bottom_des": "*Bike purchase invitation reward is fulfilled after 60 days with no returns.",
+        "total_money": "$1210"
+      }
+    },
+    "1f2cb3ee-3161-4de2-95e3-2d6ac0a4ea7a": {
+      "type": "fb-friendbuy-dialog",
+      "settings": {
+        "fb_share_title": "<p>Earn up to $102 for every friend you refer<\/p>",
+        "fb_share_desc": "<p>Give each friend a $100 discount and you will earn up to $1210 in cash rewards after they complete their purchases.<\/p>",
+        "fb_twittershare_desc": "freebeat is awesome! Their bikes have helped me transition into a healthier lifestyle. Never thought I'd have so much fun exercising. Here's a $100 discount.",
+        "fb_share_writecontent": "<p>\"I'm a huge fan of freebeat! Before I purchased one of their indoor stationary bikes, I never thought I'd have so much fun exercising. I can now enjoy the flexibility and comfort of working out from home, and their fantastic classes have motivated me to transition into a healthier lifestyle. I feel like I've gained much more than just a bike. Here's $100 off your first purchase at freebeat- you can use it with the current Black Friday sale that's going on for an even higher discount!  I hope that you enjoy freebeat bikes as much as I do!\"<\/p>",
+        "customer_ruletitle": "Terms & Conditions",
+        "customer_bigtitle": "Terms & Conditions",
+        "customer_ruledesc": "<p>As a member of the Referral Program, you are subject to freebeat's Terms of Use and freebeat's Privacy Policy (both available on our website), as well as the following additional Terms & Conditions for freebeat's Referral Program:<\/p><p><\/p><p>1. Qualified Referral. Qualified Referral is defined as a purchase made at <a href=\"http:\/\/freebeatfit.com\" target=\"_blank\">freebeatfit.com<\/a> by a person (a \"Referred Customer\") who arrives to our website by clicking your referral program link. You are limited to one Qualified Referral for each Referred Customer; in other words, additional\/repeat purchases made by a Referred Customer are not counted as additional Qualified Referrals.<\/p><p><\/p><p>2. Referred Customer. The Referred Customer and the Referrer cannot be the same person (for example, by using a different email address).<\/p><p><\/p><p>3. Referral Rewards. For you to earn referral rewards as a Referrer, the Referred Customer must complete an order greater than $500 in total value, minus all fees including taxes, discounts, shipping, returns, chargebacks, fraudulent payments, and\/or other 3rd party fees.<\/p><p><\/p><p>4. Reward Payments. The maximum Qualified Referrals earned per calendar year may be no more than 12 Qualified Referrals. As a Referrer, you are responsible for any and all tax liability resulting from Referral Rewards.<\/p><p><\/p><p>5. Eligibility. Eligibility is limited to individuals only. freebeat's Referral Program cannot be used by businesses for affiliate lead generation as determined in freebeat's sole discretion. (Corporations are not people, my friend!)<\/p><p><\/p><p>6. No Spam. You must comply with all up-to-date “SPAM” laws. For example, emails must be created and distributed in a personal manner and bulk email distribution is strongly discouraged. Any distribution of your referral link that could constitute unsolicited commercial email or \"spam\" under any applicable law or regulation is expressly prohibited and will be grounds for immediate termination of your account and exclusion from freebeat's Referral Program.<\/p><p><\/p><p>7. Right to Close Accounts. freebeat reserves the right to close the account(s) of any Referrer and\/or Referred Customer and to request proper payment if the Referrer and\/or Referred Customer attempts to use the freebeat Referral Program in a questionable manner or breaches any of these Terms & Conditions or is in violation of any law, statute or governmental regulation.<\/p><p><\/p><p>8. Right to Cancel Program or Change Terms. freebeat reserves the right to cancel the Referral Program or to change these Terms & Conditions at any time in its sole discretion. Any unclaimed referral rewards will be forfeited at that time. <\/p><p><\/p><p>9. Only email addresses and users registered in the United States are eligible for this Referral Program.<\/p>"
+      }
+    },
+    "40a744d0-8edd-4fa6-ac5b-377bc4f4d83d": {
+      "type": "fb-friendbuy-works",
+      "blocks": {
+        "51d430bf-7591-429c-847b-b97cce6e4f3d": {
+          "type": "friendbuy-works",
+          "settings": {
+            "buy_works_number": "shopify:\/\/shop_images\/how_it_work_1.png",
+            "buy_works_title_pc": "Spread the love with your friends",
+            "buy_works_desc_pc": "Send invites to your friends over text, email, or social media.",
+            "buy_works_desc_more_pc": "",
+            "buy_works_title_mobile": "Spread the love with your friends",
+            "buy_works_desc_mobile": "Send invites to your friends over text, email, or social media.",
+            "buy_works_desc_more_mobile": ""
+          }
+        },
+        "5506b10c-2837-4f58-b955-6774604dc458": {
+          "type": "friendbuy-works",
+          "settings": {
+            "buy_works_number": "shopify:\/\/shop_images\/how_it_work_2.png",
+            "buy_works_title_pc": "When your friend subscribes to our newsletter, get an instant $2 cash reward",
+            "buy_works_desc_pc": "You will only be eligible for this reward if your friend is a new subscriber.",
+            "buy_works_desc_more_pc": "",
+            "buy_works_title_mobile": "When your friend subscribes to our newsletter, get an instant $2 cash reward",
+            "buy_works_desc_mobile": "You will only be eligible for this reward if your friend is a new subscriber.",
+            "buy_works_desc_more_mobile": ""
+          }
+        },
+        "d3504051-dfa9-4db4-96e4-8662d8847d48": {
+          "type": "friendbuy-works",
+          "settings": {
+            "buy_works_number": "shopify:\/\/shop_images\/how_it_work_3.png",
+            "buy_works_title_pc": "Earn $100 in cash when your friend purchases a freebeat bike",
+            "buy_works_desc_pc": "Your friend will also receive a $100 discount on their purchase. Win-win!",
+            "buy_works_desc_more_pc": "*For more details please read the Terms & Conditions.",
+            "buy_works_title_mobile": "Earn $100 in cash when your friend purchases a freebeat bike",
+            "buy_works_desc_mobile": "Your friend will also receive a $100 discount on their purchase. Win-win!",
+            "buy_works_desc_more_mobile": "*For more details please read the Terms & Conditions."
+          }
+        }
+      },
+      "block_order": [
+        "51d430bf-7591-429c-847b-b97cce6e4f3d",
+        "5506b10c-2837-4f58-b955-6774604dc458",
+        "d3504051-dfa9-4db4-96e4-8662d8847d48"
+      ],
+      "settings": {
+        "buy_works_home_title": "Here's How It Works",
+        "buy_works_home_desc_black1": "",
+        "buy_works_home_desc_color": "",
+        "buy_works_home_desc_black2": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b4537d72-e4e2-4cac-9721-7ec7fbd9dde7",
+    "4885b782-1d85-4eb8-8b5b-ff1492c3bf3a",
+    "1f2cb3ee-3161-4de2-95e3-2d6ac0a4ea7a",
+    "40a744d0-8edd-4fa6-ac5b-377bc4f4d83d"
+  ]
+}

@@ -1,0 +1,137 @@
+{%- if template == 'page.become-a-host-application' -%}
+  <link rel="stylesheet" href="{{ 'fb-host-application.css' | asset_url }}">
+{%- endif -%}
+{%- if template == 'index'
+  or template == 'page.lit-bike-white'
+  or template == 'page.lit-bike-beige'
+  or template == 'page.lit-bike-beige-blogger'
+  or template == 'page.lit-bike'
+  or template == 'page.lit-bike-klarna'
+-%}
+  <link rel="stylesheet" href="{{ 'fb-gif-roll.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-single-goods.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'introduceBikes.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-PR-swiper.css' | asset_url }}">
+{%- endif -%}
+{%- if template == 'index'
+  or template == 'page.lit-bike'
+  or template == 'page.lit-bike-klarna'
+  or template == 'page.lit-bike-white'
+  or template == 'page.lit-bike-beige'
+  or template == 'page.lit-bike-beige-blogger'
+  or template == 'page.bike'
+  or template contains 'page.boom-bike'
+-%}
+  <link rel="stylesheet" href="{{ 'fb-active-roll.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-safe-hands.css' | asset_url }}">
+{%- endif -%}
+
+{%- if template == 'page.lit-bike' or template == 'page.lit-bike-klarna' -%}
+  {% comment %} 3d下架了 {% endcomment %}
+  {% comment %} <link rel="stylesheet" href="{{ 'fb-xbike-3D.css' | asset_url }}"> {% endcomment %}
+  <link rel="stylesheet" href="{{ 'fb-pages-klarna-design.css' | asset_url }}">
+{%- endif -%}
+<!-- boom css public -->
+{%- if template == 'page.lit-bike-white'
+  or template == 'page.lit-bike-beige'
+  or template == 'page.lit-bike'
+  or template == 'page.lit-bike-klarna'
+-%}
+  <link rel="stylesheet" href="{{ 'fb-boom-bike-white.css' | asset_url }}">
+{%- endif -%}
+{% comment %} 去掉多余代码 {% endcomment %}
+{% comment %}
+  {%- if  template == 'page.lit-bike' -%}
+    <link rel="stylesheet" href="{{ 'fb-boom-bike-white.css' | asset_url }}">
+  {%- endif -%}
+{% endcomment %}
+{%- if template == 'page.lit-bike-white'
+  or template == 'page.lit-bike-beige'
+  or template == 'page.lit-bike-beige-blogger'
+  or template contains 'page.boom-bike'
+  or template == 'page.lit-bike'
+  or template == 'page.lit-bike-klarna'
+  or template == 'page.classes' 
+-%}
+  <link rel="stylesheet" href="{{ 'jquery-ui.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-newPages-PRswiper.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-pages-bike-public.css' | asset_url }}">
+{%- endif -%}
+{%- if template == 'page.lit-bike-white'
+  or template == 'page.lit-bike-beige'
+  or template == 'page.lit-bike-beige-blogger'
+  or template == 'page.lit-bike'
+  or template == 'page.lit-bike-klarna'
+-%}
+  <link rel="stylesheet" href="{{ 'fb-product-pagesbike.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-animation-bike.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-animation-chair.css' | asset_url }}">
+{%- endif -%}
+{%- if template contains 'page.boom-bike' -%}
+  <link rel="stylesheet" href="{{ 'fb-boom-bike.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-animation-boom.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-boom-resistance.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-boom-algorithm.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-boom-challenge.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-boom-space.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-boom-klarna.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'fb-boom-compare.css' | asset_url }}">
+{%- endif -%}
+
+{%- if template contains 'friendbuy' -%}
+  <link rel="stylesheet" href="{{ 'fb-friendbuy.css' | asset_url }}">
+{%- endif -%}
+{% if template contains 'product' %}
+    {%- if template != 'product.lit-bike-beige-blogger' -%}
+        <link rel="stylesheet" href="{{ 'fb-boom-challenge.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-boom-klarna.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-boom-bike.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-boom-compare.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-active-roll.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-pages-bike-public.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-newPages-PRswiper.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-product-card.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-customer-shop.css' | asset_url }}">
+        <link rel="stylesheet" href="{{ 'fb-customer-shop-mob.css' | asset_url }}">
+    {%- endif -%}
+{%- endif -%}
+{%- if template == 'index'
+  or template == 'page.lit-bike-white'
+  or template == 'page.lit-bike-beige'
+  or template == 'page.lit-bike-beige-blogger'
+  or template contains 'page.boom-bike'
+  or template == 'page.lit-bike'
+  or template == 'page.lit-bike-klarna'
+-%}
+  <link rel="stylesheet" href="{{ 'fb-compare-table.css' | asset_url }}">
+{%- endif -%}
+{%- if template contains 'page.customer-shop' -%}
+    <link rel="stylesheet" href="{{ 'fb-customer-shop.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'fb-customer-shop-mob.css' | asset_url }}">
+{%- endif -%}
+
+{%- if template == 'index' -%}
+  <link rel="stylesheet" href="{{ 'fb-index.css' | asset_url }}">
+{%- endif -%}
+{%- if template == 'page.membership' or template == 'page.membership2' -%}
+  <link rel="stylesheet" href="{{ 'payment-info.css' | asset_url }}">
+{%- endif -%}
+{%- if template contains 'product.lit-bike' or template contains 'product.boom-bike'  -%}
+    <!-- <link rel="stylesheet" href="{{ 'main-product-pdp.css' | asset_url }}"> -->
+    <link rel="stylesheet" href="{{ 'ebike-model.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'ebike-product-model.css' | asset_url }}">
+    <link rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css">
+
+{%- endif -%}
+{%- if template == 'page.user-manual' -%}
+  <link rel="stylesheet" href="{{ 'fb-user-manual.css' | asset_url }}">
+{%- endif -%}
+{%- if template == 'page.vote'  -%}
+    <link rel="stylesheet" href="{{ 'fb-vote.css' | asset_url }}">
+{%- endif -%}
+{%- if template == 'page.affiliate-program'  -%}
+    <link rel="stylesheet" href="{{ 'affiliate-program.css' | asset_url }}">
+  {%- endif -%}
+{%- if template == 'collection.exercise-bikes-collection' -%}
+    <link rel="stylesheet" href="{{ 'fb-exercise-bikes.css' | asset_url }}">
+{%- endif -%}

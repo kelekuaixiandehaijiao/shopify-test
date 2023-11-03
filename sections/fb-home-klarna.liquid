@@ -1,0 +1,273 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if country_code_var != 'gb' -%}
+    <div class="fb-home-klarna" id="section-{{ section.id }}">
+        <div class="fb_xc_klarna_con fb_xc_home_con fb_xc_klarna_con">
+            {%- assign klarna_title_block_oprichtext  = section.settings.klarna_title_block | strip_html -%}
+            {%- if klarna_title_block_oprichtext != blank -%}
+            <div class="fb_xc_home_title">
+                {{ section.settings.klarna_title_block }}
+            </div> 
+            {%- else -%}
+            <div class="fb_xc_klarna_con_logo">
+                    {% assign leftimgpiker = section.settings.klarna_left_logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+                    <img class="Image--lazyLoad Image--fadeIn fb_xc_klarna_con_logo_r" data-src="{{ leftimgpiker }}"  data-sizes="auto"
+                        data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    >
+                {%- if section.settings.klarna_middle_logo != blank -%}
+                    {% assign middleimgpiker = section.settings.klarna_middle_logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+                    <img class="Image--lazyLoad Image--fadeIn fb_xc_klarna_con_logo_c" data-src="{{middleimgpiker}}" data-sizes="auto"
+                        data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]" 
+                    >
+                {%- endif -%}
+                
+                {%- if section.settings.klarna_right_logo != blank -%}
+                    {% assign rightimgpiker = section.settings.klarna_right_logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+                    <img class="Image--lazyLoad Image--fadeIn fb_xc_klarna_con_logo_l" data-src="{{ rightimgpiker }}" data-sizes="auto"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"    
+                    >
+                {%- endif -%}
+                
+            </div>
+            
+    
+            {%- endif -%}
+            
+            <div class="fb_xc_klarna_con_price">
+                <div class="fb_xc_klarna_con_price_item">
+                
+                    <div class="fb_xc_klarna_price_item">
+                    {%- if section.settings.klarna_first_unit != blank -%}
+                        <div class="fb_xc_klarna_unit fb_xc_home_color">
+                        {{ section.settings.klarna_first_unit }}
+                        </div>
+                    {%- endif -%}
+                    {%- if section.settings.klarna_first_number != blank -%}
+                        <div class="fb_xc_number fb_xc_home_color">
+                        {{ section.settings.klarna_first_number }}
+                        </div>
+                    {%- endif -%}
+                    </div>
+                    {%- if section.settings.klarna_first_desc != blank -%}
+                    <div class="fb_xc_klarna_price_item_text fb_xc_home_color">
+                        {{ section.settings.klarna_first_desc }}
+                    </div>
+                    {%- endif -%}
+                </div>
+                <div class="fb_xc_klarna_price_item_img">
+                {%- if section.settings.klarna_line != blank -%}
+                    <img src="{{  section.settings.klarna_line | img_url: '' }}" />
+                {%- else -%}
+                    <img src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/Line_2_Stroke_2x_ae62bb75-5e38-4aeb-90b6-609283bc1773.png?v=1652860961" alt="">
+                {%- endif -%} 
+                </div>
+                <div class="fb_xc_klarna_con_price_item">
+                    {%- if section.settings.klarna_sencond_top_desc != blank -%}
+                    <div class="fb_xc_klarna_as_low_as">
+                        {{ section.settings.klarna_sencond_top_desc }}
+                    </div>
+                    {%- endif -%}
+                    <div class="fb_xc_klarna_price_item">
+                    {%- if section.settings.klarna_sencond_unit != blank -%}
+                        <div class="fb_xc_klarna_unit fb_xc_home_color">
+                        {{ section.settings.klarna_sencond_unit }}
+                        </div>
+                    {%- endif -%}
+                    {%- if section.settings.klarna_sencond_number != blank -%}
+                        <div class="fb_xc_number fb_xc_home_color">
+                        {% comment %} {{ section.settings.klarna_sencond_number }} {% endcomment %}
+                        {%- assign product =  section.settings.product  -%}
+                            {% if product != blank %}
+                                {% render 'customer-price-control', type:'mo', cpc_product: product %}
+                            {%- else -%}
+                            {{ section.settings.klarna_sencond_number }}
+                        {% endif %}
+                        </div>
+                    {%- endif -%}
+                    </div>
+                    {%- if section.settings.klarna_sencond_desc != blank -%}
+                    <div class="fb_xc_klarna_price_item_text fb_xc_home_color">
+                        {{ section.settings.klarna_sencond_desc }}<sup>1</sup>
+                    </div>
+                    {%- endif -%}  
+                
+                </div>
+                <div class="fb_xc_klarna_price_item_img">
+                {%- if section.settings.klarna_line != blank -%}
+                    <img src="{{  section.settings.klarna_line | img_url: '' }}" />
+                {%- else -%}
+                    <img src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/Line_2_Stroke_2x_ae62bb75-5e38-4aeb-90b6-609283bc1773.png?v=1652860961" alt="">
+                {%- endif -%} 
+                </div>
+                <div class="fb_xc_klarna_con_price_item fb_xc_klarna_con_price_item_m">
+                    <div class="fb_xc_klarna_price_item">
+                    {%- if section.settings.klarna_third_number != blank -%}
+                        <div class="fb_xc_number fb_xc_home_color">
+                        {{ section.settings.klarna_third_number }}
+                        </div>
+                    {%- endif -%}
+                    {%- if section.settings.klarna_third_unit != blank -%}
+                        <div class="fb_xc_klarna_unit fb_xc_home_color">
+                        {{ section.settings.klarna_third_unit }}
+                        </div>
+                    {%- endif -%}
+                    </div>
+                    {%- if section.settings.klarna_third_desc != blank -%}
+                    <div class="fb_xc_klarna_price_item_text fb_xc_home_color">
+                        {{ section.settings.klarna_third_desc  }}
+                    </div>
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endif -%}
+  <style>
+    #section-{{ section.id }} {
+      background-color: {{ section.settings.klarna_color }}
+    }
+    .fb_xc_home_title {
+      color: {{ section.settings.klarna_text_color }};
+    }
+    .fb_xc_klarna_as_low_as{
+      color:{{ section.settings.klarna_text_color }};
+    }
+    @media only screen and (min-width: 769px){
+       .fb-home-klarna{
+            margin-bottom: 160px;
+        }
+     }
+     @media only screen and (max-width: 768px){
+       .fb-home-klarna{
+            margin-bottom: 49px;
+        }
+     }
+     @media only screen and (max-width: 768px){
+        #section-{{ section.id }} .fb-home-klarna{
+          background-color: {{ section.settings.klarna_mobile_color }}
+        }
+     }
+    #section-{{ section.id }} .fb_xc_home_color{
+      color: {{ section.settings.klarna_text_color }}
+    }
+  </style>
+  {% schema %}
+    {
+      "name": "FbHomeKlarna",
+      "presets": [
+        {
+            "name": "fb-home-klarna",
+            "category": "Fb Sections",
+            "blocks": []
+        }
+      ],
+      "settings": [
+         {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+        },
+        {
+          "type": "color",
+          "id": "klarna_color",
+          "label": "Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "klarna_mobile_color",
+          "label": "Background Color",
+          "default": "#f6f6f6"
+        },
+        {
+          "type": "color",
+          "id": "klarna_text_color",
+          "label": "Text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "richtext",
+          "id": "klarna_title_block",
+          "label": "Main title"
+        },
+        {
+          "type": "image_picker",
+          "id": "klarna_left_logo",
+          "label": "Left Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "klarna_middle_logo",
+          "label": "Middle Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "klarna_right_logo",
+          "label": "Left Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "klarna_line",
+          "label": "Line"
+        },
+        {
+          "type": "text",
+          "id": "klarna_first_unit",
+          "label": "first unit",
+          "default": "$"
+        },
+        {
+          "type": "text",
+          "id": "klarna_first_number",
+          "label": "first number",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "klarna_first_desc",
+          "label": "first description",
+          "default": "DOWN PAYMENT"
+        },
+        {
+          "type": "text",
+          "id": "klarna_sencond_unit",
+          "label": "sencond unit",
+          "default": "$"
+        },
+        {
+          "type": "text",
+          "id": "klarna_sencond_number",
+          "label": "sencond number",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "klarna_sencond_top_desc",
+          "label": "sencond top desc"
+        },
+        {
+          "type": "text",
+          "id": "klarna_sencond_desc",
+          "label": "sencond description",
+          "default": "/MONTH"
+        },
+        {
+          "type": "text",
+          "id": "klarna_third_unit",
+          "label": "third unit",
+          "default": "%"
+        },
+        {
+          "type": "text",
+          "id": "klarna_third_number",
+          "label": "third number",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "klarna_third_desc",
+          "label": "third description",
+          "default": "APR FINANCING"
+        }
+      ]
+    }
+  {% endschema %}

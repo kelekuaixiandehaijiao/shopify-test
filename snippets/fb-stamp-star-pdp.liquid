@@ -1,0 +1,75 @@
+<span class="stamped-product-reviews-badge stamped-main-badge" 
+data-product-id="{{ product.id }}"
+data-name="{{ product.title | escape }}"
+data-url="{{ shop.url }}{{ product.url }}"
+data-description="{{ product.description | escape }}"
+data-product-sku="{{ product.handle }}"
+data-product-title="{{product.title}}"
+data-product-type="{{product.type}}">
+<span class="stampedRating"></span>
+{{product.metafields.stamped.badge}}
+</span>
+
+<script>
+  let stampedDom = $(`{{product.metafields.stamped.badge}}`)
+  if(stampedDom && stampedDom[0]) {
+    let stampedRating = stampedDom[0].dataset.rating
+    $(".stampedRating").text(stampedRating)
+ }
+ 
+</script>
+
+<style>
+  .fbStampStar{
+    position: relative;
+    display: inline-block;
+    float: right;
+  }
+  .stamped-badge-caption{
+    display: block;
+    text-decoration: unset;
+  }
+  .stampedRating{
+    position: absolute;
+    right: 0;
+    top: 3px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .stamped-badge{
+    padding-right: 32px;
+  }
+  .stamped-badge-caption{
+    position: absolute;
+    right: 0;
+    bottom: -24px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+  }
+
+  @media screen and (min-width: 641px){
+    .fbStampStar{
+      position: absolute;
+      bottom: -86px;
+      left: 40px;
+    }
+    .stampedRating{
+      left: 0;
+      top: -6px;
+      font-size: 24px;
+    }
+    .stamped-badge{
+      padding-left: 52px;
+      padding-right: 0;
+    }
+    .stamped-badge-caption{
+      left: 0;
+      font-size: 18px;
+      bottom: -36px;
+    }
+    .stamped-fa-star:before{
+      font-size: 24px;
+    }
+  }
+</style>

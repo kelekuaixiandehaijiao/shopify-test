@@ -1,0 +1,214 @@
+.fb-pages-klarba-content {
+    padding: 111px 0 200px 80px;
+}
+
+.fb-pages-klarba-title {
+    margin-bottom: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fb-pages-klarba-title_img {
+    display: flex;
+    margin-left: 39px;
+}
+
+.fb-pages-klarba-title_img1,
+.fb-pages-klarba-title_img2 {
+    /* display: block; */
+    width: 50px;
+    cursor: pointer;
+}
+
+.fb-pages-klarba-title_img1 {
+    margin-right: 30px;
+}
+
+.fb-pages-klarba-title_con {
+    font-size: 48px;
+    font-weight: 800;
+    color: #000;
+    line-height: 54px;
+    letter-spacing: 1px;
+    margin-right: 150px;
+}
+
+.fb-pages-klarba_scroll {
+    display: flex;
+    overflow-x: scroll;
+    /* justify-content: center; */
+    overflow-y: hidden;
+}
+
+.fb-pages-klarba_scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.fb-pages-klarba_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 480px;
+    height: 600px;
+    margin: 0 40px;
+    padding: 35px 36px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.fb-pages-klarba_item .fb-pages-klarba_imgblock {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.fb-pages-klarba_item .fb-pages-klarba_imgblock img {
+    width: 100%;
+    height: 100%;
+}
+
+.fb-pages-klarba_item_title {
+    width: 50%;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 34px;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 2;
+}
+
+.fb-pages-klarba_item_con {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 28px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+@media only screen and (min-width: 1441px) and (max-width: 1550px) {
+    .fb-pages-klarba-content {
+        padding: 83px 0 150px 60px;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1440px) {
+    .fb-pages-klarba-content {
+        padding: 83px 0 150px 60px;
+    }
+
+    .fb-pages-klarba-content-length {
+        padding-left: 50px;
+        padding-right: 0px;
+    }
+
+    .fb-pages-klarba-content-length .fb-pages-klarba_scroll {
+        justify-content: left !important;
+    }
+
+    .fb-pages-klarba-title {
+        margin-bottom: 42px;
+    }
+
+    .fb-pages-klarba-title {
+        margin-bottom: 16px;
+    }
+
+    .fb-pages-klarba-title_img {
+        margin-left: 30px;
+    }
+
+    .fb-pages-klarba-title_img1,
+    .fb-pages-klarba-title_img2 {
+        width: 28px;
+    }
+
+    .fb-pages-klarba-title_img1 {
+        margin-right: 13px;
+    }
+
+    .fb-pages-klarba-title_con {
+        font-size: 36px;
+        line-height: 41px;
+        margin-right: 120px;
+        font-weight: 800;
+    }
+
+    .fb-pages-klarba_item {
+        width: 288px;
+        height: 396px;
+        margin: 0 24px;
+        padding: 26px 14px;
+        position: relative;
+    }
+
+    .fb-pages-klarba_item_title {
+        width: 50%;
+        font-size: 26px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 32px;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .fb-pages-klarba_item_con {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #fff;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .fb-pages-klarba-title_img {
+        display: none;
+    }
+
+    .fb-pages-klarba-content {
+        padding: 41px 0 60px;
+    }
+
+    .fb-pages-klarba-title_con {
+        font-size: 24px;
+        line-height: 27px;
+        margin-left: 12px;
+    }
+
+    .fb-pages-klarba_scroll {
+        display: flex;
+        overflow-x: scroll;
+        justify-content: left;
+    }
+
+    .fb-pages-klarba_item {
+        width: 319px;
+        height: 442px;
+        margin: 0 12px;
+        padding: 32px 26px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .fb-pages-klarba_item_con {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .fb-pages-klarba_item_title {
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+}

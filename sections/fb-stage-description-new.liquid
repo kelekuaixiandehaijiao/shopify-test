@@ -1,0 +1,180 @@
+
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div id="section-{{ section.id }}" class="fb-stage-desc home-community">
+    {%- if country_code_var == 'ca' -%}
+        <div class="fb-hwbqTs">
+            <div class="fb-stage-p">
+                {{ section.settings.fb_stage_desc }}
+            
+            </div>
+            {%- if section.settings.fb_stage_desc_seconds != blank -%}
+                <div class="fb-stage-p2">
+                    {{ section.settings.fb_stage_desc_seconds }}
+                </div>
+            {%- endif -%}
+    
+        </div>
+    {%- endif -%}
+    {%- if country_code_var == 'gb' -%}
+        <div class="fb-hwbqTs">
+            <div class="fb-stage-p">
+                {{ section.settings.gb_fb_stage_desc }}
+            
+            </div>
+            {%- if section.settings.gb_fb_stage_desc_seconds != blank -%}
+                <div class="fb-stage-p2">
+                    {{ section.settings.gb_fb_stage_desc_seconds }}
+                </div>
+            {%- endif -%}
+    
+        </div>
+    {%- endif -%}
+    {%- if country_code_var == 'au' -%}
+        <div class="fb-hwbqTs">
+            <div class="fb-stage-p">
+                {{ section.settings.au_fb_stage_desc }}
+            
+            </div>
+            {%- if section.settings.au_fb_stage_desc_seconds != blank -%}
+                <div class="fb-stage-p2">
+                    {{ section.settings.au_fb_stage_desc_seconds }}
+                </div>
+            {%- endif -%}
+    
+        </div>
+    {%- endif -%}
+</div>
+<style>
+    #section-{{ section.id }} {
+        background-color: {{ section.settings.fb_stage_backgroundcolor }};
+      
+    }
+    {%- if section.settings.fb_stage_backgroundImage != blank -%}
+        background: url("{{ section.settings.fb_stage_backgroundImage }}") no-repeat;
+        background-size: 100% 100%; 
+    {%- endif -%}
+    .fb-hwbqTs  p{
+        font-weight: 300;
+        letter-spacing: 0.025em;
+        line-height: 1.5em;
+        font-size: 12px;
+        color: rgb(101, 102, 106);
+        margin: 0px auto 0px 0px;
+        {% comment %} max-width: 1000px; {% endcomment %}
+        {% comment %} padding: 0px 65px; {% endcomment %}
+    }
+    .fb-hwbqTs p a{
+        text-decoration: revert;
+    }
+    @media only screen and (min-width: 100px) and (max-width: 768px) {
+     .fb-hwbqTs  p {
+        padding: 0px 24px;
+      }
+    }
+#section-{{ section.id }} .fb-stage-p p{
+    color: {{ section.settings.fb_stage_color }}
+}
+#section-{{ section.id }} .fb-stage-p2 {
+    margin-top: 10px;
+}
+#section-{{ section.id }} .fb-stage-p2 p{
+    color: {{ section.settings.fb_stage_color_seconds }}
+}
+.fb-stage-desc{
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+@media only screen and (max-width: 768px){
+    .fb-stage-desc{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+</style>
+{% schema %}
+  {
+    "name": "FbStageDescriptionNew",
+    "presets": [
+      {
+        "name": "fb-stage-description-new",
+        "category": "stage-description-new",
+        "blocks": []
+      }
+    ],
+    "settings": [
+         {
+            "type": "url",
+            "id": "fb_stage_backgroundImage",
+            "label": "BackgroundImage"
+        },
+        {
+            "type": "color",
+            "id": "fb_stage_backgroundcolor",
+            "label": "Background color",
+            "default": "#fff"
+        },
+        {
+            "type": "richtext",
+            "id": "fb_stage_desc",
+            "label": "Desc1"
+        },
+        {
+            "type": "color",
+            "id": "fb_stage_color",
+            "label": "color1",
+            "default": "#000"
+        },
+        {
+            "type": "richtext",
+            "id": "fb_stage_desc_seconds",
+            "label": "Desc2"
+        },
+        {
+            "type": "richtext",
+            "id": "gb_fb_stage_desc",
+            "label": "GB Desc1"
+        },
+        {
+            "type": "color",
+            "id": "gb_fb_stage_color",
+            "label": "GB color1",
+            "default": "#000"
+        },
+        {
+            "type": "richtext",
+            "id": "gb_fb_stage_desc_seconds",
+            "label": "GB Desc2"
+        },
+        {
+            "type": "color",
+            "id": "gb_fb_stage_color_seconds",
+            "label": "GB color2",
+            "default": "#000"
+        },
+        {
+            "type": "richtext",
+            "id": "au_fb_stage_desc",
+            "label": "AU Desc1"
+        },
+        {
+            "type": "color",
+            "id": "au_fb_stage_color",
+            "label": "AU color1",
+            "default": "#000"
+        },
+        {
+            "type": "richtext",
+            "id": "au_fb_stage_desc_seconds",
+            "label": "AU Desc2"
+        },
+        {
+            "type": "color",
+            "id": "au_fb_stage_color_seconds",
+            "label": "AU color2",
+            "default": "#000"
+        }
+    ]
+  }
+{% endschema %}
+
+

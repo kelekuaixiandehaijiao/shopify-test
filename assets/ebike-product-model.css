@@ -1,0 +1,4255 @@
+.ebike-width-100 {
+    width: 100%;
+}
+.ebike-fbcur-introduce-color p {
+    margin: 0;
+    padding: 0;
+}
+
+.fb-pdpthu-imgList .img-box img[src=""],
+.fb-pdpthu-imgList .img-box img:not([src]) {
+    opacity: 0;
+}
+
+/* 公共部分 */
+@media screen and (min-width: 769px) {
+    .ebike-pcshow-mobhide {
+        display: block;
+    }
+
+    .ebike-mobshow-pchide {
+        display: none;
+    }
+
+    .ebike-choose-title2 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 16px;
+        padding-top: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .au-no-klarna-box{
+        height: auto;
+    }
+    .ebike-pcshow-mobhide {
+        display: none;
+    }
+
+    .ebike-mobshow-pchide {
+        display: block;
+    }
+
+    .ebike-mob-paddingleft {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .ebkie-left-icon-info::-webkit-scrollbar {
+        display: none;
+        /* Chrome Safari */
+    }
+
+    .ebike-choose-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 14px;
+    }
+
+    .ebike-choose-title2 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 14px;
+        padding-top: 20px;
+    }
+}
+
+/* 总控制自适应 */
+@media screen and (min-width: 769px) {
+
+    .ebike-content-width,
+    .ebike-mbf-section {
+        width: 1200px;
+    }
+
+    .ebike-content-width {
+        /* min-height: 1014px; */
+        margin: 0 auto 105px;
+    }
+
+    .ebike-fbm-top-box {
+        width: 100%;
+    }
+
+    .ebike-wrapper-left,
+    .ebike-mbf-section .ebike-mbf-left,
+    .ebike-fbm-top-box .abmtc-left {
+        width: 57%;
+    }
+
+    /* 继承57% */
+    .ebike-more-imgarr {
+        width: 100%;
+        min-height: 580px;
+    }
+
+    .ebike-img-sliditem {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        width: 100%;
+        height: 580px;
+        position: relative;
+    }
+
+    /* left */
+    .ebike-thumbnails-box {
+        height: 580px;
+        width: 76px;
+        margin-right: 24px;
+        padding: 22px 0px;
+        position: relative;
+    }
+
+    /* right */
+    .ebike-pdp-slidebox {
+        width: 580px;
+        height: 580px;
+        overflow: hidden;
+        flex-shrink: 0;
+        border-radius: 20px;
+    }
+
+    .elii-content {
+        width: 628px;
+        margin-left: 104px;
+    }
+
+    .elii-item {
+        min-width: 31%;
+    }
+
+    .ebike-wrapper-right,
+    .ebike-mbf-section .ebike-mbf-right,
+    .ebike-fbm-top-box .abmtc-right {
+        width: 38.33%;
+    }
+
+    .ebike-main-bottom-fixed {
+        width: 100%;
+    }
+
+    .ebike-wrapper-left {
+        position: sticky;
+        top: 120px;
+    }
+
+    .ebike-img-sliditem {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1210px) {
+
+    .ebike-content-width,
+    .ebike-mbf-section {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ebike-wrapper-left,
+    .ebike-mbf-section .ebike-mbf-left,
+    .ebike-fbm-top-box .abmtc-left {
+        width: 50%;
+    }
+
+    .ebike-thumbnails-box {
+        height: 580px;
+        overflow: hidden;
+        width: 80px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* right */
+    .ebike-pdp-slidebox,
+    .elii-content {
+        width: 85%;
+    }
+
+    .elii-item {
+        min-width: 50%;
+    }
+
+    .ebike-wrapper-right,
+    .ebike-mbf-section .ebike-mbf-right,
+    .ebike-fbm-top-box .abmtc-right {
+        width: 45%;
+    }
+
+    .ebike-product,
+    .ebike-main-bottom-fixed {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-product-wrapper {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .ebike-content-width {
+        padding-bottom: 24px;
+    }
+
+    .ebike-wrapper-left {
+        width: 100%;
+        position: relative;
+    }
+
+    .ebike-wrapper-right {
+        width: 100%;
+    }
+
+    .ebike-mbf-section {
+        width: 100%;
+        padding: 12px 24px 12px 24px;
+    }
+
+    .ebike-mbf-section .ebike-mbf-left {
+        width: 100%;
+    }
+
+    .ebike-more-imgarr {
+        width: 100%;
+        min-height: 375px;
+    }
+
+    .ebike-img-sliditem {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .ebike-pdp-slidebox {
+        width: 100%;
+        height: 375px;
+    }
+
+    .ebike-wrapper-left .Product__Gallery {
+        min-height: 375px;
+    }
+}
+
+.ebike-img-sliditem {
+    display: none;
+}
+
+/* 控制总适应结束 */
+
+/* product 部分 */
+.ebike-product {
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    .ebike-product-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .Product__Info .Container {
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+
+    .Product__Aside .Section {
+        max-width: 630px;
+        margin: 0 auto;
+    }
+
+    .Product__Gallery {
+        position: relative;
+        /* background-color: gray; */
+        border-radius: 20px;
+    }
+
+    .Product__InfoWrapper {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+    }
+
+    .Product__SlideshowMobileNav .flickity-page-dots {
+        width: 174px;
+        bottom: 40px;
+        right: 40px;
+    }
+
+    .flickity-page-dots .dot {
+        width: 12px;
+        height: 12px;
+        margin: 0 8.5px;
+    }
+
+    .Product__SlideshowMobileNav {
+        margin: 0;
+    }
+
+    .Product__Info {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .ProductMeta .ProductMeta_productName {
+        display: none;
+    }
+
+    .addProduct_subheading {
+        position: initial;
+    }
+
+    .PDPAddToCart_enabled .payment_method_button .pay_now .method_name {
+        display: inline-block !important;
+    }
+
+    .metaAndStamp,
+    .paymentMethodFrame {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+    }
+
+    .metaAndStamp {
+        left: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .paymentMethodFrame {
+        right: 0;
+    }
+
+    .shopify-payment-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 0;
+    }
+
+
+}
+
+@keyframes shopifyfgrollshow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.shopify-payment-button_position {
+    animation: shopifyfgrollshow 0.3s 1;
+}
+
+@media screen and (max-width: 768px) {
+
+    .ebike-pc-show {
+        display: none;
+    }
+
+    .shopify-payment-button__button--branded {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+    }
+
+    .Product__InfoWrapper {
+        padding: 0 24px;
+        margin-top: 28px;
+    }
+
+    .Product__Info {
+        max-width: 100%;
+    }
+
+    .Product__Info .Container {
+        padding: 0;
+    }
+
+    /* .paymentMethodFrame {
+        margin-bottom: 20px;
+    } */
+}
+
+.fb-notify-button {
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.ebike-pdp-slidebox-warpper {
+    width: 100%;
+    height: 100%;
+}
+
+.ebike-pdp-slidebox-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ebike-pdp-slidebox-slide video {
+    width: auto;
+    height: 100%;
+    object-fit: fill;
+    position: relative;
+}
+
+.ebike-pdp-slidebox-slide img {
+    width: 100%;
+    height: auto;
+    /* object-fit: cover; */
+    position: relative;
+}
+
+@media screen and (min-width: 769px) {
+    .ebkie-fbm-bulid {
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+
+    .ebkie-fbm-bulid span {
+        font-size: 18px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 18px;
+    }
+
+    /* .ebike-thumbnails-box {
+        flex-shrink: 0;
+    } */
+    .fbm-pdp-video-wrapper {
+        background: #000;
+    }
+
+    .fbm-pdp-video-wrapper .VideoWrapper {
+        padding-bottom: 0px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .ebike-pdp-slidebox .plyr.plyr--full-ui.plyr--video {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    /* .fbm-pdp-video-wrapper .plyr--video .plyr__controls{
+        bottom: 100px;
+     } */
+    .plyr.plyr--full-ui.plyr--video .plyr__video-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ebike-pdp-slidebox .AspectRatio>img {
+        width: auto;
+        height: 100% !important;
+        object-fit: cover;
+        position: relative;
+    }
+
+    .ebike-pdp-slidebox .plyr video,
+    .ebike-pdp-slidebox .plyr audio {
+        width: 100% !important;
+        height: auto;
+        object-fit: fill;
+        position: relative;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .ebkie-fbm-bulid {
+        width: 100%;
+        padding-top: 20px;
+        border-top: 1px solid #E6E6E6;
+    }
+
+    .ebkie-fbm-bulid span {
+        font-size: 18px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 18px;
+    }
+
+    .fbm-pdp-video-wrapper {
+        background: #000;
+    }
+
+    .fbm-pdp-video-wrapper .VideoWrapper {
+        padding-bottom: 0px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .ebike-pdp-slidebox .plyr.plyr--full-ui.plyr--video {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    /* .fbm-pdp-video-wrapper .plyr--video .plyr__controls{
+        bottom: 72px;
+     } */
+    .plyr.plyr--full-ui.plyr--video .plyr__video-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ebike-pdp-slidebox .AspectRatio>img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        position: relative;
+    }
+
+    .ebike-pdp-slidebox .plyr video,
+    .ebike-pdp-slidebox .plyr audio {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+        position: relative;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .fbm-pdp-video-wrapper {
+        background: #000;
+    }
+
+    .fbm-pdp-video-wrapper .plyr__video-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ebike-pdp-slidebox .plyr.plyr--full-ui.plyr--video {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    /* .ebike-pdp-slidebox .plyr video, .ebike-pdp-slidebox .plyr audio {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        position: relative;
+    } */
+    .ebike-pdp-slidebox .AspectRatio>img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+
+}
+
+.ebike-pdp-slidebox .flickity-viewport {
+    height: 100%;
+}
+
+.ebike-pdp-slidebox .VideoWrapper,
+.ebike-pdp-slidebox .Product__SlideItem,
+.ebike-pdp-slidebox .AspectRatio {
+    width: 100%;
+    height: 100%;
+}
+
+.ebike-pdp-slidebox .AspectRatio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.ebike-pdp-slidebox .AspectRatio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.fbm-pdp-video-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.ebike-pdp-slidebox .plyr__poster {
+    width: auto;
+}
+
+@media screen and (min-width: 769px) {
+
+    /* .fbm-pdp-videobox .stampedRating, .fbm-pdp-videobox .stampedRating2{
+        color: #ccc!important;
+    } */
+    .fbm-pdp-videobox .stamped-badge-caption,
+    .ebike-fbm-stamp-container {
+        color: #121212
+    }
+
+    .fbm-pdp-videobox .stamped-badge-caption,
+    .ebike-fbm-stamp-container.ebike-video-color {
+        color: #ccc !important;
+    }
+
+    .fbm-pdp-videobox .change-color-des {
+        color: #999 !important;
+    }
+
+    .fbm-pdp-videobox .flickity-page-dots .dot {
+        background: rgba(255, 255, 255, 0.4) !important;
+        border: none !important;
+    }
+
+    .fbm-pdp-videobox .dot.is-selected {
+        background: #fff !important;
+        border: none !important;
+    }
+
+    .fbm-pdp-videobox .js-mpdp-show-video .choose-circle-a {
+        display: none;
+    }
+
+    .fbm-pdp-videobox .js-mpdp-show-video .js-mpdp-showback {
+        display: flex;
+    }
+
+    .ebike-pdp-slidebox .VideoWrapper--native .plyr {
+        position: relative;
+    }
+
+}
+
+/* 老版abtest */
+/* .ebike-thumbnails-box{
+    width: 100%;
+}  */
+.ab-go-left-right {
+    width: 100%;
+}
+
+.ab-scroll-left,
+.ab-scroll-right {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+
+    /* .ebike-thumbnails-box{
+        position: relative;
+        margin-top: -100px;
+    }  */
+    .fb-pdpthu-imgList {
+        /* height: 80px; */
+        /* display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start; */
+        width: 100%;
+    }
+
+    .ebike-go-left-right {
+        overflow: hidden;
+    }
+
+    .ebike-thu-scroll-left,
+    .ebike-thu-scroll-right {
+        width: 28px;
+        height: 12px;
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        margin-left: -14px;
+        cursor: pointer;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .ebike-thu-scroll-left {
+        top: 0px;
+        /* transform: rotate(180deg); */
+    }
+
+    .ebike-thu-scroll-left.swiper-button-disabled,
+    .ebike-thu-scroll-right.swiper-button-disabled {
+        display: none;
+    }
+
+    .ebike-thu-scroll-right {
+        bottom: 0px;
+    }
+
+    .fb-pdpthu-imgList::-webkit-scrollbar {
+        display: none;
+    }
+
+    .fb-pdpthu-imgList .img-box {
+        width: 76px;
+        min-width: 76px;
+        height: 76px;
+        border: 1px solid #CCCCCC;
+        border-radius: 1px 1px 1px 1px;
+        /* margin-right: 13px; */
+        margin-bottom: 10px;
+        position: relative;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    .fb-pdpthu-imgList .img-box img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        object-fit: cover;
+        z-index: 1;
+
+        /* border-radius: 8px; */
+    }
+
+    .fb-pdpthu-imgList .img-box .u-video {
+        border: none !important;
+    }
+
+    .fb-pdpthu-imgList .img-box .pause {
+        width: 28px !important;
+        height: 28px !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .Product__SlideshowMobileNav .flickity-page-dots {
+        opacity: 0 !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chooseBikeColor {
+        width: 100%;
+    }
+
+    .flickity-page-dots {
+        display: none !important;
+    }
+
+    .ebike-go-left-right {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .fb-pdpthu-imgList {
+        height: 48px;
+        width: 100%;
+        min-width: auto;
+        /* overflow-x: scroll !important; */
+        /* display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start; */
+        padding: 0 9px 0 24px;
+    }
+
+    .fb-pdpthu-imgList::-webkit-scrollbar {
+        display: none;
+    }
+
+    .fb-pdpthu-imgList .img-box {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        border: 1px solid #CCCCCC;
+        border-radius: 1px 1px 1px 1px;
+        margin-right: 15px;
+        position: relative;
+        flex-shrink: 0;
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    .fb-pdpthu-imgList .img-box img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .fb-pdpthu-imgList .img-box .u-video {
+        border: none !important;
+    }
+
+    .fb-pdpthu-imgList .img-box .pause {
+        width: 16px !important;
+        height: 16px !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .fb-pdpthu-imgList .img-box .video-active {
+        opacity: 1;
+    }
+
+    .fb-pdpthu-imgList .img-active {
+        border: 1px solid #333333;
+        opacity: 1;
+    }
+
+    .fb-pdpthu-imgList .img-active img {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .Product__Gallery .Product__Gallery--withThumbnails {
+        position: relative;
+        /* height: 500px; */
+    }
+}
+
+/* 公共class */
+/* .fb-pdpthu-imgList .img-box .is-selected {
+    opacity: 1;
+}
+
+
+.fb-pdpthu-imgList .is-selected {
+    border: 1px solid #333333;
+    opacity: 1;
+}
+.fb-pdpthu-imgList .is-selected img {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+} */
+.ebike-thumbnails-box .swiper-slide-thumb-active,
+.ebike-thumbnails-box .is-selected {
+    opacity: 1;
+    border: 1px solid #333333;
+}
+
+.ebike-thumbnails-box .swiper-slide-thumb-active img,
+.ebike-thumbnails-box .is-selected img {
+    opacity: 1;
+}
+
+/* section start */
+/* gift  start*/
+.ebike-pdp-gift-section {
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.ebike-gift-ul {
+    width: 100%;
+}
+
+.ebike-gift-ul {
+    /* margin-top: 20px; */
+    border-radius: 10px;
+    border: 1px solid #E6E6E6;
+    padding: 0px 20px;
+}
+
+.ebike-gift-ul .ebike-gift-li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.ebike-gift-ul .ebike-gift-li:last-child {
+    border-bottom: none !important;
+}
+
+.ebike-gift-ul .ebike-gift-li .egl-checkbox {
+    width: 20px;
+}
+
+.egl-checkbox-disabled,
+.egl-checkbox-default {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.ebike-gift-lileft {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.egl-checkbox-disabled {
+    background: rgba(18, 18, 18, 0.1);
+    border: 1px solid #121212;
+}
+
+.egl-checkbox-default {
+    border: 1px solid #121212;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.egl-checkbox-default.egl-checkbox-checked {
+    background-color: #121212 !important;
+}
+
+.ebike-gift-ul .ebike-gift-li .egl-img {
+    width: 34px;
+    height: 34px;
+    margin-left: 20px;
+}
+
+.ebike-gift-ul .ebike-gift-li .egl-img img {
+    width: 34px;
+    height: 34px;
+}
+
+.egl-price-youhui .egl-price-1 {
+    text-decoration: line-through;
+}
+
+.egl-price-youhui .egl-price-free {
+    display: inline !important;
+}
+
+.ebkie-gift-more {
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 500;
+    color: #00CC45;
+}
+
+.ebkie-gift-more span {
+    cursor: pointer;
+}
+
+.ebkie-gift-showhide {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    .ebike-gift-ul .ebike-gift-li {
+        height: 82px;
+    }
+    .ebike-gift-ul .ebike-gift-li .egl-name {
+        margin-left: 14px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 14px;
+        font-size: 14px;
+    }
+
+    .egl-price .egl-price-1 {
+        font-weight: 500;
+        color: #121212;
+        line-height: 14px;
+        font-size: 14px;
+    }
+
+    .egl-price .egl-price-free {
+        font-size: 14px;
+        font-weight: 800;
+        color: #00CC45;
+        line-height: 14px;
+        margin-left: 8px;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-gift-ul .ebike-gift-li {
+        height: 74px;
+    }
+
+    .ebike-pdp-gift-section {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .egl-price .egl-price-free {
+        margin-left: 8px;
+    }
+
+    .ebike-gift-ul .ebike-gift-li .egl-name {
+        margin-left: 14px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 12px;
+        font-size: 12px;
+    }
+
+    .egl-price .egl-price-1 {
+        font-weight: 500;
+        color: #121212;
+        line-height: 14px;
+        font-size: 14px;
+    }
+
+    .egl-price .egl-price-free {
+        font-size: 14px;
+        font-weight: 800;
+        color: #00CC45;
+        line-height: 14px;
+        margin-left: 12px;
+        display: none;
+    }
+}
+
+/* gift end */
+
+/* introduce section pc */
+
+/* buy button */
+@media screen and (min-width: 769px) {
+    .ebike-main-product-buy-bottom {
+        width: 100%;
+    }
+
+    .ebike-main-product-buy-bottom button {
+        width: 100%;
+        height: 52px;
+        background: #000000;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-main-product-buy-bottom {
+        /* padding-top: 20px; */
+        width: 100%;
+    }
+
+    .ebike-main-product-buy-bottom button {
+        width: 100%;
+        height: 48px;
+        background: #000000;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* klarna */
+@media screen and (min-width: 769px) {
+    .ebike-main-product-klarna {
+        margin-top: 16px;
+    }
+
+    .ebike-main-top-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 40px;
+        /* padding-bottom: 40px; */
+        height: 160px;
+    }
+
+    .ebike-fbm-top-box .ebike-main-product-klarna {
+        margin-top: 0px;
+    }
+
+    .ebike-main-product-klarna .ebike-main-product-klarna {
+        width: 100%;
+    }
+
+    .ebike-main-product-klarna .ebike-main-product-klarna-box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .abmtc-right  .ebike-main-product-klarna-box{
+        min-height: 18px;
+    }
+    .ebike-mbf-left  .ebike-main-product-klarna-box{
+        min-height: 16px;
+    }
+
+    .abmtc-right .ebike-main-product-klarna-box span {
+        font-size: 18px;
+        color: #121212;
+        line-height: 18px;
+        font-weight: 600;
+    }
+    .ebike-mbf-left  .ebike-main-product-klarna-box span{
+        font-size: 12px;
+        color: #666;
+        line-height: 16px;
+        font-weight: 500;
+    }
+
+    .abmtc-right .ebike-main-product-klarna-box img {
+        width: auto;
+        height: 18px;
+    }
+
+    .ebike-mbf-left .ebike-main-product-klarna-box img {
+        width: auto;
+        height: 13px;
+    }
+
+    .ebike-main-product-klarna .ebike-main-product-klarna-box .span1 {
+        margin-right: 2px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-mbf-section-mob .ebike-main-product-klarna {
+        margin-top: 10px;
+        margin-bottom: 9px;
+    }
+
+    .ebkie-product-mob-price .ebike-main-product-klarna {
+        margin-top: 12px;
+    }
+
+    .ebike-main-product-klarna .ebike-main-product-klarna {
+        width: 100%;
+    }
+
+    .ebike-mbf-section-mob .ebike-main-product-klarna-box,
+    .ebkie-product-mob-price .ebike-main-product-klarna-box {
+        width: 100%;
+        height: 12px;
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    .ebike-mbf-section-mob .ebike-main-product-klarna-box {
+        justify-content: center;
+    }
+
+    .ebkie-product-mob-price .ebike-main-product-klarna-box {
+        justify-content: flex-start;
+    }
+
+    .ebike-main-product-klarna .ebike-main-product-klarna-box span {
+        font-size: 10px;
+        color: #666;
+        line-height: 10px;
+        font-weight: 600;
+    }
+
+    .ebike-main-product-klarna .ebike-main-product-klarna-box img {
+        width: auto;
+        height: 11px;
+    }
+
+    .ebike-main-product-klarna .ebike-main-product-klarna-box .span1 {
+        margin-right: 2px;
+    }
+    .ebike-mbf-right-date{
+        margin-top: 10px;
+        line-height: 12px;
+        text-align: center;
+    }
+    .ebike-main-product-buy-bottom .ebike-mbf-right-date{
+        margin-top: 12px;
+    }
+    .ebike-mbf-right-date span{
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18,18,18,0.8);
+        line-height: 12px;   
+    }
+    .ebike-main-product-buy-bottom .ebike-mbf-right-date span{
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+
+/* top */
+@media screen and (min-width: 769px) {
+
+    .abmtc-left,
+    .abmtc-right {
+        display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+
+    }
+
+    .abmtc-left {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .abmtc-left .abmtc-title {
+        font-weight: bold;
+        color: #000;
+        line-height: 48px;
+        font-size: 48px;
+        text-align: left;
+    }
+
+    .abmtc-left .abmtc-desc {
+        margin-top: 14px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 18px;
+        font-size: 18px;
+    }
+
+    .abmtc-right {
+        text-align: right;
+        justify-content: flex-end;
+    }
+
+    .ebike-priceA {
+        display: flex;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 14px;
+    }
+
+    .ebike-current {
+        font-size: 48px;
+        font-weight: bold;
+        color: #00CC45;
+        line-height: 48px;
+    }
+
+    .ebike-mobi {
+        text-align: left;
+        margin-left: 12px;
+    }
+
+    .ebike-lowPrice {
+        font-size: 18px;
+        font-weight: 400;
+        color: rgba(18, 18, 18, 0.60);
+        line-height: 18px;
+    }
+
+    .ebike-origin {
+        font-size: 18px;
+        font-weight: 600;
+        color: rgba(18, 18, 18, 0.6);
+        ;
+        line-height: 18px;
+        margin-top: 4px;
+        text-decoration: line-through;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebkie-product-mob-price {
+        width: 100%;
+
+    }
+
+    .epmp-content {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 22px;
+        border-top: 1px solid #E6E6E6;
+        position: relative;
+        /* display: flex;
+        align-items: center;
+        justify-content: space-between; */
+    }
+
+    /* .epmp-add-btn{
+        width: 120px;
+        height: 32px;
+        position: absolute;
+        right: 0px;
+        top: 20px;
+    }
+    .epmp-add-btn button{
+        width: 100%;
+        height: 32px;
+        background: #000000;
+        border: none;
+        line-height: 32px;
+        color: #fff;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: #FFFFFF;
+    } */
+    .epmp-content .ebike-priceA {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 50%;
+    }
+
+    .epmp-content .ebike-current {
+        font-size: 26px;
+        font-weight: bold;
+        color: #00CC45;
+        line-height: 26px;
+    }
+
+    .ebike-mobi {
+        text-align: left;
+        margin-left: 6px;
+    }
+
+    .ebike-lowPrice {
+        font-size: 10px;
+        font-weight: 500;
+        color: #888;
+        line-height: 8px;
+    }
+
+    .ebike-origin {
+        font-size: 10px;
+        font-weight: 600;
+        color: #666;
+        line-height: 8px;
+        margin-top: 6px;
+        text-decoration: line-through;
+    }
+
+    .epmp-content .epmp-content-pay {
+        width: 50%;
+        /* height: 22px; */
+        /* line-height: 11px; */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .epmp-content-pay span {
+        font-size: 10px;
+        font-weight: 600;
+        color: #666666;
+        line-height: 11px;
+    }
+
+    .epmp-content-pay .span1 {
+        margin-right: 2px;
+    }
+
+    .epmp-content-pay img {
+        width: auto;
+        height: 10px;
+    }
+}
+
+/* dismess */
+@media only screen and (min-width: 768px) {
+    .ebike-dimens-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ebike-fbcu-dimens {
+        padding-top: 20px;
+        text-align: center;
+        width: 100%;
+        line-height: 16px;
+    }
+
+    .ebike-fbcu-dimens span {
+        text-decoration: underline;
+        color: #121212;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+.ebike-fbcur-introduce-color {
+    width: 100%;
+}
+
+.ebike-fbcur-introduce-ul li {
+    display: flex;
+}
+
+.ebike-fbcur-introduce-ul li a {
+    text-decoration: underline;
+}
+
+.ebike-fbcur-introduce-tips {
+    position: absolute;
+    background: #fefefe;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 2;
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .ebike-dimens-section {
+        position: absolute;
+        top: 339px;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        display: none;
+    }
+
+    .ebike-fbcu-dimens {
+        text-align: center;
+    }
+
+    .ebike-fbcu-dimens span {
+        width: 120px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        background: #FFFFFF;
+        border-radius: 6px 6px 6px 6px;
+        opacity: 1;
+        border: 1px solid #121212;
+        color: #000000;
+        font-weight: 600;
+        font-size: 10px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+
+    /* introduce section pc */
+    .ebike-fbcur-introduce-color {
+        margin-top: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+
+    .ebike-fbcur-introduce-color .ebike-fbcur-introduce-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+    }
+
+    .ebike-fbcur-introduce-ul {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .ebike-fbcur-introduce-ul li {
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    .ebike-fbcur-introduce-ul li:last-child {
+        margin-bottom: 0px;
+    }
+
+    .ebike-fbcur-introduce-ul li .ebike-fbcur-introduce-imgcheck {
+        width: 24px;
+        height: auto;
+    }
+
+    .ebike-fbcur-introduce-ul li .ebike-fbcur-introduce-imgcheck {
+        margin-right: 15px;
+    }
+
+    .ebike-fbcur-introduce-tips {
+        width: 460px;
+        padding: 15px;
+        min-height: 78px;
+        bottom: -80px;
+        left: 0px;
+    }
+
+    .ebike-fbcur-introduce-product-name p {
+        font-weight: 500;
+        font-size: 14px;
+        color: #121212;
+    }
+
+    .ebike-fbcur-introduce-tips p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #333333;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* introduce section mob */
+    .ebike-fbcur-introduce-color {
+        padding: 17px 0px;
+        height: 54px;
+        position: relative;
+        margin-top: -20px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .ebike-fbcur-introduce-color .ebike-fbcur-introduce-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+    }
+
+    .ebike-fbcur-introduce-ul {
+        /* display: flex;
+        justify-content: flex-start; */
+        height: 20px;
+        width: 100%;
+        /* flex-direction: column; */
+        /* align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden; */
+        /* position: absolute;
+        left: 0;
+        top: 17px; */
+    }
+
+    /* .ebike-fbcur-introduce-ul::-webkit-scrollbar {
+        display: none;
+    } */
+    .ebike-width-100 {
+        position: relative;
+    }
+
+    .ebike-fbcur-leftmodel,
+    .ebike-fbcur-rightmodel {
+        width: 76px;
+        height: 34px;
+        position: absolute;
+        top: 10px;
+        z-index: 2;
+    }
+
+    .ebike-fbcur-leftmodel {
+        left: -24px;
+        background: linear-gradient(90deg, #FFFFFF 30%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .ebike-fbcur-rightmodel {
+        right: -24px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 64%);
+    }
+
+    .ebike-fbcur-leftmodel.swiper-button-disabled,
+    .ebike-fbcur-rightmodel.swiper-button-disabled {
+        display: none;
+    }
+
+    /* .ebike-fbcur-introduce-ul {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #E6E6E6;
+    } */
+    .ebike-fbcur-introduce-ul li {
+        /* width: 100%; */
+        line-height: 20px;
+        flex-shrink: 0;
+        margin-right: 20px;
+        align-items: center;
+        width: auto;
+    }
+
+    .ebike-fbcur-introduce-ul li .ebike-fbcur-introduce-imgcheck {
+        width: 20px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .ebike-fbcur-choose-product-sold-out {
+        width: 58px;
+        height: 18px;
+        text-align: center;
+        line-height: 18px;
+        background: #cccccc;
+        border-radius: 11px;
+        color: #fff;
+        font-size: 10px;
+    }
+
+    .ebike-fbcur-introduce-tips {
+        width: 286px;
+        padding: 10px;
+        min-height: 60px;
+        top: 25px;
+        left: 0px;
+    }
+
+    .ebike-fbcur-introduce-tips:first-child {
+        min-height: 80px;
+        bottom: -850px;
+    }
+
+    .ebike-fbcur-introduce-product-name p {
+        font-weight: 500;
+        font-size: 12px;
+        color: #333;
+    }
+
+    .ebike-fbcur-introduce-tips p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #333333;
+    }
+}
+
+
+.ebike-fbcur-intro-dialog-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222222;
+    line-height: 38px;
+    text-align: center;
+}
+
+.ebike-fbcur-intro-dialog-desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 24px;
+    padding: 38px 0 32px;
+    text-align: center;
+}
+
+.ebike-fbcur-intro-dialog-desc span {
+    color: #02c0d9;
+    margin-right: 3px;
+}
+
+.ebike-fbcur-intro-dialog-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 75px;
+}
+
+.ebike-fbcur-intro-dialog-item:first-child {
+    margin-bottom: 32px;
+}
+
+.fbcur_intro_dialog_item_img1 {
+    display: block;
+    width: 104px;
+    height: auto;
+    margin-right: 120px;
+}
+
+.fbcur_intro_dialog_item_img2 {
+    display: block;
+    width: 104px;
+    height: auto;
+}
+
+.ebike-fbcur-intro-dialog-title-bottom {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 24px;
+}
+
+.fbcur_intro_dialog_item_img3 {
+    display: block;
+    width: 129px;
+    height: auto;
+    margin-left: 12px;
+}
+
+.ebike-fbcur-intro-dialogcontent {
+    width: 630px;
+    height: 360px;
+    padding: 48px 75px 59px;
+    position: relative;
+}
+
+.ebike-fbcur-intro-dialog-close {
+    width: 17px;
+    height: 17px;
+    top: 13px;
+    right: 14px;
+}
+
+@media only screen and (max-width: 1549px) {
+    .ebike-fbcur-intro-dialogcontent {
+        width: 509px;
+        height: 291px;
+        padding: 39px 61px 48px;
+    }
+
+    .ebike-fbcur-intro-dialog-title {
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+    .ebike-fbcur-intro-dialog-desc {
+        font-size: 13px;
+        line-height: 19px;
+        padding: 31px 0 26px;
+    }
+
+    .ebike-fbcur-intro-dialog-item {
+        margin: 0 61px;
+    }
+
+    .ebike-fbcur-intro-dialog-item:first-child {
+        margin-bottom: 26px;
+    }
+
+    .fbcur_intro_dialog_item_img1 {
+        width: 84px;
+        margin-right: 97px;
+    }
+
+    .fbcur_intro_dialog_item_img2 {
+        width: 84px;
+    }
+
+    .ebike-fbcur-intro-dialog-title-bottom {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .fbcur_intro_dialog_item_img3 {
+        width: 104px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ebike-fbcur-intro-dialogcontent {
+        width: 334px;
+        height: 390px;
+        padding: 56px 36px;
+    }
+
+    .ebike-fbcur-intro-dialog-title {
+        font-size: 24px;
+        line-height: 15px;
+    }
+
+    .ebike-fbcur-intro-dialog-desc {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 24px 0 32px;
+    }
+
+    .ebike-fbcur-intro-dialog-item {
+        margin: 0 9px;
+    }
+
+    .ebike-fbcur-intro-dialog-item:first-child {
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #e4e4e4;
+    }
+
+    .fbcur_intro_dialog_item_img1 {
+        margin-right: 32px;
+    }
+
+    .ebike-fbcur-intro-dialog-item:last-child {
+        flex-direction: column;
+        padding: 0 40px;
+    }
+
+    .ebike-fbcur-intro-dialog-title-bottom {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .fbcur_intro_dialog_item_img3 {
+        width: 104px;
+        margin: 8px 26px;
+    }
+}
+
+/* star  start*/
+
+/* 评论部分 */
+
+@media only screen and (min-width: 769px) {
+    .stamped-badge-caption {
+        display: block;
+        text-decoration: unset;
+    }
+
+    .stampedRating {
+        position: absolute;
+        right: 0;
+        top: 3px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .ebike-fbm-stamp {
+        position: absolute;
+        top: 24px;
+        left: 124px;
+        z-index: 1;
+    }
+
+    .ebike-fbm-stamp-container {
+        display: inline-block;
+        height: 35px;
+        position: relative;
+    }
+
+    .ebike-fbm-stamp-container .stampedRating2 {
+        position: absolute;
+        left: 0;
+        top: -2px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .ebike-fbm-stamp-container .stamped-badge-caption {
+        font-size: 16px;
+        /* color: #666; */
+        bottom: -18px;
+        left: 0px;
+        position: absolute;
+    }
+
+    .ebike-fbm-stamp-container .stamped-badge {
+        padding-left: 38px;
+        padding-right: 0;
+    }
+
+    .ebike-fbm-stamp-container .stampedRating {
+        left: 0;
+        top: -6px;
+        font-size: 24px;
+    }
+
+    .ebike-fbm-stamp-container .stamped-fa-star-half-o:before,
+    .ebike-fbm-stamp-container .stamped-fa-star:before {
+        font-size: 20px !important;
+    }
+
+    /* .stamped-badge-caption{
+        position: absolute;
+        font-size: 14px;
+        font-weight: bold;
+    } */
+}
+
+@media only screen and (max-width: 768px) {
+    .stamped-badge-caption {
+        display: block;
+        text-decoration: unset;
+    }
+
+    .stampedRating {
+        position: absolute;
+        right: 0;
+        top: 3px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .stamped-badge {
+
+        text-align: right;
+    }
+
+    .ebike-fbm-stamp {
+        position: absolute;
+        right: 24px;
+        bottom: 20px;
+        width: 130px;
+        height: 46px;
+        z-index: 2;
+    }
+
+    .stamped-badge-starrating {
+        padding-right: 32px;
+        line-height: 26px;
+    }
+
+    .ebike-fbm-stamp-container {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+    }
+
+    .ebike-fbm-stamp-container .stampedRating2 {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: bold;
+    }
+
+    .ebike-fbm-stamp-container .stamped-badge-caption {
+        font-size: 11px;
+        line-height: 11px;
+        color: rgba(18, 18, 18, 0.8);
+        bottom: 0px;
+        font-weight: 500;
+        margin-top: 4px;
+    }
+}
+
+/* section end*/
+
+@media screen and (min-width: 769px) {
+
+    .fbm-pdp-product-ab .img-box,
+    .fbm-pdp-product-ab .img-box img:first-child {
+        border-radius: 8px;
+    }
+
+    .fbm-pdp-product-ab .ebike-pdp-slidebox .plyr video,
+    .fbm-pdp-product-ab .ebike-pdp-slidebox .plyr audio {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* xi di buy bottom  start*/
+.ebike-main-bottom-fixed {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    border-top: 1px solid #E6E6E6;
+}
+
+@media screen and (min-width: 769px) {
+    .ebike-main-bottom-fixed{
+        min-height: 82px;
+    }
+
+    .ebike-mbf-section-pc {
+        display: flex;
+    }
+
+    .ebike-mbf-section-mob {
+        display: none;
+    }
+
+    .ebike-mbf-section .ebike-mbf-right {
+        text-align: right;
+    }
+
+    .ebike-mbf-price {
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        margin-right: 32px;
+    }
+    .ebike-span1, .ebike-span2{
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+    }
+    .ebike-span1{
+        margin-right: 12px;
+    }
+
+    .ebike-span2 {
+        margin-right: 10px;
+    }
+
+    .ebike-span3 {
+        font-weight: 500;
+        color: #888888;
+        font-size: 18px;
+        text-decoration: line-through;
+    }
+
+    .ebike-mbf-section .ebike-main-product-klarna {
+        margin-top: 10px;
+    }
+    .ebike-mbf-right{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .ebike-mbf-right-button{
+        width: 100%;
+        height: 44px;
+        text-align: center;
+        background: #000000;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 44px;
+        font-weight: bold;
+    }
+    .ebike-main-product-buy-bottom .ebike-mbf-right-date{
+        text-align: center;
+        margin-top: 12px;
+        line-height: 14px;
+    }
+    .ebike-main-product-buy-bottom .ebike-mbf-right-date span{
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 500;
+        color: rgba(18,18,18,0.8);
+    }
+    .ebike-main-bottom-fixed .ebike-mbf-right-date{
+        margin-top: 6px;
+        line-height: 12px;
+    }
+    .ebike-main-bottom-fixed .ebike-mbf-right-date span{
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18,18,18,0.8);
+        line-height: 12px;   
+    }
+   
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .ebike-main-bottom-fixed {
+        width: 100%;
+        padding: 0px 20px;
+    }
+
+    .ebike-mbf-section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-mbf-section-pc {
+        display: none;
+    }
+
+    .ebike-mbf-section-mob {
+        display: block;
+    }
+
+    .ebike-main-bottom-fixed {
+        min-height: 111px;
+    }
+
+    .ebike-mbf-price {
+        width: 100%;
+        text-align: center;
+        line-height: 16px;
+    }
+
+    .ebike-span1,
+    .ebike-span2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .ebike-span1 {
+        font-weight: bold;
+        color: #333;
+        margin-right: 12px;
+    }
+
+    .ebike-span2 {
+        font-weight: 500;
+        color: #888;
+        text-decoration: line-through;
+    }
+
+    .ebike-span3 {
+        font-size: 12px;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    .ebike-main-btn-dian {
+        display: inline-block;
+        width: 2px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .ebike-mbf-right-button {
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        background: #000000;
+        border-radius: 8px;
+        color: #fff;
+        line-height: 40px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+/* xi di buy bottom  end*/
+
+@media screen and (min-width: 769px) {
+    .ebike-fbm-test-show-fixed {
+        display: none;
+    }
+
+    .ebike-mbf-section {
+        align-items: center;
+        justify-content: space-between;
+        height: 82px;
+        margin: 0 auto;
+    }
+    .ebike-thumbnails-box .ebike-go-left-right{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    /* .ebike-scroll-left{
+        display: none;
+    } */
+    .ebike-scroll-left,
+    .ebike-scroll-right {
+        position: absolute;
+        width: 26px;
+        height: 82px;
+        z-index: 2;
+        cursor: pointer;
+        display: none;
+    }
+
+    .ebike-scroll-left {
+        left: 24px;
+        top: -1px;
+        background: url("https://cdn.shopify.com/s/files/1/0592/3766/2905/files/right2222.png?v=1687921510") no-repeat center;
+        background-size: 30px 30px;
+    }
+
+    .ebike-scroll-right {
+        right: 24px;
+        top: -1px;
+        background: url("https://cdn.shopify.com/s/files/1/0592/3766/2905/files/left222.png?v=1687921510") no-repeat center;
+        background-size: 30px 30px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+
+    .ebike-scroll-left,
+    .ebike-scroll-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-fbm-test-show-fixed {
+        display: none;
+    }
+
+    #section-header .main_product_payBtn {
+        width: 85px;
+    }
+
+    .ebike-fbm-test-show {
+        display: none;
+    }
+
+    /* 更改color */
+    .changecolorWrapper {
+        margin: 20px;
+    }
+
+    .ebike-thumbnails-box {
+        margin: 12px 0px;
+        height: 48px;
+    }
+
+    .ebike-scroll-left,
+    .ebike-scroll-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* 开启mob端全局放出 */
+    .mobileDelivers {
+        display: none;
+    }
+
+}
+
+/* left icon desc */
+.elii-item-desc {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+}
+
+.elii-item-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.elii-item-hover-desc {
+    background-color: #fff;
+    position: absolute;
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 8px 8px 8px 8px;
+    z-index: 2;
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    .ebkie-left-icon-info {
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .elii-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .elii-item {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        margin-top: 30px;
+    }
+
+    .elii-item .elii-item-img {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin-right: 18px;
+    }
+
+    .elii-item-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .elii-item-text {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 40px;
+    }
+
+    .elii-item-desc:hover .elii-item-hover-desc {
+        display: block;
+    }
+
+    .elii-item-text .elii-item-desc,
+    .elii-item-text .elii-item-desc p {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.60);
+    }
+
+    .elii-item-text .elii-item-desc p {
+        line-height: 14px;
+    }
+
+    .elii-item-icon {
+        width: 14px;
+        height: 14px;
+        margin-left: 4px;
+    }
+
+    .elii-item-hover-desc {
+        padding: 18px 20px;
+        top: 20px;
+        left: 0px;
+        width: 340px;
+    }
+
+    .elii-item-text .elii-item-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebkie-left-icon-info {
+        width: 100%;
+        padding: 8px 0px 8px 24px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        background: #000000;
+        height: 44px;
+        /* padding-top: 41px; */
+    }
+    .ebike-icon-info-mb-box{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .ebkie-left-icon-info-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 76px;
+        height: 44px;
+        display: none;
+        background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        z-index: 1;
+    }
+
+    .ebkie-left-icon-info-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 76px;
+        height: 44px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+        z-index: 1;
+
+    }
+
+    .elii-content {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+
+    }
+
+    .elii-item {
+        display: flex;
+        /* align-items: center; */
+        justify-content: flex-start;
+        flex-shrink: 0;
+        margin-right: 32px;
+        color: #fff;
+    }
+
+    .elii-content .elii-item:nth-child(5n) {
+        margin-right: 24px !important;
+    }
+
+    .elii-padding-1 {
+        width: 1px;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .elii-item .elii-item-img {
+        width: 28px;
+        height: 28px;
+        position: relative;
+    }
+
+    .elii-item-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .elii-item-text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+        margin-left: 6px;
+    }
+
+    .elii-item-text .elii-item-desc,
+    .elii-item-text .elii-item-desc p {
+        font-size: 10px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: left;
+    }
+
+    .elii-item-text .elii-item-desc p {
+        line-height: 12px;
+    }
+
+    .elii-item-text .elii-item-desc {
+        margin-top: 2px;
+    }
+
+    .elii-item-icon {
+        width: 12px;
+        height: 12px;
+        margin-left: 2px;
+    }
+
+    .elii-item-hover-desc {
+        padding: 18px 16px 18px 16px;
+        top: 10px;
+        left: 0px;
+    }
+
+    .elii-item-text .elii-item-title {
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 12px;
+        text-align: center;
+    }
+
+    .ebkie-product-title {
+        width: 100%;
+        margin-top: 24px;
+        padding-bottom: 20px;
+        text-align: left;
+        position: relative;
+    }
+
+    .ebkie-product-title .abmtc-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 20px;
+    }
+
+    .ebkie-product-title .abmtc-desc {
+        margin-top: 10px;
+        font-size: 11px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 11px;
+    }
+
+    .ebkie-product-title-ul {
+        position: relative;
+    }
+}
+
+/*  mob端add to cart */
+/* 保险 start*/
+@media screen and (min-width: 769px) {
+    .ebike-protection {
+        width: 100%;
+        min-height: 94px;
+    }
+
+    .ebkie-protection-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 16px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    /* .ebkie-protection-box{
+        width: 100%;
+        min-height: 120px;
+    } */
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-protection {
+        width: 100%;
+        min-height: 108px;
+        padding-bottom: 4px;
+    }
+    .ebike-protection  iframe{
+        height: 95px!important;
+    }
+    .ebkie-protection-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 14px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    /* .ebkie-protection-box{
+        width: 100%;
+        min-height: 60px;
+    } */
+}
+
+/* 保险 end*/
+
+/* 支付方式 */
+.ebike-shop-payment {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.ebike-shop-payment-item {
+    margin-right: 10px;
+    height: 24px;
+    line-height: 24px;
+}
+
+@media screen and (min-width: 769px) {
+    .ebike-shop-payment {
+        border-bottom: 1px solid #E6E6E6;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-shop-payment {
+        justify-content: flex-start;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        overflow-x: auto;
+    }
+    .ebike-shop-payment::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ebike-shop-payment-item:last-child {
+        margin-right: 10px;
+    }
+}
+
+/* 尺寸表格配置  start*/
+.ebike-size-config {
+    width: 100%;
+}
+
+.ebike-size-ul {
+    width: 100%;
+}
+
+.ebike-size-li {
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E6E6E6;
+    font-size: 16px;
+    font-weight: 600;
+    color: #121212;
+    line-height: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.ebike-size-li span {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 769px) {
+    .ebike-size-li .span-svg {
+        margin-right: 22px;
+    }
+
+    .ebike-size-li img {
+        width: 18px;
+        height: 18px;
+    }
+    .ebike-size-li svg{
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-size-li {
+        font-size: 14px;
+        line-height: 14px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .ebike-size-li img {
+        width: 14px;
+        height: 14px;
+    }
+    .ebike-size-li svg{
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+}
+
+/* table and introduce */
+.ebike-sizeli-section {
+    padding-top: 9px;
+    width: 100%;
+}
+
+/* .ebike-sizeli-dialog, */
+.ebike-fbcur-introduce-dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 888;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.ebike-sizeli-modelshow {
+    display: none;
+    width: 100%;
+}
+
+.ebike-sizeli-container,
+.fb-introducetip-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.ebike-sizeli-close,
+.ebike-fbcur-intro-dialog-close {
+    position: absolute;
+    z-index: 2;
+}
+.ebike-sizeli-close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ebike-sizeli-close svg,
+.ebike-fbcur-intro-dialog-close svg {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.ebike-sizeli-content,
+.ebike-fbcur-intro-dialogcontent {
+    background: #fefefe;
+    position: relative;
+}
+.ebike-sizeli-content{
+    overflow: hidden;
+}
+
+.ebike-sizeli-title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 24px;
+   
+}
+
+.ebike-sizeli-desc {
+    padding-top: 20px;
+}
+
+.ebike-sizeli-desc p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #121212;
+    line-height: 24px;
+}
+
+.ebike-sizeli-desc p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.ebike-sizeli-desc p:first-child {
+    margin-bottom: 24px;
+}
+
+.ebike-sizeli-img {
+    width: 100%;
+    background-color: #D9D9D9;
+    position: relative;
+}
+
+.ebike-sizeli-img img {
+    width: 100%;
+    height: auto;
+}
+
+.ebike-sizeli-table {
+    width: 100%;
+}
+
+.ebike-sizeli-table2 {
+    width: 100%;
+}
+
+.ebike-sizeli-tr2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ebike-sizeli-header,
+.ebike-sizeli-tr {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ebike-sizeli-header {
+    padding-bottom: 14px;
+}
+
+.ebike-sizeli-header span {
+    color: #121212;
+    text-align: center;
+    width: 33.3%;
+}
+
+.ebike-sizeli-header span:first-child {
+    text-align: left;
+}
+
+.ebike-sizeli-tr {
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.ebike-sizeli-tr span {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    width: 33.3%;
+    text-align: center;
+}
+
+.ebike-sizeli-tr span:first-child {
+    font-weight: 600;
+    text-align: left;
+}
+.ebike-sizeli-door{
+    width: 100%;
+    border-bottom: 1px solid #E6E6E6;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ebike-sizeli-door-button{
+    display: inline-block;
+    font-weight: bold;
+    color: rgba(18,18,18,0.5);
+    border-bottom: 2px solid transparent;
+}
+.ebike-sizeli-door-button.dooractive{
+    color: #00CC45;
+    border-bottom: 2px solid #00CC45;
+}
+.Drawer__Content__fb_ebike, .Drawer__Content__fb_ebike2, .Drawer__Content__fb_litboom{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/* .ebike-sizeli-public-top{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 3;
+} */
+.ebike-sizeli-top-textclose{
+    position: relative;
+}
+@media only screen and (min-width: 769px) {
+    .ebike-sizeli-img {
+        height: 240px;
+        margin-top: 20px;
+    }
+
+    .ebike-sizeli-table {
+        margin-top: 72px;
+    }
+
+    .ebike-sizeli-tr {
+        height: 48px;
+    }
+
+    .ebike-sizeli-header span {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+    }
+    .Drawer__Content__fb_ebike{
+        height: calc(100% - 110px);
+        max-height: calc(100% - 110px);
+    }
+    .Drawer__Content__fb_ebike2{
+        height: calc(100% - 85px);
+        max-height: calc(100% - 85px);
+    }
+    .Drawer__Content__fb_litboom{
+        height: calc(100% - 81px);
+        max-height: calc(100% - 81px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ebike-sizeli-section {
+        display: none;
+    }
+
+    .ebike-sizeli-img {
+        height: 184px;
+        margin-top: 20px;
+    }
+
+    .ebike-sizeli-table {
+        margin-top: 24px;
+    }
+
+    .ebike-sizeli-tr {
+        height: 40px;
+    }
+
+    .ebike-sizeli-header span {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .Drawer__Content__fb_ebike{
+        height: calc(100% - 92px);
+        max-height: calc(100% - 92px);
+    }
+    .Drawer__Content__fb_ebike2{
+        height: calc(100% - 61px);
+        max-height: calc(100% - 61px);
+    }
+    .Drawer__Content__fb_litboom{
+        height: calc(100% - 61px);
+        max-height: calc(100% - 61px);
+    }
+}
+@media only screen and (min-width: 769px) {
+    #ebike-sizeli-dialog{
+        width: 420px;
+    }
+    .ebike-sizeli-content {
+        width: 100%;
+        height: 100%;
+        padding: 0px 24px;
+        /* overflow-y: auto; */
+    }
+    .ebike-sizeli-close {
+        width: 16px;
+        height: 16px;
+        right: 0px;
+        top: 32px;
+    }
+    .ebike-sizeli-tr2 {
+        padding-top: 17px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+
+    .ebike-sizeli-tr2 .tr2-span1 {
+        width: 116px;
+        text-align: left;
+        font-weight: 600;
+        color: #121212;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .ebike-sizeli-tr2 .tr2-span2 {
+        width: 220px;
+        font-size: 12px;
+        text-align: left;
+        font-weight: 500;
+        color: #121212;
+        line-height: 14px;
+    }
+    .ebike-sizeli-door-button{
+        padding-bottom: 11px;
+        margin-right: 47px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .ebike-sizeli-title1{
+        padding-top: 30px;
+        margin-bottom: 28px;
+    }
+    .ebike-sizeli-title2{
+        padding: 30px 0px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+    .ios-li-space{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ebike-sizeli-title1 {
+        font-size: 20px;
+        line-height: 20px;
+        padding-top: 20px;
+        margin-bottom: 24px;
+    }
+    .ebike-sizeli-title2{
+        font-size: 20px;
+        line-height: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid #E6E6E6;
+    }
+    #ebike-sizeli-dialog{
+        width: 327px;
+    }
+    .ebike-sizeli-content {
+        width: 100%;
+        height: 100%;
+        /* overflow-y: auto; */
+    }
+    #ebike-sizeli-dialog .Drawer__Main{
+        padding: 0px 20px 0px 20px;
+        width: 100%;
+    }
+    .ebike-sizeli-public-top{
+        width: 100%;
+        padding: 0px 20px 0px 20px;
+    }
+    .ebike-sizeli-desc p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .ebike-sizeli-close {
+        width: 16px;
+        height: 16px;
+        right: 0px;
+        top: 22px;
+    }
+    .ebike-sizeli-tr span:first-child,
+    .ebike-sizeli-header span:first-child {
+        min-width: 110px;
+        text-align: left;
+    }
+
+    .ebike-sizeli-tr2 {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+
+    .ebike-sizeli-tr2 .tr2-span1 {
+        width: 116px;
+        text-align: left;
+        font-weight: 600;
+        color: #121212;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .ebike-sizeli-tr2 .tr2-span2 {
+        width: 180px;
+        font-size: 12px;
+        text-align: left;
+        font-weight: 500;
+        color: #121212;
+        line-height: 14px;
+    }
+    .ebike-sizeli-door-button{
+        padding-bottom: 11px;
+        margin-right: 47px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .ios-li-space{
+        visibility: hidden;
+        width: 100%;
+        height: 100px;
+    }
+}
+/* lit boom config */
+.lit-boom-size-config{
+    display: none;
+}
+.ebike-sizeli-title3{
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 20px;
+    border-bottom: 1px solid #E6E6E6;
+}
+.Drawer__Content__fb_litboom{
+    padding-top: 20px;
+    width: 100%;
+}
+.Drawer__Content__fb_litboom ul{
+    width: 100%;
+}
+.Drawer__Content__fb_litboom ul li, .Drawer__Content__fb_litboom p{
+    font-weight: 500;
+    line-height: 20px;
+    color:rgba(18,18,18,0.7);
+    position: relative;
+    padding-left: 14px;
+    list-style: none;
+}
+.Drawer__Content__fb_litboom ul li::before, .Drawer__Content__fb_litboom p::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background: #00CC45;
+    position: absolute;
+    left: 0px;
+    top: 7px;
+}
+.Drawer__Content__fb_litboom ul li::marker{
+    position: absolute;
+    left: 0; 
+    top: 0;
+}
+@media only screen and (min-width: 769px) {
+    .ebike-sizeli-title3{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    .Drawer__Content__fb_litboom ul li{
+        margin-bottom: 12px;
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .ebike-sizeli-title3{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .Drawer__Content__fb_litboom ul li{
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+}
+/* 尺寸表格配置  end*/
+@keyframes ebikezoomhide {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes ebikezoomshow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+    .ebike-popup-zoom-hide {
+        visibility: hidden;
+        z-index: -9999;
+        animation: ebikezoomhide 0.3s 1;
+    }
+
+    .ebike-zoom-box {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        touch-action: none;
+        -webkit-text-size-adjust: 100%;
+        -webkit-backface-visibility: hidden;
+        outline: none;
+        position: fixed;
+        background-color: #fff;
+        visibility: hidden;
+        z-index: -9999;
+        animation: ebikezoomhide 0.3s 1;
+        /* display: none; */
+    }
+
+    .ebike-zoom-popup-show {
+        visibility: visible;
+        z-index: 9999;
+        animation: ebikezoomshow 0.3s 1;
+    }
+
+    .ebike-zoom-swiper {
+        width: 100;
+        height: 100%;
+        position: relative;
+    }
+
+    .ebike-zoom-swiper .swiper-slide {
+        background-color: #fff;
+    }
+
+    .ebike-zoom-done {
+        position: absolute;
+        width: 100%;
+        bottom: 90px;
+        transform: translateY(35px);
+        left: 0;
+        text-align: center;
+        transition: all .15s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .ebike-zoom-close {
+        margin: 0px 18px;
+        cursor: pointer;
+    }
+
+    .ebike-zoom-button.swiper-button-disabled {
+        /* display: none; */
+        visibility: hidden;
+    }
+
+    .ebike-zoom-button {
+        cursor: pointer;
+    }
+
+    .ebike-zoom-relative img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.ebike-zoom-warpper .swiper-slide,
+.fb-pdpthu-imgList,
+.swiper-slide {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media screen and (min-width: 1008px) {
+    .ebike-zoom-relative img {
+        cursor: var(--cursor-zoom-in-svg) 18 18, zoom-in;
+        cursor: -webkit-image-set(var(--cursor-zoom-in-svg) 1x, var(--cursor-zoom-in-2x-svg) 2x), zoom-in;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ebike-zoom-box {
+        display: none !important;
+    }
+}
+
+
+/* ebike选择框 start*/
+.ebike-Midnight-Black {
+    background-color: #121212;
+}
+
+.ebike-Sage-Green {
+    background-color: #8A9B8E;
+}
+
+.ebike-Sahara-Sand {
+    background-color: #DBD5CD;
+}
+
+/* choose color section pc */
+.ebike-choose-ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ebike-choose-ul li,
+.ebike-choose-imgdefalut {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ebike-choose-imgdefalut {
+    justify-content: center;
+}
+
+.ebike-choose-ul li {
+    flex-direction: column;
+}
+
+.ebike-choose-size {
+    cursor: pointer;
+}
+
+.ebike-cfm-size3 {
+    background: rgba(0, 204, 69, 0.05);
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid #00CC45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ebike-cfm-select {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    user-select: none;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 769px) {
+    .ebike-choose-form-mob {
+        /* border-top: 1px solid #E6E6E6; */
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #E6E6E6;
+        width: 100%;
+    }
+
+    .ebike-cfm-size,
+    .ebike-cfm-size2,
+    .ebike-cfm-size3 {
+        height: 44px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .ebike-cfm-size {
+        margin-right: 13px;
+    }
+
+    .ebike-cfm-size2 {
+        margin-right: 11px;
+    }
+
+    .ebike-cfm-size3 img {
+        width: 14px;
+        height: auto;
+        margin-right: 4px;
+    }
+
+    .ebike-cfm-size3 {
+        width: 106px;
+    }
+
+    .ebike-cfm-size4 {
+        cursor: default !important;
+    }
+
+    .ebike-cfm-size4 span {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.5);
+        line-height: 14px;
+    }
+
+    .ebike-size-tool {
+        font-size: 12px;
+        font-weight: 500;
+        color: #00CC45;
+    }
+
+    .ebike-cfm-size {
+        width: 180px;
+    }
+
+    .ebike-cfm-size2 {
+        width: 148px;
+    }
+
+    .ebike-cfm-frame {
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        border: 1px solid #CCCCCC;
+        padding-left: 15px;
+        position: relative;
+
+    }
+
+    .ebike-cfm-frame .span1 {
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.5);
+        font-size: 14px;
+    }
+
+    .ebike-cfm-frame .span2 {
+        font-size: 14px;
+        font-weight: 500;
+        color: #121212;
+        /* line-height: 14px; */
+        text-align: right;
+    }
+
+    .ebike-choose-form-mob .span3-img {
+        width: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ebike-cfm-frame .span3-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .ebike-cfm-value-1 {
+        width: 180px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .ebike-cfm-value-2 {
+        width: 210px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+
+    .ebike-cfm-value {
+        display: none;
+        height: auto;
+        position: absolute;
+        top: 54px;
+        left: 0px;
+        border-radius: 8px;
+        border: 1px solid #CCCCCC;
+        background-color: #fff;
+    }
+
+    /* .ebike-cfm-common.ebike-cfm-focus {
+        box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.15);
+    } */
+    .ebike-choose-size-mob {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.6);
+        height: 38px;
+        text-align: left;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .ebike-cfm-frame,
+    .ebike-choose-size-mob {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ebike-other-csm .span-option3 img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .span-option3 .e-default-icon {
+        display: inline-block;
+    }
+
+    .span-option3 .e-active-icon {
+        display: none;
+    }
+
+    .ebike-other-csm span {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.6);
+        line-height: 14px;
+        margin-left: 8px;
+    }
+
+    .ebike-choose-size-mob.ecsm-select {
+        font-weight: 800;
+    }
+
+    .ebike-cfm-common {
+        margin-bottom: 24px;
+        flex-shrink: 0;
+    }
+
+    .ebike-choose-color-box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ebike-choose-color-left {
+        min-width: 200px;
+    }
+
+    .ebike-choose-ul {
+        width: 100%;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 16px;
+    }
+
+    .ebike-choose-item {
+        width: 32px;
+        height: 32px;
+        margin-right: 40px;
+        display: block;
+    }
+
+    .ebike-choose-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 14px;
+    }
+
+    .ebike-choose-imgdefalut {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    /* mob端的颜色切换 */
+    .ebike-choose-icon {
+        display: none;
+        width: 10px;
+    }
+
+    .ebike-choose-item-checked .ebike-choose-icon {
+        display: inline-block;
+    }
+
+    .ebike-choose-color-right {
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .ebike-choose-quantity {
+        margin-top: 16px;
+        width: 80px;
+        height: 32px;
+        line-height: 32px;
+        background: #FFFFFF;
+        border-radius: 22px 22px 22px 22px;
+        border: 1px solid #121212;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px;
+    }
+
+    .ebike-choose-quantity span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #000000;
+        display: inline-block;
+
+    }
+
+    .ebike-add-quantity,
+    .ebike-add-quantity {
+        cursor: pointer;
+        width: 10px;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .ebike-add-quantity.disabled,
+    .ebike-add-quantity.disabled {
+        cursor: not-allowed;
+        color: rgba(18, 18, 18, 0.4);
+    }
+}
+
+/* @media only screen and (min-width: 770px) and (max-width: 850px) { 
+    .ebike-cfm-select{
+        flex-wrap: wrap;
+    }
+} */
+@media only screen and (max-width: 768px) {
+    .ebike-choose-form-mob {
+        border-top: 1px solid #E6E6E6;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #E6E6E6;
+        width: 100%;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .ebike-cfm-size,
+    .ebike-cfm-size2,
+    .ebike-cfm-size3 {
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .ebike-cfm-size4 span {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.5);
+        line-height: 12px;
+    }
+
+    .ebike-cfm-size {
+        margin-right: 10px;
+    }
+
+    .ebike-cfm-common {
+        flex-shrink: 0;
+    }
+
+    .ebike-cfm-size {
+        width: 150px;
+    }
+
+    .ebike-cfm-size2 {
+        width: 117px;
+    }
+
+    .ebike-cfm-size2 {
+        margin-right: 10px;
+    }
+
+    .ebike-cfm-size3 img {
+        width: 14px;
+        height: auto;
+    }
+
+    .ebike-cfm-size3 {
+        width: 40px;
+    }
+
+    .ebike-size-tool {
+        display: none;
+    }
+
+    .ebike-cfm-frame {
+        height: 40px;
+        line-height: 40px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        border: 1px solid #CCCCCC;
+        padding-left: 10px;
+        position: relative;
+
+    }
+
+    .ebike-cfm-frame .span1 {
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.5);
+        font-size: 12px;
+    }
+
+    .ebike-cfm-frame .span2 {
+        font-size: 12px;
+        font-weight: 500;
+        color: #121212;
+        text-align: right;
+    }
+
+    .ebike-choose-form-mob .span3-img {
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ebike-cfm-frame .span3-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .ebike-cfm-value-1 {
+        width: 150px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .ebike-cfm-value-2 {
+        width: 167px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    .ebike-cfm-value {
+        display: none;
+        height: auto;
+        position: absolute;
+        top: 48px;
+        left: 0px;
+        border-radius: 8px;
+        border: 1px solid #CCCCCC;
+        background-color: #fff;
+    }
+
+    /* .ebike-cfm-common.ebike-cfm-focus {
+        box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.15);
+    } */
+    .ebike-cfm-value .ebike-choose-size-mob,
+    .ebike-cfm-value2 .ebike-choose-size-mob {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.6);
+        height: 32px;
+        /* line-height: 32px; */
+        text-align: left;
+
+    }
+
+    .ebike-cfm-value .ebike-choose-size-mob {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .ebike-cfm-value-2 .ebike-choose-size-mob {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .ebike-cfm-frame,
+    .ebike-choose-size-mob {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .ebike-other-csm .span-option3 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .span-option3 .e-default-icon {
+        display: inline-block;
+    }
+
+    .span-option3 .e-active-icon {
+        display: none;
+    }
+
+    .ebike-other-csm span {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18, 18, 18, 0.6);
+        line-height: 12px;
+        margin-left: 6px;
+    }
+
+    .ebike-choose-size-mob.ecsm-select {
+        font-weight: 800;
+    }
+
+    .ebike-cfm-common {
+        margin-bottom: 24px;
+    }
+
+    .ebike-choose-color-box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ebike-choose-color-left {
+        min-width: 200px;
+    }
+
+    .ebike-choose-ul {
+        width: 100%;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 12px;
+    }
+
+    .ebike-choose-item {
+        width: 24px;
+        height: 24px;
+        margin-right: 34px;
+    }
+
+    .ebike-choose-title {
+        font-size: 12px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 12px;
+    }
+
+    .ebike-choose-imgdefalut {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    /* mob端的颜色切换 */
+    .ebike-choose-icon {
+        display: none;
+        width: 10px;
+    }
+
+    .ebike-choose-item-checked .ebike-choose-icon {
+        display: inline-block;
+    }
+
+    .ebike-choose-color-right {
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .ebike-choose-quantity {
+        margin-top: 12px;
+        width: 80px;
+        height: 24px;
+        line-height: 24px;
+        background: #FFFFFF;
+        border-radius: 22px;
+        border: 1px solid #121212;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px;
+    }
+
+    .ebike-choose-quantity span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #000000;
+        display: inline-block;
+
+    }
+
+    .ebike-add-quantity,
+    .ebike-add-quantity {
+        cursor: pointer;
+        width: 9px;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .ebike-add-quantity.disabled,
+    .ebike-add-quantity.disabled {
+        cursor: not-allowed;
+        color: rgba(18, 18, 18, 0.4);
+    }
+}
+
+.ebike-cfm-common.ebike-cfm-focus .ebike-cfm-value {
+    display: block !important;
+}
+
+.ebike-cfm-common.ebike-cfm-focus .span3-img img {
+    transform-origin: center center;
+    transform: rotate(180deg);
+}
+
+/* .ebike-choose-size-mob.ebike-choose-item-checked */
+.ebike-choose-size-mob:hover,
+.ebike-choose-size-mob.ebike-choose-item-checked {
+    background: rgba(18, 18, 18, 0.08);
+    color: #121212;
+}
+
+.ebike-choose-size-mob:hover span,
+.ebike-choose-size-mob.ebike-choose-item-checked span {
+    color: #121212 !important;
+}
+
+.ebike-choose-size-mob:hover .span-option3 .e-default-icon,
+.ebike-choose-size-mob.ebike-choose-item-checked .span-option3 .e-default-icon {
+    display: none;
+}
+
+.ebike-choose-size-mob:hover .span-option3 .e-active-icon,
+.ebike-choose-size-mob.ebike-choose-item-checked .span-option3 .e-active-icon {
+    display: inline-block;
+}
+
+/* ebike选择框 end*/
+
+/* popup弹窗start */
+.ebike-popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 888;
+    background: rgba(0, 0, 0, .4);
+    display: none;
+}
+
+.ebike-popup-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.ebike-popup-content {
+    width: 300px;
+
+    border-radius: 10px;
+    padding: 0px 10px 10px;
+    background-color: #fff;
+}
+
+.ebike-popup-top {
+    width: 100%;
+    height: 36px;
+    position: relative;
+}
+
+.ebike-popup-close {
+    width: 12px;
+    height: 12px;
+    right: 8px;
+    top: 8px;
+    position: absolute;
+}
+
+.ebike-popup-text {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    color: #121212;
+    line-height: 18px;
+    padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 769px) {
+
+    /* .litboom-product  .ebike-content-width{
+        margin: 0 auto 105px;
+    } */
+    .litboom-product .ebike-choose-form-mob {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-bottom: none;
+    }
+
+    .litboom-product .ebike-choose-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 16px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .litboom-product .ebike-choose-form-mob {
+        padding-bottom: 0px;
+        border-bottom: none;
+    }
+
+    .litboom-product .ebike-choose-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 14px;
+    }
+
+    .litboom-product .ebike-choose-ul {
+        margin-top: 20px;
+    }
+
+    .litboom-product .ebkie-product-title {
+        margin-top: 12px;
+    }
+}
+
+/* dimess and introduce */
+.ebike-dimens-dialog,
+.ab-fbcur-introduce-dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 888;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.ebike-dimens-container,
+.fb-introducetip-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ebike-dimens-close,
+.ab-fbcur-intro-dialog-close {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.ebike-dimens-close svg,
+.ab-fbcur-intro-dialog-close svg {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.ebike-dimens-content,
+.ab-fbcur-intro-dialogcontent {
+    background: #fefefe;
+    position: relative;
+}
+
+.ebike-dimens-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.ebike-dimens-mainimg {
+    position: relative;
+}
+
+.ebike-dimens-mainimg img {
+    width: 100%;
+    /*     height: 100%; */
+    object-fit: fill;
+}
+
+@media only screen and (min-width: 769px) {
+    .ebike-dimens-content {
+        width: 617px;
+        height: 632px;
+        border-radius: 12px;
+    }
+
+    .ebike-dimens-close {
+        width: 15px;
+        height: 15px;
+        right: 25px;
+        top: 25px;
+    }
+
+    .ebike-dimens-box {
+        padding-top: 8px;
+    }
+
+    .ebike-dimens-mainimg {
+        width: 377px;
+        height: 400px;
+    }
+
+    .ebike-dimens-textbox {
+        width: 309px;
+        height: auto;
+        text-align: left;
+    }
+
+    .ebike-dimens-textbox p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ebike-dimens-textbox .textbox-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ebike-dimens-content {
+        width: 327px;
+        height: 472px;
+        border-radius: 12px;
+    }
+
+    .ebike-dimens-close {
+        width: 12px;
+        height: 12px;
+        right: 19px;
+        top: 19px;
+    }
+
+    .ebike-dimens-box {
+        padding-top: 24px;
+        gap: 10px;
+    }
+
+    .ebike-dimens-mainimg {
+        width: 279px;
+        height: 296px;
+    }
+
+    .ebike-dimens-textbox {
+        width: 279px;
+        height: auto;
+        text-align: left;
+    }
+
+    .ebike-dimens-textbox p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ebike-dimens-textbox .textbox-title {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+}
+.ebike-product.Product{
+    margin: 0 auto!important;
+}
+
+/* ebike promotion */
+.ebike-main-promotion{
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+.ebike-pro-box-icon{
+    width: 24px;
+    min-height: 24px;
+    background: #d3f6de;
+    line-height: normal;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px 0px 0px 2px;
+    flex-shrink: 0;
+}
+.ebike-pro-box-icon svg{
+    width: 12px;
+    height: 12px;
+}
+.ebike-main-pro-box{
+    background: #e8faee;
+    border-radius: 0px 2px 2px 0px;
+    display: inline-block;
+    line-height: normal;
+}
+.ebike-main-pro-box p{
+    display: inline-block;
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #00CC45;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 769px) {
+    .ebike-main-pro-box p{
+        margin: 6px 14px 6px 6px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .ebike-main-pro-box p{
+        margin: 6px 14px 6px 8px;
+        line-height: 14px;
+    }
+}
+/* 新增hover */
+.egl-name{
+  position: relative;
+}
+.egl-name-hover{
+  display: none;
+}
+.egl-name:hover .egl-name-hover {
+  display: block;
+}
+.egl-name .egl-img-icon{
+  display: inline!important;
+}
+.egl-name-hover{
+  padding: 12px;
+  background-color: #fff;
+  box-shadow:0px 0px 8px 0px rgba(0,0,0,0.2);
+  color: #121212;
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  width:288px;
+  border-radius: 10px;
+  z-index: 2;
+}
+.egl-name-hover p{
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 769px) {
+  .egl-name-mob-width {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .egl-name .egl-img-icon{
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
+  }
+  .egl-name-hover{
+    top: 20px;
+    left: -50%;
+  }
+  .sgl-hover-title{
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+@media only screen and (min-width: 1120px) {
+  .egl-name-hover{
+    left: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .egl-name-mob-width {
+    width: 102px;
+  }
+  .egl-name .egl-img-icon{
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+  }
+  .sgl-hover-title{
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .egl-name-hover{
+    top: 24px;
+    left: -88px;
+  }
+}
+

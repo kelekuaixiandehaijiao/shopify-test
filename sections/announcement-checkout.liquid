@@ -1,0 +1,526 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+
+{%- if section.settings.enable_bar_checkout -%}
+  {%- unless section.settings.home_page_only_checkout and template != 'index' -%}
+    <section id="section-{{ section.id }}"  class="js-announcementbar-old" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
+      <div class="AnnouncementBar"
+        data-arry="{%for block in section.blocks%}{{ block.settings.announcement_cycle_speed_checkout | times: 1000 }},{% endfor %}"
+      >
+        {% if country_code_var == 'gb' or locale contains 'GB' %}
+            <div class="AnnouncementBar__Wrapper js-announcement-box announcement-content-box">
+              {%- for block in section.blocks -%}
+                {%- if block.settings.show_announcement_gb_img_checkout == true -%}
+                  <a
+                    class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    {% if block.settings.announcement_gb_link_checkout != blank %}
+                    href="{{ block.settings.announcement_gb_link_checkout }}"
+                    {%- else -%}
+                    href="javascript:void(0);"
+                    {% endif %}
+                    data-speed="{{ block.settings.announcement_cycle_gb_speed_checkout }}"
+                    style="color: {{ block.settings.announcement_text_gb_color_checkout }};">
+                    {% assign imgPikerpc = block.settings.announcement_piker_gb_pc_checkout | img_url: '' %}
+                    {% assign imgPikermob = block.settings.announcement_piker_gb_mob_checkout | img_url: '' %}
+                    <div class="utils-mobile-hide2 announcement-block-img">
+                      <img src="{{ imgPikerpc }}" />
+                    </div>
+                    <div class="utils-pc-hide2 announcement-block-img">
+                      <img src="{{ imgPikermob }}" />
+                    </div>
+                  </a>
+                {%- else -%}
+                  {%- assign mobile_gb_text = block.settings.announcement_gb_text_mobile_checkout | default: block.settings.announcement_gb_text_checkout -%}
+                  <a
+                    class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    {% if block.settings.announcement_gb_link_checkout != blank %}
+                    href="{{ block.settings.announcement_gb_link_checkout }}"
+                    {%- else -%}
+                    href="javascript:void(0);"
+                    {% endif %}
+                    data-speed="{{ block.settings.announcement_cycle_gb_speed_checkout }}"
+                    style="color: {{ block.settings.announcement_text_gb_color_checkout }};">
+                    <div class="utils-mobile-hide2">
+                      <object>
+                        {{ block.settings.announcement_gb_text_checkout }}
+                      </object>
+                    </div>
+                    <div class="utils-pc-hide2">
+                      <object>
+                        {{ mobile_gb_text }}
+                      </object>
+                    </div>
+                  </a>
+                  {%- comment -%}
+                  <a
+                  class="Heading announcement-scroll js-announcement-show  announcement-scroll-1"
+                  href="/en-uk/products/lit-bike"
+                  data-speed="5"
+                  style="color: #fff">
+                  <div class="utils-mobile-hide2">
+                  <object>
+                  <p>
+                  {% render 'customer-price-control', type: 'off', product_type: 'litbike_default' %} OFF LITBIKE! | Use code LITSALEUK
+                  </p>
+                  </object>
+                  </div>
+                  <div class="utils-pc-hide2">
+                  <object>
+                  <p>
+                  {% render 'customer-price-control', type: 'off', product_type: 'litbike_default' %} OFF LITBIKE! | Use code LITSALEUK
+                  </p>
+                  </object>
+                  </div>
+                  </a>
+                  <a
+                  class="Heading announcement-scroll js-announcement-show  announcement-scroll-2"
+                  href="/en-uk/products/boom-bike-arctic-white"
+                  data-speed="5"
+                  style="color: #fff">
+                  <div class="utils-mobile-hide2">
+                  <object>
+                  <p>
+                  {% render 'customer-price-control', type: 'off', product_type: 'boombike_default' %} OFF BOOMBIKE! | Use code BOOMSALEUK
+                  </p>
+                  </object>
+                  </div>
+                  <div class="utils-pc-hide2">
+                  <object>
+                  <p>
+                  {% render 'customer-price-control', type: 'off', product_type: 'boombike_default' %} OFF BOOMBIKE! | Use code BOOMSALEUK
+                  </p>
+                  </object>
+                  </div>
+                  </a>
+                  {%- endcomment -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+        {% elsif country_code_var == 'au' or locale contains 'AU' %}
+            <div class="AnnouncementBar__Wrapper js-announcement-box announcement-content-box">
+              {%- for block in section.blocks -%}
+                {%- if block.settings.show_announcement_img_au_checkout == true -%}
+                  <a
+                    class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    {% if block.settings.announcement_link_au_checkout != blank %}
+                      href="{{ block.settings.announcement_link_au_checkout }}"
+                    {%- else -%}
+                      href="javascript:void(0);"
+                    {% endif %}
+                      data-speed="{{ block.settings.announcement_cycle_speed_au_checkout }}"
+                      style="color: {{ block.settings.announcement_text_color_au_checkout }};">
+                      {% assign auImgPikerpc = block.settings.announcement_piker_pc_au_checkout | img_url: '' %}
+                      {% assign auImgPikermob = block.settings.announcement_piker_mob_au_checkout | img_url: '' %}
+                      <div class="utils-mobile-hide2 announcement-block-img">
+                        <img src="{{ auImgPikerpc }}" />
+                      </div>
+                      <div class="utils-pc-hide2 announcement-block-img">
+                        <img src="{{ auImgPikermob }}" />
+                      </div>
+                  </a>
+                {%- else -%}
+                  {%- assign mobile_text_au = block.settings.announcement_text_mobile_au_checkout | default: block.settings.announcement_text_au_checkout -%}
+                  <a class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    {% if block.settings.announcement_link_au_checkout != blank %}
+                        href="{{ block.settings.announcement_link_au_checkout }}"  
+                    {%- else -%}
+                        href="javascript:void(0);" 
+                    {% endif %}
+                    data-speed="{{ block.settings.announcement_cycle_speed_au_checkout }}"
+                    style="color: {{ block.settings.announcement_text_color_au_checkout }};">
+                    <div class="utils-mobile-hide2"> <object> {{ block.settings.announcement_text_au_checkout }} </object></div>
+                    <div class="utils-pc-hide2"><object> {{ mobile_text_au }} </object></div>
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+        {%- else -%}
+            <div class="AnnouncementBar__Wrapper js-announcement-box announcement-content-box">
+                {%- for block in section.blocks -%}
+                  {%- if block.settings.show_announcement_img_checkout == true -%}
+                    <a
+                      class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                      {% if block.settings.announcement_link_checkout != blank %}
+                      href="{{ block.settings.announcement_link_checkout }}"
+                      {%- else -%}
+                      href="javascript:void(0);"
+                      {% endif %}
+                      data-speed="{{ block.settings.announcement_cycle_speed_checkout }}"
+                      style="color: {{ block.settings.announcement_text_color_checkout }};">
+                      {% assign imgPikerpc = block.settings.announcement_piker_pc_checkout | img_url: '' %}
+                      {% assign imgPikermob = block.settings.announcement_piker_mob_checkout | img_url: '' %}
+                      <div class="utils-mobile-hide2 announcement-block-img">
+                        <img src="{{ imgPikerpc }}" />
+                      </div>
+                      <div class="utils-pc-hide2 announcement-block-img">
+                        <img src="{{ imgPikermob }}" />
+                      </div>
+                    </a>
+                  {%- else -%}
+                    {%- assign mobile_text = block.settings.announcement_text_mobile_checkout | default: block.settings.announcement_text_checkout -%}
+                    <a class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                        {% if block.settings.announcement_link_checkout != blank %}
+                            href="{{ block.settings.announcement_link_checkout }}"  
+                        {%- else -%}
+                            href="javascript:void(0);" 
+                        {% endif %}
+                        data-speed="{{ block.settings.announcement_cycle_speed_checkout }}"
+                        style="color: {{ block.settings.announcement_text_color_checkout }};">
+                        <div class="utils-mobile-hide2"> <object> {{ block.settings.announcement_text_checkout }} </object></div>
+                        <div class="utils-pc-hide2"><object> {{ mobile_text }} </object></div>
+                    </a>
+                  {%- endif -%}
+                {%- endfor -%}
+            </div>
+        {% endif %}
+      </div>
+    </section>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        .AnnouncementBar {
+          {% assign image = section.settings.BackgroundImage_p_checkout %}
+          {% if image != blank %}
+            background: url("{{ section.settings.BackgroundImage_p_checkout | image_url }}");
+            background-size: 100% 100%;
+          {% else %}
+            background: #000;
+          {% endif %}
+        }
+        .announcement-block-img {
+          width: 100%;
+          height: 100%;
+        }
+        .announcement-block-img img {
+          width: auto;
+          height: 100%;
+          object-fit: cover;
+        }
+        #shopify-section-announcement{
+            position: sticky;
+            top: 0!important;
+            width: 100%!important;
+            z-index: 10!important;
+        }
+        #section-{{ section.id }} .announcement-content-box{
+            position: relative;
+            text-align: center;
+        }
+        .announcement-scroll p{
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+        }
+        {%- if section.settings.pc_line_checkout == '2' -%}
+            #section-{{ section.id }} .announcement-content-box {
+                height:  80px;
+            }
+            .announcement-scroll p{
+                font-size: 18px;
+                line-height: 22px;
+            }
+        {%- else -%}
+            #section-{{ section.id }} .announcement-content-box {
+                height: 55px;  
+            }
+            .announcement-scroll p{
+                font-size: 18px;
+                line-height: 22px;
+            }
+        {%- endif -%}
+  
+        @media only screen and (max-width: 1023px) {
+          {%- if section.settings.mobile_line_checkout == '2' -%}
+            #section-{{ section.id }} .announcement-content-box {
+              height:  46px;
+            }
+            .announcement-scroll p{
+              font-size: 12px;
+              line-height: 18px;
+            }
+          {%- else -%}
+            #section-{{ section.id }} .announcement-content-box {
+              height: 23px;  
+            }
+            .announcement-scroll p{
+              font-size: 12px;
+              line-height: 15px;
+            }
+          {%- endif -%}
+
+          /* 隐藏mobile */
+          .utils-mobile-hide2{
+            display: none!important;
+          }
+
+          .AnnouncementBar {
+            {% assign image = section.settings.BackgroundImage_m_checkout %}
+            {% if image != blank %}
+              background: url("{{ section.settings.BackgroundImage_m_checkout | image_url }}");
+              background-size: 100% 100%;
+            {% else %}
+              background: #000;
+            {% endif %}
+          }
+        }
+        .announcement-scroll {
+            visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0px;
+            top: 0px;
+        }
+        .announcement-scroll:first-child{
+            visibility: visible;
+        }
+        @media only screen and (min-width: 1024px){
+          /* 隐藏pc */
+          .utils-pc-hide2 {
+            display: none!important;
+          }
+        }
+        @keyframes utilsscrollhide{
+            0% {opacity: 1;}
+            10% {opacity: 0.8;}
+            100% {opacity: 0; }
+        }
+        @keyframes utilsscrollshow{
+            0%{opacity:0; }
+            100%{
+                opacity: 1;
+            }
+        }
+        .utils-scroll-show {
+            animation: utilsscrollshow 1s 1;
+            visibility: visible!important; 
+        }
+        .utils-scroll-hide {
+            animation: utilsscrollhide 1s 1;  
+            visibility: hidden!important;
+        }
+       .announcement-content-box  object p a {
+            text-decoration: underline;
+            color: #fff;
+        }
+    </style>
+
+    <script>
+      document.documentElement.style.setProperty('--announcement-bar-height', document.getElementById('shopify-section-announcement-checkout').offsetHeight + 'px');
+    </script>
+  {%- endunless -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar checkout",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar_checkout",
+      "label": "Enable bar checkout",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only_checkout",
+      "label": "Home page only checkout",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "BackgroundImage_m_checkout",
+      "label": "Background Mobild Image checkout"
+    },
+    {
+      "type": "image_picker",
+      "id": "BackgroundImage_p_checkout",
+      "label": "Background Computer Image checkout"
+    },
+    {
+      "type": "select",
+      "id": "pc_line_checkout",
+      "label": "Select Pc rows checkout",
+      "options": [
+        {
+          "value": "1",
+          "label": "One rows"
+        },
+        {
+          "value": "2",
+          "label": "Two rows"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "mobile_line_checkout",
+      "label": "Select Mobile rows checkout",
+      "options": [
+        {
+          "value": "1",
+          "label": "One"
+        },
+        {
+          "value": "2",
+          "label": "Two"
+        }
+      ],
+      "default": "2"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+      {
+        "type": "scrollBar",
+        "name": "scrollBar checkout",
+        "settings": [
+            {
+              "type": "checkbox",
+              "id": "show_announcement_img_checkout",
+              "label": "Show Img checkout",
+              "default": false,
+              "info": "If this option is enabled, only the configured images will be displayed, and the configuration text will be invalidated"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_pc_checkout",
+              "label": "Image pc checkout"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_mob_checkout",
+              "label": "Image mob checkout",
+              "info": "One row of images is 23px high, and two rows of images are 46px high"
+            },
+            {
+                "type": "color",
+                "id": "announcement_text_color_checkout",
+                "label": "Text Color checkout",
+                "default": "#ffffff"
+            },
+            {
+                "type": "url",
+                "id": "announcement_link_checkout",
+                "label": "Link checkout"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text_checkout",
+                "label": "Pc text checkout"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text_mobile_checkout",
+                "label": "Mobile text checkout"
+            },
+            {
+                "type": "range",
+                "id": "announcement_cycle_speed_checkout",
+                "min": 2,
+                "max": 20,
+                "step": 1,
+                "unit": "sec",
+                "label": "Change slides every checkout(unit: s)",
+                "default": 5
+            },
+            {
+              "type": "checkbox",
+              "id": "show_announcement_gb_img_checkout",
+              "label": "Show Img gb checkout",
+              "default": false,
+              "info": "If this option is enabled, only the configured images will be displayed, and the configuration text will be invalidated"
+            }, {
+              "type": "image_picker",
+              "id": "announcement_piker_gb_pc_checkout",
+              "label": "Image pc gb checkout"
+            }, {
+              "type": "image_picker",
+              "id": "announcement_piker_gb_mob_checkout",
+              "label": "Image mob gb checkout",
+              "info": "One row of images is 23px high, and two rows of images are 46px high"
+            }, {
+              "type": "color",
+              "id": "announcement_text_gb_color_checkout",
+              "label": "Text Color gb checkout",
+              "default": "#ffffff"
+            }, {
+              "type": "url",
+              "id": "announcement_gb_link_checkout",
+              "label": "Link gb checkout"
+            }, {
+              "type": "richtext",
+              "id": "announcement_gb_text_checkout",
+              "label": "Pc text gb checkout"
+            }, {
+              "type": "richtext",
+              "id": "announcement_gb_text_mobile_checkout",
+              "label": "Mobile text gb checkout"
+            }, {
+              "type": "range",
+              "id": "announcement_cycle_gb_speed_checkout",
+              "min": 2,
+              "max": 20,
+              "step": 1,
+              "unit": "sec",
+              "label": "Change slides every checkout(unit: s)",
+              "default": 5
+            },
+            {
+              "type": "checkbox",
+              "id": "show_announcement_img_au_checkout",
+              "label": "Show Img AU checkout",
+              "default": false,
+              "info": "If this option is enabled, only the configured images will be displayed, and the configuration text will be invalidated"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_pc_au_checkout",
+              "label": "Image pc AU checkout"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_mob_au_checkout",
+              "label": "Image mob AU checkout",
+              "info": "One row of images is 23px high, and two rows of images are 46px high"
+            },
+            {
+              "type": "color",
+              "id": "announcement_text_color_au_checkout",
+              "label": "Text Color AU checkout",
+              "default": "#ffffff"
+            },
+            {
+              "type": "url",
+              "id": "announcement_link_au_checkout",
+              "label": "Link AU checkout"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text_au_checkout",
+                "label": "Pc text AU checkout"
+            },
+            {
+              "type": "richtext",
+              "id": "announcement_text_mobile_au_checkout",
+              "label": "Mobile text AU checkout"
+            },
+            {
+              "type": "range",
+              "id": "announcement_cycle_speed_au_checkout",
+              "min": 2,
+              "max": 20,
+              "step": 1,
+              "unit": "sec",
+              "label": "Change slides every checkout(unit: s)",
+              "default": 5
+            }
+        ]
+      }
+  ]
+}
+{% endschema %}

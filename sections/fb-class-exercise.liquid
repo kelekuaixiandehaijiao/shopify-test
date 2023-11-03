@@ -1,0 +1,266 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-class-exercise-type">
+    <div class="exercise-type-title">{{ section.settings.fb_class_exercise_title }}</div>
+    <div class="exercise-type-wrapper">
+      <div class="exercise-type-item">
+        <div class="exercise-type-image">
+          {% assign image1 = section.settings.fb_class_exercise_img1 | img_url: '' %}  
+          <img  src="{{ image1 }}" />
+        </div>
+        <div class="exercise-item-title" style="width:187px;">{{ section.settings.fb_class_exercise_content1 }}</div>
+        <div class="exercise-type-info">{{ section.settings.fb_class_exercise_info1 }}</div>
+      </div>
+      <div class="exercise-type-item">
+        <div class="exercise-type-image">
+          {% assign image2 = section.settings.fb_class_exercise_img2 | img_url: '' %}  
+          <img  src="{{ image2 }}" />
+        </div>
+        <div class="exercise-item-title">{{ section.settings.fb_class_exercise_content2 }}</div>
+        <div class="exercise-type-info">{{ section.settings.fb_class_exercise_info2 }}</div>
+      </div>
+      <div class="exercise-type-item">
+        <div class="exercise-type-image">
+          {% assign image3 = section.settings.fb_class_exercise_img3 | img_url: '' %}  
+          <img  src="{{ image3 }}" />
+        </div>
+        <div class="exercise-item-title">{{ section.settings.fb_class_exercise_content3 }}</div>
+        <div class="exercise-type-info">{{ section.settings.fb_class_exercise_info3 }}</div>
+      </div>
+      <div class="exercise-type-item">
+        <div class="exercise-type-image">
+          {% assign image4 = section.settings.fb_class_exercise_img4 | img_url: '' %}  
+          <img  src="{{ image4 }}" />
+        </div>
+        <div class="exercise-item-title">{{ section.settings.fb_class_exercise_content4 }}</div>
+        <div class="exercise-type-info">{{ section.settings.fb_class_exercise_info4 }}</div>
+      </div>
+      <div class="exercise-type-item-teshu"></div>
+    </div>
+  </div>
+</section>
+<style>
+  #section-{{ section.id }}{
+    width:100%;
+    height: 100%;
+    {% comment %} height: 556px; {% endcomment %}
+    background: #F5F5F5;
+    display:flex;
+    justify-content:center;
+  }
+  .fb-class-exercise-type{
+    width:1200px;
+    height: 100%;
+    {% comment %} height:500px; {% endcomment %}
+  }
+  .exercise-type-title{
+    font-size: 36px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #000000;
+    line-height: 36px;
+    margin-top:100px;
+    text-align:center;
+  }
+  .exercise-type-wrapper{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    margin-top:60px;
+    margin-bottom:100px;
+  }
+  .exercise-type-item{
+    width:285px;
+    height:280px;
+    background: #FFFFFF;
+    border-radius:14px;
+    padding-left:20px;
+  }
+  .exercise-type-item-teshu{
+    display:none
+  }
+  .exercise-type-image{
+    width:34px;
+    height:28px;
+    margin-top:30px;
+  }
+  .exercise-type-image img{
+    width:100%;
+    height:100%;
+  }
+  .exercise-item-title{
+    font-size: 18px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #000000;
+    line-height: 24px;
+    margin-top:11px;
+  }
+  .exercise-type-info{
+    margin-top:14px;
+    width: 238px;
+    font-size: 14px;
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    color: #000000;
+    line-height: 20px;
+  }
+  
+  @media screen and (max-width: 768px){
+    ::-webkit-scrollbar {
+      display: none; 
+    }
+    #section-{{ section.id }}{
+      width:100%;
+      height: 100%;
+      background: #F5F5F5;
+      display:flex;
+      justify-content:center;
+    }
+    .fb-class-exercise-type{
+      width:100%;
+      height:100%;
+    }
+    .exercise-type-title{
+      width: 295px;
+      font-size: 28px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #000000;
+      line-height: 32px;
+      margin:0 auto;
+      margin-top:60px;
+      text-align:center; 
+    }
+    .exercise-type-wrapper{
+      {% comment %} width:100%; {% endcomment %}
+      display:flex;
+      justify-content:flex-start;
+      margin-top:30px;
+      margin-bottom:60px;
+      overflow-x:auto;
+      padding:0 25px 0 0px;
+      box-sizing:border-box;
+      {% comment %} padding-left:15px;
+      padding-right:15px; {% endcomment %}
+    }
+    .exercise-type-item{
+      width:300px;
+      height:280px;
+      background: #FFFFFF;
+      border-radius:14px;
+      margin-left:20px;
+      {% comment %} margin-right:20px; {% endcomment %}
+      flex-shrink:0;
+    }
+    .exercise-type-item-teshu{
+      display:block;
+      padding-left:15px;
+    }
+    .exercise-type-image{
+      width:34px;
+      height:28px;
+      margin-top:30px;
+    }
+    .exercise-type-image img{
+      width:100%;
+      height:100%;
+    }
+    .exercise-item-title{
+      width: 187px;
+      font-size: 18px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #000000;
+      line-height: 24px;
+      margin-top:14px;
+    }
+    .exercise-type-info{
+      margin-top:14px;
+      width: 238px;
+      font-size: 14px;
+      font-family: Montserrat-Regular, Montserrat;
+      font-weight: 400;
+      color: #000000;
+      line-height: 20px;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbClassesExercise",
+    "presets": [
+      {
+        "name": "fb-classes-exercise",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "fb_class_exercise_title",
+        "label": "Exercise title"
+      },
+      {
+        "type": "image_picker",
+        "id": "fb_class_exercise_img1",
+        "label": "Exercise img1"
+      },
+      {
+        "type": "text",
+        "id": "fb_class_exercise_content1",
+        "label": "Exercise Content1"
+      },  
+      {
+        "type": "richtext",
+        "id": "fb_class_exercise_info1",
+        "label": "Exercise Info1"
+      },
+      {
+        "type": "image_picker",
+        "id": "fb_class_exercise_img2",
+        "label": "Exercise img2"
+      },
+      {
+        "type": "text",
+        "id": "fb_class_exercise_content2",
+        "label": "Exercise Content2"
+      },  
+      {
+        "type": "richtext",
+        "id": "fb_class_exercise_info2",
+        "label": "Exercise Info2"
+      },
+      {
+        "type": "image_picker",
+        "id": "fb_class_exercise_img3",
+        "label": "Exercise img3"
+      },
+      {
+        "type": "text",
+        "id": "fb_class_exercise_content3",
+        "label": "Exercise Content3"
+      },  
+      {
+        "type": "richtext",
+        "id": "fb_class_exercise_info3",
+        "label": "Exercise Info3"
+      },
+      {
+        "type": "image_picker",
+        "id": "fb_class_exercise_img4",
+        "label": "Exercise img4"
+      },
+      {
+        "type": "text",
+        "id": "fb_class_exercise_content4",
+        "label": "Exercise Content4"
+      },  
+      {
+        "type": "richtext",
+        "id": "fb_class_exercise_info4",
+        "label": "Exercise Info4"
+      }
+    ]
+  }
+{% endschema %}

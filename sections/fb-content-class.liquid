@@ -1,0 +1,314 @@
+<section id="section-{{ section.id }}">
+  <div class="class-take-online">
+    <div class="take-online-content">
+      <div class="online-content-name"><h2>{{ section.settings.fb_online_name }}</h2></div>
+      <div class="online-content-para">{{ section.settings.fb_online_para }}</div>
+      <div class="online-content-para para-teshu">{{ section.settings.fb_online_para1 }}</div>
+      <div class="online-content-link more-link">{{ section.settings.fb_online_link1 }}</div>
+      <div class="online-content-main">
+        <div class="main-item">
+          <div class="item-title">{{ section.settings.fb_online_title1 }}</div>
+          <div class="item-desc">{{ section.settings.fb_online_desc1 }}</div>
+        </div>
+        <div class="main-item">
+          <div class="item-title">{{ section.settings.fb_online_title2 }}</div>
+          <div class="item-desc">{{ section.settings.fb_online_desc2 }}</div>
+        </div>
+        <div class="main-item">
+          <div class="item-title">{{ section.settings.fb_online_title3 }}</div>
+          <div class="item-desc">{{ section.settings.fb_online_desc3 }}</div>
+          <div class="item-desc item-desc-teshu">{{ section.settings.fb_online_desc4 }}</div>
+          <div class="item-desc item-desc-teshu">{{ section.settings.fb_online_desc5 }}</div>
+        </div>
+      </div>
+      <div class="online-content-link close-link">{{ section.settings.fb_online_link2 }}</div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  $('.more-link').click(function(){
+    $('.online-content-main').css('display','block')
+    $('.close-link').css('display','block')
+    $('.more-link').css('display','none')
+  })
+  $('.close-link').click(function(){
+    $('.online-content-main').css('display','none')
+    $('.close-link').css('display','none')
+    $('.more-link').css('display','block')
+  })
+</script>
+<style>
+  .class-take-online {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    {%- if section.settings.text_position == 'center' -%}
+      background: #F7F7F7;
+    {%- elsif section.settings.text_position == 'left' -%}
+      background: #FFFFFF;
+    {%- endif -%}
+
+  }
+  .take-online-content {
+    {%- if section.settings.text_position == 'center' -%}
+      width: 1200px;
+    {%- elsif section.settings.text_position == 'left' -%}
+      width: 1280px;
+      border-top: 1px solid rgba(0, 0, 0, 0.15);
+    {%- endif -%}
+
+    padding: 80px 0;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1339px) {
+    .take-online-content {
+        width: 98%;
+      } 
+    }
+  .online-content-name {
+    {%- if section.settings.text_position == 'center' -%}
+      width: 800px;
+    {%- elsif section.settings.text_position == 'left' -%}
+      width: 640px;
+    {%- endif -%}
+
+    font-size: 36px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 44px;
+  }
+  .online-content-para {
+    {%- if section.settings.text_position == 'center' -%}
+      width: 100%;
+    {%- elsif section.settings.text_position == 'left' -%}
+      width: 100%;
+    {%- endif -%}
+    font-size: 16px;
+    font-weight: 400;
+    color: #121212;
+    line-height: 24px;
+    margin-top: 40px;
+  }
+  .para-teshu {
+    margin-top: 12px;
+  }
+  .online-content-link {
+    width: 112px;
+    height: 20px;
+    font-size: 16px;
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    color: #02C0D9;
+    line-height: 24px;
+    margin-top: 20px;
+    border-bottom: 1px solid #02C0D9;
+    cursor: pointer;
+  }
+  .close-link {
+    display: none;
+    width: 88px;
+  }
+  .online-content-main {
+    display: none;
+  }
+  .online-content-main .item-title {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 32px;
+  }
+  .online-content-main .item-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #121212;
+    line-height: 24px;
+    margin-top: 20px;
+    {%- if section.settings.text_position == 'center' -%}
+      width: 1200px;
+    {%- elsif section.settings.text_position == 'left' -%}
+      width: 1280px;
+    {%- endif -%}
+  }
+  .main-item .item-desc-teshu {
+    margin-top: 12px;
+  }
+  @media(max-width: 768px) {
+    .class-take-online {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .take-online-content {
+      {%- if section.settings.text_position == 'center' -%}
+        width: 327px;
+      {%- elsif section.settings.text_position == 'left' -%}
+        width: 345px;
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+      {%- endif -%}
+      padding: 40px 0;
+    }
+    .online-content-name {
+      {%- if section.settings.text_position == 'center' -%}
+       width: 300px;
+       font-size: 16px;
+       line-height: 24px;
+      {%- elsif section.settings.text_position == 'left' -%}
+        width: 280px;
+        font-size: 20px;
+        line-height: 28px;
+      {%- endif -%}
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #333333;
+      
+      margin: 0 auto;
+      text-align: center;
+    }
+    .online-content-para {
+      {%- if section.settings.text_position == 'center' -%}
+        width: 327px;
+      {%- elsif section.settings.text_position == 'left' -%}
+        width: 345px;
+      {%- endif -%}
+      font-size: 12px;
+      font-family: Montserrat-Regular, Montserrat;
+      font-weight: 400;
+      color: #121212;
+      line-height: 18px;
+      margin-top: 24px;
+    }
+    .para-teshu {
+      margin-top: 8px;
+    }
+    .online-content-link {
+      width: 84px;
+      height: 15px;
+      font-size: 12px;
+      font-family: Montserrat-Regular, Montserrat;
+      font-weight: 400;
+      color: #02C0D9;
+      line-height: 18px;
+      margin-top: 12px;
+      border-bottom: 1px solid #02C0D9;
+      cursor: pointer;
+    }
+    .close-link {
+      display: none;
+      width: 66px;
+    }
+    .online-content-main .item-title {
+      margin-top: 24px;
+      font-size: 14px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #333333;
+      line-height: 20px;
+      {%- if section.settings.text_position == 'center' -%}
+        text-align: center;
+      {%- elsif section.settings.text_position == 'left' -%}
+        text-align: left;
+      {%- endif -%}
+
+    }
+    .online-content-main .item-desc {
+      font-size: 12px;
+      font-family: Montserrat-Regular, Montserrat;
+      font-weight: 400;
+      color: #121212;
+      line-height: 18px;
+      margin-top: 12px;
+      {%- if section.settings.text_position == 'center' -%}
+        width: 327px;
+      {%- elsif section.settings.text_position == 'left' -%}
+        width: 345px;
+      {%- endif -%}
+    }
+    .main-item .item-desc-teshu {
+      margin-top: 8px;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbContentClass",
+    "presets": [
+      {
+        "name": "fb-content-class",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "Text position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "text",
+        "id": "fb_online_name",
+        "label": "Online name"
+      },
+      {
+        "type": "text",
+        "id": "fb_online_para",
+        "label": "Online Para"
+      },
+      {
+        "type": "text",
+        "id": "fb_online_para1",
+        "label": "Online Para1"
+      }, {
+        "type": "text",
+        "id": "fb_online_title1",
+        "label": "Title1"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc1",
+        "label": "Desc1"
+      }, {
+        "type": "text",
+        "id": "fb_online_title2",
+        "label": "Title2"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc2",
+        "label": "Desc2"
+      }, {
+        "type": "text",
+        "id": "fb_online_title3",
+        "label": "Title3"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc3",
+        "label": "Desc3"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc4",
+        "label": "Desc4"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc5",
+        "label": "Desc5"
+      }, {
+        "type": "text",
+        "id": "fb_online_link1",
+        "label": "Link1"
+      }, {
+        "type": "text",
+        "id": "fb_online_link2",
+        "label": "Link2"
+      }
+    ]
+  }
+{% endschema %}

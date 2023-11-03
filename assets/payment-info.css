@@ -1,0 +1,266 @@
+/* payment-content 开始 */
+@media screen and (min-width: 641px){
+    .payment-box{
+      max-width: 1000px;
+      margin: auto;
+    }
+    .payment-title{
+      font-size: 36px;
+      font-weight: bold;
+      color: #000;
+      line-height: 36px;
+      text-align: center;
+      padding-bottom: 48px;
+      padding-top: 80px;
+    }
+    .payment-desc{
+      font-size: 18px;
+      font-weight: 500;
+      color: #000;
+      line-height: 18px;
+      text-align: center;
+      padding-bottom: 40px;
+    }
+    .payment-prompt{
+      /* height: 66px; */
+      background: rgba(255, 128, 0, 0.1);
+      font-size: 18px;
+      font-weight: 500;
+      color: #FF8000;
+      line-height: 66px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .payment-table{
+      width: 100%;
+      border-bottom: 1px solid #808080;
+    }
+    .payment-table th{
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      line-height: 18px;
+      text-align: left;
+      padding-bottom: 20px;
+    }
+    .payment-footer{
+      padding-top: 30px;
+      overflow: hidden;
+    }
+    .payment-account{
+      font-size: 18px;
+      font-weight: 500;
+      color: #666;
+      line-height: 18px;
+      float: left;
+    }
+    .payment-footer .subscribe{
+      float: right;
+      margin-top: 0!important;
+      overflow: hidden;
+      display: flex;
+    }
+    .payment-footer .subscribe button{
+      width: auto;
+    }
+    .payment-footer .Button--primary{
+        font-size: 18px!important;
+        font-weight: 600!important;
+        color: #000;
+        line-height: 18px;
+        text-decoration: underline;
+        letter-spacing: 0!important;
+    }
+    .payment-footer .Button--primary::before{
+      background:none;
+    }
+   .footer-url{
+      font-size: 18px;
+      font-weight: 500;
+      color: #666666;
+      line-height: 18px;
+    }
+    .footer-url2{
+      font-size: 18px;
+      font-weight: 500;
+      color: #666666;
+      line-height: 18px;
+      padding-top: 30px;
+      position: relative;
+    }
+    /* .footer-url2 .Link--underline{
+        font-size: 18px!important;
+        color: #000;
+        line-height: 18px;
+        text-decoration: underline;
+        position: absolute;
+        top: 30px;
+        left: 370px;
+        overflow: hidden;
+    } */
+    .payment-footer .Form__Submit{
+      margin-top: 0;
+      border: none;
+      text-transform: none;
+      padding: 0;
+    }
+    .payment-footer .Link--underline{
+      display: none;
+    }
+    .ship-centent .logout-btn {
+      width: 322px;
+      height: 50px;
+      z-index: 1;
+      margin: auto;
+      margin-top: 80px;
+      margin-bottom: 80px;
+      border: 1px solid #000;
+      font-size: 18px!important;
+      font-weight: 600!important;
+      color: #000!important;
+      letter-spacing: 0!important;
+      padding: 0!important;
+    }
+    .ship-centent .logout-btn::before{
+      background: none;
+    }
+    .ship-centent{
+      padding: 0!important;
+    }
+    .ship-centent .title{
+      padding-top: 80px!important;
+    }
+    .shopify-section--bordered > .Section--spacingNormal{
+      padding: 0!important;
+    }
+  }
+@media screen and (max-width: 640px){
+  .payment-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    line-height: 18px;
+    text-align: center;
+    padding-bottom: 32px;
+   padding-top: 60px;
+  }
+  .payment-desc{
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    line-height: 18px;
+    text-align: center;
+    padding-bottom: 24px;
+  }
+  .payment-prompt{
+    height: 60px;
+    background: rgba(255, 128, 0, 0.1);
+    font-size: 12px;
+    font-weight: 500;
+    color: #FF8000;
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 12px 20px;
+  }
+  .payment-table{
+    width: 100%;
+    border-bottom: 1px solid #808080;
+  }
+  .payment-table th{
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    line-height: 12px;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .payment-footer{
+    padding-top: 16px;
+    overflow: hidden;
+  }
+  .payment-account{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    line-height: 12px;
+    float: left;
+  }
+  .payment-footer .subscribe{
+    float: right;
+    margin-top: 0!important;
+    overflow: hidden;
+    display: flex;
+  }
+  .payment-footer .subscribe button{
+    width: auto;
+  }
+  .footer-url{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 18px;
+  }
+  .footer-url2{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 18px;
+    padding-top: 16px;
+    position: relative;
+  }
+  .payment-footer .Button--primary{
+    font-size: 12px!important;
+    font-weight: 600!important;
+    color: #000;
+    line-height: 12px;
+    text-decoration: underline;
+    letter-spacing: 0!important;
+  }
+  .payment-footer .Button--primary::before{
+    background:none;
+  }
+  /* .footer-url2 .Link--underline{
+    font-size: 12px!important;
+    color: #000;
+    line-height: 12px;
+    text-decoration: underline;
+    position: absolute;
+    top: 19px;
+    left: 246px;
+    overflow: hidden;
+  } */
+  .payment-footer .Form__Submit{
+    margin-top: 0;
+    border: none;
+    text-transform: none;
+    padding: 0;
+  }
+  .payment-footer .Link--underline{
+    display: none;
+  }
+  .ship-centent .logout-btn {
+    width: 182px!important;
+    height: 38px;
+    z-index: 1;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: 1px solid #000;
+    font-size: 12px!important;
+    font-weight: 600!important;
+    color: #000!important;
+    letter-spacing: 0!important;
+    padding: 0!important;
+  }
+  .ship-centent .logout-btn::before{
+    background: none;
+  }
+  .ship-centent{
+    padding: 0!important;
+  }
+  .shopify-section--bordered > .Section--spacingNormal{
+    padding: 0!important;
+  }
+}
+/* payment-content 结束 */
+  

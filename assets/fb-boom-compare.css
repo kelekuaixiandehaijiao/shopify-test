@@ -1,0 +1,774 @@
+/* boom bike车 */
+@media only screen and (min-width: 821px){
+    .boom_bike_mobile{
+        display: none;
+    }
+    .peloton_bike_mobile{
+        display: none;
+    }
+    .compact_design_mobile{
+        display: none!important;
+    }
+    .fb-boom-compare{
+        width: 100%;
+        background: #fff;
+        margin-bottom: 118px;
+    }
+    .boom_compare_title{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 40px;
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    .fb-boom-compare-con{
+        max-width: 760px;
+        margin: auto;
+    }
+    .boom_compare_content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .boom_compare_left{
+        width: 280px;
+    } 
+    .boom_compare_left_bike{
+        padding-top: 48px;
+    }
+    .boom_compare_left_bike img{
+        width: 140px;
+        display: block;
+        margin: auto;
+    }
+    .boom_compare_left_bike .bike_title{
+        font-size: 36px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 36px;
+        padding-top: 16px;
+        text-align: center;
+    }
+    .boom_compare_left_bike .bike_desc{
+        font-size: 16px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 20px;
+        padding-top: 12px;
+        text-align: center;
+    }
+    .boom_compare_con{
+        padding-bottom: 60px;
+        text-align: center;
+    }
+    .boom_compare_con img{
+        width: 56px;
+    }
+    .boom_compare_con .text{
+        font-size: 28px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 28px;
+    }
+    .boom_compare_con .desc{
+        font-size: 16px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #121212;
+        line-height: 20px;
+    }
+    .boom_compare_left_1,
+    .boom_compare_left_2,
+    .boom_compare_left_3,
+    .boom_compare_left_4,
+    .boom_compare_left_5,
+    .boom_compare_left_6,
+    .boom_compare_left_7{
+        padding-top: 48px;
+    }
+   
+    .boom_compare_left_2 .desc,
+    .boom_compare_left_3 .desc,
+    .boom_compare_left_4 .desc,
+    .boom_compare_left_5 .desc,
+    .boom_compare_left_6 .desc,
+    .boom_compare_left_7 .desc
+    {
+        padding-top: 12px;
+    }
+    .boom_compare_con .text{
+        padding-top: 12px;
+    }
+    .boom_compare_con .price_discount{
+        font-size: 16px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 20px;
+        padding-top: 8px;
+        text-decoration: line-through;
+    }
+    .boom_compare_right{
+        width: 280px;
+    }
+    .boom_compare_right_bike .bike_title{
+        font-size: 36px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 36px;
+        padding-top: 88px;
+        text-align: center;
+    }
+    .boom_compare_right_1{
+        padding-top: 80px;
+    }
+    .boom_compare_right_1 .text{
+        padding-top: 12px;
+    }
+    .boom_compare_right_2,
+    .boom_compare_right_3,
+    .boom_compare_right_7
+    {
+        width: 30px;
+        height: 3px;
+        background: #121212;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .boom_compare_right_2{
+       margin: 119px auto 0;
+    }
+    .boom_compare_right_3{
+        margin: 133px auto 0;
+    }
+    .boom_compare_right_4{
+        padding-top: 90px;
+    }
+    .boom_compare_right_5,
+    .boom_compare_right_6
+    {
+        padding-top: 48px;
+    }
+    .boom_compare_right_7{
+       margin: 71px auto 0;
+    }
+    .boom_compare_right_4 .desc,
+    .boom_compare_right_5 .desc,
+    .boom_compare_right_6 .desc
+    {
+        padding-top: 12px;
+    }
+    .boom_compare_button{
+        width:140px;
+        margin: auto;
+        font-size: 16px;
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+        color: #121212;
+        line-height: 16px;
+        text-decoration:underline;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .boom_compare_button span{
+        text-align: center;
+        display: block;
+    }  
+}
+@media only screen and (max-width: 820px){
+    .boom_bike_pc{
+        display: none;
+    }
+    .peloton_bike_pc{
+        display: none;
+    }
+    .compact_design_pc{
+        display: none!important;
+    }
+    .fb-boom-compare{
+        width: 100%;
+        background: #fff;
+        margin-bottom: 40px;
+    }
+    .boom_compare_title{
+        width: 275px;
+        margin: auto;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 32px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .fb-boom-compare-con{
+        padding: 0 15px;
+        margin: auto;
+    }
+    .boom_compare_content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .boom_compare_left{
+        width: 165px;
+    } 
+    .boom_compare_left_bike{
+        padding-top: 32px;
+    }
+    .boom_compare_left_bike img{
+        width: 118px;
+        display: block;
+        margin: auto;
+    }
+    .boom_compare_left_bike .bike_title{
+        font-size: 24px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 24px;
+        padding-top: 12px;
+        text-align: center;
+    }
+    .boom_compare_left_bike .bike_desc{
+        font-size: 12px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 16px;
+        padding-top: 8px;
+        text-align: center;
+        width: 103px;
+        margin: auto;
+    }
+    .boom_compare_con{
+        padding-bottom: 32px;
+        text-align: center;
+    }
+    .boom_compare_con img{
+        width: 48px;
+    }
+    .boom_compare_con .desc{
+        font-size: 12px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #121212;
+        line-height: 16px;
+    }
+    .boom_compare_con .text{
+        font-size: 20px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 20px;
+    }
+    .boom_compare_con .price_discount{
+        font-size: 12px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 16px;
+        padding-top: 4px;
+        text-decoration: line-through;
+    }
+    .boom_compare_left_1,
+    .boom_compare_left_2,
+    .boom_compare_left_3,
+    .boom_compare_left_4,
+    .boom_compare_left_5,
+    .boom_compare_left_6,
+    .boom_compare_left_7{
+        padding-top: 32px;
+    }
+    .boom_compare_left_2 .desc,
+    .boom_compare_left_3 .desc,
+    .boom_compare_left_4 .desc,
+    .boom_compare_left_5 .desc,
+    .boom_compare_left_6 .desc,
+    .boom_compare_left_7 .desc
+    {
+        padding-top: 8px;
+    }
+    .boom_compare_left_1 .text{
+        padding-top: 8px;
+    }
+    .boom_compare_left_1 .tprice_discountext{
+        padding-top: 4px;
+    }
+    .boom_compare_left_2 .desc{
+        width: 65px;
+        margin: auto;
+    }
+    .boom_compare_left_6 .desc{
+        width: 97px;
+        margin: auto;
+    }
+    .boom_compare_left_7 .desc{
+        width: 82px;
+        margin: auto;
+    }
+    .boom_compare_right{
+        width: 165px;
+    }
+    .boom_compare_right_bike .bike_title{
+        font-size: 24px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 28px;
+        padding-top: 60px;
+        text-align: center;
+    }
+    .boom_compare_right_1{
+        padding-top: 70px;
+    }
+    .boom_compare_right_1 .text{
+        padding-top: 8px;
+    }
+    .boom_compare_right_2,
+    .boom_compare_right_3,
+    .boom_compare_right_7
+    {
+        width: 30px;
+        height: 3px;
+        background: #121212;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .boom_compare_right_2{
+       margin: 95px auto 0;
+    }
+    .boom_compare_right_3{
+        margin: 108px auto 0;
+    }
+    .boom_compare_right_4{
+        padding-top: 67px;
+    }
+    .boom_compare_right_5,
+    .boom_compare_right_6
+    {
+        padding-top: 32px;
+    }
+    .boom_compare_right_7{
+       margin: 75px auto 0;
+    }
+    .boom_compare_right_4 .desc,
+    .boom_compare_right_5 .desc,
+    .boom_compare_right_6 .desc
+    {
+        padding-top: 8px;
+    }
+    .boom_compare_right_6 .desc{
+        width: 144px;
+        margin: auto;
+    }
+    .boom_compare_button{
+        width:105px;
+        margin: auto;
+        font-size: 12px;
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+        color: #121212;
+        line-height: 12px;
+        text-decoration:underline;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .boom_compare_button span{
+        text-align: center;
+        display: block;
+    }  
+}
+/* lit bike车 */
+@media only screen and (min-width: 821px){
+    .lit_bike_mobile{
+        display: none;
+    }
+    .peloton_bike_mobile{
+        display: none;
+    }
+    .swiss_design_mobile{
+        display: none!important;
+    }
+    .fb-lit-compare{
+        width: 100%;
+        background: #fff;
+        margin-bottom: 118px;
+    }
+    .lit_compare_title{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 40px;
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    .fb-lit-compare-con{
+        max-width: 760px;
+        margin: auto;
+    }
+    .lit_compare_content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .lit_compare_left{
+        width: 280px;
+    } 
+    .lit_compare_left_bike{
+        padding-top: 48px;
+    }
+    .lit_compare_left_bike img{
+        width: 116px;
+        display: block;
+        margin: auto;
+    }
+    .lit_compare_left_bike .bike_title{
+        font-size: 36px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 36px;
+        padding-top: 16px;
+        text-align: center;
+    }
+    .lit_compare_left_bike .bike_desc{
+        font-size: 16px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 20px;
+        padding-top: 12px;
+        text-align: center;
+    }
+    .lit_compare_con{
+        padding-bottom: 60px;
+        text-align: center;
+    }
+    .lit_compare_con img{
+        width: 56px;
+    }
+    .lit_compare_con .text{
+        font-size: 28px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 28px;
+    }
+    .lit_compare_con .desc{
+        font-size: 16px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #121212;
+        line-height: 20px;
+    }
+    .lit_compare_left_1,
+    .lit_compare_left_2,
+    .lit_compare_left_3,
+    .lit_compare_left_4,
+    .lit_compare_left_5,
+    .lit_compare_left_6,
+    .lit_compare_left_7{
+        padding-top: 48px;
+    }
+   
+    .lit_compare_left_2 .desc,
+    .lit_compare_left_3 .desc,
+    .lit_compare_left_4 .desc,
+    .lit_compare_left_5 .desc,
+    .lit_compare_left_6 .desc,
+    .lit_compare_left_7 .desc
+    {
+        padding-top: 12px;
+    }
+    .lit_compare_con .text{
+        padding-top: 12px;
+    }
+    .lit_compare_con .price_discount{
+        font-size: 16px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 20px;
+        padding-top: 8px;
+        text-decoration: line-through;
+    }
+    .lit_compare_right{
+        width: 280px;
+    }
+    .lit_compare_right_bike .bike_title{
+        font-size: 36px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 36px;
+        padding-top: 88px;
+        text-align: center;
+    }
+    .lit_compare_right_1{
+        padding-top: 80px;
+    }
+    .lit_compare_right_1 .text{
+        padding-top: 12px;
+    }
+    .lit_compare_right_2,
+    .lit_compare_right_3,
+    .lit_compare_right_7
+    {
+        width: 30px;
+        height: 3px;
+        background: #121212;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .lit_compare_right_2{
+       margin: 119px auto 0;
+    }
+    .lit_compare_right_3{
+        margin: 133px auto 0;
+    }
+    .lit_compare_right_4{
+        padding-top: 90px;
+    }
+    .lit_compare_right_5,
+    .lit_compare_right_6
+    {
+        padding-top: 48px;
+    }
+    .lit_compare_right_7{
+       margin: 91px auto 0;
+    }
+    .lit_compare_right_4 .desc,
+    .lit_compare_right_5 .desc,
+    .lit_compare_right_6 .desc
+    {
+        padding-top: 12px;
+    }
+    .lit_compare_button{
+        width:140px;
+        margin: auto;
+        font-size: 16px;
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+        color: #121212;
+        line-height: 16px;
+        text-decoration:underline;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .lit_compare_button span{
+        text-align: center;
+        display: block;
+    }  
+}
+@media only screen and (max-width: 820px){
+    .lit_bike_pc{
+        display: none;
+    }
+    .peloton_bike_pc{
+        display: none;
+    }
+    .swiss_design_pc{
+        display: none!important;
+    }
+    .fb-lit-compare{
+        width: 100%;
+        background: #fff;
+        margin-bottom: 40px;
+    }
+    .lit_compare_title{
+        width: 275px;
+        margin: auto;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 32px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .fb-lit-compare-con{
+        padding: 0 15px;
+        margin: auto;
+    }
+    .lit_compare_content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .lit_compare_left{
+        width: 165px;
+    } 
+    .lit_compare_left_bike{
+        padding-top: 32px;
+    }
+    .lit_compare_left_bike img{
+        width: 104px;
+        display: block;
+        margin: auto;
+    }
+    .lit_compare_left_bike .bike_title{
+        font-size: 24px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 24px;
+        padding-top: 12px;
+        text-align: center;
+    }
+    .lit_compare_left_bike .bike_desc{
+        font-size: 12px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 16px;
+        padding-top: 8px;
+        text-align: center;
+        width: 120px;
+        margin: auto;
+    }
+    .lit_compare_con{
+        padding-bottom: 32px;
+        text-align: center;
+    }
+    .lit_compare_con img{
+        width: 48px;
+    }
+    .lit_compare_con .desc{
+        font-size: 12px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #121212;
+        line-height: 16px;
+    }
+    .lit_compare_con .text{
+        font-size: 20px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 20px;
+    }
+    .lit_compare_con .price_discount{
+        font-size: 12px;
+        font-family: Montserrat-Regular, Montserrat;
+        font-weight: 400;
+        color: #666666;
+        line-height: 16px;
+        padding-top: 4px;
+        text-decoration: line-through;
+    }
+    .lit_compare_left_1,
+    .lit_compare_left_2,
+    .lit_compare_left_3,
+    .lit_compare_left_4,
+    .lit_compare_left_5,
+    .lit_compare_left_6,
+    .lit_compare_left_7{
+        padding-top: 32px;
+    }
+    .lit_compare_left_2 .desc,
+    .lit_compare_left_3 .desc,
+    .lit_compare_left_4 .desc,
+    .lit_compare_left_5 .desc,
+    .lit_compare_left_6 .desc,
+    .lit_compare_left_7 .desc
+    {
+        padding-top: 8px;
+    }
+    .lit_compare_left_1 .text{
+        padding-top: 8px;
+    }
+    .lit_compare_left_1 .tprice_discountext{
+        padding-top: 4px;
+    }
+    .lit_compare_left_2 .desc{
+        width: 86px;
+        margin: auto;
+    }
+    .lit_compare_left_6 .desc{
+        width: 97px;
+        margin: auto;
+    }
+    .lit_compare_left_7 .desc{
+        width: 82px;
+        margin: auto;
+    }
+    .lit_compare_right{
+        width: 165px;
+    }
+    .lit_compare_right_bike .bike_title{
+        font-size: 24px;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: bold;
+        color: #121212;
+        line-height: 28px;
+        padding-top: 60px;
+        text-align: center;
+    }
+    .lit_compare_right_1{
+        padding-top: 42px;
+    }
+    .lit_compare_right_1 .text{
+        padding-top: 8px;
+    }
+    .lit_compare_right_2,
+    .lit_compare_right_3,
+    .lit_compare_right_7
+    {
+        width: 30px;
+        height: 3px;
+        background: #121212;
+        border-radius: 8px 8px 8px 8px;
+    }
+    .lit_compare_right_2{
+       margin: 95px auto 0;
+    }
+    .lit_compare_right_3{
+        margin: 108px auto 0;
+    }
+    .lit_compare_right_4{
+        padding-top: 67px;
+    }
+    .lit_compare_right_5,
+    .lit_compare_right_6
+    {
+        padding-top: 32px;
+    }
+    .lit_compare_right_7{
+       margin: 75px auto 0;
+    }
+    .lit_compare_right_4 .desc,
+    .lit_compare_right_5 .desc,
+    .lit_compare_right_6 .desc
+    {
+        padding-top: 8px;
+    }
+    .lit_compare_right_6 .desc{
+        width: 97px;
+        margin: auto;
+    }
+    .lit_compare_button{
+        width:105px;
+        margin: auto;
+        font-size: 12px;
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+        color: #121212;
+        line-height: 12px;
+        text-decoration:underline;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .lit_compare_button span{
+        text-align: center;
+        display: block;
+    }  
+}

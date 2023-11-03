@@ -1,0 +1,225 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div class="fb-add-hotline" id="section-{{ section.id }}">
+  <div class="hotline_max_title">
+    {{ section.settings.hotline_max_title }}
+  </div>
+  <div class="hotline_max_desc">
+    {{ section.settings.hotline_max_desc }}
+  </div>
+  <div class="add-hotline-content">
+    {%- for block in section.blocks -%}
+        {%- if country_code_var == 'gb' and block.settings.hotline_title contains 'Phone' -%}
+        {%- else -%}
+            <div class="add-hotline-item">
+                <a
+                {% if forloop.first %}
+                    href="javascript:void(0);" onclick="TidioShowFun()"
+                {% else %}
+                    href="{{ block.settings.swiper_url }}"
+                {% endif %}
+                >
+                {% assign hotline_img = block.settings.hotline_img | img_url: '' %}
+                <img
+                    class="Image--lazyLoad Image--fadeIn hotline_img"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    data-src="{{ hotline_img }}"
+                >
+                </a>
+                <div class="hotline_text">
+                <div class="hotline_title">
+                    {{ block.settings.hotline_title }}
+                </div>
+                <div class="hotline_desc">
+                    {{ block.settings.hotline_desc }}
+                </div>
+                <div class="hotline_contact">
+                    <a
+                    {% if forloop.first %}
+                        href="javascript:void(0);" onclick="TidioShowFun()"
+                    {% else %}
+                        href="{{ block.settings.swiper_url }}"
+                    {% endif %}
+                    >
+                    {{ block.settings.hotline_contact }}
+                    </a>
+                </div>
+                </div>
+            </div>
+        {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+<style>
+  @media only screen and (min-width: 1025px) and (max-width: 1549px) {
+    .add-hotline-content {
+      padding-left: 110px;
+      padding-right: 110px;
+    }
+  }
+  @media screen and (min-width: 641px) {
+    .hotline_max_title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      line-height: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hotline_max_desc {
+      font-size: 20px;
+      font-weight: 500;
+      color: #000000;
+      line-height: 20px;
+      text-align: center;
+      margin-bottom: 65px;
+    }
+    .add-hotline-content {
+      max-width: 1260px;
+      display: flex;
+      margin: auto;
+      justify-content: space-between;
+    }
+    .add-hotline-item {
+      width: 33%;
+      margin-bottom: 60px;
+    }
+    .hotline_img {
+      width: 86px;
+      display: block;
+      margin: auto;
+    }
+    .hotline_title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #000000;
+      line-height: 20px;
+      margin-top: 13px;
+      text-align: center;
+    }
+    .hotline_desc {
+      font-size: 16px;
+      font-weight: 500;
+      color: #6a6a6a;
+      line-height: 26px;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .hotline_contact {
+      font-size: 16px;
+      font-weight: 500;
+      color: #02c0d9;
+      line-height: 26px;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .hotline_max_title {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: #000000;
+      text-align: center;
+    }
+    .hotline_max_desc {
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 40px;
+      font-weight: 500;
+      color: #000000;
+      text-align: center;
+    }
+    .add-hotline-content {
+      padding: 0 24px;
+    }
+    .add-hotline-item {
+      text-align: center;
+    }
+    .add-hotline-item:nth-child(1) .hotline_img {
+      width: 38px;
+    }
+    .add-hotline-item .hotline_img {
+      width: 38px;
+    }
+    .hotline_title {
+      font-size: 16px;
+      line-height: 16px;
+      color: #000000;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .hotline_desc {
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 8px;
+      font-weight: 500;
+      color: #6a6a6a;
+    }
+    .hotline_contact {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 500;
+      color: #02c0d9;
+      margin-bottom: 30px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Fb Add Hotline",
+  "presets": [
+    {
+      "name": "fb-add-hotline",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "hotline_max_title",
+      "label": "Hotline Max Title"
+    },
+    {
+      "type": "richtext",
+      "id": "hotline_max_desc",
+      "label": "Hotline Max Desc"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "HotlineBlock",
+      "name": "HotlineBlock",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hotline_img",
+          "label": "Hotline Img"
+        },
+        {
+          "type": "richtext",
+          "id": "hotline_title",
+          "label": "Hotline Title"
+        },
+        {
+          "type": "richtext",
+          "id": "hotline_desc",
+          "label": "Hotline Desc"
+        },
+        {
+          "type": "richtext",
+          "id": "hotline_contact",
+          "label": "Hotline Contact"
+        },
+        {
+          "type": "url",
+          "id": "swiper_url",
+          "label": "Swiper URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

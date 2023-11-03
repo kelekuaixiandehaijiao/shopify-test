@@ -1,0 +1,654 @@
+<div class="introduceBikesWrapper home-community" id="section-{{ section.id }}">
+  <div class="introduceBikes">
+    {%- assign country_code_var = localization.country.iso_code | downcase -%}
+
+    {%- capture intro_loop_bike_color -%}
+      {%- assign index = 1 -%}
+			{%- for block in section.blocks -%}    
+				{%- if block.settings.selector_bike == '2' -%}
+          {%- assign product1 =  block.settings.product  -%}
+						{%- capture show_product -%}
+              {%- render 'customer-price-control', type:'showProduct', cpc_product: product1 -%}
+            {%- endcapture -%}
+						{%- if show_product != 'true' -%}
+              {%- continue -%}
+						{%- endif -%}
+					{% capture cirledomimg %}
+						<div class="fb-sg-imgbox-mobile ib-sg-imgbox-mobile1 ib-sg-mobile-doc{{ index }}" data-index="{{ index }}">
+							{% assign imgdefault = block.settings.bike_img_defalut | img_url %}
+							{% assign imgactive = block.settings.bike_img_active | img_url %}
+							<img  class="fb-sg-active" src="{{ imgactive }}" />
+							<img  class="fb-sg-default" src="{{ imgdefault }}" />
+						</div>
+					{% endcapture %}  
+					{%- if block.settings.selector_bike_swiper_order == '1' -%}
+						{{ cirledomimg }}
+					{%- endif -%}
+					{%- if block.settings.selector_bike_swiper_order == '2' -%}
+						{{ cirledomimg }}
+					{%- endif -%}
+					{%- if block.settings.selector_bike_swiper_order == '3' -%}
+						{{ cirledomimg }}
+					{%- endif -%}
+					{%- if block.settings.selector_bike_swiper_order == '4' -%}
+						{{ cirledomimg }}
+					{%- endif -%}
+          {%- assign index = index | plus: 1 -%}
+				{%- endif -%}
+			{%- endfor -%}
+    {%- endcapture -%}
+
+    {%- capture boom_intro_loop_bike_color -%}
+      {%- assign index = 1 -%}
+      {%- for block in section.blocks -%}
+				{%- if block.settings.selector_bike == '3' -%}
+          {%- assign product1 =  block.settings.product  -%}
+          {%- capture show_product -%}
+            {%- render 'customer-price-control', type:'showProduct', cpc_product: product1 -%}
+          {%- endcapture -%}
+          {%- if show_product != 'true' -%}
+            {%- continue -%}
+          {%- endif -%}
+					{% capture cirledomimg2 %}
+						<div class="fb-sg-imgbox-mobile ib-sg-imgbox-mobile2 ib-sg-mobile-boom-doc{{ index }}" data-index="{{ index }}">
+							{% assign imgdefault = block.settings.bike_img_defalut | img_url %}
+							{% assign imgactive = block.settings.bike_img_active | img_url %}
+							<img  class="fb-sg-active" src="{{ imgactive }}" />
+							<img  class="fb-sg-default" src="{{ imgdefault }}" />
+						</div>
+					{% endcapture %}  
+					{%- if block.settings.selector_bike_swiper_order == '1' -%}
+						{{ cirledomimg2 }}
+					{%- endif -%}
+					{%- if block.settings.selector_bike_swiper_order == '2' -%}
+						{{ cirledomimg2 }}
+					{%- endif -%}
+					{%- if block.settings.selector_bike_swiper_order == '3' -%}
+						{{ cirledomimg2 }}
+					{%- endif -%}
+					{%- if block.settings.selector_bike_swiper_order == '4' -%}
+						{{ cirledomimg }}
+					{%- endif -%}
+          {%- assign index = index | plus: 1 -%}
+				{%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+
+    <div class="coverWrapper">
+      <div class="coverImg">
+        {% assign cover_img = section.settings.cover_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        <img
+          class="Image--lazyLoad Image--fadeIn cover_img"
+          data-src="{{ cover_img }}"
+          data-sizes="auto"
+          alt="{{ section.settings.cover_img.alt }}"
+        >
+        <div class="coverDes">{{ section.settings.coverText }}</div>
+        <a href="{{section.settings.coverButton-url}}">
+          <div class="coverCta">
+            <div>{{ section.settings['coverButton-text'] }}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    {%- capture intro_loop_bike_image -%}
+			<div class="introduce-bikes-box-pc">
+        {%- assign index = 1 -%}
+				{%- for block in section.blocks -%}
+					{%- if block.settings.selector_bike == '2' -%}
+            
+						{%- assign product1 =  block.settings.product  -%}
+						{%- capture show_product -%}
+              {%- render 'customer-price-control', type:'showProduct', cpc_product: product1 -%}
+            {%- endcapture -%}
+						{%- if show_product != 'true' -%}
+              {%- continue -%}
+						{%- endif -%}
+						<div class="introduce-bikes-box ib-fsg-loop-profooter ib-loop-index{{ index }}" data-url="{{ block.settings.link_page_url }}">
+							<div class="introduce-bikes-left">
+								{%- if section.settings.show_label -%}
+									<div class="label">
+										<img
+											data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/label.png?v=1651828886"
+											alt=""
+											data-sizes="auto"
+											class="Image--lazyLoad"
+										/>
+									</div>
+								{%- endif -%}
+								<div class="fb-sg-dotter ib-sg-mobile-lopbox{{ index }}">
+									{{ intro_loop_bike_color }}
+								</div>
+							</div>
+							<div class="introduce-bikes-right {% if block.settings.pay_as_low_as == blank %}no-klarna-style{% endif%}">
+									<p class="introduce_bikes_title">{{ block.settings.introduce_bikes_title}}</p>
+									{%- if block.settings.introduce_bikes_title_sub != blank -%}
+											<p class="introduce_bikes_title_sub">{{ block.settings.introduce_bikes_title_sub }}</p>
+									{%- else -%}
+											<p class="introduce_bikes_title_sub">&nbsp;</p>        
+									{%- endif -%}
+									<div class="m-star-pdp">
+											{%- if block.settings.show_custom_product_star != blank -%}
+											{%- render 'fb-pdp-star', product: block.settings.show_custom_product_star -%}
+											{%- else -%}
+											{%- render 'fb-pdp-star', product: product -%}
+											{%- endif -%}
+									</div>
+									<p class="introduce_bikes_desc1">{{ block.settings.starting_at }}</p>
+									<div class="introduce_bikes_proprice">
+										<p class="intoduce_bikes_proprice_price"
+												data-fbcountry-code="{{ country_code_var }}" 
+												data-fbtype="sale"
+												data-fbid="{{- product1.id -}}"
+												data-fborigin= "{{- product1.selected_or_first_available_variant.price -}}"
+										>
+											{% render 'customer-price-control', type:'sale', cpc_product: product1 %}
+										</p>
+										<div class="introduce_bikes_discount">
+                      {%- capture origin_price -%}
+                          {%- render 'customer-price-control', type:'origin', cpc_product: product1 -%}
+                      {%- endcapture -%}
+                      {%- if origin_price!= blank -%}
+                        <p class="introduce_bikes_discount_amount"
+                        data-fbcountry-code="{{ country_code_var }}" 
+                        data-fbtype="off"
+                        data-fbid="{{- product1.id -}}"
+                        data-fborigin= "{{- product1.selected_or_first_available_variant.price -}}"
+                      > 
+                        {% render 'customer-price-control', type:'off', cpc_product: product1 %} OFF
+                      </p>
+                      <p class="introduce_bikes_discount_price"
+                        data-fbcountry-code="{{ country_code_var }}" 
+                        data-fbtype="origin"
+                        data-fbid="{{- product1.id -}}"
+                        data-fborigin= "{{- product1.selected_or_first_available_variant.price -}}"
+                      > 
+                        {% render 'customer-price-control', type:'origin', cpc_product: product1 %}
+                      </p>
+                      {%- endif -%}
+										</div>
+									</div>
+									{%- if block.settings.pay_as_low_as != blank and country_code_var != 'au' -%}
+										<div class="line"></div>
+										<div class="introduce_bikes_stage_desc">{{ block.settings.pay_as_low_as }}</div>
+										{%- if product1 != blank -%}
+											<div class="introduce_bikes_stage_price">${% render 'customer-price-control', type:'mo', cpc_product: product1 %}/MO<sup>1</sup></div>
+										{%- else -%}
+											<div class="introduce_bikes_stage_price">${{ block.settings.introduce_bikes_stage_price }}/MO<sup>1</sup></div>
+										{%- endif -%}
+									{%- endif -%}
+									
+									<a class="introduce_bikes_shopNow" href="{{ block.settings.link_page_url }}"><div>{{ block.settings.shop_now }}</div></a>
+							</div>
+						</div>
+            {%- assign index = index | plus: 1 -%}
+					{%- endif -%}
+				{%- endfor -%}
+
+				<div class="swiper bikeImg" id="introduceBikesSwiper">
+					<div class="swiper-wrapper">
+						{%- for block in section.blocks  -%}
+							{%- if block.settings.selector_bike == '2' -%}
+                {%- assign product1 =  block.settings.product  -%}
+                {%- capture show_product -%}
+                  {%- render 'customer-price-control', type:'showProduct', cpc_product: product1 -%}
+                {%- endcapture -%}
+                {%- if show_product != 'true' -%}
+                  {%- continue -%}
+                {%- endif -%}
+								<a class="introduce-bikes-box-img swiper-slide" href="{{ block.settings.link_page_url }}">
+									{% assign image_url =  block.settings.link_image_product_chooseImage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+									<img class="Image--lazyLoad Image--fadeIn introduce-bikes-product-image"
+											data-src="{{ image_url }}" 
+										data-sizes="auto"
+										data-optimumx="1.2"
+										data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+										alt="{{ block.settings.link_image_product_chooseImage.alt }}"
+									>
+									<span class="Image__Loader"></span>
+								</a>
+							{%- endif -%}
+						{%- endfor -%}
+					</div>
+				</div>
+			</div>
+  	{%- endcapture -%}
+
+    {%- capture boom_intro_loop_bike_image -%}
+      <div class="introduce-bikes-box-pc">
+        {%- assign index = 1 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.selector_bike == '3' -%}
+
+            {%- assign product1 =  block.settings.product  -%}
+            {%- capture show_product -%}
+              {%- render 'customer-price-control', type:'showProduct', cpc_product: product1 -%}
+            {%- endcapture -%}
+            {%- if show_product != 'true' -%}
+              {%- continue -%}
+            {%- endif -%}
+            <div class="introduce-bikes-box ib-fsg-loop-profooter-boom ib-loopboom-index{{ index }}" data-url="{{ block.settings.link_page_url }}">
+              <div class="introduce-bikes-left">
+                {%- if section.settings.show_label -%}
+                  <div class="label">
+                    <img
+                      data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/label.png?v=1651828886"
+                      alt=""
+                      data-sizes="auto"
+                      class="Image--lazyLoad"
+                    />
+                  </div>
+                {%- endif -%}
+                <div class="fb-sg-dotter ib-sg-mobile-boom-lopbox{{ index }}">
+                  {{ boom_intro_loop_bike_color }}
+                </div>
+              </div>
+              <div class="introduce-bikes-right {% if block.settings.pay_as_low_as == blank %}no-klarna-style{% endif%}">
+                <p class="introduce_bikes_title">{{ block.settings.introduce_bikes_title}}</p>
+                {%- if block.settings.introduce_bikes_title_sub != blank -%}
+                  <p class="introduce_bikes_title_sub">{{ block.settings.introduce_bikes_title_sub }}</p>
+                {%- else -%}
+                  <p class="introduce_bikes_title_sub">&nbsp;</p>        
+                {%- endif -%}
+                <div class="m-star-pdp">
+                  {%- if block.settings.show_custom_product_star != blank -%}
+                  {%- render 'fb-pdp-star', product: block.settings.show_custom_product_star -%}
+                  {%- else -%}
+                  {%- endif -%}
+                </div>
+                
+                <p class="introduce_bikes_desc1">{{ block.settings.starting_at }}</p>
+                
+                <div class="introduce_bikes_proprice">
+                  <p class="intoduce_bikes_proprice_price"
+                    data-fbcountry-code="{{ country_code_var }}" 
+                    data-fbtype="sale"
+                    data-fbid="{{- product1.id -}}"
+                    data-fborigin= "{{- product1.selected_or_first_available_variant.price -}}"
+                  >
+                    {% render 'customer-price-control', type:'sale', cpc_product: product1 %}
+                  </p>
+                  <div class="introduce_bikes_discount">
+                    {%- capture origin_price -%}
+                        {%- render 'customer-price-control', type:'origin', cpc_product: product1 -%}
+                    {%- endcapture -%}
+                    {%- if origin_price!= blank -%}
+                      <p class="introduce_bikes_discount_amount"
+                        data-fbcountry-code="{{ country_code_var }}" 
+                        data-fbtype="off"
+                        data-fbid="{{- product1.id -}}"
+                        data-fborigin= "{{- product1.selected_or_first_available_variant.price -}}"
+                      > {% render 'customer-price-control', type:'off', cpc_product: product1 %} OFF</p>
+                      <p class="introduce_bikes_discount_price"
+                        data-fbcountry-code="{{ country_code_var }}" 
+                        data-fbtype="origin"
+                        data-fbid="{{- product1.id -}}"
+                        data-fborigin= "{{- product1.selected_or_first_available_variant.price -}}"
+                    > {% render 'customer-price-control', type:'origin', cpc_product: product1 %}
+                    </p> 
+                  {%- endif -%}
+                  </div>
+                </div>
+                {%- if block.settings.pay_as_low_as != blank and  country_code_var != 'au' -%}
+                    <div class="line"></div>
+                    <div class="introduce_bikes_stage_desc">{{ block.settings.pay_as_low_as }}</div>
+                    {%- if product1 != blank -%}
+                        <div class="introduce_bikes_stage_price">${% render 'customer-price-control', type:'mo', cpc_product: product1 %}/MO<sup>1</sup></div>
+                    {%- else -%}
+                        <div class="introduce_bikes_stage_price">${{ block.settings.introduce_bikes_stage_price }}/MO<sup>1</sup></div>
+                    {%- endif -%}
+                {%- endif -%}
+                <a class="introduce_bikes_shopNow" href="{{ block.settings.link_page_url }}"><div>{{ block.settings.shop_now }}</div></a>
+              </div>
+            </div>
+            {%- assign index = index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="swiper bikeImg" id="introduceBikesSwiperBoom">
+            <div class="swiper-wrapper">
+                {%- for block in section.blocks  -%}
+                    {%- if block.settings.selector_bike == '3' -%}
+                      {%- assign product1 =  block.settings.product  -%}
+                      {%- capture show_product -%}
+                        {%- render 'customer-price-control', type:'showProduct', cpc_product: product1 -%}
+                      {%- endcapture -%}
+                      {%- if show_product != 'true' -%}
+                        {%- continue -%}
+                      {%- endif -%}
+                        <a class="introduce-bikes-box-img swiper-slide" href="{{ block.settings.link_page_url }}">
+                            {% assign image_url =  block.settings.link_image_product_chooseImage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+                            <img class="Image--lazyLoad Image--fadeIn introduce-bikes-product-image" data-src="{{ image_url }}"
+                                data-sizes="auto"
+                                data-optimumx="1.2"
+                                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                              alt="{{ block.settings.link_image_product_chooseImage.alt }}"
+                            >
+                            <span class="Image__Loader"></span>
+                        </a>
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+        </div>
+      </div>
+    {%- endcapture -%}
+
+    <div class="intoduce-bikes-products-pc">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.selector_order == '1' -%}
+          {%- if block.settings.selector_bike == '0' -%}
+            {% render 'introduce-bikes-box', block: block %}
+
+          {%- elsif block.settings.selector_bike == '2' -%}
+            {{ intro_loop_bike_image }}
+          {%- else -%}
+            {{ boom_intro_loop_bike_image }}
+          {%- endif -%}
+          {% break %}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.settings.selector_order == '2' -%}
+          {%- if block.settings.selector_bike == '0' -%}
+            {% render 'introduce-bikes-box', block: block %}
+          {%- elsif block.settings.selector_bike == '2' -%}
+            {{ intro_loop_bike_image }}
+          {%- else -%}
+            {{ boom_intro_loop_bike_image }}
+          {%- endif -%}
+          {% break %}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.settings.selector_order == '3' -%}
+          {%- if block.settings.selector_bike == '0' -%}
+            {% render 'introduce-bikes-box', block: block %}
+          {%- elsif block.settings.selector_bike == '2' -%}
+            {{ intro_loop_bike_image }}
+          {%- else -%}
+            {{ boom_intro_loop_bike_image }}
+          {%- endif -%}
+          {% break %}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.settings.selector_order == '4' -%}
+          {%- if block.settings.selector_bike == '0' -%}
+            {% render 'introduce-bikes-box', block: block %}
+          {%- elsif block.settings.selector_bike == '2' -%}
+            {{ intro_loop_bike_image }}
+          {%- else -%}
+            {{ boom_intro_loop_bike_image }}
+          {%- endif -%}
+          {% break %}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<style>
+  #section-{{ section.id }} {
+    width: 100%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-color: {{ section.settings.introduce_background }};
+  }
+  .fb-sg-active{
+    cursor: pointer;
+  }
+  .fb-sg-default{
+    cursor: pointer;
+  }
+  .ib-sg-imgbox-mobile1{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .ib-sg-imgbox-mobile1 .fb-sg-default {
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 32px;
+  }
+  .ib-sg-imgbox-mobile1 .fb-sg-active {
+    display: none;
+    width: 30px;
+    height: 30px;
+  }
+  .fb-sg-mobile-dotter1{
+    display: none;
+  }
+  @media screen and (max-width: 608px){
+      .ib-sg-imgbox-mobile1 .fb-sg-default {
+      display: block;
+      width: 20px;
+      height: 20px;
+      line-height: 32px;
+      }
+      .ib-sg-imgbox-mobile1 .fb-sg-active {
+      display: none;
+      width: 24px;
+      height: 24px;
+      }
+  }
+  .no-klarna-style{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+  }
+  .no-klarna-style .introduce_bikes_title{
+      padding: 0px 0px 0px;
+  }
+  .no-klarna-style .introduce_bikes_shopNow div{
+      margin: 0px;
+  }
+  .no-klarna-style .m-star-pdp{
+      width: 100%;
+      margin-top: 16px;
+  }
+  .no-klarna-style .introduce_bikes_desc1 {
+      padding-top: 11px;
+  }
+  @media screen and (max-width: 1023px) {
+      .no-klarna-style .introduce_bikes_shopNow{
+          margin: 18px 0px 0px;
+      }
+  }
+</style>
+{% schema %}
+{
+  "name": "Introduce Bikes",
+  "presets": [
+    {
+      "name": "Introduce-bikes",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "introduce_background",
+      "label": "background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_img",
+      "label": "Cover Img"
+    },
+    {
+      "type": "text",
+      "id": "coverText",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "coverButton-url",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "coverButton-text",
+      "label": "Button Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Intro_swiper",
+      "name": "Intro Swiper",
+      "settings": [
+        {
+          "type": "select",
+          "id": "selector_order",
+          "label": "Selector Order",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "select",
+          "id": "selector_bike",
+          "label": "Selector Bike",
+          "options": [
+            {
+              "value": "0",
+              "label": "None"
+            },
+            {
+              "value": "2",
+              "label": "Lit Bike"
+            },
+            {
+              "value": "3",
+              "label": "Boom Bike"
+            }
+          ],
+          "default": "0"
+        },
+        {
+          "type": "select",
+          "id": "selector_bike_swiper_order",
+          "label": "Selector Swiper Bike Order",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+
+        {
+          "type": "url",
+          "id": "link_page_url",
+          "label": "Link page Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "link_image_product_chooseImage",
+          "label": "Choose Image"
+        },
+        {
+          "type": "text",
+          "id": "introduce_bikes_title",
+          "label": "Introduce Bike Title"
+        },
+        {
+          "type": "text",
+          "id": "introduce_bikes_title_sub",
+          "label": "Introduce Bike Title Sub"
+        },
+        {
+          "type": "product",
+          "id": "show_custom_product_star",
+          "label": "fbStampStar"
+        },
+        {
+          "type": "text",
+          "id": "starting_at",
+          "label": "Starting At"
+        },
+
+        {
+          "type": "text",
+          "id": "pay_as_low_as",
+          "label": "Pay As Low As"
+        },
+        {
+          "type": "text",
+          "id": "introduce_bikes_stage_price",
+          "label": "Introduce Bike Stage Price"
+        },
+        {
+          "type": "text",
+          "id": "shop_now",
+          "label": "shop now",
+          "default": "SHOP NOW"
+        },
+        {
+          "type": "image_picker",
+          "id": "bike_img_defalut",
+          "label": "Bike Default Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "bike_img_active",
+          "label": "Bike Active Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

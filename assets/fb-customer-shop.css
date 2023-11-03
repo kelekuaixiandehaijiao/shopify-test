@@ -1,0 +1,1069 @@
+.js-customershop-addtocart:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+@media only screen and (min-width: 769px) { 
+    .cs-mobshow-pchide{
+        display: none;
+    }
+    .cs-mobhide-pcshow{
+        display: block;
+    }
+}
+@media only screen and (max-width: 768px) { 
+    .cs-mobshow-pchide{
+        display: block;
+    }
+    .cs-mobhide-pcshow{
+        display: none;
+    }
+}
+
+.fb-customer-shop .fbcu-content{
+    width: 100%;
+}
+.fb-customer-shop p {
+    margin: 0;
+    padding: 0;
+}
+.js-fbcu-hide{
+   display: none; 
+}
+.fbcu-flex-content{
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+   
+}
+.fbcu-block-left{
+    position: relative;
+}
+.fbcu-cusomer-kefu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.fbcu-kefu-text{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+.fbcu-kefu-text .span1{
+    color: #333333;
+}
+
+.fbcu-kefu-text .span2{
+    color: #333333;
+    margin-top: 8px;
+}
+.fbcu-main-title {
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.fbcu-main-img{
+    position: relative;
+}
+.fbcu-main-img img{
+    width: 100%;
+    height: 100%;
+}
+.fbcu-block-right{
+    height: auto;
+}
+.fbcu-dimens{
+    width: 100%;
+}
+.fbcur-discount-desc{
+    background: rgba(2, 192, 217, 0.05);
+    border: 1px solid #02C0D9;
+}
+.fbcur-choose-color, .gift-show-ul, .fbcur-introduce-color, .fb-insurance-box{
+    width: 100%;
+}
+.fbcur-choose-ul{
+    width: 100%;
+    /* overflow-x: auto; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fbcur-choose-ul::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}
+.gift-show-ul{
+    display: flex;
+    justify-content: flex-start;
+}
+.fbcur-bikeservice-ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.fbcur-introduce-ul{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.fbcur-discount-desc p {
+    color: #02C0D9;
+}
+.fbcur-choose-color .fbcur-choose-title{
+    color: #333;
+}
+.fbcur-choose-ul li, .gift-show-ul li, .fbcur-bikeservice-ul li{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.fbcur-introduce-ul li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+.fbcur-introduce-imgcheck, .fbcur-introduce-product-name{
+    cursor: pointer;
+}
+.fbcur-introduce-product-name{
+    text-decoration-line: underline;
+}
+.fbcur-choose-item .fbcur-choose-imgdefalut{
+    display: block;
+}
+.fbcur-choose-item .fbcur-choose-imgcheck{ 
+    display: none;
+}
+.fbcur-choose-item-checked .fbcur-choose-imgcheck{
+    display: block!important;
+}
+.fbcur-choose-item-checked{
+    border: 1px solid #333333!important; 
+    background-color: #fafafa!important;
+}
+.fbcur-choose-item-checked .fbcur-choose-imgdefalut {
+    display: none!important;
+}
+.fbcur-introduce-tips{
+    position: absolute;
+    background: #FEFEFE;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 2;
+    display: none;
+}
+.fbcu-flex-bottom-pc{
+    width: 100%;
+    border-top: 1px solid #E6E6E6;
+    z-index: 5;
+}
+.gift-show-product-name p, .fbcur-bikeservice-product-name p{
+    text-align: center;
+}
+.csb-customer-service{
+    width: 100%;
+}
+@media only screen and (min-width: 769px) { 
+    .fbcubt-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        height: 72px;
+    }
+    .fbcubt-content-left{
+        width: 740px;
+        height: 100%;
+        margin-right: 80px;
+    }
+    .fbcubt-content-right{
+        min-width: 460px;
+        height: 100%;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .fb-bike-sub-total{
+        width: 100%;
+        
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1364px) { 
+    .fbcubt-content-left{
+        margin-right: 0px!important;
+        /* gap: 97px; */
+    }
+}
+/*  botoom 结账 */
+.cs-bike-content .cs-bike-li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cs-bike-content{
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+}
+
+.js-customershop-addtocart{
+    background: #000000;
+    text-align: center;
+    color: #fff;
+}
+
+/* 1280px */
+@media only screen and (min-width: 769px) { 
+    .fb-customer-shop .fbcu-content{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .fbcu-block-left{
+        width: 740px;
+        min-height: 740px;
+    }
+    .fbcu-main-img{
+       width: 620px;
+       height: 620px;
+       margin: 32px auto 19px auto;
+    }
+    .fbcu-cusomer-kefu{
+        gap: 17px;
+    }
+    
+    /* .fbcu-flex-content{
+        gap: 80px;
+    } */
+    .fbcu-block-left{
+        margin-right: 80px;
+    }
+    .fbcu-kefu-text{
+        gap: 8;
+    }
+    .fbcu-kefu-text .span1{
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 500;
+    }
+    
+    .fbcu-kefu-text .span2{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .fbcu-cusomer-kefu svg{
+        width: 32px;
+        height: 32px;
+    }
+    .fbcu-main-title a{
+        display: none;
+    }
+    .fbcu-main-title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .fbcu-dimens{
+        line-height: 20px;
+        text-align: center;
+    }
+    .fbcu-dimens span{
+        text-decoration: underline;
+        color: #000000;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        cursor: pointer;
+    }
+    .fbcu-block-right{
+        width: 460px;
+        min-height: 740px;
+    }
+    .fbcu-block-right .fbcur-product-name {
+        text-align: left;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+        color: #333333;
+    }
+    .fbcur-discount-desc{
+        width: 100%;
+        /* min-height: 80px; */
+        margin-top: 30px;
+        border-radius: 8px;
+        padding: 16px 40px 12px 40px;
+        text-align: center;
+    }
+    .fbcur-discount-p{
+        width: 100%;
+    }
+    .fbcur-discount-desc p:last-child{
+        font-size: 12px;
+        line-height: 12px;
+        margin-top: 16px;
+    }
+    .fbcur-discount-desc p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    /* choose color section pc */
+    .fbcur-choose-color{
+        margin-top: 30px;
+    }
+    .fbcur-choose-color .fbcur-choose-title{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+    }
+    .fbcur-choose-ul{
+        margin-top: 20px;
+        padding-bottom: 30px;
+        /* border-bottom: 1px solid #e6e6e6; */
+    }
+    .fb-insurance-box{
+        /* margin-top: -10px;
+        margin-bottom: 30px; */
+    }
+    .cs-mobshow-pchide{
+        display: none!important;
+    }
+    .fbcur-choose-ul li {
+        width: 108px;
+        height: 108px;
+        background: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 8px;
+        cursor: pointer;
+        flex-shrink: 0;
+        padding-top: 20px;
+    }
+    .fbcur-choose-ul li{
+        margin-right: 9px;
+    }
+    .fbcur-choose-ul li:last-child{
+        margin-right: 0px;
+    }
+    .fbcur-choose-ul li img{
+        width: 32px;
+        height: 32px;
+        margin-bottom: 14px;
+        flex-shrink: 0;
+    }
+    .fbcur-choose-product-name p{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #333;
+        text-align: center;
+    }
+    /* gift section pc */
+    .gift-show-color{
+        padding-top: 30px;
+        /* border-top: 1px solid #e6e6e6; */
+    }
+    .gift-show-color .gift-show-title .sapn1 p{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+    }
+    .gift-show-color .gift-show-title .sapn2{
+        margin-top: 15px;
+    }
+    .gift-show-color .gift-show-title .sapn2 p{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        color: #666666;
+    }
+    .gift-show-color .gift-show-title p strong{
+        color: #02C0D9;
+        font-weight: 500!important;
+    }
+    .gift-show-ul{
+        margin-top: 20px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .gift-show-ul li {
+        width: 80px;
+        min-height: 116px;
+        background: #FFFFFF;
+        margin-right: 47px;
+    }
+    .gift-show-ul li:last-child{
+        margin-right: 0px;
+    }
+    .gift-show-ul li img{
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+    }
+    .gift-show-ul li img{
+        margin-bottom: 6px;
+    }
+    .gift-show-product-price p{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        text-decoration-line: line-through;
+        color: #888888;
+        margin-bottom: 8px;
+    }
+    .gift-show-product-name p{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #333;
+    }
+    /* introduce section pc */
+    .fbcur-introduce-color{
+        margin-top: 30px;
+    }
+    .fbcur-introduce-color .fbcur-introduce-title{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+    }
+    .fbcur-introduce-ul{
+        /* gap: 9px; */
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
+    .fbcur-introduce-ul li {
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        margin-bottom: 9px;
+        /* gap: 15px; */
+    }
+    .fbcur-introduce-ul li:last-child{
+        margin-bottom: 0px;
+    }
+    .fbcur-introduce-ul li .fbcur-introduce-imgcheck{
+        width: 24px;
+        height: auto;
+    }
+    .fbcur-introduce-ul li  .fbcur-introduce-imgcheck{
+        margin-right: 15px;
+    }
+    .fbcur-introduce-tips{
+        width: 460px;
+        padding: 15px;
+        min-height: 78px;
+        bottom: -80px;
+        left: 0px;
+    }
+    .fbcur-introduce-product-name p{
+        font-weight: 500;
+        font-size: 14px;
+        color: #333333;
+    }
+    .fbcur-introduce-tips p{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #333333;
+    }
+    /* bottom */
+
+        /* choose color section pc */
+    .fbcur-choose-color{
+        margin-top: 30px;
+    }
+    .fbcur-choose-color .fbcur-choose-title{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+    }
+    .fbcur-choose-product-name p{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #333;
+    }
+        /* choose bike service */
+        .fbcur-bikeservice-color{
+            margin-top: 30px;
+        }
+        .fbcur-bikeservice-color .fbcur-bikeservice-title{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+            text-align: left;
+        }
+       
+        .fbcur-bikeservice-ul li {
+            width: 183px;
+            height: auto;
+            cursor: pointer;
+            margin-right: 30px;
+            height: 48px;
+            flex-direction: row;
+            flex-shrink: 0;
+        }
+        .fbcur-bikeservice-ul li:last-child{
+            margin-right: 0!important;
+        }
+        .fbcur-bikeservice-ul li img{
+            width: 40px;
+            height: auto;
+            margin-right: 15px;
+        }
+        .fbcur-bikeservice-product-name {
+            width: 128px;
+            text-align: left;
+        }
+        .fbcur-bikeservice-product-name p{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333333;
+            text-align: left!important;
+        }
+        /* .cs-bike-addtocart{
+            margin-top: 20px;
+        } */
+       
+        .cs-bike-li{
+            height: 18px;
+            padding-right: 6px;
+        }
+        .cs-bike-li .span1{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666666;
+        }
+        .cs-bike-li .span2{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 18px;
+            color: #888;
+            margin-right: 6px;
+            text-decoration-line: line-through;
+        }
+        .cs-bike-li .span3{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 18px;
+            color: #333333;
+        }
+        .cs-bike-li .span4{
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 18px;
+            color: #333333;
+        }
+        .cs-bike-addtocart-desc{
+            width: 100%;
+        }
+        .cs-bike-addtocart-desc p{
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 12px;
+            color: #666666;
+            margin-top: 10px;
+        }
+        .cs-bike-addtocart-desc .p-klarea{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .cs-bike-addtocart-desc .p-klarea img{
+            display: inline-block;
+        }
+        .cs-bike-addtocart-desc .p-klarea .img1{
+            width: 50px;
+            height: auto;
+        }
+        .cs-bike-addtocart-desc .p-klarea .img2{
+            margin-left: 3px;
+            width: 46px;
+            height: auto;
+        }
+        .js-customershop-addtocart{
+            width: 142px;
+            height: 48px;
+            line-height: 48px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+        }
+        .fbcur-deliver-to{
+            width: 100%;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            border-top: 1px solid #E6E6E6;
+            border-bottom: 1px solid #E6E6E6;
+        }
+        .fbcur-choose-title p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333333;
+            line-height: 16px;
+            text-align: left;
+        }
+        #fbcur-deliver-to{
+            border-top:none;
+            border-bottom: none;
+            padding-top: 24px;
+            padding-bottom: 0;
+           }
+        .deliver-countrycode-ul{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+        .deliver-countrycode-ul li {
+            width: 108px;
+            height: 44px;
+            line-height: 44px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin-right: 9px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            color: #333333;
+        }
+        .deliver-countrycode-ul li:last-child{
+            margin-right: 0px!important;
+        }
+        .deliver-countrycode-ul li.checked-deliver-code {
+            background: #FAFAFA;
+            border: 1px solid #333;
+        }
+        .deliver-countrycode-ul li.disabled-deliver-code{
+            background: #F5F5F5;
+            border: 1px solid #CCCCCC;
+            color: #CCCCCC;
+            cursor: not-allowed;
+        }
+
+}
+@media only screen and (min-width: 1365px) { 
+    .fbcu-flex-bottom-pc{
+        display: block;
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        background-color: #fff;
+        width: 100%;
+    }
+    #main{
+        padding-bottom: 120px;
+    }
+    .fbcur-bikeservice-ul{
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .fbcu-block-left{
+        position: sticky;
+        top: 170px;
+    }
+    
+}
+@media only screen and (min-width: 1365px) { 
+    .cs-bike-pc-left{
+        min-width: 308px;
+        /* margin-right: 15px; */
+    }
+    .fbcubt-content-right{
+        height: 100%;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1364px) { 
+    .cs-bike-pc-left{
+        width: 740px;
+        margin-right: 15px;
+    }
+    .fbcubt-content-right{
+        height: auto;
+    }
+    .fbcu-flex-content, .fbcubt-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .fbcur-bikeservice-ul{
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .fbcubt-content-left{
+        padding-top: 20px;
+    }
+    .fbcu-block-left{
+       margin-right: 0px;
+       margin-bottom: 60px;
+    }
+    .fbcubt-content{
+        gap: 0;
+    }
+    .fbcu-flex-bottom-pc{
+        margin-top: 0px;
+    }
+    .fbcubt-content{
+        height: auto;
+    }
+    .fbcubt-content-right{
+        width: 100%;
+        padding: 20px 10% 20px 10%;
+        border-top: 1px solid #E6E6E6;
+    }
+    .fbcubt-content-right{
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        background-color: #fff;
+        width: 100%;
+    }
+    #main{
+        padding-bottom: 100px;
+    }
+}
+
+
+
+
+/* dimess and introduce */
+.fb-dimens-dialog, .fbcur-introduce-dialog{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 888;
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+}
+.js-show-dimensionimg{
+    display: none;
+}
+.fb-dimens-container, .fb-introducetip-container{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+}
+.fb-dimens-close, .fbcur-intro-dialog-close{
+    width: 100%; 
+    position: absolute;
+    z-index: 2;
+}
+.fb-dimens-close svg, .fbcur-intro-dialog-close svg{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.fb-dimens-content, .fbcur-intro-dialogcontent{
+    background: #FEFEFE;
+    position: relative;
+}
+.fb-dimens-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.fb-dimens-mainimg{
+    position: relative;
+}
+.fb-dimens-mainimg img{
+    width: 100%;
+/*     height: 100%; */
+    object-fit: fill;
+}
+
+@media only screen and (min-width: 769px) { 
+    .fb-dimens-content{
+        width: 617px;
+        height: 632px;
+        border-radius: 12px;
+    }
+    
+    .fb-dimens-close{
+        width: 15px;
+        height: 15px;
+        right: 25px;
+        top: 25px;
+    }
+
+    .fb-dimens-box{
+        padding-top: 30px;
+        gap: 10px;
+    }
+    .fb-dimens-mainimg{
+        width: 377px;
+        height: 400px;
+    }
+    .fb-dimens-textbox{
+        /* width: 309px; */
+        width:325px;
+        height: auto;
+        text-align: left;
+    }
+    .fb-dimens-textbox p{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+    }
+    .fb-dimens-textbox .textbox-title{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+}
+@media only screen and (max-width: 768px) { 
+    .fb-dimens-content{
+        width: 327px;
+        height: 472px;
+        border-radius: 12px;
+    }
+    .fb-dimens-close{
+        width: 12px;
+        height: 12px;
+        right: 19px;
+        top: 19px;
+    }
+    .fb-dimens-box{
+        padding-top: 24px;
+        gap: 10px;
+    }
+    .fb-dimens-mainimg{
+        width: 279px;
+        height: 296px;
+    }
+    .fb-dimens-textbox{
+        width: 279px;
+        height: auto;
+        text-align: left;
+    }
+    .fb-dimens-textbox p{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+    }
+    .fb-dimens-textbox .textbox-title{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+}
+.fbcur-introduce-product-name:hover  .fbcur-introduce-tips{
+    display: block!important;
+}
+
+@media only screen and (min-width: 769px) { 
+    /* pc */
+    .frinew-buy-customer{
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .frinew-customer-img{
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+        cursor: pointer;
+    }
+    .customer_service_right{
+        height: 48px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .customer_service_right, .customer_service_right p{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #666;
+        cursor: pointer;
+    }
+    .customer_service_right p:nth-child(2n) {
+        text-decoration: underline;
+        color: #333;
+    }
+}
+
+.fbcur-intro-dialog-title{
+    font-size: 32px;
+    font-weight: bold;
+    color: #222222;
+    line-height: 38px;
+    text-align: center;
+}
+.fbcur-intro-dialog-desc{
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 24px;
+    padding: 38px 0 32px;
+    text-align: center;
+}
+.fbcur-intro-dialog-desc span{
+    color: #02C0D9;
+    margin-right: 3px;
+}
+.fbcur-intro-dialog-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 75px;
+}
+.fbcur-intro-dialog-item:first-child{
+    margin-bottom: 32px;
+}
+.fbcur_intro_dialog_item_img1{
+    display: block;
+    width: 104px;
+    height: auto;
+    margin-right: 120px;
+}
+.fbcur_intro_dialog_item_img2{
+    display: block;
+    width: 104px;
+    height: auto;
+}
+.fbcur-intro-dialog-title-bottom{
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 24px;
+}
+.fbcur_intro_dialog_item_img3{
+    display: block;
+    width: 129px;
+    height: auto;
+    margin-left: 12px;
+}
+.fbcur-intro-dialogcontent{
+    width: 630px; 
+    height: 360px;
+    padding: 48px 75px 59px;
+    position: relative;
+}
+.fbcur-intro-dialog-close{
+    width: 17px;
+    height: 17px;
+    top: 13px;
+    right: 14px;
+}
+@media only screen and (max-width: 1549px){
+    .fbcur-intro-dialogcontent{
+        width: 509px;
+        height: 291px;
+        padding: 39px 61px 48px;
+    }
+    .fbcur-intro-dialog-title{
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .fbcur-intro-dialog-desc{
+        font-size: 13px;
+        line-height: 19px;
+        padding: 31px 0 26px;
+    }
+    .fbcur-intro-dialog-item{
+        margin: 0 61px;
+    }
+    .fbcur-intro-dialog-item:first-child{
+        margin-bottom: 26px;
+    }
+    .fbcur_intro_dialog_item_img1{
+        width: 84px;
+        margin-right: 97px;
+    }
+    .fbcur_intro_dialog_item_img2{
+        width: 84px;
+    }
+    .fbcur-intro-dialog-title-bottom{
+        font-size: 13px;
+        line-height: 19px;
+    }
+    .fbcur_intro_dialog_item_img3{
+        width: 104px;
+        margin-left: 10px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .fbcur-intro-dialogcontent{
+        width: 334px;
+        height: 390px;
+        padding: 56px 36px;
+    }
+    .fbcur-intro-dialog-title{
+        font-size: 24px;
+        line-height: 15px;
+    }
+    .fbcur-intro-dialog-desc{
+        font-size: 16px;
+        line-height: 22px;
+        padding: 24px 0 32px;
+    }
+    .fbcur-intro-dialog-item{
+        margin: 0 9px;
+    }
+    .fbcur-intro-dialog-item:first-child{
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #E4E4E4;
+    }
+    .fbcur_intro_dialog_item_img1{
+        margin-right: 32px;
+    }
+    .fbcur-intro-dialog-item:last-child{
+        flex-direction: column;
+        padding: 0 40px;
+    }
+    .fbcur-intro-dialog-title-bottom{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .fbcur_intro_dialog_item_img3{
+        width: 104px;
+        margin: 8px 26px;
+    }
+}

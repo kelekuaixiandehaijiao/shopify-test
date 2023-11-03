@@ -1,0 +1,118 @@
+{%- capture  AnnouncementBarNew -%}
+    <div class="AnnouncementBar"
+        data-arry="{%for block in section.blocks%}{{ block.settings.announcement_cycle_speed | times: 1000 }},{% endfor %}"
+      >
+        <div class="AnnouncementBar__Wrapper js-announcement-box announcement-content-box">
+            {%- for block in section.blocks -%}
+                {%- assign mobile_text = block.settings.announcement_text_mobile | default: block.settings.announcement_text -%}
+                <a class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    {% if block.settings.announcement_link != blank %}
+                        href="{{ block.settings.announcement_link }}"  
+                    {%- else -%}
+                        href="javascript:void(0);" 
+                    {% endif %}
+                    data-speed="{{ block.settings.announcement_cycle_speed }}"
+                    style="color: {{ block.settings.announcement_text_color }};">
+                    <div class="utils-mobile-hide"> <object>{{ block.settings.announcement_text }} </object></div>
+                    <div class="utils-pc-hide"> <object>{{ mobile_text }}</object></div>
+                </a>
+            {%- endfor -%}
+        </div>
+    </div>
+{%- endcapture -%}
+<div class="js-announcement-new"  id="section-{{ section.id }}" data-show="{{ section.settings.replace_enable_bar }}" style="display: none;">
+    {{ AnnouncementBarNew }}
+</div>
+{% schema %}
+{
+  "name": "Fb Announcement bar",
+  "presets": [
+      {
+        "name": "fb-announcement-bar",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "replace_enable_bar",
+      "label": "Is Show Replace Announcement Content",
+      "info": "Turn on to replace the announcement bar copy and line number carousel time",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "pc_line",
+      "label": "Select Pc rows",
+      "options": [
+        {
+          "value": "1",
+          "label": "One rows"
+        },
+        {
+          "value": "2",
+          "label": "Two rows"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "mobile_line",
+      "label": "Select Mobile rows",
+      "options": [
+        {
+          "value": "1",
+          "label": "One"
+        },
+        {
+          "value": "2",
+          "label": "Two"
+        }
+      ],
+      "default": "2"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+      {
+        "type": "scrollBar",
+        "name": "scrollBar",
+        "settings": [
+            {
+                "type": "color",
+                "id": "announcement_text_color",
+                "label": "Text Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "url",
+                "id": "announcement_link",
+                "label": "Link"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text",
+                "label": "Pc text"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text_mobile",
+                "label": "Mobile text"
+            },
+            {
+                "type": "range",
+                "id": "announcement_cycle_speed",
+                "min": 2,
+                "max": 20,
+                "step": 1,
+                "unit": "sec",
+                "label": "Change slides every (unit: s)",
+                "default": 5
+            }
+        ]
+      }
+  ]
+}
+{% endschema %}

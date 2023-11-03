@@ -1,0 +1,231 @@
+
+{%- capture banner_title_color -%}
+    {%- if block.settings.banner_title_color != blank -%}
+        color: {{ block.settings.banner_title_color }}
+    {%- else -%}
+        color: #fff;
+    {%- endif -%}
+{%- endcapture -%}
+{%- capture banner_sub_title_color -%}
+    {%- if block.settings.banner_sub_title_color != blank -%}
+        color: {{ block.settings.banner_sub_title_color }}
+    {%- else -%}
+        color: #fff;
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- capture banner_desc_color -%}
+    {%- if block.settings.banner_desc_color != blank -%}
+        color: {{ block.settings.banner_desc_color }}
+    {%- else -%}
+        color: #fff;
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- capture banner_more_color -%}
+    {%- if block.settings.banner_more_color != blank -%}
+        color: {{ block.settings.banner_more_color }}
+    {%- else -%}
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- capture banner_title_color_mob -%}
+    {%- if block.settings.banner_title_color_mob != blank -%}
+      color: {{ block.settings.banner_title_color_mob }}
+    {%- else -%}
+      color: #fff;
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- capture banner_sub_title_color_mob -%}
+    {%- if block.settings.banner_sub_title_color_mob != blank -%}
+      color: {{ block.settings.banner_sub_title_color_mob }}
+    {%- else -%}
+      color: #fff;
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- capture banner_desc_color_mob -%}
+    {%- if block.settings.banner_desc_color_mob != blank -%}
+      color: {{ block.settings.banner_desc_color_mob }}
+    {%- else -%}
+      color: #fff;
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- capture banner_more_color_mob -%}
+    {%- if block.settings.banner_more_color_mob != blank -%}
+      color: {{ block.settings.banner_more_color_mob }}
+  {%- else -%}
+    {%- endif -%}
+  {%- endcapture -%}
+
+
+{%- if type == 'video' -%}
+    {%- if block.settings.banner_sub_title != blank or block.settings.banner_sub_title_mob != blank -%}
+        <div class="SectionHeader__SubHeading Heading u-h6 content_position_pc" style="{{ banner_sub_title_color }}"> 
+            {{ block.settings.banner_sub_title }}
+        </div>
+        <div class="SectionHeader__SubHeading Heading u-h6 content_position_mobile" style="{{ banner_sub_title_color_mob }}">{{ block.settings.banner_sub_title_mob }}</div>
+    {%- endif -%}
+    {%- assign title_oprichtext  = block.settings.banner_title | strip_html -%}
+    {%- assign title_oprichmobtext = block.settings.banner_title_mob | strip_html -%}
+    {%- if title_oprichtext  != blank or title_oprichmobtext != blank -%}
+        <div class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 content_position_pc"
+            style="{{ banner_title_color }}"
+        >   
+         {{ block.settings.banner_title }}
+        </div>
+        <div class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 content_position_mobile" style="{{ banner_title_color_mob }}">
+            {{ block.settings.banner_title_mob }}
+        </div>
+    {%- endif -%}
+{%- else -%}
+    {%- if block.settings.banner_sub_title != blank or block.settings.banner_sub_title_mob != blank -%}
+        <div class="banner_title content_position_pc" style="{{ banner_sub_title_color }}">{{ block.settings.banner_sub_title }}</div>
+        <div class="banner_title content_position_mobile" style="{{ banner_sub_title_color_mob }}">{{ block.settings.banner_sub_title_mob }}</div>
+    {%- endif -%}
+    {% comment %} {%- assign banner_sub_title  = block.settings.banner_sub_title | strip_html -%} {% endcomment %}
+    {%- if block.settings.banner_title != blank or block.settings.banner_title_mob != blank -%}
+        <div class="banner_sub_title content_position_pc" style="{{ banner_title_color }}">
+            {{ block.settings.banner_title }}
+        </div>
+        <div class="banner_sub_title content_position_mobile" style="{{ banner_title_color_mob }}">
+            {{ block.settings.banner_title_mob }}
+        </div>
+    {%- endif -%}
+    {%- if block.settings.banner_desc != blank or block.settings.banner_desc_mob != blank -%}
+        <div class="banner_desc content_position_pc" style="{{ banner_desc_color }}">
+            {{ block.settings.banner_desc }}
+            {%- if block.settings.banner_icon != blank -%}
+            {% assign banner_icon = block.settings.banner_icon | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <img class="Image--lazyLoad Image--fadeIn banner_icon"
+                data-src="{{ banner_icon }}"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                data-sizes="auto"
+                alt="{{ block.settings.banner_icon.alt | escape }}"
+            >
+            {%- endif -%}
+        </div>
+        <div class="banner_desc content_position_mobile" style="{{ banner_desc_color_mob }}">
+            {{ block.settings.banner_desc_mob }}
+            {%- if block.settings.banner_icon_mob != blank -%}
+                {% assign banner_icon_mob = block.settings.banner_icon_mob | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                <img
+                class="Image--lazyLoad Image--fadeIn banner_icon"
+                data-src="{{ banner_icon_mob}}"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                data-sizes="auto"
+                alt="{{ block.settings.banner_icon_mob.alt | escape }}">
+            {%- endif -%}
+        </div>
+    {%- endif -%}
+{%- endif -%}
+
+{%- if block.settings.button_1_text != blank and block.settings.button_2_text != blank -%}
+    {%- assign has_two_buttons = true -%}
+{%- else -%}
+    {%- assign has_two_buttons = false -%}
+{%- endif -%}
+
+{%- if block.settings.button_1_text != blank or block.settings.button_2_text != blank -%}
+    <div class="SectionHeader__ButtonWrapper banner_button content_position_pc">
+        <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}">
+        {%- if block.settings.button_1_text != blank -%}
+            <a 
+                {% if block.settings.button_1_open_dialog %}
+                    data-type="playvideo"
+                    href="javascript:void(0)"
+                    data-videourl="{{ block.settings.button_1_link }}"
+                    class="js-open-videodialog ButtonGroup__Item Button js-public-gtm-btn button_1_text"
+                {% else %}
+                    href="{{ block.settings.button_1_link }}"
+                    class="ButtonGroup__Item Button js-public-gtm-btn button_1_text"    
+                {% endif %}
+                style="{% if block.settings.button_1_text_bordercolor %}border-color:{{ block.settings.button_1_text_bordercolor }};{% endif %}{% if block.settings.button_1_text_color %}color: {{ block.settings.button_1_text_color }}; {% endif %}{% if block.settings.button_1_text_backgroundcolor %}background-color: {{ block.settings.button_1_text_backgroundcolor }};{% endif %}"
+                data-number="{{ forloop.index }}"
+                data-btntext="{{ block.settings.button_1_text }}"
+                id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_1_text | escape }}"
+            >
+                {{ block.settings.button_1_text | escape }}
+            </a>
+        {%- endif -%}
+
+        {%- if block.settings.button_2_text != blank -%}
+            <a 
+                {% if block.settings.button_2_open_dialog %}
+                    data-type="playvideo"
+                    href="javascript:void(0)"
+                    data-videourl="{{ block.settings.button_2_link }}"
+                    class="js-open-videodialog ButtonGroup__Item Button js-public-gtm-btn button_2_text"
+                {%- else -%}
+                    href="{{ block.settings.button_2_link }}"
+                    class="ButtonGroup__Item Button js-public-gtm-btn button_2_text"        
+                {% endif %}
+                style="{% if block.settings.button_2_text_bordercolor %}border-color:{{ block.settings.button_2_text_bordercolor }};{% endif %}{% if block.settings.button_2_text_color %}color: {{ block.settings.button_2_text_color }}; {% endif %}{% if block.settings.button_2_text_backgroundcolor %}background-color: {{ block.settings.button_2_text_backgroundcolor }};{% endif %}"
+                data-number="{{ forloop.index }}"
+                data-btntext="{{ block.settings.button_2_text }}"
+                id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_2_text | escape }}"
+            >
+                {{ block.settings.button_2_text | escape }}
+            </a>
+        {%- endif -%}
+        </div>
+    </div>
+{%- endif -%}
+
+{%- if block.settings.button_1_text_mob != blank and block.settings.button_2_text_mob != blank -%}
+  {%- assign has_two_buttons_mob = true -%}
+{%- else -%}
+  {%- assign has_two_buttons_mob = false -%}
+{%- endif -%}
+
+{%- if block.settings.button_1_text_mob != blank or block.settings.button_2_text_mob != blank -%}
+  <div class="SectionHeader__ButtonWrapper banner_button content_position_mobile">
+    <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons_mob %}ButtonGroup--sameSize{% endif %}">
+      {%- if block.settings.button_1_text_mob != blank -%}
+        <a
+            {% if block.settings.button_1_open_dialog_mob %}
+                data-type="playvideo"
+                href="javascript:void(0)"
+                data-videourl="{{ block.settings.button_1_link_mob }}"
+                class="js-open-videodialog ButtonGroup__Item Button js-public-gtm-btn button_1_text"
+            {%- else -%}
+                href="{{ block.settings.button_1_link_mob }}"
+                class="ButtonGroup__Item Button js-public-gtm-btn button_1_text" 
+            {% endif %}
+          style="{% if block.settings.button_1_text_bordercolor_mob %}border-color:{{ block.settings.button_1_text_bordercolor_mob }};{% endif %}{% if block.settings.button_1_text_color_mob %}color: {{ block.settings.button_1_text_color_mob }}; {% endif %}{% if block.settings.button_1_text_backgroundcolor_mob %}background-color: {{ block.settings.button_1_text_backgroundcolor_mob }};{% endif %}"
+          data-number="{{ forloop.index }}"
+          data-btntext="{{ block.settings.button_1_text_mob }}"
+          id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_1_text_mob | escape }}">
+          {{ block.settings.button_1_text_mob | escape }}
+        </a>
+      {%- endif -%}
+
+      {%- if block.settings.button_2_text_mob != blank -%}
+        <a
+            {% if block.settings.button_2_open_dialog_mob %}
+                data-type="playvideo"
+                href="javascript:void(0)"
+                data-videourl="{{ block.settings.button_2_link_mob }}"
+                class="js-open-videodialog ButtonGroup__Item Button js-public-gtm-btn button_2_text"
+            {%- else -%}
+                href="{{ block.settings.button_2_link_mob }}"
+                class="ButtonGroup__Item Button js-public-gtm-btn button_2_text" 
+            {% endif %}
+          style="{% if block.settings.button_2_text_bordercolor_mob %}border-color:{{ block.settings.button_2_text_bordercolor_mob }};{% endif %}{% if block.settings.button_2_text_color_mob %}color: {{ block.settings.button_2_text_color_mob }}; {% endif %}{% if block.settings.button_2_text_backgroundcolor_mob %}background-color: {{ block.settings.button_2_text_backgroundcolor_mob }};{% endif %}"
+          data-number="{{ forloop.index }}"
+          data-btntext="{{ block.settings.button_2_text_mob }}"
+          id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_2_text_mob | escape }}">
+          {{ block.settings.button_2_text_mob | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{%- assign banner_more  = block.settings.banner_more | strip_html -%}
+{%- assign banner_more_mob = block.settings.banner_more_mob | strip_html -%}
+{%- if block.settings.banner_more != blank or block.settings.banner_more_mob != blank -%}
+    <div class="banner_more content_position_pc" style="{{ banner_more_color }}">{{ block.settings.banner_more }}</div>
+    <div class="banner_more content_position_mobile" style="{{ banner_more_color_mob }}">{{ block.settings.banner_more_mob }}</div>
+{%- endif -%}

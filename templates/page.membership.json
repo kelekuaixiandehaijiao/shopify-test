@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "162926545175971031": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "Membership",
+        "html": "<p>Write your own custom HTML content 789.<\/p>"
+      }
+    },
+    "1629795908485d4358": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "99352235-fbf3-4636-beb8-4afbeacd8900": {
+      "type": "fb-membership",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "162926545175971031",
+    "1629795908485d4358",
+    "99352235-fbf3-4636-beb8-4afbeacd8900"
+  ]
+}

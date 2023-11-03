@@ -1,0 +1,681 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+
+{%- if section.settings.enable_bar -%}
+  {%- unless section.settings.home_page_only and template != 'index' -%}
+    <section id="section-{{ section.id }}"  class="js-announcementbar-old" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
+      <div class="swiper AnnouncementBar"
+        id="headerBanner" 
+        data-arry="{%for block in section.blocks%}{{ block.settings.announcement_cycle_speed | times: 1000 }},{% endfor %}"
+      >
+        {% if country_code_var == 'gb' or locale contains 'GB' %}
+            <div class="swiper-wrapper AnnouncementBar__Wrapper js-announcement-box announcement-content-box">
+              {%- for block in section.blocks -%}
+                {% assign gbHeaderLeft = block.settings.header_left_gb | img_url: '' %}
+                {% assign gbeaderRight = block.settings.header_right_gb | img_url: '' %}
+                {%- if block.settings.show_announcement_gb_img == true -%}
+                <div class="swiper-slide">
+                  <a
+                    class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    data-isimgae="{{ block.settings.show_announcement_gb_img }}"
+                    {% if block.settings.announcement_gb_link != blank %}
+                    href="{{ block.settings.announcement_gb_link }}"
+                    {%- else -%}
+                    href="javascript:void(0);"
+                    {% endif %}
+                    data-speed="{{ block.settings.announcement_cycle_gb_speed }}"
+                    style="color: {{ block.settings.announcement_text_gb_color }};">
+                    {% assign imgPikerpc = block.settings.announcement_piker_gb_pc | img_url: '' %}
+                    {% assign imgPikermob = block.settings.announcement_piker_gb_mob | img_url: '' %}
+                    <div class="utils-mobile-hide2 announcement-block-img" style="width:100%;height:55px;">
+                      <img src="{{ imgPikerpc }}" />
+                    </div>
+                    <div class="utils-pc-hide2 announcement-block-img" style="width:100%;height:46px;">
+                      <img src="{{ imgPikermob }}" />
+                    </div>
+                  </a>
+                </div>
+                {%- else -%}
+                  {%- assign mobile_gb_text = block.settings.announcement_gb_text_mobile | default: block.settings.announcement_gb_text -%}
+                  <div class="swiper-slide">
+                  <a
+                    class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    {% if block.settings.announcement_gb_link != blank %}
+                    href="{{ block.settings.announcement_gb_link }}"
+                    {%- else -%}
+                    href="javascript:void(0);"
+                    {% endif %}
+                    data-speed="{{ block.settings.announcement_cycle_gb_speed }}"
+                    style="color: {{ block.settings.announcement_text_gb_color }};">
+                    <div class="utils-mobile-hide2">
+                      <object>
+                        {{ block.settings.announcement_gb_text }}
+                      </object>
+                    </div>
+                    <div class="utils-pc-hide2">
+                      <object>
+                        {{ mobile_gb_text }}
+                      </object>
+                    </div>
+                  </a>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            <div class="announcement-left" data-index="{{forloop.index}}"><img style="width:7px;height:12px;" src="{{ gbHeaderLeft }}" /></div>
+            <div class="announcement-right" data-index="{{forloop.index}}"><img style="width:7px;height:12px;" src="{{ gbeaderRight }}" /></div>
+        {% elsif country_code_var == 'au' or locale contains 'AU' %}
+            <div class="swiper-wrapper AnnouncementBar__Wrapper js-announcement-box announcement-content-box">
+              {%- for block in section.blocks -%}
+                {% assign auHeaderLeft = block.settings.header_left_au | img_url: '' %}
+                {% assign auHeaderRight = block.settings.header_right_au | img_url: '' %}
+                {%- if block.settings.show_announcement_img_au == true -%}
+                <div class="swiper-slide">
+                  <a
+                    class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    data-isimgae="{{ block.settings.show_announcement_img_au }}"
+                    {% if block.settings.announcement_link_au != blank %}
+                      href="{{ block.settings.announcement_link_au }}"
+                    {%- else -%}
+                      href="javascript:void(0);"
+                    {% endif %}
+                      data-speed="{{ block.settings.announcement_cycle_speed_au }}"
+                      style="color: {{ block.settings.announcement_text_color_au }};">
+                      {% assign auImgPikerpc = block.settings.announcement_piker_pc_au | img_url: '' %}
+                      {% assign auImgPikermob = block.settings.announcement_piker_mob_au | img_url: '' %}
+                      <div class="utils-mobile-hide2 announcement-block-img" style="width:100%;height:55px;">
+                        <img src="{{ auImgPikerpc }}" />
+                      </div>
+                      <div class="utils-pc-hide2 announcement-block-img" style="width:100%;height:46px;">
+                        <img src="{{ auImgPikermob }}" />
+                      </div>
+                  </a>
+                </div>
+                {%- else -%}
+                  {%- assign mobile_text_au = block.settings.announcement_text_mobile_au | default: block.settings.announcement_text_au -%}
+                  <div class="swiper-slide">
+                  <a class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                    {% if block.settings.announcement_link_au != blank %}
+                        href="{{ block.settings.announcement_link_au }}"  
+                    {%- else -%}
+                        href="javascript:void(0);" 
+                    {% endif %}
+                    data-speed="{{ block.settings.announcement_cycle_speed_au }}"
+                    style="color: {{ block.settings.announcement_text_color_au }};">
+                    <div class="utils-mobile-hide2"> <object> {{ block.settings.announcement_text_au }} </object></div>
+                    <div class="utils-pc-hide2"><object> {{ mobile_text_au }} </object></div>
+                  </a>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            <div class="announcement-left" data-index="{{forloop.index}}"><img style="width:7px;height:12px;" src="{{ auHeaderLeft }}" /></div>
+            <div class="announcement-right" data-index="{{forloop.index}}"><img style="width:7px;height:12px;" src="{{ auHeaderRight }}" /></div>
+        {%- else -%}
+            <div class="swiper-wrapper AnnouncementBar__Wrapper js-announcement-box announcement-content-box">
+                {%- for block in section.blocks -%}
+                    {% assign headerLeft = block.settings.header_left | img_url: '' %}
+                    {% assign headerRight = block.settings.header_right | img_url: '' %}
+                  {%- if block.settings.show_announcement_img == true -%}
+                  <div class="swiper-slide">
+                    <a
+                      class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                      data-isimgae="{{ block.settings.show_announcement_img }}"
+                      {% if block.settings.announcement_link != blank %}
+                      href="{{ block.settings.announcement_link }}"
+                      {%- else -%}
+                      href="javascript:void(0);"
+                      {% endif %}
+                      data-speed="{{ block.settings.announcement_cycle_speed }}"
+                      style="color: {{ block.settings.announcement_text_color }};">
+                      {% assign imgPikerpc = block.settings.announcement_piker_pc | img_url: '' %}
+                      {% assign imgPikermob = block.settings.announcement_piker_mob | img_url: '' %}
+                      <div class="utils-mobile-hide2 announcement-block-img"  style="width:100%;height:55px;">
+                        <img src="{{ imgPikerpc }}" />
+                      </div>
+                      <div class="utils-pc-hide2 announcement-block-img" style="width:100%;height:46px;">
+                        <img src="{{ imgPikermob }}" />
+                      </div>
+                    </a>
+                  </div>
+                  {%- else -%}
+                    {%- assign mobile_text = block.settings.announcement_text_mobile | default: block.settings.announcement_text -%}
+                    <div class="swiper-slide">
+                    <a class="Heading announcement-scroll js-announcement-show  announcement-scroll-{{ forloop.index }}"
+                        {% if block.settings.announcement_link != blank %}
+                            href="{{ block.settings.announcement_link }}"  
+                        {%- else -%}
+                            href="javascript:void(0);" 
+                        {% endif %}
+                        data-speed="{{ block.settings.announcement_cycle_speed }}"
+                        style="color: {{ block.settings.announcement_text_color }};">
+                        <div class="utils-mobile-hide2"> <object> {{ block.settings.announcement_text }} </object></div>
+                        <div class="utils-pc-hide2"><object> {{ mobile_text }} </object></div>
+                    </a>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+            </div>
+            <div class="announcement-left" data-index="{{forloop.index}}"><img class="Image--lazyLoad Image--fadeIn" style="width:7px;height:12px;" src="{{ headerLeft }}" /></div>
+            <div class="announcement-right" data-index="{{forloop.index}}"><img class="Image--lazyLoad Image--fadeIn" style="width:7px;height:12px;" src="{{ headerRight }}" /></div>
+        {% endif %}
+        {% if country_code_var == 'gb' %}
+          {%- if section.settings.is_view_offer_gb -%}
+            <button class="annou-button-offer annou-button-offer-position" aria-expanded="false" data-action="open-modal" aria-controls="sidebar-annoucement-offer-gb"  aria-label="Open OK">
+                <span class="annou-button-text">{{ section.settings.view_offer_text }}</span> <span class="js-view-annou-number">1</span>
+            </button>
+          {%- endif -%}
+        {%- elsif country_code_var == 'au' -%}
+          {%- if section.settings.is_view_offer_au -%}
+            <button class="annou-button-offer annou-button-offer-position" aria-expanded="false" data-action="open-modal" aria-controls="sidebar-annoucement-offer-au"  aria-label="Open OK">
+                <span class="annou-button-text">{{ section.settings.view_offer_text }}</span> <span class="js-view-annou-number">1</span>
+            </button>
+          {%- endif -%}
+        {%- else -%}
+          {%- if section.settings.is_view_offer -%}
+            <button class="annou-button-offer annou-button-offer-position" aria-expanded="false" data-action="open-modal" aria-controls="sidebar-annoucement-offer"  aria-label="Open OK">
+                <span class="annou-button-text">{{ section.settings.view_offer_text }}</span> <span class="js-view-annou-number">1</span>
+            </button>
+          {%- endif -%}
+        {% endif %}
+      </div>
+    </section>
+    <style>
+      .announcement-left{
+        position: absolute;
+        top:16px;
+        left: 12px;
+        width: 24px;
+        height: 24px;
+        background: rgba(255,255,255,0.2);
+        color:#fff;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index:999;
+        display:flex;
+        align-items:center;
+      }
+      .announcement-left img{
+        margin-left:8px;
+      }
+      .announcement-right{
+        position: absolute;
+        top:16px;
+        right: 12px;
+        width: 24px;
+        height: 24px;
+        background: rgba(255,255,255,0.2);
+        color:#fff;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index:999;
+        display:flex;
+        align-items:center;
+      }
+      .announcement-right img{
+        margin-left:10px;
+        z-index:999;
+      }
+        a{
+            text-decoration:none;
+        }
+        .AnnouncementBar__Wrapper{
+          padding: 12px 0px;
+        }
+        .AnnouncementBar {
+          {% assign image = section.settings.BackgroundImage_p %}
+          {% if image != blank %}
+            background: url("{{ section.settings.BackgroundImage_p | image_url }}");
+            background-size: 100% 100%;
+          {% else %}
+            background: #000;
+          {% endif %}
+        }
+        .announcement-block-img {
+          width: 100%;
+          height: 100%;
+        }
+        .announcement-block-img img {
+          width: auto;
+          height: 100%;
+          object-fit: cover;
+        }
+        #shopify-section-announcement{
+            position: sticky;
+            top: 0!important;
+            width: 100%!important;
+            z-index: 10!important;
+        }
+        #section-{{ section.id }} .announcement-content-box{
+            position: relative;
+            text-align: center;
+        }
+        .announcement-scroll p{
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+        }
+        {%- if section.settings.pc_line == '2' -%}
+            #section-{{ section.id }} .announcement-content-box {
+                height:  80px;
+            }
+            .announcement-scroll p{
+                font-size: 18px;
+                line-height: 22px;
+            }
+        {%- else -%}
+            #section-{{ section.id }} .announcement-content-box {
+                height: 55px;  
+            }
+            .announcement-scroll p{
+                font-size: 18px;
+                line-height: 22px;
+            }
+        {%- endif -%}
+  
+        @media only screen and (max-width: 1023px) {
+          .announcement-left{
+            display: none;
+          }
+          .announcement-right{
+            display: none;
+          }
+          {%- if section.settings.mobile_line == '2' -%}
+            #section-{{ section.id }} .announcement-content-box {
+              height:  46px;
+            }
+            .announcement-scroll p{
+              font-size: 12px;
+              line-height: 18px;
+            }
+          {%- else -%}
+            #section-{{ section.id }} .announcement-content-box {
+              height: 23px;  
+            }
+            .announcement-scroll p{
+              font-size: 12px;
+              line-height: 15px;
+            }
+          {%- endif -%}
+
+          /* 隐藏mobile */
+          .utils-mobile-hide2{
+            display: none!important;
+          }
+
+
+          .AnnouncementBar {
+            {% assign image = section.settings.BackgroundImage_m %}
+            {% if image != blank %}
+              background: url("{{ section.settings.BackgroundImage_m | image_url }}");
+              background-size: 100% 100%;
+            {% else %}
+              background: #000;
+            {% endif %}
+          }
+        }
+        .announcement-scroll {
+            visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0px;
+            top: 0px;
+        }
+        .announcement-scroll:first-child{
+            visibility: visible;
+        }
+        @media only screen and (min-width: 1024px){
+          /* 隐藏pc */
+          .utils-pc-hide2 {
+            display: none!important;
+          }
+        }
+        @keyframes utilsscrollhide{
+            0% {opacity: 1;}
+            10% {opacity: 0.8;}
+            100% {opacity: 0; }
+        }
+        @keyframes utilsscrollshow{
+            0%{opacity:0; }
+            100%{
+                opacity: 1;
+            }
+        }
+        .utils-scroll-show {
+            animation: utilsscrollshow 1s 1;
+            visibility: visible!important; 
+        }
+        .utils-scroll-hide {
+            animation: utilsscrollhide 1s 1;  
+            visibility: hidden!important;
+        }
+       .announcement-content-box  object p a {
+            text-decoration: underline;
+            color: #fff;
+        }
+        {% for block in section.blocks %}
+          {% if forloop.index == 1 and block.settings.show_announcement_img %}
+            .annou-button-offer-position{
+              z-index: -1;
+              visibility: hidden;
+            }
+          {% else %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {%- capture dom_css_offer -%}
+              .announcement-block-img{
+                display: flex;
+                justify-content: center;
+              }
+              .announcement-block-img{
+                width: 100%!important;
+                padding-right: 0px!important;
+              }
+              @media only screen and (min-width: 1024px) {
+                .utils-mobile-hide2{
+                  width: 818px;
+                  padding-right: 178px;
+                  text-align: center;
+                }
+              }
+              @media only screen and (max-width: 1023px){
+                .announcement-scroll{
+                  padding-left: 10px;
+                  justify-content: flex-start;
+                }
+                .utils-pc-hide2{
+                  text-align: left;
+                }
+              }
+        {%- endcapture -%}
+        {% if country_code_var == 'gb' %}
+          {%- if section.settings.is_view_offer_gb -%}
+              {{ dom_css_offer }}
+          {%- endif -%}
+        {%- elsif country_code_var == 'au' -%}
+          {%- if section.settings.is_view_offer_au -%}
+            {{ dom_css_offer }}
+          {%- endif -%}
+        {%- else -%}
+          {%- if section.settings.is_view_offer -%}
+            {{ dom_css_offer }}
+          {%- endif -%}
+        {% endif %}
+    </style>
+
+    <script>
+      document.documentElement.style.setProperty('--announcement-bar-height', document.getElementById('shopify-section-announcement').offsetHeight + 'px');
+    </script>
+  {%- endunless -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Home page only",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "BackgroundImage_m",
+      "label": "Background Mobild Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "BackgroundImage_p",
+      "label": "Background Computer Image"
+    },
+    {
+      "type": "select",
+      "id": "pc_line",
+      "label": "Select Pc rows",
+      "options": [
+        {
+          "value": "1",
+          "label": "One rows"
+        },
+        {
+          "value": "2",
+          "label": "Two rows"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "mobile_line",
+      "label": "Select Mobile rows",
+      "options": [
+        {
+          "value": "1",
+          "label": "One"
+        },
+        {
+          "value": "2",
+          "label": "Two"
+        }
+      ],
+      "default": "2"
+    },
+    {
+        "type": "checkbox",
+        "id": "is_view_offer",
+        "label": "Open Offer CA",
+        "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "is_view_offer_gb",
+      "label": "Open Offer GB",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "is_view_offer_au",
+      "label": "Open Offer AU",
+      "default": true
+    },
+    {
+        "type": "text",
+        "id": "view_offer_text",
+        "label": "View Offer Text",
+        "default": "VIEW OFFERS"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+      {
+        "type": "scrollBar",
+        "name": "scrollBar",
+        "settings": [
+            {
+              "type": "checkbox",
+              "id": "show_announcement_img",
+              "label": "Show Img",
+              "default": false,
+              "info": "If this option is enabled, only the configured images will be displayed, and the configuration text will be invalidated"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_pc",
+              "label": "Image pc"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_mob",
+              "label": "Image mob",
+              "info": "One row of images is 23px high, and two rows of images are 46px high"
+            },
+            {
+                "type": "color",
+                "id": "announcement_text_color",
+                "label": "Text Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "url",
+                "id": "announcement_link",
+                "label": "Link"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text",
+                "label": "Pc text"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text_mobile",
+                "label": "Mobile text"
+            },
+            {
+                "type": "range",
+                "id": "announcement_cycle_speed",
+                "min": 2,
+                "max": 20,
+                "step": 1,
+                "unit": "sec",
+                "label": "Change slides every (unit: s)",
+                "default": 5
+            },
+            {
+              "type": "checkbox",
+              "id": "show_announcement_gb_img",
+              "label": "Show Img gb",
+              "default": false,
+              "info": "If this option is enabled, only the configured images will be displayed, and the configuration text will be invalidated"
+            }, {
+              "type": "image_picker",
+              "id": "announcement_piker_gb_pc",
+              "label": "Image pc gb"
+            }, {
+              "type": "image_picker",
+              "id": "announcement_piker_gb_mob",
+              "label": "Image mob gb",
+              "info": "One row of images is 23px high, and two rows of images are 46px high"
+            }, {
+              "type": "color",
+              "id": "announcement_text_gb_color",
+              "label": "Text Color gb",
+              "default": "#ffffff"
+            }, {
+              "type": "url",
+              "id": "announcement_gb_link",
+              "label": "Link gb"
+            }, {
+              "type": "richtext",
+              "id": "announcement_gb_text",
+              "label": "Pc text gb"
+            }, {
+              "type": "richtext",
+              "id": "announcement_gb_text_mobile",
+              "label": "Mobile text gb"
+            }, {
+              "type": "range",
+              "id": "announcement_cycle_gb_speed",
+              "min": 2,
+              "max": 20,
+              "step": 1,
+              "unit": "sec",
+              "label": "Change slides every (unit: s)",
+              "default": 5
+            },
+            {
+              "type": "checkbox",
+              "id": "show_announcement_img_au",
+              "label": "Show Img AU",
+              "default": false,
+              "info": "If this option is enabled, only the configured images will be displayed, and the configuration text will be invalidated"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_pc_au",
+              "label": "Image pc AU"
+            },
+            {
+              "type": "image_picker",
+              "id": "announcement_piker_mob_au",
+              "label": "Image mob AU",
+              "info": "One row of images is 23px high, and two rows of images are 46px high"
+            },
+            {
+              "type": "color",
+              "id": "announcement_text_color_au",
+              "label": "Text Color AU",
+              "default": "#ffffff"
+            },
+            {
+              "type": "url",
+              "id": "announcement_link_au",
+              "label": "Link AU"
+            },
+            {
+                "type": "richtext",
+                "id": "announcement_text_au",
+                "label": "Pc text AU"
+            },
+            {
+              "type": "richtext",
+              "id": "announcement_text_mobile_au",
+              "label": "Mobile text AU"
+            },
+            {
+              "type": "range",
+              "id": "announcement_cycle_speed_au",
+              "min": 2,
+              "max": 20,
+              "step": 1,
+              "unit": "sec",
+              "label": "Change slides every (unit: s)",
+              "default": 5
+            },
+            {
+              "type": "image_picker",
+              "id": "header_left",
+              "label": "Header Left"
+            },
+            {
+              "type": "image_picker",
+              "id": "header_right",
+              "label": "Header Right"
+            },
+            {
+              "type": "image_picker",
+              "id": "header_left_au",
+              "label": "AU Header Left"
+            },
+            {
+              "type": "image_picker",
+              "id": "header_right_au",
+              "label": "AU Header Right"
+            },
+            {
+              "type": "image_picker",
+              "id": "header_left_gb",
+              "label": "GB Header Left"
+            },
+            {
+              "type": "image_picker",
+              "id": "header_right_gb",
+              "label": "GB Header Right"
+            }
+        ]
+      }
+  ]
+}
+{% endschema %}

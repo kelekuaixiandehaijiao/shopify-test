@@ -1,0 +1,29 @@
+<div style="">
+    <div class="fb-star-litbike">
+        <span class="stamped-product-reviews-badge stamped-main-badge" data-product-id="{{ product.id }}" 
+            data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}"
+            data-description="{{ product.description | escape }}" data-product-sku="{{ product.handle }}"
+            data-product-title="{{product.title}}" data-product-type="{{product.type}}">
+            <span class="stampedRating-pdp"></span>
+            {{product.metafields.stamped.badge}}
+         </span>
+        {% comment %} get product{{ settings.product_black.id }} {% endcomment %}
+        {% comment %} {%- render 'fb-pdp-star', product: settings.product_black -%} {% endcomment %}
+    </div>
+    <div class="fb-star-boombike">
+        {%- render 'fb-pdp-star', product: settings.product_boom_white -%}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "fCheckoutStar",
+    "presets": [
+      {
+          "name": "fb-checkout-star",
+          "category": "My Sections",
+          "blocks": []
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,60 @@
+<div class="all-page-play-video" id="all-page-playVideo">
+    <img id="all-page-colsePlay" 
+        data-size="auto"
+        class="Image--lazyLoad"
+        data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/black_background_close.png?v=1649846405">
+    <div class="all-page-video-box">
+        <video id="js-trigger-video" controls="controls" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780">
+        </video>
+    </div>
+</div>
+<style>
+/* 自定制视频播放弹窗 */
+.all-page-play-video{
+	display: none;
+	position: fixed;
+  z-index: 99999999999999;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: #000;
+  
+  
+}
+.all-page-play-video .all-page-video-box{
+
+	position: relative;
+  width: 100%;
+  height: 100%;
+  	z-index:0;
+  
+}
+.all-page-video-box video{
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+.all-page-play-video img{
+	position: absolute;
+  	width: 40px;
+  	z-index:1;
+    top: 60px;
+    right: 60px;
+    width: 32px;
+    cursor: pointer;
+    border: 0;
+    max-width: 100%;
+}
+@media (max-width: 640px){
+  .all-page-play-video img{
+  	width: 24px;
+    top: 22px;
+    right: 22px;
+  }
+  .all-page-video-box video{
+  	object-fit: contain;
+  }
+}
+</style>

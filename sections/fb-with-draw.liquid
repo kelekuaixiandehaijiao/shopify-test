@@ -1,0 +1,300 @@
+<div class="fb-with-draw" id="section-{{ section.id }}">
+    {% assign imgPiker =section.settings.bg_image | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+
+    <img class="Image--lazyLoad Image--fadeIn fb-with-draw-bg" 
+    data-src="{{ imgPiker }}" 
+    data-sizes="auto"
+    data-optimumx="1.2"
+    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+    <div class="fb-with-card">
+        <div class="with-card-name">hello, <span id="userName"></span></div>
+        <div class="u-balance">{{section.settings.total_balance}}</div>
+        <div class="u-money"><span id="totalBonus">$0</span> <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/PAYPAL_2x_7d17a12d-f32b-4ac2-a531-6b234ebb5cb0.png?v=1667732889" alt="" class="u-img"></div>
+        <!-- <div class="u-received">{{'Received'}}</div> -->
+        <div class="u-btn">Withdraw</div>
+        <div class="with-draw-list">
+            <div class="with-draw-list_box">
+                <div class="with-title">{{section.settings.with_draw_one_des}}</div>
+                <div class="with-money" id="availableBonus">$0</div>
+                <div class="with-des">{{section.settings.with_one_bottom_des}}</div>
+            </div>
+            <div class="with-draw-list_box">
+                <div class="with-title">{{section.settings.with_draw_two_des}}</div>
+                <div class="with-money" id="frozenBonus">$0</div>
+                <div class="with-des">{{section.settings.with_two_bottom_des}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "FbWithDraw",
+    "presets": [
+      {
+        "name": "fb-with-draw",
+        "category": "Fb Sections"
+      }
+    ],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Bg Image"
+        },
+        {
+            "type": "text",
+            "id": "with_draw_one_des",
+            "label": "With Draw one Des",
+            "default":"Withdrawable now"
+        },
+        {
+            "type": "text",
+            "id": "with_draw_two_des",
+            "label": "With Draw two Des",
+            "default":"Withdrawable later"
+        },
+        {
+            "type": "text",
+            "id": "with_one_bottom_des",
+            "label": "With Draw One Bottom Des"
+        },
+        {
+            "type": "text",
+            "id": "with_two_bottom_des",
+            "label": "With Draw Two Bottom Des"
+        },
+        {
+            "type": "text",
+            "id": "total_balance",
+            "label": "Total Balance",
+            "default":"Total Balance"
+        }
+    ]
+  }
+{% endschema %}
+<style>
+    .fb-with-draw-bg{
+        width: 100%;
+        /* height: 620px; */
+        height: 315px;
+        position: relative;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .fb-with-card{
+        width:calc(100% - 400px);
+        height: 696px;
+        margin: 0 auto;
+        margin-top: -255px;
+        margin-bottom: 120px;
+        background: #FFFFFF;
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 60px 95px;
+        box-sizing: border-box;
+    }
+    
+    .with-card-name{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        text-transform: capitalize;
+        /* identical to box height */
+        color: #000000;
+    }
+    .fb-with-draw .u-balance{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+        margin: 30px 0 8px 0;
+    }
+    .fb-with-draw .u-money{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 59px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 34px;
+        margin-left: 118px;
+        display: flex;
+        align-items: center;
+    }
+    /* .fb-with-draw .u-received{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        margin: 4px 0 20px 0;
+    } */
+    .fb-with-draw  .u-btn{
+        width: 400px;
+        height: 64px;   
+        background: linear-gradient(90deg, #8003FE 0%, #FC5EA6 100%);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        cursor: pointer;
+        color: #FFFFFF;
+    }
+    .fb-with-draw .with-draw-list{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 80px;
+    }
+    .fb-with-draw  .with-draw-list_box{
+        width: calc(calc(100% - 71px)/2);
+        height: 214px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px 16px 16px 16px;
+        box-sizing: border-box;
+    }
+    .fb-with-draw  .with-draw-list_box .with-title{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: #000000;
+    }
+    .fb-with-draw  .with-draw-list_box .with-money{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        /* identical to box height */
+        text-align: center;
+        color: #000000;
+    }
+    .fb-with-draw  .with-draw-list_box .with-des{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+        text-align: center;
+        color: #747474;
+        word-break: normal;
+        /* white-space: nowrap; */
+        /* transform: scale(0.8); */
+    }
+    .u-money .u-img{
+        width: 104px;
+        height: 32px;
+        margin-left: 16px;
+    }
+    
+ @media screen and (max-width: 769px)  {
+    .fb-with-draw-bg{
+        width: 100%;
+        height: 180px;
+    }
+    .fb-with-card{
+        width:calc(100% - 50px);
+        height:auto;
+        margin-top: -150px;
+        margin-bottom: 60px;
+        padding: 32px 20px;
+        border-radius: 12px;
+    }
+    .with-card-name{
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: capitalize;
+    }
+    .fb-with-draw .u-balance{
+        font-size: 16px;
+        line-height: 20px;
+        margin: 20px 0 8px 0;
+    }
+    /* .fb-with-draw .u-received{
+        font-size: 12px;
+        line-height: 15px;
+        margin: 4px 0 24px 0;
+    } */
+    .fb-with-draw .u-money{
+        font-size: 32px;
+        line-height: 39px;
+        margin-bottom: 24px;
+        margin-left: 58px;
+    }
+    .fb-with-draw  .u-btn{
+        width: 240px;
+        height: 40px; 
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .fb-with-draw .with-draw-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 42px
+    }
+    .fb-with-draw  .with-draw-list_box{
+        width:100%;
+        height: 122px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(16.45px);
+        border-radius: 8px;
+        margin: 0 auto;
+        padding: 16px 0 8px 0;
+    }
+    .fb-with-draw  .with-draw-list_box:nth-child(1){
+        margin-bottom: 12px;
+    }
+    .fb-with-draw  .with-draw-list_box .with-title{
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .fb-with-draw  .with-draw-list_box .with-money{
+        font-size: 32px;
+        line-height: 39px;
+    }
+    .fb-with-draw  .with-draw-list_box .with-des{
+        font-size: 6px;
+        /* white-space: nowrap; */
+        transform: scale(1);
+        line-height: 6px;
+    }
+    .u-money .u-img{
+        width: 52px;
+        height: 16px;
+        margin-left: 8px;
+    }
+
+
+
+ }
+
+</style>

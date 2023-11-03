@@ -1,0 +1,346 @@
+<div id="section-{{ section.id }}" class="online-reviewers js-online-reviewers">
+  <div class="online_reviewers_max_title">{{ section.settings.online_reviewers_max_title }}</div>
+
+  <div class="swiper testswiper">
+    <div class="swiper-wrapper">
+      {%- for block in section.blocks -%}
+        <div class="swiper-slide">
+          <div class="online_reviewers_con">
+            <div class="online_reviewers_item">
+              <div class="online_reviews_top">
+                {% assign online_reviews_icon = block.settings.online_reviews_icon | img_url: '' %}
+                <img
+                  class="Image--lazyLoad Image--fadeIn online_reviews_icon"
+                  data-sizes="auto"
+                  data-optimumx="1.2"
+                  data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                  data-src="{{ online_reviews_icon }}"
+                >
+                <span class="online_reviews_title">{{ block.settings.online_reviews_title }}</span>
+              </div>
+
+              <div class="online_reviews_middle">
+                <iframe
+                  class="reviews_iframe"
+                  style="border-radius: 16px;"
+                  src="{{ block.settings.online_reviews_url }}"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="online_reviews_bottom">
+                <div class="online_reviews_bottom1">
+                  {% assign online_reviews_circle = block.settings.online_reviews_circle | img_url: '' %}
+                  <img
+                    class="Image--lazyLoad Image--fadeIn online_reviews_circle"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    data-src="{{ online_reviews_circle }}"
+                  >
+                  <p class="online_reviews_color">{{ block.settings.online_reviews_color }}</p>
+                </div>
+                <div class="online_reviews_bottom2">
+                  {% assign online_reviews_talk = block.settings.online_reviews_talk | img_url: '' %}
+                  <img
+                    class="Image--lazyLoad Image--fadeIn online_reviews_talk"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    data-src="{{ online_reviews_talk }}"
+                  >
+                  <p class="online_reviews_text">{{ block.settings.online_reviews_text }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="swiper-scrollbar testscrollbar"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<style>
+  .reviews_iframe{
+    width: 440px;
+    height: 240px;
+    margin: auto;
+  }
+  .online-reviewers {
+    padding-bottom: 0;
+    padding-top: 100px;
+  }
+  .online-reviewers .testscrollbar {
+    display: block;
+    width: 80%;
+    height: 6px;
+    margin: 20px auto;
+    border-radius: 3px;
+  }
+  .online-reviewers .testscrollbar .swiper-scrollbar-drag {
+    width: 33%;
+    background: rgba(0, 0, 0, 0.15);
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .online-reviewers .swiper-slide {
+    width: auto;
+  }
+  .online-reviewers .swiper-pagination {
+    display: none;
+  }
+  .testswiper {
+    width: 80%;
+    margin: auto;
+  }
+  .online_reviewers_max_title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .online_reviewers_con {
+    display: flex;
+  }
+  .online_reviewers_item {
+    width: 440px;
+  }
+  .online_reviews_top {
+    margin-bottom: 29px;
+  }
+  .online_reviews_top .online_reviews_icon {
+    width: 32px;
+  }
+  .online_reviews_top .online_reviews_title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    margin-left: 18px;
+  }
+  .online_reviews_bottom1 {
+    margin-top: 25px;
+    overflow: hidden;
+  }
+  .online_reviews_bottom1 .online_reviews_circle {
+    width: 28px;
+    float: left;
+  }
+  .online_reviews_bottom1 .online_reviews_color {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    float: left;
+    margin-left: 20px;
+    margin-top: 2px;
+  }
+  .online_reviews_bottom2 {
+    margin-top: 23px;
+    overflow: hidden;
+  }
+  .online_reviews_bottom2 .online_reviews_talk {
+    width: 32px;
+    float: left;
+  }
+  .online_reviews_bottom2 .online_reviews_text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    float: right;
+    margin-top: -30px;
+    margin-left: 50px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .reviews_iframe{
+      width: 100%;
+      height: 160px;
+      margin: auto;
+    }
+    {%- if template == 'index' -%}
+        .online-reviewers {
+          padding: 0 25px 60px 25px;
+          background: #f7f7f7;
+          position: relative;
+        }
+    {%- else -%}
+        .online-reviewers {
+          padding: 50px 25px 60px 25px;
+          background: #f7f7f7;
+          position: relative;
+        }
+    {%- endif -%}
+    .online-reviewers .swiper-scrollbar {
+      display: none;
+    }
+    .online-reviewers .swiper-pagination {
+      display: block;
+    }
+    .online-reviewers .swiper-slide {
+      margin-right: 0;
+    }
+    .online_reviewers_max_title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 37px;
+      color: #000000;
+      margin-bottom: 30px;
+      margin-top: 0;
+      text-align: left;
+    }
+    .testswiper {
+      width: 100%;
+      height: 100%;
+    }
+    .online_reviewers_item {
+      background: #ffffff;
+      border-radius: 25px;
+      padding-bottom: 20px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .online-reviewers .swiper-pagination {
+      position: absolute;
+      bottom: 30px;
+      z-index: 1;
+    }
+    .online-reviewers .swiper-pagination .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .online-reviewers .swiper-pagination .swiper-pagination-bullet-active {
+      background: #000000;
+    }
+    .online_reviews_top {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .online_reviews_top .online_reviews_icon {
+      width: 20px;
+      margin-top: 7px;
+      margin-left: 20px;
+    }
+    .online_reviews_top .online_reviews_title {
+      margin-left: 15px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+    }
+    .online_reviews_middle {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .online_reviews_bottom1 {
+      margin-top: 20px;
+      margin-left: 21px;
+    }
+    .online_reviews_bottom1 .online_reviews_circle {
+      width: 18px;
+    }
+    .online_reviews_bottom1 .online_reviews_color {
+      margin-left: 16px;
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+    }
+    .online_reviews_bottom2 {
+      overflow: hidden;
+      margin-top: 16px;
+      margin-left: 20px;
+    }
+    .online_reviews_bottom2 .online_reviews_talk {
+      width: 20px;
+      float: left;
+      margin-right: 15px;
+    }
+    .online_reviews_bottom2 .online_reviews_text {
+      float: left;
+      width: 246px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      color: #000000;
+      margin-left: 0;
+      margin-top: 0;
+    }
+    .online_reviewers_item .Image--fadeIn {
+      opacity: 1;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Online Reviewers",
+  "presets": [
+    {
+      "name": "online-reviewers",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "online_reviewers_max_title",
+      "label": "Online Reviewers Max Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "OnlineReviewersBlock",
+      "name": "OnlineReviewersBlock",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "online_reviews_icon",
+          "label": "Online Reviews Icon"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_title",
+          "label": "Online Reviews Title"
+        },
+        {
+          "type": "url",
+          "id": "online_reviews_url",
+          "label": "Online Reviews Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_reviews_circle",
+          "label": "Online Reviews Circle"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_color",
+          "label": "Online Reviews Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_reviews_talk",
+          "label": "Online Reviews Talk"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_text",
+          "label": "Online Reviews Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

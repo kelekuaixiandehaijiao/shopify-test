@@ -1,0 +1,159 @@
+<div  id="section-{{ section.id }}" class="fb-animation-boom-class js-boombike-delayshow">
+    <div id="fb-scroll-boom" data-template="{{template}}" data-video-src="https://cdn.shopify.com/">
+        <div class="fb-scroll-boom-container" >
+            <!-- video1 muted -->
+            <div id="boom-video-muted-one" class="fb-video-muted-btn fb-video-muted-box1">
+                <img data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/yinyueopen.png?v=1664250931" class="fac-open-video Image--lazyLoad Image--fadeIn" />
+                <img data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/yinyueclose.png?v=1664250931" class="fac-close-video Image--lazyLoad Image--fadeIn" />
+            </div>
+            <!-- video2 muted -->
+            <div id="boom-video-muted" class="fb-video-muted-btn fb-video-muted-box2">
+                <img data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/yinyueopen.png?v=1664250931" class="fac-open-video Image--lazyLoad Image--fadeIn" />
+                <img data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/yinyueclose.png?v=1664250931" class="fac-close-video Image--lazyLoad Image--fadeIn" />
+             </div>
+            <!-- first screen -->
+            <div class="boom-section-fullimg">
+                <img class="js-boom-back" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780">
+            </div>
+            <div class="boom-section-firsttext">
+                {{ section.settings.aboom_title_home }}
+            </div>
+            {%- comment -%} first after add {%- endcomment -%}
+            <div id="boom-sectionzero-video">
+                <video id="boom-sectionzero-videosrc"  
+                    x-webkit-airplay="allow"
+                    webkit-playsinline="true"
+                    playsinline="true"
+                    preload="auto"
+                    muted
+                    loop
+                    ref="video"
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780"
+                >
+                </video>
+            </div>
+            <!-- first add -->
+            <div id="boom-sectionfirst-video">
+                <video id="boom-sectionfirst-videosrc"  
+                    x-webkit-airplay="allow"
+                    webkit-playsinline="true"
+                    playsinline="true"
+                    preload="auto"
+                    muted
+                    loop
+                    ref="video"
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780"
+                >
+                </video>
+            </div>
+            <div class="boom-svg-text-box" id="boom-svg-text">
+                <div class="chair-flex-center">
+                    {%- if section.settings.aboom_title_one != blank -%}
+                        <div class="ctb-title">
+                        {{ section.settings.aboom_title_one }}
+                        </div>
+                    {%- endif -%}
+                    {%- if section.settings.acboom_desc_one != blank -%}
+                        <div class="ctb-desc">
+                            {{ section.settings.acboom_desc_one }}
+                        </div>
+                    {%- endif -%}
+                </div>
+            </div>
+
+            <div class="boom-svg-text-box" id="boom-video-text">
+                <div class="chair-flex-center">
+                    {%- if section.settings.acboom_title_two != blank -%}
+                        <div class="ctb-title boom-mshow-pchide">
+                            {{ section.settings.acboom_title_two }}
+                        </div>
+                        <div class="ctb-title boom-pcshow-mhide">
+                           <p> {{  section.settings.acboom_title_two | strip_html}} </p>
+                        </div>
+
+                    {%- endif -%}
+                    {%- if section.settings.acboom_desc_two != blank -%}
+                        <div class="ctb-desc">
+                        {{ section.settings.acboom_desc_two }}
+                        </div>
+                    {%- endif -%}
+                </div>
+            </div>
+
+            <!-- second -->
+            <img id="boom-section-svga"  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780" />
+            <!-- 第三层哑铃视频动画 -->
+            <div id="boom-section-video">
+                <video id="boom-section-videosrc"  
+                    x-webkit-airplay="allow"
+                    webkit-playsinline="true"
+                    playsinline="true"
+                    preload="auto"
+                    muted
+                    loop
+                    ref="video"
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780"
+                >
+                </video>
+            </div>
+        </div>
+    </div> 
+</div>
+<!-- {
+    "type": "image_picker",
+    "id": "aboom_mobile_img",
+    "label": "Mobile First Image"
+},
+{
+    "type": "image_picker",
+    "id": "aboom_pc_img",
+    "label": "Pc First Image"
+} -->
+{% schema %}
+{
+    "name": "FbAnimatioBoom",
+    "presets": [
+        {
+            "name": "fb-animation-boom",
+            "category": "Fb Sections",
+            "blocks": []
+        }
+        ],
+        "settings": [
+            {
+                "type": "header",
+                "content": "section one"
+            },
+            {
+                "type": "richtext",
+                "id": "aboom_title_home",
+                "label": "Home Title",
+                "default": "<p> EXTENDED REALITY </p>"
+            },
+            {
+                "type": "richtext",
+                "id": "aboom_title_one",
+                "label": "title 1",
+                "default": "<p> Immersive Workout </p>"
+            },
+            {
+                "type": "richtext",
+                "id": "acboom_desc_one",
+                "label": "desc 1",
+                "default": "<p>Artist-generated interactive stages turn every class into an immersive workout.</p>"
+            },
+            {
+                "type": "richtext",
+                "id": "acboom_title_two",
+                "label": "title 2",
+                "default": "<p>Rotate for More</p>"
+            },
+            {
+                "type": "richtext",
+                "id": "acboom_desc_two",
+                "label": "desc 2",
+                "default": "<p> Roate the screen to seamlessly transition between a staggering array of cycling, stretching, strength training, and more classes all under one roof. </p>"
+            }
+    ]
+}
+{% endschema %}

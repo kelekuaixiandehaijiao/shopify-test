@@ -1,0 +1,72 @@
+<div id="section-{{section.id}}" class="fb-boom-algorithm utils-boom-section js-boombike-delayshow">
+  <div class="fb-algorithm-back-fade">
+  </div>
+  <div class="fb-boom-algorithm-content utils-boom-card" id="boombikeAlgorithmObserve">
+    <div class="boom_algorithm_right">
+        <div class="boom_algorithm_title_black">{{section.settings.boom_algorithm_title_black}}</div>
+        <div class="boom_algorithm_title_color">{{section.settings.boom_algorithm_title_color}}</div>
+      <div class="boom_algorithm_desc">
+        {{section.settings.boom_algorithm_desc}}
+      </div>
+    </div>
+    <div class="boom_algorithm_left mshow-pchide">
+      <video
+            class="boom_algorithm_video_mobile Image--lazyLoad"
+            x-webkit-airplay="allow" 
+            webkit-playsinline="true" 
+            playsinline="true" 
+            autoplay="autoplay" 
+            muted="muted" 
+            loop="loop" 
+            data-src="{{section.settings.boom_algorithm_url_pc}}">
+      </video>
+    </div>
+    <div class="boom_algorithm_left pcshow-mhide">
+      <video
+            class="boom_algorithm_video_pc Image--lazyLoad"
+            x-webkit-airplay="allow" 
+            webkit-playsinline="true" 
+            playsinline="true" 
+            autoplay="autoplay" 
+            muted="muted" 
+            loop="loop" 
+            data-src="{{section.settings.boom_algorithm_url_mobile}}">
+      </video>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbBoomAlgorithm",
+  "presets": [
+    {
+    "name": "fb-boom-algorithm",
+    "category": "Fb Sections",
+    "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type":"richtext",
+      "id":"boom_algorithm_title_black",
+      "label":"Title Black"
+    },{
+      "type":"richtext",
+      "id":"boom_algorithm_title_color",
+      "label":"Title Color"
+    },{
+      "type":"richtext",
+      "id":"boom_algorithm_desc",
+      "label":"Desc"
+    },{
+      "type":"url",
+      "id":"boom_algorithm_url_pc",
+      "label":"Url Pc"
+    },{
+      "type":"url",
+      "id":"boom_algorithm_url_mobile",
+      "label":"Url Mobile"
+  }
+  ]
+}
+{% endschema %}

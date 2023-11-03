@@ -1,0 +1,29 @@
+<div id="section-{{ section.id }}" class="fb-key-content">
+    <h1 class="Heading u-h2 fb-customerkey-hide">
+        {{ section.settings.fb_customerkey_h1 }}
+    </h1>
+</div>
+<style>
+ .fb-customerkey-hide{
+    display: none;
+ } 
+</style>
+{% schema %}
+  {
+    "name": "FbKeyContent",
+    "presets": [
+      {
+        "name": "fb-key-content",
+        "category": "fb-section",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "fb_customerkey_h1",
+            "label": "H1 Title"
+        }
+    ]
+  }
+{% endschema %}

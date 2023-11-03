@@ -1,0 +1,292 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-course-main">
+      <div class="course-title">{{ section.settings.course_title }}</div>
+      <div class="course-video-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="course-video-item">
+            <video 
+              id="course-play-pause{{ forloop.index }}"
+              class="course-video-pc Image--lazyLoad" 
+              webkit-playsinline="true" 
+              playsinline="true"
+              muted="muted" 
+              loop="loop"
+              id="welcomeVideo"
+              data-src="{{ block.settings.course_video }}"
+            >
+            </video>
+            <div class="course-video-image" data-index="{{ forloop.index }}">
+              {%- assign course-image = block.settings.course_video_img | img_url: '' -%}
+              <img class="Image--lazyLoad Image--fadeIn" data-src="{{ course-image }}" />
+            </div>
+            <div class="course-open-pause">
+              {% assign open_icon = block.settings.course_open_icon |  img_url: '' %}
+              {% assign pause_icon = block.settings.course_pause_icon |  img_url: '' %}
+              <img class="Image--lazyLoad Image--fadeIn course_open_icon" data-index="{{ forloop.index }}" data-src="{{ open_icon }}" />
+              <img class="Image--lazyLoad Image--fadeIn course_pause_icon" data-index="{{ forloop.index }}" data-src="{{ pause_icon }}" />
+            </div>
+          </div>
+        {%- endfor -%}
+        <div class="course-video-item-teshu"></div>
+      </div>
+  </div>
+</section>
+
+<script>
+  $(function(){
+    $('.course_open_icon').click(function(){
+      let currentIndex = $(this).attr('data-index')
+      $(this).css('display','none')
+      $(this).siblings().css('display','block')
+      $(this).parent().parent().siblings().find('.course_open_icon').css('display','none')
+      $(this).parent().parent().siblings().find('.course_pause_icon').css('display','block')
+      let coursePauseVideo = document.getElementById(`course-play-pause${currentIndex}`)
+      coursePauseVideo.pause()  
+      {% comment %} document.getElementById(`course-play-pause${currentIndex}`) {% endcomment %}
+      {% comment %} $(this).parent().parent().siblings().find('.course-video-pc')[0].pause() {% endcomment %}
+    })
+    $('.course_pause_icon').click(function(){
+      let currentIndex = $(this).attr('data-index')
+      $(this).parent().siblings('.course-video-image').css('opacity','0')
+      $(this).css('display','none')
+      $(this).siblings().css('display','block')
+      $(this).parent().parent().siblings().find('.course_open_icon').css('display','none')
+      $(this).parent().parent().siblings().find('.course_pause_icon').css('display','block')
+      let playVideo = document.getElementsByClassName('course-video-pc')
+      for(let i = 0; i<playVideo.length;i++){
+        let courseOpenVideo = document.getElementById(`course-play-pause${i+1}`)
+        if(i + 1  == currentIndex){
+          courseOpenVideo.play()
+        }else{
+          courseOpenVideo.pause()
+        }
+      }
+      {% comment %} let courseOpenVideo = document.getElementById(`course-play-pause${currentIndex}`)
+        courseOpenVideo.play() {% endcomment %}
+    })
+    $('.course-video-image').click(function(){
+      $(this).css('opacity','0')
+      let currentIndex = $(this).attr('data-index')
+      {% comment %} let courseOpenVideo = document.getElementById(`course-play-pause${currentIndex}`) {% endcomment %}
+      let playVideo = document.getElementsByClassName('course-video-pc')
+      for(let i = 0; i<playVideo.length;i++){
+        let courseOpenVideo = document.getElementById(`course-play-pause${i+1}`)
+        if(i + 1  == currentIndex){
+          if(!courseOpenVideo.paused){
+            courseOpenVideo.pause()
+            $(this).siblings().find('.course_pause_icon').css('display','block')
+            $(this).siblings().find('.course_open_icon').css('display','none')
+          }else{
+            courseOpenVideo.play()
+            $(this).siblings().find('.course_pause_icon').css('display','none')
+            $(this).siblings().find('.course_open_icon').css('display','block')
+          }
+        }else{
+          courseOpenVideo.pause()
+          $(this).parent().siblings().find('.course_open_icon').css('display','none')
+          $(this).parent().siblings().find('.course_pause_icon').css('display','block')
+        }
+        {% comment %} if(i + 1  == currentIndex){
+          courseOpenVideo.play()
+        }else{
+          courseOpenVideo.pause()
+        } {% endcomment %}
+      }
+      {% comment %} if(!courseOpenVideo.paused){
+        courseOpenVideo.pause()
+        $(this).siblings().find('.course_pause_icon').css('display','block')
+        $(this).siblings().find('.course_open_icon').css('display','none')
+      }else{
+        courseOpenVideo.play()
+        $(this).siblings().find('.course_pause_icon').css('display','none')
+        $(this).siblings().find('.course_open_icon').css('display','block')
+        $(this).parent().siblings().find('.course_open_icon').css('display','none')
+        $(this).parent().siblings().find('.course_pause_icon').css('display','block')
+      } {% endcomment %}
+    })
+  })
+</script>
+<style>
+  .fb-course-main{
+    width:100%;
+    height:546px;
+    background:#FFFFFF;
+  }
+  .course-title{
+    padding-top:120px;
+    font-size: 36px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #000000;
+    line-height: 36px;
+    text-align:center;
+  }
+  .course-video-wrapper{
+    width:1200px;
+    height:230px;
+    margin:0 auto;
+    margin-top:60px;
+    display:flex;
+    justify-content:space-between;
+  }
+  .course-video-item{
+    width: 386px;
+    height: 230px;
+    border-radius: 8px;
+    position:relative;
+  }
+  .course-video-item-teshu{
+    display:none;
+  }
+  {% comment %} .course-video-item video{
+   width:100%;
+   height:100%;
+   object-fit: fill;
+   border-radius: 8px;
+  } {% endcomment %}
+  .course-open-pause{
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    width:36px;
+    height:36px;
+  }
+  .course_open_icon{
+    display:none;
+  }
+  .course-open-pause img{
+    width:100%;
+    height:100%;
+  }
+  .course-video-pc{
+    width:100%;
+    height:100%;
+    object-fit: fill;
+    border-radius: 8px;
+    cursor:pointer;
+    position:relative;
+  }
+  .course-video-image img{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    border-radius: 8px;
+    cursor:pointer;
+  }
+  @media screen and (max-width: 768px){
+    .fb-course-main{
+      width:100%;
+      height:382px;
+      background:#FFFFFF;
+    }
+    .course-title{
+      padding-top:60px;
+      width:368px;
+      margin:0 auto;
+      font-size: 28px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #000000;
+      line-height: 32px;
+      text-align:center;
+    }
+    .course-video-wrapper{
+      width:100%;
+      {% comment %} padding-left:15px;
+      padding-right:15px; {% endcomment %}
+      margin-top:30px;
+      display:flex;
+      overflow-x:auto;
+      padding:0 15px 0 0px;
+    }
+    .course-video-item{
+      {% comment %} width: 280px;
+      height: 168px; {% endcomment %}
+      width: 310px;
+      height: 186px;
+      border-radius: 8px;
+      margin-left:20px;
+      {% comment %} margin-right:20px; {% endcomment %}
+      flex-shrink:0;
+    }
+    .course-video-item-teshu{
+      display:block;
+      padding-left:15px;
+    }
+    .course_open_icon{
+      display:none;
+    }
+    .course-video-pc{
+      width: 310px;
+      height: 186px;
+      {% comment %} width: 280px;
+      height: 168px; {% endcomment %}
+      object-fit: fill;
+      border-radius: 8px;
+      position:relative;
+    }
+    .course-video-image img{
+      width:100%;
+      height:100%;
+      position:absolute;
+      left:0;
+      top:0;
+      border-radius: 8px;
+      cursor:pointer;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbClassesCourse",
+    "presets": [
+      {
+        "name": "fb-classes-course",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings":[
+      {
+        "type": "text",
+        "id": "course_title",
+        "label": "Course Title"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "course_list",
+        "name": "course list",
+        "settings":[
+          {
+            "type": "url",
+            "id": "course_video",
+            "label": "Course Video"
+          },
+          {
+            "type": "url",
+            "id": "course_video_mob",
+            "label": "Course Video Mob"
+          },
+          {
+            "type": "image_picker",
+            "id": "course_open_icon",
+            "label": "Course Open"
+          },
+          {
+            "type": "image_picker",
+            "id": "course_pause_icon",
+            "label": "Course Pause"
+          },
+          {
+            "type": "image_picker",
+            "id": "course_video_img",
+            "label": "Course Video Img"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

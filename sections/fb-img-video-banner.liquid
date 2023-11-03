@@ -1,0 +1,783 @@
+{%- capture country_banner -%}
+  <section
+    id="section-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    class="fb-newhome-baner"
+    data-type="swiper">
+    <div class="fbHomeImgVideoBanner fv-banner-container {% if section.settings.show_fullscreen %}Slideshow--fullscreen{% endif %}">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          {% comment %} 图片模块 {% endcomment %}
+          {%- capture slide_default_image -%}
+            <div class="fv-slid-imgcontainer {% if block.settings.apply_overlay %}Image--contrast{% endif %} {% if section.settings.show_fullscreen %}PlaceholderBackground{% endif %} PlaceholderSvg--dark">
+              {%- capture placeholder -%}
+                {% cycle 'lifestyle-1', 'lifestyle-2' %}{%- endcapture -%}
+              {{ placeholder | placeholder_svg_tag: 'Slideshow__Image PlaceholderBackground__Svg' }}
+            </div>
+          {%- endcapture -%}
+          {%- capture slide_image_content -%}
+            {%- assign mobile_image = block.settings.mobile_image | default: block.settings.image -%}
+            {%- assign mobile_image_new = mobile_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            {%- if mobile_image -%}
+              <div class="fv-slid-imgcontainer fb-hidden-tablet-and-up" style="{% unless section.settings.show_fullscreen %}--aspect-ratio: {{ mobile_image.aspect_ratio }};{% endunless %} background-image: url({{ mobile_image | img_url: '1x1', format: 'jpg' }})">
+                <img
+                  class="Image--lazyLoad Image--fadeIn fv-slid-img"
+                  data-src="{{ mobile_image_new }}"
+                  alt="{{ mobile_image.alt | escape }}"
+                  data-sizes="auto">
+              </div>
+            {%- endif -%}
+            {%- if block.settings.image -%}
+              <div class="fv-slid-imgcontainer fb-hidden-phone" style="{% unless section.settings.show_fullscreen %}padding-bottom: {{ 100.0 | divided_by: block.settings.image.aspect_ratio }}%; --aspect-ratio: {{ block.settings.image.aspect_ratio }};{% endunless %} background-image: url({{ block.settings.image | img_url: '1x1', format: 'jpg' }})">
+                {% assign image_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                <img
+                  class="Image--lazyLoad Image--fadeIn Image--lazyLoad fv-slid-img"
+                  data-src="{{ image_url }}"
+                  data-optimumx="1.2"
+                  data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                  data-sizes="auto"
+                  alt="{{ block.settings.image.alt | escape }}">
+              </div>
+            {%- else -%}
+              {{- slide_default_image -}}
+            {%- endif -%}
+          {%- endcapture -%}
+          {% comment %} 视频模块 {% endcomment %}
+          {%- capture slide_video_content -%}
+            {%- assign mobile_vedio = block.settings.video_mobile_url | default: block.settings.video_url -%}
+            {%- if mobile_vedio != blank -%}
+              <div
+                class="fv-slid-videocontainer fb-hidden-tablet-and-up"
+                style='
+                {% unless section.settings.show_fullscreen %}--aspect-ratio: {{ block.settings.video_mobile_image.aspect_ratio }};{% endunless %}
+                {% if block.settings.video_mobile_image %}
+                  background-image: url({{ block.settings.video_mobile_image | img_url: '1x1', format: 'jpg' }});{% endif %}'>
+                <video
+                  class="Image--lazyLoad fv-slid-video"
+                  x-webkit-airplay="allow"
+                  webkit-playsinline="true"
+                  playsinline="true"
+                  autoplay="autoplay"
+                  muted="muted"
+                  loop="loop"
+                  data-src="{{ mobile_vedio }}"
+                  alt="{{ mobile_vedio.alt | escape }}"></video>
+                {%- if block.settings.video_mobile_image -%}
+                  {%- assign video_mobile_image = block.settings.video_mobile_image | default: block.settings.image -%}
+                  {%- assign video_mobile_image_new = video_mobile_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  <img
+                    class="Image--lazyLoad Image--fadeIn fv-slid-img"
+                    data-src="{{ video_mobile_image_new }}"
+                    alt="{{ video_mobile_image.alt | escape }}"
+                    data-sizes="auto">
+                {%- endif -%}
+
+              </div>
+            {%- endif -%}
+            {%- if block.settings.video_url != blank -%}
+              <div
+                class="fv-slid-videocontainer fb-hidden-phone {% if block.settings.apply_overlay %}Image--contrast{% endif %} {% unless section.settings.show_fullscreen %}AspectRatio AspectRatio--withFallback{% endunless %}"
+                style='
+                {% unless section.settings.show_fullscreen %}padding-bottom: {{ 100.0 | divided_by: block.settings.image.aspect_ratio }}%; --aspect-ratio: {{ block.settings.video_image.aspect_ratio }};{% endunless %}
+                {% if block.settings.video_mobile_image %}background-image: url({{ block.settings.video_image | img_url: '1x1', format: 'jpg' }});
+                {% endif %}'>
+                <video
+                  class="fv-slid-video Image--lazyLoad"
+                  x-webkit-airplay="allow"
+                  webkit-playsinline="true"
+                  playsinline="true"
+                  autoplay="autoplay"
+                  muted="muted"
+                  loop="loop"
+                  data-src="{{ block.settings.video_url }}"></video>
+                {%- if block.settings.video_image -%}
+                  {% assign video_image_url = block.settings.video_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                  <img
+                    class="Slideshow__Image Image--lazyLoad hide-no-js"
+                    data-src="{{ video_image_url }}"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    data-sizes="auto"
+                    alt="{{ block.settings.video_image.alt | escape }}">
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            {%- unless block.settings.video_image or block.settings.video_mobile_image -%}
+              {{- slide_default_image -}}
+            {%- endunless -%}
+          {%- endcapture -%}
+          {% comment %} 文字模块 {% endcomment %}
+          {%- capture slideshow_text_content -%}
+            {%- render 'fb-img-video-text3', block: block, type: 'img' -%}
+          {%- endcapture -%}
+          {%- capture slideshow_text_box -%}
+            {%- if slideshow_text_content != blank -%}
+              <div class="fv_content_{{ block.settings.content_position_pc }}_pc fv_content_pcshow_mobhide  fv_content_position">
+                <header class="SectionHeader">
+                  {{ slideshow_text_content }}
+                </header>
+              </div>
+              <div class="fv_content_{{ block.settings.content_position_mobile }}_mobile fv_content_mobshow_pchide  fv_content_position">
+                <header class="SectionHeader">
+                  {{ slideshow_text_content }}
+                </header>
+              </div>
+            {%- endif -%}
+          {%- endcapture -%}
+          {% comment %} 文字模块结束 {% endcomment %}
+
+          {% comment %} 判断video和image类型 {% endcomment %}
+          {%- capture slideshow_type_banner -%}
+            {%- if block.type == 'image_banner' -%}
+              {{- slide_image_content -}}
+            {%- else -%}
+              {{- slide_video_content -}}
+            {%- endif -%}
+            {{- slideshow_text_box -}}
+          {%- endcapture -%}
+
+          {%- if block.settings.button_1_text == blank and block.settings.banner_href -%}
+            <a
+              href="{{ block.settings.button_1_link }}"
+              class="swiper-slide js-homebanner-slid js-banner-kinds"
+              data-slide-index="{{ forloop.index0 }}"
+              data-number="{{ forloop.index }}"
+              data-type="{{ block.type }}"
+              data-length="{{ forloop.length }}">
+              {{- slideshow_type_banner -}}
+            </a>
+          {%- else -%}
+            <div
+              id="Slide{{ block.id }}"
+              class="swiper-slide js-homebanner-slid js-banner-kinds"
+              data-slide-index="{{ forloop.index0 }}"
+              data-number="{{ forloop.index }}"
+              data-type="{{ block.type }}"
+              data-length="{{ forloop.length }}">
+              {{- slideshow_type_banner -}}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <div class="fbhomebaner-swiper-pagination"></div>
+    </div>
+
+  </section>
+{%- endcapture -%}
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if country_code_var == 'gb' and section.settings.additional_class == 'britain-img-banner'  -%}
+  {{ country_banner }}
+{%- elsif country_code_var == 'ca' and section.settings.additional_class != 'britain-img-banner' and section.settings.additional_class != 'australia-img-banner' -%}
+  {{ country_banner }}
+{%- elsif country_code_var == 'au' and section.settings.additional_class == 'australia-img-banner' -%}
+  {{ country_banner }}
+{%- endif -%}
+{% schema %}
+  {
+    "name": "FbImgVideoBanner",
+    "class": "shopify-section--slideshow",
+    "presets": [
+      {
+        "name": "fb-img-video-banner",
+        "category": "Fb Sections",
+        "blocks": [
+          {
+            "type": "image_banner"
+          }, {
+            "type": "video_banner"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "select",
+        "id": "additional_class",
+        "label": "Additional Operations",
+        "options": [
+          {
+            "value": "britain-img-banner",
+            "label": "britain"
+          }, {
+            "value": "figpii-img-banner",
+            "label": "AB test"
+          }, {
+            "value": "",
+            "label": "Default"
+          }, {
+            "value": "australia-img-banner",
+            "label": "australia"
+          }
+        ],
+        "default": ""
+      },
+      {
+        "type": "checkbox",
+        "id": "show_fullscreen",
+        "label": "Show full-screen images",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_arrow",
+        "label": "Show bottom arrow",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Auto rotate between slides",
+        "default": true
+      }, {
+        "type": "range",
+        "id": "cycle_speed",
+        "min": 3,
+        "max": 8,
+        "step": 1,
+        "unit": "sec",
+        "label": "Change slides every",
+        "default": 5
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button text",
+        "default": "#363636"
+      }, {
+        "type": "color",
+        "id": "button_background",
+        "label": "Button background",
+        "default": "#ffffff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_banner",
+        "name": "Image Banner",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "checkbox",
+            "id": "banner_href",
+            "label": "Image Href",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "1800 x 800px .jpg recommended"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile image",
+            "info": "750 x 1100px .jpg recommended. If none is set, desktop image will be cropped."
+          }, {
+            "type": "checkbox",
+            "id": "apply_overlay",
+            "label": "Apply overlay on image",
+            "info": "This can improve text visibility.",
+            "default": true
+          }, {
+            "type": "select",
+            "id": "content_position_pc",
+            "label": "Content position Pc",
+            "options": [
+              {
+                "value": "middleLeft",
+                "label": "Middle left"
+              }
+            ],
+            "default": "middleLeft"
+          }, {
+            "type": "select",
+            "id": "content_position_mobile",
+            "label": "Content position Mobile",
+            "options": [
+              {
+                "value": "topCenter",
+                "label": "Top Center"
+              }, {
+                "value": "bottomLeft",
+                "label": "Bottom left"
+              }
+            ],
+            "default": "bottomLeft"
+          }, {
+            "type": "url",
+            "id": "pc_gift_img",
+            "label": "Pc Gift Img Link"
+          }, {
+            "type": "url",
+            "id": "mb_gift_img",
+            "label": "Mb Gift Img Link"
+          }, {
+            "type": "header",
+            "content": "Italics are underscores"
+          }, {
+            "type": "richtext",
+            "id": "banner_sub_title",
+            "label": "Banner Sub Title"
+          }, {
+            "type": "color",
+            "id": "banner_sub_title_color",
+            "label": "Banner Sub Title Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_sub_title_mob",
+            "label": "Banner Sub Title Mob"
+          }, {
+            "type": "color",
+            "id": "banner_sub_title_color_mob",
+            "label": "Banner Sub Title Color Mob"
+          }, {
+            "type": "richtext",
+            "id": "banner_title",
+            "label": "Banner Title"
+          }, {
+            "type": "color",
+            "id": "banner_title_color",
+            "label": "Banner Title Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_title_mob",
+            "label": "Banner Title Mob"
+          }, {
+            "type": "color",
+            "id": "banner_title_color_mob",
+            "label": "Banner Title Color Mob"
+          }, {
+            "type": "richtext",
+            "id": "banner_desc",
+            "label": "Banner Desc"
+          }, {
+            "type": "color",
+            "id": "banner_desc_color",
+            "label": "Banner Desc Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_desc_mob",
+            "label": "Banner Desc Mob"
+          }, {
+            "type": "color",
+            "id": "banner_desc_color_mob",
+            "label": "Banner Desc Color Mob"
+          }, {
+            "type": "image_picker",
+            "id": "banner_icon",
+            "label": "Banner Icon"
+          }, {
+            "type": "image_picker",
+            "id": "banner_icon_mob",
+            "label": "Banner Icon mob"
+          }, {
+            "type": "header",
+            "content": "Button 1"
+          }, {
+            "type": "text",
+            "id": "button_1_text",
+            "label": "button 1 Text"
+          }, {
+            "type": "color",
+            "id": "button_1_text_color",
+            "label": "Button 1 Text Color"
+          }, {
+            "type": "color",
+            "id": "button_1_text_backgroundcolor",
+            "label": "Button 1 Text BackgroundColor"
+          }, {
+            "type": "color",
+            "id": "button_1_text_bordercolor",
+            "label": "Button 1 Text BorderColor"
+          }, {
+            "type": "checkbox",
+            "id": "button_1_open_dialog",
+            "label": "Is Open button 1 Video Dialog",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_1_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Button 1 Mob"
+          }, {
+            "type": "text",
+            "id": "button_1_text_mob",
+            "label": "button 1 Text Mob"
+          }, {
+            "type": "color",
+            "id": "button_1_text_color_mob",
+            "label": "Button 1 Text Color Mob"
+          }, {
+            "type": "color",
+            "id": "button_1_text_backgroundcolor_mob",
+            "label": "Button 1 Text BackgroundColor_mob"
+          }, {
+            "type": "color",
+            "id": "button_1_text_bordercolor_mob",
+            "label": "Button 1 Text BorderColor Mob"
+          }, {
+            "type": "checkbox",
+            "id": "button_1_open_dialog_mob",
+            "label": "Is Open button 1 Video Dialog Mob",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_1_link_mob",
+            "label": "Link Mob"
+          }, {
+            "type": "header",
+            "content": "Button 2"
+          }, {
+            "type": "text",
+            "id": "button_2_text",
+            "label": "button 2 Text"
+          }, {
+            "type": "color",
+            "id": "button_2_text_color",
+            "label": "Button 2 Text Color"
+          }, {
+            "type": "color",
+            "id": "button_2_text_backgroundcolor",
+            "label": "Button 2 Text BackgroundColor"
+          }, {
+            "type": "color",
+            "id": "button_2_text_bordercolor",
+            "label": "Button 2 Text BorderColor"
+          }, {
+            "type": "checkbox",
+            "id": "button_2_open_dialog",
+            "label": "Is Open button 2 Video Dialog",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_2_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Button 2 Mob"
+          }, {
+            "type": "text",
+            "id": "button_2_text_mob",
+            "label": "button 2 Text Mob"
+          }, {
+            "type": "color",
+            "id": "button_2_text_color_mob",
+            "label": "Button 2 Text Color Mob"
+          }, {
+            "type": "color",
+            "id": "button_2_text_backgroundcolor_mob",
+            "label": "Button 2 Text BackgroundColor Mob"
+          }, {
+            "type": "color",
+            "id": "button_2_text_bordercolor_mob",
+            "label": "Button 2 Text BorderColor Mob"
+          }, {
+            "type": "checkbox",
+            "id": "button_2_open_dialog_mob",
+            "label": "Is Open button 2 Video Dialog Mob",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_2_link_mob",
+            "label": "Link"
+          }, {
+            "type": "richtext",
+            "id": "banner_more",
+            "label": "Banner More"
+          }, {
+            "type": "color",
+            "id": "banner_more_color",
+            "label": "Banner More Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_more_mob",
+            "label": "Banner More Mob"
+          }, {
+            "type": "color",
+            "id": "banner_more_color_mob",
+            "label": "Banner More Color Mob"
+          }
+        ]
+      }, {
+        "type": "video_banner",
+        "name": "Video Banner",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "banner_href",
+            "label": "Video Banner Href",
+            "default": false
+          },
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "url",
+            "id": "video_url",
+            "label": "PC Video Url"
+          },
+          {
+            "type": "url",
+            "id": "video_mobile_url",
+            "label": "Mobile Video Url"
+          }, {
+            "type": "image_picker",
+            "id": "video_image",
+            "label": "Video Pc Image",
+            "info": "1800 x 800px .jpg recommended"
+          }, {
+            "type": "image_picker",
+            "id": "video_mobile_image",
+            "label": "Video Mobile image",
+            "info": "750 x 1100px .jpg recommended. If none is set, desktop image will be cropped."
+          }, {
+            "type": "checkbox",
+            "id": "apply_overlay",
+            "label": "Apply overlay on vedio",
+            "info": "This can improve text visibility.",
+            "default": false
+          }, {
+            "type": "select",
+            "id": "content_position_pc",
+            "label": "Content position Pc",
+            "options": [
+              {
+                "value": "middleLeft",
+                "label": "Middle left"
+              }
+            ],
+            "default": "middleLeft"
+          }, {
+            "type": "select",
+            "id": "content_position_mobile",
+            "label": "Content position Mobile",
+            "options": [
+              {
+                "value": "topCenter",
+                "label": "Top Center"
+              }, {
+                "value": "bottomLeft",
+                "label": "Bottom left"
+              }
+            ],
+            "default": "bottomLeft"
+          }, {
+            "type": "header",
+            "content": "Italics are underscores"
+          }, {
+            "type": "richtext",
+            "id": "banner_sub_title",
+            "label": "Banner Sub Title"
+          }, {
+            "type": "color",
+            "id": "banner_sub_title_color",
+            "label": "Banner Sub Title Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_sub_title_mob",
+            "label": "Banner Sub Title Mob"
+          }, {
+            "type": "color",
+            "id": "banner_sub_title_color_mob",
+            "label": "Banner Sub Title Color Mob"
+          }, {
+            "type": "richtext",
+            "id": "banner_title",
+            "label": "Banner Title"
+          }, {
+            "type": "color",
+            "id": "banner_title_color",
+            "label": "Banner Title Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_title_mob",
+            "label": "Banner Title Mob"
+          }, {
+            "type": "color",
+            "id": "banner_title_color_mob",
+            "label": "Banner Title Color Mob"
+          }, {
+            "type": "richtext",
+            "id": "banner_desc",
+            "label": "Banner Desc"
+          }, {
+            "type": "color",
+            "id": "banner_desc_color",
+            "label": "Banner Desc Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_desc_mob",
+            "label": "Banner Desc Mob"
+          }, {
+            "type": "color",
+            "id": "banner_desc_color_mob",
+            "label": "Banner Desc Color Mob"
+          }, {
+            "type": "image_picker",
+            "id": "banner_icon",
+            "label": "Banner Icon"
+          }, {
+            "type": "image_picker",
+            "id": "banner_icon_mob",
+            "label": "Banner Icon mob"
+          }, {
+            "type": "header",
+            "content": "Button 1"
+          }, {
+            "type": "text",
+            "id": "button_1_text",
+            "label": "Text"
+          }, {
+            "type": "color",
+            "id": "button_1_text_color",
+            "label": "Button 1 Text Color"
+          }, {
+            "type": "color",
+            "id": "button_1_text_backgroundcolor",
+            "label": "Button 1 Text BackgroundColor"
+          }, {
+            "type": "color",
+            "id": "button_1_text_bordercolor",
+            "label": "Button 1 Text BorderColor"
+          }, {
+            "type": "checkbox",
+            "id": "button_1_open_dialog",
+            "label": "Is Open button 1 Video Dialog",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_1_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Button 1 Mob"
+          }, {
+            "type": "text",
+            "id": "button_1_text_mob",
+            "label": "button 1 Text Mob"
+          }, {
+            "type": "color",
+            "id": "button_1_text_color_mob",
+            "label": "Button 1 Text Color Mob"
+          }, {
+            "type": "color",
+            "id": "button_1_text_backgroundcolor_mob",
+            "label": "Button 1 Text BackgroundColor_mob"
+          }, {
+            "type": "color",
+            "id": "button_1_text_bordercolor_mob",
+            "label": "Button 1 Text BorderColor Mob"
+          }, {
+            "type": "checkbox",
+            "id": "button_1_open_dialog_mob",
+            "label": "Is Open button 1 Video Dialog Mob",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_1_link_mob",
+            "label": "Link Mob"
+          }, {
+            "type": "header",
+            "content": "Button 2"
+          }, {
+            "type": "text",
+            "id": "button_2_text",
+            "label": "Button 2 Text"
+          }, {
+            "type": "color",
+            "id": "button_2_text_color",
+            "label": "Button 2 Text Color"
+          }, {
+            "type": "color",
+            "id": "button_2_text_backgroundcolor",
+            "label": "Button 2 Text BackgroundColor"
+          }, {
+            "type": "color",
+            "id": "button_2_text_bordercolor",
+            "label": "Button 2 Text BorderColor"
+          }, {
+            "type": "checkbox",
+            "id": "button_2_open_dialog",
+            "label": "Is Open button 2 Video Dialog",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_2_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Button 2 Mob"
+          }, {
+            "type": "text",
+            "id": "button_2_text_mob",
+            "label": "button 2 Text Mob"
+          }, {
+            "type": "color",
+            "id": "button_2_text_color_mob",
+            "label": "Button 2 Text Color Mob"
+          }, {
+            "type": "color",
+            "id": "button_2_text_backgroundcolor_mob",
+            "label": "Button 2 Text BackgroundColor Mob"
+          }, {
+            "type": "color",
+            "id": "button_2_text_bordercolor_mob",
+            "label": "Button 2 Text BorderColor Mob"
+          }, {
+            "type": "checkbox",
+            "id": "button_2_open_dialog_mob",
+            "label": "Is Open button 2 Video Dialog Mob",
+            "default": false
+          }, {
+            "type": "url",
+            "id": "button_2_link_mob",
+            "label": "Link"
+          }, {
+            "type": "richtext",
+            "id": "banner_more",
+            "label": "Banner More"
+          }, {
+            "type": "color",
+            "id": "banner_more_color",
+            "label": "Banner More Color"
+          }, {
+            "type": "richtext",
+            "id": "banner_more_mob",
+            "label": "Banner More Mob"
+          }, {
+            "type": "color",
+            "id": "banner_more_color_mob",
+            "label": "Banner More Color Mob"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+<style>
+  #section-{{ section.id }}.Heading, #section-{{ section.id }}.flickity-page-dots {
+    color: {{ section.settings.text_color }}
+    ;
+  }
+  #section-{{ section.id }}.Button {
+    color: {{ section.settings.button_color }}
+    ;
+    border-color: {{ section.settings.button_background }}
+    ;
+    background-color: {{ section.settings.button_background }}
+    ;
+  }
+</style>

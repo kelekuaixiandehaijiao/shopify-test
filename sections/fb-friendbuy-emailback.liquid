@@ -1,0 +1,131 @@
+<div id="section-{{ section.id }}" class="fri-buy-email-back">
+    <div class="fri-email-success-result">
+        {% assign imgsucPc = section.settings.success_img_pc | img_url: ''  %} 
+        {% assign imgsucMob = section.settings.success_img_mob | img_url: '' %} 
+        <img class="fri-email-pcshow" 
+              src="{{ imgsucPc }}"
+        >
+         <img class="fri-email-mobilshow" 
+              src="{{ imgsucMob }}"
+        >
+
+    </div>
+     <div class="fri-email-fail-result">
+        {% assign imgfailPc = section.settings.fail_img_pc | img_url: ''  %} 
+        {% assign imgfailMob = section.settings.fail_img_mob | img_url: '' %} 
+         <img class="fri-email-pcshow" 
+              src="{{ imgfailPc }}"
+        >
+        <img class="fri-email-mobilshow" 
+              src="{{ imgfailMob }}"
+        >
+            
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "FbFriendbuyEmailBack",
+    "presets": [
+      {
+        "name": "fb-friendbuy-emailback",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "success_img_pc",
+            "label": "Success Pc Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "success_img_mob",
+            "label": "Success Mob Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "fail_img_pc",
+            "label": "Failed Pc Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "fail_img_mob",
+            "label": "Failed Mob Image"
+        }
+    ]
+  }
+{% endschema %}
+<style>
+    .fri-email-success-result, .fri-email-fail-result{
+        display: none;
+    }
+    .fri-email-success-result img, .fri-email-fail-result img{
+       width: 100%;
+       height: auto;
+       object-fit: fill;
+    }
+    @media only screen and (min-width: 769px){ 
+        .fri-email-pcshow{
+            display: block;
+        }
+        .fri-email-mobilshow{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 768px){ 
+        .fri-email-pcshow{
+            display: none;
+        }
+          .fri-email-mobilshow{
+            display: block;
+        }
+    }
+</style>
+<script>
+    $(function(){
+        const emailBack = {
+            email: '',
+            code: '',
+            name: '',
+            fbpath:  'https://api.freebeatfit.com',
+            init: function () {
+                this.email = getQueryString('email') || ''
+                this.code = getQueryString('code') || ''
+                if(this.email && this.code) {
+                    this.event()
+                } else {
+                    $('.fri-email-success-result').hide()
+                    $('.fri-email-fail-result').show()
+                }
+                
+            },
+            event: function () {
+                let _this = this
+                fetch(`${_this.fbpath}/blackfriday/verifyEmail/callback?email=${_this.email}&code=${_this.code}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                }).then(function (res) {
+                    return res.json();
+                }).then(function (res) {
+                    let { code, data, msg } = res
+                    if (code == 200) {
+                        $('.fri-email-success-result').show()
+                        $('.fri-email-fail-result').hide()
+                    } else {
+                        $('.fri-email-success-result').hide()
+                        $('.fri-email-fail-result').show()
+                    }
+                }).catch((error) => {
+                    console.log("error", error)
+                    $('.fri-email-success-result').hide()
+                    $('.fri-email-fail-result').show()
+                }
+                )
+            }
+        }
+        emailBack.init()
+    })
+</script>

@@ -1,0 +1,184 @@
+<div id="section-{{ section.id }}" class="fb-sr-submitted">
+    <div class="submit-title">
+        <div>{{section.settings.title-L1}}</div>
+        <div>{{section.settings.title-L2}}</div>
+    </div>
+    <div class="submit-subTitle">{{section.settings.subTitle}}</div>
+    <div class="explain">{{section.settings.explain-1}}</div>
+    {%- if section.settings.buttonText != blank -%}
+        <a href="{{section.settings.url}}"><div class="submit-button">{{section.settings.buttonText}}</div></a>
+    {%- endif -%}
+    <div class="explain">{{section.settings.explain-2}}</div>
+</div>
+<style>
+.fb-sr-submitted{
+    padding: 200px 50px;
+    color: #1C1B1B;
+    text-align: center;
+}
+.submit-title{
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 36px;
+}
+.submit-title div:first-child{
+    padding-bottom: 24px;
+}
+.submit-subTitle{
+    padding:60px 0 80px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+}
+.explain{
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 20px;
+}
+.submit-button{
+    width:185px;
+    height: 48px;
+    text-align: center;
+    line-height:48px;
+    margin: 30px auto;
+    color: #fff;
+    background-color:#02C0D9;
+    font-size: 16px;
+    font-weight: bold;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1549px){
+    .fb-sr-submitted{
+        padding: 161px 50px;
+    }
+    .submit-title{
+        font-size: 29px;
+        line-height: 29px;
+    }
+    .submit-title div:first-child{
+        padding-bottom: 19px;
+    }
+    .submit-subTitle{
+        padding:48px 0 65px;
+        font-size: 16px;
+        line-height: 23px;
+    }
+    .explain{
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .submit-button{
+        width:165px;
+        height: 39px;
+        line-height:39px;
+        margin: 24px auto;
+        font-size: 13px;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+    .fb-sr-submitted{
+        padding: 107px 50px;
+    }
+    .submit-title{
+        font-size: 19px;
+        line-height: 19px;
+    }
+    .submit-title div:first-child{
+        padding-bottom: 13px;
+    }
+    .submit-subTitle{
+        padding:32px 0 43px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .explain{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .submit-button{
+        width:150px;
+        height: 30px;
+        line-height:30px;
+        margin: 16px auto;
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width:768px){
+    .fb-sr-submitted{
+        padding: 48px 13px 60px;
+    }
+    .submit-title{
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .submit-title div:first-child{
+        padding-bottom: 12px;
+    }
+    .submit-subTitle{
+        padding:50px 12px 60px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .explain{
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0 12px;
+    }
+    .submit-button{
+        width:160px;
+        height: 40px;
+        line-height:40px;
+        margin: 20px auto 30px;
+        font-size: 14px;
+    }
+}
+</style>
+{% schema %}
+{
+"name": "FbShowroomsDes",
+"presets": [
+  {
+    "name": "fb-sr-submitted",
+    "category": "Fb Sections",
+    "blocks": []
+  }
+],
+"settings": [
+    {
+        "type": "text",
+        "id": "title-L1",
+        "label": "Title L1"
+    },
+    {
+        "type": "text",
+        "id": "title-L2",
+        "label": "Title L2"
+    },
+    {
+        "type": "text",
+        "id": "subTitle",
+        "label": "subTitle"
+    },
+    {
+        "type": "richtext",
+        "id": "explain-1",
+        "label": "explain-1"
+    },
+    {
+        "type": "richtext",
+        "id": "explain-2",
+        "label": "explain-2"
+    },
+    {
+        "type": "text",
+        "id": "buttonText",
+        "label": "buttonText"
+    },
+    {
+        "type": "url",
+        "id": "url",
+        "label": "Button URL"
+    }
+]
+}
+{% endschema %}

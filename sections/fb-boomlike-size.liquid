@@ -1,0 +1,211 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<section id="section-{{ section.id }}">
+  <div class="fb-boombike-size">
+    {% if country_code_var == 'gb' or locale contains 'GB' %}
+      <div class="fb-boombile-content fb-boombile-main">
+        <div class="fb-boombike-left">
+          <div class="fb-boombike-title">{{ section.settings.fb_boombike_title_gb }}</div>
+          <div class="fb-boombike-desc">{{ section.settings.fb_boombike_desc_gb }}</div>
+        </div>
+        <div class="fb-boombike-right">
+          {% assign imgGbPc = section.settings.fb-boombike_img_gb | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          {% assign imgGbMob = section.settings.fb-boombike_img_gb_mob | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          <img
+            class="Image--lazyLoad Image--fadeIn fb-boombike_img_pc"
+            data-src="{{imgGbPc}}"
+            data-sizes="auto">
+          <img
+            class="Image--lazyLoad Image--fadeIn fb-boombike_img_mob"
+            data-src="{{imgGbMob}}"
+            data-sizes="auto">
+        </div>
+      </div>
+    {%- else -%}
+      <div class="fb-boombile-content fb-boombile-main">
+        <div class="fb-boombike-left">
+          <div class="fb-boombike-title">{{ section.settings.fb_boombike_title }}</div>
+          <div class="fb-boombike-desc">{{ section.settings.fb_boombike_desc }}</div>
+        </div>
+        <div class="fb-boombike-right">
+          {% assign imgPc = section.settings.fb-boombike_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          {% assign imgMob = section.settings.fb-boombike_img_mob | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+          <img
+            class="Image--lazyLoad Image--fadeIn fb-boombike_img_pc"
+            data-src="{{imgPc}}"
+            data-sizes="auto">
+          <img
+            class="Image--lazyLoad Image--fadeIn fb-boombike_img_mob"
+            data-src="{{imgMob}}"
+            data-sizes="auto">
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+<style>
+  #section-{{ section.id }}{
+    width: 100%;
+    background: #EFEFEF;
+    padding-bottom:20px;
+  }
+  .fb-boombike-size {
+    width: 100%;
+    height: 640px;
+    background: #B8A6FF;
+    margin: 0px auto 20px;
+  }
+  .fb-boombile-content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+  .fb-boombike-left {
+    padding-top: 200px;
+  }
+  .fb-boombike-title {
+    width: 247px;
+    font-size: 60px;
+    font-family: Montserrat-ExtraBold, Montserrat;
+    font-weight: 800;
+    color: #1D1D1F;
+    line-height: 60px;
+  }
+  .fb-boombike-desc {
+    width: 264px;
+    font-size: 18px;
+    font-family: Montserrat-Medium, Montserrat;
+    font-weight: 500;
+    color: rgba(29.29, 31, 0.8);
+    line-height: 24px;
+    margin-top: 24px;
+  }
+  .fb-boombike-right {
+    height: 100%;
+    padding-top: 95px;
+    margin-left: 94px;
+  }
+  .fb-boombike-right img {
+    height: 474px;
+    width: 444px;
+  }
+  .fb-boombike_img_pc {
+    display: block;
+  }
+  .fb-boombike_img_mob {
+    display: none;
+  }
+
+  /*
+  #section-{{ section.id }}{
+    background-color: {{ section.settings.fb_stage_backgroundcolor }}
+
+  }
+  */
+  @media screen and (max-width: 768px) {
+    #section-{{ section.id }}{
+      width: 100%;
+      background: #EFEFEF;
+      padding-top: 40px;
+    }
+    .fb-boombike-size {
+      width: 325px;
+      height: 640px;
+      background: linear-gradient(225deg, #AF9BF2 0%, #99A0FF 100%);
+      border-radius: 24px;
+      margin: 40px auto;
+    }
+    .fb-boombile-content {
+      display: none;
+    }
+    .fb-boombile-main {
+      display: block;
+    }
+    .fb-boombike-left {
+      padding-left: 30px;
+      padding-top: 30px;
+    }
+    .fb-boombike-title {
+      width: 225px;
+      height: 88px;
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: 1px;
+    }
+    .fb-boombike-desc {
+      width: 234px;
+      height: 80px;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(29.29, 31, 0.88);
+      line-height: 20px;
+      margin-top: 16px;
+    }
+    .fb-boombike-right {
+      padding-top: 58px;
+      margin-left: 13px;
+      height: 320px;
+    }
+    .fb-boombike-right img {
+      height: 320px;
+      width: 300px;
+    }
+    .fb-boombike_img_pc {
+      display: none;
+    }
+    .fb-boombike_img_mob {
+      display: block;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbBoomLikeSize",
+    "presets": [
+      {
+        "name": "fb-boombike-size",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "fb_boombike_title",
+        "label": "Boombike title"
+      },
+      {
+        "type": "text",
+        "id": "fb_boombike_desc",
+        "label": "Boombike desc"
+      },
+      {
+        "type": "image_picker",
+        "id": "fb-boombike_img",
+        "label": "Boombike img PC"
+
+      },
+      {
+        "type": "image_picker",
+        "id": "fb-boombike_img_mob",
+        "label": "Boombike img Mob"
+
+      }, {
+        "type": "text",
+        "id": "fb_boombike_title_gb",
+        "label": "Boombike title GB"
+      }, {
+        "type": "text",
+        "id": "fb_boombike_desc_gb",
+        "label": "Boombike desc GB"
+      }, {
+        "type": "image_picker",
+        "id": "fb-boombike_img_gb",
+        "label": "Boombike img GB PC"
+      }, {
+        "type": "image_picker",
+        "id": "fb-boombike_img_gb_mob",
+        "label": "Boombike img GB Mob"
+      }
+    ]
+  }
+{% endschema %}

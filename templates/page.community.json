@@ -1,0 +1,330 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "1652439813b6e0ce2a": {
+      "type": "fb-image-text-share",
+      "blocks": {
+        "6e9cd62e-6cdf-4582-a1a0-c4e84d4027b3": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.instagram.com\/freebeatfit\/",
+            "social_img": "shopify:\/\/shop_images\/Instagram2.png"
+          }
+        },
+        "7964035b-8074-4baf-b516-825e275a84ae": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.youtube.com\/channel\/UCSob0frzoq6jUnbiMj-jZow",
+            "social_img": "shopify:\/\/shop_images\/Youtube2.png"
+          }
+        },
+        "6af82113-b49a-4a5a-8d99-0c5ea9356355": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.tiktok.com\/@freebeatfitusa",
+            "social_img": "shopify:\/\/shop_images\/TikTok2.png"
+          }
+        },
+        "183b12c3-b9d4-4849-966e-0267ba956c80": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.facebook.com\/freebeatfit",
+            "social_img": "shopify:\/\/shop_images\/Facebook2.png"
+          }
+        },
+        "a9136733-a17a-4211-9145-f04c47bc4302": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.pinterest.com\/freebeatfit\/_created\/",
+            "social_img": "shopify:\/\/shop_images\/Pinterest2.png"
+          }
+        }
+      },
+      "block_order": [
+        "6e9cd62e-6cdf-4582-a1a0-c4e84d4027b3",
+        "7964035b-8074-4baf-b516-825e275a84ae",
+        "6af82113-b49a-4a5a-8d99-0c5ea9356355",
+        "183b12c3-b9d4-4849-966e-0267ba956c80",
+        "a9136733-a17a-4211-9145-f04c47bc4302"
+      ],
+      "settings": {
+        "its_logo": "shopify:\/\/shop_images\/freebeat-5.11.png",
+        "its-title-1": "SQUAD",
+        "its_image": "shopify:\/\/shop_images\/its-ImgNew.png",
+        "its_box_des1": "<p>We strive to positively influence others via a strong brand and product. freebeat believes that influencers are the personification of the brand. Launching several influencer campaigns such as; <strong>#freebeatchallenge<\/strong>,<strong> #beat21days<\/strong>,<strong> <\/strong>and <strong>#freebeatbike<\/strong>, freebeat has boosted brand awareness and is proactively building strong communities.<\/p>"
+      }
+    },
+    "16524269657bc9adc6": {
+      "type": "fb-image-text-contact",
+      "blocks": {
+        "83da4963-ce5a-4c9c-a194-9ab2785aea27": {
+          "type": "contact_dialog",
+          "settings": {
+            "contact_dialog_title": "Thank you for applying",
+            "contact_dialog_subtitle": "We will be in contact with you soon. Meanwhile, RIDE on! Let's go!",
+            "contact_dialog_btn_text": "Okay"
+          }
+        },
+        "0e07a0f8-80be-4655-89c8-03984cafabd3": {
+          "type": "contact_info",
+          "settings": {
+            "contact_info_name": "NAME",
+            "contact_info_email": "EMAIL",
+            "contact_info_username": "SOCIAL MEDIA USERNAME",
+            "contact_info_platform": "SOCIAL MEDIA PLATFORM",
+            "contact_info_select_values": "Instagram, Youtube, Tiktok",
+            "contact_info_select_input_name": "Select",
+            "contact_info_followers": "AMOUNT OF FOLLOWERS",
+            "contact_info_media_link": "SOCIAL MEDIA LINK",
+            "contact_info_submit_botton_name": "APPLY"
+          }
+        },
+        "8e87f23b-eb8b-4ccf-a882-4c2b8048eca9": {
+          "type": "perksdesc",
+          "settings": {
+            "perks_desc": "<p>Earn commission with every sale you make. <\/p>"
+          }
+        },
+        "2a262508-656e-4f18-a03a-6b1536b172e2": {
+          "type": "perksdesc",
+          "settings": {
+            "perks_desc": "<p>A special discount code dedicated with your name on it. <\/p>"
+          }
+        },
+        "3d396b97-cb09-49c6-aa2a-b2d45feb6d3f": {
+          "type": "perksdesc",
+          "settings": {
+            "perks_desc": "<p>Get an exclusive first look, special discounts, and perks on all our products. <\/p>"
+          }
+        },
+        "2cddbb11-c2d2-4a95-9c35-de7e5e72c1cf": {
+          "type": "perksdesc",
+          "settings": {
+            "perks_desc": "<p>Exclusive access to freebeat events (including flight tickets, 7 day hotel room, transportation, and Coachella tickets) or a big chance to collaborate with us to have your own class session on our platform. <\/p>"
+          }
+        },
+        "7baa2a1f-8af1-4b30-942d-96f3fcf1fa86": {
+          "type": "perksdesc",
+          "settings": {
+            "perks_desc": "<p>Get invited to freebeat events with other influencers and just have fun! <\/p>"
+          }
+        },
+        "b57764ca-5a21-4aad-baa1-6638008a17e6": {
+          "type": "perksdesc",
+          "settings": {
+            "perks_desc": "<p>Have the chance to win money or products for you to give away to your own followers. <\/p>"
+          }
+        },
+        "98504e64-f869-45e1-a1e9-da69689568f6": {
+          "type": "perksdesc",
+          "settings": {
+            "perks_desc": "<p>Have the chance to do an Instagram takeover on our company IG <a href=\"https:\/\/www.instagram.com\/freebeatfit\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/freebeatfit\/\">@freebeatfit<\/a>. Go live and promote your active lifestyle!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "83da4963-ce5a-4c9c-a194-9ab2785aea27",
+        "0e07a0f8-80be-4655-89c8-03984cafabd3",
+        "8e87f23b-eb8b-4ccf-a882-4c2b8048eca9",
+        "2a262508-656e-4f18-a03a-6b1536b172e2",
+        "3d396b97-cb09-49c6-aa2a-b2d45feb6d3f",
+        "2cddbb11-c2d2-4a95-9c35-de7e5e72c1cf",
+        "7baa2a1f-8af1-4b30-942d-96f3fcf1fa86",
+        "b57764ca-5a21-4aad-baa1-6638008a17e6",
+        "98504e64-f869-45e1-a1e9-da69689568f6"
+      ],
+      "settings": {
+        "show_fb_contact_us": true,
+        "itc_back_color": "#ffffff",
+        "itc_image": "shopify:\/\/shop_images\/2121212.png",
+        "itc_title": "AMBASSADORS",
+        "itc_sub_title": "JOIN THE #FREEBEATSQUAD!",
+        "itc_box_desc1": "<p>Interested in being a part of our <a href=\"https:\/\/www.instagram.com\/freebeatfit\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/freebeatfit\/\"><strong>#freebeatsquad<\/strong><\/a>? The freebeat ambassador squad is a highly sought-after, exclusive club for the most passionate athletes and social influencers. Ever dreamed about what it would be like to become an influencer? Who better to represent our brand than those who actually love freebeat! You're one click and five seconds away from making your dreams come true.<\/p>",
+        "itc_box_desc2": "<p>What are you waiting for? Let's launch your social media career and <strong>#findyourbeat with us!<\/strong><\/p>",
+        "perks": "PERKS:"
+      }
+    },
+    "16524397855818cc24": {
+      "type": "fb-community-swiper",
+      "blocks": {
+        "7fc235ae-b310-4bab-93f4-b01222968690": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "https:\/\/www.bloomberg.com\/press-releases\/2021-11-18\/freebeat-hosts-thanksgiving-charity-activities-helping-children-with-cancer",
+            "swiperImg": "shopify:\/\/shop_images\/Bloomberg-Logo.png",
+            "swiperDes": "\"Take your fitness journey to the next level.\""
+          }
+        },
+        "663028b9-587b-4a59-a0e9-f04edc483686": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/elle_pc_0511.png",
+            "swiperDes": "\"Always step off the bike in a better mood\""
+          }
+        },
+        "1451deeb-7d47-4e30-815d-6499abbdaec9": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/20230512-181255.png",
+            "swiperDes": "\"Quite a nice array of classes\""
+          }
+        },
+        "1de26cf1-09e1-405e-8812-ab1e4ae7e259": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/sun_new_logp.png",
+            "swiperDes": "\"A one-of-a-kind at-home cycling experience\""
+          }
+        },
+        "2bc6cd11-743e-4c29-9bb5-95e7f792a6de": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "https:\/\/www.tomsguide.com\/reviews\/freebeat-xbike",
+            "swiperImg": "shopify:\/\/shop_images\/toms-guide-logo.gif",
+            "swiperDes": "\"First stationary bikes to turn spinning into a game\""
+          }
+        },
+        "c2e580df-1aea-477f-8315-6ce32909d9b7": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/sl_new_logo.png",
+            "swiperDes": "\"Shines as a high-quality, technology-enhanced home cardio exercise bike\""
+          }
+        },
+        "f6736e49-d054-4861-9573-04a802e1c7d7": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "#",
+            "swiperImg": "shopify:\/\/shop_images\/marketwatch-logo.png",
+            "swiperDes": "\"Leading players in the stationary indoor exercise bike\""
+          }
+        },
+        "23e9435e-bfa9-4864-8cf0-f10aded6068d": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/shape_new_logo.png",
+            "swiperDes": "\"Perfect if you’re new to cycling\""
+          }
+        },
+        "2c31f02b-a591-41da-adaa-645feac5710a": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/self_new_logo.png",
+            "swiperDes": "\"Classes to rev up your heart rate\""
+          }
+        },
+        "70607fc9-dbf2-448c-abfd-716fc2611951": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "https:\/\/www.digitaljournal.com\/pr\/freebeat-launches-xbike-with-trending-features-and-offers#ixzz7CrOtWJIm",
+            "swiperImg": "shopify:\/\/shop_images\/Digital-Journal-Logo.png",
+            "swiperDes": "\"Sleek and modern fitted design.\""
+          }
+        },
+        "ffdb997d-f9fe-44c8-b125-ce3f45e98976": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/vwf_new_logo.png",
+            "swiperDes": "\"Get into cycling and have room to progress\""
+          }
+        },
+        "b4547c9a-3eef-49e2-a957-37686420a740": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/know_techie.png",
+            "swiperDes": "\"Auto Resistance System that matches its rider\""
+          }
+        },
+        "fb865428-05fa-466d-95cc-7f2f6793741d": {
+          "type": "swiperContent",
+          "settings": {
+            "swiper_url": "",
+            "swiperImg": "shopify:\/\/shop_images\/runner_m_0511.png",
+            "swiperDes": "\"Heart-Pumping workout at home\""
+          }
+        }
+      },
+      "block_order": [
+        "7fc235ae-b310-4bab-93f4-b01222968690",
+        "663028b9-587b-4a59-a0e9-f04edc483686",
+        "1451deeb-7d47-4e30-815d-6499abbdaec9",
+        "1de26cf1-09e1-405e-8812-ab1e4ae7e259",
+        "2bc6cd11-743e-4c29-9bb5-95e7f792a6de",
+        "c2e580df-1aea-477f-8315-6ce32909d9b7",
+        "f6736e49-d054-4861-9573-04a802e1c7d7",
+        "23e9435e-bfa9-4864-8cf0-f10aded6068d",
+        "2c31f02b-a591-41da-adaa-645feac5710a",
+        "70607fc9-dbf2-448c-abfd-716fc2611951",
+        "ffdb997d-f9fe-44c8-b125-ce3f45e98976",
+        "b4547c9a-3eef-49e2-a957-37686420a740",
+        "fb865428-05fa-466d-95cc-7f2f6793741d"
+      ],
+      "settings": {
+        "cs-title-1": "FREEBEAT COMMUNITY",
+        "cs_box_des1": "<p>Our strong and undefeated freebeat community is growing at exponential rates around the globe. From micro to celebrity influencers, freebeat has collaborated with hundreds of influencers, brands and top journals. Our mission is to build a healthy and active lifestyle within our community while also focusing on all areas of life. We emphasize embodying our core values - kindness, honesty, inclusivity, accountability, and growth. freebeat strives to create an empowering community promoting health and wellness.<\/p>",
+        "cs_image": "shopify:\/\/shop_images\/commu-pc.png"
+      }
+    },
+    "165242732179395521": {
+      "type": "fb-featured-video",
+      "settings": {
+        "section_size": "large",
+        "fcv_title": "CHECK US OUT",
+        "kelcee_text": "Video by @kelc33",
+        "kelcee_text_url": "https:\/\/www.instagram.com\/p\/CakJPYjq2PB\/",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "title": "",
+        "image": "shopify:\/\/shop_images\/ciun.jpg",
+        "video_url": "https:\/\/youtu.be\/NF60TULzXfo"
+      }
+    },
+    "165242744520888c41": {
+      "type": "instafeed",
+      "settings": {
+        "heading_size": 20,
+        "feed_width": 100,
+        "html_area": ""
+      }
+    },
+    "1629795908485d4358": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "1662430763cf884421": {
+      "type": "fb-seo-content",
+      "settings": {
+        "fb_seo_h1": "community"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1652439813b6e0ce2a",
+    "16524269657bc9adc6",
+    "16524397855818cc24",
+    "165242732179395521",
+    "165242744520888c41",
+    "1629795908485d4358",
+    "1662430763cf884421"
+  ]
+}

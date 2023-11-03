@@ -1,0 +1,356 @@
+
+/* #scroll-container{
+    overflow-x: hidden;
+} */
+/* 820px */
+.fb-scroll-dumbbell-class{
+    display: none;
+}
+.fb-scroll-dumbbell-class img[src=“”],
+.fb-scroll-dumbbell-class img:not([src]) {
+    opacity: 0;
+    border: none;
+}
+#fb-scroll-dumbbell {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 100vh;
+}
+#fb-scroll-chair-space{
+    width: 0;
+    height: 0;
+}
+
+.fb-scroll-container{
+    width: 100%;
+    height: 100vh;
+    background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/mob.png?v=1658917970') no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.chair-text-box{
+    padding-top: 154px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+   color: #1D1D1F;
+}
+.chair-text-box .ctb-title {
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+#chair-text{
+    text-align: center;
+    z-index: 4;
+}
+#dumbbell-text{
+    text-align: left;
+    z-index: 3;
+    padding-left: 20px;
+}
+#chair-text .ctb-desc {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.chair-text-box .ctb-desc{
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1D1D1F;
+    line-height: 22px;
+    margin-top: 14px;
+}
+/* first */
+#chair-press-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 3;
+    opacity: 0;
+}
+
+.chair-press-content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.chair-btn-svga{
+    width: 40vh;
+    height: 40vh;
+    position: absolute;
+    left: 50%;
+    margin-left: -20vh;
+    top: 27vh;
+    z-index: 2;
+}
+#chair-btn-svga-one{
+    opacity: 1;
+}
+#chair-btn-svga-two{
+   opacity: 0;
+}
+/* second */
+#dumbbell-section-svga{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    object-fit: cover;
+}
+/* third */
+#dumbbell-video{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+.chair-press-btn{
+    position: absolute;
+    width: 108px;
+    height: 108px;
+    bottom: 23vh;
+    left: 3vh;
+    border-radius: 108px;
+    /* left: calc(82% - 34px); */
+    cursor: pointer;
+    z-index: 4;
+    background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/cirle.png?v=1659322685') no-repeat center;
+    background-size: 100% 100%;
+}
+.chair-press-inner{
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1D1D1F;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.chair-press-content {
+	-webkit-tap-highlight-color: transparent;
+}
+.chair-press-down {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.chair-press-down, .chair-press-down img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+}
+#chairup{
+    opacity: 1;
+    z-index: 1;
+}
+#chairdown{
+    opacity: 0;
+    z-index: 1;
+}
+ #chair-text{
+    /* display: block; */
+    opacity: 0;
+}
+#dumbbell-text{
+    opacity: 0;
+    /* display: none; */
+}
+
+@keyframes chairmovehide{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes chairmoveshow{
+	0%{opacity:0;}
+	100%{opacity: 1;}
+	
+}
+.chair-move-show {
+  animation: chairmoveshow 0.3s 1;
+}
+.chair-move-hide {
+    animation: chairmovehide 0.3s 1;
+}
+.chair-show-opacity{
+    opacity: 1!important;
+}
+.chair-hide-opacity {
+    opacity: 0!important;
+}
+#dumbbell-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fb-video-muted-btn{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 10%;
+    left: 4%;
+    text-align: center;
+    line-height: 30px;
+    display: none;
+    z-index: 4;
+    cursor: pointer;
+}
+.fb-video-muted-btn img{
+    width: 100%;
+    height: auto;
+}
+.fac-open-video{
+    display: none;
+}
+@media only screen and (min-width: 700px) and (max-width: 820px){ 
+    .chair-text-box .ctb-title{
+        display: block;
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .chair-text-box .ctb-desc, .chair-text-box .ctb-desc p{
+        font-size: 18px;
+        /* font-family: "Roboto-Light", "Roboto"; */
+        font-weight: 300;
+        /* color: #1D1D1F; */
+        line-height: 24px;
+    }
+}
+/*  820的少数ipad */
+@media only screen and (min-width: 821px) {
+    .fb-scroll-container{
+        background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pc.png?v=1658918142');
+        background-size: 100% 100%;
+    }
+
+    /* #chair-text  .ctb-title-mobile{
+        display: none;
+    } */
+    #chair-text{
+        text-align: left;
+    }
+    .chair-text-box{
+        width: 500px;
+    }
+    .chair-text-box .ctb-title{
+        display: block;
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .chair-text-box .ctb-desc{
+        width: 440px;
+        height: 72px;
+    }
+    #chair-text .ctb-desc{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .chair-text-box .ctb-desc, .chair-text-box .ctb-desc p{
+       font-size: 18px;
+       /* font-family: "Roboto-Light", "Roboto"; */
+       font-weight: 300;
+       /* color: #1D1D1F; */
+       line-height: 24px;
+    }
+    .chair-press-btn{
+        left: 74%;
+        top: 47%;
+    }
+    .fb-video-muted-btn{
+        left: 10%;
+        width: 40px;
+        height: 40px;
+    }
+ }
+ /* min-width: 768px */
+ @media only screen and (min-width: 821px) and (max-width: 1440px){
+    .chair-text-box{
+        padding: 0;
+        left: 5%;
+        top: 0%;
+        width: 530px;
+        height: 100%;
+       
+    }
+    .chair-flex-center{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .chair-btn-svga{
+        width: 500px;
+        height: 500px;
+        top: 9vh;
+        left: 42%;
+    }
+    #chair-text{
+        text-align: left;
+    }
+ }
+ @media only screen and (min-width: 1441px) {
+    .chair-text-box{
+        padding: 0;
+        left: 5%;
+        top: 0;
+        width: 560px;
+        height: 100%;
+    }
+    .chair-flex-center{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .chair-text-box .ctb-title{
+        /* width: 560px; */
+        width: 100%;
+    }
+
+    .chair-text-box .ctb-desc{
+        width: 530px;
+    }
+    #chair-text{
+        text-align: left;
+    }
+    .chair-btn-svga{
+        width: 500px;
+        height: 500px;
+        top: 14vh;
+        left: 45%;
+    }
+ }
+
+
+

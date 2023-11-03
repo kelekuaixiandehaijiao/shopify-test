@@ -1,0 +1,1089 @@
+<link rel="stylesheet" href="{{ 'show-row-goods.css' | asset_url }}">
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- assign boom_bike_index = section.settings.boom_bike_default_name  -%}
+{%- assign lit_bike_index = section.settings.lit_bike_default_name  -%}
+{%- assign peloton_bike_index = section.settings.other_bike_default_name -%}
+{%- assign bike_parent = 'freebeat-group' -%}
+{%- assign bike_copy_parent = 'freebeat-group-copy' -%}
+{%- assign peloton_parent = 'peloton-group' -%}
+{%- capture circel_dom_group1 -%}
+   {%- render 'fb-showrowgoods-item', section: section, domtype: 'circle', bike_type: '4', parent: bike_parent, index: boom_bike_index -%}
+{%- endcapture -%}
+{%- comment -%} copy boom bike {%- endcomment -%}
+{%- capture circel_dom_group5 -%}
+    {%- render 'fb-showrowgoods-item', section: section, domtype: 'circle', bike_type: '4', parent: bike_copy_parent, index: boom_bike_index -%}
+{%- endcapture -%}
+{%- capture circel_dom_group2 -%}
+    {%- render 'fb-showrowgoods-item', section: section, domtype: 'circle', bike_type: '1', parent: bike_parent, index: lit_bike_index -%}
+{%- endcapture -%}
+{%- comment -%} copy lit bike circle {%- endcomment -%}
+{%- capture circel_dom_group_copy4 -%}
+  {%- render 'fb-showrowgoods-item', section: section, domtype: 'circle', bike_type: '1', parent: bike_copy_parent, index: lit_bike_index -%}
+{%- endcapture -%} 
+
+{%- capture circel_dom_group3 -%}
+    <ul class="js-srg-table ">
+        <li>
+            <p class="srg-m-circle">
+                {%- for block in section.blocks -%}
+                    {% if block.settings.bike_name_index == peloton_bike_index %}
+                        <span style="background-color: {{ block.settings.bike_color }}">
+                        </span>
+                    {% endif %}
+                {%- endfor -%}
+            </p>
+        </li>
+    </ul>
+    {%- for block in section.blocks -%}
+        {% if block.settings.bike_name_index == peloton_bike_index %}
+            <p class="srg-mm-dec js-m-dec-p">{{ block.settings.bike_color_text }}</p>
+        {% endif %}
+    {%- endfor -%}
+{%- endcapture -%}
+
+
+
+<!-- peloton select li -->
+{%- capture peloton_panel -%}
+    <div class="srg-pleton-choose-box">
+        <!-- srg-box-ul -->
+        <ul class="srg-pleton-choose-ul">
+            {%- for block in section.blocks  -%}
+            <!-- {% if forloop.index==2 %}active{% endif %} -->
+                {% if block.settings.bike_type == '2' or block.settings.bike_type == '3' %}
+                        <li class="js-peloton-select peloton-panel-li {% if block.settings.bike_name_index == peloton_bike_index %}active{% endif %}"
+                            style="display:{% if country_code_var == 'au' and block.settings.bike_type == '3' %} none {% endif %}"
+                            data-index="{{ block.settings.bike_name_index }}"
+                            data-parent="{{ peloton_parent }}-{{ block.settings.bike_name_index }}"
+                            data-parent-box="fb-{{- peloton_parent -}}-{{- block.settings.bike_type -}}"
+                            data-name="{{ block.settings.peloton_name }}"
+                            data-page="{{ block.settings.bike_type }}"
+                        >
+                            <span class="peloton-panel-title">
+                                {%- if block.settings.bike_name_index == peloton_bike_index -%}
+                                    Peloton
+                                {%- endif -%} 
+                                {%- if block.settings.bike_name_index == 's22i-studio-bike' and country_code_var != 'au' -%}
+                                    Nordic Track
+                                {%- endif -%} 
+                            </span>
+                        <span class="peloton-panel-desc">{{ block.settings.peloton_name }}</span>
+                        <span class="peloton-panel-img">
+                                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/right_c9a98866-a060-4c1a-85ae-433c7509ae91.png?v=1662024968" />
+                        </span>
+                        </li>
+                {% endif %}
+                
+            {%- endfor -%}
+         
+                <li class="js-copylit-select js-copy-group2 peloton-panel-li"
+                    data-group="freebeat-group-4"
+                    data-name="Lit Bike"
+                >
+                    <span class="peloton-panel-title">
+                        freebeat
+                    </span>
+                    <span class="peloton-panel-desc"> Lit Bike </span>
+                    <span class="peloton-panel-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/right_c9a98866-a060-4c1a-85ae-433c7509ae91.png?v=1662024968" />
+                    </span>
+                </li>
+                <li class="js-copylit-select js-copy-group2 peloton-panel-li"
+                    data-group="freebeat-group-5"
+                    data-name="Boom Bike"
+                >
+                    <span class="peloton-panel-title">
+                    </span>
+                    <span class="peloton-panel-desc"> Boom Bike </span>
+                    <span class="peloton-panel-img">
+                        <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/right_c9a98866-a060-4c1a-85ae-433c7509ae91.png?v=1662024968" />
+                    </span>
+                </li>
+        </ul>  
+    </div>
+  
+{%- endcapture -%}
+<!-- default  forloop.index == 2 -->
+{%- capture peloton_first_name -%}
+    {%- for block in section.blocks -%}
+        {%- if block.settings.bike_name_index == peloton_bike_index -%}
+            {{ block.settings.peloton_name }} 
+        {% break %}
+        {%- endif -%}
+    {%- endfor -%} 
+{%- endcapture -%}
+{%- capture select_peloton_bikes_pc -%}
+<!--select peloton_name pc 采用hover -->
+ 
+    <div class="srg-peloton-name">
+        <!-- init first -->
+        <span class="srgp-name js-peloton-select-name" >
+            {{ peloton_first_name }}
+        </span>
+        <img class="pull-icon pull-down" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pulldown.png?v=1662024968">
+        <img class="pull-icon pull-up" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pullup.png?v=1662025470"> 
+        {{ peloton_panel }}
+    </div>
+        
+{%- endcapture -%}
+<!-- 移动端单个切换事件 -->
+{%- capture select_peloton_bikes_mobile -%}
+    <div class="srg-bike-box js-peloton-panel-name" data-show="false">
+        <div class="srg-bike-name">
+            <span class="js-peloton-select-name">
+                {%- comment -%} {{ peloton_first_name }} {%- endcomment -%}
+            </span>
+            <img  class="pull-icon pull-down" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pulldown.png?v=1662024968" />
+            <img  class="pull-icon pull-up" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pullup.png?v=1662025470" />
+        </div>
+        {{ peloton_panel }}
+    </div>
+{%- endcapture -%}
+
+
+<section   id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="ShowRowGoods" class="show-row-goods">
+  <div class="srg-container">
+    {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+      <div class="srg-top-block">
+        {%- if section.settings.subheading != blank -%}
+          <p class="srg-top-one">
+            {{ section.settings.subheading | escape }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <p class="srg-top-two">
+            {{section.settings.title | escape}}
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <!--freebeat mobile top select -->
+    <div class="srg-mobile-select">
+        <!-- js-freebeat-panel-name -->
+        <div class="srg-bike-box js-freebeat-panel-name" data-show="false">
+            <div class="srg-bike-name">
+                <span class="js-freebeat-select-name">{{ section.settings.mobile_freebeat_table }}</span>
+                <img  class="pull-icon pull-down" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pulldown.png?v=1662024968" />
+                <img  class="pull-icon pull-up" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pullup.png?v=1662025470" />
+            </div>
+            <div class="srg-freebeat-choose-box">
+                <ul class="srg-box-ul srg-freebeat-choose-ul">
+                    <li  class="freebeat-panel-li js-freebeat-select active" 
+                        data-parent="freebeat-group-2" 
+                        data-name="{{ section.settings.mobile_freebeat_table }}"
+                    >
+                       <span class="freebeat-panel-desc"> {{ section.settings.mobile_freebeat_table }} </span>
+                       <span class="freebeat-panel-img">
+                            <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/right_c9a98866-a060-4c1a-85ae-433c7509ae91.png?v=1662024968" />
+                       </span>
+                    </li>
+                    <li class="freebeat-panel-li js-freebeat-select" 
+                        data-parent="freebeat-group-1"
+                        data-name="{{ section.settings.mobile_boom_table }}"
+                    >
+                        <span class="freebeat-panel-desc"> {{ section.settings.mobile_boom_table }} </span>
+                        <span class="freebeat-panel-img">
+                             <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/right_c9a98866-a060-4c1a-85ae-433c7509ae91.png?v=1662024968" />
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{ select_peloton_bikes_mobile }}
+    </div>
+    <div class="srg-content">
+        <div class="bikes-group freebeat-group freebeat-group-1">
+            {%- comment -%} boom bike {%- endcomment -%}
+            {%- for block in section.blocks -%}
+                {%- if block.settings.bike_type == '4' -%}
+                    {%- assign product = block.settings.product -%}
+                    {%- capture show_product -%}
+                        {%- render 'customer-price-control', type:'showProduct', cpc_product: product -%}
+                    {%- endcapture -%}
+                    {%- if show_product != 'true' -%}
+                        {%- continue -%}
+                    {%- endif -%}   
+                    <div class="srg-max-block group-box-1 fb-{{ bike_parent }}-{{ block.settings.bike_type }} {{ bike_parent }}-{{ block.settings.bike_name_index }}">
+                        {%- render 'fb-showrowgoods-item', section: section, block: block, circel_dom: circel_dom_group1, domtype: 'item' -%}
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+        <div class="bikes-group freebeat-group freebeat-group-2">
+              {%- comment -%} freebeat bike {%- endcomment -%}
+            {%- for block in section.blocks -%}
+                {%- if block.settings.bike_type == '1' -%}
+                    {%- assign product = block.settings.product -%}
+                    {%- capture show_product -%}
+                        {%- render 'customer-price-control', type:'showProduct', cpc_product: product -%}
+                    {%- endcapture -%}
+                    {%- if show_product != 'true' -%}
+                        {%- continue -%}
+                    {%- endif -%}   
+                    <div class="srg-max-block group-box-2 fb-{{ bike_parent }}-{{ block.settings.bike_type }} {{ bike_parent }}-{{ block.settings.bike_name_index }}">
+                        {%- render 'fb-showrowgoods-item',  section: section, block: block, circel_dom: circel_dom_group2 -%}
+                    </div>
+                 {%- endif -%}
+            {%- endfor -%}
+        </div>
+        <div class="bikes-group freebeat-group-3 mob-right-group">
+            {%- comment -%} peloton bike {%- endcomment -%}
+            {%- for block in section.blocks -%}
+                {%- if block.settings.bike_type == '2' or block.settings.bike_type == '3' -%}
+                    <div class="srg-max-block group-box-3 fb-{{ peloton_parent }}-{{ block.settings.bike_type }} {{ peloton_parent }}-{{ block.settings.bike_name_index }}">
+                        {%- render 'fb-showrowgoods-item', section: section, block: block, circel_dom: circel_dom_group3, select_peloton_bikes_pc: select_peloton_bikes_pc -%}
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+        {%- comment -%} copy freebeat {%- endcomment -%}
+        <div class="bikes-group freebeat-group-copy freebeat-group-4 mob-right-group">
+            {%- comment -%} freebeat bike {%- endcomment -%}
+            {%- for block in section.blocks -%}
+                {%- if block.settings.bike_type == '1' -%}
+                    {%- assign product = block.settings.product -%}
+                    {%- capture show_product -%}
+                        {%- render 'customer-price-control', type:'showProduct', cpc_product: product -%}
+                    {%- endcapture -%}
+                    {%- if show_product != 'true' -%}
+                        {%- continue -%}
+                    {%- endif -%}   
+                    <div class="srg-max-block group-box-4 fb-{{ bike_copy_parent }}-{{ block.settings.bike_type }} {{ bike_copy_parent }}-{{ block.settings.bike_name_index }}" style="{% if block.settings.bike_name_index == lit_bike_index %}display: block;{% endif %}">
+                        {%- render 'fb-showrowgoods-item', section: section, block: block, circel_dom: circel_dom_group_copy4 -%}
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+        {%- comment -%} copy boom bike {%- endcomment -%}
+        <div class="bikes-group freebeat-group-copy freebeat-group-5 mob-right-group">
+            {%- comment -%} boom bike {%- endcomment -%}
+            {%- for block in section.blocks -%}
+                {%- if block.settings.bike_type == '4' -%}
+                    {%- assign product = block.settings.product -%}
+                    {%- capture show_product -%}
+                        {%- render 'customer-price-control', type:'showProduct', cpc_product: product -%}
+                    {%- endcapture -%}
+                    {%- if show_product != 'true' -%}
+                        {%- continue -%}
+                    {%- endif -%}   
+                    <div class="srg-max-block group-box-5 fb-{{ bike_copy_parent }}-{{ block.settings.bike_type }} {{ bike_copy_parent }}-{{ block.settings.bike_name_index }}" style="{% if block.settings.bike_name_index == boom_bike_index %}display: block;{% endif %}">
+                        {%- render 'fb-showrowgoods-item', section: section, block: block, circel_dom: circel_dom_group5 -%}
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "FbShowRowGoods",
+    "presets": [
+      {
+          "name": "fb-show-row-goods",
+          "category": "My Sections",
+          "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Sub-heading",
+        "default": "Compare Bikes"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Which freebeat bike suits you best?"
+      },
+      {
+        "type": "text",
+        "id": "mobile_buy_lit_bike",
+        "label": "BUY LIT BIKE",
+        "default": "BUY LIT BIKE"
+      },
+      {
+        "type": "text",
+        "id": "mobile_freebeat_table",
+        "label": "Freebeat table name",
+        "default": "Freebeat Lit Bike"
+      },
+      {
+        "type": "text",
+        "id": "mobile_boom_table",
+        "label": "Freebeat table name",
+        "default": "Boom Bike"
+      },
+        {
+            "type": "checkbox",
+            "id": "show_klarna_block",
+            "label": "Is Show Karna",
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "lit_bike_default_name",
+            "label":"Deafualt Lit Bike",
+            "options": [
+                {
+                  "value": "litbike-beige",
+                  "label": "litbike-beige"
+                },
+                {
+                  "value": "litbike-white",
+                  "label": "litbike-white"
+                },
+                {
+                    "value": "litbike-black",
+                    "label": "litbike-black"
+                },
+                {
+                  "value": "litbike-pink",
+                  "label": "litbike-pink"
+                }
+            ],
+            "default": "litbike-beige"
+        },
+        {
+            "type": "select",
+            "id": "boom_bike_default_name",
+            "label":"Deafualt Boom Bike",
+            "options": [
+                {
+                    "value": "boombike-grey",
+                    "label": "boombike-grey"
+                },
+                {
+                    "value": "boombike-yellow",
+                    "label": "boombike-yellow"
+                },
+                {
+                    "value": "boombike-white",
+                    "label": "boombike-white"
+                }
+            ],
+            "default": "boombike-grey"
+        },
+        {
+            "type": "select",
+            "id": "other_bike_default_name",
+            "label":"Deafualt Other Bike",
+            "options": [
+                {
+                    "value": "bike-plus",
+                    "label": "peloton - bike-plus"
+                },
+                {
+                    "value": "bike",
+                    "label": "peloton - bike"
+                },
+                {
+                    "value": "s22i-studio-bike",
+                    "label": "nordictrack - s22i-studio-bike"
+                },
+                {
+                    "value": "free-s15i-bike",
+                    "label": "nordictrack - free-s15i-bike"
+                }
+            ],
+            "default": "bike-plus"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "showRowGoods",
+        "name": "showRowGoods",
+        "settings": [
+          {
+            "type": "select",
+            "id": "bike_type",
+            "label":"Select Bike Type",
+            "options": [
+                {
+                  "value": "1",
+                  "label": "Freebeat Lit Bike"
+                },
+                {
+                  "value": "2",
+                  "label": "Peloton"
+                },
+                {
+                    "value": "3",
+                    "label": "Nordictrack"
+                },
+                {
+                  "value": "4",
+                  "label": "Freebeat Boom Bike"
+                }
+            ],
+            "default": "1"
+          },
+          {
+            "type": "select",
+            "id": "bike_name_index",
+            "label":"Select Bike Name Index",
+            "options": [
+                {
+                  "value": "litbike-beige",
+                  "label": "litbike-beige"
+                },
+                {
+                  "value": "litbike-white",
+                  "label": "litbike-white"
+                },
+                {
+                    "value": "litbike-black",
+                    "label": "litbike-black"
+                },
+                {
+                  "value": "litbike-pink",
+                  "label": "litbike-pink"
+                },
+                {
+                    "value": "boombike-grey",
+                    "label": "boombike-grey"
+                },
+                {
+                    "value": "boombike-yellow",
+                    "label": "boombike-yellow"
+                },
+                {
+                    "value": "boombike-white",
+                    "label": "boombike-white"
+                },
+                {
+                    "value": "bike-plus",
+                    "label": "peloton - bike-plus"
+                },
+                {
+                    "value": "bike",
+                    "label": "peloton - bike"
+                },
+                {
+                    "value": "s22i-studio-bike",
+                    "label": "nordictrack - s22i-studio-bike"
+                },
+                {
+                    "value": "free-s15i-bike",
+                    "label": "nordictrack - free-s15i-bike"
+                }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "boxcolor",
+            "label":"background color",
+            "default": "rgba(2,192,217,0.03)"
+          },
+          {
+            "type": "image_picker",
+            "id": "define_choose_img",
+            "label": "Choose Image",
+            "info": "Do not transfer, default to product drawing"
+          },
+          {
+            "type": "richtext",
+            "id": "product_hover_desc",
+            "label":"Hover Desc",
+            "default": "<p>Our final price includes: the bike, delivery, fees, etc.</p>"
+          },
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "color",
+            "id": "lable_text",
+            "label": "Lable Text",
+            "default": "#02C0D9"
+          },
+          {
+            "type": "color",
+            "id": "bike_color",
+            "label": "Bike color",
+            "default": "#fff"
+          },
+          {
+            "type": "text",
+            "id": "bike_color_text",
+            "label": "Bike color text",
+            "default": "White"
+          },
+          {
+            "type": "text",
+            "id": "lable_text_btn",
+            "label": "Lable text btn"
+          },
+          {
+            "type": "richtext",
+            "id": "product_introduce",
+            "label": "Product Introduce",
+            "default": "<p>Gamified Studio Cycling + Cross-Training Hub at Home.</p>"
+          },
+          {
+            "type": "header",
+            "content": "ONLY PELOTON SET"
+          },
+          {
+            "type": "text",
+            "id": "peloton_name",
+            "label": "Peloton Name",
+            "default": "Peloton Bike+"
+          },
+          {
+            "type": "text",
+            "id": "peloton_price",
+            "label": "Peloton Price",
+            "default": "$2,499"
+          },
+          {
+            "type": "text",
+            "id": "gb_peloton_price",
+            "label": "GB Peloton Price",
+            "default": "$2,499"
+          },
+          {
+            "type": "text",
+            "id": "au_peloton_price",
+            "label": "AU Peloton Price",
+            "default": "$1,995"
+          },
+          {
+            "type": "text",
+            "id": "peloton_huaxian_price",
+            "label": "Peloton Scribing Price"
+          },
+          {
+            "type": "text",
+            "id": "buy_button_text",
+            "label": "Buy Button text"
+          },
+          {
+            "type": "text",
+            "id": "mobile_buy_button_text",
+            "label": "mobile Buy Button text",
+            "default": "SHOP NOW"
+          },
+          {
+            "type": "url",
+            "id": "buy_button_link",
+            "label": "Buy Button link"
+          },
+          {
+            "type": "header",
+            "content": "QUICK LOOK SHOW"
+          },
+          {
+            "type": "text",
+            "id": "quick_look_title",
+            "label": "quick look mobile title",
+            "default": "QUICK LOOK"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_look_content_1",
+            "label":"quick look content 1",
+            "default": "<p><strong>CLASSES</strong><br/>Access to fun, gamified on-demand classes. Compete with family and friends!</p>"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_look_content_2",
+            "label":"quick look content 2"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_look_content_3",
+            "label":"quick look content 3"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_gblook_content_3",
+            "label":"quick Gblook content 3"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_aulook_content_3",
+            "label":"quick Aulook content 3"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_calook_content_3",
+            "label":"quick Calook content 3"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_look_content_4",
+            "label":"quick look content 4"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_look_content_5",
+            "label":"quick look content 5"
+          },
+          {
+            "type": "richtext",
+            "id": "quick_look_content_6",
+            "label":"quick look content 6"
+          },
+          {
+            "type": "text",
+            "id": "see_more_space_mobile",
+            "label":"MOBILE SHOW SEE MORE SPECS",
+            "default": "SEE MORE SPECS"
+          },
+          {
+            "type": "text",
+            "id": "explore_button_text",
+            "label": "Explore Button text"
+          },
+          {
+            "type": "url",
+            "id": "explore_button_link",
+            "label": "Explore Button link"
+          },
+          {
+            "type": "header",
+            "content": "SPEC"
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_1",
+            "label":"Product SPEC Title 1 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_1",
+            "label":"Product SPEC Content 1 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_gbcontent_1",
+            "label":"Product SPEC GbContent 1 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_aucontent_1",
+            "label":"Product SPEC AuContent 1 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_cacontent_1",
+            "label":"Product SPEC CaContent 1 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_2",
+            "label":"Product SPEC Title 2 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_2",
+            "label":"Product SPEC Content 2 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_3",
+            "label":"Product SPEC Title 3 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_3",
+            "label":"Product SPEC Content 3 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_4",
+            "label":"Product SPEC Title 4 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_4",
+            "label":"Product SPEC Content 4 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_5",
+            "label":"Product SPEC Title 5 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_5",
+            "label":"Product SPEC Content 5 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_6",
+            "label":"Product SPEC Title 6 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_6",
+            "label":"Product SPEC Content 6 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_7",
+            "label":"Product SPEC Title 7 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_7",
+            "label":"Product SPEC Content 7 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_8",
+            "label":"Product SPEC Title 8 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_8",
+            "label":"Product SPEC Content 8 "
+          },
+          {
+            "type": "text",
+            "id": "product_spec_title_9",
+            "label":"Product SPEC Title 9 "
+          },
+          {
+            "type": "richtext",
+            "id": "product_spec_content_9",
+            "label":"Product SPEC Content 9 "
+          }
+          ]
+      }
+    ]
+  }
+{% endschema %}
+<script type="text/javascript">
+  $(function () {
+      const showRowGoods ={
+        freebeatIndex: '{{ lit_bike_index }}',
+        otherIndex: '{{ peloton_bike_index }}',
+        freebeatCopyindex: '{{ lit_bike_index }}',
+        nordictrackIndex: 's22i-studio-bike',
+        nordictrackUrl: window.Shopify.routes.root + 'pages/compare-bikes-freebeat-vs-nordictrack-which-one-is-better-for-you',
+        pelotonUrl: window.Shopify.routes.root + 'pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',
+        currentUrl: window.location.pathname,
+        bike_parent: '{{ bike_parent }}',
+        bike_copy_parent: '{{ bike_copy_parent }}',
+        peloton_parent: '{{ peloton_parent }}',
+        litArry: ['litbike-beige','litbike-white','litbike-black','litbike-pink'],
+        boomArry: ['boombike-grey','boombike-yellow','boombike-white'],
+        pelotonArry: ['bike-plus', 'bike'],
+        nordictrackArry: ['s22i-studio-bike', 'free-s15i-bike'],
+        initLitClass: '{{ bike_parent }}-{{ lit_bike_index }}',
+        initboomClass: '{{ bike_parent }}-{{ boom_bike_index }}',
+        initOtherClass: '{{ peloton_parent }}-{{ peloton_bike_index }}',
+        paramName: 'peloton',
+        init: function () {
+            this.initPage()
+            this.methods()
+            this.resizeHeight()
+            this.scroolToTop()
+        },
+        initPage: function () {
+            let _this  = this
+            let freebeat =  getQueryString('freebeat')
+            let peloton = getQueryString('peloton')
+            let nordictrack = getQueryString('nordictrack')
+            if(freebeat && (this.litArry.indexOf(freebeat) > -1 || this.boomArry.indexOf(freebeat) > -1)) {
+                _this.freebeatIndex = freebeat
+            }
+            if(this.currentUrl == this.nordictrackUrl) {
+                if(nordictrack && this.nordictrackArry.indexOf(nordictrack) > -1) {
+                    _this.otherIndex = nordictrack
+                } else {
+                    _this.otherIndex = this.nordictrackArry[0]
+                }
+                _this.paramName = 'nordictrack'
+            } else {
+                if(peloton && this.pelotonArry.indexOf(peloton) > -1) {
+                    _this.otherIndex = peloton
+                } else {
+                    _this.otherIndex = '{{ peloton_bike_index }}'
+                }
+            }
+            let dombike = `${_this.bike_parent}-${_this.freebeatIndex}`
+            if( window.innerWidth <= 640) {
+                {% comment %} boom bike {% endcomment %}
+                if(_this.freebeatIndex.indexOf('boombike') > -1) {
+                    let domfree = $('.js-freebeat-select[data-parent=freebeat-group-1]')
+                    $('.freebeat-group-2').hide() 
+                    $('.freebeat-group-1').show()  
+                    $('.freebeat-group-1').children('.group-box-1').hide()
+                    $('.freebeat-group-1').children(`.${dombike}`).show()
+                    // 控制移动端表头顺序
+                    $('.js-freebeat-select').removeClass('active')
+                    domfree.addClass('active')
+                    $('.js-freebeat-select-name').text(domfree.attr('data-name'))
+                } else {
+                    {% comment %} lit bike {% endcomment %}
+                    $('.freebeat-group-2').show() 
+                    $('.freebeat-group-1').hide()  
+                    $('.freebeat-group-2').children('.group-box-2').hide()
+                    $('.freebeat-group-2').children(`.${dombike}`).show()
+                    // 控制移动端表头顺序
+                    let domfree = $('.js-freebeat-select[data-parent=freebeat-group-2]')
+                    $('.js-freebeat-select').removeClass('active')
+                    domfree.addClass('active')
+                    $('.js-freebeat-select-name').text(domfree.attr('data-name'))
+                }
+                _this.changeCircle(dombike, _this.freebeatIndex)
+            } else {
+                $('.freebeat-group-1').show()  
+                $('.freebeat-group-2').show() 
+                if(_this.freebeatIndex.indexOf('boombike') > -1) {
+                    $('.freebeat-group-1').children('.group-box-1').hide()
+                    $('.freebeat-group-1').children(`.${dombike}`).show()
+                    $('.freebeat-group-2').children('.group-box-2').hide()
+                    $('.freebeat-group-2').children(`.${this.initLitClass}`).show()
+                    {% comment %} $('.freebeat-group-2').children('.group-box-2').eq(0).show() {% endcomment %}
+                    
+                } else {
+                    $('.freebeat-group-2').children('.group-box-2').hide()
+                    $('.freebeat-group-2').children(`.${dombike}`).show()
+                    $('.freebeat-group-1').children('.group-box-1').hide()
+                    {% comment %} $('.freebeat-group-1').children('.group-box-1').eq(0).show() {% endcomment %}
+                    $('.freebeat-group-1').children(`.${this.initboomClass}`).show()
+                    
+                }
+                _this.changeCircle(dombike, _this.freebeatIndex)
+            }
+           // right peloton box
+           let dpl = `${_this.peloton_parent}-${_this.otherIndex}`
+           let dplparent = $(`.js-peloton-select[data-parent=${dpl}]`)
+           let _dplparentBox = dplparent.attr('data-parent-box')
+           $('.js-peloton-select-name').text(dplparent.attr('data-name'))
+           $(`.${_dplparentBox}`).hide()
+           $(`.${dpl}`).show()
+           $('.js-peloton-select').removeClass('active')
+           dplparent.addClass('active')
+        },
+        scroolToTop: function () {
+          if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            let position = $(".srg-content").offset();
+            // position.top = position.top - 160;
+            $("html,body").animate({scrollTop:position.top -160}, 100);
+          } 
+        },
+        resizePublicHeight: function (_dom) {
+            let _this = this
+            let arr = []
+            $(_dom).each(function(ulIndex, ul) {
+                let arr2 = []
+                $(ul).find('li').each(function(liIndex, livalue) {
+                    arr2.push($(livalue).height())
+                })
+                arr.push(arr2)
+            })
+            let arr3 = []
+            // 矩阵 长 宽
+            for(let i=0; i < arr[0].length; i++){
+                let singleArr = []
+                for(let j= 0; j< arr.length; j++) {
+                    singleArr.push(arr[j][i]) 
+                }
+                arr3.push(Math.max(...singleArr))
+            }
+
+            $(_dom).each(function(ulIndex, ul) {
+                    $(ul).find('li').each(function(liIndex, livalue) {
+                    $(livalue).css('height', arr3[liIndex] + 'px')
+                })
+            })
+        },
+        resizeBox: function (_dom) {
+            let _this = this
+            let arr = []
+            $(_dom).each(function(itemIndex, item) {
+               arr.push($(item).height())
+            })
+            let maxheight = Math.max(...arr)
+            $(_dom).each(function(itemIndex, item) {
+                 $(item).css('height', maxheight + 'px')
+             })
+            
+        },
+        initHeight: function () {
+            $('.js-srg-mobile-quciklook').each(function(ulIndex, ul) {
+                    $(ul).find('li').each(function(liIndex, livalue) {
+                    $(livalue).css('height', 'auto')
+                })
+            })
+            $('.js-srg-list-desc').each(function(ulIndex, ul) {
+                    $(ul).find('li').each(function(liIndex, livalue) {
+                    $(livalue).css('height', 'auto')
+                })
+            })
+        },
+        resizeHeight: function () {
+            this.resizePublicHeight('.js-srg-mobile-quciklook')
+            this.resizePublicHeight('.js-srg-list-desc')
+            console.log("22222")
+            this.resizeBox('.js-srg-price-height')
+        },
+        spliteTitle: function (title) {
+            if(!title) {
+                return ''
+            }
+            let copyArr = title.split('Bike')
+            return copyArr[1]
+        },
+        changeCircle: function (parent, index) {
+            let _this = this
+            $(`.${parent} .js-m-circle-p`).each(function(circelIndex, circel) {
+                if($(circel).data('index') === index) {
+                    $(circel).addClass('srg-active')
+                    let desc = _this.spliteTitle($(this).attr('data-title'))
+                    $(`.${parent} .js-m-dec-p`).html(desc)
+                } else {
+                    $(circel).removeClass('srg-active')
+                }
+            })
+        }, 
+        changeCopyCircle: function (parent, index) {
+            let _this = this
+            $(`.${parent} .js-m-copycircle-p`).each(function(circelIndex, circel) {
+                if($(circel).data('index') === index) {
+                    $(circel).addClass('srg-active')
+                    let desc = _this.spliteTitle($(this).attr('data-title'))
+                    $(`.${parent} .js-m-copydec-p`).html(desc)
+                } else {
+                    $(circel).removeClass('srg-active')
+                }
+            })
+        }, 
+        changeUpDown: function (_that, dom) {
+            let isShow = (_that.attr('data-show') === 'true' ? true : false)
+            if(isShow) {
+                _that.find('.pull-down').show()
+                _that.find('.pull-up').hide()
+                _that.attr('data-show', 'false')
+                _that.find(dom).hide()
+            } else {
+                _that.find('.pull-down').hide()
+                _that.find('.pull-up').show()
+                _that.attr('data-show', 'true')
+                _that.find(dom).show()
+            }
+        },
+        closeFunc: function () {
+            if($('.js-peloton-panel-name').attr('data-show') == 'true') {
+                $('.js-peloton-panel-name').find('.pull-down').show()
+                $('.js-peloton-panel-name').find('.pull-up').hide()
+                $('.js-peloton-panel-name').attr('data-show', 'hide')
+                $('.srg-pleton-choose-box').hide()
+            } else {
+                return false
+            }
+        },
+        closeFunc2: function (_dom) {
+            if($(_dom).attr('data-show') == 'true') {
+                $(_dom).find('.pull-down').show()
+                $(_dom).find('.pull-up').hide()
+                $(_dom).attr('data-show', 'hide')
+                $('.srg-freebeat-choose-box').hide()
+            } else {
+                return false
+            }
+        },
+        methods: function () {
+            let _this = this
+            // freebeat boom bike 切换顺序
+            $('.js-m-circle-p').click( function (e) {
+                e.stopPropagation()
+                if($(this).hasClass('srg-active')) {
+                    return false
+                }
+                let index = $(this).data('index')
+                let parent = $(this).attr('data-parent')
+                let parentBox =  $(this).attr('data-parent-box')
+                _this.freebeatIndex = index
+                _this.changeCircle(parent, index)
+                $(`.${parentBox}`).hide()
+                $(`.${parent}`).show()
+                _this.resizeHeight()
+            })
+            // mobile peloton click
+            $('.js-peloton-panel-name').click(function() {
+                _this.changeUpDown($(this), '.srg-pleton-choose-box')
+            })
+            // mobile freebeat click
+            $('.js-freebeat-panel-name').click(function () {
+                _this.changeUpDown($(this), '.srg-freebeat-choose-box')
+            })
+            // more peloton select click
+            $('.js-freebeat-select').click(function (e) {
+                e.stopPropagation()
+                // click yourself return false
+                if($(this).hasClass('active')) {
+                    return false
+                }
+                $('.js-freebeat-select').removeClass('active')
+                $(this).addClass('active')
+                $('.js-freebeat-select-name').text($(this).attr('data-name'))
+                let parent = $(this).attr('data-parent')
+                // init lit bike first
+                if(parent === 'freebeat-group-1') {
+                    _this.freebeatIndex = '{{ boom_bike_index }}'
+                } else {
+                   _this.freebeatIndex = '{{ lit_bike_index }}'
+                }
+               
+                window.location.href = `${window.location.pathname}?freebeat=${_this.freebeatIndex}&${_this.paramName}=${_this.otherIndex}`
+            })
+             // more peloton select click pc and mobile
+            $('.js-peloton-select').click(function (e) {
+                e.stopPropagation()
+                if($(this).hasClass('active')) {
+                    return false
+                }
+                let pageType = $(this).attr('data-page')
+                let index = $(this).data('index')  //1开始的
+                _this.otherIndex = index
+                // 修改为跳转页面
+                if(pageType === '3') {
+                    window.location.href = `${_this.nordictrackUrl}?freebeat=${_this.freebeatIndex}&nordictrack=${_this.otherIndex}`
+                    return false
+                } else {
+                    window.location.href = `${_this.pelotonUrl}?freebeat=${_this.freebeatIndex}&peloton=${_this.otherIndex}`
+                    return false
+                }
+            })
+            $('.js-copylit-select').click(function(e) {
+                e.stopPropagation()
+                if($(this).hasClass('active')) {
+                    return false
+                }
+                let group = $(this).attr('data-group')
+                $('.mob-right-group').hide()
+                $(`.${group}`).show()
+                $('.peloton-panel-li').removeClass('active')
+                $(this).addClass('active')
+                $('.js-peloton-select-name').text($(this).attr('data-name'))
+                _this.closeFunc()
+                console.log("22222", 222)
+                _this.resizeHeight()
+            })
+            $(document).bind("click",function(e){      
+                if($(e.target).closest(".js-peloton-panel-name").length == 0){
+                    //点击id为menu之外且id不是不是open，则触发
+                    _this.closeFunc()
+                }
+                if($(e.target).closest(".js-freebeat-panel-name").length == 0){
+                    //点击id为menu之外且id不是不是open，则触发
+                    _this.closeFunc2('.js-freebeat-panel-name')
+                }
+            })
+        }
+      }
+      showRowGoods.init()
+      
+  })
+</script>
+<style>
+</style>

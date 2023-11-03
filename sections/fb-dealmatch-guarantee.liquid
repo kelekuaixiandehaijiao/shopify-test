@@ -1,0 +1,76 @@
+{{ 'shopify-style.css' | asset_url | stylesheet_tag}}
+<div class="fb-dealmatch-guarantee w-full px-5 py-10 fb-sm:px-10  fb-sm:py-15 fb-md:px-0 fb-md:py-20">
+  <div class="mx-auto flex w-full max-w-75r flex-col fb-sm:flex-row-reverse">
+    {{
+      section.settings.fb_dealmatch_guarantee_img
+      | image_url: width: 800
+      | image_tag:
+        loading: 'lazy',
+        sizes: '(min-width: 1200px) 600px, (min-width: 640px) calc((100vw - 80px) / 2), calc((100vw - 40px) / 2)',
+        class: 'w-full h-auto rounded-lg fb-sm:w-1/2 fb-sm:ml-5 object-contain',
+        widths: '375, 550, 750, 1100, 1500',
+        alt: section.settings.fb_dealmatch_guarantee_img.alt
+    }}
+    <div class="fb-dealmatch-guarantee__content mt-8 fb-sm:mt-0 flex fb-sm:mr-5 flex-1 flex-col text-center fb-sm:text-start items-center fb-sm:w-1/2 fb-sm:justify-center fb-sm:items-start fb-md:mt-0">
+      <h2 class="fb-dealmatch-guarantee__heading truncate text-20 font-bold uppercase text-121212 fb-md:text-32">
+        {{ section.settings.fb_dealmatch_guarantee_heading }}
+      </h2>
+      <div class="fb-dealmatch-guarantee__desc mt-4 text-12 text-121212 fb-md:mt-6 fb-md:text-16">
+        {{ section.settings.fb_dealmatch_guarantee_desc }}
+      </div>
+      <a
+        href="{{ section.settings.fb_dealmatch_guarantee_url }}" target="_blank"
+        class="fb-dealmatch-guarantee__link hidden fb-md:leading-12 mt-6 text-center inline-block h-10 w-50 rounded-md bg-121212 text-12 font-bold uppercase leading-10 text-white fb-md:h-3r fb-md:w-15r fb-md:text-16"
+      >
+        {{ section.settings.fb_dealmatch_guarantee_url_btn }}
+      </a>
+    </div>
+  </div>
+</div>
+{% style %}
+  .fb-dealmatch-guarantee__desc p:first-child {
+    margin-top: 0;
+  }
+  .fb-dealmatch-guarantee__desc p {
+    margin-top: 8px;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Fb Dealmatch Guarantee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "fb_dealmatch_guarantee_heading",
+      "label": "t:sections.collage.settings.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "fb_dealmatch_guarantee_desc",
+      "label": "desc"
+    },
+    {
+      "type": "image_picker",
+      "id": "fb_dealmatch_guarantee_img",
+      "label": "image"
+    },
+    {
+      "type": "text",
+      "id": "fb_dealmatch_guarantee_url_btn",
+      "label": "link text"
+    },
+    {
+      "type": "url",
+      "id": "fb_dealmatch_guarantee_url",
+      "label": "link url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fb Dealmatch Guarantee",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

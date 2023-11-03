@@ -1,0 +1,263 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if country_code_var == 'gb' -%}
+    {%- if routes.root_url contains 'en-uk' -%}
+        {%- assign country_url_add = routes.root_url -%}
+    {%- else -%}
+        {%- assign country_url_add = '' -%}
+    {%- endif -%}
+{%- elsif country_code_var == 'au' -%}
+    {%- if routes.root_url contains 'en-au' -%}
+        {%- assign country_url_add = routes.root_url -%}
+    {%- else -%}
+        {%- assign country_url_add = '' -%}
+    {%- endif -%}
+{%- else -%}
+    {%- assign country_url_add = ''-%}
+{%- endif -%}
+<div id="section-{{ section.id }}" class="fb-lit-compare">
+  <div class="lit_compare_title">
+    <span>Which bike is right for you?</span>
+  </div>
+  <div class="fb-lit-compare-con">
+    <div class="lit_compare_content">
+      <div class="lit_compare_left">
+          {% assign lit_bike_pc = section.settings.lit_bike_pc | img_url: '' %}
+          {% assign lit_bike_mobile = section.settings.lit_bike_mobile | img_url: '' %}    
+          <img class="Image--lazyLoad Image--fadeIn lit_bike_pc" 
+                data-src="{{ lit_bike_pc }}"  
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+          >
+          <img class="Image--lazyLoad Image--fadeIn lit_bike_mobile" 
+                data-src="{{ lit_bike_mobile }}"  
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+          >
+        <div class="lit_compare_left_bike">
+            <img class="Image--lazyLoad Image--fadeIn swiss_design_pc" 
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_24_2x_e00e5d65-8098-467f-a2b7-11cd1d91ec2d.png?v=1680517229"  
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            <img class="Image--lazyLoad Image--fadeIn swiss_design_mobile" 
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/3_2x_9c599aa2-3f46-4df8-b6fe-d309e1f51d65.png?v=1680578525"  
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+          <div class="bike_title">Lit Bike</div>
+          <div class="bike_desc">Perfect and elegant Swiss Design</div>
+        </div>
+        <div class="lit_compare_con">
+          <div class="lit_compare_left_1">
+              <div class="desc">starting at</div>
+              <div class="text"
+                data-fbcountry-code="{{ country_code_var }}" 
+                data-fbtype="sale"
+                data-fbid="{{- product.id -}}"
+                data-fborigin= "{{- product.selected_or_first_available_variant.price -}}"
+            >{% render 'customer-price-control', type:'sale', cpc_product: product %}</div>
+              <div class="price_discount"
+                data-fbcountry-code="{{ country_code_var }}" 
+                data-fbtype="origin"
+                data-fbid="{{- product.id -}}"
+                data-fborigin= "{{- product.selected_or_first_available_variant.price -}}"
+            >{% render 'customer-price-control', type:'origin', cpc_product: product %}</div>
+          </div>
+          <div class="lit_compare_left_2">
+            <img class="Image--lazyLoad Image--fadeIn" 
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_3_2x_70d9ff39-5506-4a6f-afbd-1ed45251fadc.png?v=1680517285"  
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            <div class="desc">Compete with Friends</div>
+          </div>
+          <div class="lit_compare_left_3">
+            <img class="Image--lazyLoad Image--fadeIn" 
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/24__2x_b04ea300-b9dd-4422-ade4-f807a3f96766.png?v=1680517365"  
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            <div class="desc">Gamified Classes</div>
+          </div>
+          <div class="lit_compare_left_4">
+            <div class="text">21.5" HD</div>
+            <div class="desc">21.5" HD Rotating Touchscreen</div>
+          </div>
+          <div class="lit_compare_left_5">
+            <img class="Image--lazyLoad Image--fadeIn" 
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_9bce6999-54a5-4d5a-8da2-10876d0aaa07.png?v=1680517482"  
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+              {%- if country_code_var == 'gb' -%}
+                <div class="desc">{{ section.settings.lit_unit_gbdesc }}</div>
+              {%- elsif country_code_var == 'au' -%}
+                <div class="desc">{{ section.settings.lit_unit_audesc }}</div>
+              {%- elsif country_code_var == 'ca' -%}
+                <div class="desc">{{ section.settings.lit_unit_cadesc }}</div>
+              {%- else -%}
+                <div class="desc">{{ section.settings.lit_unit_desc }}</div>
+              {%- endif -%}
+            {% comment %} <div class="desc">49" L x 59" H x 23" W</div> {% endcomment %}
+          </div>
+          <div class="lit_compare_left_6">
+            <img class="Image--lazyLoad Image--fadeIn" 
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_1_20518f9b-ca9d-4178-b706-f60b7f424a3d.png?v=1680517489"  
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            <div class="desc">Auto Resistance System</div>
+          </div>
+          <div class="lit_compare_left_7">
+            <img class="Image--lazyLoad Image--fadeIn" 
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_14_2x_b5dbb8a6-fcbf-4c62-8dcd-437b6a584467.png?v=1680517497"  
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            <div class="desc">Smart Saddle Detection+</div>
+          </div>
+        </div>
+      </div>
+      <div class="lit_compare_right">
+        <img class="Image--lazyLoad Image--fadeIn peloton_bike_pc" 
+          data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pb.png?v=1680501305"  
+          data-sizes="auto"
+          data-optimumx="1.2"
+          data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+        >
+        <img class="Image--lazyLoad Image--fadeIn peloton_bike_mobile" 
+          data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pb.png?v=1680501305"  
+          data-sizes="auto"
+          data-optimumx="1.2"
+          data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+        >
+        <div class="lit_compare_right_bike">
+          <div class="bike_title">Peloton Bike+</div>
+        </div>
+        <div class="lit_compare_con">
+            <div class="lit_compare_right_1">
+              <div class="desc">starting at</div>
+              {%- if country_code_var == 'gb' -%}
+                <div class="text">£1,995</div>
+                {%- elsif country_code_var == 'au' -%}
+                <div class="text">$3,345</div>
+              {%- else -%}
+                <div class="text">$3,295</div>
+              {%- endif -%}
+             
+            </div>
+            <div class="lit_compare_right_2"></div>
+            <div class="lit_compare_right_3"></div>
+            <div class="lit_compare_right_4">
+              <div class="text">23.8" HD</div>
+              <div class="desc">23.8" HD Rotating Touchscreen</div>
+            </div>
+            <div class="lit_compare_right_5">
+              <img class="Image--lazyLoad Image--fadeIn" 
+                data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_9bce6999-54a5-4d5a-8da2-10876d0aaa07.png?v=1680517482"  
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+              >
+                {%- if country_code_var == 'gb' -%}
+                  <div class="desc">{{ section.settings.lit_pelunit_gbdesc }}</div>
+                {%- elsif country_code_var == 'au' -%}
+                  <div class="desc">{{ section.settings.lit_pelunit_audesc }}</div>
+                {%- elsif country_code_var == 'ca' -%}
+                  <div class="desc">{{ section.settings.lit_pelunit_cadesc }}</div>
+                {%- else -%}
+                  <div class="desc">{{ section.settings.lit_pelunit_desc }}</div>
+                {%- endif -%}
+              {% comment %} <div class="desc">59" L x 59" H x 22" W</div> {% endcomment %}
+            </div>
+            <div class="lit_compare_right_6">
+              <img class="Image--lazyLoad Image--fadeIn" 
+                data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_1_20518f9b-ca9d-4178-b706-f60b7f424a3d.png?v=1680517489"  
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+              >
+              <div class="desc">Auto Resistance System</div>
+            </div>
+            <div class="lit_compare_right_7"></div>
+        </div>
+      </div>
+    </div>
+    <a class="lit_compare_button" href="{{- country_url_add -}}/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you">
+        <span>COMPARE BIKES</span>
+      </a>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "FbLitCompare",
+    "presets": [
+      {
+        "name": "fb-lit-compare",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "lit_bike_pc",
+          "label": "Lit Bike Pc"
+        },
+        {
+          "type": "image_picker",
+          "id": "lit_bike_mobile",
+          "label": "Lit Bike Mobile"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_unit_desc",
+          "label": "Unit Desc"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_unit_gbdesc",
+          "label": "Unit GbDesc"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_unit_audesc",
+          "label": "Unit AuDesc"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_unit_cadesc",
+          "label": "Unit CaDesc"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_pelunit_desc",
+          "label": "PelUnit Desc"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_pelunit_gbdesc",
+          "label": "PelUnit GbDesc"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_pelunit_audesc",
+          "label": "PelUnit AuDesc"
+        },
+        {
+          "type": "richtext",
+          "id": "lit_pelunit_cadesc",
+          "label": "PelUnit CaDesc"
+        }
+    ]
+  }
+{% endschema %}

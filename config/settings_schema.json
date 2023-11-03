@@ -1,0 +1,1373 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Prestige",
+    "theme_author": "Maestrooo",
+    "theme_version": "5.0.0",
+    "theme_documentation_url": "http:\/\/support.maestrooo.com\/",
+    "theme_support_url": "https:\/\/support.maestrooo.com\/article\/203-contact-us"
+  },
+  {
+    "name": "Tracking Data Configuration",
+    "settings": [
+      {
+        "type": "text",
+        "id": "ca_fa_google_ads_id",
+        "label": "ca_fa_google_ads_id",
+        "default": "10865443592"
+      },
+      {
+        "type": "text",
+        "id": "uk_fa_google_ads_id",
+        "label": "uk_fa_google_ads_id",
+        "default": "10865361993"
+      },
+      {
+        "type": "text",
+        "id": "au_fa_google_ads_id",
+        "label": "au_fa_google_ads_id",
+        "default": "10865361993"
+      },
+      {
+        "type": "text",
+        "id": "ca_fa_google_gtm_id",
+        "label": "ca_fa_google_gtm_id",
+        "default": "5QF2PVP"
+      },
+      {
+        "type": "text",
+        "id": "uk_fa_google_gtm_id",
+        "label": "uk_fa_google_gtm_id",
+        "default": "59FTVQD"
+      },
+      {
+        "type": "text",
+        "id": "au_fa_google_gtm_id",
+        "label": "au_fa_google_gtm_id",
+        "default": "59FTVQD"
+      },
+      {
+        "type": "text",
+        "id": "ca_fa_google_ads_send_to_add_to_cart",
+        "label": "ca_fa_google_ads_send_to_add_to_cart",
+        "default": "10865443592\/HbC-CLLkvoIYEIiGhr0o"
+      },
+      {
+        "type": "text",
+        "id": "uk_fa_google_ads_send_to_add_to_cart",
+        "label": "uk_fa_google_ads_send_to_add_to_cart",
+        "default": "10865361993\/xra3CKLrtJcYEMmIgb0o"
+      },
+      {
+        "type": "text",
+        "id": "au_fa_google_ads_send_to_add_to_cart",
+        "label": "au_fa_google_ads_send_to_add_to_cart",
+        "default": "10865361993\/xra3CKLrtJcYEMmIgb0o"
+      },
+      {
+        "type": "text",
+        "id": "ca_fa_google_ads_send_to_purchase",
+        "label": "ca_fa_google_ads_send_to_purchase",
+        "default": "10865443592\/_N9LCMnGwIIYEIiGhr0o"
+      },
+      {
+        "type": "text",
+        "id": "uk_fa_google_ads_send_to_purchase",
+        "label": "uk_fa_google_ads_send_to_purchase",
+        "default": "10865361993\/azy6CJ_rtJcYEMmIgb0o"
+      },
+      {
+        "type": "text",
+        "id": "au_fa_google_ads_send_to_purchase",
+        "label": "au_fa_google_ads_send_to_purchase",
+        "default": "10865361993\/azy6CJ_rtJcYEMmIgb0o"
+      },
+      {
+        "type": "text",
+        "id": "ca_fa_google_ads_send_to_begin_checkout",
+        "label": "ca_fa_google_ads_send_to_begin_checkout",
+        "default": "10865443592\/n5Z9CNXGwIIYEIiGhr0o"
+      },
+      {
+        "type": "text",
+        "id": "uk_fa_google_ads_send_to_begin_checkout",
+        "label": "uk_fa_google_ads_send_to_begin_checkout",
+        "default": "10865361993\/m0vmCKXrtJcYEMmIgb0o"
+      },
+      {
+        "type": "text",
+        "id": "au_fa_google_ads_send_to_begin_checkout",
+        "label": "au_fa_google_ads_send_to_begin_checkout",
+        "default": "10865361993\/m0vmCKXrtJcYEMmIgb0o"
+      },
+      {
+        "type": "text",
+        "id": "ca_fa_google_ads_send_to_page_view",
+        "label": "ca_fa_google_ads_send_to_page_view",
+        "default": "10865443592\/eephCL3pvoIYEIiGhr0o"
+      },
+      {
+        "type": "text",
+        "id": "uk_fa_google_ads_send_to_page_view",
+        "label": "uk_fa_google_ads_send_to_page_view",
+        "default": "10865361993\/mBpHCKvrtJcYEMmIgb0o"
+      },
+      {
+        "type": "text",
+        "id": "au_fa_google_ads_send_to_page_view",
+        "label": "au_fa_google_ads_send_to_page_view",
+        "default": "10865361993\/mBpHCKvrtJcYEMmIgb0o"
+      }
+    ]
+  },
+  {
+    "name": "Bike Public Info",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Price Show"
+      },
+      {
+        "type": "checkbox",
+        "id": "bike_use_discount_price",
+        "label": "Activate discount price",
+        "info": "After opening, it is the selling price minus the discount price,It will also enable automatic filling of discount codes",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "bike_fill_discount",
+        "label": "Enable discount code filling",
+        "info": "When the discount code price is activated, it becomes invalid",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bike_use_discount_price",
+        "label": "GB Activate discount price",
+        "info": "After opening, it is the selling price minus the discount price,It will also enable automatic filling of discount codes",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bike_fill_discount",
+        "label": "GB Enable discount code filling",
+        "info": "When the discount code price is activated, it becomes invalid",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bike_use_discount_price",
+        "label": "AU Activate discount price",
+        "info": "After opening, it is the selling price minus the discount price,It will also enable automatic filling of discount codes",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bike_fill_discount",
+        "label": "AU Enable discount code filling",
+        "info": "When the discount code price is activated, it becomes invalid",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "By Stages"
+      },
+      {
+        "type": "number",
+        "id": "bike_by_stage_number",
+        "label": "By Stages Number",
+        "default": 36
+      },
+      {
+        "type": "number",
+        "id": "gb_bike_by_stage_number",
+        "label": "GB By Stages Number",
+        "default": 36
+      },
+      {
+        "type": "number",
+        "id": "au_bike_by_stage_number",
+        "label": "AU By Stages Number",
+        "default": 36
+      },
+      {
+        "type": "number",
+        "id": "bbaw_rate",
+        "label": "Boom Bike Arctic White Rate Defalut Boom Bike",
+        "default": 77
+      },
+      {
+        "type": "number",
+        "id": "lbsb_rate",
+        "label": "Lit Bike Space Black Rate Defalut Lit Bike",
+        "default": 289
+      },
+      {
+        "type": "number",
+        "id": "bbaw_freight",
+        "label": "Boom Bike Arctic White freight Defalut Boom Bike",
+        "default": 99
+      },
+      {
+        "type": "number",
+        "id": "lbsb_freight",
+        "label": "Lit Bike Space Black freight Defalut",
+        "default": 99
+      },
+      {
+        "type": "url",
+        "id": "litbike_product_default_url",
+        "label": "Lit Bike Product Default Url"
+      },
+      {
+        "type": "url",
+        "id": "boombike_product_default_url",
+        "label": "Boom Bike Product Default Url"
+      }
+    ]
+  },
+  {
+    "name": "Lit Bike Space Black",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_black",
+        "label": "Product Black"
+      },
+      {
+        "type": "number",
+        "id": "lbsb_discount",
+        "label": "Lit Bike Space Black Discount",
+        "default": 100
+      },
+      {
+        "type": "number",
+        "id": "gb_lbsb_discount",
+        "label": "GB Lit Bike Space Black Discount",
+        "default": 600
+      },
+      {
+        "type": "number",
+        "id": "au_lbsb_discount",
+        "label": "AU Lit Bike Space Black Discount",
+        "default": 600
+      },
+      {
+        "type": "number",
+        "id": "lbsb_te",
+        "label": "Lit Bike Space Black transportation expenses",
+        "default": 100
+      },
+      {
+        "type": "number",
+        "id": "gb_lbsb_te",
+        "label": "GB Lit Bike Space Black transportation expenses",
+        "default": 99
+      },
+      {
+        "type": "number",
+        "id": "au_lbsb_te",
+        "label": "AU Lit Bike Space Black transportation expenses",
+        "default": 99
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbsb_oversold",
+        "label": "CA Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbsb_oversold",
+        "label": "GB Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbsb_oversold",
+        "label": "AU Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbsb_show",
+        "label": "CA Lit Bike Space Black Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbsb_show",
+        "label": "GB Lit Bike Space Black Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbsb_show",
+        "label": "AU Lit Bike Space Black Show",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Lit Bike Aurora Pink",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_pink",
+        "label": "Product Pink"
+      },
+      {
+        "type": "number",
+        "id": "lbap_discount",
+        "label": "Lit Bike Aurora Pink Discount"
+      },
+      {
+        "type": "number",
+        "id": "gb_lbap_discount",
+        "label": "GB Lit Bike Aurora Pink Discount"
+      },
+      {
+        "type": "number",
+        "id": "au_lbap_discount",
+        "label": "AU Lit Bike Aurora Pink Discount"
+      },
+      {
+        "type": "number",
+        "id": "lbap_te",
+        "label": "Lit Bike Aurora Pink transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "gb_lbap_te",
+        "label": "GB Lit Bike Aurora Pink transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "au_lbap_te",
+        "label": "AU Lit Bike Aurora Pink transportation expenses"
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbap_oversold",
+        "label": "CA Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbap_oversold",
+        "label": "GB Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbap_oversold",
+        "label": "AU Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbap_show",
+        "label": "CA Lit Bike Aurora Pink Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbap_show",
+        "label": "GB Lit Bike Aurora Pink Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbap_show",
+        "label": "AU Lit Bike Aurora Pink Show",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Lit Bike Moonbow Beige",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_beige",
+        "label": "Product Beige"
+      },
+      {
+        "type": "number",
+        "id": "lbmb_discount",
+        "label": "Lit Bike Moonbow Beige Discount"
+      },
+      {
+        "type": "number",
+        "id": "gb_lbmb_discount",
+        "label": "GB Lit Bike Moonbow Beige Discount"
+      },
+      {
+        "type": "number",
+        "id": "au_lbmb_discount",
+        "label": "AU Lit Bike Moonbow Beige Discount"
+      },
+      {
+        "type": "number",
+        "id": "lbmb_te",
+        "label": "Lit Bike Moonbow Beige transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "gb_lbmb_te",
+        "label": "GB Lit Bike Moonbow Beige transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "au_lbmb_te",
+        "label": "AU Lit Bike Moonbow Beige transportation expenses"
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbmb_oversold",
+        "label": "CA Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbmb_oversold",
+        "label": "GB Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbmb_oversold",
+        "label": "AU Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbmb_show",
+        "label": "CA Lit Bike Moonbow Beige Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbmb_show",
+        "label": "GB Lit Bike Moonbow Beige Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbmb_show",
+        "label": "AU Lit Bike Moonbow Beige Show",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Lit Bike Snowpeak White",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_white",
+        "label": "Product White"
+      },
+      {
+        "type": "number",
+        "id": "lbsw_discount",
+        "label": "Lit Bike Snowpeak White Discount"
+      },
+      {
+        "type": "number",
+        "id": "gb_lbsw_discount",
+        "label": "GB Lit Bike Snowpeak White Discount"
+      },
+      {
+        "type": "number",
+        "id": "au_lbsw_discount",
+        "label": "AU Lit Bike Snowpeak White Discount"
+      },
+      {
+        "type": "number",
+        "id": "lbsw_te",
+        "label": "Lit Bike Snowpeak White transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "gb_lbsw_te",
+        "label": "GB Lit Bike Snowpeak White transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "au_lbsw_te",
+        "label": "AU Lit Bike Snowpeak White transportation expenses"
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbsw_oversold",
+        "label": "CA Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbsw_oversold",
+        "label": "GB Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbsw_oversold",
+        "label": "AU Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_lbsw_show",
+        "label": "CA Lit Bike Snowpeak White Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_lbsw_show",
+        "label": "GB Lit Bike Snowpeak White Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_lbsw_show",
+        "label": "AU Lit Bike Snowpeak White Show",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Boom Bike Mist Grey",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_boom_grey",
+        "label": "Product Boom Grey"
+      },
+      {
+        "type": "number",
+        "id": "bbgd_discount",
+        "label": "Boom Bike Mist Grey Discount"
+      },
+      {
+        "type": "number",
+        "id": "gb_bbgd_discount",
+        "label": "GB Boom Bike Mist Grey Discount"
+      },
+      {
+        "type": "number",
+        "id": "au_bbgd_discount",
+        "label": "AU Boom Bike Mist Grey Discount"
+      },
+      {
+        "type": "number",
+        "id": "bbgd_te",
+        "label": "Boom Bike Mist Grey transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "gb_bbgd_te",
+        "label": "GB Boom Bike Mist Grey transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "au_bbgd_te",
+        "label": "AU Boom Bike Mist Grey transportation expenses"
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_bbgd_oversold",
+        "label": "CA Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bbgd_oversold",
+        "label": "GB Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bbgd_oversold",
+        "label": "AU Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_bbgd_show",
+        "label": "CA Boom Bike Mist Grey Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bbgd_show",
+        "label": "GB Boom Bike Mist Grey Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bbgd_show",
+        "label": "AU Boom Bike Mist Grey Show",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Boom Bike Arctic White",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_boom_white",
+        "label": "Product Boom White"
+      },
+      {
+        "type": "number",
+        "id": "bbaw_discount",
+        "label": "Boom Bike Arctic White Discount"
+      },
+      {
+        "type": "number",
+        "id": "gb_bbaw_discount",
+        "label": "GB Boom Bike Arctic White Discount"
+      },
+      {
+        "type": "number",
+        "id": "au_bbaw_discount",
+        "label": "AU Boom Bike Arctic White Discount"
+      },
+      {
+        "type": "number",
+        "id": "bbaw_te",
+        "label": "Boom Bike Arctic White transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "gb_bbaw_te",
+        "label": "GB Boom Bike Arctic White transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "au_bbaw_te",
+        "label": "AU Boom Bike Arctic White transportation expenses"
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_bbaw_oversold",
+        "label": "CA Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bbaw_oversold",
+        "label": "GB Oversold",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bbaw_oversold",
+        "label": "AU Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_bbaw_show",
+        "label": "CA Boom Bike Arctic White Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bbaw_show",
+        "label": "GB Boom Bike Arctic White Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bbaw_show",
+        "label": "AU Boom Bike Arctic White Show",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Boom Bike Tuscany Yellow",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_boom_yellow",
+        "label": "Product Boom Yellow"
+      },
+      {
+        "type": "number",
+        "id": "bbyd_discount",
+        "label": "Boom Bike Tuscany Yellow Discount"
+      },
+      {
+        "type": "number",
+        "id": "gb_bbyd_discount",
+        "label": "GB Boom Bike Tuscany Yellow Discount"
+      },
+      {
+        "type": "number",
+        "id": "au_bbyd_discount",
+        "label": "AU Boom Bike Tuscany Yellow Discount"
+      },
+      {
+        "type": "number",
+        "id": "bbyd_te",
+        "label": "Boom Bike Tuscany Yellow transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "gb_bbyd_te",
+        "label": "GB Boom Bike Tuscany Yellow transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "au_bbyd_te",
+        "label": "AU Boom Bike Tuscany Yellow transportation expenses"
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_bbyd_oversold",
+        "label": "CA Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bbyd_oversold",
+        "label": "GB Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bbyd_oversold",
+        "label": "AU Oversold",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "ca_bbyd_show",
+        "label": "CA Boom Bike Tuscany Yellow Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_bbyd_show",
+        "label": "GB Boom Bike Tuscany Yellow Show",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_bbyd_show",
+        "label": "AU Boom Bike Tuscany Yellow Show",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Jenselter Bike",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product_jenselter_bike",
+        "label": "Product Jenselter Bike"
+      },
+      {
+        "type": "number",
+        "id": "jslb_discount",
+        "label": "Jenselter Bike Discount"
+      },
+      {
+        "type": "number",
+        "id": "gb_jslb_discount",
+        "label": "GB Jenselter Bike Discount"
+      },
+      {
+        "type": "number",
+        "id": "jslb_te",
+        "label": "Jenselter Bike transportation expenses"
+      },
+      {
+        "type": "number",
+        "id": "gb_jslb_te",
+        "label": "GB Jenselter Bike transportation expenses"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Body text",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "text_light_color",
+        "label": "Body light text",
+        "default": "#6a6a6a"
+      },
+      {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link color",
+        "default": "#6a6a6a"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#eaeaea"
+      },
+      {
+        "type": "color",
+        "id": "light_background",
+        "label": "Light background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "product_on_sale_color",
+        "label": "On sale accent",
+        "default": "#f94c43"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "color",
+        "id": "button_background",
+        "label": "Background",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "header_background",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "header_heading_color",
+        "label": "Heading and icons",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "header_light_color",
+        "label": "Light text",
+        "default": "#6a6a6a"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "footer_background",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "footer_heading_color",
+        "label": "Heading",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "footer_text_color",
+        "label": "Text",
+        "default": "#6a6a6a"
+      },
+      {
+        "type": "header",
+        "content": "Sidebar navigation"
+      },
+      {
+        "type": "color",
+        "id": "navigation_background",
+        "label": "Background",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "navigation_text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Newsletter popup"
+      },
+      {
+        "type": "color",
+        "id": "newsletter_popup_background",
+        "label": "Background",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "newsletter_popup_text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Secondary elements",
+        "info": "This is used in modals and other secondary elements."
+      },
+      {
+        "type": "color",
+        "id": "secondary_elements_background",
+        "label": "Background",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "secondary_elements_text_color",
+        "label": "Text",
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "label": "Size",
+        "info": "All headings (small and large) will be adjusted.",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "small"
+      },
+      {
+        "type": "checkbox",
+        "id": "uppercase_heading",
+        "label": "Display headings in uppercase",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Body text"
+      },
+      {
+        "type": "font_picker",
+        "id": "text_font",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "range",
+        "id": "base_text_font_size",
+        "label": "Base size",
+        "min": 13,
+        "max": 17,
+        "unit": "px",
+        "default": 14
+      }
+    ]
+  },
+  {
+    "name": "Color swatch",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "color_swatch_config",
+        "label": "Configuration",
+        "info": "Each rule must be in its own line. [Learn more](https:\/\/www.google.com) about the exact naming convention."
+      }
+    ]
+  },
+  {
+    "name": "Animation",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_page_transition",
+        "label": "Show page transition",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button_transition",
+        "label": "Show button transition",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_image_zooming",
+        "label": "Show image zoom effect",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_element_staggering",
+        "label": "Reveal elements one by one",
+        "info": "This setting displays blog post and product grid element one after the other.",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Search",
+    "settings": [
+      {
+        "type": "select",
+        "id": "search_mode",
+        "label": "Search only...",
+        "options": [
+          {
+            "value": "product",
+            "label": "Products only"
+          },
+          {
+            "value": "product,page",
+            "label": "Products and pages"
+          },
+          {
+            "value": "product,article",
+            "label": "Products and articles"
+          },
+          {
+            "value": "product,article,page",
+            "label": "Products, articles and pages"
+          }
+        ],
+        "default": "product,article"
+      }
+    ]
+  },
+  {
+    "name": "Products grid",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Grid"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_show_price_on_hover",
+        "label": "Show price on hover",
+        "info": "Prices will always be visible on touch devices.",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "product_show_secondary_image",
+        "label": "Show secondary image on hover",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "product_info_alignment",
+        "label": "Product info alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "select",
+        "id": "product_image_size",
+        "label": "Product image size",
+        "options": [
+          {
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "short",
+            "label": "Short (4:3)"
+          },
+          {
+            "value": "square",
+            "label": "Square (1:1)"
+          },
+          {
+            "value": "tall",
+            "label": "Tall (2:3)"
+          }
+        ],
+        "default": "natural"
+      },
+      {
+        "type": "select",
+        "id": "product_list_horizontal_spacing",
+        "label": "Horizontal spacing",
+        "options": [
+          {
+            "value": "extra_small",
+            "label": "Extra small"
+          },
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "extra_large",
+            "label": "Extra large"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "select",
+        "id": "product_list_vertical_spacing",
+        "label": "Vertical spacing",
+        "options": [
+          {
+            "value": "extra_small",
+            "label": "Extra small"
+          },
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "extra_large",
+            "label": "Extra large"
+          }
+        ],
+        "default": "medium"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Cart type",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "Drawer"
+          },
+          {
+            "value": "page",
+            "label": "Page"
+          }
+        ],
+        "default": "drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_enable_notes",
+        "label": "Enable order notes",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gb_cart_enable_notes",
+        "label": "GB Enable order notes",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "au_cart_enable_notes",
+        "label": "AU Enable order notes",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "shipping_main_cart_warn",
+        "label": "Discount Desc",
+        "default": "<p> Use code <strong>BOOMSALE<\/strong> to get <br\/> $600 off Boom Bike and <strong> LITSALE <\/strong> to <br\/> get $500 off Lit Bike<\/p>"
+      },
+      {
+        "type": "richtext",
+        "id": "shipping_main_cart_warn_gb",
+        "label": "GB Discount Desc",
+        "default": "<p> Use code <strong>BOOMSALEUK<\/strong> to get <br\/> £600 off Boom Bike and <strong> LITSALEUK <\/strong> to <br\/> get £600 off Lit Bike<\/p>"
+      },
+      {
+        "type": "richtext",
+        "id": "shipping_main_cart_warn_au",
+        "label": "AU Discount Desc",
+        "default": "<p> Use code <strong>BOOMSALEAU<\/strong> to get <br\/> $600 off Boom Bike and <strong> LITSALEAU <\/strong> to <br\/> get $500 off Lit Bike<\/p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_free_shipping_threshold",
+        "label": "Show free shipping minimum amount",
+        "info": "Make sure that you have properly configured your [shipping rates](\/admin\/settings\/shipping).",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "cart_free_shipping_threshold",
+        "label": "Free shipping minimum amount",
+        "info": "Only write a number, no letters",
+        "default": "50"
+      },
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "info": "https:\/\/www.facebook.com\/shopify",
+        "label": "Facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "info": "https:\/\/twitter.com\/shopify",
+        "label": "Twitter"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest",
+        "info": "https:\/\/www.pinterest.com\/shopify",
+        "label": "Pinterest"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "info": "https:\/\/instagram.com\/shopify",
+        "label": "Instagram"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo",
+        "info": "https:\/\/vimeo.com\/shopify",
+        "label": "Vimeo"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr",
+        "info": "https:\/\/shopify.tumblr.com",
+        "label": "Tumblr"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "info": "https:\/\/www.youtube.com\/user\/shopify",
+        "label": "YouTube"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "info": "https:\/\/www.tiktok.com\/shopify",
+        "label": "TikTok"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin",
+        "info": "https:\/\/linkedin.com\/in\/shopify",
+        "label": "LinkedIn"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat",
+        "info": "https:\/\/snapchat.com\/add\/shopify",
+        "label": "Snapchat"
+      },
+      {
+        "type": "text",
+        "id": "social_fancy",
+        "info": "https:\/\/fancy.com\/Shopify",
+        "label": "Fancy"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Image",
+        "info": "96 x 96px .png recommended"
+      }
+    ]
+  }
+]

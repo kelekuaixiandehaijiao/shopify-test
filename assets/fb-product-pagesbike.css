@@ -1,0 +1,109 @@
+.fb-product-pagesbike .payment_method_button .activeBorder{
+    border: 1px solid #000;
+}
+.fb-product-pagesbike .product_popup{
+    padding-bottom: 0px;
+    padding-top: 22px;
+}
+.fb-product-pagesbike  .pdp-gift-section {
+    margin: 32px 0px 0px 0px;
+
+}
+.fb-product-pagesbike .payment_method_button{
+    padding: 16px 0px 16px 0px;
+}
+.fb-product-pagesbike .gift-pic-wrapper{
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 789px) { 
+    .fb-product-pagesbike .AspectRatio{
+        height: 320px;
+    }
+    .fb-product-pagesbike .AspectRatio > img, .fb-product-pagesbike .no-js .AspectRatio > noscript img {
+        /* object-fit: cover; */
+        width: 320px;
+        left: 50%;
+        margin-left: -160px;
+    }
+    .fb-product-pagesbike .payment_method_button{
+        padding: 12px 0 18px;
+    }
+    .fb-product-pagesbike  .product_popup {
+        padding-bottom: 18px; 
+    }
+    .fb-product-pagesbike .Product {
+        margin: 0 auto 30px auto;
+    }
+}
+
+.fb-product-pagesbike .current, .fb-product-pagesbike .info .aging span{
+    color: #000;
+}
+.fb-product-pagesbike .gift_des, .fb-product-pagesbike .charity_des {
+    color: #000;
+}
+.fb-product-pagesbike .gift_icon{
+    background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/giftblack.png?v=1658227114') no-repeat center;
+    background-size: 100% 100%;
+}
+.fb-product-pagesbike .gift_icon img, .fb-product-pagesbike .charity_icon img{
+    display: none;
+}
+.fb-product-pagesbike .charity_icon{
+    background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/heart.png?v=1658284459') no-repeat center;
+    background-size: 100% 100%;
+}
+.fb-product-pagesbike #details_icon img{
+    opacity: 0;
+}
+.fb-product-pagesbike #details_icon{
+    background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/information.png?v=1658227480') no-repeat center;
+    background-size: 100% 100%; 
+}
+.fb-product-pagesbike .shopify-payment-button__button--unbranded{
+    border-color:#000;
+}
+.fb-product-pagesbike .shopify-payment-button__button--unbranded::before, .fb-product-pagesbike .Button--primary::before{
+    background-color: #000;
+}
+.fb-product-pagesbike #xbike-add-to-cart-main {
+    border-color: transparent;
+}
+.fb-product-pagesbike .flickity-page-dots .dot.is-selected {
+    border-color:#000!important;
+    background-color: #000!important;
+}
+.fb-product-pagesbike .klarna_right_box #klarnaLearmore{
+    color: #000;
+}
+.fb-product-pagesbike  .Product__SlideshowMobileNav{
+    position: relative;
+}
+
+.fb-product-pagesbike #addProdctTitle {
+    font-size: 30px;
+}
+
+@media only screen and (min-width: 100px) and (max-width: 650px) {
+    .fb-product-pagesbike #addProdctTitle {
+        font-size: 24px;
+    }  
+}
+@media screen and (min-width: 1008px) {
+    .fb-product-pagesbike  .Product__InfoWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fb-product-pagesbike   .Product__Info{
+        position: static;
+    }
+    .fb-product-pagesbike #details_icon{
+        cursor: pointer;
+    }
+    .fb-product-pagesbike .hoverBox{
+        right: -11%;
+        top: -120%;
+    }
+}

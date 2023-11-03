@@ -1,0 +1,55 @@
+ {%- assign product =  block.settings.product  -%}
+<a class="fb-sg-box-pc" href="{{ block.settings.link_page_url }}">
+<div class="fb-sg-profooter">
+    <div class="fb-sg-header-icons">
+        {%- if block.settings.swiss_image != blank  -%}
+            <img class="Image--lazyLoad Image--fadeIn" 
+                data-src="{{ block.settings.swiss_image }}" 
+            >
+        {%- else -%}
+            <img class="Image--lazyLoad Image--fadeIn" 
+            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780" 
+            >
+        {%- endif -%}
+    </div>
+    <div class="fsg-swiper-dot-mobile">
+         {% assign imgactive = block.settings.bike_img_active | img_url %}
+        {%- if block.setting.bike_img_active -%}
+             <img src="{{ imgactive }}" />
+        {%- endif -%}
+    </div>
+    <p class="fb-sg-profooter-title">{{ block.settings.fsgblock_title }}</p>
+    {%- if block.settings.fsgblock_title_sub != blank  -%}
+        <p class="fb-sg-profooter-subtitle">{{ block.settings.fsgblock_title_sub }}</p>
+    {%- else -%}
+        <p class="fb-sg-profooter-subtitle">&nbsp;</p>        
+    {%- endif -%}
+    <p class="fb-sg-profooter-desc">{{ block.settings.starting_at }}</p>
+    <div class="fb-sg-proprice">
+        <p class="fb-sg-proprice-price">
+            {% render 'customer-price-control', type:'sale', cpc_product: product %}
+        </p>
+        {%- if block.settings.show_discount_price -%}
+        <div class="fb-sg-proprice-discount">
+            <p class="fb-sg-proprice-discount-amount">{% render 'customer-price-control', type:'off', cpc_product: product %} OFF</p>
+            <p class="fb-sg-proprice-discount-price">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</p>
+        </div>
+        {%- endif -%}
+    </div>
+    <div class="fsg-swiper-dot-pc">
+        <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/gray_bike.png?v=1667202780" />
+    </div>
+    <div  class="fb-sg-profooter-shopNow">{{ block.settings.shop_now }}</div>
+</div>
+<div class="fb-sg-header">
+    {% assign image_url =  block.settings.link_image_product_chooseImage | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+    <img class="Image--lazyLoad Image--fadeIn fb-sg-product-image" data-src="{{ image_url }}"  data-sizes="auto"
+        alt="{{ block.settings.link_image_product_chooseImage.alt }}"
+    >
+    <span class="Image__Loader"></span>
+    {% if block.settings.freebeat_klarna_image != blank %}
+        <img data-src="{{ block.settings.freebeat_klarna_image }}"  class="Image--lazyLoad Image--fadeIn fb-sg-image-desc" />
+    {% endif %} 
+    
+</div>
+</a>

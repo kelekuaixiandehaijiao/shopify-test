@@ -1,0 +1,211 @@
+<div id="section-{{ section.id }}" class="fb-friend-kinds-model">
+    {%- comment -%} 分享弹窗 {%- endcomment -%}
+<div class="fri-dialog-container fri-share-discount">
+    <div class="fri-dialog-showhide">
+        <div class="fri-share-box fri-model-box">
+            <div class="fr-diaolog-close">
+                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" class="js-close-share"  />
+            </div>
+            <div class="fb-dialog-title">
+                {{ section.settings.fb_share_title }}
+            </div>
+            <div  class="fb-dialog-desc">
+                {{ section.settings.fb_share_desc }}
+            </div>
+            <div class="fb-share-form">
+                <p class="fb-dialog-tip">  Share your referral link anywhere: </p>
+                <div class="fb-share-inputbox">
+                    <input type="text" class="fb-text-input fb-share-text-input-field js-fri-copyurl" readonly="" data-clipboard-text="" value="loading...">
+                    <div class="fb-primary-button fb-share-copy-button js-fri-copyurl" data-clipboard-text="">
+                    </div>
+                </div>
+                <p class="fb-dialog-tip"> Send your friends an email </p>
+                <input type="text" placeholder="Email address" class="fb-share-email js-share-email" required>
+                <div class="fb-invalid-feedback"></div>
+                <div  class="fb-share-textarea">
+                    {{ section.settings.fb_share_writecontent }}
+                </div>
+                <div  class="fb-sharprimary-button">
+                    <button type="submit" id="fb-share-email-submit">
+                        Start Sharing
+                    </button>
+                </div>
+                <p class="fb-dialog-tip">Or share with:</p>
+                <div class="fb-share-kinds">
+                    <a class="js-fb-share-app" data-type="facebook">
+                        <img  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/facebook_3x_b260bc27-2fb6-4e5b-b404-e31c45f323da.png?v=1667786740"  />
+                    </a>
+                    <a href="javascript:void(0)" class="js-fb-share-app"  data-type="twitter" data-desc="{{ section.settings.fb_twittershare_desc }}">
+                        <img  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/twitter_3x_647121dc-1b75-4d82-80fa-3e81720895e2.png?v=1667786740"  />
+                    </a>
+                     <a href="javascript:void(0)" class="js-fb-share-app" data-type="whatsapp" data-desc="{{ section.settings.fb_twittershare_desc }}">
+                        <img  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/whatsapp_3x_cb1ae94e-3bba-437c-8ea7-352f3c39b524.png?v=1667786740"  />
+                    </a>
+                </div>
+                <p class="fb-dialog-rul-tip">
+                    <span class="fb-diaolg-rule js-open-termdialog">{{ section.settings.customer_ruletitle }}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+   
+</div>
+{%- comment -%} 协议 {%- endcomment -%}
+ <div class="fri-dialog-container fri-terms-dialog">
+    <div class="fri-dialog-showhide">
+        <div class="fri-terms-box fri-model-box">
+            <div class="fr-diaolog-close">
+                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" class="js-close-terms"  />
+            </div>
+            <div class="fb-dialog-title">
+            <p> {{ section.settings.customer_bigtitle }} </p>
+            </div>
+            <div class="fb-terms-width">
+                <div class="fb-terms-textcontent">
+                    {{ section.settings.customer_ruledesc }}
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+{%- comment -%} 提款弹窗 {%- endcomment -%}
+<div class="fri-dialog-container fri-paypal-dialog" id="fri-paypal-dialog1">
+    <div class="fri-dialog-showhide">
+        <div class="fri-buy-paypal" id="fri-model-box1" >
+            <div class="fr-diaolog-close">
+                 <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" class="js-close-paypal"  />
+             </div>
+            <div class="buy_paypal_title">Email Verification</div>
+            <div class="buy_paypal_desc">We will send an email to <p class="buy_paypal_email">mlinkaaoops@gmail.com</p></div>
+            <div class="buy_paypal_code">
+                <input type="text" placeholder="Enter your verification code" value="">
+                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/copy_2x_cce050e9-7773-4f70-8f6c-f6ab4b2c2ced.png?v=1667989952" id="fb-sendCode" alt="">
+            </div>
+            <div class="buy_paypal_text">
+                Request a new verification code in <span class="buy_paypal_seconds">XX</span> <span>seconds </span>
+            </div>
+            <div class="buy_paypal_confirm" id="paypal_confirm_submit">
+                <button type="submit" >
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fri-dialog-container fri-paypal-dialog" id="fri-paypal-dialog2">
+    <div class="fri-dialog-showhide">
+        <div class="fb-confirm-email fri-model-box" id="fri-model-box2" >
+            <!-- <div class="fr-diaolog-close">
+                <span class="js-close-paypal">{% render 'icon' with 'close' %}</span> 
+             </div> -->
+             <div class="fr-diaolog-close">
+                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" class="js-close-paypal"  />
+            </div>
+             <div class="fb_confirm_home_title">Withdraw to PayPal</div>
+             <div class="fb_confirm_home_price" id="fb_confirm_home_price">$10</div>
+             <div class="fb_confirm_email">
+                <input type="text" placeholder="Enter your PayPal account email" id="fb_enter_paypal_email">
+                <input type="text" placeholder="Confirm your PayPal account email" id="fb_confirm_paypal_email">
+            </div>
+             <div class="fb_confirm_title">Disclaimer: We will not be responsible if you enter your account information incorrectly and fail to receive payment.</div>
+             <div class="fb_confirm_desc">You are expected to receive the payment in 24-48 hours.</div>
+            <div class="fb_confirm_confirm"  id="confirm_email_submit">
+                <button type="submit">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fri-dialog-container fri-paypal-dialog" id="fri-paypal-dialog3">
+    <div class="fri-dialog-showhide">
+        <div class="fri-paypal-success fri-model-box" id="fri-model-box3">
+            <div class="fr-diaolog-close">
+                <span class="js-close-paypal">{% render 'icon' with 'close' %}</span> 
+             </div>
+             <div class="paypal_success_title">Success!</div>
+             <div class="paypal_success_img">
+                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Subtract_2x_caf2f5a0-782e-4cc3-8d26-c938c451d1ef.png?v=1667978252" alt="">
+             </div>
+            <div class="paypal_success_con">
+                <span class="paypal_success_price" id="up-Money">$10</span>
+                <span> has been sent to your PayPal account</span>
+                <p class="paypal_success_email">g***4@gmail.com</p>
+            </div>
+            <div class="paypal_success_desc">You are expected to receive the payment in 24-48 hours.</div>
+            <div class="paypal_success_cash" id="get_more_cash">
+                <button type="submit">
+                    <a href="" class="u-submit">Get more cash</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% schema %}
+{
+"name": "FbFriendbuyDialog",
+"presets": [
+  {
+    "name": "fb-friendbuy-dialog",
+    "category": "Fb Sections",
+    "blocks": []
+  }
+],
+"settings": [
+     {
+        "type": "header",
+        "content": "Share Content"
+    },
+    {
+        "type": "richtext",
+        "id": "fb_share_title",
+        "label": "Share Title",
+        "default": "<p>Earn up to $100 for every friend you refer</p>"
+    },
+    {
+        "type": "richtext",
+        "id": "fb_share_desc",
+        "label": "Share Desc",
+        "default": "<p> Give your friends a $$ discount and you will <br/> earn up to $100 in cash rewards after their <br/> first purchase</p>"
+    },
+    {
+        "type": "text",
+        "id": "fb_twittershare_desc",
+        "label": "Twitter Desc",
+        "default": "freebeat is awesome! Their bikes have helped me transition into a healthier lifestyle. Never thought I'd have so much fun exercising. Here's a $100 discount."
+    },
+     {
+        "type": "richtext",
+        "id": "fb_share_writecontent",
+        "label": "Write Content"
+    },
+    {
+        "type": "header",
+        "content": "Terms"
+    },
+    {
+        "type": "text",
+        "id": "customer_ruletitle",
+        "label": "Terms Title",
+        "default": "Terms"
+    },
+    
+    {
+        "type": "text",
+        "id": "customer_bigtitle",
+        "label": "Terms Desc",
+        "default": "Terms & Conditions"
+    },
+    {
+        "type": "richtext",
+        "id": "customer_ruledesc",
+        "label": "Terms Desc"
+    }
+]
+}
+{% endschema %}

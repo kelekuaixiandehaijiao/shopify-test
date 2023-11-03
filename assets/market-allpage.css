@@ -1,0 +1,348 @@
+/* maket top seconds */
+#js-market-down {
+    display: none;
+  
+}
+.market-top-down {
+    background: #F1F1F1;
+    width: 100%;
+    padding: 2px 0px 0px 0px;
+}
+.market-top-down .mtd-title {
+    font-size: 35px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #8830F5;
+    line-height: 47px; 
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#marketCountdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    height: 65px;
+}
+.countdownHolder{
+    margin:0 auto;
+    font: 40px/1.5 'Montserrat-Bold', 'Montserrat';
+    text-align:center;
+    letter-spacing:-3px;
+}
+#marketCountdown .countDays {
+    margin-right:26px;
+}
+@media screen and (min-width: 641px) {
+    .countdownHolder{
+        margin:0 auto;
+        font: 36px/1.43 'Montserrat-Bold', 'Montserrat';
+        text-align:center;
+    }
+}
+@media screen and (max-width: 640px) {
+    .market-top-down {
+        padding: 6px 0px 6px 0px;
+    }
+    .market-top-down .mtd-title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    #marketCountdown{
+      height: 22px;
+      margin-top: 15px;
+    }
+    .countdownHolder{
+        margin:0 auto;
+        font: 18px/1.5 'Montserrat-Bold', 'Montserrat';
+        text-align:center;
+        letter-spacing:-3px;
+    }
+    #marketCountdown .countDays {
+        margin-right:11px;
+    }
+    /* #marketCountdown .countDiv{
+        width: 0.2em;
+    } */
+}   
+#marketCountdown .position{
+    display: inline-block;
+    height: 1.6em;
+    overflow: hidden;
+    position: relative;
+    width: 1.05em;
+}
+#marketCountdown .digit{
+    position:absolute;
+    display:block;
+    width:1em;
+    background-color:#000;
+    /* border-radius:0.2em; */
+    border-radius: 4px;
+    text-align:center;
+    color:#fff;
+    font-family: 'Montserrat-Bold', 'Montserrat';
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+
+/**
+ * You can use these classes to hide parts
+ * of the countdown that you don't need.
+ */
+
+#marketCountdown .countDiv{
+    display:inline-block;
+    width: 0.42em;
+    height:1.6em;
+    position:relative;
+}
+
+#marketCountdown .countDiv:before,
+#marketCountdown .countDiv:after{
+    position:absolute;
+    width: 0.18em;
+    height: 0.18em;
+    background-color:#000;
+    border-radius:50%;
+    left:50%;
+    left: 50%;
+    margin-left: -0.09em;
+    top:0.3em;
+    /* box-shadow:1px 1px 1px #000; */
+    content:'';
+}
+#marketCountdown .countDiv:after{
+    /* top:0.8em; */
+   top: 0.6em;
+}
+
+/*  new popup */
+
+#MarketNewsletterPopup{
+    display: none;
+}
+.market-NewsletterPopup {
+  position: fixed;
+  width: calc(100% - 30px);
+  padding: 24px 30px 30px 30px;
+  background: var(--newsletter-popup-background);
+  color: var(--newsletter-popup-text-color);
+  z-index: 50;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s var(--drawer-transition-timing);
+  opacity: 0;
+  visibility: hidden;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.market-NewsletterPopup__ZoomOut{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 20px;
+    line-height: 0px;
+}
+.market-NewsletterPopup__Close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.market-NewsletterPopup__Content, #js-market-popup-seconds{
+   cursor: default;
+}
+.market-NewsletterPopup__Close svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+}
+.js-market-popup-seconds{
+    color: inherit;
+}
+.market-NewsletterPopup .Button{
+  color: var(--newsletter-popup-background);
+  border-color: var(--newsletter-popup-text-color);
+}
+.market-NewsletterPopup .Button::before {
+  background-color: var(--newsletter-popup-text-color);
+}
+.market-NewsletterPopup[aria-hidden=false] {
+    opacity: 1;
+    visibility: visible;
+}
+.market-NewsletterPopup[aria-hidden= true] {
+    opacity: 0;
+    visibility: hidden;
+}
+#market-mm-newsletter-button > img {
+    border-radius: 50%;
+  }
+  
+  #market-mm-newsletter-button:hover {
+    cursor: pointer;
+  }
+  
+#market-mm-newsletter-button {
+  /* 暂时blok */
+    display: none; 
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    z-index: 50;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    border-radius: 50%;
+}
+#market-mm-newsletter-button p{
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+#market-mm-newsletter-button .ptext1 {
+  font-size: 16px;
+  font-family: Montserrat-Medium, Montserrat;
+  font-weight: 500;
+  color: #fff;
+  line-height: 9px;
+  margin-top: 16px;
+  transform:scale(0.6)
+} 
+#market-mm-newsletter-button .ptext2, #market-mm-newsletter-button .ptext3{
+  font-size: 12px;
+  font-family: Montserrat-Medium, Montserrat;
+  font-weight: 600;
+  color: #fff;
+  line-height: 14px;
+ 
+} 
+#market-mm-newsletter-button .ptext3{
+  margin-top: 22px;
+}
+#market-mm-newsletter-button .ptext2{
+  margin-top: 2px;
+}
+#market-mm-newsletter-button img{
+  width: 12px;
+  height: auto;
+  margin-top: 8px;
+}
+#market-mm-newsletter-button .ptext4, #market-mm-newsletter-button .ptext5{
+  font-size: 14px;
+  font-family: Montserrat-Medium, Montserrat;
+  font-weight: 600;
+  color: #fff;
+  line-height: 16px;
+  margin-top: -7px;
+}
+#market-mm-newsletter-button .ptext5{
+  font-size: 12px;
+}
+.market-btn-border{
+  background: linear-gradient(134deg, rgba(136, 48, 245, 1), rgba(245, 48, 190, 1))!important;
+  padding: 2px;
+}
+.market-last-circle{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #000;
+}
+  #market-mm-newsletter-button > img {
+    border-radius: 50%;
+  }
+  
+  #market-mm-newsletter-button:hover {
+    cursor: pointer;
+  }
+  .market-NewsletterPopup__Form {
+    margin-top: 20px;
+  }
+  .market-NewsletterPopup .Button {
+    color: var(--newsletter-popup-background);
+    border-color: var(--newsletter-popup-text-color);
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .market-NewsletterPopup .Button::before {
+    background-color: var(--newsletter-popup-text-color);
+  }
+  .market-NewsletterPopup__Form  .Form__Input{
+      text-align: center;
+      font-weight: bold;
+      cursor: text;
+      color: #fff;
+  }
+  .market-NewsletterPopup__Form  .Form__Input[disabled]{color:#fff;opacity:1}
+    
+/* @media screen and (max-width: 640px) {
+  @supports (padding: max(0px)) {
+      .market-NewsletterPopup {
+          bottom: max(15px, env(safe-area-inset-bottom, 0px) + 15px);
+      }
+
+    
+  }
+} */
+.market-days-desc, #js-market-popup-seconds{
+  display: flex;
+  justify-content: center;
+  
+}
+.market-days-desc{
+  margin-bottom: 20px;
+}
+.market-days-desc p{
+  font-size: 10px;
+  line-height: 10px;
+}
+.market-days-desc p, #js-market-popup-seconds p{
+  width: 60px;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+#js-market-popup-seconds p, #js-market-popup-seconds span{
+  line-height: 48px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.market-days-desc span, #js-market-popup-seconds span{ 
+  width: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (-moz-touch-enabled: 0),
+(hover: hover) {
+    .market-NewsletterPopup .Button:not([disabled]):hover {
+        color: var(--newsletter-popup-text-color);
+        background-color: transparent;
+    }
+}
+@media screen and (max-width: 640px) {
+  @supports (padding: max(0px)) {
+    .market-NewsletterPopup {
+      bottom: 100px;
+    }
+  }
+}
+@media screen and (min-width: 641px) {
+  .market-NewsletterPopup {
+    max-width: 385px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 250px;
+    padding-top: 35px;
+  }
+  .NewsletterPopup__Close svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+}

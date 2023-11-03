@@ -1,0 +1,343 @@
+
+.fb-annimation-bike{
+    display: none;
+}
+#scroll-magic-container{
+    height: 100%;
+    overflow: hidden;
+}
+
+#scroll-section1-web{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#scroll-section1-video-container-web{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: gray;
+    overflow: hidden;
+}
+
+#scroll-section1-web video{
+    width: 100vw;
+    height: 100%;
+    object-fit:cover;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#scroll-section1-web img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+#scroll-section1-desc-web{
+    position: relative;
+    z-index: 3;
+
+    font-size: 48px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#scroll-section1{
+    position: relative;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#scroll-section3{
+    position: relative;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#scroll-section1-video-container{
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: gray;
+}
+
+#scroll-section3 video{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+#scroll-section3 img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+#scroll-section1 video{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+#scroll-section1 img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+.scroll-section1-desc{
+    position: relative;
+    z-index: 3;
+
+    font-size: 28px;
+    font-family: Montserrat-SemiBold, Montserrat;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+#scroll-section1-svga{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    object-fit: cover;
+}
+#scroll-section1-svga2{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.section2-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: gray;
+}
+
+.scroll-title{
+    position: relative;
+    z-index: 3;
+
+    font-size: 24px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #fff;
+    line-height: 24px;
+    letter-spacing: 1px;
+    padding-top: 149px;
+    text-align: center;
+}
+
+.scroll-desc{
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: 16px;
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    color: #fff;
+    line-height: 22px;
+    padding: 14px 12px;
+}
+
+.scroll-desc1{
+    padding: 159px 12px 14px;
+    font-weight: 600;
+}
+
+.scroll-title1{
+    padding-top: 0;
+}
+
+#scroll-section2{
+    overflow: hidden;
+}
+#scroll-section2-video{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    object-fit: cover;
+}
+
+#txt-container2{
+    position: relative;
+    z-index: 3;
+}
+
+
+#progressbar-container{
+    width: 305px;
+    position: absolute;
+    bottom: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.txt-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+#progressbar-container-desc{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7px;
+    font-size: 18px;
+    font-family: Montserrat-SemiBold, Montserrat;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 18px;
+    margin-bottom: 13px;
+}
+
+#progressbar{
+    width: 305px;
+}
+
+.ui-widget-content{
+    background: #626062 !important;
+    padding: 0 5px !important;
+    border-radius: 9px !important;
+    border: none !important;
+    height: 14px !important;
+}
+
+.ui-widget-header{
+    background: linear-gradient(90deg, #3886C6 0%, #5EFFCA 100%) !important;
+    border-radius: 9px !important;
+    border: none !important;
+    height: 8px !important;
+    margin-top: 3px !important;
+}
+
+.fb-video-muted-btn{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 10%;
+    left: 4%;
+    text-align: center;
+    line-height: 30px;
+    display: none;
+    z-index: 4;
+    cursor: pointer;
+}
+.fb-video-muted-btn img{
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width:786px){
+    .scroll-title{
+        font-size: 48px !important;
+        padding-top: 189px !important;
+        line-height: 48px !important;
+
+    }
+    .scroll-desc{
+        padding-top: 23px !important;
+        font-size: 18px !important;
+    }
+
+    .scroll-desc1{
+        padding-top: 189px !important;
+        padding-bottom: 16px !important;
+        font-size: 24px;
+    }
+
+    .scroll-title1{
+        padding-top: 0 !important;
+    }
+    #txt-container3{
+        position: absolute;
+        z-index: 3;
+        height: 100vh;
+        top: 0;
+    }
+    #txt-container4{
+        position: absolute;
+        z-index: 3;
+        height: 100vh;
+        top: 0;
+    }
+    #txt-container5{
+        position: absolute;
+        z-index: 3;
+        height: 100vh;
+        top: 0;
+    }
+
+    #scroll-title-3{
+        position: absolute;
+        left: 5vw;
+        width: 450px;
+        text-align: left;
+        padding-top: 0 !important;
+        top: calc(50vh - 80px);
+        text-align: left;
+        transform-origin: left top;
+    }
+    .scroll-title-3-desc{
+        padding-left: 0 !important;
+        text-align: left !important;
+    }
+    #scroll-desc-3{
+        position: absolute;
+        left: calc(50vw + 70px);
+        padding-top: 0 !important;
+        bottom: 7vh;
+        width: 450px;
+        text-align: left;
+        display: flex;
+    }
+    #scroll-title-1{
+        /* position: absolute;
+        left: 50px;
+        padding-top: 0 !important;
+        top: 50vh; */
+        /* transform-origin: left top; */
+        width: fit-content;
+        margin: 0 auto;
+        padding-top: 0 !important;
+        top: 189px;
+    }
+    #scroll-desc-1{
+        display: flex;
+        position: absolute;
+        left: 73vw;
+        padding-top: 0 !important;
+        top: 57vh;
+        width: 300px;
+        text-align: left;
+    }
+}
+

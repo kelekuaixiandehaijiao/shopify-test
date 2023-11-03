@@ -1,0 +1,442 @@
+{%- capture section_settings -%}
+{
+  "type": {{ settings.cart_type | json }},
+  "itemCount": {{ cart.item_count }},
+  "drawer": false,
+  "hasShippingEstimator": {% if section.settings.show_shipping_estimator and cart.item_count > 0 %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if routes.root_url contains 'en-uk' or routes.root_url contains 'en-au' -%}
+    {%- assign country_url_add = routes.root_url -%}
+{%- else -%}
+    {%- assign country_url_add = '' -%}
+{%- endif -%}
+<section data-section-id="{{ section.id }}" data-section-type="cart" data-section-settings='{{ section_settings }}'
+    class="fb-new-maincart"
+>
+  {%- if cart.item_count == 0 -%}
+    <div class="EmptyState">
+      <div class="Container">
+        <h1 class="EmptyState__Title Heading u-h5">{{ 'cart.general.empty' | t }}</h1>
+
+        {%- if settings.cart_show_free_shipping_threshold -%}
+          {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+          {%- capture remaining_amount -%}<span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+
+          <p class="Text--subdued">{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}</p>
+        {%- endif -%}
+
+        <a href="{{- country_url_add -}}/collections/exercise-bikes" class="EmptyState__Action Button Button--primary">{{ 'cart.general.empty_button' | t }}</a>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="Container">
+      <header class="PageHeader">
+        <div class="SectionHeader SectionHeader--center">
+          <h1 class="SectionHeader__Heading Heading u-h1">
+            Your cart
+            {% comment %} {{ 'cart.general.title' | t }} {% endcomment %}
+            </h1>
+
+          {%- if settings.cart_show_free_shipping_threshold -%}
+            {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+
+            <p class="SectionHeader__Description Text--subdued">
+              {%- if cart.total_price >= threshold_in_cents -%}
+                {{- 'cart.general.free_shipping' | t -}}
+              {%- else -%}
+                {%- capture remaining_amount -%}<span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+                {{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}
+              {%- endif -%}
+            </p>
+          {%- endif -%}
+        </div>
+      </header>
+
+      <div class="PageContent">
+        <form action="{{ routes.cart_url }}" method="POST" class="Cart Cart--expanded js-cart-expand" novalidate>
+          <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
+          <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+          {% render 'cart-items' %}
+
+          <footer class="Cart__Footer">
+            <div class="Cart__NoteContainer">
+              {%- if country_code_var == 'gb' -%}
+              {%- assign showCartNotes= settings.gb_cart_enable_notes -%}
+              {%- elsif country_code_var == 'au' -%}
+              {%- assign showCartNotes= settings.au_cart_enable_notes -%}
+              {%- else -%}
+              {%- assign showCartNotes= settings.cart_enable_notes -%}
+              {%- endif -%}
+              {%- if showCartNotes -%}
+              <div class="fb-main-cart-warn">
+                  {%- if country_code_var == 'gb' -%}
+                      {{ settings.shipping_main_cart_warn_gb }}
+                  {%- elsif country_code_var == 'au' -%}
+                      {{ settings.shipping_main_cart_warn_au }}  
+                  {%- else -%}
+                      {{ settings.shipping_main_cart_warn }} 
+                  {%- endif -%}
+              </div>
+              {%- endif -%}
+              <span class="Cart__NoteButton">
+                  <span class="new-maincart-border new-maincart-opennot js-open-ordernot">{{ 'cart.general.add_note' | t }}</span>
+                  <span class="new-maincart-not js-open-ordernot">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 19V5H12V12H19V13C19.7 13 20.37 13.13 21 13.35V9L15 3H5C3.89 3 3 3.89 3 5V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H13.35C13.13 20.37 13 19.7 13 19H5ZM14 4.5L19.5 10H14V4.5ZM23 18V20H20V23H18V20H15V18H18V15H20V18H23Z" fill="#6A6A6A"></path>
+                      </svg>
+                  </span>
+              </span>
+            
+              <textarea class="Cart__Note Form__Textarea js-maincart-textarea-input" name="note" id="cart-note" rows="4" placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}</textarea>
+            </div>
+
+            <div class="Cart__Recap">
+              {%- capture shipping_and_taxes_notice -%}{{ 'cart.general.shipping_and_taxes_notice' | t }}{%- endcapture -%}
+
+              {%- if cart.cart_level_discount_applications != blank -%}
+                {%- for discount_application in cart.cart_level_discount_applications -%}
+                  <p class="Cart__Discount Heading u-h6">{{ 'cart.general.discount' | t }} ({{ discount_application.title }}): -<span>{{ discount_application.total_allocated_amount | money_without_trailing_zeros }}</span></p>
+                {%- endfor -%}
+              {%- endif -%}
+
+              <p class="Cart__Total Heading u-h6">{{ 'cart.general.total' | t }}: <span>{{ cart.total_price | money_without_trailing_zeros }}</span></p>
+
+            
+
+              <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary Button--full">{{ 'cart.general.checkout' | t }}</button>
+                <!-- Route Code Edited  1/31/2023 -->
+                {% comment %} <div class="route-div"></div>
+    
+                <style>
+                    .pw-route-protection .pw-green .carbon-text-100{
+                    font-size: 11px !important;
+                    }
+                    .pw-route-protection .pw-green .carbon-text{
+                    font-size: 11px !important;
+                    }
+                    .pw-route-protection .pw-subtitle-text{
+                    font-size: 11px !important;
+                    }
+                </style>
+                <div style="font-size: 12px; margin-top: 10px; margin-bottom: 15px;">*Route is an added layer of protection to your order<br> which insures package replacement for lost, stolen, or<br> damaged packages. By unselecting it, you are opting<br> out of this premium feature.</div> {% endcomment %}
+                <!-- End Route Code -->
+              {%- if shipping_and_taxes_notice != blank -%}
+                <p class="Cart__Taxes Text--subdued fb-cart-taxes">{{ shipping_and_taxes_notice }}</p>
+              {%- endif -%}
+                <ul class="fb-cart-payment"> 
+                  {%- for type in shop.enabled_payment_types -%}
+                      <li class="fb-cart-payment-item">{{ type | payment_type_svg_tag }}</li>
+                  {%- endfor -%}
+                  {%- if country_code_var == 'gb' -%}
+                  <li class="fb-cart-payment-item">{{ 'klarna' | payment_type_svg_tag }}</li> 
+                  {%- elsif country_code_var == 'au' -%}
+                  {%- else -%}
+                  <li class="fb-cart-payment-item">{{ 'klarna' | payment_type_svg_tag }}</li> 
+                  {%-  endif  -%}
+
+                  {% comment %} <li class="fb-cart-payment-item">{{ 'klarna' | payment_type_svg_tag }}</li> {% endcomment %}
+                </ul>
+            </div>
+          </footer>
+        </form>
+
+        {%- if section.settings.show_shipping_estimator -%}
+          <div class="Section Section--spacingExtraLarge">
+            <div class="Panel">
+              <h2 class="Panel__Title Heading u-h2">{{ 'cart.shipping_estimator.title' | t }}</h2>
+
+              <div class="Panel__Content">
+                <div class="ShippingEstimator">
+                  <div class="ShippingEstimator__Form">
+                    <div class="ShippingEstimator__Country Form__Select Select Select--primary">
+                      {%- render 'icon' with 'select-arrow' -%}
+                      <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}" data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">{{ country_option_tags }}</select>
+                    </div>
+
+                    <div class="ShippingEstimator__Province Form__Select Select Select--primary" style="display: none">
+                      {%- render 'icon' with 'select-arrow' -%}
+                      <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
+                    </div>
+
+                    <input type="text" class="ShippingEstimator__Zip Form__Input" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+
+                    <button type="button" class="ShippingEstimator__Submit Button Button--primary">{{ 'cart.shipping_estimator.estimate' | t }}</button>
+                  </div>
+
+                  <div class="ShippingEstimator__Error Alert Alert--error" style="display: none"></div>
+                  <div class="ShippingEstimator__Results">
+                    <div class="ShippingEstimator__ResultsInner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_shipping_estimator",
+      "label": "Show shipping rates calculator",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "shipping_estimator_default_country",
+      "label": "Default country to use",
+      "info": "If your customer is logged-in, the country in his default shipping address will be selected.",
+      "default": "United States"
+    }
+  ]
+}
+{% endschema %}
+<script>
+$(function() {
+    const cartFun = {
+        isOpen: false,
+        init: function () {
+            this.event()
+        },
+        event: function () {
+            let _this = this
+            $('body').on('click', '.js-open-ordernot', function (e) {
+                _this.isOpen = !_this.isOpen
+                if(_this.isOpen) {
+                    $('.js-maincart-textarea-input').show()
+                    $('.new-maincart-opennot').removeClass('new-maincart-border')
+                } else {
+                    $('.js-maincart-textarea-input').hide()
+                    $('.new-maincart-opennot').addClass('new-maincart-border')
+                }
+            })
+            
+        }
+    }
+    cartFun.init()
+})
+
+</script>
+<script id="docapp-discount-speedup">
+(() => { if (!document.documentElement.innerHTML.includes('\\/shop' + '\\/js' + '\\/discount-on-cart-pro.min.js') || window.discountOnCartProAppLoaded) return; let script = document.createElement('script'); script.src = "https://d9fvwtvqz2fm1.cloudfront.net/shop/js/discount-on-cart-pro.min.js?shop=freebeat-fit.myshopify.com"; document.getElementById('docapp-discount-speedup').after(script); })();
+</script>
+<style>
+    @media only screen and (min-width:  769px) { 
+        .fb-new-maincart .docapp-coupon-input--button{
+            background: #000;
+        }
+        .fb-new-maincart .u-h1{
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: 700!important;
+        }
+        .fb-new-maincart .u-h7{
+            font-weight: 500!important;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666;
+        }
+        .fb-new-maincart .CartItem__Title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 18px;
+            color: #333333;
+        }
+        .fb-new-maincart .CartItem__Meta{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666666
+        }
+        .fb-new-maincart .CartItem__Remove{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            color: #333;
+        }
+        .fb-new-maincart .CartItem__LinePriceList{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 20px;
+            color: #333;
+        }
+        .fb-new-maincart .new-maincart-border{
+            border-bottom: 1px solid #282828;
+        }
+        .fb-new-maincart .Cart__NoteButton{
+            display: flex;
+            align-items: flex-start;
+        }
+        .fb-new-maincart .new-maincart-opennot{
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 16px;
+        }
+        .fb-new-maincart .new-maincart-not{
+            margin-left: 7px;
+            margin-top: -6px;
+            cursor: pointer;
+            
+        }
+        .fb-new-maincart .Cart__NoteContainer .Form__Textarea{
+            display: none;
+        }
+        .fb-main-cart-warn{
+            background: rgba(2, 192, 217, 0.05);
+            border: 1px solid #02C0D9;
+            width: 340px;
+            padding: 8px 20px;
+            margin-bottom: 25px;
+        }
+        .fb-main-cart-warn p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #02C0D9;
+            text-align: center;
+        }
+    }
+    @media only screen and (max-width:  768px) { 
+        .fb-new-maincart .docapp-coupon-input--button{
+            background: #000;
+        }
+        .fb-new-maincart .u-h1{
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: 700!important;
+        }
+        .fb-new-maincart .u-h7{
+            font-weight: 500!important;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666;
+        }
+        .fb-new-maincart .CartItem__Title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+            color: #333333;
+        }
+        .fb-new-maincart .CartItem__Meta{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666;
+        }
+        .fb-new-maincart .CartItem__Remove{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            color: #666;
+        }
+        .fb-new-maincart .CartItem__LinePriceList{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 20px;
+            color: #333;
+        }
+        .fb-new-maincart .new-maincart-border{
+            border-bottom: 1px solid #282828;
+        }
+        .fb-new-maincart .Cart__NoteButton{
+            display: flex;
+            align-items: flex-start;
+        }
+        .fb-new-maincart .new-maincart-opennot{
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 16px;
+        }
+        .fb-new-maincart .new-maincart-not{
+            margin-left: 7px;
+            margin-top: -6px;
+            cursor: pointer;
+            
+        }
+        .fb-new-maincart .Cart__NoteContainer .Form__Textarea{
+            display: none;
+        }
+        .fb-main-cart-warn{
+            background: rgba(2, 192, 217, 0.05);
+            border: 1px solid #02C0D9;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+        }
+        .fb-main-cart-warn p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+            color: #02C0D9;
+            text-align: center;
+        }
+    }
+    .Container{
+        padding: 24px 24px;
+    }
+    @media screen and (min-width: 641px){
+        .Container{
+             padding: 25px 50px;
+        }
+    }
+  .fb-cart-payment {
+      padding-top: 4px;
+      display: flex;
+      align-items: center;
+  }
+  
+  .fb-cart-payment-item {
+      margin-left: 10px;
+      height: 24px;
+      line-height: 24px;
+  }
+  
+  @media screen and (min-width: 769px) {
+      .fb-cart-payment {
+          justify-content: flex-end;
+      }
+      .fb-cart-taxes {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        margin-top: 13px;
+     }
+  }
+  
+  @media screen and (max-width: 768px) {
+      .fb-cart-payment {
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+      }
+      .fb-cart-payment-item:first-child {
+          margin-left: 0px;
+      }
+      .fb-cart-payment-item{
+        margin-bottom: 5px;
+      }
+      .fb-cart-payment-item {
+        margin-left: 8px;
+      }
+      .fb-cart-taxes {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        margin-top: 12px;
+      }
+  }
+</style>
+<script id="docapp-discount-speedup">
+(() => { if (!document.documentElement.innerHTML.includes('\\/shop' + '\\/js' + '\\/discount-on-cart-pro.min.js') || window.discountOnCartProAppLoaded) return; let script = document.createElement('script'); script.src = "https://d9fvwtvqz2fm1.cloudfront.net/shop/js/discount-on-cart-pro.min.js?shop=freebeat-canada.myshopify.com"; document.getElementById('docapp-discount-speedup').after(script); })();
+</script>

@@ -1,0 +1,76 @@
+
+<div id="section-{{ section.id }}" class="fb-stage-desc">
+    <div class="hwbqTs">
+        <p class="fb-stage-p">{{ section.settings.fb_stage_desc_start }}
+        <a href="{{ section.settings.fb_stage_desc_a }}">{{ section.settings.fb_stage_desc_a }}</a> 
+        {{ section.settings.fb_stage_desc_end }}
+        </p>
+        <p class="fb-stage-p2">
+            {{ section.settings.fb_stage_desc_seconds }}
+        </p>
+    </div>
+</div>
+<style>
+.fb-stage-p{
+    color: {{ section.settings.fb_stage_color }}
+}
+.fb-stage-p2{
+    color: {{ section.settings.fb_stage_color_seconds }}
+}
+.fb-stage-desc{
+    padding: 56px 0px;
+}
+@media only screen and (max-width: 414px){
+    .fb-stage-desc{
+        padding: 20px 0px;
+    }
+}
+</style>
+{% schema %}
+  {
+    "name": "FbStageDescription",
+    "presets": [
+      {
+        "name": "fb-stage-description",
+        "category": "stage-description",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "fb_stage_desc_start",
+            "label": "Desc1"
+        },
+        {
+            "type": "text",
+            "id": "fb_stage_desc_a",
+            "label": "Desc1 link"
+        },
+        {
+            "type": "text",
+            "id": "fb_stage_desc_end",
+            "label": "Desc1",
+            "default": "for details"
+        },
+        {
+            "type": "color",
+            "id": "fb_stage_color",
+            "label": "color1",
+            "default": "#000"
+        },
+        {
+            "type": "text",
+            "id": "fb_stage_desc_seconds",
+            "label": "Desc2"
+        },
+        {
+            "type": "color",
+            "id": "fb_stage_color_seconds",
+            "label": "color2",
+            "default": "#000"
+        }
+    ]
+  }
+{% endschema %}
+

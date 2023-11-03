@@ -1,0 +1,191 @@
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="Fb-Variety" class="Fb-Variety">
+    <div class="varietySection varietyContainer">
+        {%- if section.settings.varietyTitle != blank -%}
+            <div class="varietyTitle">{{section.settings.varietyTitle}}</div>
+        {%- endif -%}
+        {%- if section.settings.varietyDes != blank -%}
+            <div class="varietyDes">
+            {{section.settings.varietyDes}}
+            </div>
+        {%- endif -%}
+        <div class="v-button">
+            {%- if section.settings.button-1-text != blank -%}  
+                <a href="{{section.settings.button-1-url}}">
+                    <div class="button-1 button">{{section.settings.button-1-text}}</div>
+                </a>
+            {%- endif -%}
+            {%- if section.settings.button-2-text != blank -%}
+                <a href="{{section.settings.button-2-url}}">
+                    <div class="button-2 button">{{section.settings.button-2-text}}</div>
+                </a>
+            {%- endif -%}
+        </div>
+    </div>
+<style>
+    a {
+        text-decoration: none;
+    }
+    .varietySection {
+        background-color: {{section.settings.section-color}}
+    }
+    .varietyTitle,.varietyDes{
+        color: {{section.settings.text-color}}
+    }
+
+    .varietyContainer {
+        padding: 100px 0 40px;
+    }
+    .varietyTitle {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 42px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .varietyDes {
+        width: 667px;
+        padding: 48px 0;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 32px;
+    }
+    .v-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .button {
+        width: 240px;
+        height: 46px;
+        border-radius: 0px 0px 0px 0px;
+        opacity: 1;
+        text-align: center;
+    }
+     .button-1 {
+        border: 2px solid {{section.settings.button1_border_color}};
+        font-size: 14px;
+        font-weight: 600;
+        color: {{ section.settings.button1_text_color }};
+        box-sizing: border-box;
+        margin: 0 32px 0 0;
+        line-height: 42px;
+
+    }
+    .button-2 {
+        background: #181a1d;
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: 1px;
+        line-height: 46px;
+
+    }
+    @media screen and (max-width: 650px) {
+        .varietyContainer {
+        width: 100%;
+        padding: 50px 0 20px;
+        }
+        .varietyTitle {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 0 50px;
+        }
+        .varietyDes {
+        width: 347px;
+        padding: 24px 0 40px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 32px;
+        }
+        .v-button {
+        flex-direction: column;
+        }
+        .button {
+        width: 200px;
+        height: 40px;
+        letter-spacing: 1px;
+        }
+        .button-1 {
+        font-size: 14px;
+        margin: 0 0 16px 0;
+        line-height: 36px;
+        }
+        .button-2 {
+        font-size: 14px;
+        line-height: 40px;
+
+        }
+    }
+</style>
+{% schema %}
+  {
+    "name": "Variety Desciption",
+    "presets": [
+      {
+          "name": "Variety Desciption",
+          "category": "My Sections",
+          "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "section-color",
+            "label": "Background Color",
+            "default": "#000"
+        },
+        {
+            "type": "color",
+            "id": "text-color",
+            "label": "Text color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "button1_text_color",
+            "label": "Button1 Text color",
+            "default": "#e5e5e5"
+        },
+        {
+            "type": "color",
+            "id": "button1_border_color",
+            "label": "Button Border color",
+            "default": "#e5e5e5"
+        },
+        {
+            "type": "text",
+            "id": "varietyTitle",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "varietyDes",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "button-1-text",
+            "label": "BUTTON TEXT 1"
+        },
+        {
+            "type": "url",
+            "id": "button-1-url",
+            "label": "BUTTON LINK 1"
+        },
+        {
+            "type": "text",
+            "id": "button-2-text",
+            "label": "BUTTON TEXT 2"
+        },
+        {
+            "type": "url",
+            "id": "button-2-url",
+            "label": "BUTTON LINK 2"
+        }
+    ]
+  }
+{% endschema %}
+
+

@@ -1,0 +1,351 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-class-extended">
+    <div class="extended-header-title">{{ section.settings.header_title }}</div>
+    <div class="extended-show-pc">
+      <div class="header-border">
+        <div class="header-wrapper">
+          <div class="header-select-title selected-title-one active">{{ section.settings.select_title1 }}</div>
+          <div class="header-select-title selected-title-two">{{section.settings.select_title2}}</div>
+        </div>
+      </div>
+      <div class="extend-info info-desc1">{{section.settings.extended_info1}}</div>
+      <div class="extend-info info-desc2">{{section.settings.extended_info2}}</div>
+      <div class="extended-wrapper">
+          <div class="extended-video video-extend-show">
+            <video 
+              id="extend-video-play1"
+              class="Image--lazyLoad extended-video-item"
+              webkit-playsinline="true" 
+              playsinline="true"
+              muted="muted" 
+              loop="loop"
+              data-src="{{ section.settings.extended_video1 }}">
+            </video>
+            <div class="border-top-hide"></div>
+          </div>
+          <div class="extended-video video-extend-hide">
+            <video 
+              id="extend-video-play2"
+              class="Image--lazyLoad extended-video-item" 
+              style="position: absolute;z-index:1;" 
+              webkit-playsinline="true" 
+              playsinline="true"
+              muted="muted" 
+              loop="loop"
+              data-src="{{ section.settings.extended_video2 }}">
+            </video>
+          </div>
+          
+      </div>
+    </div>
+    <div class="extended-show-mob">
+      <div class="extended-main">
+        <div class="extended-content">
+          <div class="header-select-title">{{ section.settings.select_title1 }}</div>
+          <div class="extend-info info-desc1">{{section.settings.extended_info1}}</div>
+          <div class="extended-video video-extend-show" style="margin-top:80px;">
+            <video 
+              class="Image--lazyLoad extended-video-item" 
+              style="position: absolute;z-index:1;" 
+              webkit-playsinline="true" 
+              playsinline="true"
+              autoplay="autoplay" 
+              muted="muted" 
+              loop="loop"
+              data-src="{{ section.settings.extended_mob_video1 }}">
+            </video>
+            <div class="border-top-hide"></div>
+          </div>
+        </div>
+        <div class="extended-content">
+          <div class="header-select-title">{{ section.settings.select_title2 }}</div>
+          <div class="extend-info info-desc1">{{section.settings.extended_info2}}</div>
+          <div class="extended-video video-extend-show">
+            <video 
+              class="Image--lazyLoad extended-video-item mob-show" 
+              style="position: absolute;z-index:1;" 
+              webkit-playsinline="true" 
+              playsinline="true"
+              autoplay="autoplay" 
+              muted="muted" 
+              loop="loop"
+              data-src="{{ section.settings.extended_mob_video2 }}">
+            </video>
+          </div>
+        </div>
+        <div style="padding-left:15px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $(function(){
+    document.getElementById(`extend-video-play1`).play()
+    $('.selected-title-one').click(function(){
+      $(this).addClass('active')
+      $(this).siblings().removeClass('active')
+      $('.info-desc1').css('display','block')
+      $('.info-desc2').css('display','none')
+      $('.video-extend-show').css('display','block')
+      $('.video-extend-hide').css('display','none')
+      document.getElementById(`extend-video-play1`).currentTime = 0
+      document.getElementById(`extend-video-play1`).play()
+      document.getElementById(`extend-video-play2`).pause()
+    })
+    $('.selected-title-two').click(function(){  
+      $(this).addClass('active')
+      $(this).siblings().removeClass('active')
+      $('.info-desc1').css('display','none')
+      $('.info-desc2').css('display','block')
+      $('.video-extend-show').css('display','none')
+      $('.video-extend-hide').css('display','block')
+      document.getElementById(`extend-video-play2`).currentTime = 0
+      document.getElementById(`extend-video-play2`).play()
+      document.getElementById(`extend-video-play1`).pause()
+    })
+  })
+</script>
+<style>
+  .extended-show-mob{
+    display:none;
+  }
+  #section-{{ section.id }}{
+    width:100%;
+    {% comment %} height:1159px; {% endcomment %}
+    height:100%;
+    background:#FFFFFF;
+  }
+  .extended-header-title{
+    padding-top:80px;
+    text-align:center;
+    font-size: 36px;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #000000;
+    line-height: 36px;
+  }
+  .header-border{
+    width:100%;
+    border-bottom:1px solid #D9D9D9;
+    display:flex;
+    justify-content:center;
+  }
+  .header-wrapper{
+    margin-top:60px;
+    width:1200px;
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+  } 
+  .header-select-title{
+    width: 600px;
+    height: 44px;
+    font-size: 24px;
+    font-family: Montserrat-Medium, Montserrat;
+    font-weight: 500;
+    color: rgba(0,0,0,0.3);
+    line-height: 24px;
+    cursor:pointer
+  } 
+  .active{
+    color:#000000;
+    border-bottom:3px solid #000000;
+    font-weight:bold;
+  }
+  .extend-info{
+    margin-top:50px;
+    font-size: 16px;
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    color: #000000;
+    line-height: 16px;
+    text-align:center;
+  }
+  .info-desc2{
+    display:none;
+  }
+  .extended-wrapper{
+    margin:0 auto;
+    margin-top:50px;
+    width:1200px;
+    height:820px;
+    background:#FFFFFF;
+  }
+
+  .extended-video{
+    width:1000px;
+    height:820px;
+    margin:0 auto;
+    position:relative;
+  }
+  .border-top-hide{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background:#FFFFFF;
+  }
+  .extended-video-item{
+    width:1000px;
+    height:820px;
+    object-fit:cover;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+  }
+  .video-extend-hide{
+    display:none;
+  }
+  @media screen and (max-width: 768px){
+    ::-webkit-scrollbar {
+      display: none; 
+    }
+    .extended-show-pc{
+      display:none
+    }
+    .extended-show-mob{
+      display:block;
+      background: #F5F5F5;
+    }
+    #section-{{ section.id }}{
+      width:100%;
+      height:100%;
+      background: #F5F5F5;
+      padding-bottom:60px;
+    }
+    .extended-header-title{
+      padding-top:0px;
+      text-align:center;
+      font-size: 28px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #000000;
+      line-height: 32px;
+    }
+    .extended-main{
+      width:100%;
+      {% comment %} padding-left:15px;
+      padding-right:15px; {% endcomment %}
+      margin-top:30px;
+      display:flex;
+      overflow-x:auto;
+      padding:0 15px 0 0px;
+    }
+    .extended-content{
+      width: 300px;
+      {% comment %} height: 466px; {% endcomment %}
+      background: #FFFFFF;
+      border-radius: 14px;
+      margin-left:20px;
+      {% comment %} margin-right:20px; {% endcomment %}
+      position:relative;
+      flex-shrink:0;
+    }
+    .header-select-title{
+      margin:0 auto;
+      width: 199px;
+      font-size: 24px;
+      font-family: Montserrat-Bold, Montserrat;
+      font-weight: bold;
+      color: #000000;
+      line-height: 24px;
+      text-align:center;
+      border-bottom:0;
+      margin-top:40px;
+    }
+    .extend-info{
+      margin:0 auto;
+      margin-top:24px;
+      width: 225px;
+      font-size: 14px;
+      font-family: Montserrat-Regular, Montserrat;
+      font-weight: 400;
+      color: #000000;
+      line-height: 20px;
+      text-align:center;
+    }
+    .extended-video{
+      width: 285px;
+      height: 234px;
+      margin:0 auto;
+      margin-top:40px;
+      position:relative;
+      {% comment %} margin-top:60px; {% endcomment %}
+    }
+    .extended-video-item{
+      width: 285px;
+      height:234px;
+      object-fit:cover;
+      border-bottom-left-radius:14px;
+      border-bottom-right-radius:14px;
+    }
+    .border-top-hide{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:2px;
+      z-index:2;
+      background:#FFFFFF;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbClassesExtended",
+    "presets": [
+      {
+        "name": "fb-classes-extended",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings":[
+      {
+        "type": "richtext",
+        "id": "header_title",
+        "label": "Header Title"
+      },
+      {
+        "type": "richtext",
+        "id": "select_title1",
+        "label": "Select Title1"
+      },
+      {
+        "type": "richtext",
+        "id": "select_title2",
+        "label": "Select Title2"
+      },
+      {
+        "type": "richtext",
+        "id": "extended_info1",
+        "label": "Extended info1"
+      },
+      {
+        "type": "richtext",
+        "id": "extended_info2",
+        "label": "Extended info2"
+      },
+      {
+        "type": "url",
+        "id": "extended_video1",
+        "label": "Extended Video1"
+      },
+      {
+        "type": "url",
+        "id": "extended_mob_video1",
+        "label": "Extended Video1 Mob"
+      },
+      {
+        "type": "url",
+        "id": "extended_video2",
+        "label": "Extended Video2"
+      },
+      {
+        "type": "url",
+        "id": "extended_mob_video2",
+        "label": "Extended Video2 Mob"
+      }
+    ]
+  }
+{% endschema %}

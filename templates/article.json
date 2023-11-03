@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "show_article_image": true,
+        "show_date": true,
+        "show_category": false,
+        "show_author": true,
+        "show_share_buttons": true,
+        "show_prev_next": true
+      }
+    },
+    "1629795957e26061cf": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1629795957e26061cf"
+  ]
+}

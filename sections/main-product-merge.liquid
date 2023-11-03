@@ -1,0 +1,1546 @@
+{%- assign meta_block = section.blocks | where: 'type', 'product_meta' | first -%}
+{%- assign share_buttons_block = section.blocks | where: 'type', 'share_buttons' | first -%}
+{%- assign inventory_block = section.blocks | where: 'type', 'inventory' | first -%}
+{%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
+{%- assign show_charity_block = section.blocks | where: 'type', 'show_charity' | first -%}
+{%- assign choose_bike_color = section.blocks | where: 'type', 'choose_bikeColor' | first -%}
+{%- assign fb-delivers-product = section.blocks | where: 'type', 'Delivers' | first -%}
+{%- assign fb-product-payment = section.blocks | where: 'type', 'paymentMethodButton' | first -%}
+{%- assign fb-product-popup = section.blocks | where: 'type', 'productPopup' | first -%}
+{%- assign fb-gift-charity-popup = section.blocks | where: 'type', 'giftCharityPopup' | first -%}
+{%- assign fb-pdp-gift-remake = section.blocks | where: 'type', 'pdpGiftRemake' | first -%}
+{%- assign fb-customer-service = section.blocks | where: 'type','customerService' | first-%}
+{%- assign low-on-stock = section.blocks | where: 'type','low_on_stock' | first-%}
+
+{%- capture section_settings -%}
+{
+  "enableHistoryState": true,
+  "templateSuffix": {{ product.template_suffix | json }},
+  "showInventoryQuantity": {% if inventory_block != blank %}true{% else %}false{% endif %},
+  "showSku": {{ meta_block.settings.show_sku | json }},
+  "stackProductImages": {{ section.settings.stack_images | json }},
+  "showThumbnails": {{ section.settings.show_thumbnails | json }},
+  "enableVideoLooping": {{ section.settings.enable_video_looping | json }},
+  "inventoryQuantityThreshold": {{ inventory_block.settings.inventory_quantity_threshold | default: 0 }},
+  "showPriceInButton": {{ buy_buttons_block.settings.show_price_in_button | json }},
+  "enableImageZoom": {{ section.settings.enable_image_zoom | json }},
+  "showPaymentButton": {{ buy_buttons_block.settings.show_payment_button | json }},
+  "useAjaxCart": {% if settings.cart_type == 'drawer' %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+
+<script>
+  // To power the recently viewed products section, we save the ID of the product inside the local storage
+  (() => {
+    let items = JSON.parse(localStorage.getItem('recentlyViewedProducts') || '[]');
+
+    // We check if the current product already exists, and if it does not, we add it at the start
+    if (!items.includes({{ product.id }})) {
+      items.unshift({{ product.id }});
+    }
+
+    // Then, we save the current product into the local storage, by keeping only the 8 most recent
+    try {
+      localStorage.setItem('recentlyViewedProducts', JSON.stringify(items.slice(0, 8)));
+    } catch (error) {
+      // Do nothing, this may happen in Safari in incognito mode
+    }
+  })();
+</script>
+
+<section class="Product Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
+    {%- render 'fb-gift-charity-popup' ,  block: block -%}
+  <div class="Product__Wrapper">
+    {%- capture action_list_items -%}
+      {%- if section.settings.enable_image_zoom -%}
+        <div class="Product__ActionItem hidden-lap-and-up">
+          <button class="RoundButton RoundButton--small RoundButton--flat" aria-label="{{ 'product.slideshow.zoom' | t | escape }}" data-action="open-product-zoom">{% render 'icon' with 'plus' %}</button>
+        </div>
+      {%- endif -%}
+
+      {%- if share_buttons_block != blank -%}
+        <div class="Product__ActionItem hidden-lap-and-up">
+          <button class="RoundButton RoundButton--small RoundButton--flat" data-action="toggle-social-share" data-animate-bottom aria-expanded="false">
+            <span class="RoundButton__PrimaryState">{% render 'icon' with 'share' %}</span>
+            <span class="RoundButton__SecondaryState">{% render 'icon' with 'close' %}</span>
+          </button>
+
+          {%- assign share_url = shop.url | append: product.url -%}
+          {%- assign twitter_text = product.title -%}
+          {%- assign pinterest_description = product.description | strip_html | truncatewords: 15 | url_param_escape -%}
+          {%- assign pinterest_image = product.featured_media | img_url: '1024x' | prepend: 'https:' -%}
+
+          <div class="Product__ShareList" aria-hidden="true">
+            <a class="Product__ShareItem" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'facebook' -%} Facebook</a>
+            <a class="Product__ShareItem" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener">{%- render 'icon' with 'pinterest' -%} Pinterest</a>
+            <a class="Product__ShareItem" href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'twitter' -%} Twitter</a>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endcapture -%}
+
+    {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    PRODUCT GALLERY
+    --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
+    {%- assign initial_media_id = product.featured_media.id -%}
+    {%- assign initial_media_index = 0 -%}
+    {%- assign media_count = 0 -%}
+
+    {%- capture slideshow_media -%}
+      {%- for media in product.media -%}
+        {%- if product.selected_variant and media.id == product.selected_variant.featured_media.id -%}
+          {%- assign initial_media_index = media_count -%}
+          {%- assign initial_media_id = media.id -%}
+        {%- endif -%}
+
+        {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200,1400,1600', image: media -%}{%- endcapture -%}
+
+        {%- case media.media_type -%}
+          {%- when 'image' -%}
+            <div id="Media{{ media.id }}" tabindex="0" class="Product__SlideItem Product__SlideItem--image Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="image" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}" data-image-media-position="{% increment image_position %}">
+              <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%; --aspect-ratio: {{ media.aspect_ratio }};">
+                {% assign image_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+                <img class="Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" data-expand="-100" alt="{{ media.alt | escape }}" data-max-width="{{ media.width }}" data-max-height="{{ media.height }}" data-original-src="{{ media | img_url: 'master' }}">
+                <span class="Image__Loader"></span>
+
+                <noscript>
+                  <img src="{{ media | img_url: '800x' }}" alt="{{ media.alt | escape }}">
+                </noscript>
+              </div>
+            </div>
+
+          {%- when 'external_video' -%}
+            <div id="Media{{ media.id }}" tabindex="-1" class="Product__SlideItem Product__SlideItem--video Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="external_video" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}" data-video-host="{{ media.host | escape }}" data-video-id="{{ media.external_id | escape }}">
+              <div class="Image--lazyLoad Image--fadeIn" data-expand="-100">
+                <div class="VideoWrapper">
+                  {{- media | external_video_tag: image_size: '1024x' -}}
+                </div>
+              </div>
+            </div>
+
+          {%- when 'video' -%}
+            <div id="Media{{ media.id }}" tabindex="-1" class="Product__SlideItem Product__SlideItem--video Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="video" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}">
+              <div class="Image--lazyLoad Image--fadeIn" data-expand="-100">
+                <div class="VideoWrapper VideoWrapper--native" style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%">
+                  {{- media | video_tag: image_size: '1024x', controls: true -}}
+                </div>
+              </div>
+            </div>
+
+          {%- when 'model' -%}
+            <div id="Media{{ media.id }}" tabindex="-1" class="Product__SlideItem Product__SlideItem--model Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="model" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}">
+              <div class="Image--lazyLoad Image--fadeIn" data-expand="-100">
+                <div class="ModelWrapper">
+                  {{- media | model_viewer_tag: image_size: '1024x', reveal: 'interaction', toggleable: true -}}
+                </div>
+              </div>
+            </div>
+        {%- endcase -%}
+
+        {%- assign media_count = media_count | plus: 1 -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+
+    {%- if product.media.size > 0 -%}
+      
+      <div class="Product__Gallery {% if section.settings.stack_images %}Product__Gallery--stack{% endif %} {% if section.settings.show_thumbnails and media_count > 1 %}Product__Gallery--withThumbnails{% else %}Product__Gallery--withDots{% endif %}">
+        <span id="ProductGallery" class="Anchor"></span>
+
+        {% comment %} {%- if action_list_items != blank -%}
+          <div class="Product__ActionList hidden-lap-and-up {% if product.media[initial_media_index].media_type != 'image' %}is-hidden{% endif %}">
+            {{ action_list_items }}
+          </div>
+        {%- endif -%} {% endcomment %}
+
+        {%- capture slideshow_nav -%}
+          {%- if media_count > 1 -%}
+            {% comment %} {%- if section.settings.show_thumbnails -%}
+              <div class="Product__SlideshowNav Product__SlideshowNav--thumbnails">
+                <div class="Product__SlideshowNavScroller">
+                  {%- for media in product.media -%}
+                    {%- capture nav_item_badge -%}
+                      {%- case media.media_type -%}
+                        {%- when 'model' -%}
+                          <span class="Product__SlideshowNavBadge">{% render 'icon', icon: 'media-model-badge' %}</span>
+
+                        {%- when 'video' or 'external_video' -%}
+                          <span class="Product__SlideshowNavBadge">{% render 'icon', icon: 'media-video-badge' %}</span>
+                      {%- endcase -%}
+                    {%- endcapture -%}
+
+                    {%- if section.settings.stack_images -%}
+                      <a href="#Media{{ media.id }}" data-offset="-25" data-focus-on-click data-media-id="{{ media.id }}" class="Product__SlideshowNavImage AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ media.preview_image.aspect_ratio }}">
+                        <img src="{{ media | img_url: '160x' }}" alt="{{ media.alt | escape }}">
+                        {{- nav_item_badge -}}
+                      </a>
+                    {%- else -%}
+                      <a href="{{ media | img_url: '1024x' }}" data-media-id="{{ media.id }}" class="Product__SlideshowNavImage AspectRatio {% if media.id == initial_media_id %}is-selected{% endif %}" style="--aspect-ratio: {{ media.preview_image.aspect_ratio }}">
+                        <img src="{{ media | img_url: '160x' }}" alt="{{ media.alt | escape }}">
+                        {{- nav_item_badge -}}
+                      </a>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endif -%} {% endcomment %}
+
+            {%- if section.settings.stack_images -%}
+              <div class="Product__SlideshowNav Product__SlideshowNav--dots">
+                <div class="Product__SlideshowNavScroller">
+                  {%- for media in product.media -%}
+                    <a href="#Media{{ media.id }}" data-offset="-25" data-focus-on-click class="Product__SlideshowNavDot {% if forloop.first %}is-selected{% endif %}"></a>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endcapture -%}
+
+        {%- if section.settings.stack_images -%}
+          {{- slideshow_nav -}}
+        {%- endif -%}
+
+        {%- capture flickity_options -%}
+          {
+            "prevNextButtons": false,
+            "pageDots": false,
+            "adaptiveHeight": true,
+            "watchCSS": true,
+            "dragThreshold": 8,
+            "initialIndex": {{ initial_media_index }},
+            "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+          }
+        {%- endcapture -%}
+
+        <div class="Product__Slideshow {% if section.settings.enable_image_zoom %}Product__Slideshow--zoomable{% endif %} Carousel" data-flickity-config='{{ flickity_options }}'>
+          {{ slideshow_media }}
+        </div>
+
+        {%- comment -%}Add the "view in your space" button, which allows to show the product in customer's environment (if the device supports it){%- endcomment -%}
+        {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
+
+        {%- if first_3d_model -%}
+          <button class="Product__ViewInSpace Button Button--full" data-shopify-xr data-shopify-model3d-id="{{ first_3d_model.id }}" data-shopify-model3d-default-id="{{ first_3d_model.id }}" data-shopify-title="{{ product.title | escape }}" data-shopify-xr-hidden>
+            {%- render 'icon', icon: 'media-view-in-space' -%} {{- 'product.general.view_in_space' | t -}}
+          </button>
+        {%- endif -%}
+
+        {%- if media_count > 1 -%}
+          {%- comment -%}
+            IMPLEMENTATION NOTE: The reason we create ourselves our own UI instead of relying of the built-in feature of Flickity is that,
+            since the media API, Shopify requires to add arrows next to the dot. Unfortunately this layout is not
+            achievable easily using Flickity options only, so we have to run our own
+          {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'choose_bikeColor' -%}
+                {%- render 'choose_bike_color', block: block -%}
+            {%- endcase -%}
+          {%- endfor -%}
+
+          <div class="Product__SlideshowMobileNav">
+          <!-- 
+            {% if section.settings.stack_images or section.settings.show_thumbnails %}hidden-lap-and-up{% endif %}
+            <button class="Product__SlideshowNavArrow Product__SlideshowNavArrow--previous" type="button" data-direction="previous" aria-label="{{ 'general.accessibility.previous' | t }}">
+              {% render 'icon' with 'media-arrow-left' %}
+            </button> -->
+
+            <div class="flickity-page-dots">
+              <div class="flickity-page-dots-frame">
+                {%- for i in (1..media_count) -%}
+                  <button type="button" aria-label="{{ 'product.slideshow.go_to_image' | t: i: i | escape }}" class="dot {% if forloop.index0 == initial_media_index %}is-selected{% endif %}" data-index="{{ forloop.index0 }}" onclick="rangeLeft({{forloop.index0}})"></button>
+                {%- endfor -%}
+              </div>
+            </div>
+
+            <!-- <button class="Product__SlideshowNavArrow Product__SlideshowNavArrow--next" type="button" data-direction="next" aria-label="{{ 'general.accessibility.next' | t }}">
+              {% render 'icon' with 'media-arrow-right' %}
+            </button> -->
+          </div>
+        {%- endif -%}
+
+        {%- unless section.settings.stack_images -%}
+          {{- slideshow_nav -}}
+        {%- endunless -%}
+      </div>
+
+      <div class="pcDelivers">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'Delivers' -%}
+            {%- render 'fb-delivers-product',  block: block -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- capture product_aside -%}
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      PRODUCT TABS
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      {%- render 'product-tabs' -%}
+
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      PRODUCT WEAR IT WITH
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      {%- assign buy_it_with_block = section.blocks | where: 'type', 'buy_it_with' | first -%}
+
+      {%- if buy_it_with_block != blank and buy_it_with_block.settings.product != blank -%}
+        {%- assign associated_product = buy_it_with_block.settings.product -%}
+
+        <div class="Section Section--spacingNormal">
+          <header class="SectionHeader SectionHeader--center">
+            <h3 class="SectionHeader__Heading Heading u-h4">{{ buy_it_with_block.settings.title | escape }}</h3>
+          </header>
+          {% render 'product-item', product: associated_product, use_horizontal: true, show_labels: false, show_product_info: true, show_vendor: false, show_price_on_hover: false %}
+        </div>
+      {%- endif -%}
+    {%- endcapture -%}
+    {% assign discount_img_mobile = section.settings.discount_img_mobile | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+    {%- if section.settings.show_mb_discount-%}
+      <img class="Image--lazyLoad Image--fadeIn dci-mob-show"
+          data-sizes="auto" data-optimumx="1.2"  data-src="{{ discount_img_mobile }}"
+          data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+          alt="{{ section.settings.discount_img_mobile.alt | escape }}">
+    {%- endif -%}
+    <div class="Product__InfoWrapper">
+      <div class="Product__Info {% if media_count == 0 %}Product__Info--noGallery{% endif %}">
+        <div class="Container">
+          {%- form 'product', product, class: 'ProductForm' -%}
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when '@app' -%}
+                  {%- render block -%}
+
+                  {%- when 'product_meta' -%}
+                    <div class="metaAndStamp">
+                      {%- render 'product-meta', form: form, block: block, product: product -%}
+                      
+                      <!-- 副标题-4.11 -->
+                      <div class="addProduct_subheading">
+                        {%- if block.settings.subheading != blank -%}
+                          <header class="SectionHeader">
+                              <h3 id="new-heading-2">{{ block.settings.subheading | escape }}</h3>
+                          </header>
+                        {%- endif -%}
+                      </div>
+
+                      {%- when 'fbStampStar' -%}
+                        <div class="fbStampStar">
+                          {%- if block.settings.show_custom_product_star != blank -%}
+                            {%- render 'fb-stamp-star',  product: block.settings.show_custom_product_star -%}
+                          {%- else -%}
+                            {%- render 'fb-stamp-star',  product: product -%}
+                          {%- endif -%}
+                        </div>
+                    </div>
+                
+                {%- when 'description' -%}
+                  {%- if product.description != blank -%}
+                    <div class="ProductMeta__Description" {{ block.shopify_attributes }}>
+                      <div class="Rte">
+                      <!-- {%- if product.url == '/products/lit-bike' or product.url == '/products/lit-bike-klarna-limited-edition' or product.url == '/products/xbike' -%}
+                        <div class="fb_CharityInformation">
+                            <div></div>
+                            <div class="fb_CharityInformation_con">
+                                <div class="fb_CharityInformation_item">
+                                    <div class="fb_CharityInformation_item_text">With every purchase you make,<br />we’re proud to donate $1 to</div>
+                                </div>
+                              	 <div class="fb_CharityInformation_item">
+                                    <div><a href="https://curechildhoodcancer.org/" target="_blank"><img class="fb_CharityInformation_item_img3" src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/charityIcon.png?v=1646903556"/></a></div>
+                                    <div><a href="https://www.ctf.org/" target="_blank"><img class="fb_CharityInformation_item_img1" src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202221617330.png?v=1645004028" alt=""></a></div>
+                                </div>
+                                <div class="fb_CharityInformation_item">
+                                    <div class="fb_CharityInformation_item_text">Read our story on</div>
+                                    <div><a href="https://www.bloomberg.com/press-releases/2021-11-18/freebeat-hosts-thanksgiving-charity-activities-helping-children-with-cancer" target="_blank"><img class="fb_CharityInformation_item_img2" src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202221617331.png?v=1645004028" alt=""></a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                        {%- endif -%} -->
+                        {{- product.description | replace: 'data-section-type', 'data-section-type-placeholder' -}}
+                      </div>
+                    </div>
+                  {%- endif -%}
+				            <!-- 4.13 选择颜色 -->
+                    {%- when 'Delivers' -%}
+                    <div class="mobileDelivers">
+                      {%- render 'fb-delivers-product',  block: block -%}
+                    </div>
+                    
+                    {%- when 'paymentMethodButton' -%}
+                    <div class="paymentMethodFrame">
+                      {%- render 'fb-product-payment',  block: block -%}
+
+                      {%- if block.settings.show_payment_button and product.template_suffix != 'pre-order' and product.url != '/products/xbike-coupon' and product.url != '/products/exclusive-cyber-week-gift' -%}
+                        {{ form | payment_button }}
+                      {%- endif -%}
+                    </div>
+
+                    {% assign discount_img_pc = section.settings.discount_img_pc | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+                    {%- if section.settings.show_pc_discount-%}
+                      <img class="Image--lazyLoad Image--fadeIn dci-pc-show"
+                            data-sizes="auto" data-optimumx="1.2"  data-src="{{ discount_img_pc }}"
+                            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                            alt="{{ section.settings.discount_img_pc.alt | escape }}">
+                    {%- endif -%}
+                    {%- comment -%} {%- when 'productPopup' -%}
+                    {%- render 'fb-product-popup',  block: block -%}
+
+                    {%- when 'pdpGiftRemake' -%}
+                    {%- render 'fb-pdp-gift-remake',  block: block -%}
+
+                    {%- when 'customerService'-%}
+                    {%- render 'fb-customer-service', block:block-%}
+
+                    {%- when 'low_on_stock'-%}
+                    {%- render 'low-on-stock', block:block-%}
+
+                    {%- when 'addDiscount'-%}
+                    {%- render 'fb-add-discount', block: block -%} 
+                    {%- endcomment -%}
+                    
+                            <!-- 4.13公益 -->
+                  {%- when 'show_charity' -%}
+                  {%- render 'show_charity',  block: block -%}
+                
+      
+                {%- when 'share_buttons' -%}
+                  <div class="ProductMeta__ShareButtons hidden-pocket" {{ block.shopify_attributes }}>
+                    <span class="ProductMeta__ShareTitle Heading Text--subdued u-h7">{{ 'product.form.share' | t }}</span>
+
+                    {%- assign share_url = shop.url | append: product.url -%}
+                    {%- assign twitter_text = product.title -%}
+                    {%- assign pinterest_description = product.description | strip_html | truncatewords: 15 | url_param_escape -%}
+                    {%- assign pinterest_image = product.featured_image | img_url: 'large' | prepend: 'https:' -%}
+
+                    <div class="ProductMeta__ShareList Text--subdued">
+                      <a class="ProductMeta__ShareItem" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener" aria-label="Facebook">{%- render 'icon' with 'facebook' -%}</a>
+                      <a class="ProductMeta__ShareItem" href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener" aria-label="Twitter">{%- render 'icon' with 'twitter' -%}</a>
+                      <a class="ProductMeta__ShareItem" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener" aria-label="Pinterest">{%- render 'icon' with 'pinterest' -%}</a>
+                    </div>
+                  </div>
+
+                {%- when 'variant_selector' -%}
+                  {%- render 'product-form', block: block, product: product -%}
+
+                {%- when 'quantity_selector' -%}
+                  <div class="ProductForm__QuantitySelector" {{ block.shopify_attributes }}>
+                    {%- if block.settings.show_label -%}
+                      <span class="ProductForm__Label">{{ 'product.form.quantity' | t }}:</span>
+                    {%- endif -%}
+
+                    <div class="QuantitySelector QuantitySelector--large">
+                      {%- assign quantity_minus_one = line_item.quantity | minus: 1 -%}
+
+                      <button type="button" class="QuantitySelector__Button Link Link--secondary" data-action="decrease-quantity">{% render 'icon' with 'minus' %}</button>
+                      <input type="text" class="QuantitySelector__CurrentQuantity" pattern="[0-9]*" name="quantity" value="1" aria-label="{{ 'product.form.quantity' | t }}">
+                      <button type="button" class="QuantitySelector__Button Link Link--secondary" data-action="increase-quantity">{% render 'icon' with 'plus' %}</button>
+                    </div>
+                  </div>
+
+                {%- when 'inventory' -%}
+                  {%- assign hide_inventory_quantity_by_default = false -%}
+
+                  {%- if product.selected_or_first_available_variant.inventory_management == blank or product.selected_or_first_available_variant.inventory_quantity <= 0 -%}
+                    {%- assign hide_inventory_quantity_by_default = true -%}
+                  {%- endif -%}
+
+                  {%- if block.settings.inventory_quantity_threshold != 0 and product.selected_or_first_available_variant.inventory_quantity > block.settings.inventory_quantity_threshold -%}
+                    {%- assign hide_inventory_quantity_by_default = true -%}
+                  {%- endif -%}
+
+                  <p class="ProductForm__Inventory Text--subdued" {% if hide_inventory_quantity_by_default %}style="display: none"{% endif %} {{ block.shopify_attributes }}>
+                    {%- if block.settings.inventory_quantity_threshold == 0 -%}
+                      {{- 'product.form.inventory_quantity_count' | t: count: product.selected_or_first_available_variant.inventory_quantity -}}
+                    {%- else -%}
+                      {{- 'product.form.low_inventory_quantity_count' | t: count: product.selected_or_first_available_variant.inventory_quantity -}}
+                    {%- endif -%}
+                  </p>
+
+                {% comment %} {%- when 'buy_buttons' -%}
+                  {%- if block.settings.show_payment_button == false or product.selling_plan_groups.size > 0 -%}
+                    {%- assign use_primary_button = true -%}
+                  {%- else -%}
+                    {%- assign use_primary_button = false -%}
+                  {%- endif -%}
+
+                  <div class="ProductForm__BuyButtons" {{ block.shopify_attributes }}>
+                    {%- if block.settings.show_payment_button and product.selected_or_first_available_variant.available == false -%}
+                      <style>
+                        #shopify-section-{{ section.id }} .shopify-payment-button {
+                          display: none;
+                        }
+                      </style>
+                    {%- endif -%}
+
+                    {%- if section.id != 'template--15226692862137__main' -%} 
+                    
+                      <button id="xbike-add-to-cart-main" onclick="clickGtm({{ product.selected_or_first_available_variant.price}})" type="submit" data-use-primary-button="{% if use_primary_button %}true{% else %}false{% endif %}" class="ProductForm__AddToCart Button {% if product.selected_or_first_available_variant.available and use_primary_button %}Button--primary{% else %}Button--secondary{% endif %} Button--full" {% if product.selected_or_first_available_variant.available %}data-action="add-to-cart"{% else %}disabled="disabled"{% endif %}>
+                        {%- if product.selected_or_first_available_variant.available -%}
+                          <span>{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{% else %}{{ 'product.form.add_to_cart' | t }}{% endif %}</span>
+
+                          {%- if block.settings.show_price_in_button -%}
+                            <span class="Button__SeparatorDot"></span>
+                            <span>{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+                          {%- endif -%}
+                        {%- else -%}
+                          {{- 'product.form.sold_out' | t -}}
+                        {%- endif -%}
+                      </button>
+                    {%- endif -%}
+                    
+                    {%- if section.id == 'template--15226692862137__main' -%}
+                    <style>
+                      .container {display: none !important;}
+                    </style>
+                    {%- endif -%}
+                    
+                    {%- if section.id == 'template--15007580651705__main' and product.url != '/products/exclusive-cyber-week-gift' and product.url != '/products/exclusive-gift' and product.url != '/products/freebells' -%}
+                    <div id="fb_klarnaAnchor"></div>
+                    {%- endif -%}
+                  </div>
+                  {%- if section.settings.show_sell_out -%}
+                    <div class="fb-notify-button" id="notice_button" data-shownotice="{{ section.settings.show_sell_out }}">
+                        <div  class="shopify-payment-button__button shopify-payment-button__button--unbranded" style="width: 100%;cursor:pointer">NOTIFY ME</div>
+                    </div>
+                  {%- endif -%} {% endcomment %}
+                {%- when 'store_pickup' -%}
+                  {%- comment -%}The availability container will be added automatically if there is store pickup available{%- endcomment -%}
+                  <div class="ProductMeta__StoreAvailabilityContainer" {{ block.shopify_attributes }}></div>
+              {%- endcase -%}
+            {%- endfor -%}
+          {%- endform -%}
+
+          {%- if section.settings.stack_images and product_aside != blank and media_count > 0 -%}
+            <div class="Product__QuickNav hidden-pocket">
+              <div class="Product__QuickNavWrapper">
+                <a href="#ProductAside" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_info' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
+                <a href="#ProductGallery" class="Heading Link Link--secondary u-h7">{{ 'product.form.view_images' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    {%- if product_aside != blank -%}
+    {%- if product.url != '/products/exclusive-cyber-week-gift' -%}
+      <div class="Product__Aside">
+        <span id="ProductAside" class="Anchor"></span>
+        {{- product_aside -}}
+      </div>
+    {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{%- comment -%}
+--------------------------------------------------------------------------------------------------------------------
+PHOTO SWIPE
+
+This is the root container for the zoom functionality. Must not be removed, as order element is important.
+--------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- if section.settings.enable_image_zoom -%}
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides. Do not remove as content is dynamically added -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Main UI bar -->
+      <div class="pswp__ui pswp__ui--hidden">
+        <button class="pswp__button pswp__button--prev RoundButton" data-animate-left title="{{ 'product.slideshow.previous' | t }}">{% render 'icon' with 'arrow-left' %}</button>
+        <button class="pswp__button pswp__button--close RoundButton RoundButton--large" data-animate-bottom title="{{ 'product.slideshow.close' | t }}">{% render 'icon' with 'close' %}</button>
+        <button class="pswp__button pswp__button--next RoundButton" data-animate-right title="{{ 'product.slideshow.next' | t }}">{% render 'icon' with 'arrow-right' %}</button>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+{% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %}
+
+<!-- <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-min-rating="3" data-product-id="{{ product.id }}"></div> -->
+<script>
+  window.ShopifyXR=window.ShopifyXR||function(){(ShopifyXR.q=ShopifyXR.q||[]).push(arguments)};
+  ShopifyXR('addModels', {{ product.media | where: 'media_type', 'model' | json }});
+</script>
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+    if(document.querySelector('.Product__Aside')){
+    document.querySelector('.Product__Gallery').classList.remove("productSticky");
+  }
+
+  let screen_width = window.screen.width;
+  let screen_height = window.screen.height;
+  let mobile_flag = screen_width > 325 && screen_height < 750;
+
+  function rangeLeft(index){
+    if(index === {{media_count}} - 1) return;
+
+    let maxRight = 5
+    let moveLen = 0
+
+    if(index <= 5){
+      moveLen = 0
+      maxRight = 5
+    }else{
+      moveLen = index - 5
+      maxRight = index
+    }
+
+    if(index === maxRight){
+      let value = "-" + ((moveLen + 1) * 29) + 'px'
+      if(mobile_flag){
+        value = "-" + ((moveLen + 1) * 16) + 'px'
+      }
+      $(".flickity-page-dots-frame").css("margin-left", value)
+    }else if(index < maxRight){
+      $(".flickity-page-dots-frame").css("margin-left", "0px")
+    }
+  }
+</script>
+{% schema %}
+{
+  "name": "Product page merge",
+  "class": "shopify-section--bordered",
+  "presets": [
+       {
+         "name": "fb-product-page-merge",
+         "category": "Fb Sections",
+         "blocks": [
+              {
+                "type": "choose_bikeColor"
+              },
+              {
+                "type": "Delivers"
+              },
+              {
+                 "type": "paymentMethodButton"
+              },
+               {
+                 "type": "productPopup"
+              },
+              {
+                "type": "giftCharityPopup"
+              },
+             {
+                "type": "pdpGiftRemake"
+             },
+             {
+              "type":"customerService"
+            },
+            {
+              "type":"low_on_stock"
+            }
+         ]
+       }
+     ],
+  "blocks": [
+    {
+      "type": "product_meta",
+      "name": "Product meta",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "checkbox",
+            "id": "top_banner_open_activity",
+            "label": "open activity",
+            "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_vendor",
+          "label": "Show vendor",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_sku",
+          "label": "Show SKU",
+          "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "show_price",
+            "label": "Show Price",
+            "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_taxes_included",
+          "label": "Show price taxes notice",
+          "default": false
+        },
+        // 副标题-4.11
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Sub-heading"
+        },
+		{
+          "type": "text",
+          "id": "notice",
+          "label": "Notice"
+        },
+		{
+          "type": "text",
+          "id": "noticeMb",
+          "label": "Notice Mobile"
+        },
+		{
+          "type": "text",
+          "id": "corner",
+          "label": "Notice Corner"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "variant_selector",
+      "name": "Variant selector",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "selector_mode",
+          "label": "Selector type",
+          "options": [
+            {
+              "value": "block",
+              "label": "Block"
+            },
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            }
+          ],
+          "default": "dropdown"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_color_swatch",
+          "label": "Show color swatch",
+          "default": false,
+          "info": "Some colors appear white? [Learn more](http://support.maestrooo.com/article/80-product-uploading-custom-color-for-color-swatch)."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_color_carousel",
+          "label": "Show color carousel",
+          "info": "A pop-up selector with variant images for choosing colors. Only enables when color swatch is disabled.",
+          "default": false
+        },
+        {
+          "type": "page",
+          "id": "size_chart",
+          "label": "Size chart",
+          "info": "Show along option named Size."
+        }
+      ]
+    },
+    {
+      "type": "share_buttons",
+      "name": "Share buttons",
+      "limit": 1
+    },
+    {
+      "type": "inventory",
+      "name": "Inventory",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "inventory_quantity_threshold",
+          "label": "Inventory quantity threshold",
+          "info": "Only show inventory quantity if below threshold. Choose 0 to always show.",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_price_in_button",
+          "label": "Show price in add to cart button",
+          "default": false
+        }
+      ]
+    },
+	  {
+      "type": "show_charity",
+      "name": "Show Charity",
+      "settings": []
+    },
+    {
+      "type": "Delivers",
+      "name": "Delivers",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "deliversIcon",
+          "label": "Delivers Icon"
+        },
+        {
+          "type": "text",
+          "id": "delivers",
+          "label": "Delivers"
+        },
+        {
+          "type": "richtext",
+          "id": "tips",
+          "label": "Tips",
+          "default": "<p>Currently we cannot ship to Alaska, Hawaii, Puerto Rico, U.S. Virgin Islands. Worldwide shipping will be available soon.</p>"
+        }
+      ]
+    },
+    {
+      "type":"customerService",
+      "name":"Customer Service",
+      "settings":[
+      {
+        "type":"image_picker",
+        "id":"customer_img",
+        "label":"Customer Img"
+      },
+      {
+        "type":"text",
+        "id":"customer_title",
+        "label":"Customer Title"
+      },
+      {
+        "type":"text",
+        "id":"customer_desc",
+        "label":"Customer Desc"
+      }
+      ]
+    },
+    {
+      "type":"low_on_stock",
+      "name":"low-on-stock",
+      "settings":[
+      {
+        "type":"image_picker",
+        "id":"stock_pc_img",
+        "label":"Stock Pc Img"
+      },
+      {
+        "type":"image_picker",
+        "id":"stock_mobile_img",
+        "label":"Stock Mobile Img"
+      }
+      ]
+    },
+    {
+      "type": "productPopup",
+      "name": "Product Popup",
+      "settings": [
+      {
+        "type": "text",
+        "id": "gift_des",
+        "label": "Gift Des"
+      },
+      {
+        "type": "text",
+        "id": "gift_price",
+        "label": "Gift Price"
+      },
+      {
+        "type": "text",
+        "id": "gift_price_des",
+        "label": "Gift Price Des"
+      },
+      {
+        "type": "text",
+        "id": "charity_des",
+        "label": "Charity Des"
+      },
+      {
+        "type": "text",
+        "id": "charity_des_right",
+        "label": "Charity Des R"
+      }
+      ]
+    },
+    {
+      "type": "giftCharityPopup",
+      "name": "gift Popup",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "acceImg",
+          "label": "Acce Image"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_popup_title",
+          "label": "Gift Popup Title"
+        },
+        {
+          "type": "text",
+          "id": "contentA",
+          "label": "contentA"
+        },
+        {
+          "type": "text",
+          "id": "contentA-price",
+          "label": "contentA Price"
+        },
+        {
+          "type": "text",
+          "id": "contentB",
+          "label": "contentB"
+        },
+        {
+          "type": "text",
+          "id": "contentB-price",
+          "label": "contentB Price"
+        },
+        {
+          "type": "text",
+          "id": "contentC",
+          "label": "contentC"
+        },
+        {
+          "type": "text",
+          "id": "contentC-price",
+          "label": "contentC Price"
+        }
+      ]
+    },
+    {
+      "type": "choose_bikeColor",
+      "name": "Bike Color",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_third_color",
+          "label": "Show The third color",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_forth_color",
+          "label": "Show The forth color",
+          "default": false
+        },
+        {
+            "type": "header",
+            "content": "Current Bike Name"
+        },
+        {
+          "type": "text",
+          "id": "bike_color_title",
+          "label": "Color Name"
+        },
+        {
+            "type": "header",
+            "content": "BIKE 1"
+        },
+        {
+          "type": "color",
+          "id": "bike_color1",
+          "label": "Bike Color1",
+          "default": "#000"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_color_active1",
+            "label": "Is Show Active Image",
+            "default": false
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_defalut1",
+            "label": "Bike Default Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_active1",
+            "label": "Bike Active Image"
+        },
+        {
+          "type": "url",
+          "id": "bike_color_url1",
+          "label": "BikeColorPage1"
+        },
+        {
+            "type": "header",
+            "content": "BIKE 2"
+        },
+        {
+          "type": "color",
+          "id": "bike_color2",
+          "label": "Bike Color2",
+          "default": "#000"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_color_active2",
+            "label": "Is Show Active Image",
+            "default": false
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_defalut2",
+            "label": "Bike Default Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_active2",
+            "label": "Bike Active Image"
+        },
+        {
+          "type": "url",
+          "id": "bike_color_url2",
+          "label": "BikeColorPage2"
+        },
+        {
+            "type": "header",
+            "content": "BIKE 3"
+        },
+        {
+          "type": "color",
+          "id": "bike_color3",
+          "label": "Bike Color3",
+          "default": "#000"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_color_active3",
+            "label": "Is Show Active Image",
+            "default": false
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_defalut3",
+            "label": "Bike Default Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_active3",
+            "label": "Bike Active Image"
+        },
+        {
+          "type": "url",
+          "id": "bike_color_url3",
+          "label": "BikeColorPage3"
+        },
+         {
+            "type": "header",
+            "content": "BIKE 4"
+        },
+        {
+          "type": "color",
+          "id": "bike_color4",
+          "label": "Bike Color4",
+          "default": "#000"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_color_active4",
+            "label": "Is Show Active Image",
+            "default": false
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_defalut4",
+            "label": "Bike Default Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bike_img_active4",
+            "label": "Bike Active Image"
+        },
+        {
+          "type": "url",
+          "id": "bike_color_url4",
+          "label": "BikeColorPage4"
+        }
+      ]
+    },
+    {
+      "type": "paymentMethodButton",
+      "name": "Payment Method Button",
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "limited_time",
+          "label": "Limited Time"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pay_over_time",
+          "label": "Is Show Pay Over Time",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_payment_button",
+          "label": "Show dynamic checkout button",
+          "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    },
+    {
+      "type": "quantity_selector",
+      "name": "Quantity selector",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_label",
+          "label": "Show label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "store_pickup",
+      "name": "Local pickup availability",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Show customers where they can pick up the product. [Learn more](https://help.shopify.com/en/manual/shipping/setting-up-and-managing-your-shipping/local-methods/local-pickup#show-pickup-availability-to-your-customers)"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "name": "Content",
+      "type": "content",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "This content will show on the left part, below the product images."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Content from page",
+          "info": "If specified, takes precedence over inline content."
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "type": "reviews",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To show reviews, install [Shopify Product Reviews](https://apps.shopify.com/product-reviews). This content will show on the left part, below the product images. "
+        }
+      ]
+    },
+    {
+      "name": "Buy it with",
+      "type": "buy_it_with",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Buy it with"
+        }
+      ]
+    },
+    {
+      "type": "pdpGiftRemake",
+      "name": "PDP Gift Show",
+      "settings": [ 
+        {
+          "type": "checkbox",
+          "id": "show_third_gift",
+          "label": "Show The third gift",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_forth_gift",
+          "label": "Show The forth gift",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "giftBackground",
+          "label": "Gift Background",
+          "default": "#FAFAFA"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_title_line1",
+          "label": "Gift Title 1"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_title_line2",
+          "label": "Gift Title 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_pic_1",
+          "label": "Gift Image 1"
+        },
+        {
+          "type": "text",
+          "id": "gift_price_1",
+          "label": "Gift Price 1"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_des_1",
+          "label": "Gift Des 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_pic_2",
+          "label": "Gift Image 2"
+        },
+        {
+          "type": "text",
+          "id": "gift_price_2",
+          "label": "Gift Price 2"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_des_2",
+          "label": "Gift Des 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_pic_3",
+          "label": "Gift Image 3"
+        },
+        {
+          "type": "text",
+          "id": "gift_price_3",
+          "label": "Gift Price 3"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_des_3",
+          "label": "Gift Des 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_pic_4",
+          "label": "Gift Image 4"
+        },
+        {
+          "type": "text",
+          "id": "gift_price_4",
+          "label": "Gift Price 4"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_des_4",
+          "label": "Gift Des 4"
+        }
+      ]
+    },
+    {
+        "type": "fbStampStar",
+        "name": "Stamp Star",
+        "settings": [ 
+          {
+            "type": "product",
+            "id": "show_custom_product_star",
+            "label": "choose custom stamp star",
+            "info": "If you do not select, the default is the main product of the current page"
+          }
+        ]
+    }
+  ],
+  "settings": [
+    {
+          "type":"image_picker",
+          "id":"discount_img_pc",
+          "label":"Discount Img Pc"
+        },
+        {
+          "type":"image_picker",
+          "id":"discount_img_mobile",
+          "label":"Discount Img Mobile"
+        },
+    {
+      "type": "checkbox",
+      "id": "show_mb_discount",
+      "label": "show mb discount",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pc_discount",
+      "label": "show pc discount",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sell_out",
+      "label": "show sell out btn",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "fill",
+          "label": "Fill screen"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_images",
+      "label": "Stack images on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumbnails",
+      "label": "Show thumbnails on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": "Enable zoom",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": false
+    }
+  ]
+}
+{% endschema %}
+<style>
+    @keyframes shopifyfgrollshow{
+    0%{opacity:0;}
+    100%{opacity: 1;}	
+  }
+  .shopify-payment-button_position {
+    animation: shopifyfgrollshow 0.3s 1;
+  }
+  .PDPAddToCart_enabled .shopify-payment-button .shopify-payment-button__button--unbranded{
+    width: 180px !important;
+    font-size: 16px !important;
+    border: none !important;
+    padding: 8.5px 0;
+    background-color: #000 !important;
+    color: #fff !important;
+  }
+
+  @media screen and (max-width: 640px){
+    .shopify-payment-button__button--branded{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+    }
+    .Product__InfoWrapper{
+      padding: 0 17px;
+    }
+    .Product__Info .Container{
+      padding: 0;
+    }
+    .shopify-payment-button__button--unbranded{
+      width: 120px !important;
+      font-size: 12px !important;
+      border: none;
+      padding: 8.5px 0;
+    }
+  }
+  .fb-notify-button {
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+  } 
+</style>
+<script>
+  function clickGtm(price) {
+        window.uetq = window.uetq || [];
+        let _price = 0
+        if(price) {
+            price = price.toString()
+            _price = price.slice(0,price.length -2) + "." + price.slice(price.length -2)
+        }
+        window.uetq.push('event', 'add_to_cart', {
+            revenue_value: _price,
+            currency: 'USD',
+        });
+  }
+  $(function () {
+    const initBuyButoon = {
+      deviceId: getPcOrMobile(),
+      isInit: false,
+      isUnbrand: false,
+      init: function () {
+        this.event()
+      },
+      scrollBtn: function ($dom) {
+        let xbikeAddToCart = document.getElementById('xbike-add-to-cart-main');
+              let observerBtn = new IntersectionObserver(function(entries){
+                entries.forEach( function(element, index) {
+                    if (element.isIntersecting ) {
+                      if($dom.css('position') !== 'static') {
+                        $dom.css('position', 'static')
+                        $dom.removeClass('shopify-payment-button_position')
+                      }
+                    } else {
+                      if($dom.css('position') !== 'fixed') { 
+                        $dom.css('position', 'fixed')
+                        $dom.addClass('shopify-payment-button_position')
+                      }
+                      
+                    }
+                });
+            }, {
+                root: null,
+                threshold:[0, 1]
+          });
+          observerBtn.observe(xbikeAddToCart)
+      },
+      event: function () {
+        let _this = this
+        {% comment %} if(this.deviceId === 2 || window.innerWidth <= 640) { {% endcomment %}
+          const targetNode = document.getElementsByClassName('shopify-payment-button')[0];
+          // 当观察到突变时执行的回调函数
+          let callback = function(mutationsList) {
+              mutationsList.forEach(function(item,index){
+                  if (item.type == 'childList') {
+                      if($('.shopify-payment-button').find('.shopify-payment-button__button--branded').length > 0) {
+                        if((_this.deviceId === 2 || window.innerWidth <= 640) && !_this.isInit){
+                          _this.scrollBtn($('.shopify-payment-button').find('.shopify-payment-button__button--branded'))
+                        }
+                        _this.isInit = true
+                      } else if($('.shopify-payment-button').find('.shopify-payment-button__button--unbranded').length > 0) {
+                        if(!_this.isUnbrand) {
+                          customGaEvent( 'buy-it-now-exposure', window.location.pathname, 'shopify-payment-button__button--unbranded')
+                        }
+                        _this.isUnbrand = true
+                      }
+                  }
+              });
+          };
+      
+          // 创建一个链接到回调函数的观察者实例
+          const observerDom = new MutationObserver(callback);
+      
+          // 开始观察已配置突变的目标节点
+          observerDom.observe(targetNode, { attributes: true, childList: true, subtree: true });
+      
+          // 停止观察
+          //observer.disconnect();
+        {% comment %} } {% endcomment %}
+      }  
+    }
+    initBuyButoon.init()
+  })
+</script>

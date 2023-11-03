@@ -1,0 +1,223 @@
+<span class="stamped-product-reviews-badge stamped-main-badge" data-product-id="{{ product.id }}" 
+  data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}"
+  data-description="{{ product.description | escape }}" data-product-sku="{{ product.handle }}"
+  data-product-title="{{product.title}}" data-product-type="{{product.type}}">
+  <span class="stampedRating-pdp"></span>
+  {{product.metafields.stamped.badge}}
+</span>
+
+<script>
+</script>
+
+<style>
+  .m-star-pdp {
+    position: relative;
+    display: inline-block;
+  }
+
+  .m-star-pdp .stamped-badge-caption {
+    display: block;
+    text-decoration: unset;
+  }
+
+  .m-star-pdp .stampedRating-pdp {
+    position: absolute;
+    right: 0;
+    top: -28px;
+    font-size: 24px;
+    font-weight: bold;
+    font-weight: 600;
+    color: #333333;
+  }
+
+  .m-star-pdp  .stamped-badge {
+    padding-right: 32px;
+  }
+
+  .m-star-pdp  .stamped-badge-caption {
+    position: absolute;
+    right: 0;
+    bottom: -24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+  }
+
+  .m-star-pdp  .m-star-pdp {
+    position: absolute;
+  }
+
+  .m-star-pdp  .stampedRating-pdp {
+    left: 87px;
+    font-size: 24px;
+  }
+
+  .m-star-pdp  .stamped-badge {
+    position: absolute;
+    padding-right: 0;
+    left: 124px;
+    top: -22px;
+  }
+
+  .m-star-pdp  .m-stampst {
+    position: absolute;
+    width: 100%;
+    bottom: -25px;
+    left: -54px;
+    font-size: 18px;
+  }
+
+  .m-star-pdp  .stamped-badge-caption {
+    width: 100%;
+    left: 36px;
+    font-size: 18px;
+    bottom: -26px;
+    left: 0;
+  }
+
+  .m-star-pdp .stamped-badge-caption span {
+    color: #333333;
+    font-size: 18px;
+    font-weight: 400;
+    left: 0;
+  }
+
+  .m-star-pdp .stamped-fa-star:before {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: 641px) {
+    .m-star-pdp  .m-star-pdp {
+      position: absolute;
+    }
+
+    .m-star-pdp .stampedRating-pdp {
+      left: 0px;
+      font-size: 16px;
+      top:-16px
+    }
+
+    .m-star-pdp  .stamped-badge {
+      position: absolute;
+      padding-right: 0;
+      left: 28px;
+      top: -17px;
+      width: 200px;
+    }
+
+    .m-star-pdp  .m-stampst {
+      position: absolute;
+      width: 100%;
+      bottom: -25px;
+      left: -54px;
+    }
+
+    .m-star-pdp  .stamped-badge-caption {
+      width: 100%;
+      left: 36px;
+      font-size: 10px;
+      bottom: -15px;
+      left: -29px;
+      font-weight: 500;
+    }
+   
+    .m-star-pdp  .stamped-badge-caption span {
+      color: #333333;
+      font-size: 10px;
+      font-weight: 400;
+      left: 0;
+    }
+
+    .m-star-pdp  .stamped-fa-star:before {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 641px) {
+    .m-star-pdp   .m-star-pdp {
+      position: relative;
+      /* height: 70px; */
+    }
+
+    .m-star-pdp  .stampedRating-pdp {
+      font-weight: bold;
+      position: absolute;
+      top: -20px;
+      left: 0;
+      font-size: 12px;
+    }
+
+    .m-star-pdp  .stamped-badge {
+      position: absolute;
+      padding-right: 0;
+      left:20px;
+      top: -26px;
+      width: 110px;
+    }
+
+    .m-star-pdp .m-stampst {
+      position: absolute;
+      bottom: -14px;
+      left: -29px;
+      font-size: 12px;
+    }
+
+    .m-star-pdp  .stamped-badge-caption {
+      bottom: -14px;
+      font-size: 10px;
+      left: -20px;
+      font-weight: 500;
+    }
+
+    .m-star-pdp  .stamped-badge-caption span {
+      color: #666666;
+      font-size: 12px;
+      font-weight: 500;
+      left: 0;
+    }
+
+    .m-star-pdp  .stamped-fa-star:before {
+      font-size: 22px;
+    }
+  }
+  @media screen and (max-width:414px) {
+    .m-star-pdp {
+      position: relative;
+    }
+
+    .m-star-pdp  .stampedRating-pdp {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .m-star-pdp  .stamped-badge {
+      position: absolute;
+      padding-right: 0;
+      left:20px;
+      top: -27px;
+      width: 110px;
+    }
+
+    .m-star-pdp .m-stampst {
+      position: absolute;
+      bottom: -12px;
+      left: -29px;
+      font-size: 12px;
+    }
+
+    .m-star-pdp  .stamped-badge-caption {
+      bottom: -12px;
+      font-size: 10px;
+      left: -20px;
+      font-weight: 500;
+    }
+    .m-star-pdp  .stamped-fa-star::before {
+      font-size: 14px;
+      margin-right: 2px;
+    }
+
+  }
+</style>

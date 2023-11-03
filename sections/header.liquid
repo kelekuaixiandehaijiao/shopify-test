@@ -1,0 +1,1148 @@
+{%- comment -%}
+In Prestige, the header is quite complex due to the very high number of possible combinations. If you have to edit it, please
+make sure to duplicate the theme first so you can revert your changes in case any issue is introduced.
+{%- endcomment -%}
+
+{%- comment -%}
+--------------------------------------------------------------------------------------------------------------------
+USEFUL VARIABLES
+--------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+{% comment %} /en-uk {% endcomment %}
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if country_code_var == 'gb' -%}
+    {%- if routes.root_url contains 'en-uk' -%}
+        {%- assign country_url_add = routes.root_url -%}
+    {%- else -%}
+        {%- assign country_url_add = '' -%}
+    {%- endif -%}
+{%-  elsif country_code_var == 'au'-%}
+    {%- if routes.root_url contains 'en-au' -%}
+        {%- assign country_url_add = routes.root_url -%}
+    {%- else -%}
+        {%- assign country_url_add = '' -%}
+    {%- endif -%}
+{%- else -%}
+    {%- assign country_url_add = ''-%}
+{%- endif -%}
+{%- assign use_transparent_header = false -%}
+
+{%- if template == 'index' and section.settings.enable_transparent_header -%}
+  {%- assign use_transparent_header = true -%}
+{%- endif -%}
+
+{%- if template.name == 'collection' and section.settings.enable_transparent_header_collection and collection.image and collection.all_products_count > 0 and collection.template_suffix != 'no-image' -%}
+  {%- assign use_transparent_header = true -%}
+{%- endif -%}
+
+{%- if section.settings.navigation_style != 'sidebar' -%}
+  {%- assign use_sidebar_menu = false -%}
+{%- else -%}
+  {%- assign use_sidebar_menu = true -%}
+{%- endif -%}
+
+{%- comment -%}
+--------------------------------------------------------------------------------------------------------------------
+CURRENCY AND LANGUAGE SELECTORS
+--------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- if section.settings.show_currency_selector and shop.enabled_currencies.size > 1 -%}
+  {%- assign currency_selector = true -%}
+{%- endif -%}
+
+{%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
+  {%- assign locale_selector = true -%}
+{%- endif -%}
+
+{%- if locale_selector or currency_selector -%}
+  {%- capture localization_form -%}
+    {%- form 'localization', id: 'localization_form_header', class: 'Header__LocalizationForm hidden-pocket hidden-lap' -%}
+      <div class="HorizontalList HorizontalList--spacingLoose">
+        {%- if currency_selector -%}
+          <div class="HorizontalList__Item">
+            <input type="hidden" name="currency_code" value="{{ form.current_currency.iso_code }}">
+            <span class="u-visually-hidden">{{ 'header.general.currency' | t }}</span>
+
+            <button type="button" class="SelectButton Link Link--primary u-h8" aria-haspopup="true" aria-expanded="false" aria-controls="header-currency-popover">
+              {{ form.current_currency.iso_code }} {% if form.current_currency.symbol %}{{ form.current_currency.symbol }}{% endif %}
+              {%- render 'icon', icon: 'select-arrow' -%}
+            </button>
+
+            <div id="header-currency-popover" class="Popover Popover--small Popover--noWrap" aria-hidden="true">
+              <header class="Popover__Header">
+                <button type="button" class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% render 'icon' with 'close' %}</button>
+                <span class="Popover__Title Heading u-h4">{{ 'header.general.currency' | t }}</span>
+              </header>
+
+              <div class="Popover__Content">
+                <div class="Popover__ValueList Popover__ValueList--center" data-scrollable>
+                  {%- for currency in form.available_currencies -%}
+                    <button type="submit" name="currency_code" class="Popover__Value {% if currency.iso_code == form.current_currency.iso_code %}is-selected{% endif %} Heading Link Link--primary u-h7"  value="{{ currency.iso_code }}" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %}>
+                      {{ currency.iso_code }} {% if currency.symbol %}{{ currency.symbol }}{% endif %}
+                    </button>
+                  {%- endfor -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if locale_selector -%}
+          <div class="HorizontalList__Item">
+            <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}">
+            <span class="u-visually-hidden">{{ 'header.general.locale' | t }}</span>
+
+            <button type="button" class="SelectButton Link Link--primary u-h8" aria-haspopup="true" aria-expanded="false" aria-controls="header-locale-popover">
+              {{- form.current_locale.endonym_name -}}
+              {%- render 'icon', icon: 'select-arrow' -%}
+            </button>
+
+            <div id="header-locale-popover" class="Popover Popover--small Popover--noWrap" aria-hidden="true">
+              <header class="Popover__Header">
+                <button type="button" class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% render 'icon' with 'close' %}</button>
+                <span class="Popover__Title Heading u-h4">{{ 'header.general.locale' | t }}</span>
+              </header>
+
+              <div class="Popover__Content">
+                <div class="Popover__ValueList Popover__ValueList--center" data-scrollable>
+                  {%- for locale in form.available_locales -%}
+                    <button type="submit" name="locale_code" class="Popover__Value {% if locale.iso_code == form.current_locale.iso_code %}is-selected{% endif %} Heading Link Link--primary u-h7" value="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %}>
+                      {{- locale.endonym_name -}}
+                    </button>
+                  {%- endfor -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endform -%}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- comment -%}
+--------------------------------------------------------------------------------------------------------------------
+SEARCH FORM (implemented as a modal)
+
+Implementation note: make sure that the Search div is always just before the Header element, as the CSS uses
+                     this assumption
+--------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<div id="Search" class="Search" aria-hidden="true">
+  <div class="Search__Inner">
+    <div class="Search__SearchBar">
+      <form action="{{ routes.search_url }}" name="GET" role="search" class="Search__Form">
+        <div class="Search__InputIconWrapper">
+          <span class="hidden-tablet-and-up">{%- render 'icon' with 'header-search' -%}</span>
+          <span class="hidden-phone">{%- render 'icon' with 'search-desktop' -%}</span>
+        </div>
+
+        <input type="search" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" aria-label="{{ 'search.general.input_placeholder' | t }}" placeholder="{{ 'search.general.input_placeholder' | t }}" autofocus>
+        <input type="hidden" name="type" value="product">
+      </form>
+
+      <button class="Search__Close Link Link--primary" data-action="close-search" aria-label="{{ 'header.navigation.close_search' | t }}">{% render 'icon' with 'close' %}</button>
+    </div>
+
+    <div class="Search__Results" aria-hidden="true">
+      {%- if settings.search_mode != 'product' -%}
+        <div class="PageLayout PageLayout--breakLap">
+          <div class="PageLayout__Section"></div>
+          <div class="PageLayout__Section PageLayout__Section--secondary"></div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{%- comment -%}
+--------------------------------------------------------------------------------------------------------------------
+HEADER CONTENT
+--------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- capture section_settings -%}
+{
+  "navigationStyle": {{ section.settings.navigation_style | json }},
+  "hasTransparentHeader": {% if use_transparent_header %}true{% else %}false{% endif %},
+  "isSticky": {% if section.settings.use_sticky_header %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+
+<header id="section-{{ section.id }}"
+        class="Header Header--{{ section.settings.navigation_style }} {% if section.settings.navigation_style != 'inline' and section.settings.navigation_style != 'logoLeft' %}Header--initialized{% endif %} {% if use_transparent_header %}Header--transparent{% endif %} {% if section.settings.show_icons or section.settings.navigation_style == 'sidebar' %}Header--withIcons{% endif %}"
+        data-section-id="{{ section.id }}"
+        data-section-type="header"
+        data-section-settings='{{ section_settings }}'
+        role="banner">
+  <div class="headerPadding">
+    {%- capture header_logo -%}
+      <a href="{{ routes.root_url }}" class="Header__LogoLink">
+        {%- if section.settings.logo != blank -%}
+          {%- capture image_size -%}{{ section.settings.logo_max_width }}x{%- endcapture -%}
+
+          <img class="Header__LogoImage Header__LogoImage--primary"
+               src="{{ section.settings.logo | img_url: image_size }}"
+               srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+               width="{{ section.settings.logo.width }}"
+               height="{{ section.settings.logo.height }}"
+               alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
+
+          {%- if use_transparent_header and section.settings.transparent_logo != blank -%}
+            <img class="Header__LogoImage Header__LogoImage--transparent"
+                 src="{{ section.settings.transparent_logo | img_url: image_size }}"
+                 srcset="{{ section.settings.transparent_logo | img_url: image_size }} 1x, {{ section.settings.transparent_logo | img_url: image_size, scale: 2 }} 2x"
+                 width="{{ section.settings.logo.width }}"
+                 height="{{ section.settings.logo.height }}"
+                 alt="{{ section.settings.transparent_logo.alt | default: shop.name | escape }}">
+          {%- endif -%}
+        {%- else -%}
+          <span class="Heading u-h4">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    {%- endcapture -%}
+
+    <div class="Header__FlexItem--logo show">
+      {%- if template == 'index' -%}
+        <h1 class="Header__Logo">{{ header_logo }}</h1>
+      {%- else -%}
+        <div class="Header__Logo">{{ header_logo }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="Header__FlexItem--priceItem"></div>
+    
+    <div class="Header__inlineBlockItem FlexItem--fill">
+      <button class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless use_sidebar_menu %}hidden-desk{% endunless %}" aria-expanded="false" data-action="open-drawer" data-drawer-id="sidebar-menu" aria-label="{{ 'header.navigation.open_sidebar' | t }}">
+        <span class="hidden-tablet-and-up">{%- render 'icon' with 'nav' -%}</span>
+        <span class="hidden-phone">{%- render 'icon' with 'nav-desktop' -%}</span>
+      </button>
+
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      DESKTOP NAVIGATION (if not using the sidebar mode)
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      {%- unless use_sidebar_menu -%}
+        {%- if country_code_var == 'gb' -%}
+            {%- assign main_menu_handle = section.settings.gb_navigation_menu | default: 'main-menu' -%}
+        {%- elsif country_code_var == 'au' -%}
+            {%- assign main_menu_handle = section.settings.au_navigation_menu | default: 'main-menu' -%}
+        {%- else -%}
+            {%- assign main_menu_handle = section.settings.navigation_menu | default: 'main-menu' -%}
+        {%- endif -%}
+        {%- assign main_menu = linklists[main_menu_handle] -%}
+
+        {%- assign mega_menu_names = '' -%}
+
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'mega_menu' -%}
+            {%- assign trim_mega_menu_name = block.settings.navigation_mega_menu | strip -%}
+            {%- assign mega_menu_names = mega_menu_names | append: trim_mega_menu_name | append: ',' -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
+        <nav class="Header__MainNav hidden-pocket hidden-lap" aria-label="{{ 'header.navigation.title' | t }}">
+          <ul class="HorizontalList HorizontalList--spacingExtraLoose">
+            {%- for link in main_menu.links -%}
+              {%- assign downcased_link_title = link.title | downcase | strip -%}
+              {%- assign use_mega_menu = false -%}
+
+              {%- capture menu_item_dropdown -%}
+                {%- if mega_menu_names contains downcased_link_title -%}
+                  {%- for block in section.blocks -%}
+                    {%- assign downcased_mega_menu_name = block.settings.navigation_mega_menu | downcase -%}
+
+                    {%- if downcased_mega_menu_name != downcased_link_title -%}
+                      {%- continue -%}
+                    {%- endif -%}
+
+                    {%- assign use_mega_menu = true -%}
+                    {%- assign push_image_count = 0 -%}
+
+                    {%- if block.settings.push_1_image -%}
+                      {%- assign push_image_count = push_image_count | plus: 1 -%}
+                    {%- endif -%}
+
+                    {%- if block.settings.push_2_image -%}
+                      {%- assign push_image_count = push_image_count | plus: 1 -%}
+                    {%- endif -%}
+
+                    {%- assign should_space_evenly = false -%}
+
+                    {%- if push_image_count == 0 and link.links.size <= 3 -%}
+                      {%- assign should_space_evenly = true -%}
+                    {%- endif -%}
+
+                    {%- if push_image_count == 1 and link.links.size == 1 -%}
+                      {%- assign should_space_evenly = true -%}
+                    {%- endif -%}
+
+                    {%- if push_image_count == 2 and link.links.size == 1 -%}
+                      {%- assign should_space_evenly = true -%}
+                    {%- endif -%}
+
+                    <div class="MegaMenu {% if push_image_count != 0 and link.links.size == 0 %}MegaMenu--spacingCenter{% elsif should_space_evenly %}MegaMenu--spacingEvenly{% endif %} {% if push_image_count == 0 and link.links.size > 4 %}MegaMenu--grid{% endif %}" aria-hidden="true" {{ block.shopify_attributes }}>
+                      <div class="MegaMenu__Inner">
+                        {%- for sub_link in link.links -%}
+                          <div class="MegaMenu__Item MegaMenu__Item--fit">
+                            <a href="{{ sub_link.url }}" class="MegaMenu__Title Heading Text--subdued u-h7">{{ sub_link.title | title }}</a>
+
+                            {%- if sub_link.links != blank -%}
+                              <ul class="Linklist">
+                                {%- for sub_sub_link in sub_link.links -%}
+                                  <li class="Linklist__Item">
+                                    <a href="{{ sub_sub_link.url }}" class="Link Link--secondary">{{ sub_sub_link.title | escape }}</a>
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            {%- endif -%}
+                          </div>
+                        {%- endfor -%}
+
+                        {%- if push_image_count > 0 -%}
+                          <div class="MegaMenu__Item" style="{% if push_image_count == 1 %}width: 370px; min-width: 250px;{% else %}width: 660px; min-width: 425px;{% endif %}">
+                            {%- if block.settings.push_1_image -%}
+                              <div class="MegaMenu__Push {% if push_image_count == 2 %}MegaMenu__Push--shrink{% endif %}">
+                                {%- if block.settings.push_1_url != blank -%}
+                                  <a class="MegaMenu__PushLink" href="{{ block.settings.push_1_url }}">
+                                {%- endif -%}
+
+                                {%- assign max_width = 370 | at_most: block.settings.push_1_image.width -%}
+
+                                <div class="MegaMenu__PushImageWrapper AspectRatio" style="background: url({{ block.settings.push_1_image | img_url: '1x1', format: 'jpg' }}); max-width: {{ max_width }}px; --aspect-ratio: {{ block.settings.push_1_image.aspect_ratio }}">
+                                  <img class="Image--lazyLoad Image--fadeIn"
+                                       data-src="{{ block.settings.push_1_image | img_url: '370x230', scale: 2 }}"
+                                       alt="{{ block.settings.push_1_image.alt | escape }}">
+
+                                  <span class="Image__Loader"></span>
+                                </div>
+
+                                {%- if block.settings.push_1_heading != blank -%}
+                                  <p class="MegaMenu__PushHeading Heading u-h7">{{ block.settings.push_1_heading | escape }}</p>
+                                {%- endif -%}
+
+                                {%- if block.settings.push_1_subheading != blank -%}
+                                  <p class="MegaMenu__PushSubHeading Heading Text--subdued u-h7">{{ block.settings.push_1_subheading | escape }}</p>
+                                {%- endif -%}
+
+                                {%- if block.settings.push_1_url != blank -%}
+                                  </a>
+                                {%- endif -%}
+                              </div>
+                            {%- endif -%}
+
+                            {%- if block.settings.push_2_image -%}
+                              <div class="MegaMenu__Push {% if push_image_count == 2 %}MegaMenu__Push--shrink{% endif %}">
+                                {%- if block.settings.push_2_url != blank -%}
+                                  <a class="MegaMenu__PushLink" href="{{ block.settings.push_2_url }}">
+                                {%- endif -%}
+
+                                {%- assign max_width = 370 | at_most: block.settings.push_2_image.width -%}
+
+                                <div class="MegaMenu__PushImageWrapper AspectRatio" style="background: url({{ block.settings.push_2_image | img_url: '1x1', format: 'jpg' }}); max-width: {{ max_width }}px; --aspect-ratio: {{ block.settings.push_2_image.aspect_ratio }}">
+                                  <img class="Image--lazyLoad Image--fadeIn"
+                                       data-src="{{ block.settings.push_2_image | img_url: '370x230', scale: 2 }}"
+                                       alt="{{ block.settings.push_2_image.alt | escape }}">
+
+                                  <span class="Image__Loader"></span>
+                                </div>
+
+                                {%- if block.settings.push_2_heading != blank -%}
+                                  <p class="MegaMenu__PushHeading Heading u-h7">{{ block.settings.push_2_heading | escape }}</p>
+                                {%- endif -%}
+
+                                {%- if block.settings.push_2_subheading != blank -%}
+                                  <p class="MegaMenu__PushSubHeading Heading Text--subdued u-h7">{{ block.settings.push_2_subheading | escape }}</p>
+                                {%- endif -%}
+
+                                {%- if block.settings.push_2_url != blank -%}
+                                  </a>
+                                {%- endif -%}
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endfor -%}
+                {%- elsif link.links != blank -%}
+                        {%- assign linkname = link.title | escape -%}
+                      {% if link.url == '/pages/lit-bike' or linkname == 'BIKES' or link.url == '/products/lit-bike'%} 
+                          <div  class="first_DropdownMenu DropdownMenu" aria-hidden="true">
+                            <div class="top-list">
+                              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_85d661e9-ba5e-4ab9-bf9a-f6c90902ea9c.png?v=1662021761" alt="" data-src="" />
+                              <div class="first_DropdownMenu_top_list_info"> 
+                                <div class="first_DropdownMenu_title"> 
+                                lit bike
+                                </div>
+                                <div class="first_DropdownMenu_color">Space Black</div>
+                                <div class="first_DropdownMenu_subtitle">
+                                   Premium Home Cardio Machine
+                                </div>
+                                <div class="first_DropdownMenu_radio_box">
+                                  <div class="first_DropdownMenu_radio radio_color_lit_black radio_color"></div>
+                                  {%- if country_code_var != 'gb' and country_code_var != 'au' -%}
+                                    <div class="first_DropdownMenu_radio radio_color_lit_pink"></div>
+                                  {%- else -%}
+                                  {%- endif -%}
+                                  <div class="first_DropdownMenu_radio radio_color_lit_beige"></div>
+                                  {%- if country_code_var != 'gb' and country_code_var != 'au' -%}
+                                    <div class="first_DropdownMenu_radio radio_color_lit_white"></div>
+                                  {%- else -%}
+                                  {%- endif -%}
+                                 
+                                </div>
+                                
+                              </div>
+                              <div class="first_DropdownMenu_link">
+                                  {% comment %} <a href="/pages/lit-bike" name="one">
+                                    Explore Lit Bike
+                                  </a> {% endcomment %}
+                                  <a href="{{- country_url_add -}}/products/lit-bike" name="four">
+                                    Buy Now
+                                  </a>
+                                  <a href="{{- country_url_add -}}/products/lit-bike?section=reviews" name="three">
+                                    Reviews
+                                  </a>
+                                  <a href="{{- country_url_add -}}/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you" name="two">
+                                    Compare Bikes
+                                  </a>
+                                 
+                                </div>
+                            </div>
+                            <div class="first_DropdownMenu_line"></div>
+                            {%- if country_code_var != 'ca' -%}
+                                <div class="first_DropdownMenu_bottom-list">
+                                    <!-- class="Image__Loader" data- -->
+                                    <img  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/19_2x_ef6f0020-0fd7-42a1-a315-0f4fbcd52b2f.png?v=1670296695" alt=""/>
+                                    <div class="first_DropdownMenu_top_list_info"> 
+                                        <div class="first_DropdownMenu_title"> 
+                                            BOOM BIKE
+                                        </div>
+                                        <div class="first_DropdownMenu_color_2">Arctic White</div>
+                                        <div class="first_DropdownMenu_subtitle">
+                                            Colorful and Expressive Cardio
+                                        </div>
+                                        <div class="first_DropdownMenu_radio_box">
+                                            
+                                            {%- if country_code_var == 'ca' -%}
+                                            {%- else -%}
+                                                <div class="first_DropdownMenu_radio radio_color_boom_white radio_color_boom"></div>                               
+                                                <div class="first_DropdownMenu_radio radio_color_boom_gray"></div>
+                                                {% comment %} <div class="first_DropdownMenu_radio radio_color_boom_yellow"></div> {% endcomment %}
+                                            {%- endif -%}
+                                        </div>
+                                    </div>
+                                    <div class="first_DropdownMenu_link">
+                                        {% comment %} <a href="/pages/boom-bike-mist-grey" name="one">
+                                            Explore Boom Bike
+                                        </a> {% endcomment %}
+                                        <a href="{{- country_url_add -}}/products/boom-bike-arctic-white" name="four" >
+                                            Buy Now
+                                        </a>
+                                        <a href="{{- country_url_add -}}/products/boom-bike-arctic-white?section=reviews"name="three">
+                                            Reviews
+                                        </a>
+                                        <a href="{{- country_url_add -}}/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you" name="two" >
+                                            Compare Bikes
+                                        </a>
+                                    </div>
+                                </div>
+                            {%- else -%}
+                                <div class="first_DropdownMenu_bottom-list">
+                                    <!-- class="Image__Loader" data- -->
+                                    <img  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/boombike.png?v=1664366055" alt=""/>
+                                    <div class="first_DropdownMenu_top_list_info"> 
+                                        <div class="first_DropdownMenu_title"> 
+                                            BOOM BIKE
+                                        </div>
+                                        <div class="first_DropdownMenu_color_2">Arctic White</div>
+                                        <div class="first_DropdownMenu_subtitle">
+                                            Colorful and Expressive Cardio
+                                        </div>
+                                    </div>
+                                    <div class="first_DropdownMenu_link">
+                             
+                                        <a href="{{- country_url_add -}}/products/boom-bike-arctic-white" name="four" >
+                                            Buy Now
+                                        </a>
+                                        <a href="{{- country_url_add -}}/products/boom-bike-arctic-white?section=reviews"name="three">
+                                            Reviews
+                                        </a>
+                                        <a href="{{- country_url_add -}}/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you" name="two" >
+                                            Compare Bikes
+                                        </a>
+                                    </div>
+                                </div>
+                            {%- endif -%}
+                         </div>
+                      {%- else -%}
+                         <div class="DropdownMenu" aria-hidden="true">
+                          <ul class="Linklist">
+                            {%- for sub_link in link.links -%}
+                              <li class="Linklist__Item" {% if sub_link.links != blank %}aria-haspopup="true"{% endif %}>
+                                <a href="{{ sub_link.url }}" class="Link Link--secondary">{{ sub_link.title | escape }} {% if sub_link.links != blank %}{% render 'icon' with 'select-arrow-right' %}{% endif %}</a>
+
+                                {%- if sub_link.links != blank -%}
+                                  <div class="DropdownMenu" aria-hidden="true">
+                                    <ul class="Linklist">
+                                      {%- for sub_sub_link in sub_link.links -%}
+                                        <li class="Linklist__Item">
+                                          <a href="{{ sub_sub_link.url }}" class="Link Link--secondary">{{ sub_sub_link.title | escape }}</a>
+                                        </li>
+                                      {%- endfor -%}
+                                    </ul>
+                                  </div>
+                                {%- endif -%}
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                  </div> 
+                {%- endif -%}
+          
+                {%- endif -%}
+              {%- endcapture -%}
+              {%- capture horizontalList_item -%}
+                    <li class="HorizontalList__Item {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
+                        <a href="{{ link.url }}" class="Heading u-h7">
+                        {{- link.title | escape -}}
+
+                        {%- if use_mega_menu or menu_item_dropdown == blank -%}
+                            <span class="Header__LinkSpacer">{{ link.title | escape }}</span>
+                        {%- endif -%}
+                        </a>
+
+                        {{- menu_item_dropdown -}}
+                    </li>
+              {%- endcapture -%}
+                   {{ horizontalList_item }}
+            {%- endfor -%}
+          </ul>
+        </nav>
+
+        
+      {%- endunless -%}
+    </div>
+
+    <div class="Header__FlexItem--fill Header__RightItem show">
+      {%- unless section.settings.show_icons or use_sidebar_menu -%}
+        <nav class="Header__SecondaryNav hidden-phone">
+          <ul class="HorizontalList HorizontalList--spacingLoose hidden-pocket hidden-lap">
+            {%- if localization_form != blank and section.settings.navigation_style == 'inline' or section.settings.navigation_style == 'logoLeft' -%}
+              <li class="HorizontalList__Item">
+                {% comment %} {{ localization_form }} {% endcomment %}
+              </li>
+            {%- endif -%}
+
+            {%- if shop.customer_accounts_enabled -%}
+              <li class="HorizontalList__Item" id="header_account">
+                <a href="{{ routes.account_url }}" class="Heading Link Link--primary Text--subdued u-h8">
+                  {%- render 'icon' with 'header-account' -%}
+                  {%- render 'icon' with 'header-account-active' -%}
+                </a>
+              </li>
+            {%- endif -%}
+
+            {% comment %} <li class="HorizontalList__Item" id="header_search">
+              <a href="{{ routes.search_url }}" class="Heading Link Link--primary Text--subdued u-h8" data-action="toggle-search">
+                {%- render 'icon' with 'header-search' -%}
+                {%- render 'icon' with 'header-search-active' -%}
+              </a>
+            </li> {% endcomment %}
+
+            <li class="HorizontalList__Item" id="header_cart">
+              <a href="{{ routes.cart_url }}" class="Heading Link Link--primary Icon-Wrapper--clickable Text--subdued u-h8" {% unless template == 'cart' or settings.cart_type == 'page' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endunless %}>
+                {%- render 'icon' with 'header-cart' -%}
+                {%- render 'icon' with 'header-cart-active' -%}
+                <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      {%- elsif localization_form != blank -%}
+        <nav class="Header__SecondaryNav">
+          <ul class="HorizontalList HorizontalList--spacingLoose hidden-pocket hidden-lap">
+            <li class="HorizontalList__Item">
+              {{ localization_form }}
+            </li>
+          </ul>
+        </nav>
+      {%- endunless -%}
+
+      <a href="{{ routes.account_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}">
+        {%- render 'icon' with 'header-account' -%}
+      </a>
+
+      {%- if shop.customer_accounts_enabled and section.settings.show_icons or use_sidebar_menu -%}
+        <a href="{{ routes.search_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
+          <span class="hidden-tablet-and-up">{%- render 'icon' with 'header-search' -%}</span>
+          <span class="hidden-phone">{%- render 'icon' with 'header-search' -%}</span>
+        </a>
+      {%- endif -%}
+
+      <a href="{{ routes.cart_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
+        <span class="hidden-tablet-and-up">{%- render 'icon' with 'header-cart' -%}</span>
+        <span class="hidden-phone">{%- render 'icon' with 'header-cart' -%}</span>
+        <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
+      </a>
+    </div>
+
+    <div class="Header__FlexItem--fill Header__RightItem"></div>
+    <div class="clearboth"></div>
+  </div>
+</header>
+<style>
+  .clearboth{
+    clear: both;
+  }
+
+  .headerPadding{
+    padding: 13px 15px;
+  }
+
+  .Header__RightItem{
+    display: none;
+    float: right;
+    margin-top: 7px;
+  }
+
+  .Header__RightItem.show{
+    display: inline-block;
+  }
+
+  .HorizontalList{
+    margin: 0 !important;
+  }
+
+  .HorizontalList__Item{
+    margin-right: 0.8vw;
+    margin-left: 0.8vw;
+    display: inline-block;
+    margin: 6px 8px;
+  }
+
+  .Icon.Icon--header-account,
+  .Icon.Icon--header-search,
+  .Icon.Icon--header-cart,
+  .Icon.Icon--header-account-active,
+  .Icon.Icon--header-search-active,
+  .Icon.Icon--header-cart-active{
+    width: 1.5vw;
+    height: 1.5vw;
+    vertical-align: middle;
+  }
+
+  .Icon.Icon--header-account-active,
+  .Icon.Icon--header-search-active,
+  .Icon.Icon--header-cart-active{
+    display: none;
+  }
+  .Header__inlineBlockItem{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .FlexItem--fill{
+    margin-top: 6px;
+  }
+  .Header__FlexItem--priceItem{
+    font-size: 10px;
+    line-height: 14px;
+    color: #666;
+    position: absolute;
+    right: 106px;
+    top: 7px;
+  }
+  .Header__FlexItem--priceItem,
+  .Header__FlexItem--logo{
+    display: none;
+  }
+  .Header__FlexItem--priceItem.show,
+  .Header__FlexItem--logo.show{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  {%- if section.settings.use_sticky_header -%}
+    :root {
+      --use-sticky-header: 1;
+      --use-unsticky-header: 0;
+    }
+
+    .shopify-section--header {
+      position: -webkit-sticky;
+      position: sticky;
+    }
+  {%- else -%}
+    :root {
+      --use-sticky-header: 0;
+      --use-unsticky-header: 1;
+    }
+  {%- endif -%}
+
+  {%- if section.settings.logo -%}
+    .Header__LogoImage {
+      max-width: {{ section.settings.logo_max_width }}px;
+    }
+
+    @media screen and (max-width: 640px) {
+        {%- if country_code_var == 'ca' and template contains 'lit-bike' -%}
+            .Header__FlexItem--priceItem.show{
+               padding-top: 7px;
+            }
+        {%- endif -%}
+        {%- if country_code_var == 'gb' or country_code_var == 'au' or product.title  contains 'Lit Bike'-%}
+            #section-{{ section.id }} .fb_pages_top_bike_b_text{
+                display: none !important;
+            } 
+            .Header__FlexItem--priceItem.show{
+                padding-top: 7px;
+             }
+        {%- else -%}
+            #section-{{ section.id }} .fb_pages_top_bike_b_text{
+                display: block !important;
+            } 
+        {%- endif -%}
+     
+      .Header__LogoImage {
+        max-width: {{ section.settings.mobile_logo_max_width }}px;
+      }
+      .headerPadding{
+        height: 40px;
+        padding: 0 15px;
+      }
+    }
+
+    @media screen and (max-width: 1139px) {
+      .Header__FlexItem--logo{
+        position: absolute;
+        top: 50%;
+        margin-top: -21px;
+        left: 50%;
+        margin-left: -70px;
+      }
+
+      .Icon.Icon--header-account,
+      .Icon.Icon--header-search,
+      .Icon.Icon--header-cart,
+      .Icon.Icon--header-account-active,
+      .Icon.Icon--header-search-active{
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
+    }
+  {%- endif -%}
+
+  {%- if use_transparent_header -%}
+    :root {
+      --header-is-not-transparent: 0;
+      --header-is-transparent: 1;
+    }
+
+    .shopify-section--header {
+      margin-bottom: calc(-1 * var(--header-height));
+    }
+
+    .supports-sticky .Search[aria-hidden="true"] + .Header--transparent {
+      {%- if section.settings.show_transparent_header_border -%}
+        box-shadow: 0 -1px {{ section.settings.transparent_text_color | color_modify: 'alpha', 0.25 }} inset;
+      {%- else -%}
+        box-shadow: none;
+      {%- endif -%}
+
+      color: {{ section.settings.transparent_text_color }};
+    }
+  {%- else -%}
+    :root {
+      --header-is-not-transparent: 1;
+      --header-is-transparent: 0;
+    }
+  {%- endif -%}
+
+  #section-{{ section.id }} .main_product_payBtn{
+    width: 83px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    background: #000;
+    color: #fff;
+  }
+    {%- if country_code_var == 'gb' or country_code_var == 'au' -%}
+        #section-{{ section.id }} .fb_pages_top_bike_b_text{
+            display: none !important;
+        } 
+    {%- endif -%}
+</style>
+
+<script>
+  document.documentElement.style.setProperty('--header-height', document.getElementById('shopify-section-header').offsetHeight + 'px');
+  var country_url_add = "{{- country_url_add -}}"
+  $(function(){
+    {% comment %} if(window.shopify.con) {% endcomment %}
+    var bikeList=[
+        {colorName:'Space Black',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_85d661e9-ba5e-4ab9-bf9a-f6c90902ea9c.png?v=1662021761',Explore: '/products/lit-bike',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike?section=reviews',buyLink:'/products/lit-bike'},
+        {colorName:'Aurora Pink',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d7bd0788-b07b-4113-8cb6-0d4c0cdc84d5.png?v=1662021762',Explore:'/products/lit-bike-klarna-limited-edition',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike-klarna-limited-edition?section=reviews',buyLink:'/products/lit-bike-klarna-limited-edition'},
+        {colorName:'Moonbow Beige',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_de455e62-530b-4ab6-8eb3-842331519c30.png?v=1662021762',Explore:'/products/lit-bike-moonbow-beige',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike-moonbow-beige?section=reviews',buyLink:'/products/lit-bike-moonbow-beige'},
+        {colorName:'Snowpeak White',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_13e56b55-e8dc-4f7c-b3a7-8978212d688a.png?v=1662021762',Explore:'/products/lit-bike-snowpeak-white',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike-snowpeak-white?section=reviews',buyLink:'/products/lit-bike-snowpeak-white'}
+    ]
+    if(window.Shopify.country.toLowerCase() == 'gb') {
+        bikeList=[
+            {colorName:'Space Black',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_85d661e9-ba5e-4ab9-bf9a-f6c90902ea9c.png?v=1662021761',Explore: '/products/lit-bike',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike?section=reviews',buyLink:'/products/lit-bike'},
+            {colorName:'Moonbow Beige',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_de455e62-530b-4ab6-8eb3-842331519c30.png?v=1662021762',Explore:'/products/lit-bike-moonbow-beige',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike-moonbow-beige?section=reviews',buyLink:'/products/lit-bike-moonbow-beige'},
+        ]
+    } 
+    if(window.Shopify.country.toLowerCase() == 'au') {
+        bikeList=[
+            {colorName:'Space Black',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_85d661e9-ba5e-4ab9-bf9a-f6c90902ea9c.png?v=1662021761',Explore: '/products/lit-bike',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike?section=reviews',buyLink:'/products/lit-bike'},
+            {colorName:'Moonbow Beige',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_de455e62-530b-4ab6-8eb3-842331519c30.png?v=1662021762',Explore:'/products/lit-bike-moonbow-beige',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/lit-bike-moonbow-beige?section=reviews',buyLink:'/products/lit-bike-moonbow-beige'},
+        ]
+    } 
+    var bikeboomList=[
+      {colorName:'Arctic White',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/19_2x_ef6f0020-0fd7-42a1-a315-0f4fbcd52b2f.png?v=1670296695',Explore:'/products/boom-bike-arctic-white',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/boom-bike-arctic-white?section=reviews',buyLink:'/products/boom-bike-arctic-white'},
+      {colorName:'Mist Grey',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/19_2x_f5b0887e-b242-4015-a017-9547ccae7f07.png?v=1670296684',Explore:'/products/boom-bike-mist-grey',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/boom-bike-mist-grey?section=reviews',buyLink:'/products/boom-bike-mist-grey'},
+      {colorName:'Tuscany Yellow',imgUrl:'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/19_2_2x_ec06df3a-b94f-4c72-ada4-2baa6b615040.png?v=1670296688',Explore:'/products/boom-bike-tuscany-yellow',Compare:'/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you',reviews:'/products/boom-bike-tuscany-yellow?section=reviews',buyLink:'/products/boom-bike-tuscany-yellow'}
+    ]
+    if(country_url_add) {
+        bikeList.map((item) => {
+            item.Explore = country_url_add + item.Explore
+            item.Compare = country_url_add + item.Compare
+            item.reviews = country_url_add + item.reviews
+            item.buyLink = country_url_add + item.buyLink
+            return item
+        })
+        bikeboomList.map((item) => {
+            item.Explore = country_url_add + item.Explore
+            item.Compare = country_url_add + item.Compare
+            item.reviews = country_url_add + item.reviews
+            item.buyLink = country_url_add + item.buyLink
+            return item
+        })
+    }
+
+    let headerPathName = window.location.pathname
+    function publicHeadHref (index) {
+        $(".first_DropdownMenu_color").html(bikeList[index].colorName)
+        $(".top-list a[name='one']").attr('href',bikeList[index].Explore);
+        $(".top-list a[name='two']").attr('href',bikeList[index].Compare);
+        $(".top-list a[name='three']").attr('href',bikeList[index].reviews);
+        $(".top-list a[name='four']").attr('href',bikeList[index].buyLink);
+        $(".top-list img").attr("src",bikeList[index].imgUrl)
+    }
+    function publicHeadHrefBoom (index){
+        $(".first_DropdownMenu_color_2").html(bikeboomList[index].colorName)
+        $(".first_DropdownMenu_bottom-list a[name='one']").attr('href',bikeboomList[index].Explore);
+        $(".first_DropdownMenu_bottom-list a[name='two']").attr('href',bikeboomList[index].Compare);
+        $(".first_DropdownMenu_bottom-list a[name='three']").attr('href',bikeboomList[index].reviews);
+        $(".first_DropdownMenu_bottom-list a[name='four']").attr('href',bikeboomList[index].buyLink);
+        $(".first_DropdownMenu_bottom-list img").attr("src",bikeboomList[index].imgUrl)
+    }
+    bikeList.forEach((item, index) => {
+        if(item.Explore == headerPathName || item.reviews == (headerPathName + '?section=reviews') || item.buyLink == headerPathName ) {
+            $(".top-list .first_DropdownMenu_radio_box div").removeClass("radio_color");
+            $(".top-list .first_DropdownMenu_radio_box div").eq(index).addClass("radio_color");
+            publicHeadHref(index)
+        }
+    })
+    bikeboomList.forEach((item, index) => {
+        if(item.Explore == headerPathName || item.reviews == (headerPathName + '?section=reviews') || item.buyLink == headerPathName ) {
+            $(".first_DropdownMenu_bottom-list .first_DropdownMenu_radio_box div").removeClass("radio_color_boom");
+            $(".first_DropdownMenu_bottom-list .first_DropdownMenu_radio_box div").eq(index).addClass("radio_color_boom");
+            publicHeadHrefBoom(index)
+        }
+  })
+  $(".top-list .first_DropdownMenu_radio_box div").click(function(){
+      $(this).addClass("radio_color");
+      $(this).siblings().removeClass("radio_color");
+        var index = $(".top-list .first_DropdownMenu_radio_box div").index(this);
+        publicHeadHref(index)
+  });
+
+  $(".first_DropdownMenu_bottom-list .first_DropdownMenu_radio_box div").click(function(){
+    $(this).addClass("radio_color_boom");
+    $(this).siblings().removeClass("radio_color_boom");
+      var index = $(".first_DropdownMenu_bottom-list .first_DropdownMenu_radio_box div").index(this);
+      publicHeadHrefBoom(index)
+  });
+
+  function addHoverEvent(eleStr, orgStr, targetStr){
+    $(eleStr).mouseenter(function() {
+      $(orgStr).css("display", "none")
+      $(targetStr).css("display", "inline-block")
+    })
+    $(eleStr).mouseleave(function() {
+      $(orgStr).css("display", "inline-block")
+      $(targetStr).css("display", "none")
+    })
+  }
+
+  addHoverEvent("#header_account", ".Icon--header-account", ".Icon--header-account-active")
+  addHoverEvent("#header_search", ".Icon--header-search", ".Icon--header-search-active")
+  addHoverEvent("#header_cart", ".Icon--header-cart", ".Icon--header-cart-active")
+});
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "shopify-section--header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_sticky_header",
+      "label": "Use sticky header",
+      "default": true
+    },
+    {
+        "type": "checkbox",
+        "id": "show_all_boome_bike",
+        "label": "Show All Boom Bike",
+        "default": true
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "number",
+      "id": "discount_price",
+      "label": "Discount Price",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "trans_expenses",
+      "label": "transportation expenses",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "header_pay_one",
+      "label": "Desc one"
+    },
+    {
+      "type": "text",
+      "id": "header_pay_two",
+      "label": "Nnumber"
+    },
+    {
+      "type": "text",
+      "id": "header_pay_three",
+      "label": "Desc Two"
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Image",
+      "info": "200 x 60px .png recommended"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 50,
+      "max": 350,
+      "step": 5,
+      "unit": "px",
+      "label": "Image width",
+      "default": 140
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_max_width",
+      "min": 50,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile image width",
+      "default": 90
+    },
+    {
+      "type": "header",
+      "content": "Currency selector",
+      "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_currency_selector",
+      "label": "Show currency selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "navigation_menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+        "type": "link_list",
+        "id": "gb_navigation_menu",
+        "label": "GB Menu"
+    },
+    {
+        "type": "link_list",
+        "id": "au_navigation_menu",
+        "label": "AU Menu"
+    },
+    {
+      "type": "select",
+      "id": "navigation_style",
+      "label": "Navigation style",
+      "info": "Setting will default to center style if screen width cannot fit all the links.",
+      "options": [
+        {
+          "value": "sidebar",
+          "label": "Sidebar"
+        },
+        {
+          "value": "inline",
+          "label": "Inline"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "logoLeft",
+          "label": "Logo left"
+        }
+      ],
+      "default": "inline"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icons",
+      "label": "Show icons",
+      "info": "Text for account, search and cart are replaced by icons on desktop.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Transparent header"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header",
+      "label": "Enable on homepage",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_transparent_header_collection",
+      "label": "Enable on collection pages",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_transparent_header_border",
+      "label": "Show separation border",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "transparent_text_color",
+      "label": "Text/icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "transparent_logo",
+      "label": "Logo image",
+      "info": "200 x 60px .png recommended"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "Mega menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "navigation_mega_menu",
+          "label": "Menu item",
+          "info": "Enter menu item to apply a mega menu dropdown. [Learn more](http://support.maestrooo.com/article/149-navigation-enabling-and-configuring-mega-menu)."
+        },
+        {
+          "type": "header",
+          "content": "Image push 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "push_1_image",
+          "label": "Image",
+          "info": "740 x 460 px .jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "push_1_heading",
+          "label": "Heading",
+          "default": "Example heading"
+        },
+        {
+          "type": "text",
+          "id": "push_1_subheading",
+          "label": "Sub-heading",
+          "default": "Example sub-heading"
+        },
+        {
+          "type": "url",
+          "id": "push_1_url",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Image push 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "push_2_image",
+          "label": "Image",
+          "info": "740 x 460 px .jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "push_2_heading",
+          "label": "Heading",
+          "default": "Example heading"
+        },
+        {
+          "type": "text",
+          "id": "push_2_subheading",
+          "label": "Sub-heading",
+          "default": "Example sub-heading"
+        },
+        {
+          "type": "url",
+          "id": "push_2_url",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

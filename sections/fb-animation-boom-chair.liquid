@@ -1,0 +1,76 @@
+<div  id="section-{{ section.id }}" class="fb-animation-boom-chair utils-boom-section js-boombike-delayshow">
+    <div class="fb-animation-back-fade">
+    </div>
+    <div class="fb-boom-chair-card utils-boom-card" >
+        <div class="boom-chair-text-box">
+            {%- if section.settings.boomchair_title_one != blank -%}
+                <div class="boomchair-title">
+                    {{ section.settings.boomchair_title_one }}
+                    <p class="boomchair-title-color">
+                        {{ section.settings.boomchair_title_one_color }}
+                    </p>
+                </div>
+            {%- endif -%}
+            {%- if section.settings.boomchair_desc_one != blank -%}
+                <div class="boomchair-desc">
+                    {{ section.settings.boomchair_desc_one }}
+                </div>
+            {%- endif -%}
+        </div>
+        <div class="boom-active-box">
+            <div class="boomchair-press-btn">
+                <div class="boomchair-press-inner js-boomchair-down">
+                </div>
+            </div>
+            <img class="chair-boombtn-svga Image--lazyLoad Image--fadeIn" data-size="auto" id="chair-boombtn-svga-one"  data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/ezgif-3-b7de519529.gif?v=1664365725" />
+            <img class="chair-boombtn-svga Image--lazyLoad Image--fadeIn"  data-size="auto" id="chair-boombtn-svga-two" data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/ezgif-3-bbbdc95a09.gif?v=1664365972" />
+            <div class="boom-chair-press-down">
+                <img  class="js-boom-chairup" 
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780" 
+                />
+                <img  
+                    class="js-boom-chairdown" 
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhanweitu.png?v=1659520780" 
+                />
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% schema %}
+ {
+    "name": "FbAnimatioBoomChair",
+    "presets": [
+        {
+            "name": "fb-animation-boom-chair",
+            "category": "Fb Sections",
+            "blocks": []
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "section one"
+        },
+        {
+            "type": "richtext",
+            "id": "boomchair_title_one",
+            "label": "title",
+            "default": "<p> Smart Saddle Detection+</p>"
+        },
+        {
+            "type": "text",
+            "id": "boomchair_title_one_color",
+            "label": "title",
+            "default": "Detection+"
+        },
+        {
+            "type": "richtext",
+            "id": "boomchair_desc_one",
+            "label": "desc",
+            "default": "<p>Detects in and out of saddle riding via sensors to deliver intense results.</p>"
+        }
+    ]
+}
+{% endschema %}

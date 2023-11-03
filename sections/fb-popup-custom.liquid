@@ -1,0 +1,23 @@
+
+<div  id="section-{{ section.id }}" data-delay="{{ section.settings.fb_delay_time }}" class="js-custom-popup" style="height:0px;">
+</div>
+{% schema %}
+  {
+    "name": "FbPopupCustom",
+    "presets": [
+      {
+        "name": "fb-popup-custom",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "number",
+            "id": "fb_delay_time",
+            "label": "show popup delay (ms)",
+            "default": 0
+        }
+    ]
+  }
+{% endschema %}

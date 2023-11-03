@@ -1,0 +1,100 @@
+<script> 
+    window.fbCheckoutInfo = {
+        purchase_currency: "",
+        order_amount: 0,
+        shopping_amount: {{ checkout.shipping_price}},
+        email: "{{ checkout.customer.email }}",
+        phone: "{{ checkout.customer.phone }}",
+        order_lines: [],
+        shipping_address: {
+            firstName: "{{ checkout.shipping_address.first_name }}",
+            lastName:  "{{ checkout.shipping_address.last_name }}",
+            address1: "{{ checkout.shipping_address.address1 }}",
+            address2: "{{ checkout.shipping_address.address2 }}",
+            city: "{{ checkout.shipping_address.city }}",
+            province: "{{ checkout.shipping_address.province }}",
+            provinceCode: "{{ checkout.shipping_address.province_code }}",
+            country: "{{ checkout.shipping_address.country }}",
+            zip: "{{ checkout.shipping_address.zip }}",
+            phone: "{{ checkout.shipping_address.city }}",
+            company: "{{ checkout.shipping_address.company}}"
+        }
+    }
+    {% for item in checkout.line_items %}
+        window.fbCheckoutInfo.order_lines.push({
+            sku: "{{ item.sku }}",
+            title: "{{ item.title }}",
+            quantity: "{{ item.quantity }}",
+            image_url: "{{ item.image }}",
+            variant_id: "{{ item.variant_id }}",
+            product_id: "{{ item.product_id }}",
+            price: "{{ item.final_price }}",
+            total: "{{ item.final_line_price }}",
+            {% if item.line_level_discount_allocations  %}
+            {% for lib in item.line_level_discount_allocations limit: 1 %}
+            applied_discount: {
+                description: "{{ lib.discount_application.target_selection }}",
+                value_type: "{{ lib.discount_application.value_type}}",
+                value: "{{ lib.discount_application.value }}",
+                amount: "{{ lib.discount_application.value }}",
+                title: "{{ lib.discount_application.title }}"
+            } 
+            {% endfor %}
+            {% else %}
+                applied_discount:  {
+                    description: "",
+                    value_type: "",
+                    value: "",
+                    amount: "",
+                    title: ""
+                }   
+            {% endif %}
+        })
+        {% comment %} {% if item.line_level_discount_allocations  %}
+            {% for lib in item.line_level_discount_allocations %}
+                console.log("title", "{{ lib.target_selection }}" )
+                console.log("title", "{{ lib.discount_application.title }}" )
+                console.log("value", "{{ lib.discount_application.value }}" )
+                console.log("amount", "{{ lib.amount }}" )
+                console.log("value_type", "{{ lib.value_type }}" )
+            {% endfor %}
+        {% endif %} {% endcomment %}
+    {% endfor %} 
+
+{% comment %} (function ($) {
+    $(document).on("page:load page:change", function () {
+        if(Shopify.Checkout.step === "payment_method") {
+            {% for item in checkout.line_items %}
+                {% comment %} console.log("product", {{ item | json }}) 
+                console.log("title", "{{ item.title }}") 
+                console.log("quantity", "{{ item.quantity }}")
+                console.log("sku", "{{ item.sku }}") 
+                console.log("image", "{{ item.image }}") 
+                console.log("variant_id", "{{ item.variant_id }}") 
+                console.log("product_id", "{{ item.product_id }}") 
+                console.log("price", "{{ item.final_price }}")
+                console.log("total", " {{ item.final_line_price }}") {% endcomment %}
+                console.log("===============")
+                {% for lib in item.line_level_discount_allocations %}
+                    console.log("title", "{{ lib.target_selection }}" )
+                    console.log("title", "{{ lib.title }}" )
+                    console.log("value", "{{ lib.value }}" )
+                    console.log("amount", "{{ lib.amount }}" )
+                    console.log("value_type", "{{ lib.value_type }}" )
+                {% endfor %}
+            {% endfor %} 
+            
+        }
+    })
+})(Checkout.$); {% endcomment %}
+{% comment %} console.log("address1", "{{ checkout.shipping_address.address1 }}" )
+console.log("address2", "{{ checkout.shipping_address.address2 }}")
+console.log("city", "{{ checkout.shipping_address.city }}")
+console.log("province", "{{ checkout.shipping_address.province }}")
+console.log("zip", "{{ checkout.shipping_address.zip }}")
+console.log("phone", "{{ checkout.shipping_address.phone }}")
+console.log("country", "{{ checkout.shipping_address.country }}")
+console.log("first_name", "{{ checkout.shipping_address.first_name }}")
+console.log("last_name", "{{ checkout.shipping_address.last_name }}")
+console.log("email", "{{ checkout.customer.email }}") {% endcomment %}
+</script>

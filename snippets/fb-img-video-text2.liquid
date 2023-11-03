@@ -1,0 +1,85 @@
+
+{%- if block.settings.subheading != blank -%}
+<div class="{% if template contains 'boom-bike' or template == 'page.lit-bike-white' or template contains 'lit-bike-beige' %}Heading{% endif %}  fb-dual-key"
+    style="{% if block.settings.subheading_color %} color: {{ block.settings.subheading_color }}; {% endif %} "
+> 
+    {%- if block.settings.subheading_mo != blank -%}
+        {{ block.settings.subheading | strip_html }} {{ block.settings.subheading_mo }}/mo<sup>1</sup>
+    {%- else -%}
+        {{ block.settings.subheading }}
+    {%- endif -%}
+</div>
+{%- endif -%}
+{%- assign title_oprichtext  = block.settings.title | strip_html -%}
+{%- if title_oprichtext != blank -%}
+<div class="SectionHeader__Heading {% if template contains 'boom-bike' or template == 'page.lit-bike-white' or template contains 'lit-bike-beige' %}SectionHeader__Heading--emphasize Heading{% endif %} {% if template contains 'boom-bike' %}fb-boom-card-desc{% endif %} {% if template == 'page.lit-bike-white' %}fb-dual-car-des{% endif %} {% if template contains 'lit-bike-beige' or template == 'page.lit-bike' or template == 'page.lit-bike-klarna' %}fb-dual-car-des-beige{% endif %}"
+    style="{% if block.settings.subheading_color %}color: {{ block.settings.title_color }}; {% endif %}"
+>
+{{ block.settings.title }}
+</div>
+{%- endif -%}
+
+<div class="fb_black_slideshow_1_3 fb-dual-car-price fb-gift-box">
+    {%- assign product =  block.settings.product  -%}
+{%- if product != blank -%}
+     <span class="fb_black_variant_price" style="{% if block.settings.current_price_background %} background-image: {{ block.settings.current_price_background }}; {% endif %}">
+        {%- render 'customer-price-control', type:'sale', cpc_product: product -%}
+    </span>
+     <div class="fb_black_flex-item" style="{% if block.settings.original_price_color %}color:{{ block.settings.original_price_color }}; {%- endif -%}">
+        <span class="fb_black_off" style=" opacity:0.75;font-family: Montserrat-Regular, Montserrat;">{% render 'customer-price-control', type:'off', cpc_product: product %} OFF</span>
+        <span class="fb_black_compare_price" style="font-family: Montserrat-Medium, Montserrat;">{%- render 'customer-price-control', type:'origin', cpc_product: product -%}</span>
+       </div> 
+{%- endif -%}
+{%- if block.settings.pc_gift_img != blank -%}
+<img src="{{block.settings.pc_gift_img}}" alt="" class="pc_gift_img">
+{%- endif -%}
+</div>
+{%- if block.settings.mb_gift_img != blank -%}
+<img src="{{block.settings.mb_gift_img}}" alt="" class="mb_gift_img">
+{%- endif -%}
+{%- if block.settings.button_1_text != blank and block.settings.button_2_text != blank -%}
+{%- assign has_two_buttons = true -%}
+{%- else -%}
+{%- assign has_two_buttons = false -%}
+{%- endif -%}
+
+{%- if block.settings.button_1_text != blank or block.settings.button_2_text != blank -%}
+<div class="SectionHeader__ButtonWrapper">
+    <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}">
+    {%- if block.settings.button_1_text != blank -%}
+        <a  href="{{ block.settings.button_1_link }}"
+            class="ButtonGroup__Item Button js-public-gtm-btn"
+            style="{% if block.settings.button_1_text_bordercolor %}border-color:{{ block.settings.button_1_text_bordercolor }};{% endif %}{% if block.settings.button_1_text_color %}color: {{ block.settings.button_1_text_color }}; {% endif %}{% if block.settings.button_1_text_backgroundcolor %}background-color: {{ block.settings.button_1_text_backgroundcolor }};{% endif %}"
+            data-number="{{ forloop.index }}"
+            data-btntext="{{ block.settings.button_1_text }}"
+            id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_1_text | escape }}"
+        >
+            {{ block.settings.button_1_text | escape }}
+        </a>
+    {%- endif -%}
+
+    {%- if block.settings.button_2_text != blank -%}
+        <a href="{{ block.settings.button_2_pc_link }}" class="fb-video-full-pc js-open-videodialog ButtonGroup__Item Button js-public-gtm-btn"
+            style="{% if block.settings.button_2_text_bordercolor %}border-color:{{ block.settings.button_2_text_bordercolor }};{% endif %}{% if block.settings.button_2_text_color %}color: {{ block.settings.button_2_text_color }}; {% endif %}{% if block.settings.button_2_text_backgroundcolor %}background-color: {{ block.settings.button_2_text_backgroundcolor }};{% endif %}"
+            data-number="{{ forloop.index }}"
+            data-type="playvideo"
+            data-videourl="{{ block.settings.button_2_pc_link }}"
+            data-btntext="{{ block.settings.button_2_text }}"
+            id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_2_text | escape }}"
+        >
+            {{ block.settings.button_2_text | escape }}
+        </a>
+    {%- endif -%}
+      {%- if block.settings.button_2_text != blank -%}
+        <a href="{{ block.settings.button_2_mobile_link }}" class="fb-video-full-mobile ButtonGroup__Item Button js-public-gtm-btn"
+            style="{% if block.settings.button_2_text_bordercolor %}border-color:{{ block.settings.button_2_text_bordercolor }};{% endif %}{% if block.settings.button_2_text_color %}color: {{ block.settings.button_2_text_color }}; {% endif %}{% if block.settings.button_2_text_backgroundcolor %}background-color: {{ block.settings.button_2_text_backgroundcolor }};{% endif %}"
+            data-number="{{ forloop.index }}"
+            data-btntext="{{ block.settings.button_2_text }}"
+            id="gtm-homeSlideshow-xBikeButton-{{ block.settings.button_2_text | escape }}"
+        >
+            {{ block.settings.button_2_text | escape }}
+        </a>
+    {%- endif -%}
+    </div>
+</div>
+{%- endif -%}

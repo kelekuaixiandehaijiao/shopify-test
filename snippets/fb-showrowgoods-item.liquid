@@ -1,0 +1,398 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if domtype == 'circle' -%}
+    <ul class="js-srg-table ">
+        {%- for block in section.blocks -%}
+            {%- if block.settings.bike_type == bike_type -%}
+                {%- assign product =  block.settings.product -%}
+                {%- capture show_product -%}
+                    {%- render 'customer-price-control', type:'showProduct', cpc_product: product -%}
+                {%- endcapture -%}
+                {%- if show_product != 'true' -%}
+                    {%- continue -%}
+                {%- endif -%}
+                <li class="js-srg-m-circle">
+                    <p class="srg-m-circle js-m-circle-p {% if block.settings.bike_name_index == index %}srg-active{% endif %}" 
+                        data-index="{{ block.settings.bike_name_index }}"
+                        data-title="{{ product.title }}"  
+                        data-parent="{{- parent -}}-{{- block.settings.bike_name_index -}}"
+                        data-parent-box="fb-{{- parent -}}-{{- block.settings.bike_type -}}"
+                        data-colortext="{{ block.settings.bike_color_text }}"
+                        data-url="{{ block.settings.buy_button_link }}"
+                    >
+                        <span style="background-color: {{ block.settings.bike_color }}; {% if block.settings.bike_name_index == 'boombike-white' or block.settings.bike_name_index == 'litbike-white' %}border: 1px solid #000;{% endif %}"  
+                            data-index="{{ block.settings.bike_name_index }}"
+                            class="srg-table-circel{{ block.settings.bike_name_index }}">
+                        </span>
+                    </p>
+                </li>
+            {%- endif -%}
+        {%- endfor -%}
+    </ul>
+    {%- for block in section.blocks -%}
+        {%- if block.settings.bike_name_index == index -%}
+            <p class="srg-mm-dec js-m-dec-p" style="text-align: center;">{{ block.settings.bike_color_text }}</p>
+        {%- endif -%}
+    {%- endfor -%}
+{%- else -%}
+    {%- assign product = block.settings.product -%}
+    {%- capture bike_type_string -%}
+    {%- if block.settings.bike_type == '1' or block.settings.bike_type == '4' -%}
+        freebeat-box
+    {%- else -%}
+        peloton-box
+    {%- endif -%}
+    {%- endcapture -%}
+    {%- capture buy_bike_hrefbtn -%}
+        {%- if product == blank or product.title == blank -%}
+            <a href="javascript:void(0);" class="srg-disabled-btn">{{ block.settings.buy_button_text | escape }}
+            </a>
+        {%- else -%}
+            <a href="{{ block.settings.buy_button_link }}">{{ block.settings.buy_button_text | escape }}
+            </a>
+        {%- endif -%}
+    {%- endcapture -%}
+    {%- capture mobile_buy_bike_hrefbtn -%}
+        {%- if product == blank or product.title == blank -%}
+            <a href="javascript:void(0);" class="srg-disabled-btn">{{ block.settings.mobile_buy_button_text | escape }}
+            </a>
+        {%- else -%}
+            <a href="{{ block.settings.buy_button_link }}">{{ block.settings.mobile_buy_button_text | escape }}
+            </a>
+        {%- endif -%}
+    {%- endcapture -%}
+
+    {%- capture explore_bike_hrefbtn -%}
+    {%- if product == blank or product.title == blank -%}
+        <a href="javascript:void(0);" class="srg-disabled-btn">{{ block.settings.explore_button_text | escape }}
+        </a>
+    {%- else -%}
+        <a href="{{ block.settings.explore_button_link }}">{{ block.settings.explore_button_text | escape }}
+        </a>
+    {%- endif -%}
+    {%- endcapture -%}
+
+    {%- capture freebeat_info_dom -%}
+    <div class="srg-img-type srg-public-line">
+        {%- if block.settings.lable_text_btn != blank -%}
+        <span style="color:{{ block.settings.lable_text }}; border-color: {{block.settings.lable_text}}">
+            {{ block.settings.lable_text_btn | escape }}
+        </span>
+        {%- endif -%}
+    </div>
+    <div class="srg-title-content-box">
+        {%- if block.settings.bike_type == '1' or block.settings.bike_type == '4' -%}
+        {%- if product.title != blank -%}
+            <div class="srg-title srg-public-line js-srg-title" data-title="{{ product.title  }}">
+            {{- product.title -}}
+            </div>
+        {%- endif -%}
+        {%- if block.settings.product_introduce != blank -%}
+            <div class="srg-introduce srg-public-line pcshow-mobilehide">
+            {{ block.settings.product_introduce }}
+            </div>
+        {%- endif -%}
+        {%- else -%}
+        <div class="pcshow-mobilehide">
+            {{ select_peloton_bikes_pc }}
+        </div>
+        {%- if block.settings.product_introduce != blank -%}
+            <div class="srg-introduce srg-public-line pcshow-mobilehide">
+            {{ block.settings.product_introduce }}
+            </div>
+        {%- endif -%}
+        <div class="srg-title srg-public-line js-srg-title mobileshow-pchide" data-title="{{ block.settings.peloton_name }}">
+            {{ block.settings.peloton_name }}
+        </div>
+        {%- endif -%}
+    </div>
+    <div class="srg-price-title mobileshow-pchide">
+        PRICE
+    </div>
+    {%- if product != blank -%}
+        <!-- bikes -->
+        <div class="srg-price js-srg-price-height">
+            <div class="srg-price-one srg-price-publice">
+                <div class="srg-price-warn">
+                    <span>starting at</span>
+                    <!-- <div class="srg-hover-box">
+                        <img class="srg-price-hover" src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/information-line_1.png?v=1650007431" />
+                        <div class="srg-hover-p srg-hover-{{ forloop_index }}">
+                        {{ block.settings.product_hover_desc }}
+                        </div>
+                    </div> -->
+                </div>
+
+                <p class="srg-price-text">
+                <span>
+                    {% render 'customer-price-control', type:'sale', cpc_product: product %}
+                </span>
+                {%- comment -%} <span class="original-price">
+                    {{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}
+                </span> {%- endcomment -%}
+                </p>
+            </div>
+            <div class="srg-price-line srg-price-publice {% if country_code_var == 'au' %} srg-price-one-hidden {% endif %}">
+            
+            </div>
+            <div class="srg-price-two srg-price-publice {% if country_code_var == 'au'%} srg-price-one-hidden {% endif %}">
+                <p class="srg-price-warn">
+                    pay monthly
+                </p>
+                <p class="srg-price-text">
+                    <span>${% render 'customer-price-control', type:'mo', cpc_product: product %}/mo
+                    </span>
+                </p>
+            </div>
+        </div>
+    {%- else -%}
+        <!-- peloton -->
+        <div class="srg-price js-srg-price-height">
+            <div class="srg-price-three">
+                <div class="srg-price-warn">
+                    <span>starting at</span>
+                </div>
+                <p class="srg-price-text">
+                    <span>
+                        {%- if country_code_var == 'gb' -%}
+                            {{ block.settings.gb_peloton_price | money_without_trailing_zeros }}
+                        {% elsif country_code_var == 'au' %}
+                            {{ block.settings.au_peloton_price | money_without_trailing_zeros}}
+                        {%- else -%}
+                            {{ block.settings.peloton_price | money_without_trailing_zeros }}
+                        {%- endif -%}
+                    </span>
+                    {%- if block.settings.peloton_huaxian_price != blank -%}
+                        <span class="original-price">
+                        {{ block.settings.peloton_huaxian_price }}
+                        </span>
+                    {%- endif -%}
+                </p>
+            </div>
+            <div class="srg-price-two {% if country_code_var == 'gb' %}srg-price-one-hidden {% endif %}"></div>
+        </div>
+    {%- endif -%}
+    <div class="srg-buy-bike srg-public-line pcshow-mobilehide">
+        {%- if block.settings.buy_button_text != blank -%}
+        {%- if block.settings.bike_type == '1' or block.settings.bike_type == '4' -%}
+            {{ buy_bike_hrefbtn }}
+        {%- endif -%}
+        {%- endif -%}
+    </div>
+    <div class="srg-mobile-buy-bike srg-public-line mobileshow-pchide">
+        {% if block.settings.mobile_buy_button_text != blank %}
+        {%- if block.settings.bike_type == '1' or block.settings.bike_type == '4' -%}
+            {{ mobile_buy_bike_hrefbtn }}
+        {%- endif -%}
+        {% endif %}
+    </div>
+
+    {%- endcapture -%}
+    <div class="{{ bike_type_string }}">
+    <div class="srg-space-height"></div>
+    <div class="srg-block srg-text-center" style="background: {{ block.settings.boxcolor }} ;">
+        <div class="srg-img">
+        {%- if block.settings.define_choose_img != blank -%}
+            {% assign image_url = block.settings.define_choose_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            {% assign image_alt = block.settings.define_choose_img.alt | escape %}
+        {%- else -%}
+            {% assign image_url = product.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            {% assign image_alt = '' %}
+        {%- endif -%}
+        <img
+            class="Image--lazyLoad Image--fadeIn"
+            data-src="{{ image_url }}"
+            data-sizes="auto"
+            alt="{{ image_alt }}">
+        <span class="Image__Loader"></span>
+        </div>
+        {%- comment -%} {%- if circel_dom == 'mobcopy' -%}
+        <div class="srg-mobile-table">
+        <ul class="js-srg-table ">
+        <li>
+        <p class="srg-m-circle">
+        <span style="background-color: {{ block.settings.bike_color }}; {% if block.settings.bike_color_text == 'White' %}border: 1px solid #000;{% endif %}" data-index="{{ forloop.index }}" class="srg-table-circel{{ forloop.index }}"></span>
+        </p>
+
+        </li>
+        </ul>
+        <p class="srg-mm-copydec">
+        {{ product.title | remove: 'Lit Bike' }}
+        </p>
+        </div>
+        {%- else -%}
+        <div class="srg-mobile-table">
+        {{ circel_dom }}
+        </div>
+        {%- endif -%} {%- endcomment -%}
+        <div class="srg-mobile-table">
+        {{ circel_dom }}
+        </div>
+        <div class="srg-product-desc">
+        {{ freebeat_info_dom }}
+        </div>
+        {%- if block.settings.quick_look_title != blank -%}
+        <div class="srg-mobile-quciklook js-srg-mobile-quciklook">
+            <div class="srg-quicklook-title">
+            {{ block.settings.quick_look_title }}
+            </div>
+            <ul class="srg-quicklook-ul">
+            <li class="srg-quicklook-li">
+                {{ block.settings.quick_look_content_1 }}
+            </li>
+            <li class="srg-quicklook-li">
+                {{ block.settings.quick_look_content_2 }}
+            </li>
+            <li class="srg-quicklook-li">
+                {%- if country_code_var == 'gb' -%}
+                    {{ block.settings.quick_gblook_content_3 }}
+                {%- elsif country_code_var == 'au' -%}
+                    {{ block.settings.quick_aulook_content_3 }}
+                {%- elsif country_code_var == 'ca' -%}
+                    {{ block.settings.quick_calook_content_3 }}
+                {%- else -%}
+                    {{ block.settings.quick_look_content_3 }}
+                {%- endif -%}
+                {% comment %} {{ block.settings.quick_look_content_3 }}3333 {% endcomment %}
+            </li>
+            <li class="srg-quicklook-li">
+                {{ block.settings.quick_look_content_4 }}
+            </li>
+            <li class="srg-quicklook-li">
+                {{ block.settings.quick_look_content_5 }}
+            </li>
+            <li class="srg-quicklook-li">
+                {{ block.settings.quick_look_content_6 }}
+            </li>
+            </ul>
+        </div>
+        {%- endif -%}
+        <!-- <div class="see-more-specs js-show-spec">
+        <span class="pecs-pulldown-text">
+        {{ block.settings.see_more_space_mobile }}
+        </span>
+        <span class="pecs-pullup-text">
+        SEE LESS SPECS
+        </span>
+        <img  class="pull-icon pull-down" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pulldown.png?v=1662024968" />
+        <img  class="pull-icon pull-up" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pullup.png?v=1662025470" />
+        </div> -->
+        <ul class="srg-list-desc js-srg-list-desc" data-show="false">
+        <!-- <div class="srg-is-show-specstext mobileshow-pchide">
+            SPECS
+        </div> -->
+        {%- if block.settings.product_spec_title_1 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_1 }}">
+            <h3>{{ block.settings.product_spec_title_1 }}
+            </h3>
+            {%- if country_code_var == 'ca' -%}
+                {{ block.settings.product_spec_cacontent_1 }}
+            {%- elsif country_code_var == 'gb' -%}
+            {{ block.settings.product_spec_gbcontent_1 }}
+            {%- elsif country_code_var == 'au' -%}
+            {{ block.settings.product_spec_aucontent_1 }}
+            {%- else -%}
+            {{ block.settings.product_spec_content_1 }}
+            {%- endif -%}
+            </li>
+
+        {%- endif -%}
+        {%- if block.settings.product_spec_title_2 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_2 }}">
+            <h3>{{ block.settings.product_spec_title_2 }}
+            </h3>
+            {{ block.settings.product_spec_content_2 }}
+            </li>
+
+        {%- endif -%}
+        {%- if block.settings.product_spec_title_3 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_3 }}">
+            <h3>{{ block.settings.product_spec_title_3 }}
+            </h3>
+            {{ block.settings.product_spec_content_3 }}
+            </li>
+
+        {%- endif -%}
+
+        {%- if block.settings.product_spec_title_4 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_4 }}">
+            <h3>{{ block.settings.product_spec_title_4 }}
+            </h3>
+            {{ block.settings.product_spec_content_4 }}
+            </li>
+
+        {%- endif -%}
+
+        {%- if block.settings.product_spec_title_5 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_5 }}">
+            <h3>{{ block.settings.product_spec_title_5 }}
+            </h3>
+            {{ block.settings.product_spec_content_5 }}
+            </li>
+
+        {%- endif -%}
+
+        {%- if block.settings.product_spec_title_6 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_6 }}">
+            <h3>{{ block.settings.product_spec_title_6 }}
+            </h3>
+            {{ block.settings.product_spec_content_6 }}
+            </li>
+
+        {%- endif -%}
+
+        {%- if block.settings.product_spec_title_7 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_7 }}">
+            <h3>{{ block.settings.product_spec_title_7 }}
+            </h3>
+            {{ block.settings.product_spec_content_7 }}
+            </li>
+
+        {%- endif -%}
+        {%- if block.settings.product_spec_title_8 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_8 }}">
+            <h3>{{ block.settings.product_spec_title_8 }}
+            </h3>
+            {{ block.settings.product_spec_content_8 }}
+            </li>
+
+        {%- endif -%}
+        {%- if block.settings.product_spec_title_9 != blank -%}
+            <li data-title="{{ block.settings.product_spec_title_9 }}">
+            <h3>{{ block.settings.product_spec_title_9 }}
+            </h3>
+            {{ block.settings.product_spec_content_9 }}
+            </li>
+
+        {%- endif -%}
+        </ul>
+        <div class="srg-buy-bike srg-public-line pcshow-mobilehide">
+        {%- if block.settings.buy_button_text != blank -%}
+            {{ buy_bike_hrefbtn }}
+        {%- endif -%}
+
+        </div>
+        <div class="srg-explore-bike srg-public-line pcshow-mobilehide">
+        {%- if block.settings.explore_button_text != blank -%}
+            {{ explore_bike_hrefbtn }}
+            <!-- <a href="{{ block.settings.explore_button_link }}"> {{ block.settings.explore_button_text }} </a> -->
+        {%- endif -%}
+        </div>
+    </div>
+
+    </div>
+    {%- if block.settings.bike_type == '1' or block.settings.bike_type == '4' -%}
+    <div class="srg-mobile-out-btn mobileshow-pchide">
+        <div class="srg-buy-bike srg-public-line">
+        {%- if block.settings.buy_button_text != blank -%}
+            {{ buy_bike_hrefbtn }}
+        {%- endif -%}
+        </div>
+        <div class="srg-explore-bike srg-public-line">
+        {%- if block.settings.explore_button_text != blank -%}
+            {{ explore_bike_hrefbtn }}
+        {%- endif -%}
+        </div>
+    </div>
+    {%- endif -%}      
+{%- endif -%}
+

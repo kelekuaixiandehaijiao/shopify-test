@@ -1,0 +1,186 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "show_collection_info": false,
+        "show_collection_image": false,
+        "apply_overlay": true,
+        "show_color_swatch": false,
+        "show_vendor": false,
+        "collection_image_size": "normal",
+        "show_sort_by": false,
+        "show_layout_switch": false,
+        "toolbar_position": "top",
+        "show_filters": false,
+        "show_filter_color_swatch": true,
+        "expand_filters": true,
+        "filter_position": "sidebar",
+        "filter_menu": "",
+        "grid_items_per_page": 16,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 3
+      }
+    },
+    "1662430346f06f2489": {
+      "type": "fb-seo-content",
+      "settings": {
+        "fb_seo_h1": "accessories"
+      }
+    },
+    "54697e38-8487-4489-88c5-9971fe7e461b": {
+      "type": "fb-exercise-bikes",
+      "blocks": {
+        "009b1fd6-0986-47d0-9e84-e8f455a2cc43": {
+          "type": "goods",
+          "settings": {
+            "exerise_product": "lit-bike",
+            "bike_name_1": "",
+            "bike_name_2": "Space Black",
+            "define_star_product": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "8cb7d10a-3af2-414a-bfad-28121b24ef79": {
+          "type": "goods",
+          "settings": {
+            "exerise_product": "lit-bike-klarna-limited-edition",
+            "bike_name_1": "",
+            "bike_name_2": "Aurora Pink",
+            "define_star_product": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "2c68b071-7127-4eed-879d-39685a7758a0": {
+          "type": "goods",
+          "settings": {
+            "exerise_product": "lit-bike-moonbow-beige",
+            "bike_name_1": "",
+            "bike_name_2": "Moonbow Beige",
+            "define_star_product": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "d4d33cd5-09f3-4a5a-bd1a-12cc633f209e": {
+          "type": "goods",
+          "settings": {
+            "exerise_product": "lit-bike-snowpeak-white",
+            "bike_name_1": "",
+            "bike_name_2": "Snowpeak White",
+            "define_star_product": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "009b1fd6-0986-47d0-9e84-e8f455a2cc43",
+        "8cb7d10a-3af2-414a-bfad-28121b24ef79",
+        "2c68b071-7127-4eed-879d-39685a7758a0",
+        "d4d33cd5-09f3-4a5a-bd1a-12cc633f209e"
+      ],
+      "settings": {
+        "freebeat_type": "1",
+        "exerise_title": "<p>Join the Home <br\/> Workout Revolution<\/p>",
+        "exerise_bike": "Lit Bike",
+        "exerise_bike_icon": "PREMIUM DESIGN",
+        "exerise_bike_desc": "<p>Raw performance and sleek designs add grace and modernity to your home.<\/p>"
+      }
+    },
+    "a6bd14b6-cb39-45e4-97d5-773011fb3d09": {
+      "type": "fb-exercise-bikes",
+      "blocks": {
+        "1a3ecf6c-98d7-4fb9-aa1e-bef88edcad20": {
+          "type": "goods",
+          "settings": {
+            "exerise_product": "boom-bike-arctic-white",
+            "bike_name_1": "",
+            "bike_name_2": "Arctic White",
+            "define_star_product": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "c7f6e51d-2f35-4d50-bea1-57ff88a7f675": {
+          "type": "goods",
+          "disabled": true,
+          "settings": {
+            "exerise_product": "boom-bike-tuscany-yellow",
+            "bike_name_1": "",
+            "bike_name_2": "Tuscany Yellow",
+            "define_star_product": "",
+            "open_sold_out": true,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": "shopify:\/\/products\/boom-bike-arctic-white"
+          }
+        },
+        "6c9e9012-dcca-4c1f-89e4-3ebc1e09d79e": {
+          "type": "goods",
+          "settings": {
+            "exerise_product": "boom-bike-mist-grey",
+            "bike_name_1": "",
+            "bike_name_2": "Mist Grey",
+            "define_star_product": "boom-bike-arctic-white",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": "shopify:\/\/products\/boom-bike-mist-grey"
+          }
+        }
+      },
+      "block_order": [
+        "1a3ecf6c-98d7-4fb9-aa1e-bef88edcad20",
+        "c7f6e51d-2f35-4d50-bea1-57ff88a7f675",
+        "6c9e9012-dcca-4c1f-89e4-3ebc1e09d79e"
+      ],
+      "settings": {
+        "freebeat_type": "2",
+        "exerise_title": "",
+        "exerise_bike": "Boom Bike",
+        "exerise_bike_icon": "ECONOMY",
+        "exerise_bike_desc": "<p>Colorful and expressive cardio.<\/p>"
+      }
+    },
+    "44bb3288-f8d4-4870-97ee-4f8efab6e7d5": {
+      "type": "fb-dealmatch-guarantee",
+      "settings": {
+        "fb_dealmatch_guarantee_heading": "LOW PRICE GUARANTEE",
+        "fb_dealmatch_guarantee_desc": "<p>We've launched our Low Price Guarantee.<\/p><p>Starting 11\/1\/23, you can place your order now with confidence! You'll be getting all freebeat bikes at the season's lowest price - guaranteed.<\/p>",
+        "fb_dealmatch_guarantee_img": "shopify:\/\/shop_images\/BlackFriday_LowPriceGuarantee.png",
+        "fb_dealmatch_guarantee_url_btn": "LEARN MORE",
+        "fb_dealmatch_guarantee_url": "shopify:\/\/pages\/freebeat-black-friday-low-price-guarantee"
+      }
+    },
+    "2204bda4-1d6a-4d27-9662-2d8a82a48f5a": {
+      "type": "fb-exercise-fit",
+      "settings": {
+        "fbex_fit": "<p>Not Sure? Find the Perfect Fit!<\/p>",
+        "fbex_btn_text": "COMPARE BIKES",
+        "fbex_btn_url": "shopify:\/\/pages\/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662430346f06f2489",
+    "54697e38-8487-4489-88c5-9971fe7e461b",
+    "a6bd14b6-cb39-45e4-97d5-773011fb3d09",
+    "44bb3288-f8d4-4870-97ee-4f8efab6e7d5",
+    "2204bda4-1d6a-4d27-9662-2d8a82a48f5a"
+  ]
+}

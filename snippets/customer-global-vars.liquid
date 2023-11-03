@@ -1,0 +1,13 @@
+{%- assign fb_country = localization.country.iso_code | downcase -%}
+{%- if fb_country == 'gb' -%}
+    {%- assign fb_country_isgb = true -%}
+{%- else -%}
+    {%- assign fb_country_isgb = false -%}
+{%- endif -%}
+{%- if type == 'country_code_var' -%}
+    {{- fb_country_isgb -}}
+{%- endif -%}
+{%- if type == 'code' -%}
+    {{- fb_country -}}
+{%- endif -%}
+

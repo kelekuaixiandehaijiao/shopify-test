@@ -1,0 +1,327 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if cpc_product -%}
+    {%- if country_code_var == 'gb' -%}
+    {%- assign fbstage = settings.gb_bike_by_stage_number | default: 0 | times: 100.0  -%} 
+    {%-elsif country_code_var == 'au'-%}
+    {%- assign fbstage = settings.au_bike_by_stage_number | default: 0 | times: 100.0  -%} 
+    {%- else -%}
+    {%- assign fbstage = settings.bike_by_stage_number | default: 0 | times: 100.0  -%} 
+    {%- endif -%}
+    {%- if settings.product_beige.id == cpc_product.id -%}
+            {%- comment -%} Lit Bike Moonbow Beige 1 {%- endcomment -%}
+            {%- if country_code_var == 'gb' -%}
+            {%- assign setDiscountPrice = settings.gb_lbmb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_lbmb_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.gb_lbmb_show -%}
+            {%- assign setoversold = settings.gb_lbmb_oversold -%}
+            {%- elsif country_code_var == 'au' -%}
+            {%- assign setDiscountPrice = settings.au_lbmb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.au_lbmb_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.au_lbmb_show -%} 
+            {%- assign setoversold = settings.au_lbmb_oversold -%}
+
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.lbmb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.lbmb_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.ca_lbmb_show -%}
+            {%- assign setoversold = settings.ca_lbmb_oversold -%}
+
+            {%- endif -%}
+            {%- assign setBikeType = 1 -%}
+            {%- assign gbShow = settings.gb_lbmb_show -%}
+            {%- assign caShow = settings.ca_lbmb_show -%}
+            {%- assign auShow = settings.au_lbmb_show -%}
+            {%- comment -%} Lit Bike Snowpeak White 2{%- endcomment -%}
+            {%- elsif settings.product_white.id == cpc_product.id -%}
+            {%- if country_code_var == 'gb' -%}
+            {%- assign setDiscountPrice = settings.gb_lbsw_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_lbsw_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.gb_lbsw_show -%}
+            {%- assign setoversold = settings.gb_lbsw_oversold -%}
+
+            {%- elsif country_code_var == 'au' -%}
+            {%- assign setDiscountPrice = settings.au_lbsw_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.au_lbsw_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.au_lbsw_show -%}
+            {%- assign setoversold = settings.au_lbsw_oversold -%}
+
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.lbsw_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.lbsw_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.ca_lbsw_show -%}
+            {%- assign setoversold = settings.ca_lbsw_oversold -%}
+
+            {%- endif -%}
+            {%- assign setBikeType = 2 -%}
+            {%- assign gbShow = settings.gb_lbsw_show -%}
+            {%- assign caShow = settings.ca_lbsw_show -%}
+            {%- assign auShow = settings.au_lbsw_show -%}
+            {%- comment -%} Lit Bike Space Black 3 {%- endcomment -%}
+            {%- elsif settings.product_black.id == cpc_product.id -%}
+            {%- if country_code_var == 'gb' -%}
+            {%- assign setDiscountPrice = settings.gb_lbsb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_lbsb_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.gb_lbsb_show -%}
+            {%- assign setoversold = settings.gb_lbsb_oversold -%}
+
+            {%- elsif country_code_var == 'au' -%}
+            {%- assign setDiscountPrice = settings.au_lbsb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.au_lbsb_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.au_lbsb_show -%}
+            {%- assign setoversold = settings.au_lbsb_oversold -%}
+
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.lbsb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.lbsb_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.ca_lbsb_show -%}
+            {%- assign setoversold = settings.ca_lbsb_oversold -%}
+
+            {%- endif -%}
+            {%- assign setBikeType = 3 -%}
+            {%- assign gbShow = settings.gb_lbsb_show -%}
+            {%- assign caShow = settings.ca_lbsb_show -%}
+            {%- assign auShow = settings.au_lbsb_show -%}
+            {%- comment -%} Lit Bike Aurora Pink 4 {%- endcomment -%}
+    {%- elsif settings.product_pink.id == cpc_product.id -%}
+            {%- if country_code_var == 'gb' -%}
+            {%- assign setDiscountPrice = settings.gb_lbap_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_lbap_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.gb_lbap_show -%}
+            {%- assign setoversold = settings.gb_lbap_oversold -%}
+
+
+            {%- elsif country_code_var == 'au' -%}
+            {%- assign setDiscountPrice = settings.au_lbap_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.au_lbap_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.au_lbap_show -%}
+            {%- assign setoversold = settings.au_lbap_oversold -%}
+
+
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.lbap_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.lbap_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.ca_lbap_show -%}
+            {%- assign setoversold = settings.ca_lbap_oversold -%}
+
+
+            {%- endif -%}
+            {%- assign setBikeType = 4 -%}
+            {%- assign gbShow = settings.gb_lbap_show -%}
+            {%- assign caShow = settings.ca_lbap_show -%}
+            {%- assign auShow = settings.au_lbap_show -%}
+    {%- elsif settings.product_boom_grey.id == cpc_product.id -%}
+            {%- comment -%} Boom Bike Mist Grey 1 {%- endcomment -%}
+            {%- if country_code_var == 'gb' -%}
+            {%- assign setDiscountPrice = settings.gb_bbgd_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_bbgd_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.gb_bbgd_show -%}
+            {%- assign setoversold = settings.gb_bbgd_oversold -%}
+
+            {%- elsif country_code_var == 'au' -%}
+            {%- assign setDiscountPrice = settings.au_bbgd_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.au_bbgd_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.au_bbgd_show -%}
+            {%- assign setoversold = settings.au_bbgd_oversold -%}
+
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.bbgd_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.bbgd_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.ca_bbgd_show -%}
+            {%- assign setoversold = settings.ca_bbgd_oversold -%}
+
+            {%- endif -%}
+            {%- assign setBikeType = 1 -%}
+            {%- assign gbShow = settings.gb_bbgd_show -%}
+        {%- assign caShow = settings.ca_bbgd_show -%}
+        {%- assign auShow = settings.au_bbgd_show -%}
+    {%- elsif settings.product_boom_yellow.id == cpc_product.id -%}
+            {%- comment -%} Boom Bike Tuscany Yellow 2 {%- endcomment -%}
+            {%- if country_code_var == 'gb' -%}
+            {%- assign setDiscountPrice = settings.gb_bbyd_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_bbyd_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.gb_bbyd_show -%}
+
+            {%-elsif country_code_var == 'au'-%}
+            {%- assign setDiscountPrice = settings.au_bbyd_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.au_bbyd_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.au_bbyd_show -%}
+
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.bbyd_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.bbyd_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.ca_bbyd_show -%}
+
+            {%- endif -%}
+
+            {%- assign setBikeType = 2 -%}
+            {%- assign gbShow = settings.gb_bbyd_show -%}
+            {%- assign caShow = settings.ca_bbyd_show -%}
+            {%- assign auShow = settings.au_bbyd_show -%}
+    {%- elsif settings.product_boom_white.id == cpc_product.id -%}
+            {%- comment -%} Boom Bike Arctic White 3 {%- endcomment -%}
+            {%- if country_code_var == 'gb' -%}
+            {%- assign setDiscountPrice = settings.gb_bbaw_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_bbaw_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.gb_bbaw_show -%}
+            {%- assign setoversold = settings.gb_bbaw_oversold -%}
+
+            {%- elsif country_code_var == 'au' -%}
+            {%- assign setDiscountPrice = settings.au_bbaw_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.au_bbaw_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.au_bbaw_show -%}
+            {%- assign setoversold = settings.au_bbaw_oversold -%}
+
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.bbaw_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.bbaw_te | default: 0 | times: 100 -%}
+            {%- assign setShowProduct = settings.ca_bbaw_show -%}
+            {%- assign setoversold = settings.ca_bbaw_oversold -%}
+
+            {%- endif -%}  
+            {%- assign setBikeType = 3 -%}
+            {%- assign gbShow = settings.gb_bbaw_show -%}
+            {%- assign caShow = settings.ca_bbaw_show -%}
+            {%- assign auShow = settings.au_bbaw_show -%}
+    {%- else -%}
+            {%- assign setDiscountPrice = 0 -%}
+            {%- assign setTransPrice = 0 -%}
+    {%- endif -%}
+        {%- comment -%} 目前支持两种价格展示 1.price减去折扣算的sale，这种一定开启自动填充 2.price的sale，小折扣填充自由开启 {%- endcomment -%}
+        {%- if country_code_var == 'gb' -%}
+        {%- assign showDiscount = settings.gb_bike_use_discount_price -%}
+        {%- elsif country_code_var == 'au' -%}
+        {%- assign showDiscount = settings.au_bike_use_discount_price -%}
+        {%- else -%} 
+        {%- assign showDiscount = settings.bike_use_discount_price -%}
+        {%- endif -%}
+        {%- if showDiscount -%}
+                    {%- assign sale_price =  cpc_product.price | minus: setDiscountPrice | money_without_trailing_zeros -%}
+                    {%- assign sale_int_price = cpc_product.price | minus: setDiscountPrice | divided_by: 100 -%}
+                    {%- if setDiscountPrice == 0 or setDiscountPrice == blank -%}
+                    {%- assign off_price = 0 -%}
+                    {%- assign off_int_price = 0 -%}
+                    {%- assign origin_price = blank -%}
+                    {%- else -%}
+                        {%- assign off_price = setDiscountPrice | money_without_trailing_zeros -%}
+                        {%- assign off_int_price = setDiscountPrice | default: 0 | divided_by: 100 -%}
+                        {%- assign origin_price = cpc_product.price | money_without_trailing_zeros -%}   
+                    {%- endif -%}
+                    {%- assign mo_price = cpc_product.price | minus: setDiscountPrice | plus: setTransPrice | divided_by: fbstage | round: 2 -%}
+                    {%- assign momoney_price = cpc_product.price | minus: setDiscountPrice | plus: setTransPrice -%}
+        {%- else -%}
+                        {%- assign sale_price = cpc_product.price | money_without_trailing_zeros -%}
+                        {%- assign sale_int_price = cpc_product.price | divided_by: 100 -%}
+                        {%- if cpc_product.compare_at_price and cpc_product.compare_at_price > cpc_product.price -%}
+                            {%- assign off_price = cpc_product.compare_at_price  | minus: cpc_product.price | money_without_trailing_zeros -%}
+                            {%- assign off_int_price = cpc_product.compare_at_price | minus: cpc_product.price  | default: 0 | divided_by: 100 -%}
+                            {%- assign origin_price = cpc_product.compare_at_price | money_without_trailing_zeros -%}
+                        {%- else -%}
+                            {%- assign off_price = 0 -%}
+                            {%- assign off_int_price = 0  -%}
+                            {%- assign origin_price = blank -%}
+                        {%- endif -%}
+                        {%- assign mo_price = cpc_product.price | plus: setTransPrice | divided_by: fbstage | round: 2 -%}
+                        {%- assign momoney_price = cpc_product.price | plus: setTransPrice -%}
+
+        {%- endif -%}
+        {%- if type == 'overSold' -%}
+            {{- setoversold -}}
+        {%- endif -%}
+        {%- if type == 'sale' -%}
+            {{- sale_price -}}
+        {%- elsif type == 'saleInt' -%}
+            {{- sale_int_price -}}
+        {%- elsif type == 'off' -%}
+        {{- off_price -}}
+        {%- elsif type == 'offInt' -%}
+            {{- off_int_price -}}
+        {%- elsif type == 'origin' -%}
+            {{- origin_price -}}
+        {%- elsif type == 'showProduct' -%}
+            {{- setShowProduct -}}
+        {%- elsif type == 'mo' -%}
+        {{- mo_price -}}
+        {%- elsif type == 'momoney' -%}
+        {{- momoney_price -}}
+        {%- elsif type == 'bikeType' -%}
+            {{- setBikeType -}}
+        {%- elsif type == 'bikeDefaultPdpUrl' -%}
+            {%- assign product_available = cpc_product.available -%}
+            {%- capture product_default_url -%}
+                {%- if cpc_product.title contains 'Lit Bike' -%}
+                    {{- settings.litbike_product_default_url -}}
+                {%- elsif cpc_product.title contains 'Boom Bike' -%}
+                    {{- settings.boombike_product_default_url -}}
+                {%- endif -%}
+            {%- endcapture -%}
+            {%- comment -%} product_available true 是有库存 false是无库存 {%- endcomment -%}
+            {%- comment -%} hasSoldOutDefaultUrl 为‘’ 是有库存  反之有库存 {%- endcomment -%}
+            {%- if product_available == false and product_default_url -%}
+                {%- assign hasSoldOutDefaultUrl = product_default_url -%}
+            {%- else -%}
+                {%- assign hasSoldOutDefaultUrl = '' -%}
+            {%- endif -%}
+            {{- hasSoldOutDefaultUrl -}}
+        {%- endif -%}    
+        {%- else -%}
+        {%- if country_code_var == 'gb' -%}
+        {%- assign showDiscount = settings.gb_bike_use_discount_price -%}
+        {%- elsif country_code_var == 'au' -%}
+        {%- assign showDiscount = settings.au_bike_use_discount_price -%}
+        {%- else -%} 
+        {%- assign showDiscount = settings.bike_use_discount_price -%}
+        {%- endif -%}
+        {%- if product_type == 'litbike_default' -%}
+            {%- if country_code_var == 'gb' or locale contains 'GB' -%}
+            {%- assign setDiscountPrice = settings.gb_lbsb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.gb_lbsb_te | default: 0 | times: 100 -%}
+            {%- elsif country_code_var == 'au' or locale contains 'AU' -%}
+                {%- assign setDiscountPrice = settings.au_lbsb_discount | default: 0 | times: 100 -%}
+                {%- assign setTransPrice = settings.au_lbsb_te | default: 0 | times: 100 -%}
+            {%- else -%}
+            {%- assign setDiscountPrice = settings.lbsb_discount | default: 0 | times: 100 -%}
+            {%- assign setTransPrice = settings.lbsb_te | default: 0 | times: 100 -%}
+            {%- endif -%}
+            {%- if type == 'sale' -%}
+                {%- if showDiscount -%}
+                {{- settings.product_beige.selected_or_first_available_variant.price | minus: setDiscountPrice | money_without_trailing_zeros -}}
+                {%- else -%}
+                {{- settings.product_beige.selected_or_first_available_variant.price | money_without_trailing_zeros -}}
+                {%- endif -%}
+            {%- endif -%}
+            {%- if type == 'off' -%}
+            {{- setDiscountPrice | money_without_trailing_zeros -}}
+            {%- endif -%}
+        {%- endif -%}
+        {%- if product_type == 'boombike_default' -%}
+            {%- if country_code_var == 'gb' or locale contains 'GB' -%}
+                {%- assign setDiscountPrice = settings.gb_bbaw_discount | default: 0 | times: 100 -%}
+                {%- assign setTransPrice = settings.gb_bbaw_te | default: 0 | times: 100 -%}
+            {%- elsif country_code_var == 'au' or locale contains 'AU' -%}
+                {%- assign setDiscountPrice = settings.au_bbaw_discount | default: 0 | times: 100 -%}
+                {%- assign setTransPrice = settings.au_bbaw_te | default: 0 | times: 100 -%}
+            {%- else -%}
+                {%- assign setDiscountPrice = settings.bbaw_discount | default: 0 | times: 100 -%}
+                {%- assign setTransPrice = settings.bbaw_te | default: 0 | times: 100 -%}
+            {%- endif -%}
+            {%- if type == 'sale' -%}
+            {%- if showDiscount -%}
+            {{- settings.product_boom_white.selected_or_first_available_variant.price | minus: setDiscountPrice | money_without_trailing_zeros -}}
+            {%- else -%}
+            {{- settings.product_boom_white.selected_or_first_available_variant.price | money_without_trailing_zeros -}}
+            {%- endif -%}
+            {%- endif -%}
+            {%- if type == 'off' -%}
+            {{- setDiscountPrice | money_without_trailing_zeros -}}
+            {%- endif -%}
+        {%- endif -%}
+        {%- if type == 'gbShow' -%}
+            {{- gbShow -}}
+        {%- endif -%}
+        {%- if type == 'caShow' -%}
+            {{- caShow -}}
+        {%- endif -%}
+        {%- if type == 'auShow' -%}
+            {{- auShow -}}
+        {%- endif -%}
+{%- endif -%}

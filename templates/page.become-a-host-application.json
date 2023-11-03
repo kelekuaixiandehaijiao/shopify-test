@@ -1,0 +1,119 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "1656301898ba8e95f0": {
+      "type": "fb-host-application",
+      "blocks": {
+        "c2456343-fe34-4ebe-9ee3-240728c67acd": {
+          "type": "list-li",
+          "settings": {
+            "fha_list_li": "<p>New customers get 10% cashback on their first order after being accepted<\/p>"
+          }
+        },
+        "6e8378c0-d91d-4f19-b6d8-a49618f0338f": {
+          "type": "list-li",
+          "settings": {
+            "fha_list_li": "<p>Motivate and inspire future freebeat customers<\/p>"
+          }
+        },
+        "d38eacb9-c3a0-4416-bb4f-788e7d60fc71": {
+          "type": "list-li",
+          "settings": {
+            "fha_list_li": "<p>Commission on all in-person and online showroom tours that lead to a new bike purchase.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c2456343-fe34-4ebe-9ee3-240728c67acd",
+        "6e8378c0-d91d-4f19-b6d8-a49618f0338f",
+        "d38eacb9-c3a0-4416-bb4f-788e7d60fc71"
+      ],
+      "settings": {
+        "showroom_title": "<p>The Next <\/p><p>Showroom<\/p><p> Host<\/p>",
+        "showroom_title_sub": "<p>Accompany our exploding community of fitness masters on a path towards a healthier lifestyle.<\/p>",
+        "showroom_input_desc": "<p>You may receive emails from one of our community representatives during the application process.<\/p><p>By applying you agree to freebeat's <a href=\"https:\/\/www.freebeatfit.ca\/policies\/terms-of-service\" target=\"_blank\" title=\"https:\/\/www.freebeatfit.ca\/policies\/terms-of-service\">Terms of Service<\/a> and <a href=\"https:\/\/www.freebeatfit.ca\/policies\/privacy-policy\" target=\"_blank\" title=\"https:\/\/www.freebeatfit.ca\/policies\/privacy-policy\">Privacy Policy<\/a>.<\/p><p><\/p>",
+        "next_showroom_title": "<p>Complete your application<\/p>",
+        "next_showroom_subtitle": "<p>New freebeat customers will receive 10% cashback after getting accepted as a Showroom Host. Future freebeat riders are eager to visit your Showroom!<\/p>"
+      }
+    },
+    "1656906749552b5ff8": {
+      "type": "fb-sr-footerIcon",
+      "blocks": {
+        "b5349158-1ee0-43fb-aa68-bc946ed070b1": {
+          "type": "sr-footerIcon",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/fieldx2.png",
+            "Icon-Title": "Product warranty",
+            "Description": "Enjoy warranty for up to 10 years on bike components and parts.",
+            "learnMore-url": "shopify:\/\/pages\/product-warranty",
+            "learnMore": "Learn more >"
+          }
+        },
+        "35cc4005-41db-4e87-b420-9489508298fb": {
+          "type": "sr-footerIcon",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/30-dayx2.png",
+            "Icon-Title": "0% Financing",
+            "Description": "If your purchase is not working for you, we've got you covered.",
+            "learnMore-url": "shopify:\/\/pages\/return-policy",
+            "learnMore": "Learn more >"
+          }
+        },
+        "f61039a2-10fc-49ad-8f8d-8ccd1949c726": {
+          "type": "sr-footerIcon",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/cahtx2.png",
+            "Icon-Title": "Talk to a Specialist",
+            "Description": "Our customer service team will find you the best solution.",
+            "learnMore-url": "",
+            "learnMore": "Launch chat >"
+          }
+        }
+      },
+      "block_order": [
+        "b5349158-1ee0-43fb-aa68-bc946ed070b1",
+        "35cc4005-41db-4e87-b420-9489508298fb",
+        "f61039a2-10fc-49ad-8f8d-8ccd1949c726"
+      ],
+      "settings": {
+      }
+    },
+    "1629795908485d4358": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "1631695119735c6fe5": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "calculate-page",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "16624306217cdbe5e0": {
+      "type": "fb-seo-content",
+      "settings": {
+        "fb_seo_h1": "become a host application"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1656301898ba8e95f0",
+    "1656906749552b5ff8",
+    "1629795908485d4358",
+    "1631695119735c6fe5",
+    "16624306217cdbe5e0"
+  ]
+}

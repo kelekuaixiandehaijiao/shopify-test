@@ -1,0 +1,23 @@
+{%- if block.settings.delivers != blank -%}
+<div class="deliverContainer">
+    {%- if block.settings.delivers != blank -%}
+    <div id="details_icon" class="js_details_icon">
+      {% if block.settings.deliversIcon != blank %}
+        <img class="hoverIconMb"
+          src="{{ block.settings.deliversIcon | image_url }}" height="16" width="16" loading="lazy">
+      {% else %}
+        <img class="hoverIconMb"
+          src="{{ 'https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/information-line_1.png?v=1650007431' }}" height="16" width="16" loading="lazy">
+      {% endif %}
+
+      <div class="hoverBox">
+          <div class="hoverText">
+              {{block.settings.tips}}
+              <!-- Currently we cannot ship to Alaska, Hawaii, Puerto Rico, U.S. Virgin Islands. Worldwide shipping will be available soon. -->
+          </div>
+      </div>
+    </div>
+    {%- endif -%}
+    <div id="delivers">{{ block.settings.delivers }}</div>
+</div>
+{%- endif -%}

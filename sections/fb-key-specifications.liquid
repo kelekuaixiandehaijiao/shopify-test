@@ -1,0 +1,273 @@
+{%- capture prodcutNavSpecial -%}
+    {%- if template contains 'product' -%}
+        js-prodcutpage-specail
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div class="fb-key-specifical {{ prodcutNavSpecial }}" id="section-{{ section.id }}">
+  <div class="fb-key-specifical-content">
+    {%- if section.settings.specail_title -%}
+      <p class="fb-key-spec-title">
+        {{ section.settings.specail_title }}
+      </p>
+    {%- endif -%}
+    <div class="fb-key-spec-ul {{ fbSpecialCss }}" id="fb-key-spec-ul-control">
+      {%- for block in section.blocks -%}
+        <div class="fb-key-spec-li">
+          <div class="fb-key-spec-li-title">
+            {{ block.settings.spe_box_title }}
+
+            <img
+              class="fb-key-tabIcon"
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/updaown.png?v=1668668770"
+              alt=""
+            >
+          </div>
+          <div class="fb-key-spec-li-content">
+            {%- assign spe_box_label_oprichtext = block.settings.spe_box_label | strip_html -%}
+            {%- if spe_box_label_oprichtext != blank -%}
+              <div class="fb-key-spec-desc">
+                {%- if country_code_var == 'ca' -%}
+                  {{ block.settings.spe_box_cadesc }}
+                {%- elsif country_code_var == 'gb' -%}
+                  {{ block.settings.spe_box_gbdesc }}
+                {%- elsif country_code_var == 'au' -%}
+                  {{ block.settings.spe_box_audesc }}
+                {%- else -%}
+                  {{ block.settings.spe_box_desc }}
+                {%- endif -%}
+              </div>
+              <div class="fb-key-spec-label">
+                {{ block.settings.spe_box_label }}
+              </div>
+            {%- else -%}
+              <div class="fb-key-spec-all-desc">
+                {%- if country_code_var == 'ca' -%}
+                  {{ block.settings.spe_box_cadesc }}
+                {%- elsif country_code_var == 'gb' -%}
+                  {{ block.settings.spe_box_gbdesc }}
+                {%- elsif country_code_var == 'au' -%}
+                  {{ block.settings.spe_box_audesc }}
+                {%- else -%}
+                  {{ block.settings.spe_box_desc }}
+                {%- endif -%}
+                {% comment %} {{ block.settings.spe_box_desc }} {% endcomment %}
+              </div>
+            {%- endif -%}
+            <div class="clearboth"></div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbKeySpecifications",
+  "presets": [
+    {
+      "name": "fb-key-specifications",
+      "category": "Fb key specifications",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "specail_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "specail_title",
+      "label": "Title",
+      "default": "Key Specifications"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "spe_box_title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "spe_box_label",
+          "label": "Label"
+        },
+        {
+          "type": "richtext",
+          "id": "spe_box_desc",
+          "label": "Desc"
+        },
+        {
+          "type": "richtext",
+          "id": "spe_box_cadesc",
+          "label": "CaDesc"
+        },
+        {
+          "type": "richtext",
+          "id": "spe_box_gbdesc",
+          "label": "GbDesc"
+        },
+        {
+          "type": "richtext",
+          "id": "spe_box_audesc",
+          "label": "AuDesc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .fb-key-specifical {
+    background-color: {{ section.settings.specail_color }}
+  }
+  .fb-key-specifical-content{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 0 20px;
+    box-sizing: border-box;
+  }
+  .fb-key-spec-title{
+    font-size: 60px;
+    font-family: Montserrat-ExtraBold, Montserrat;
+    font-weight: 800;
+    color: #1D1D1F;
+    line-height: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .fb-key-spec-ul{
+    width: 100%;
+    height: auto;
+  }
+  .fb-key-spec-li{
+    padding: 38px 60px;
+    text-align: left;
+    border-radius: 30px;
+    background: #fff;
+    margin-bottom: 30px;
+  }
+  .fb-key-spec-ul-length{
+    height: auto;
+  }
+  .fb-key-spec-li .fb-key-spec-li-title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #1D1D1F;
+    line-height: 24px;
+    padding-bottom: 0;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s;
+  }
+  .fb-key-spec-li-title.openContent{
+    padding-bottom: 30px;
+  }
+  .fb-key-tabIcon{
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 20px;
+    transform: rotate(180deg);
+    transition: all .3s;
+  }
+  .fb-key-tabIcon.openContent{
+    transform: rotate(0deg);
+  }
+  .fb-key-spec-li .fb-key-spec-li-content{
+    font-size: 18px;
+    font-weight: 400;
+    color: #1D1D1F;
+    overflow: hidden;
+    transition: all .6s;
+    max-height: 0;
+  }
+  .fb-key-spec-li-content.openContent{
+    border-top: 1px solid #1D1D1F;
+    max-height: 1000px;
+  }
+  .fb-key-spec-label{
+    float: right;
+    font-weight: 500;
+    text-align: left;
+    margin-right: 12px;
+  }
+  .fb-key-spec-desc{
+    float: right;
+    min-width: 50%;
+    max-width: 79%;
+    overflow: hidden;
+    text-align: right;
+  }
+  .fb-key-spec-all-desc{
+    max-width: 100%;
+    text-align: right;
+    overflow: hidden;
+  }
+  .fb-key-spec-label,
+  .fb-key-spec-desc,
+  .fb-key-spec-all-desc{
+    margin-top: 15px;
+  }
+  .fb-key-spec-label p,
+  .fb-key-spec-desc p{
+    margin: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .fb-key-spec-over,
+  .fb-key-spec-view{
+    display: none;
+  }
+  .clearboth{
+    clear: both;
+  }
+
+  @media only screen and (max-width: 414px){
+    .fb-key-specifical-content{
+      width: 100%;
+      padding: 15px 15px 30px;
+    }
+    .fb-key-spec-title{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .fb-key-spec-li{
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .fb-key-spec-li .fb-key-spec-li-title{
+      font-size: 14px;
+      padding-bottom: 0;
+    }
+    .fb-key-spec-li-title.openContent{
+      padding-bottom: 16px;
+    }
+    .fb-key-tabIcon{
+      width: 12px;
+    }
+    .fb-key-spec-label, .fb-key-spec-desc, .fb-key-spec-all-desc{
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .fb-key-spec-label{
+      display: inline-block;
+      float: none;
+    }
+    .fb-key-spec-label p,
+    .fb-key-spec-desc p{
+      margin: 8px 0;
+    }
+  }
+</style>

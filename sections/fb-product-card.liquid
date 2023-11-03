@@ -1,0 +1,148 @@
+{%- capture prodcutNavOverView -%}
+    {%- if template contains 'product' -%}
+        js-prodcutpage-overview
+    {%- endif -%}
+{%- endcapture -%}
+<div id="section-{{ section.id }}" class="fb-product-card {{ prodcutNavOverView }}" data-type="productSwiperCard">
+    <div class="fpc-block-title">
+        {{ section.settings.fpc_big_title }}
+    </div>
+    {%- comment -%} pc {%- endcomment -%}
+    <div class="fpc-box-ul fpc-box-ul-pc">
+        {%- for block in section.blocks  -%}
+            <div class="fpc-box-li {% if block.settings.selector_order == '2'%} fpc-box-li-revers {% endif %} {% if block.settings.selector_order == '3'%} fpb-pc-allcard {% endif %}">
+                <div class="fpc-li-video">
+                    <video class="Image--lazyLoad js-videoAutoPlayer" 
+                        x-webkit-airplay="allow" 
+                        webkit-playsinline="true" 
+                        playsinline="true" 
+                        autoplay="autoplay" 
+                        muted="muted" 
+                        loop="loop" 
+                        data-src="{{ block.settings.fpc_video_pc }}"
+                    > 
+                    <span class="Image__Loader"></span>       
+                </div>
+                <div class="fpc-li-text">
+                    <div class="fpc-li-ptitle">
+                        {{ block.settings.fpc_video_title }}
+                    </div>
+                    <div class="fpc-li-pdesc">
+                        {{ block.settings.fpc_video_desc }}
+                    </div>
+                </div>
+            </div>
+        {%- endfor -%}
+    </div>
+    {%- comment -%} mob {%- endcomment -%}
+    <div class="fpc-box-ul fpc-box-ul-mob">
+        <div class="fbcardproductSwiperMob">
+            <div class="fb-cardproduct_scroll swiper-wrapper">
+                {%- for block in section.blocks -%}
+                    <div class="swiper-slide fpc-box-li fpc-box_item {% if block.settings.selector_order == '3'%} fpb-pc-allcard {% endif %}">
+                        <div class="fpc-li-video">
+                            <video class="Image--lazyLoad js-videoAutoPlayer" 
+                                x-webkit-airplay="allow" 
+                                webkit-playsinline="true" 
+                                playsinline="true" 
+                                autoplay="autoplay" 
+                                muted="muted" 
+                                loop="loop" 
+                                data-src="{{ block.settings.fpc_video_mob }}"
+                            > 
+                            <span class="Image__Loader"></span>       
+                        </div>
+                        <div class="fpc-li-text">
+                            <div class="fpc-li-ptitle"  style="color: {{ block.settings.fpc_video_title_color }}">
+                                {{ block.settings.fpc_video_title }}
+                            </div>
+                            <div class="fpc-li-pdesc" style="color: {{ block.settings.fpc_video_desc_color }}">
+                                {{ block.settings.fpc_video_desc }}
+                            </div>
+                        </div>
+                    </div>
+                {%- endfor -%} 
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "FbProductCard",
+    "presets": [
+      {
+        "name": "fb-product-card",
+        "category": "Fb Sections"
+      }
+    ],
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "fpc_big_title",
+            "label": "Card Big title"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "video_and_text",
+            "name": "video and text",
+            "settings": [
+               {
+                    "type": "select",
+                    "id": "selector_order",
+                    "label": "Selector Order",
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "left video and right text"
+                        },
+                        {
+                            "value": "2",
+                            "label": "right video and pc text"
+                        },
+                        {
+                            "value": "3",
+                            "label": "Personal Trainer"
+                        }
+                    ],
+                    "default": "1"
+                },
+                {
+                    "type": "url",
+                    "id": "fpc_video_pc",
+                    "label": "Pc Video Url"
+                },
+                {
+                    "type": "url",
+                    "id": "fpc_video_mob",
+                    "label": "Mob Video Url"
+                },
+                {
+                    "type": "color",
+                    "id": "fpc_video_title_color",
+                    "label": "MOB Title color",
+                    "default": "#fff"
+                },
+                {
+                    "type": "richtext",
+                    "id": "fpc_video_title",
+                    "label": "Title"
+                },
+                 {
+                    "type": "color",
+                    "id": "fpc_video_desc_color",
+                    "label": "MOB desc color",
+                    "default": "#fff"
+                },
+                {
+                    "type": "richtext",
+                    "id": "fpc_video_desc",
+                    "label": "Desc"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}
+<style>
+</style>

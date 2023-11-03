@@ -1,0 +1,142 @@
+<div class="product_popup">
+    {%- if template !='product.lit-bike-black' and template !='product.lit-bike-pink' and template !='product.lit-bike-beige' and template !='product.lit-bike-beige-blogger' and template !='product.lit-bike-white' and template !='page.lit-bike-white' and template !='page.lit-bike-beige'  and template !='page.lit-bike-beige-blogger' and block.settings.gift_des != blank -%}
+    <div class="fir_pop"> 
+        <div class="image_des">
+            <div class="gift_icon">
+                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/gift-2.png?v=1657181152" alt="">
+            </div>
+            <div class="gift_des">{{ block.settings.gift_des}}</div>
+        </div>
+        <div class="gift_price_des">
+            <div class="gift_price">{{ block.settings.gift_price}}</div>
+            <div class="gift_free">{{ block.settings.gift_price_des}}</div>
+        </div>
+    </div>
+    {%- endif -%}
+    <div class="sec_pop">
+        <div class="charity_image_des">
+            <div class="charity_icon">
+                <img src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/hand-heart-fill.png?v=1657181152"
+                    alt="">
+            </div>
+            <div class="charity_des">{{ block.settings.charity_des}}</div>
+        </div>
+        <div class="gift_price_des">{{ block.settings.charity_des_right}}</div>
+    </div>
+
+</div>
+<style>
+    .product_popup {
+        /* padding-bottom: 32px; */
+/*         border-bottom: 1px solid rgba(208, 208, 208, 0.3000); */
+    }
+
+    .fir_pop,
+    .sec_pop {
+        display: flex;
+        justify-content: space-between;
+        /* cursor: pointer; */
+    }
+
+    .fir_pop {
+        margin-bottom: 8px;
+    }
+
+    .image_des,
+    .gift_price_des {
+        display: flex;
+    }
+
+    .gift_icon,
+    .charity_icon {
+        width: 20px;
+        height: auto;
+    }
+
+    .gift_icon img,
+    .charity_icon img {
+        width: 100%;
+        display: block;
+    }
+
+    .gift_des,
+    .charity_des {
+        padding-left: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #44676F;
+        line-height: 19px;
+        text-decoration: underline;
+    }
+    .charity_des{
+        cursor: pointer;
+    }
+
+    .gift_price {
+        font-size: 14px;
+        color: #999999;
+        line-height: 16px;
+        font-weight:500;
+        text-decoration: line-through;
+    }
+
+    .gift_free {
+        font-size: 14px;
+        font-weight: 600;
+        color: #797979;
+        line-height: 16px;
+        padding-left: 8px;
+    }
+
+    .charity_image_des {
+        display: flex;
+    }
+
+    .gift_price_des {
+        font-size: 14px;
+        font-weight: 600;
+        color: #797979;
+        line-height: 16px;
+        align-items:center;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .product_popup {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        {%- if template contains 'product' -%}
+            .product_popup {
+                padding-bottom: 10px;
+            }
+            {%- else -%}
+             .product_popup {
+                padding-bottom: 43px;
+            } 
+        {%- endif -%}
+        .fir_pop {
+            margin-bottom: 13px;
+        }
+
+        .gift_des,
+        .charity_des {
+            padding-left: 8px;
+            font-size: 14px;
+            line-height: 19px;
+        }
+
+        .gift_free {
+            font-size: 12px;
+            line-height: 14px;
+            padding-left: 8px;
+        }
+
+        .gift_price_des {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+</style>
+<script>
+    
+</script>

@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "1629795908485d4358": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "1631695119735c6fe5": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "calculate-page",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "901b7de4-d5da-42ff-b32f-0bb44a9431bc": {
+      "type": "fb-friendbuy-emailback",
+      "settings": {
+        "success_img_pc": "shopify:\/\/shop_images\/pcsuccess.png",
+        "success_img_mob": "shopify:\/\/shop_images\/msuccess.png",
+        "fail_img_pc": "shopify:\/\/shop_images\/pcfail.png",
+        "fail_img_mob": "shopify:\/\/shop_images\/mfail.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1629795908485d4358",
+    "1631695119735c6fe5",
+    "901b7de4-d5da-42ff-b32f-0bb44a9431bc"
+  ]
+}

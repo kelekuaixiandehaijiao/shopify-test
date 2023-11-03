@@ -1,0 +1,100 @@
+<div class="fb-gifroll-section home-community" id="section-{{ section.id }}"  data-type="gifroll">
+  <div class="fb-gifroll-content fbGifRollSwiper">
+    <div class="fb-gifroll_scroll swiper-wrapper">
+      {%- for block in section.blocks -%}
+        {% assign imgPiker = block.settings.gifroll_img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+        {% assign imgGif = block.settings.gifroll_gif | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+        <div class="fb-gifroll_item js-gifroll-box swiper-slide"  
+            data-srcgif="{{ imgGif }}"
+            data-type="img"
+            data-showgif="false"
+            data-length="{{ forloop.length }}"
+            data-index="{{ forloop.index }}"
+            alt="{{ block.settings.gifroll_gif.alt }}"
+        >
+          <div class="fb-gifroll_imgblock fb-gifroll-imgbackground js-img-box">
+            <img class="Image--lazyLoad Image--fadeIn gifroll-img-block" 
+                data-src="{{ imgPiker }}" 
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                alt="{{ block.settings.gifroll_img.alt }}"
+            >
+            <span class="Image__Loader"></span>
+            <div class="fb-img-boxshowdom js-img-box-showdom">
+                <img 
+                  data-sizes="auto"
+                  data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/play-circle-fill.png?v=1650787107" 
+                  class="js-gifroll-icon-btn Image--lazyLoad" />
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="gifroll-button-prev">
+        <img
+          data-sizes="auto"
+          class="Image--lazyLoad"
+          data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/arrow-left-circle-line.png?v=1650787114" />
+    </div>
+    <div class="gifroll-button-next">
+        <img 
+          data-sizes="auto"
+          class="Image--lazyLoad"
+          data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/arrow-right-circle-line.png?v=1650787110" />
+    </div>
+    <div class="gifroll-swiper-pagination"></div>
+</div>
+</div>
+{% schema %}
+  {
+    "name": "FbGifRoll",
+    "presets": [
+      {
+        "name": "fb-gif-roll",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "color",
+        "id": "gifroll_color",
+        "label": "Background color",
+        "default": "#000"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "gifrollImgBlock",
+        "name": "gifrollImgBlock",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "gifroll_gif",
+            "label": "Gif"
+          },
+          {
+            "type": "image_picker",
+            "id": "gifroll_img",
+            "label": "Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+<style>
+  #section-{{ section.id }} {
+    background-color: {{ section.settings.gifroll_color }};
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
+  @media only screen and (max-width: 768px){
+    #section-{{ section.id }} {
+        padding: 25px 0px 70px 0px;
+    }
+  }
+</style>
+
+

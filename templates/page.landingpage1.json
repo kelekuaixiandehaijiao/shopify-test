@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "1636698059cd5deaef": {
+      "type": "slideshow",
+      "blocks": {
+        "1636698059cd5deaef-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/landingpage1.png",
+            "mobile_image": "shopify:\/\/shop_images\/landingpage3.png",
+            "apply_overlay": true,
+            "content_position": "middleLeft",
+            "subheading": "",
+            "title": "Pay as low as $26\/mo. at 0% APR¹ with Klarna",
+            "button_1_text": "BUY BIKE",
+            "button_1_link": "shopify:\/\/products\/lit-bike",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1636698059cd5deaef-0"
+      ],
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 3,
+        "text_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_background": "#02c0d9"
+      }
+    },
+    "163677476555ad79a3": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "calculate-bike-bottom",
+        "html": ""
+      }
+    },
+    "16367732742a2d1590": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1636698059cd5deaef",
+    "163677476555ad79a3",
+    "16367732742a2d1590"
+  ]
+}

@@ -1,0 +1,249 @@
+{%- assign prboom = section.blocks | where: 'type', 'prboom' | first -%}
+{%- assign fb_boompr_prduct = section.settings.fb_boompr_prduct -%}
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div class="fb_value_prboom {% if template == 'page.lit-bike-white'
+                                or template == 'page.lit-bike-beige' %}prop_diff_pages{% endif %}" id="section-{{ section.id }}">
+
+    <div class="prboom_pc">
+        {%- for block in section.blocks -%}
+            <div class="prboom-box">
+                <div class="prboom_pc_item">
+                    <div class="prboom_imgWrapper">
+                        {% assign imgPiker = block.settings.iconPic | img_url: '1x1' | replace: '_1x1.','_{width}x.'
+                        %}
+                        {% assign imgPikerHover = block.settings.iconHover | img_url: '1x1' | replace: '_1x1.','_{width}x.'
+                        %}
+                        <img class="Image--lazyLoad Image--fadeIn iconPic" data-src="{{ imgPiker }}" data-sizes="auto" data-optimumx="1.2" data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+                        <img class="Image--lazyLoad Image--fadeIn iconHover" data-src="{{ imgPikerHover }}" data-sizes="auto" data-optimumx="1.2" data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+                    </div>
+                    <div class="prboom_title">{{block.settings.prop_title}}</div>
+                    <div class="prboom_des">{{block.settings.prop_des}}</div>
+                    <a data-url="{{section.settings.btn_url}}"
+                        href="javascript:void(0);"
+                        data-keep-biketype="{%- render 'customer-price-control', cpc_product: fb_boompr_prduct, type: 'bikeType' -%}"
+                        class="js-ebike-addtocart js-keep-biketype"
+                    >
+                        <div class="prboom_button {% if template == 'page.lit-bike-white' or template == 'page.lit-bike-beige' or template == 'page.lit-bike-klarna' or template == 'page.lit-bike' or template contains 'page.boom-bike' %}prop_button_spec {% endif %} ">
+                        {{block.settings.prop_button}}
+                        </div>
+                    </a>  
+                </div>
+                <div class="prboom-box-shadown"></div>
+            </div>
+        {%- endfor -%}
+        <div class="prboom-box-mobpadding">
+        1
+        </div>
+    </div>
+    <div class="prboom_button_pc">
+        <div class="prboom_button_pc_box">
+            <a href="javascript:void(0);" data-url="{{section.settings.btn_url}}" 
+               class="prboom_button_one js-ebike-addtocart"
+               data-keep-biketype="{%- render 'customer-price-control', cpc_product: fb_boompr_prduct, type: 'bikeType' -%}"
+            >
+                <span>{{section.settings.btn_txt}}</span>
+            </a>
+            {%- if section.settings.btn_txt_two != blank -%}
+                <a href="javascript:void(0);" data-url="{{section.settings.btn_url_two}}" class="prboom_button_two js-keep-biketype">
+                    <span>{{section.settings.btn_txt_two | default: 'BUY BOOM BIKE'}}</span>
+                </a>
+            {%- endif -%}
+        </div>
+    </div>
+        {%- if section.settings.show_other_style == '1' -%}
+            <div class="prboom_button_mob">
+                <div class="prboom_button_pc_box">
+                    <a href="javascript:void(0);" 
+                        data-url="{{section.settings.btn_url}}" 
+                        data-keep-biketype="{%- render 'customer-price-control', cpc_product: fb_boompr_prduct, type: 'bikeType' -%}"
+                        class="prboom_button_one js-ebike-addtocart"
+                    >
+                        <span>{{section.settings.btn_txt}}</span>
+                    </a>
+                    {%- if section.settings.btn_txt_two != blank -%}
+                        <a href="javascript:void(0);" data-url="{{section.settings.btn_url_two}}" class="prboom_button_two js-keep-biketype">
+                            <span>{{section.settings.btn_txt_two | default: 'BUY BOOM BIKE'}}</span>
+                        </a>
+                    {%- endif -%}
+                </div>
+            </div>
+        {%- else -%}
+    {%- endif -%}
+   
+</div>
+<script type="text/javascript">
+  $(function() {
+
+// var swiper = new Swiper(".prboom_swiper", {
+//     autoplay: {
+//         delay: 3000,
+//         disableOnInteraction: false,
+//     },
+//     observer: true,
+//     observeParents: true,
+//     observeSlideChildren: true,
+// });
+
+    function resizeprboom() {
+      let arr1 = [];
+      $(".prboom_title").each(function(ulIndex, ul) {
+        arr1.push($(ul).height())
+      })
+      let arr1height = Math.max(... arr1)
+      $(".prboom_title").each(function(ulIndex, ul) {
+        $(ul).css("height", arr1height + "px")
+      })
+    }
+    if (!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      resizeprboom()
+    }
+  })
+</script>
+{% schema %}
+  {
+    "name": "Fbprboomwiper",
+    "presets": [
+      {
+        "name": "fb-prboom-swiper",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "product",
+            "id": "fb_boompr_prduct",
+            "label": "product"
+        },
+        {
+            "type": "select",
+            "id": "show_other_style",
+            "label": "Mobile Style",
+            "options": [
+                {
+                    "value": "0",
+                    "label": "Default"
+                },
+              {
+                "value": "1",
+                "label": "1"
+              }
+            ],
+            "default": "0"
+        },
+      {
+        "type": "color",
+        "id": "swiper_background",
+        "label": "Background color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#1c1b1b"
+      },
+      {
+        "type": "color",
+        "id": "des_color",
+        "label": "Des Color",
+        "default": "#333"
+      },
+      {
+        "type": "color",
+        "id": "prop_btn_txtcolor",
+        "label": "Button Text Color",
+        "default": "#1C1B1B"
+      }, {
+        "type": "color_background",
+        "id": "prop_btn_background",
+        "label": "Button Background"
+      }, {
+        "type": "text",
+        "id": "lit_bike_background",
+        "label": "LitBike Page Background"
+      }, {
+        "type": "text",
+        "id": "btn_txt",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button URL"
+      },{
+        "type": "text",
+        "id": "btn_txt_two",
+        "label": "Button Two Text"
+      }, {
+        "type": "url",
+        "id": "btn_url_two",
+        "label": "Button Two URL"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "prboomSwiper",
+        "name": "prboom Swiper",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "iconPic",
+            "label": "Swiper Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "iconHover",
+            "label": "Swiper Hover Image"
+          },
+          {
+            "type": "text",
+            "id": "prop_title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "prop_des",
+            "label": "Desciption"
+          }, {
+            "type": "text",
+            "id": "prop_button",
+            "label": "Button"
+          }, {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button URL"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+<style>
+    {%- if section.settings.show_other_style == '1' -%}
+        @media only screen and (max-width: 768px) {
+            .prboom-box{
+                background: #fff!important;
+                height: 240px!important;
+                color: #000!important;
+            }
+            .prboom_pc_item{
+                padding: 24px!important;
+            }
+            .prboom_pc_item{
+                color: #000!important;
+            }
+            .prboom_pc_item a{
+                display: none;
+            }
+            .prboom_title{
+                letter-spacing: 0px!important;
+            }
+            .prboom_des{
+                margin-top: 12px!important;
+            }
+            .prboom_des p{
+                margin-top: 0px!important;
+            }
+        }
+    {%- endif -%}
+</style>

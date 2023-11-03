@@ -1,0 +1,57 @@
+<div  id="section-{{ section.id }}" class="fb-boom-cushion utils-boom-section">
+    <div class="fb-cushion-back-fade">
+    </div>
+    <div class="fb-cushion-card utils-boom-card" >
+    </div>
+</div>
+<style>
+    #section-{{ section.id }} .fb-cushion-card {
+        background: {{ section.settings.boom_cushion_backtext }}
+    }
+</style>
+{% schema %}
+ {
+    "name": "FbBoomCushion",
+    "presets": [
+        {
+            "name": "fb-boom-cushion",
+            "category": "Fb Sections",
+            "blocks": []
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "section one"
+        },
+        {
+            "type": "text",
+            "id": "boom_cushion_backtext",
+            "label": "background color",
+            "default": "linear-gradient(213deg, #AF9BF2 0%, #99A0FF 70%, #6E70A8 100%);"
+        },
+        {
+            "type": "richtext",
+            "id": "boom_cushion_title",
+            "label": "title",
+            "default": "<p>SPACE SAVING</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "boom_cushion_desc",
+            "label": "desc",
+            "default": "<p>Earn rewards, points, and fame by competing against friends in freebeat fitness challenges</p>"
+        },
+        {
+            "type": "image_picker",
+            "id": "boom_cushion_pc_img",
+            "label": "Image Pc"
+        },
+        {
+            "type": "image_picker",
+            "id": "boom_cushion_mob_img",
+            "label": "Image Mobile"
+        }
+    ]
+}
+{% endschema %}

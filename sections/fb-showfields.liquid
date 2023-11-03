@@ -1,0 +1,419 @@
+{%- assign showfieldSwiper = section.blocks | where: 'type', 'showfieldSwiper' | first -%}
+<div class="fb_showfields_swiper" id="section-{{ section.id }}">
+    <div class="showfields_left_wrapper">
+        <div class="showfields_title">{{section.settings.showfields_title}}</div>
+        <div class="showfields_title_des">{{section.settings.showfields_title_des}}</div>
+        <div class="left_subway_content">
+            <div class="left_subway_left">
+                <div class="subway_title_1">{{section.settings.subway_title_1}}</div>
+                <div class="subway_time_des">{{section.settings.time}}</div>
+                <div class="subway_title_2">{{section.settings.subway_title_2}}</div>
+                <div class="subway_location_des">{{section.settings.location}}</div>
+                <div class="subway_title_3">{{section.settings.subway_title_3}}</div>
+                <div class="subway_circle_wrapper">
+                    <div class="subway_circle_item">B</div>
+                    <div class="subway_circle_item">D</div>
+                    <div class="subway_circle_item">F</div>
+                    <div class="subway_circle_item">M</div>
+                    <div class="subway_circle_item">6</div>
+                </div>
+                <a href="{{section.settings.directions}}" target="_blank"><div class="directions">{{section.settings.get_directions}}</div></a>
+            </div>
+            <div class="left_subway_right">
+                {% assign imgPiker = section.settings.map | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+                <img class="Image--lazyLoad Image--fadeIn map" data-src="{{ imgPiker }}" data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]" data-sizes="auto">
+            </div>
+            <a href="{{section.settings.directions}}" target="_blank"><div class="directions_mb">{{section.settings.get_directions}}</div></a>
+        </div>
+
+    </div>
+    <div class="showfields_right_wrapper">
+        <div class="swiper showfileds_swiper">
+            <div class="swiper-wrapper">
+                {%- for block in section.blocks -%}
+                <div class="swiper-slide">
+                    <div class="showfields_imgWrapper">
+                        {% assign imgPiker = block.settings.swiperPic | img_url: '1x1' | replace: '_1x1.','_{width}x.'
+                        %}
+                        <img class="Image--lazyLoad Image--fadeIn swiperPic" data-src="{{ imgPiker }}" data-sizes="auto"
+                            data-optimumx="1.2" data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+                    </div>
+                </div>
+                {%- endfor -%}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .fb_showfields_swiper{
+        display:flex;
+        justify-content:space-between;
+        padding: 160px 200px 0;
+        text-align: left;
+        background-color: {{section.settings.swiper_background}};
+    }
+    .showfields_left_wrapper{
+        padding:92px 120px 92px 0;
+    }
+    .showfields_title{
+        font-size: 36px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 44px;
+    }
+    .showfields_title_des{
+        font-size: 20px;
+        font-weight: 400;
+        color: #1C1B1B;
+        line-height: 26px;
+        padding: 20px 0 48px;
+    }
+    .left_subway_content{
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-end;
+    }
+    .subway_title_1,.subway_title_2,.subway_title_3{
+        font-size: 20px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 20px;
+    }
+    .subway_time_des,.subway_location_des{
+        font-size: 20px;
+        font-weight: 400;
+        color: #1C1B1B;
+        line-height: 26px;
+        padding: 10px 0 30px;
+    }
+    .subway_circle_wrapper{
+        margin:12px 0 40px;
+        display: flex;
+        justify-content:space-between;
+    }
+    .subway_circle_item{
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        background-color: #F06B2F;
+        text-align: center;
+        line-height: 36px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+    .subway_circle_wrapper .subway_circle_item:nth-child(4) {
+        background-color: #EB8150;
+    }
+    .subway_circle_wrapper .subway_circle_item:last-child {
+        background-color: #3D9243;
+    }
+    .directions_mb{
+        display:none;
+    }
+    .directions{
+        font-size: 18px;
+        font-weight: 600;
+        color: #02C0D9;
+        line-height: 20px;
+        border-bottom: 2px solid #02c0d9;
+        width: 160px;
+    }
+    .left_subway_left{
+        padding-right: 50px;
+        width: 50%;
+    }
+    .left_subway_right{
+        width:50%;
+        min-width: 240px;
+    }
+    .map{
+        display:block;
+        width:100%;
+    }
+    .showfields_right_wrapper{
+        width:50%;
+    }
+    .swiperPic{
+        display:block;
+        width:100%;
+        height: auto;
+    }
+    .fb_showfields_swiper .swiper-pagination .swiper-pagination-bullet-active{
+        background: #fff;
+   }
+   .fb_showfields_swiper .swiper-pagination-bullet{
+        background: rgba(255,255,255,0.5);
+   }
+    @media screen and (min-width: 1550px){
+        .subway_circle_wrapper{
+            max-width:250px
+        }
+        .subway_time_des,.subway_location_des{
+            width:230px;
+        }
+    }
+    @media only screen and (min-width: 1025px) and (max-width: 1550px) {
+        .fb_showfields_swiper{
+            padding:129px 110px 0;
+        }
+        .showfields_left_wrapper{
+            padding:74px 60px 74px 0;
+        }
+        .showfields_title{
+            font-size: 29px;
+            line-height: 36px;
+        }
+        .showfields_title_des{
+            font-size: 16px;
+            line-height: 21px;
+            padding: 16px 0 39px;
+        }
+        .subway_title_1,.subway_title_2,.subway_title_3{
+            font-size: 16px;
+            line-height: 16px;
+        }
+        .subway_time_des,.subway_location_des{
+            font-size:16px;
+            line-height: 21px;
+            padding: 8px 0 24px;
+        }
+        .subway_circle_wrapper{
+            margin:10px 0 32px;
+            max-width: 200px;
+        }
+        .subway_circle_item{
+            width: 29px;
+            height: 29px;
+            line-height: 29px;
+            font-size: 16px;
+        }
+        .directions{
+            font-size: 15px;
+            line-height: 16px;
+            width: 134px;
+        }
+        .left_subway_right{
+            max-width:260px;
+            min-width: 180px;
+        }
+    }
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        .fb_showfields_swiper{
+            padding:85px 70px 0;
+        }
+        .showfields_left_wrapper{
+            padding:24px 40px 24px 0;
+        }
+        .showfields_title{
+            font-size: 19px;
+            line-height: 23px;
+        }
+        .showfields_title_des{
+            font-size: 12px;
+            line-height: 14px;
+            padding: 11px 0 26px;
+        }
+        .subway_title_1,.subway_title_2,.subway_title_3{
+            font-size: 14px;
+            line-height: 16px;
+        }
+        .subway_time_des,.subway_location_des{
+            font-size:12px;
+            line-height: 14px;
+            padding: 8px 0 24px;
+        }
+        .subway_circle_wrapper{
+            margin:5px 0 16px;
+        }
+        .subway_circle_item{
+            width: 19px;
+            height: 19px;
+            line-height: 19px;
+            font-size: 12px;
+        }
+        .directions{
+            font-size: 12px;
+            line-height: 14px;
+            width:107px;
+        }
+        .left_subway_right{
+            min-width: 180px;
+        }
+    }
+
+    @media only screen and (max-width: 768px){
+        .fb_showfields_swiper{
+            display:flex;
+            flex-direction: column;
+            justify-content:space-between;
+            padding:80px 0 26px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .showfields_left_wrapper{
+            padding: 0 25px;
+        }
+        .showfields_title{
+            font-size: 22px;
+            line-height: 22px;
+        }
+        .showfields_title_des{
+            font-size: 14px;
+            line-height: 20px;
+            padding: 18px 0 26px;
+        }
+        .left_subway_content{
+            display:flex;
+            justify-content:center;
+            flex-direction: column;
+            align-items:center;
+        }
+        .subway_title_1,.subway_title_2,.subway_title_3{
+            font-size: 14px;
+            line-height: 14px;
+        }
+        .subway_time_des,.subway_location_des{
+            font-size: 14px;
+            line-height: 14px;
+            padding: 10px 0 20px;
+        }
+        .subway_circle_wrapper{
+            width:214px;
+            margin:10px auto 18px;
+            display: flex;
+            justify-content:space-between;
+        }
+        .subway_circle_item{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+        }
+        .directions{
+            display:none;
+        }
+        .directions_mb{
+            display: block;
+            font-size: 14px;
+            line-height: 14px;
+            color: #02C0D9;
+            margin: 15px auto 38px;
+            border-bottom: 1px solid #02c0d9;
+            padding-bottom: 1px;
+        }
+        .left_subway_right{
+            width:214px;
+        }
+        .showfields_right_wrapper{
+            width:100%;
+        }
+        .left_subway_left{
+            padding: 0;
+            width:100%;
+        }
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        var swiper = new Swiper(".showfileds_swiper", {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+        });
+    })
+</script>
+{% schema %}
+{
+    "name": "FbShowfieldSwiper",
+    "presets": [
+        {
+            "name": "fb-showfields-swiper",
+            "category": "Fb Sections",
+            "blocks": []
+        }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "swiper_background",
+            "label": "Background color",
+            "default": "#fff"
+        },
+        {
+            "type": "image_picker",
+            "id": "map",
+            "label": "Map Image"
+        },
+        {
+            "type": "text",
+            "id": "showfields_title",
+            "label": "Showfields Title"
+        },
+        {
+            "type": "text",
+            "id": "showfields_title_des",
+            "label": "Showfields Title Des"
+        },
+        {
+            "type": "text",
+            "id": "subway_title_1",
+            "label": "Subway Title 1"
+        },
+        {
+            "type": "richtext",
+            "id": "time",
+            "label": "Time"
+        },
+        {
+            "type": "text",
+            "id": "subway_title_2",
+            "label": "Subway Title 2"
+        },
+        {
+            "type": "richtext",
+            "id": "location",
+            "label": "Location"
+        },
+        {
+            "type": "text",
+            "id": "subway_title_3",
+            "label": "Subway Title 3"
+        },
+        {
+            "type": "text",
+            "id": "get_directions",
+            "label": "Get Directions"
+        },
+        {
+            "type": "url",
+            "id": "directions",
+            "label": "Directions"
+        }
+        
+    ],
+    "blocks": [
+        {
+            "type": "showfieldSwiper",
+            "name": "ShowField Swiper",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "swiperPic",
+                    "label": "Swiper Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

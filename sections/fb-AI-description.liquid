@@ -1,0 +1,77 @@
+{% comment %} <div class="fb-AI-description" id="section-{{ section.id }}">
+    <div id="AI-text">
+        <div class="AI-title">{{section.settings.title}}</div>
+        <div class="AI-des">{{section.settings.des}}</div>
+    </div>
+</div>
+<style>
+    .fb-AI-description {
+        background-color: #fff;
+        font-family: Montserrat-Regular, Montserrat;
+    }
+
+    #AI-text {
+        margin: 0 auto;
+        text-align: center;
+        color: #1D1D1F;
+        width: 732px;
+    }
+
+    #AI-text .AI-title {
+        font-size: 60px;
+        font-weight: bold;
+        line-height: 60px;
+    }
+
+    #AI-text .AI-des {
+        font-size: 18px;
+        font-weight: 400;
+        color: #000000;
+        line-height: 24px;
+        padding: 18px 0 137px;
+    }
+
+    @media screen and (max-width:768px) {
+
+        #AI-text {
+            padding: 0 15px 30px;
+            width: auto;
+            margin: 0;
+        }
+
+        #AI-text .AI-title {
+            font-size: 24px;
+            line-height: 24px;
+        }
+
+        #AI-text .AI-des {
+            font-size: 16px;
+            line-height: 22px;
+            padding: 14px 0 12px;
+        }
+    }
+</style>
+{% schema %}
+{
+  "name": "FbAIDescription",
+  "presets": [
+  {
+    "name": "fb-AI-description",
+    "category": "Fb Sections",
+    "blocks": []
+  }
+],
+"settings": [
+    {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+    },
+    {
+        "type": "richtext",
+        "id": "des",
+        "label": "Description"
+    }
+]
+}
+{% endschema %} {% endcomment %}

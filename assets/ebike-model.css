@@ -1,0 +1,952 @@
+/* header nav start */
+.ebike-ebl-color{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 顶部颜色的切换 */
+
+.ebike-eb-right{
+    height: 100%;
+}
+.ebike-ebr-1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.fb-ebike-nav-bar{
+    background: rgba(255,255,255,0.9);
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: height .3s;
+}
+/* 同步header */
+.ebike-choose-imgdefalut-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ebike-choose-imgdefalut-top .ebike-choose-imgcircle{
+    width: 100%;
+    height: auto;
+}
+
+.ebike-choose-imgdefalut-top.ebike-choose-item-checked .ebike-choose-icon-top{
+    display: inline-block;
+}
+@media screen and (min-width: 1211px) {
+    .fb-ebike-nav-bar.ebike_nav_show{
+        height: 70px;
+        border-bottom: 0.5px solid #e6e6e6;
+        overflow: unset!important;
+    }
+    .ebike-ebl-nav-hide{
+        display: none;
+    }
+    .ebike-eb-content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 50px 0px 50px;
+    }
+    .ebike-eb-left{
+        min-width: 50%;
+    }
+    .ebike-eb-left .ebike-ebl-1{
+        min-width: 90px;
+    }
+    .ebike-eb-left .ebike-ebl-1 .ebike-ebl-1-1 {
+        min-width: 90px;
+    }
+    .ebike-eb-left .ebike-ebl-1 .ebike-ebl-1-2{
+        min-width: 90px;
+    }
+    .ebike-eb-left .ebike-ebl-2{
+        min-width: 142px;
+    }
+    .ebike-eb-left .ebike-ebl-2 .ebike-ebl-2-1{
+        min-width: 142px;
+    }
+    .ebike-choose-imgdefalut-top.ebike-choose-item-checked{
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 25px;
+    }
+    .ebike-eb-left, .ebike-ebr-flex{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+    }
+    .ebike-ebl-1-1{
+        width: 100%;
+        font-size: 22px;
+        height: 28px;
+        line-height: 28px;
+        text-align: left;
+        color: #333;
+        font-weight: 600;
+        /* margin-bottom: 6px; */
+    }
+    .ebike-ebl-1-2{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .ebike-ebl-1-2 li{
+        flex-shrink: 0;
+    }
+    .ebike-choose-imgdefalut-top{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 20px;
+        margin-right: 12px;
+        cursor: pointer;
+    }
+    .ebike-choose-icon-top{
+        display: none;
+        width: 9px;
+        height: auto;
+        vertical-align: middle;
+    }
+    .ebike-ebl-2-1 a{
+        display: inline-block;
+        font-size: 16px;
+        line-height: 16px;
+        cursor: pointer; 
+        margin: 0 18px;
+    }
+    .ebike-ebl-2-1 a.ebike-eblt-select{
+        font-size: 16px;
+        color: #333;
+        font-weight: 700;
+    }
+    .ebike-eb-right{
+        min-width: 402px;
+        height: 48px;
+    }
+    .ebike-ebr-1{
+        height: 48px;
+    }
+    .ebike-eb-right .ebike-ebr-1{
+        min-width: 240px;
+        margin-right: 30px;
+    }
+    .ebike-eb-right .ebike-ebr-2{
+        min-width: 43px;
+    }
+    .ebike-ebr-1-1{
+        width: 100%;
+        text-align: right;
+        line-height: 20px;
+    }
+    .ebike-ebr-1-1 .ab-current{
+        font-weight: 700;
+        font-size: 20px;
+        color: #333;
+        margin-left: 10px;
+    }
+    .ebike-ebr-1-1 .ab-origin{
+        font-weight: 500;
+        font-size: 20px;
+        color: #888888;
+    }
+    .ebike-ebr-1-2 {
+        line-height: 20px;
+        width: 100%;
+        text-align: right;
+    }
+    .ebike-ebr-1-2  span{
+        text-align: right;
+        font-size: 16px;
+        font-weight: 400;
+        color: #333;
+    }
+    .ebike-ebr-2 button{
+        padding: 0px 43px;
+        line-height: 48px;
+        height: 48px;
+        text-align: center;
+        background-color: #1c1b1b;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+@media screen and (max-width: 1210px) {
+    .fb-ebike-nav-bar.ebike_nav_show{
+        height: 40px;
+        border-bottom: 0.5px solid #e6e6e6;
+        overflow: unset!important;
+    }
+    /* .AnnouncementBar.ebike_nav_show{
+        height: 0;
+        overflow: hidden;
+        transition: height .3s ease-out;   
+    } */
+    /* .AnnouncementBar{
+        transition: height .2s;
+        opacity: 1;
+    }
+    #shopify-section-header{
+        transition: all 0.2s ease-in-out;
+    } */
+    .ebike-eb-content{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .ebike-eb-left{
+        height: auto;
+        width: 100%;
+    }
+    .ebike-eb-right{
+        display: none;
+    }
+    .ebike-ebl-nav-hide{
+        display: inline-block;
+    }
+    .ebike-ebr-flex{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 40px;
+        margin-top: -7px;
+    }
+    .ebike-eb-left .ebike-ebl-1{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        justify-content: space-between;
+        border-bottom: 0.5px solid #ccc;
+    }
+    .ebike-ebl-1{
+        padding: 0px 18px;
+        width: 100%;
+    }
+    .ebike-ebl-2{
+        width: 100%;
+        background-color: rgba(255,255,255,0.9);
+    }
+    .ebike-ebl-2-1{
+        width: 100%;
+    }
+    .ebike-ebl-2-1 a{
+        display: block;
+        width: 100%;
+        border-bottom: 0.5px solid #e6e6e6;
+        line-height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 18px;
+    }
+    .ebike-ebl-1-1{
+        /* line-height: 38.5px; */
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        text-align: left;
+        cursor: pointer;
+    }
+    /* .ebike-eb-left .ebike-ebl-1 .ebike-ebl-1-1 {
+        min-width: 90px;
+    }
+    .ebike-eb-left .ebike-ebl-1 .ebike-ebl-1-2{
+        min-width: 90px;
+    }
+    .ebike-eb-left .ebike-ebl-2{
+        min-width: 142px;
+    }
+    .ebike-eb-left .ebike-ebl-2 .ebike-ebl-2-1{
+        min-width: 142px;
+    } */
+    .ebike-ebl-1-2{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .ebike-ebl-1-2 li{
+        flex-shrink: 0;
+    }
+    .ebike-choose-imgdefalut-top{
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        border-radius: 16px;
+        margin-right: 12px;
+        cursor: pointer;
+    }
+    .ebike-choose-imgdefalut-top.ebike-choose-item-checked{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 20px;
+    }
+    .ebike-ebl-nav-icon-img{
+        vertical-align: middle;
+        transform: rotate(180deg);
+        margin-left: 6px;
+        transition: all .4s;
+        width: 10px;
+        height: auto;
+    }
+    .ebike-ebl-nav-icon-img.navi-open{
+        transform: rotate(0deg);
+    }
+    .ebike-choose-icon-top{
+        display: none;
+        width: 8px;
+        height: auto;
+        vertical-align: middle;
+    }
+    .ebike-ebl-2-1 a.ebike-eblt-select{
+        color: #333;
+        font-weight: 700;
+    }
+    .ebike-eb-right{
+        min-width: 402px;
+        height: 48px;
+    }
+    .ebike-ebr-1{
+        height: 40px;
+        margin-right: 8px;
+    }
+    .ebike-eb-right .ebike-ebr-1{
+        min-width: 240px;
+        margin-right: 30px;
+    }
+    .ebike-eb-right .ebike-ebr-2{
+        min-width: 43px;
+    }
+    .ebike-ebr-2{
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ebike-ebr-1-1{
+        width: 100%;
+        text-align: right;
+        line-height: 12px;
+    }
+    .ebike-ebr-1-1 .ab-current{
+        font-weight: 700;
+        font-size: 12px;
+        color: #333;
+    }
+    .ebike-ebr-1-1 .ab-origin{
+        font-weight: 500;
+        font-size: 12px;
+        color: #888888;
+        /* text-decoration: line-through; */
+    }
+
+    .ebike-ebr-1-2 {
+        line-height: 10px;
+    }
+    .ebike-ebr-1-2  span{
+        text-align: right;
+        font-size: 10px;
+        font-weight: 400;
+        color: #333;
+    }
+    .ebike-ebr-2 button{
+        /* padding: 0px 43px; */
+        width: 83px;
+        line-height: 24px;
+        height: 24px;
+        text-align: center;
+        background-color: #1c1b1b;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+    }
+    .fb_ebike_top_frame{
+        display: none;
+    }
+}
+.ebike-ebr-1-1 .ab-origin{
+    text-decoration: line-through;
+}
+/* header nav end */
+
+/* Break the mold of traditional ebike start */
+.ebike-break-traditional{
+    width: 100%;
+    background: #E9EDF3;;
+}
+.ebtr-100-width{
+    width: 100%;
+}
+.ebtr-title{
+    width: 100%;
+    text-align: center;
+}
+.ebtr-price-box{
+    width: 100%; 
+    display: flex;
+    justify-content: center;      
+}
+.ebtr-price-item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+@media screen and (min-width: 769px) {
+    .ebtr-price-box{
+        align-items: center;     
+    }
+    .ebike-break-traditional{
+        padding-top: 80px;
+    }
+    .ebtr-title p, .ebtr-title h2{
+        font-size: 40px;
+        font-weight: 800;
+        color: #121212;
+        line-height: 40px;
+    }
+    .ebtr-sub-title{
+        text-align: center;
+        width: 930px;
+        margin: 0 auto;
+        padding-top: 16px;
+    }
+    .ebtr-sub-title p {
+        font-size: 16px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 16px;
+    }
+    .ebtr-bottom{
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(90deg, rgba(18,18,18,0.88) 0%, #121212 100%);
+        /* min-height: 120px; */
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+    .ebtr-bottom-title{
+        width: 100%;
+        line-height: 40px;
+    }
+    .ebtr-bottom-title .span1{
+        font-size: 40px;
+        font-weight: bold;
+        color: #FFFFFF;
+        line-height: 40px;
+        margin-right: 18px;
+    }
+    .ebtr-bottom-title .span2{
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 40px;
+        letter-spacing: 1px;
+        background: linear-gradient(45deg, #2FDF13 0%, #B0FF4A 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .ebtr-bottom-desc{
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: 14px;
+        margin-top: 14px;
+    }
+    .ebtr-price-box{
+        margin-top: 40px;
+    }
+    .ebtr-price-imgitem{
+        width: 36px;
+        height: 36px;
+        margin: 0px 52px;
+    }
+    .ebtr-price-imgitem img{
+        width: 36px;
+        height: 36px;
+    }
+    .ebtr-price-item{
+        min-width: 141px;
+        text-align: center;
+    }
+    .ebtr-price-box .item-width-1{
+        width: 161px;
+    }
+    .ebtr-price-box .item-width-2{
+        width: 129px;
+    }
+    .ebtr-price-box .item-width-3{
+        width: 219px;
+    }
+
+    .ebtr-price-item-title{
+        font-size: 40px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 48px;
+    }
+    .ebtr-price-item-desc{
+        margin-top: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #000000;
+        line-height: 20px;
+        text-align: center;
+    }
+    .ebtr-price-equel{
+        margin-top: 52px;
+        width: 100%;
+        text-align: center;
+        line-height: 48px;
+        height: 48px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+  
+    .ebtr-price-equel img{
+        width: 48px;
+        height: 48px;
+    }
+    .ebtr-price-equel-img{
+        width: 528px;
+        margin: 0 auto;
+       
+        height: 332px;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+    .ebtr-price-equel-img img{
+        width: auto;
+        height: 332px;
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .ebtr-price-box{
+        align-items: flex-start;     
+    }
+    .ebtr-price-item{
+        justify-content: flex-start;
+    }
+    .ebike-break-traditional{
+        padding-top: 60px;
+    }
+    .ebtr-title{
+       padding: 0px 40px;
+       text-align: center;
+    }
+    .ebtr-title p, .ebtr-title h2{
+        font-size: 24px;
+        font-weight: 800;
+        color: #121212;
+        line-height: 28px;
+    }
+    .ebtr-sub-title{
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px 24px 0px 24px;
+    }
+    .ebtr-sub-title p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 22px;
+    }
+    .ebtr-bottom{
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(90deg, rgba(18,18,18,0.88) 0%, #121212 100%);
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+    .ebtr-bottom-title{
+        width: 100%;
+        line-height: 24px;
+    }
+    .ebtr-bottom-title .span1{
+        font-size: 24px;
+        font-weight: bold;
+        color: #FFFFFF;
+        line-height: 24px;
+        margin-right: 16px;
+    }
+    .ebtr-bottom-title .span2{
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 24px;
+        letter-spacing: 1px;
+        background: linear-gradient(45deg, #2FDF13 0%, #B0FF4A 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .ebtr-bottom-desc{
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: 18px;
+        padding-top: 12px;
+        max-width: 315px;
+        margin: 0 auto;
+    }
+    .ebtr-price-box{
+        margin-top: 34px;
+    }
+    .ebtr-price-imgitem{
+        width: 20px;
+        height: 20px;
+    }
+    .ebtr-price-imgitem img{
+        width: 20px;
+        height: 20px;
+    }
+    .ebtr-price-item{
+        text-align: center;
+    }
+    .ebtr-price-box .item-width-1{
+        width: 102px;
+    }
+    .ebtr-price-box .item-width-2{
+        width: 102px;
+    }
+    .ebtr-price-box .item-width-3{
+        width: 102px;
+    }
+    .ebtr-price-item-title{
+        font-size: 20px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 20px;
+    }
+    .ebtr-price-item-desc{
+        margin-top: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #000000;
+        line-height: 16px;
+        text-align: center;
+    }
+    .ebtr-price-equel{
+        margin-top: 25px;
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+  
+    .ebtr-price-equel img{
+        width: 30px;
+        height: 30px;
+    }
+    .ebtr-price-equel-img{
+        min-width: 368px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .ebtr-price-equel-img img{
+        width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+}
+/* Break the mold of traditional ebike end */
+/* Break the mold of traditional ebike start */
+
+.ebike-ride-companion p, .ebike-break-traditional p{
+    margin: 0;
+    padding: 0;
+}
+.ebike-ride-companion{
+    /* height: 100vh; */
+    width: 100%;
+    /* position: relative; */
+}
+.ride-companion-content{
+    width: 100%;
+    height: 100%;
+}
+.fb-ride-companion-first {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ride-companion-videolist, .ride-companion-item, .ride-companion-item-video{
+    width: 100%;
+    height: 100%;
+}
+.ride-companion-item{
+    position: relative;
+}
+.ride-companion-item-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (min-width: 1211px) {
+    .ride-ct-big,.ride-small-content{
+        width: 1200px;
+    }
+    .ride-ct-small{
+        right: 0px;
+    }
+}
+@media screen and (min-width: 770px) and (max-width: 1210px){
+    .ride-ct-big,.ride-small-content, .ebtr-sub-title{
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .ride-ct-small{
+        right: 10px;
+    }
+}
+.ride-companion-text{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+@media screen and (min-width: 769px) {
+    .ride-ct-big {
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        padding-top: 160px;
+    }
+    .ride-ct-big .ride-span-big1{
+        max-width: 620px;
+        text-align: left;
+    }
+    .ride-ct-big .ride-span-big1 p{
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 40px;
+    }
+    .ride-ct-big .ride-span-big2{
+        margin-top: 16px;
+        max-width: 620px;
+        text-align: left;
+    }
+    .ride-ct-big .ride-span-big2 p{
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+    .ride-ct-small{
+        position: absolute;
+        bottom: 248px;
+    }
+    .ride-ct-small .ride-span1, .ride-ct-small .ride-span2{
+        text-align: right;
+    }
+    .ride-ct-small .ride-span2{
+        margin-top: 16px;
+        max-width: 586px;
+    }
+    .ride-ct-small .ride-span1 p{
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 30px;
+    }
+    .ride-ct-small .ride-span2 p{
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+    .ride-small-content{
+        position: absolute;
+        bottom: 46px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 3;
+    }
+    .ride-samll-mob{
+        display: none;
+    }
+    .ride-small-videolist{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .ride-small-item{
+        width: 214px;
+        background-color: transparent;
+        margin-left: 16px;
+        cursor: pointer;
+    }
+
+    .ride-small-img{
+        width: 100%;
+        height: 128px;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .ride-small-img-model{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .ride-small-item.ride-video-select .ride-small-img{
+        border: 4px solid transparent;
+        background-image: linear-gradient(#fff, #fff),
+        linear-gradient(319deg,
+        rgba(176, 255, 74, 1),
+            rgba(47, 223, 19, 1));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+    }
+    .ride-small-item.ride-video-select .ride-small-img-model{
+        display: none;
+    }
+    .ride-small-img img{
+        width: 100%;
+        height: 100%;
+    }
+    .ride-small-text{
+        width: 100%;
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(249, 249, 249, 0.5);
+        line-height: 18px;
+        text-align: center;
+    }
+    .ride-small-item.ride-video-select .ride-small-text{
+        background: linear-gradient(45deg, #2FDF13 0%, #B0FF4A 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+}
+/* Break the mold of traditional ebike end */
+@media screen and (max-width: 768px) {
+    .ride-ct-big {
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        max-width: 295px;
+        padding-top: 28%;
+    }
+    .ride-ct-big .ride-span-big1{
+        text-align: center;
+    }
+    .ride-ct-big .ride-span-big1 p{
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 36px;
+    }
+    .ride-ct-big .ride-span-big2{
+        margin-top: 14px;
+        text-align: center;
+    }
+    .ride-ct-big .ride-span-big2 p{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+    .ride-ct-small{
+        position: absolute;
+        bottom: 148px;
+    }
+    .ride-ct-small .ride-span1, .ride-ct-small .ride-span2{
+        text-align: center;
+    }
+    .ride-ct-small .ride-span2{
+        margin-top: 14px;
+        max-width: 100%;
+    }
+    .ride-ct-small .ride-span1 p{
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 24px;
+    }
+    .ride-ct-small .ride-span2 p{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+    .ride-small-content{
+        display: none;
+    }
+    .ride-samll-mob{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        right: 0;;
+        z-index: 3;
+        padding: 0px 24px;
+    }
+    .ride-small-icon {
+        width: 18px;
+        min-height: 68px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .ride-small-mobimg{
+        min-width: 64px;
+    }
+    .ride-small-mob-item{
+        display: none;
+    }
+    .ride-small-mob-item:first-child{
+        display: block;
+    }
+    .ride-small-mob-img{
+        height: 40px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .ride-small-mob-img img {
+        width: auto;
+        height: 40px;
+        display: inline-block;
+    }
+    .ride-small-mob-item .ride-small-text{
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        background: linear-gradient(45deg, #2FDF13 0%, #B0FF4A 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .ride-small-icon.swiper-button-disabled{
+        visibility: hidden;
+    }
+}
+/* .fb-ride-companion-section{
+    height: 100vh;
+} */
+.js-ebike-eblt-abox, .ebike-ebl-nav-hide{
+    visibility: hidden;
+}

@@ -1,0 +1,747 @@
+a {
+    text-decoration: none;
+  }
+  img{
+    image-rendering:-moz-crisp-edges;
+    image-rendering:-o-crisp-edges;
+    image-rendering:-webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode:nearest-neighbor;
+  }
+  .introduceBikes {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+  }
+  .coverWrapper {
+    width: 50%;
+    min-height:768px;
+    margin-right: 24px;
+  }
+  .coverImg {
+    position: relative;
+  }
+  .coverImg img {
+    display: block;
+    min-height: 768px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .coverDes {
+    position: absolute;
+    bottom: 107px;
+    left: 60px;
+    right: 70px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 42px;
+  }
+  .coverCta {
+    position: absolute;
+    bottom: 42px;
+    left: 60px;
+    height: 38px;
+    width: 180px;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .coverCta div {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 14px;
+    letter-spacing: 1px;
+  }
+  .intoduce-bikes-products-pc {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .introduce-bikes-box, .introduce-bikes-box2{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    min-height:330px;
+    background: #fff;
+    box-shadow: 0px 4px 10px 4px rgba(223, 223, 223, 0.1);
+  }
+  .introduce-bikes-left {
+    position: relative;
+    width: 50%;
+  }
+  .label {
+    position: absolute;
+    width: 96px;
+    height: 18px;
+    top: 12px;
+    left: 0px;
+  }
+  .label img {
+    display: block;
+    width: 100%;
+  }
+  
+  .introduce-bikes-box .swiper{
+    margin: 0;
+  }
+  #introduceBikesWrapper .swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: space-between !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .bikeImg {
+    width: 88%;
+    height: 83%;
+    margin: 40px 0 10px 0px;
+  }
+  .bikeImg img {
+    width: 100%;
+    height: auto;
+  }
+  .introduce-bikes-right {
+    position: relative;
+    text-align: left;
+  }
+  .introduce_bikes_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 28px;
+    /* padding: 52px 0 24px; */
+  }
+  .introduce_bikes_title_sub {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #666666;
+    margin-bottom: 16px!important;
+  }
+  .introduce_bikes_desc1 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 12px;
+    margin-top: 40px;
+  }
+  
+  .introduce-bikes-right .introduce_bikes_proprice {
+    display: flex;
+    align-items: center;
+    /* padding-top: 6px; */
+    margin-top: -20px;
+  }
+  .introduce-bikes-right .intoduce_bikes_proprice_price{
+    font-size: 32px;
+    font-weight: bold;
+    color: #02c0d9;
+    line-height: 35px;
+    letter-spacing: 1px;
+    padding-right: 5px;
+  }
+  .introduce_bikes_discount_amount {
+    font-size: 12px;
+    font-weight: 500;
+    color: #02c0d9;
+    line-height: 16px;
+  }
+  .introduce_bikes_discount_price {
+    font-size: 12px;
+    font-weight: 400;
+    color: #888b93;
+    line-height: 16px;
+    text-decoration: line-through;
+  }
+  .line {
+    width: 90%;
+    height: 11px;
+    border-bottom: 1px solid #eee;
+  }
+  .introduce_bikes_stage_desc {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 14px;
+    padding: 12px 0 0px;
+  }
+  .introduce_bikes_stage_price {
+    font-size: 19px;
+    font-weight: bold;
+    color: #181a1d;
+    line-height: 23px;
+  }
+  .introduce_bikes_shopNow {
+    width: 90%;
+    height: 36px;
+    background: #181a1d;
+    margin: 24px 0 0;
+  }
+  .introduce_bikes_shopNow div {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 34px;
+    background: #181a1d;
+  }
+  .introduce-bikes-left{
+    position: relative;
+  }
+  @media only screen and (min-width:1440px) {
+    .introduce-bikes-box .fb-sg-dotter, .introduce-bikes-box2 .fb-sg-dotter{
+      z-index: 2;
+      position: absolute;
+      left: 46px;
+      width: 60%;
+      display: flex;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+    }
+    .introduce-bikes-box .fb-sg-dotter {
+        bottom: -10px;
+    }
+    .introduce-bikes-box2 .fb-sg-dotter{
+        bottom: -10px;
+    }
+    .introduce-bikes-box2 .introduce-bikes-left{
+        padding-top: 30px;
+    }
+    .introduce-bikes-box2 .introduce-bikes-left img{
+        height: auto;
+        width: 281px;
+        object-fit: contain;
+        padding-left: 8%;
+    }
+    .introduce-bikes-box2 .introduce-bikes-left{
+        padding-left: 0px;
+    }
+    .introduceBikes {
+      width: 100%;
+    }
+    .coverWrapper {
+      margin-right: 32px;
+    }
+    .coverImg img {
+      display: block;
+      height: 904px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .coverDes {
+      position: absolute;
+      bottom: 144px;
+      left: 80px;
+      font-size: 48px;
+      line-height: 56px;
+    }
+    .coverCta {
+      position: absolute;
+      bottom: 56px;
+      left: 80px;
+      height: 56px;
+      width: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .coverCta div {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    .introduce-bikes-box-pc{
+      width: 100%;
+      height: 48.6%;
+      min-height:330px;
+      background: #fff;
+      box-shadow: 0px 4px 10px 4px rgba(223, 223, 223, 0.1);
+    }
+    .introduce-bikes-box, .introduce-bikes-box2{
+      justify-content: space-evenly;
+      max-height:440px;
+    }
+    .label {
+      position: absolute;
+      width: 128px;
+      height: 24px;
+      top: 16px;
+      left: 0px;
+    }
+    .label img {
+      display: block;
+      width: 100%;
+    }
+    .introduce-bikes-left{
+      width: 50%;
+      margin-left: 10px;
+      margin-bottom: 60px;
+    }
+    .bikeImg {
+      width: 37%;
+      height: auto;
+      margin-top: -390px;
+      margin-left: 60px;
+    }
+    .bikeImg img { 
+      width: 100%;
+      padding-left: 12%;
+      max-height: 365px;
+      object-fit: contain;
+    }
+    .introduce_bikes_title {
+      font-size: 30px;
+      line-height: 30px;
+     
+      margin: 0;
+    }
+    .introduce-bikes-box .introduce_bikes_title {
+        padding: 50px 0 0;
+    }
+    .introduce-bikes-box2 .introduce_bikes_title {
+        padding: 44px 0 0;
+    }
+    .introduce-bikes-right{
+      margin-right: 10px;
+    }
+    .introduce-bikes-right .introduce_bikes_proprice {
+      padding-top: 8px;
+    }
+    .introduce-bikes-right .intoduce_bikes_proprice_price{
+      font-size: 28px;
+      line-height: 47px;
+      padding-right: 6px;
+      margin: 0;
+    }
+    .introduce_bikes_discount_amount {
+      font-size: 14px;
+      line-height: 16px;
+      margin: 0;
+    }
+    .introduce_bikes_discount_price {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    .cardR .delivery {
+      font-size: 12px;
+      line-height: 14px;
+    }
+    .line {
+      width: 90%;
+      height: 8px;
+    }
+    .introduce_bikes_stage_desc {
+      font-size: 12px;
+      line-height: 14px;
+      padding: 16px 0 0px;
+    }
+    .introduce_bikes_stage_price {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    .introduce_bikes_shopNow {
+      width: 100%;
+      height: 48px;
+    }
+    .introduce_bikes_shopNow div {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 46px;
+      background: #181a1d;
+      margin: 30px 0 0;
+    }
+  }
+  @media screen and (min-width:1024px) and (max-width:1439px){
+    .introduce-bikes-box .fb-sg-dotter{
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      display: flex;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+    }
+    .introduceBikes {
+      width: 100%;
+    }
+    .coverWrapper {
+      margin-right: 32px;
+    }
+    .coverImg img {
+      display: block;
+      height: 904px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .coverDes {
+      position: absolute;
+      bottom: 144px;
+      left: 80px;
+      font-size: 48px;
+      line-height: 56px;
+    }
+    .coverCta {
+      position: absolute;
+      bottom: 56px;
+      left: 80px;
+      height: 56px;
+      width: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .coverCta div {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    .introduce-bikes-box-pc{
+      width: 100%;
+      height: 48.6%;
+      min-height:330px;
+      background: #fff;
+      box-shadow: 0px 4px 10px 4px rgba(223, 223, 223, 0.1);
+    }
+    .introduce-bikes-box {
+      justify-content: space-evenly;
+      max-height:440px;
+    }
+    .label {
+      position: absolute;
+      width: 128px;
+      height: 24px;
+      top: 16px;
+      left: 0px;
+    }
+    .label img {
+      display: block;
+      width: 100%;
+    }
+    .introduce-bikes-box .introduce-bikes-left{
+      width: 50%;
+      margin-bottom: 60px;
+    }
+    .introduce-bikes-box2 .introduce-bikes-left{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+    .bikeImg {
+      width: 43%;
+      height: auto;
+      margin-top: -390px;
+      margin-left: 60px;
+    }
+    .bikeImg img {
+      width: 100%;
+      max-height: 365px;
+      object-fit: contain;
+    }
+    .introduce-bikes-box .introduce_bikes_title {
+      font-size: 30px;
+      line-height: 30px;
+      padding: 50px 0 0;
+      margin: 0;
+    }
+    .introduce-bikes-box2{
+       align-items: center;
+       max-height:440px;
+    }
+    .introduce-bikes-box2 .introduce_bikes_title {
+        font-size: 30px;
+        line-height: 30px;
+        padding: 0px;
+        margin: 0;
+    }
+    .introduce-bikes-right .introduce_bikes_proprice {
+      padding-top: 8px;
+    }
+    .introduce-bikes-right .intoduce_bikes_proprice_price{
+      font-size: 28px;
+      line-height: 47px;
+      padding-right: 6px;
+      margin: 0;
+    }
+    .introduce_bikes_discount_amount {
+      font-size: 14px;
+      line-height: 16px;
+      margin: 0;
+    }
+    .introduce_bikes_discount_price {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    .cardR .delivery {
+      font-size: 12px;
+      line-height: 14px;
+    }
+    .line {
+      width: 90%;
+      height: 14px;
+    }
+    .introduce_bikes_stage_desc {
+      font-size: 12px;
+      line-height: 14px;
+      padding: 16px 0 0px;
+    }
+    .introduce_bikes_stage_price {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    .introduce_bikes_shopNow {
+      width: 100%;
+      height: 48px;
+    }
+    .introduce_bikes_shopNow div {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 46px;
+      background: #181a1d;
+      margin: 30px 0 0;
+    }
+  }
+  
+  @media screen and (min-width: 1023px) {
+    .introduce-bikes-right{
+      min-width: 170px;
+    }
+    .introduce_bikes_title_sub{
+      margin-top: 8px;
+    }
+    .introduce-bikes-left{
+      padding-left: 5%;
+    }
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .intoduce-bikes-products-pc .swiper{
+      width: 176px;
+      margin-top: -265px;
+      margin-left: 6px;
+    }
+    .introduce-bikes-box .fb-sg-dotter, .introduce-bikes-box2 .fb-sg-dotter{
+      position: absolute;
+      bottom: 0;
+      left: 8px;
+      display: flex;
+      width: 90%;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+    }
+    #introduceBikesWrapper {
+      width: 100%;
+      height: auto;
+      padding: 0;
+    }
+    .introduceBikes {
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      margin: 0 auto;
+    }
+    .coverWrapper {
+      width: 100%;
+      margin-right: 0px;
+    }
+    .coverImg img {
+      width: 100%;
+      height: 384px;
+      object-fit: cover;
+    }
+    .coverWrapper{
+      min-height:0;
+    }
+    .coverImg img {
+      display: block;
+      min-height: 0;
+      width: 100%;
+      object-fit: cover;
+    }
+    .coverDes {
+      bottom: 112px;
+      left: 32px;
+      right: 50px;
+      font-size: 32px;
+      line-height: 38px;
+    }
+    .coverCta {
+      bottom: 40px;
+      left: 32px;
+      height: 44px;
+      width: 240px;
+    }
+    .coverCta div {
+      font-size: 18px;
+      line-height: 21px;
+      
+    }
+    .intoduce-bikes-products-pc {
+      width: 100%;
+      padding: 27px 16px 24px;
+      height: 669px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .introduce-bikes-box-pc{
+      width: 100%;
+      height: 292px;
+    }
+    .introduce-bikes-box{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      width: 100%;
+      height: 100%;
+      min-height: fit-content;
+      padding: 30px 0;
+      position: relative;
+    }
+    .introduce-bikes-box2{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        min-height: fit-content;
+        position: relative;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .introduce-bikes-left {
+      width: 55%;
+    }
+    .label {
+      width: 127px;
+      height: 18px;
+      top: 0px;
+      left: 0px;
+    }
+    .label img {
+      display: block;
+      width: 100%;
+    }
+    
+    .bikeImg {
+      width:176px;
+      height: 205px;
+      padding: 0;
+    }
+    .bikeImg img {
+      width: 100%;
+      margin: auto;
+      height:auto;
+    }
+    .intoduce-bikes-products-pc .swiper .swiper-slide{
+      width:176px;
+      height: 205px;
+    }
+    .introduce-bikes-right {
+      text-align: left;
+      width: 45%;
+      min-width: auto;
+      margin-right: 10px;
+    }
+    .introduce_bikes_title{
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 5px;
+      /* padding: 50px 0 8px; */
+    }
+    .introduce_bikes_title_sub{
+      font-size: 12px;
+    }
+    .introduce_bikes_desc1 {
+      font-size: 10px;
+      line-height: 10px;
+      margin: 16px 0 0;  
+    }
+    .introduce-bikes-right .introduce_bikes_proprice {
+      padding-top: 4px;
+      padding-bottom: 6px;
+      margin-top: 0;
+    }
+    .introduce-bikes-right .intoduce_bikes_proprice_price{
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 1px;
+      padding-right: 4px;
+      margin: 0;
+    }
+    .introduce_bikes_proprice .introduce_bikes_discount {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .introduce_bikes_discount_amount {
+      white-space: nowrap;
+      font-size: 10px;
+      line-height: 10px;
+      margin: 0;
+    }
+    .introduce_bikes_discount_price {
+      font-size: 10px;
+      line-height: 10px;
+    }
+    .line {
+      width: 85%;
+      height: 6px;
+      border-bottom: 1px solid #eee;
+    }
+    .introduce_bikes_stage_desc {
+      font-size: 12px;
+      line-height: 14px;
+      padding: 10px 0 4px;
+    }
+    .introduce_bikes_stage_price {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    .introduce_bikes_shopNow {
+      width: 140px;
+      height: 32px;
+      background: #181a1d;
+      margin: 15px 0 0;
+    }
+    .introduce_bikes_shopNow div {
+      font-size: 12px;
+      line-height: 32px;
+      background: #181a1d;
+      margin: 15px 0 0;
+    }
+  }
+  @media screen and (max-width:1023px) and (min-width:607px){
+      .intoduce-bikes-products-pc{
+          height: 800px;
+      }
+      .introduce-bikes-box-pc{
+          height: 300px;
+          margin-bottom: 30px;
+      }
+      .introduceBikes{
+         margin-top: -80px;
+      }
+  }
+  

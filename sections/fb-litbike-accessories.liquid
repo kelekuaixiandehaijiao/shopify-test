@@ -1,0 +1,578 @@
+<!-- Accessories -->
+{%- assign accessories = section.blocks | where: 'type', 'accessories' | first -%}
+{%- assign product =  section.settings.product  -%}
+<div class="fb_lit-bike-klarna_Accessories" id="section-{{ section.id }}">
+    <div class="Accessories_l">
+        {% assign imgPiker = section.settings.right-img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+             <img class="Image--lazyLoad Image--fadeIn Accessories_l_img" 
+                 data-src="{{ imgPiker }}" 
+                 data-sizes="auto"
+                 data-optimumx="1.2"
+                 data-widths="[ 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                 alt="{{ section.settings.right-img.alt }}"
+             >
+             <span class="Image__Loader"></span>
+  
+             {% assign imgPiker = section.settings.right-img-mb | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+             <img class="Image--lazyLoad Image--fadeIn Accessories_l_imgM" 
+                 data-src="{{ imgPiker }}" 
+                 data-sizes="auto"
+                 data-optimumx="1.2"
+                 data-widths="[800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                 alt="{{ section.settings.right-img-mb.alt }}"
+             >
+    </div>
+    <div class="Accessories_r">
+        <div class="Accessories_klarna_placement_mobile">
+                <klarna-placement
+                    data-key="top-strip-promotion-auto-size"
+                    data-locale="en-US"
+                    data-preloaded="true"
+                    data-purchase-amount="0"
+                    data-theme="dark"
+                >
+                </klarna-placement>
+        </div>
+        <div class="Accessories_r_title">{{section.settings.title}}</div>
+        <div class="Accessories_r_sub">{{section.settings.subTitle}}</div>
+        <div class="Accessories_r_con">
+            {%- for block in section.blocks -%}
+                <div class="Accessories_r_con_item">
+                    <div class="Accessories_r_con_item_l">
+                        {% assign imgPiker = block.settings.accessoriesImg | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+                        <img class="Image--lazyLoad Image--fadeIn Accessories_r_img" 
+                            data-src="{{ imgPiker }}" 
+                            data-sizes="auto"
+                            data-optimumx="1.2"
+                            data-widths="[800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                            alt="{{ block.settings.accessoriesImg.alt }}"
+                        >
+                    </div>
+                    <div class="Accessories_r_con_item_r">
+                        <div class="Accessories_r_con_item_r_price">{{block.settings.itemPrice}}</div>
+                        <div class="Accessories_r_con_item_r_title">{{block.settings.itemFree}}</div>
+                        <div class="Accessories_r_con_item_r_sub">{{block.settings.itemDes}}</div>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+        {%- if product != blank -%}
+        <div class="Accessories_r_price">
+            {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+            <div class="Accessories_r_price_1">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</div>
+            <div class="Accessories_r_price_2">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</div>
+            {%- endif -%}
+        </div>
+        {%- endif -%}
+          <div class="addDes">{{section.settings.addDes}}</div>
+          <div class="Accessories_r_bottom">
+                <a class="Accessories_r_button" href="{{section.settings.link-url}}">{{section.settings.buttonContent}}</a>
+                <div class="Accessories_klarna_placement_pc">
+                            <klarna-placement
+                                data-key="top-strip-promotion-auto-size"
+                                data-locale="en-US"
+                                data-preloaded="true"
+                                data-purchase-amount="0"
+                                data-theme="dark"
+                            >
+                            </klarna-placement>
+                    </div>
+            </div>
+    </div>
+</div> 
+<style>
+    .fb_lit-bike-klarna_Accessories{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url({{ section.settings.background-pc}}); /*#fff*/
+        background-size: 100% 100%;
+        padding: 107px 0 115px;
+        margin-top: -2px;
+    }
+    .Accessories_l{
+        margin-right: 105px;
+    }
+    .Accessories_l_img{
+        display: block;
+        width: 362px;
+    }
+    .Accessories_l_imgM{
+        display: none;
+    }
+    .Accessories_r{
+        color: {{ section.settings.text-color}};
+    }
+    .Accessories_r_title{
+        min-width: 530px;
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 58px;
+        letter-spacing: 1px;
+        padding-top: 12px;
+    }
+    .Accessories_r_sub{
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 29px;
+        letter-spacing: 1px;
+        margin-top: 6px;
+    }
+    .Accessories_r_con{
+        display: flex;
+        margin: 42px 0 48px;
+    }
+    .Accessories_r_con_item{
+        display: flex;
+        align-items: flex-end;
+        margin-right: 62px;
+    }
+    .Accessories_r_con_item_l{
+        margin-right: 14px;
+    }
+    .Accessories_r_con_item_l > img{
+        display: block;
+        height: 100px;
+    }
+    .Accessories_r_con_item_r_price{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 1px;
+        text-decoration: line-through;
+    }
+    .Accessories_r_con_item_r_title{
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 37px;
+        letter-spacing: 2px;
+    }
+    .Accessories_r_con_item_r_sub{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+    .Accessories_r_price{
+        display: flex;
+        align-items: baseline;
+    }
+    .Accessories_r .Accessories_r_price_1{
+        font-size: 60px;
+        font-weight: 900;
+        /* #FFB4C9 */
+        color: {{ section.settings.price-color}};
+        line-height: 73px;
+        letter-spacing: 2px;
+        margin-right: 18px;
+    }
+    .Accessories_r_price_2{
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 29px;
+        letter-spacing: 1px;
+        text-decoration: line-through;
+    }
+    .Accessories_r_bottom{
+        display: flex;
+        align-items: center;
+        margin-top: 42px;
+    }
+    .Accessories_r_button{
+        display: block;
+        width: max-content;
+        background: {{section.settings.buttonBackground}};
+        color: {{ section.settings.buttonTextColor}};
+        box-shadow: 0px 10px 30px 0px rgba(0, 188, 255, 0.3);
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 19px;
+        letter-spacing: 1px;
+        padding: 16px 53px;
+    }
+    .Accessories_klarna_placement_mobile{
+        display: none;
+    }
+    .Accessories_r .addDes{
+        font-size: 18px;
+        line-height: 22px;
+        text-align: left;
+    }
+    @media only screen and (min-width: 1025px) and (max-width: 1549px){
+        .fb_lit-bike-klarna_Accessories{
+            padding: 79px 0 86px;
+        }
+        .Accessories_l{
+            margin:0 60px;
+        }
+        .Accessories_l_img{
+            display: block;
+            width: 272px;
+        }
+        .Accessories_r_title{
+            max-width: 640px;
+            font-size: 36px;
+            line-height: 44px;
+            background-size: 16%;
+            background-position: 97% 0;
+        }
+        .Accessories_r_sub{
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
+            margin-top: 5px;
+        }
+        .Accessories_r_con{
+            display: flex;
+            margin: 35px 0 33px;
+        }
+        .Accessories_r_con_item{
+            display: flex;
+            align-items: flex-end;
+            margin-right: 47px;
+        }
+        .Accessories_r_con_item_l{
+            margin-right: 11px;
+        }
+        .Accessories_r_con_item_l > img{
+            display: block;
+          	min-width: 50px;
+            height: 80px;
+        }
+        .Accessories_r_con_item_r_price{
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 1px;
+        }
+        .Accessories_r_con_item_r_title{
+            font-size: 23px;
+            line-height: 28px;
+        }
+        .Accessories_r_con_item_r_sub{
+            font-size: 14px;
+            line-height: 14px;
+        }
+        .Accessories_r_price{
+            display: flex;
+            align-items: baseline;
+        }
+        .Accessories_r .Accessories_r_price_1{
+            font-size: 45px;
+            line-height: 55px;
+            margin-right: 14px;
+        }
+        .Accessories_r_price_2{
+            font-size: 18px;
+            line-height: 22px;
+        }
+        .Accessories_r_bottom{
+            margin-top: 32px;
+        }
+        .Accessories_r_button{
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px 0px rgba(0,188,255,0.3);
+            font-size: 12px;
+            line-height: 14px;
+            padding: 12px 40px;
+        }
+    }
+    @media only screen and (min-width:769px)and (max-width:1024px){
+        .fb_lit-bike-klarna_Accessories{
+            padding: 105px 0 115px;
+        }
+        .Accessories_l{
+            margin:0 30px;
+        }
+        .Accessories_l_img{
+            width: 270px;
+        }
+        .Accessories_r_title{
+            min-width: 530px;
+            font-size: 32px;
+            line-height: 36px;
+        }
+        .Accessories_r_sub{
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 6px;
+        }
+        .Accessories_r_con{
+            margin: 21px 0 30px;
+        }
+        .Accessories_r_con_item{
+            margin-right: 31px;
+        }
+        .Accessories_r_con_item_l{
+            margin-right: 14px;
+        }
+        .Accessories_r_con_item_r_price{
+            font-size: 12px;
+            line-height: 14px;
+        }
+        .Accessories_r_con_item_r_title{
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .Accessories_r_con_item_r_sub{
+            font-size: 14px;
+            line-height: 14px;
+        }
+        .Accessories_r .Accessories_r_price_1{
+            font-size: 42px;
+            line-height: 50px;
+            margin-right: 18px;
+        }
+        .Accessories_r_price_2{
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 1px;
+        }
+        .Accessories_r_bottom{
+            margin-top: 32px;
+        }
+        .Accessories_r_button{
+            border-radius: 8px;
+            font-size: 12px;
+            line-height: 14px;
+            padding: 12px 40px;
+        }
+        .Accessories_r_con_item_l > img{
+            height: auto;
+            min-width: 50px;
+          	min-width: 50px;
+            max-height:85px;
+        }
+
+    }
+    @media only screen and (max-width:768px){
+        .fb_lit-bike-klarna_Accessories{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 44px 38px 36px;
+            background-image: url({{ section.settings.background-mb}});
+            margin-top: -4px;
+        }
+        .Accessories_l{
+            margin: 0 0 27px;
+        }
+        .Accessories_l_img{
+            display: none;
+        }
+        .Accessories_l_imgM{
+            display: block;
+            width: 290px;
+        }
+        .Accessories_r{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .Accessories_r_title{
+            min-width: auto;
+            width: 300px;
+            width: 302px;
+            font-size: 20px;
+            line-height: 27px;
+            background-size: 16%;
+            background-position: 97% -20%;
+            text-align: center;
+        }
+        .Accessories_r_sub{
+            font-size: 14px;
+            line-height: 17px;
+            margin-top: 3px;
+            text-align: center;
+        }
+        .Accessories_r_con{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 32px 0 30px;
+        }
+        .Accessories_r_con_item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 0;
+        }
+        .Accessories_r_con_item_l{
+            margin: 0 0 13px;
+        }
+        .Accessories_r_con_item_l > img{
+            display: block;
+            height: 50px;
+        }
+        .Accessories_r_con_item_r{
+            text-align: center;
+        }
+        .Accessories_r_con_item_r_price{
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 1px;
+        }
+        .Accessories_r_con_item_r_title{
+            font-size: 17px;
+            line-height: 21px;
+        }
+        .Accessories_r_con_item_r_sub{
+            max-width: 65px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+        .Accessories_r_price{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .Accessories_r .Accessories_r_price_1{
+            font-size: 40px;
+            line-height: 49px;
+            margin-right: 0;
+        }
+        .Accessories_r_price_2{
+            order: -1;
+            font-size: 15px;
+            line-height: 19px;
+        }
+        .Accessories_klarna_placement_pc{
+            display: none;
+        }
+        .Accessories_klarna_placement_mobile{
+            display: block;
+            width: 226px;
+            margin-bottom: 24px;
+        }
+        .Accessories_r_bottom{
+            margin-top: 19px;
+        }
+        .Accessories_r_button{
+            border-radius: 5px;
+          	box-shadow: 0px 2px 6px 0px rgba(0,188,255,0.3);
+            font-size: 14px;
+            line-height: 17px;
+            padding: 12px 31px;
+        }
+        .Accessories_r .addDes{
+            font-size:15px;
+            line-height:19px;
+            text-align:center;
+        }
+    }
+</style>
+{% schema %}
+{
+"name": "FbLitBikeAccessories",
+"presets": [
+  {
+    "name": "fb-litbike-accessories",
+    "category": "Fb Sections",
+    "blocks": []
+  }
+],
+"settings": [
+    {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+    },
+    {
+        "type": "text",
+        "id": "background-pc",
+        "label": "Background PC"
+    },
+    {
+        "type": "text",
+        "id": "background-mb",
+        "label": "Background MB"
+    },
+    {
+        "type": "color",
+        "id": "text-color",
+        "label": "Text Color"
+    },
+    {
+        "type": "color",
+        "id": "price-color",
+        "label": "Price Color"
+    },
+    {
+        "type": "image_picker",
+        "id": "right-img",
+        "label": "Image Pc"
+    },
+    {
+        "type": "image_picker",
+        "id": "right-img-mb",
+        "label": "Image Mb"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+    },
+    {
+        "type": "text",
+        "id": "subTitle",
+        "label": "SubTitle"
+    },
+    {
+        "type": "text",
+        "id": "addDes",
+        "label": "Add Des"
+    },
+    {
+        "type": "color_background",
+        "id": "buttonBackground",
+        "label": "button Background"
+    },
+    {
+        "type": "color",
+        "id": "buttonTextColor",
+        "label": "Button Text Color",
+        "default": "#fff"
+    },
+    {
+        "type": "url",
+        "id": "link-url",
+        "label": "Link Url"
+    },
+    {
+        "type": "text",
+        "id": "buttonContent",
+        "label": "Button Content"
+    }
+ 
+],
+"blocks":[
+    {
+        "type": "accessories",
+        "name": "Accessories",
+        "limit": 3,
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "accessoriesImg",
+                "label": "Accessories Image"
+            },
+            {
+                "type": "text",
+                "id": "itemPrice",
+                "label": "Accessories Price"
+            },
+            {
+                "type": "text",
+                "id": "itemFree",
+                "label": "Accessories"
+            },
+            {
+                "type": "text",
+                "id": "itemDes",
+                "label": "Accessories Des"
+            }
+        ]
+    }
+]
+}
+{% endschema %}

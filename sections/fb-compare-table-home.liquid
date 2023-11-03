@@ -1,0 +1,677 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- capture table1 -%}
+  <table class="js-pc-boom-comparebike1">
+    <thead  class="fb_compare_mob_line" style="width: 100%">
+        <th>
+          <h5>Bike</h5>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="fb_compare_home_btn_pc">
+        <td>
+            <div class="fbc_premium_btn_pc">
+            {{ section.settings.economy_btn }}
+            </div>
+        </td>
+      </tr>
+      <tr class="fb_compare_pc_weight">
+        <td>
+          <h5>FREEBEAT
+            <br>BOOM BIKE</h5>
+        </td>
+      </tr>
+      {%- if country_code_var != 'au' -%}
+      <tr>
+        <td>
+          <h5>NORDICTRACK
+            <br>BIKE</h5>
+        </td>
+      </tr>
+      {%- endif -%}
+      <tr>
+        <td>
+          <h5>PELOTON
+            <br>BIKE</h5>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {% comment %} {%- render 'customer-price-control', type:'mo', gb_default: 'litbike' -%} {% endcomment %}
+{%- endcapture -%}
+{%- capture header1 -%}
+    <thead>
+      <tr>
+        <th>
+          <h5>Bike</h5>
+        </th>
+        <th>
+          <h5>Price</h5>
+        </th>
+        <th>
+          <h5>Colors</h5>
+        </th>
+        <th>
+          <h5>Gamified<br/>Classes</h5>
+        </th>
+        <th>
+          <h5>Auto Resistance<br/>System</h5>
+        </th>
+        <th>
+          <h5>Smart Saddle<br/>Detection+</h5>
+        </th>
+        <th>
+          <h5>Requires<br/>Cycling Shoes</h5>
+        </th>
+        <th>
+          <h5>Bike Size</h5>
+        </th>
+        <th>
+          <h5>Premium<br/>Swiss Design</h5>
+        </th>
+        <th>
+          <h5>180° Rotable<br/>Touch Screen</h5>
+        </th>
+        <th>
+          <h5>Screen Size</h5>
+        </th>
+        <th>
+          <h5>Virtual Workout<br/>Stages</h5>
+        </th>
+        <th>
+          <h5>Performance<br/>Tracking</h5>
+        </th>
+        <th>
+          <h5>Compete<br/>with Friends</h5>
+        </th>
+      </tr>
+    </thead>
+{%- endcapture -%}
+{%- capture boomtr -%}
+  <tbody class="js-pc-boom-tbody">
+      <tr class="fb_compare_home_btn_pc">
+        <td style=" visibility: hidden;">
+            <div class="fbc_premium_btn_pc">
+            {{ section.settings.economy_btn }}
+            </div>
+        </td>
+      </tr>
+      
+      <tr class="fb_compare_pc_weight">
+        <td>FREEBEAT
+          <br>BOOM BIKE</td>
+        <td>
+            {% comment %} {%- if country_code_var == 'gb' -%}
+                {%- render 'customer-price-control', type:'sale', product_type: 'boombike_default' -%}
+            {%- else -%}
+                {{ section.settings.boom_bike_price }}   
+            {%- endif -%} {% endcomment %}
+            {%- render 'customer-price-control', type:'sale', product_type: 'boombike_default' -%}
+        </td>
+        <td>
+            <div class="fb_compare_color " style="background: #F2F3F5; "></div>
+            {%- if country_code_var == 'gb' -%}
+                <div class="fb_compare_color " style="background: #7A7D80 "></div>
+            {%- elsif country_code_var == 'au' -%}
+              <div class="fb_compare_color " style="background: #7A7D80 "></div>
+            {%- else -%}
+                {%- if section.settings.is_show_boom_gery_yellow -%}
+                    <div class="fb_compare_color " style="background: #FCF296 "></div>
+                    <div class="fb_compare_color " style="background: #7A7D80; "></div>
+                {%- endif -%}
+            {%- endif -%}
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473 " alt=" ">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473 " alt=" ">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473 " alt=" ">
+        </td>
+        <td>No</td>
+        {%- comment -%}
+          boom bike
+        {%- endcomment -%}
+        {%- if country_code_var == 'gb' -%}
+          <td>
+            131 cm L 
+            <br>131 cm H
+            <br>63 cm W</td>
+          <td>
+        {%- elsif country_code_var == 'au' -%}
+          <td>
+            53 in. L 
+            <br>53 in. H
+            <br>25 in. W</td>
+          <td>
+        {%- else -%}
+          <td>
+            52" L
+            <br>52" H
+            <br>25" W</td>
+          <td>
+        {%- endif-%}
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+        </td>
+        <td>15.6"</td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+        </td>
+      </tr>
+      {%- if country_code_var != 'au' -%}
+      <tr>
+        <td>NORICTRACK
+          <br>Bike
+        </td>
+        <td>
+            {%- if country_code_var == 'gb' -%}
+                £1199
+            {%- else -%}
+                {{ section.settings.boom_norictrack_bike_price }}
+            {%- endif -%}
+           
+        </td>
+        <td>
+          <div class="fb_compare_color" style="background: #000000;"></div>
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>No</td>
+        {%- if country_code_var == 'gb' -%}
+          <td>155 cm L
+            <br>148 cm H
+            <br>56 cm W</td>
+          <td> 
+        {%- else -%}
+          <td>61" L
+            <br>58" H
+            <br>22" W</td>
+          <td>
+        {%- endif -%}
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+        </td>
+        <td>22"</td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+      </tr>
+      {%- endif -%}
+      <tr>
+        <td>PELOTON
+          <br>BIKE+</td>
+        <td style="font-size:14px;">
+            {%- if country_code_var == 'gb' -%}
+                £1345
+            {%- elsif country_code_var == 'au' -%}
+                $2,145
+            {%- else -%}
+                {{ section.settings.boom_peleton_bike_price }}
+            {%- endif -%}
+        </td>
+        <td>
+          <div class="fb_compare_color" style="background: #000000;"></div>
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>Yes</td>
+        {%- if country_code_var == 'gb' -%}
+          <td>150 cm L
+            <br>135 cm H 
+            <br>59 cm W</td>
+          <td>
+        {%- elsif country_code_var == 'au' -%}
+          <td>59 in. L
+            <br>53 in. H 
+            <br>23 in. W</td>
+          <td>
+        {%- else -%}
+          <td>59" L
+            <br>53" H
+            <br>23" W</td>
+          <td>
+        {%- endif -%}
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>24"</td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+        </td>
+        <td>
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+        </td>
+      </tr>
+  </tbody>
+{%- endcapture -%}
+<div id="section-{{ section.id }}" class="fb-compare-table-container">
+  <div class="fb-compare-table-title fb_compare_bike_title">
+    {{ section.settings.fb_combike_title }}
+  </div>
+  {%- if section.settings.show_boom_bike -%}
+    <div class="fb_compare_home_btn_mob">
+      <div class="fb_compare_big_btn">
+        <div class="fbc_premium_btn js-premium-btn fbc_btn_active">
+          {{ section.settings.premium_btn }}
+        </div>
+        <div class="fbc_economy_btn js-economy-btn">
+          {{ section.settings.economy_btn }}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+  <div class="fb_compare_chart js-freebeat-compare">
+    <div class="fb_compare_fixed">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <h5>Bike</h5>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="fb_compare_home_btn_pc">
+            <td>
+                <div class="fbc_premium_btn_pc">
+                {{ section.settings.premium_btn }}
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5>FREEBEAT
+                <br>LIT BIKE</h5>
+            </td>
+          </tr>
+          {%- if country_code_var != 'au' -%}
+          <tr>
+            <td>
+              <h5>NORDICTRACK
+                <br>S22I</h5>
+            </td>
+          </tr>
+          {%- endif -%}
+          <tr>
+            <td>
+              <h5>PELOTON
+                <br>BIKE+</h5>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      {{ table1 }}
+    </div>
+    <div class="fb_compare_scrollable">
+      <table>
+        {{ header1 }}
+        <tbody>
+          <tr class="fb_compare_home_btn_pc">
+             {%- comment -%} 占位对齐 {%- endcomment -%}
+              <td style="visibility: hidden;">
+                  <div class="fbc_premium_btn_pc">
+                  {{ section.settings.premium_btn }}
+                  </div>
+              </td>
+          </tr>
+          <tr class="fb_compare_pc_weight">
+            <td>FREEBEAT
+              <br>LIT BIKE
+            </td>
+            <td>
+                {% comment %} {%- if country_code_var == 'gb' -%}
+                    {%- render 'customer-price-control', type:'sale', product_type: 'litbike_default' -%}
+                {%- else -%}
+                    {{ section.settings.free_lit_bike_price }}           
+                {%- endif -%} {% endcomment %}
+                {%- render 'customer-price-control', type:'sale', product_type: 'litbike_default' -%}
+            </td>
+            <td>
+                {%- if country_code_var == 'gb' -%}
+                    <div class="fb_compare_color " style="background: #ECD0B5; "></div>
+                    <div class="fb_compare_color " style="background: #000000; "></div>
+                {%- elsif country_code_var == 'au' -%}
+                  <div class="fb_compare_color " style="background: #000000; "></div>
+                  <div class="fb_compare_color " style="background: #ECD0B5; "></div>
+                {%- else -%}
+                    <div class="fb_compare_color " style="background: #ECD0B5; "></div>
+                    <div class="fb_compare_color " style="background: #FFFFFF; "></div>
+                    <div class="fb_compare_color " style="background: #000000; "></div>
+                    <div class="fb_compare_color " style="background: #E788A1; "></div>
+                {%- endif -%}
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473 " alt=" ">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473 " alt=" ">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473 " alt=" ">
+            </td>
+            <td>No</td>
+            {%- if country_code_var == 'ca' -%}
+              <td>
+                49" L
+                <br>59" H
+                <br>23" W</td>
+              <td>
+            {%- elsif country_code_var == 'gb' -%}
+              <td>
+                125 cm L 
+                <br>150 cm H
+                <br>58 cm W</td>
+              <td>
+            {%- elsif country_code_var == 'au' -%}
+              <td>
+                49 in. L 
+                <br>59 in. H
+                <br>23 in. W</td>
+              <td>
+            {%- else -%}
+              <td>
+                49" L
+                <br>59" H
+                <br>23" W</td>
+              <td>
+            {%- endif -%}
+            {% comment %} <td>
+              49" L
+              <br>59" H
+              <br>23" W</td>
+            <td> {% endcomment %}
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+            </td>
+            <td>22"</td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkcolortrue.svg?v=1669183473" alt="">
+            </td>
+          </tr>
+          {%- if country_code_var != 'au' -%}
+          <tr>
+            <td>NORDICTRACK
+              <br>S22i
+            </td>
+            <td>
+                {%- if country_code_var == 'gb' -%}
+                    £1999
+                {%- else -%}
+                    {{ section.settings.nordictrack_bike_price }}
+                {%- endif -%}
+            </td>
+            <td>
+              <div class="fb_compare_color" style="background: #000000;"></div>
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>No</td>
+            {%- if country_code_var == 'gb' -%}
+              <td>155 cm L
+                <br>148 cm H
+                <br>56 cm W</td>
+              <td>
+            {%- else -%}
+              <td>61" L
+                <br>58" H
+                <br>22" W</td>
+              <td>
+            {%- endif -%}
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+            </td>
+            <td>22"</td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+          </tr>
+          {%- endif -%}
+          <tr>
+            <td>PELOTON
+              <br>BIKE+</td>
+            <td style="font-size: 14px;">
+                {%- if country_code_var == 'gb' -%}
+                    £1995
+                {%- elsif country_code_var == 'au' -%}
+                    $3,345
+                {%- else -%}
+                    {{ section.settings.peleton_bike_price }}
+                {%- endif -%}
+            </td>
+            <td>
+              <div class="fb_compare_color" style="background: #000000;"></div>
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>Yes</td>
+            {%- if country_code_var == 'gb' -%}
+              <td>150 cm L
+                <br>150 cm H
+                <br>56 cm W</td>
+              <td>
+            {%- elsif country_code_var == 'au' -%}
+              <td>59 in. L
+                <br> 59 in. H 
+                <br>22 in. W</td>
+              <td>
+            {%- else-%}
+              <td>59" L
+                <br>59" H
+                <br>22" W</td>
+              <td>
+            {%- endif -%}
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+            </td>
+            <td>24"</td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checktrue.svg?v=1669183473" alt="">
+            </td>
+            <td>
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/checkclose.svg?v=1669183473" alt="">
+            </td>
+          </tr>
+          {%- comment -%} 分开 {%- endcomment -%}
+          {{ boomtr }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {%- comment -%}  boom bike  {%- endcomment -%}
+  {%- if section.settings.show_boom_bike -%}
+    <div class="fb_compare_chart js-boombike-compare">
+      <div class="fb_compare_fixed">
+        {{ table1 }}
+      </div>
+      <div class="fb_compare_scrollable ">
+        <table class="js-pc-boom-comparebike2">
+         {{ header1 }}
+          {%- comment -%} <tbody> {%- endcomment -%}
+            {{ boomtr }}
+          {%- comment -%} </tbody> {%- endcomment -%}
+        </table>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+{% schema %}
+  {
+    "name": "FbCompareTableHome",
+    "presets": [
+      {
+        "name": "fb-compare-table-home",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "fb_combike_title",
+        "label": "Compare Bike Title",
+        "default": " <p>See Why Lit Bike</p><p>Is Your Obvious Choice</p>"
+      },
+      {
+        "type": "text",
+        "id": "free_lit_bike_price",
+        "label": "FreeBeat Lit Bike PRICE",
+        "default": "$1,799"
+      },
+      {
+        "type": "text",
+        "id": "nordictrack_bike_price",
+        "label": "NORDICTRACK S22I PRICE",
+        "default": "$1,899"
+      },
+      {
+        "type": "text",
+        "id": "peleton_bike_price",
+        "label": "PELOTON BIKE+ PRICE",
+        "default": "$2,700+"
+      }, {
+        "type": "header",
+        "content": "Boom Bike Config"
+      }, {
+        "type": "checkbox",
+        "id": "show_boom_bike",
+        "label": "Is Show Boom Bike",
+        "default": false,
+        "info": "It can only be configured on the home page. Other pages do not need it temporarily"
+      },{
+        "type": "checkbox",
+        "id": "is_show_boom_gery_yellow",
+        "label": "Is Show Gery Yellow color",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "premium_btn",
+        "label": "BUTTON1",
+        "default": "Premium"
+      }, {
+        "type": "text",
+        "id": "economy_btn",
+        "label": "BUTTON 2",
+        "default": "Economy"
+      }, {
+        "type": "text",
+        "id": "boom_bike_price",
+        "label": "FREEBEAT BOOM BIKE PRICE",
+        "default": "$699"
+      }, {
+        "type": "text",
+        "id": "boom_norictrack_bike_price",
+        "label": "NORICTRACK Bike BIKE PRICE",
+        "default": "$1,900+"
+      }, {
+        "type": "text",
+        "id": "boom_peleton_bike_price",
+        "label": "PELOTON BIKE BIKE PRICE",
+        "default": "$1,500+"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+ 
+  @media only screen and (min-width:769px) {
+    .fb-compare-table-container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  @media only screen and (max-width:768px) {
+    .fb-compare-table-container {
+      padding-top: 30px;
+      padding-bottom: 19px;
+    }
+  }
+</style>
+<script>
+  $(function() {
+    $('.js-premium-btn').click(function() {
+      $('.js-boombike-compare').css('display', 'none')
+      $('.js-freebeat-compare').css('display', 'flex')
+      $('.js-premium-btn').addClass('fbc_btn_active')
+      $('.js-economy-btn').removeClass('fbc_btn_active')
+    })
+    $('.js-economy-btn').click(function() {
+      $('.js-boombike-compare').css('display', 'flex')
+      $('.js-freebeat-compare').css('display', 'none')
+      $('.js-premium-btn').removeClass('fbc_btn_active')
+      $('.js-economy-btn').addClass('fbc_btn_active')
+    })
+  })
+</script>

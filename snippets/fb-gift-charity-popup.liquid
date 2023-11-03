@@ -1,0 +1,666 @@
+{%- if template !='product.lit-bike-black' and template !='product.lit-bike-pink'-%}
+<div class="gift_popup">
+    <div class="close">
+        <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
+            <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+          </svg>
+    </div>
+    <div class="gift_popup_wrapper">
+        {%- if block -%}
+            <div class="left-image">
+                {% assign imgPiker = block.settings.acceImg | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+                <img class="Image--lazyLoad Image--fadeIn acceImg"
+                    data-src="{{ imgPiker }}"
+                    data-sizes="auto" data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+            </div>
+            <div class="gift_popup_des">
+                <div class="gift_popup_title">{{ block.settings.gift_popup_title }}</div>
+                <div class="content">
+                    <div>{{ block.settings.contentA }}<span>{{ block.settings.contentA_price }} </span></div>
+                    <div>{{ block.settings.contentB }}<span>{{ block.settings.contentB_price }} </span></div>
+                    <div>{{ block.settings.contentC }}<span>{{ block.settings.contentC_price }} </span></div>
+                    <div>{{ block.settings.contentD }}<span>{{ block.settings.contentD_price }} </span></div>
+                </div>
+            </div>
+        {%- else -%}
+                <div class="left-image">
+                    {% assign imgPiker = block.settings.acceImg | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+                    <img class="Image--lazyLoad Image--fadeIn acceImg"
+                        data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/838-840-gift.png?v=1658483488"
+                        data-sizes="auto" data-optimumx="1.2"
+                        data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+                </div>
+                <div class="gift_popup_des">
+                    <div class="gift_popup_title">MORE FOR YOU: FREE <strong>$162</strong> GIFT BOX</div>
+                    <div class="content">
+                        <div>A. DUMBBELL SET<span>($25 VALUE)</span></div>
+                        <div>B. SWEATBAND + BOTTLE<span>($29 VALUE)</span></div>
+                        <div>C. RESISTANCE LOOP<span>($49 VALUE)</span></div>
+                        <div>D. Free 45 Days of Gamified Classes<span></span></div>
+                    </div>
+                </div>
+            
+        {%- endif -%}
+    </div>   
+   
+</div>
+{%- endif -%}
+
+<div class="charity_popup">
+    <div class="close">
+        <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
+            <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+          </svg>
+    </div>
+    <div class="charity_popup_title">CHARITABLE GIVING</div>
+    <div class="charity_popup_des">With every purchase you make, we're proud to donate <span>$1</span> to</div>
+    <div class="charity_popup_img_wrapper">
+        <div class="charity_popup_item">
+            <div>
+                <a href="https://curechildhoodcancer.org/" target="_blank"><img class="charity_popup_item_image1"
+                        src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/charityIcon.png?v=1646903556" /></a>
+            </div>
+            <div>
+                <a href="https://www.ctf.org/" target="_blank"><img class="charity_popup_item_image2"
+                        src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202221617330.png?v=1645004028"
+                        alt="" /></a>
+            </div>
+        </div>
+        <div class="charity_popup_item">
+            <div class="charity_popup_title_bottom">Read our story on</div>
+            <div>
+                <a href="https://www.bloomberg.com/press-releases/2021-11-18/freebeat-hosts-thanksgiving-charity-activities-helping-children-with-cancer"
+                    target="_blank"><img class="charity_popup_item_image3"
+                        src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202221617331.png?v=1645004028"
+                        alt="" /></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="klarnaPopup">
+    <div class="close"><img class="closeImg"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/close_img.png?v=1657605910" alt=""></div>
+    <div class="klarna_logo">
+        <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Klarna_Logo_Primary_Black.png?v=1657601017"
+            alt="">
+    </div>
+    <div class="klarna_title">4 interest-free payments</div>
+    <div class="subtitle">Buy what you love and split the cost. It's easy and interest-free. </div>
+    <div class="klarna_progress">
+        <div class="progress_item">
+            <div class="progress_icon">
+                <div class="klarna_rect"></div>
+                <div class="progress_line"></div>
+            </div>
+            <div class="klarna_text">Add item(s) to your cart</div>
+        </div>
+        <div class="progress_item">
+            <div class="progress_icon">
+                <div class="klarna_rect"></div>
+                <div class="progress_line"></div>
+            </div>
+            <div class="klarna_text">Go to checkout and choose</div>
+            <div class="klarna_pink_logo"><img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/klarna_image.png?v=1657181152" alt="">
+            </div>
+        </div>
+        <div class="progress_item">
+            <div class="progress_icon">
+                <div class="klarna_rect"></div>
+                <div class="progress_line"></div>
+            </div>
+            <div class="klarna_text">Enter your debit or credit card information</div>
+        </div>
+        <div class="progress_item">
+            <div class="progress_icon">
+                <div class="klarna_rect"></div>
+            </div>
+            <div class="klarna_text">Your first payment is taken when the order is
+                processed and the remaining 3 are automatically
+                taken every two weeks
+            </div>
+        </div>
+    </div>
+    <div class="kalrna_tips">
+        See payment <span> <a target = "_blank" href="https://cdn.klarna.com/1.0/shared/content/legal/terms/0/en_us/sliceitinx">terms </a></span> .
+        A higher initial payment may be required for some
+        consumers. CA
+        residents: Loans made or arranged pursuant to a California Financing Law license.
+    </div>
+    <div class="close_button">Close</div>
+</div>
+<div class="gift_charity_cover"></div>
+<style>
+    .gift_charity_cover {
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: none;
+    }
+
+    .gift_popup,
+    .charity_popup,
+    .klarnaPopup {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        background: #fff;
+        z-index: 999;
+    }
+
+    .gift_popup {
+        width: 898px;
+        height: 480px;
+    }
+
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 14px;
+        color: #666;
+        cursor: pointer;
+    }
+
+    .gift_popup_wrapper {
+        padding: 40px 41px 23px 29px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .acceImg {
+        width: 419px;
+        height: auto;
+    }
+
+    .gift_popup_des {
+        background: #FAFAFA;
+        margin-bottom: 17px;
+        width: 400px;
+        height: 400px;
+        padding: 37px 24px 41px;
+    }
+
+    .gift_popup_title {
+        font-size: 32px;
+        font-weight: 800;
+        color: #222222;
+        line-height: 38px;
+        padding-bottom: 64px;
+    }
+
+    .gift_popup_title strong {
+        color: #02C0D9;
+    }
+
+    .content div {
+        font-size: 16px;
+        font-weight: bold;
+        color: #666666;
+        line-height: 40px;
+        padding: 0 10px;
+    }
+
+    .content div span {
+        font-size: 14px;
+        font-weight: Medium;
+        color: #888;
+        line-height: 40px;
+    }
+
+    .charity_popup {
+        width: 630px;
+        height: 360px;
+        padding: 48px 75px 59px;
+    }
+
+    .charity_popup_title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #222222;
+        line-height: 38px;
+        text-align: center;
+    }
+
+    .charity_popup_des {
+        font-size: 16px;
+        font-weight: 500;
+        color: #666666;
+        line-height: 24px;
+        padding: 38px 0 32px;
+        text-align: center;
+    }
+
+    .charity_popup_des span {
+        color: #02C0D9;
+    }
+
+    .charity_popup_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 75px;
+    }
+
+    .charity_popup_item_image1 {
+        display: block;
+        width: 104px;
+        height: auto;
+        margin-right: 120px;
+    }
+
+    .charity_popup_item_image2 {
+        display: block;
+        width: 104px;
+        height: auto;
+
+    }
+
+    .charity_popup_item_image3 {
+        display: block;
+        width: 129px;
+        height: auto;
+        margin-left: 12px;
+    }
+
+    .charity_popup_title_bottom {
+        font-size: 16px;
+        font-weight: 600;
+        color: #222222;
+        line-height: 24px;
+    }
+
+    .charity_popup_item:first-child {
+        margin-bottom: 32px;
+    }
+
+    .klarnaPopup {
+        padding: 22px 30px 27px;
+        width: 600px;
+        height: 666px;
+    }
+
+    .klarna_logo {
+        width: 93px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .klarna_logo img {
+        display: block;
+        width: 100%;
+    }
+
+    .klarnaPopup .close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .closeImg {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+
+    .klarna_title {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000000;
+        line-height: 35px;
+        padding: 24px 23px 8px;
+        text-align: left;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000000;
+        line-height: 19px;
+        padding: 0 23px;
+    }
+
+    .klarna_progress {
+        position: relative;
+        margin: 40px 23px;
+    }
+
+    .progress_item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+    }
+
+    .progress_icon {
+        margin-top: 3px;
+        margin-right: 14px;
+    }
+
+    .klarna_rect {
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+    }
+
+    .klarna_text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #000000;
+        line-height: 19px;
+    }
+
+    .progress_line {
+        height: 54px;
+        width: 0;
+        border-left: solid 2px #F0EEEB;
+        margin-left: 4px;
+    }
+
+    .klarna_pink_logo {
+        width: 57px;
+        position: absolute;
+        top: 62px;
+        right: 177px;
+    }
+
+    .klarna_pink_logo img {
+        display: block;
+        width: 100%;
+    }
+
+    .kalrna_tips {
+        font-size: 12px;
+        font-weight: 400;
+        color: #444444;
+        line-height: 20px;
+        margin: 0 23px 40px;
+    }
+
+    .kalrna_tips span {
+        text-decoration: underline;
+    }
+
+    .close_button {
+        width: 100%;
+        height: 52px;
+        background-color: #000;
+        font-size: 16px;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: 52px;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 1549px) {
+        .gift_popup {
+            width: 725px;
+            height: 388px;
+        }
+
+        .gift_popup_wrapper {
+            padding: 30px 33px 19px 23px;
+        }
+
+        .acceImg {
+            width: 338px;
+        }
+
+        .gift_popup_des {
+            margin-bottom: 14px;
+            width: 323px;
+            height: 323px;
+            padding: 62px 19px 65px;
+        }
+
+        .gift_popup_title {
+            font-size: 26px;
+            line-height: 30px;
+            padding-bottom: 52px;
+        }
+
+        .content div {
+            font-size: 13px;
+            line-height: 25px;
+            padding: 0 8px;
+        }
+
+        .content div span {
+            font-size: 13px;
+            line-height: 25px;
+        }
+
+        .charity_popup {
+            width: 509px;
+            height: 291px;
+            padding: 39px 61px 48px;
+        }
+
+        .charity_popup_title {
+            font-size: 26px;
+            line-height: 30px;
+        }
+
+        .charity_popup_des {
+            font-size: 13px;
+            line-height: 19px;
+            padding: 31px 0 26px;
+        }
+
+        .charity_popup_item {
+            margin: 0 61px;
+        }
+
+        .charity_popup_item_image1 {
+            width: 84px;
+            margin-right: 97px;
+        }
+
+        .charity_popup_item_image2 {
+            width: 84px;
+
+        }
+
+        .charity_popup_item_image3 {
+            width: 104px;
+            margin-left: 10px;
+        }
+
+        .charity_popup_item:first-child {
+            margin-bottom: 26px;
+        }
+
+        .charity_popup_title_bottom {
+            font-size: 13px;
+            line-height: 19px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .gift_popup {
+            width: 335px;
+            height: 542px;
+        }
+
+        .close {
+            top: 8px;
+            right: 14px;
+            font-weight: bold;
+        }
+
+        .gift_popup_wrapper {
+            flex-direction: column;
+            padding: 0 0 10px;
+        }
+
+        .left-image {
+            padding: 0 30px;
+        }
+
+        .acceImg {
+            width: 275px;
+        }
+
+        .gift_popup_des {
+            margin: 0 11px 9px;
+            width: 312px;
+            height: 255px;
+            padding: 19px 12px 24px;
+        }
+
+        .gift_popup_title {
+            font-size: 24px;
+            line-height: 36px;
+            padding: 0 12px 32px;
+        }
+
+        .content div {
+            font-size: 14px;
+            line-height: 30px;
+            padding: 0;
+        }
+
+        .content div span {
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+        .charity_popup {
+            width: 334px;
+            height: 411px;
+            padding: 56px 36px;
+        }
+
+        .charity_popup_title {
+            font-size: 24px;
+            line-height: 15px;
+        }
+
+        .charity_popup_des {
+            font-size: 16px;
+            line-height: 22px;
+            padding: 24px 0 32px;
+        }
+
+        .charity_popup_item {
+            margin: 0 9px;
+        }
+
+        .charity_popup_item_image1 {
+            margin-right: 32px;
+        }
+
+        .charity_popup_item_image3 {
+            width: 104px;
+            margin: 8px 26px;
+        }
+
+        .charity_popup_item:first-child {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #E4E4E4;
+        }
+
+        .charity_popup_item:last-child {
+            flex-direction: column;
+            padding: 0 40px;
+        }
+
+        .charity_popup_title_bottom {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .klarnaPopup {
+            padding: 20px 10px 18px 20px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .klarna_logo {
+            width:77px;
+            height: auto;
+        }
+
+        .klarnaPopup .close {
+            top: 20px;
+            right: 16px;
+        }
+
+        .closeImg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .klarna_title {
+            font-size: 24px;
+            line-height: 28px;
+            padding: 35px 0 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            line-height: 16px;
+            padding: 0;
+        }
+
+        .klarna_progress {
+            position: relative;
+            margin: 24px 14px 40px 0px;
+        }
+        
+        .progress_icon {
+            margin-top: 4px;
+            margin-right: 14px;
+        }
+
+        .klarna_rect {
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+        }
+
+        .klarna_text {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .progress_line {
+            height: 44px;
+        }
+
+        .klarna_pink_logo {
+            width: 57px;
+            position: absolute;
+            top: 45px;
+            right: 49px;
+        }
+
+        .kalrna_tips {
+            font-size: 12px;
+            color: #888;
+            line-height: 20px;
+            margin: 0 0 0 4px;
+        }
+        .close_button {
+            position: absolute;
+            left: 0;
+            bottom: 18px;
+            right: 0;
+            margin:auto;
+            width:343px;
+            height: 58px;
+            line-height: 58px;
+        }
+    }
+</style>

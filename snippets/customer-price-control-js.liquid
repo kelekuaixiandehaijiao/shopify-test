@@ -1,0 +1,115 @@
+<script>
+$(function () {
+    const customerPriceFun = {
+        symbol: "{{- currency.symbol -}}",
+        bikeArray: [
+            {
+                id: "{{ settings.product_beige.id }}",
+                off: "{{ settings.gb_lbmb_discount | default: 0 }}",
+                te: "{{ settings.gb_lbmb_te | default: 0 }}"
+            },
+            {
+                id: "{{ settings.product_white.id }}",
+                off: "{{ settings.gb_lbsw_discount | default: 0 }}",
+                te: "{{ settings.gb_lbsw_te | default: 0 }}"
+            },
+            {
+                id: "{{ settings.product_black.id }}",
+                off: "{{ settings.gb_lbsb_discount | default: 0 }}",
+                te: "{{ settings.gb_lbsb_te | default: 0 }}"
+            },
+            {
+                id: "{{ settings.product_pink.id }}",
+                off: "{{ settings.gb_lbap_discount | default: 0 }}",
+                te: "{{ settings.gb_lbap_te | default: 0 }}"
+            },
+            {
+                id: "{{ settings.product_boom_grey.id }}",
+                off: "{{ settings.gb_bbgd_discount | default: 0 }}",
+                te: "{{ settings.gb_bbgd_te | default: 0 }}"
+            },
+            {
+                id: "{{ settings.product_boom_yellow.id }}",
+                off: "{{ settings.gb_bbyd_discount | default: 0 }}",
+                te: "{{ settings.gb_bbyd_te | default: 0 }}"
+            },
+            {
+                id: "{{ settings.product_boom_white.id }}",
+                off: "{{ settings.gb_bbaw_discount | default: 0 }}",
+                te: "{{ settings.gb_bbaw_te | default: 0 }}"
+            },
+            {
+                id: "{{ settings.product_jenselter_bike.id }}",
+                off: "{{ settings.gb_jslb_discount | default: 0 }}",
+                te: "{{ settings.gb_jslb_te | default: 0 }}"
+            }
+        ],
+        init: function () {
+            this.event()
+            console.log("bikeArray", this.bikeArray)
+        },
+        event: function () {
+            let _this = this
+            {% comment %} if(Shopify && (Shopify.country == 'gb' || Shopify.country == 'GB')) { {% endcomment %}
+                console.log("11111")
+                $("[data-fbcountry-code='gb']").each(function() {
+                    console.log("2222")
+                    let type = $(this).attr('data-fbtype') || 0
+                    let origin = $(this).attr('data-fborigin') || 0
+                    let off = $(this).attr('data-fboff') || 0
+                    let trans = $(this).attr('data-fbtrans') || 0
+                    let id =  $(this).attr('data-fbid') || null
+                    let sale = null
+                    let mo = null
+                    let currentobj = null
+                    console.log("origin", type, origin, off, trans)
+                    let rate = Shopify.currency ? Shopify.currency.rate : 1
+                   
+                    origin = Math.ceil(origin / 100)
+                    if (!id) {
+                        if(rate && off) {
+                            off = off * rate
+                        }
+                        if(type == 'sale') {
+                            sale =  origin - off
+                            sale = Math.ceil(sale)
+                            $(this).html('£' + sale)
+                        } else if (type == 'origin') {
+                            $(this).html('£' + origin)
+                        } else if (type == 'off') {
+                            off = Math.ceil(off)
+                            $(this).html('£' + off)
+                        }
+                    } else {
+                        _this.bikeArray.forEach((item) => {
+                            if(item.id == id ) {
+                                currentobj = item
+                                currentobj.off = item.off * rate
+                            }
+                        })
+                        console.log("currentobj", currentobj)
+                        if(type == 'sale') {
+                            sale =  origin - parseInt(currentobj.off || 0)
+                            sale = Math.ceil(sale)
+                            $(this).html('£' + sale)
+                        } else if ( type == 'origin') {
+                            $(this).html('£' + origin)
+                        } else if (type == 'mo') {
+                            mo = (origin - parseInt(currentobj.off || 0) +  parseInt(currentobj.te || 0)) / 4
+                            mo = Math.ceil(mo)
+                            $(this).html('£' + mo)
+                        } else if (type == 'off') {
+                            currentobj.off = Math.ceil(currentobj.off)
+                            $(this).html('£' + currentobj.off + ' OFF')
+                        }
+                    }
+                    
+                })
+            {% comment %} } {% endcomment %}
+        }
+    
+    }
+
+    customerPriceFun.init()
+})
+</script>

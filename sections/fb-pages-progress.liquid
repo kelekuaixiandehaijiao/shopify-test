@@ -1,0 +1,307 @@
+<div class="gFPgkd Section--spacingNormal" id="section-{{ section.id }}">
+    <div class="sc-kwTAbF">
+        <div class="sc-box">
+            <div class="sc-progress-bg"></div>
+            <ul>
+                {%- for block in section.blocks -%}
+                    <li class="sc-li">
+                        <div class="sc-progress"></div>
+                        <div class="item-title">
+                            {{ block.settings.pages_progress_title }}
+                        </div>
+                        <div class="item-info">
+                            {{ block.settings.pages_progress_Info }}
+                        </div>
+                    </li>
+                {% endfor %}
+                {% comment %} <li class="sc-li">
+                    <div class="sc-progress"></div>
+                    <div class="item-title">
+                        TRAIN WITH A RHYTHM GAME
+                    </div>
+                    <div class="item-info">
+                        Experience a fun interactive game in which you ride to the rhythm and score
+                        by your rhythmic pedal accuracy.
+                    </div>
+                </li>
+                <li class="sc-li">
+                    <div class="sc-progress"></div>
+                    <div class="item-title">CONNECT WITH YOUR PALS</div>
+                    <div class="item-info">Accept the challenge from friends and family. Climb up the leaderboard to
+                        make the most out of your fitness adventure.</div>
+                </li>
+                <li class="sc-li">
+                    <div class="sc-progress"></div>
+                    <div class="item-title">PERFORMANCE TRACKING</div>
+                    <div class="item-info">Our sensors won't miss a single pedal and receive instant performance
+                        tracking results at every beat.</div>
+                </li>
+                <li class="sc-li">
+                    <div class="sc-progress"></div>
+                    <div class="item-title">DIVERSE CLASS TYPES</div>
+                    <div class="item-info">Experience studio fitness from the comfort of your own home with thousands of
+                        on-demand classes to choose from every day.</div>
+                </li> {% endcomment %}
+            </ul>
+        </div>
+    </div>
+    <div class="sc-izAXJK">
+        <img class="bg" src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/AEAA.jpg?v=1629972745">
+        {%- for block in section.blocks -%}
+            <div class="sc-dx">
+                <video 
+                    class="bg-video Image--lazyLoad Image--fadeIn js-videoAutoPlayer" 
+                    style="position: absolute;z-index:1;" webkit-playsinline="true" playsinline="true"
+                    autoplay="autoplay" 
+                    muted="muted" 
+                    loop="loop"
+                    src="{{ block.settings.pages_progress_pc_video }}"></video>
+            </div>
+        {% endfor %}
+        {% comment %} <div class="sc-dx">
+            <video class="bg-video" style="position: absolute;z-index:1;" webkit-playsinline="true" playsinline="true"
+                autoplay="autoplay" muted="muted" loop="loop"
+                src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221241359.mp4?v=1643004057"></video>
+        </div>
+        <div class="sc-dx">
+            <video class="bg-video" style="position: absolute;z-index:1;" webkit-playsinline="true" playsinline="true"
+                autoplay="autoplay" muted="muted" loop="loop"
+                src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212114022.mp4?v=1642745201"></video>
+        </div>
+        <div class="sc-dx">
+            <video class="bg-video" style="position: absolute;z-index:1;" webkit-playsinline="true" playsinline="true"
+                autoplay="autoplay" muted="muted" loop="loop"
+                src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212114023.mp4?v=1642745177"></video>
+        </div>
+        <div class="sc-dx">
+            <video class="bg-video" style="position: absolute;z-index:1;" webkit-playsinline="true" playsinline="true"
+                autoplay="autoplay" muted="muted" loop="loop"
+                src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212114024.mp4?v=1642745201"></video>
+        </div> {% endcomment %}
+    </div>
+</div>
+<div class="gFPgkd-web">
+    <ul>
+        {%- for block in section.blocks -%}
+            {%- assign mobile_vedio = block.settings.pages_progress_mobile_video | default: block.settings.pages_progress_pc_video -%}
+             <li class="sc-li-web">
+                <div class="item-title-web">
+                    {{ block.settings.pages_progress_title }}
+                </div>
+                <div class="item-info-web">
+                    {{ block.settings.pages_progress_Info }} 
+                </div>
+                <video class="class-video pc-video js-videoAutoPlayer Image--lazyLoad Image--fadeIn" 
+                    style="width:100%;height:100%;" webkit-playsinline="true"
+                    playsinline="true" autoplay="autoplay" muted="muted" loop="loop"
+                    src="{{ block.settings.pages_progress_pc_video }}"></video>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% schema %}
+  {
+    "name": "FbPagesProgress",
+    "presets": [
+      {
+        "name": "fb-pages-progress",
+        "category": "Fb Sections",
+        "blocks": [
+            {
+                "type": "progress_list"
+            }
+        ]
+      }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "pages_progress_backcolor",
+            "label": "background color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "pages_progress_textcolor",
+            "label": "text color",
+            "default": "#000"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "progress_list",
+            "name": "progress list",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "pages_progress_title",
+                    "label": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "pages_progress_Info",
+                    "label": "Info"
+                },
+                {
+                    "type": "url",
+                    "id": "pages_progress_pc_video",
+                    "label": "Pc Video"
+                },
+                 {
+                    "type": "url",
+                    "id": "pages_progress_mobile_video",
+                    "label": "Mobile Video"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}
+<style>
+    #section-{{ section.id }} {
+        background-color: {{ section.settings.pages_progress_backcolor }};
+        color: {{ section.settings.pages_progress_textcolor }};
+    }
+    /* 切换动效 */
+.gFPgkd{
+	background: #fff;
+	display: flex;
+  
+} 
+.sc-kwTAbF{
+     -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex: 1 1 40%;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    text-align: left;
+}
+.sc-izAXJK{
+  	padding-top: 80px;
+  	display: grid;
+    flex: 1 1 60%;
+    max-width: 60vw;
+    overflow: hidden;
+    height: 600px;
+    pointer-events: none;
+  -webkit-box-pack: center;
+    justify-content: center;
+  position: relative;
+}
+.sc-izAXJK .bg{
+	 position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+/*   width: 100%; */
+  height: 90%;
+}
+.sc-box{
+	max-width: 350px;
+    position: relative;
+}
+.sc-box > ul{
+	
+}
+.sc-box li{
+	list-style: none;
+  	padding-left: 40px;
+  	position:relative;
+  	cursor: pointer;
+}
+.sc-progress-bg{
+    position: absolute;
+    content:'';
+    height:100%;
+    top:0;
+    left:0;
+    width:3px;
+	background-color: rgb(241, 241, 241);
+}
+
+.item-title{
+	font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.375em;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 30px;
+    transition: color 250ms ease 0s;
+  	opacity: .5;
+}
+.item-info{
+	font-weight: 300;
+    letter-spacing: 0.025em;
+    line-height: 1.5em;
+    font-size: 13px;
+    color: rgb(101, 102, 106);
+    opacity: 0;
+    transition: height .7s;
+  height:0;
+  overflow: hidden;
+}
+.sc-box li:first-child .item-info{
+  height:92px;
+  opacity: 1;
+}
+.sc-box li:first-child .item-title{
+  opacity: 1;
+}
+.sc-progress{
+	position: absolute;
+    top:0;
+    left:0;
+    width:3px;
+	background-color: #55bed5;
+  	height:30%;
+  	opacity: 0;
+}
+.sc-box li:first-child .sc-progress{
+	opacity: 1;
+}
+.gFPgkd-web{
+	display: none;
+}
+@media only screen and (min-width: 100px) and (max-width: 640px) {
+	.gFPgkd{
+		display: none;
+	} 
+	.gFPgkd-web{
+      	display: block;
+      padding: 30px;
+      text-align: center;
+  	}
+  .item-title-web{
+  	font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.375em;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  .item-info-web{
+	font-weight: 500;
+    letter-spacing: 0.025em;
+    line-height: 1.5em;
+    font-size: 13px;
+    color: rgb(101, 102, 106);
+	}
+  .sc-li-web img{
+  	width: 100%;
+    margin-bottom: 30px;
+    margin-top:30px;
+    display: block;
+  }
+  .sc-li-web video{
+    margin-bottom: 30px;
+    margin-top:30px;
+  }
+}
+
+
+</style>

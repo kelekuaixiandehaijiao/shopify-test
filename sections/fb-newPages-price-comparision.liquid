@@ -1,0 +1,142 @@
+{%- assign product =  section.settings.product  -%}
+<div class="fb-home-price-comparision" id="section-{{ section.id }}">
+  <div class="home-price-comparision-wrapper">
+       <div class="home-price-comparision-title">
+          {{section.settings.comparision-title}}
+      </div>
+      <div class="home-price-comparision-pic">
+        {%- if product != blank -%}
+                <img class="Image--lazyLoad Image--fadeIn comparision-img" 
+                    data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/{{product}}-{{ product.selected_or_first_available_variant.price | remove:"00" }}-pc-2.png" 
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                >
+                <span class="Image__Loader"></span>
+    
+                <img class="Image--lazyLoad Image--fadeIn comparision-img-mb" 
+                    data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/{{product}}-{{ product.selected_or_first_available_variant.price | remove:"00"}}-mb-2.png" 
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                >
+                <span class="Image__Loader"></span>
+
+        {%- else -%}
+        
+            {% assign imgPiker = section.settings.comparision-img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+            <img class="Image--lazyLoad Image--fadeIn comparision-img" 
+                data-src="{{ imgPiker }}" 
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            <span class="Image__Loader"></span>
+
+            {% assign imgPiker = section.settings.comparision-img-mb | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} 
+            <img class="Image--lazyLoad Image--fadeIn comparision-img-mb" 
+                data-src="{{ imgPiker }}" 
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            <span class="Image__Loader"></span>
+        {%- endif -%}
+      </div>
+  </div>
+</div>
+<style>
+  .home-price-comparision-wrapper{
+      color: {{ section.settings.text-color }};
+      background: {{ section.settings.comparision-color}};
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+  }
+  .home-price-comparision-title{
+      text-align: left;
+      width: 60%;
+      margin:0 auto;
+      font-size: 36px;
+      font-weight: bold;
+      line-height:10px;
+  }
+  .comparision-img{
+      display: block;
+      width: 90%;
+      margin: 50px auto 0;
+  }
+  .comparision-img-mb{
+      display: none;
+  }
+  @media only screen and (min-width:769px)and (max-width:1024px){
+    .home-price-comparision-wrapper{
+            padding: 50px 0;
+    }
+  }
+  @media only screen and (max-width:768px){
+      .home-price-comparision-wrapper{
+          padding: 60px 0 30px;
+      }
+      .home-price-comparision-title{
+          font-size: 24px;
+          width: 85%;
+      }
+      .comparision-img{
+          display: none;
+      }
+      .comparision-img-mb{
+          display: block;
+          width: 90%;
+          margin: 30px auto 0;
+      }
+  }
+</style>
+
+{% schema %}
+{
+"name": "FbNewPriceComparision",
+"presets": [
+  {
+    "name": "fb-new-price-comparision",
+    "category": "Fb Sections",
+    "blocks": []
+  }
+],
+"settings": [
+    {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+    },
+  {
+      "type": "color",
+      "id": "comparision-color",
+      "label": "Price Comparision Background"
+  },
+  {
+      "type": "color",
+      "id": "text-color",
+      "label": "Text Color"
+  },
+  {
+      "type": "richtext",
+      "id": "comparision-title",
+      "label": "Title"
+  },
+  {
+      "type": "image_picker",
+      "id": "comparision-img",
+      "label": "Image Pc"
+  },
+  {
+      "type": "image_picker",
+      "id": "comparision-img-mb",
+      "label": "Image Mb"
+  }
+ 
+]
+}
+{% endschema %}

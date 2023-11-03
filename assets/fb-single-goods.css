@@ -1,0 +1,919 @@
+/* fb-single-goods Hide the PC, but the PC is still there */
+.fb-single_products, .fb-single_products_pc {
+    justify-content: flex-start;
+    align-items: left;
+    padding: 15px 0px 30px 0px;
+    overflow-x: scroll;
+    display: flex;
+    -webkit-tap-highlight-color: transparent;
+}
+.fb-single_products{
+    display: none;
+}
+.fb-single_products_pc {
+    display: flex;
+}
+.fb-single_products p, .fb-single_products_pc p{
+    margin: unset;
+}
+
+.fb-sg-box-outer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.fb-sg-box, .fb-sg-box-pc{
+    display: flex;
+    justify-content: space-between;
+   
+    background-color: #fff;
+    margin: 0px 12px !important;
+    flex-shrink: 0;
+}
+.fb-sg-box{
+    width: 270px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+}
+.fb-sg-box-pc{
+    width: 500px;
+    height: 280px;
+    flex-direction: row;
+    overflow: hidden;
+    /* cursor: pointer; */
+    padding: 6px 11px 4px 28px;
+}
+.fb-sg-box-pc .fb-sg-profooter{
+    /* padding-top: 39px; */
+}
+.fb-sg-box-pc .fb-sg-header-icons img{
+    width: 105px;
+    height: 24px;
+    margin-bottom: 12px;
+}
+.fb-sg-box-pc .fbSingleGoodsSwiper{
+    width: 270px;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+}
+.fb-sg-box-pc .fbSingleGoodsSwiperBoom{
+    width: 270px;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+}
+.fsg-swiper-pagination{
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+}
+.fsg-swiper-pagination .swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+    position: relative;
+    opacity: 1;
+}
+.fsg-swiper-pagination .swiper-pagination-bullet:nth-child(1){
+    background:#ECD0B5;
+}
+.fsg-swiper-pagination .swiper-pagination-bullet:nth-child(2){
+    background: #fff;
+}
+.fsg-swiper-pagination .swiper-pagination-bullet:nth-child(3){
+    background: #000;
+}
+.fsg-swiper-pagination .swiper-pagination-bullet:nth-child(4){
+    background: #E788A1;
+}
+.fsg-swiper-pagination .swiper-pagination-bullet-active{
+    border: none!important;
+}
+.fsg-swiper-pagination .swiper-pagination-bullet-active::after{
+  border: 2px solid #ECD0B5;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  left: -2px;
+  background: transparent;
+  top: -2px;
+  content: "";
+}
+.js-fsg-loop-profooter{
+    display: none;
+}
+.js-fsg-loop-profooter-boom{
+    display: none;
+}
+.fb-loop-index1 {
+    display: block;
+}
+.fb-loopboom-index1{
+    display: block;
+}
+.fb-single_products::-webkit-scrollbar, .fb-single_products_pc::-webkit-scrollbar{
+    display: none;
+}
+.fb-single_products_pc .fb-sg-header{
+    width: 270px;
+    height: 100%;
+}
+.fb-sg-image-desc{
+    position: absolute;
+    top: 45px;
+    left:15px;
+    width: 60px;
+    height: auto;
+}
+.fb-sg-product-image{
+  width: 100%;
+  height: auto;
+}
+.fb-sg-header-icons-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.fb-sg-header-icons img {
+    width: 90px;
+    height: 20.32px;
+    display: block;
+    margin-top: 6px;
+}
+
+.fb-sg-header-klarna img {
+    width: 54px;
+    height: 44.81px;
+    margin-top: 6px;
+}
+
+
+
+.fb-sg-profooter-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 28px;
+    color: #333333;
+    margin-top: 3px!important;
+}
+.fb-sg-profooter-subtitle {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    color: #333333;
+    margin-bottom: 9px!important;
+}
+ .fb-sg-profooter-desc {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    height: 15px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.fb-sg-proprice {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.fb-sg-proprice-price {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #02C0D9;
+    margin-right: 10px !important;
+}
+
+.fb-sg-proprice-discount-amount {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #02C0D9;
+}
+
+.fb-sg-proprice-discount-price {
+    text-decoration: line-through;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.fb-sg-profooter-shopNow {
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    background-color: #333333;
+    height: 48px;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px !important;
+}
+.fb-single_products_pc .fb-sg-profooter-shopNow{
+    width: 180px;
+}
+.fb-sg-profooter-shopNow-acc {
+    color: #333 !important;
+    background-color: #fff !important;
+    border: 2px solid #333333;
+}
+
+.fb-sg-proprice-discount-price {
+    color: #888;
+}
+
+/* .fb-single-box-m {
+    display: none;
+    width: 22px;
+    height: 166px;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+} */
+
+ @media only screen and (max-width: 1000px) {
+    /* .fb-single_products_pc{
+        display: none;
+    } */
+    .fb-single_products {
+        justify-content: flex-start;
+        align-items: left;
+        padding: 5px 0px 11px 11px;
+        overflow-x: scroll;
+        display: flex;
+
+    }
+
+    .fb-single_products .single_products_item:last-child {
+        margin-right: 0px;
+    }
+    .fb-sg-box{
+        padding: 0px 12px 12px 12px;
+    }
+    .fb-single-box-m {
+        display: inline-block;
+    }
+    .fb-sg-box{
+        width: 230px;
+    }
+   .fb-sg-box:nth-child(6){
+        display: none;
+    }
+    .fb-sg-header{
+        width: 100%;
+        min-height: 198px;
+        width: 100%;
+        padding-top: 5px;
+        position: relative;
+    }
+    .fb-sg-header-icons img {
+        width:80px;
+        height: 18px;
+        margin-top: 8px;
+    }
+    .fb-sg-product-image {
+        width: 202px;
+        height: auto;
+        margin-top: 30px;
+    }
+    .fb-sg-profooter {
+        width: 100%;
+    }
+    .fb-sg-profooter-boom{
+        width: 100%;
+    }
+    .fb-sg-profooter-title{
+       font-size: 22px;
+       line-height: 24px;
+    }
+    .fb-sg-profooter-subtitle{
+        font-size: 16px;
+    }
+    .fb-sg-proprice-price{
+        font-size: 28px;
+    }
+    .fb-sg-profooter-shopNow{
+        margin-top: 8px!important;
+        height: 38px;
+    }
+}
+/* last block css */
+.fb-srg-last-profooter .fb-sg-profooter-subtitle, .fb-srg-last-profooter .fb-sg-profooter-desc, .fb-srg-last-profooter .fb-sg-proprice{
+    visibility: hidden;
+}
+.fb-srg-last-profooter .fb-sg-profooter-shopNow{
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    
+}
+
+/* fb-home-klarna */
+.fb_xc_home_title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 54px;
+}
+
+.fb_xc_klarna_as_low_as {
+    font-size: 15px;
+    line-height: 18px;
+    position: absolute;
+    top: -15px;
+}
+
+.fb_xc_home_con {
+    background: transparent;
+}
+
+.fb_xc_klarna_con {
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fb_xc_klarna_con_logo {
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    color: #fff;
+    margin-bottom: 54px;
+}
+
+.fb_xc_klarna_con_logo_r {
+    width: 262px;
+    height: 60px;
+}
+
+.fb_xc_klarna_con_logo_l {
+    width: 146px;
+    height: 60px;
+}
+
+.fb_xc_klarna_con_logo_c {
+    width: 17px;
+    height: 17px;
+    margin: 0px 15px;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .fb_xc_klarna_con {
+        padding: 30px 20px;
+    }
+
+    .fb_xc_klarna_con_log,
+    .fb_xc_home_title {
+        margin-bottom: 34px;
+    }
+
+    .fb_xc_klarna_as_low_as {
+        top: -20px;
+    }
+
+    .fb_xc_klarna_con_logo_r {
+        width: 112px;
+        height: 26px;
+    }
+
+    .fb_xc_klarna_con_logo_c {
+        width: 7px;
+        height: 7px;
+        margin: 0px 9px;
+    }
+
+    .fb_xc_klarna_con_logo_l {
+        width: 63px;
+        height: 26px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .fb_xc_klarna_con {
+        padding: 30px 0px;
+    }
+
+    .fb_xc_klarna_con_logo {
+        margin-bottom: 47px;
+    }
+
+    .fb_xc_home_title {
+        margin-bottom: 25px;
+    }
+
+    .fb_xc_home_title {
+        font-size: 24px;
+    }
+
+    .fb_xc_klarna_con_logo_r {
+        width: 145px;
+        height: 33px;
+    }
+
+    .fb_xc_klarna_con_logo_c {
+        width: 9px;
+        height: 9px;
+        margin: 0 9px;
+    }
+
+    .fb_xc_klarna_con_logo_l {
+        width: 81px;
+        height: 33px;
+    }
+}
+
+.fb_xc_klarna_con_price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fb_xc_klarna_con_price_item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fb_xc_klarna_price_item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.fb_xc_klarna_unit {
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.fb_xc_number {
+    font-size: 75px;
+    line-height: 88px;
+    font-weight: 400;
+}
+
+.fb_xc_klarna_price_item_text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 19px;
+}
+
+.fb_xc_klarna_price_item_img {
+    width: 20px;
+    margin: 0px 89px;
+}
+
+.fb_xc_klarna_price_item_img img {
+    width: 26px;
+    height: 112px;
+}
+
+.fb_xc_klarna_price_item {
+    font-size: 75px;
+    line-height: 92px;
+}
+
+.fb_xc_klarna_con_text {
+    margin: 51px 0 35px;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .fb_xc_klarna_price_item {
+        height: 49px;
+    }
+
+    .fb_xc_home_title {
+        font-size: 24px;
+    }
+
+    .fb_xc_number {
+        font-size: 33px;
+        line-height: 38px;
+    }
+
+    .fb_xc_klarna_unit {
+        font-size: 15px;
+        line-height: 17px;
+        margin-top: 6px;
+    }
+
+    .fb_xc_klarna_price_item_text {
+        font-size: 7px;
+        line-height: 8px;
+    }
+
+    .fb_xc_klarna_price_item_img {
+        width: 11px;
+        margin: 0 39px;
+    }
+
+    .fb_xc_klarna_price_item_img img {
+        width: 11px;
+        height: 49px;
+    }
+}
+@media only screen and (min-width: 769px) {
+    .fb-sg-mobile-dotter{
+        display: none;
+    }
+    .fb-sg-mobile-dotter-boom{
+        display: none;
+    }
+    /* .fsg-swiper-pagination{
+        display: none;
+    } */
+    .fb-sg-box-pc .fbSingleGoodsSwiper {
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    .fb-sg-box-pc .fbSingleGoodsSwiperBoom{
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    /* .fb-sg-box-pc .fsg-swiper-pagination{
+        position: absolute;
+        left: 0;
+        top: 180px;
+    } */
+    .fb-sg-profooter .fb-sg-dotter ,.fb-sg-dotter1 {
+        width: 100%;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        margin-bottom: 21px;
+    }   
+     .fb-sg-imgbox-mobile {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+     }
+     .fb-sg-imgbox-mobile-boom {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+     }
+     .fb-sg-imgbox-mobile img{
+        border-radius: 50%;
+     }
+     .fb-sg-imgbox-mobile .fb-sg-default{
+         display: block;
+         width: 24px;
+         height: 24px;
+         line-height: 32px;
+     }
+     .fb-sg-imgbox-mobile .fb-sg-active{
+        display: none;
+        width: 34px;
+        height: 34px;
+    }
+    
+   
+    /* .fb-single_products_pc .fb-sg-box-pc:nth-child(3) .fb-sg-profooter-desc{
+        visibility: hidden;
+    }
+    .fb-single_products_pc .fb-sg-box-pc:nth-child(3) .fb-sg-proprice{
+        visibility: hidden;
+    }  */
+    .fb-single_products_pc .fb-sg-box-pc:nth-child(3) .fsg-swiper-dot-pc{
+        visibility: hidden;
+    }  
+    .fsg-swiper-dot-pc{
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        position: relative;
+        opacity: 1;
+        margin-bottom: 21px;
+    }
+    .fsg-swiper-dot-pc img{
+        width: 100%;
+        height: 100%;
+    }
+    /* .fsg-swiper-dot-pc::after{
+        border: 2px solid #D3D8DC;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;  
+        left: -4px;
+        background: transparent;
+        top: -4px;
+        content: "";
+      }
+    .fsg-swiper-dot-pc::before{
+        position: absolute;
+        width: 19.2px;
+        height: 19.2px;
+        background-color:#fff;
+        z-index: 1;
+        border-radius: 16px;
+        left: 22.5px;
+        top: -5px;
+        content: "";
+    } */
+}
+@media only screen and (min-width: 769px) {
+    .fsg-swiper-dot-mobile{
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .fb-sg-mobile-dotter{
+        display: flex;
+        width: 100%;
+        height: 34px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 14px;
+    }
+    .fb-sg-mobile-dotter-boom{
+        display: flex;
+        width: 100%;
+        height: 34px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 14px;
+    }
+    .fb-sg-imgbox-mobile {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        text-align: center;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+     }
+     .fb-sg-imgbox-mobile1:nth-child(1){
+         margin: 0;
+     }
+     .fb-sg-imgbox-mobile2:nth-child(1){
+         margin: 0;
+    }
+     .fb-sg-imgbox-mobile img{
+        border-radius: 50%;
+     }
+     .fb-sg-imgbox-mobile .fb-sg-default{
+         display: block;
+         width: 20px;
+         height: 20px;
+     }
+     .fb-sg-imgbox-mobile .fb-sg-active{
+        display: none;
+        width: 24px;
+        height: 24px;
+    }
+    .fb-sg-dotter ,.fb-sg-dotter1{
+        display: none;
+    }
+    .fb-sg-box-pc{
+        flex-direction: column-reverse;
+        width: 202px;
+        height: auto;
+        padding:0;
+    }
+    .fb-sg-box-pc .fbSingleGoodsSwiper {
+        width: 202px;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+    }
+    .fb-sg-box-pc .fbSingleGoodsSwiperBoom{
+        width: 202px;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+    }
+    /* .fsg-swiper-pagination .swiper-pagination-bullet{
+        width: 24px;
+        height: 24px;
+        position: relative;
+        opacity: 1;
+    } */
+    .fb-sg-box-pc .fb-sg-header-icons{
+        position: relative;
+    }
+    .fb-sg-box-pc .fb-sg-header-icons img{
+        width: 105px;
+        height: 24px;
+        margin-bottom: 12px;
+        position: absolute;
+        left: 0;
+        top: -256px;
+        z-index: 2;
+    }
+    /* .fsg-swiper-pagination .swiper-pagination-bullet:nth-child(1){
+        background: #ECD0B5;
+        z-index: 2;
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet:nth-child(2){
+        width: 22px;
+        height: 22px;
+        background: #fff;
+        z-index: 2;
+        outline: 1px solid #8c8c8c;
+        margin-left: 8px;
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet:nth-child(3){
+        background: #000;
+        z-index: 2;
+        margin-left: 8px;
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet:nth-child(4){
+        background:#E788A1;
+        z-index: 2;
+        margin-left: 8px;
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active{
+        border: none!important;
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(1):after{
+        border: 2px solid #ECD0B5;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        left: -4px;
+        background-color: transparent;
+        top: -4px;
+        content: "";
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(1):before{
+        position: absolute;
+        width: 19.2px;
+        height: 19.2px;
+        background-color:#fff;
+        z-index: 1;
+        border-radius: 16px;
+        left: 22.5px;
+        top: -5px;
+        content: "";
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(2):after{
+        border: 2px solid #000;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        left: -5px;
+        background-color: transparent;
+        top: -5px;
+        content: "";
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(2):before{
+        position: absolute;
+        width: 19.2px;
+        height: 19.2px;
+        background-color:#fff;
+        z-index: 1;
+        border-radius: 16px;
+        left: 22.5px;
+        top: -5px;
+        content: "";
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(3):after{
+        border: 2px solid #000;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        left: -4px;
+        background-color: transparent;
+        top: -4px;
+        content: "";
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(3):before{
+        position: absolute;
+        width: 19.2px;
+        height: 19.2px;
+        background-color:#fff;
+        z-index: 1;
+        border-radius: 16px;
+        left: 22.5px;
+        top: -5px;
+        content: "";
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(4):after{
+        border: 2px solid #E788A1;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        left: -4px;
+        background-color: transparent;
+        top: -4px;
+        content: "";
+    }
+    .fsg-swiper-pagination .swiper-pagination-bullet-active:nth-child(4):before{
+        position: absolute;
+        width: 19.2px;
+        height: 19.2px;
+        background-color:#fff;
+        z-index: 1;
+        border-radius: 16px;
+        left: 22.5px;
+        top: -5px;
+        content: "";
+    } */
+    .fb-sg-box-pc .fb-sg-profooter{
+        padding-top: 12px;
+        padding-left: 12px;
+        padding-bottom: 18px;
+    }  
+    .fb-sg-box-pc .fb-sg-profooter-boom{
+        padding-top: 12px;
+        padding-left: 12px;
+        padding-bottom: 18px;
+    }  
+    .fsg-swiper-pagination{
+        position: absolute;
+       text-align: left;
+       margin-left: 12px;
+       margin-top: 10px;
+    }
+    .fsg-swiper-dot-pc{
+        display: none;
+    }
+    .fsg-swiper-dot-mobile{
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        margin-left: 12px;
+        /* margin-top: 20px; */
+        margin-bottom: 14px;
+        position: relative;
+        opacity: 1;
+    }
+    .fsg-swiper-dot-mobile img{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .fb_xc_number {
+        font-size: 41px;
+        line-height: 49px;
+    }
+
+    .fb_xc_klarna_unit {
+        font-size: 19px;
+        line-height: 22px;
+        margin-top: 9px;
+    }
+
+    .fb_xc_klarna_as_low_as {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .fb_xc_klarna_price_item_text {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 13px;
+        margin-top: 4px;
+    }
+
+    .fb_xc_klarna_price_item_img {
+        width: 14px;
+        margin: 0px 8px;
+    }
+
+    .fb_xc_klarna_price_item_img img {
+        width: 14px;
+        height: 62px;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1549px){
+   .fb-single-goods{
+     padding-left: 10px!important;
+     padding-right: 10px!important;
+   }
+}

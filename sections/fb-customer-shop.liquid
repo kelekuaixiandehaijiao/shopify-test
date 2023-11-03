@@ -1,0 +1,841 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<section id="section-{{ section.id }}"  class="fb-customer-shop">
+         {% comment %} only one id or class {% endcomment %}
+         <button id="xbike-add-to-cart-main"
+            data-variantid="" 
+            data-price=""
+            data-title=""
+            data-gourl=""
+            class="js-keep-productdata"
+            style="display: none;"
+        > 
+        </button>
+        <div class="js-open-minicart" 
+            data-action="open-drawer" 
+            data-drawer-id="sidebar-cart" 
+            aria-expanded="false" 
+            aria-label="Open cart"
+            style="display: none;"
+        >
+        </div>
+    {%- capture choose_you_color -%}
+        <div class="fbcur-choose-color">
+            <p class="fbcur-choose-title">Choose your color</p>
+            <ul class="fbcur-choose-ul">
+                {%- for block in section.blocks -%}
+                    {%- if block.type == 'product_kinds'  -%}
+                        {%- assign product_main_color = block.settings.product_main -%}
+                        {%- capture show_product -%}
+                            {%- render 'customer-price-control', type:'showProduct', cpc_product: product_main_color -%}
+                        {%- endcapture -%}
+                        {%- if show_product == 'true' -%}
+                            {%- capture gb_show -%}
+                                {%- render 'customer-price-control', type:'gbShow', cpc_product: product_main_color -%}
+                            {%- endcapture -%}
+                            {%- capture ca_show -%}
+                                {%- render 'customer-price-control', type:'caShow', cpc_product: product_main_color -%}
+                            {%- endcapture -%}
+                            {%- capture au_show -%}
+                                {%- render 'customer-price-control', type:'auShow', cpc_product: product_main_color -%}
+                            {%- endcapture -%}
+                            <li class="fbcur-choose-item js-fbchoose-productcolor js-choose-item{{ block.settings.product_slect_type }} {% if block.settings.product_slect_type =='1' %}fbcur-choose-item-checked{% endif %} " data-product-id="{{ product_main_color.id }}"
+                                data-variantid="{{product_main_color.selected_or_first_available_variant.id}}" 
+                                data-price="{{product_main_color.price | money}}"
+                                data-type="{{ block.settings.product_slect_type }}"
+                                data-title="{{ product_main_color.title }}"
+                                data-gbshow="{{ gb_show }}"
+                                data-cashow="{{ ca_show }}"
+                                data-aushow="{{ au_show }}"
+                            >
+                                {% assign select_image_select =  block.settings.fpc_color_select_img | img_url: '' %}
+                                <img class="fbcur-choose-imgdefalut" src="{{ select_image_select }}" 
+                                    alt="{{ block.settings.fpc_color_select_img.alt }}"
+                                />
+                                {% assign check_image_select =  block.settings.fpc_color_checked_img | img_url: '' %}
+                                <img class="fbcur-choose-imgcheck" src="{{ check_image_select }}"  
+                                    alt="{{ block.settings.fpc_color_checked_img.alt }}"
+                                >
+                                <div class="fbcur-choose-product-name">
+                                    {{ block.settings.fpc_color_name }}
+                                </div>
+                            </li>
+                        {%- endif -%}
+                    {%- endif -%}
+                {%- endfor -%}  
+            </ul>
+        </div>
+    {%- endcapture -%}
+    <div class="fbcu-content">
+        <div class="fbcu-flex-content">
+            <div class="fbcu-block-left">
+                <div class="fbcu-cusomer-kefu" onclick="TidioShowFun()">
+                    <div class="fbcu-kefu-text">
+                        <span class="span1">Any questions?</span>
+                        <span class="span2">Chat with a freebeat specialist</span>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.40579 15.8467C3.40579 10.0142 8.99581 5.07839 16.1686 5.07839C23.3413 5.07839 28.9314 10.0142 28.9314 15.8467C28.9314 17.9547 28.2127 19.9283 26.9552 21.6012L26.7287 21.9026L26.817 22.2693C27.0858 23.3849 27.4067 24.7576 27.667 25.88C27.7276 26.1414 27.475 26.3434 27.2413 26.2447C26.2202 25.8136 24.9808 25.2793 23.9381 24.7978L23.5677 24.6267L23.2118 24.826C21.1981 25.9538 18.7786 26.6151 16.1686 26.6151C8.99581 26.6151 3.40579 21.6793 3.40579 15.8467ZM16.1686 3.47839C8.3603 3.47839 1.80579 8.90128 1.80579 15.8467C1.80579 22.7922 8.3603 28.2151 16.1686 28.2151C18.8962 28.2151 21.4529 27.5605 23.6326 26.4177C24.6132 26.8632 25.7075 27.3339 26.619 27.7187C28.0698 28.3312 29.5781 27.0387 29.2256 25.5187C28.9923 24.5124 28.7096 23.302 28.4588 22.2539C29.7691 20.3925 30.5314 18.1995 30.5314 15.8467C30.5314 8.90128 23.9769 3.47839 16.1686 3.47839ZM16.4349 16.6708C17.1285 16.6708 17.6907 16.1335 17.6907 15.4708C17.6907 14.808 17.1285 14.2708 16.4349 14.2708C15.7413 14.2708 15.1791 14.808 15.1791 15.4708C15.1791 16.1335 15.7413 16.6708 16.4349 16.6708ZM10.0524 16.6708C10.746 16.6708 11.3082 16.1336 11.3082 15.4708C11.3082 14.8081 10.746 14.2708 10.0524 14.2708C9.35885 14.2708 8.79661 14.8081 8.79661 15.4708C8.79661 16.1336 9.35885 16.6708 10.0524 16.6708ZM24.0732 15.4708C24.0732 16.1335 23.511 16.6708 22.8174 16.6708C22.1238 16.6708 21.5616 16.1335 21.5616 15.4708C21.5616 14.808 22.1238 14.2708 22.8174 14.2708C23.511 14.2708 24.0732 14.808 24.0732 15.4708Z" fill="#333333"/>
+                    </svg>
+                </div>
+                {%- for block in section.blocks -%}
+                    {%- if block.type == 'product_kinds'  -%}
+                        {%- assign product_main_color = block.settings.product_main -%}
+                        {%- capture show_product -%}
+                            {%- render 'customer-price-control', type:'showProduct', cpc_product: product_main_color -%}
+                        {%- endcapture -%}
+                        {%- if show_product == 'true' -%}
+                            <div class="js-fbcu-hide js-fbcu-show{{block.settings.product_slect_type}}" data-index="{{ forloop.index }}" >
+                                <div class="fbcu-main-title">
+                                    <a class="js-goproduct-page" href="{{ block.settings.fpc_goback_url }}">
+                                        <svg   xmlns="http://www.w3.org/2000/svg" width="9" height="18" viewBox="0 0 9 18" fill="none">
+                                            <path d="M8.375 1.25L0.978553 8.64645C0.783291 8.84171 0.783291 9.15829 0.978553 9.35355L8.375 16.75" stroke="#333333" stroke-linecap="round"/>
+                                       </svg>
+                                    </a>
+                                 
+                                    <span>{{ block.settings.fpc_cus_name }}</span>
+                                </div>
+                                <div class="fbcu-main-img">
+                                    {%- assign product_main_img = block.settings.product_main -%}
+                                    {% assign main_image_url =  block.settings.fpc_main_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                                    {%- assign pinterest_image = product_main_img.featured_media | img_url: '600x' | prepend: 'https:' -%}
+                                    {%- if block.settings.fpc_main_img -%}
+                                        <img class="Image--lazyLoad Image--fadeIn" data-src="{{ main_image_url }}"  data-sizes="auto"
+                                            alt="{{ block.settings.fpc_main_img.alt }}"
+                                        >
+                                    {%- else -%}
+                                        <img class="Image--lazyLoad Image--fadeIn" data-src="{{ pinterest_image }}"  data-sizes="auto">      
+                                    {%- endif -%}
+                                   
+                                    <span class="Image__Loader"></span>
+                                </div>
+                                {%- if block.settings.fpc_dimension_title -%}
+                                    <div class="fbcu-dimens">
+                                        <span class="js-open-dimessdilaog" data-type="{{ block.settings.product_slect_type }}">{{ block.settings.fpc_dimension_title }}</span>
+                                    </div>
+                                {%- endif -%}
+                            </div>
+                        {%- endif -%}
+                    {%- endif -%}
+                {%- endfor -%} 
+                <div class="cs-mobshow-pchide cs-render-bikeservice">
+                    {%- render 'customer-shop-item', section: section, type: 'bike-service' -%}
+                </div>
+            </div>
+            <div class="fbcu-block-right">
+                {%- for block in section.blocks -%}
+                    {%- if block.type == 'product_kinds'  -%}
+                        {%- assign product_main_title = block.settings.product_main -%}
+                        <div class="js-fbcu-hide js-fbcu-show{{ block.settings.product_slect_type }}">
+                            <p class="fbcur-product-name">{{ product_main_title.title }}</p>
+                        </div>
+                    {%- endif -%}
+                    {%- if block.type == 'bike_discount_desc' -%}
+                        <div class="fbcur-discount-desc">
+                            <div class="fbcur-discount-p">
+                                {%- if country_code_var == 'gb' -%}
+                                    {{ block.settings.gb_fpc_desc_disount}}
+                                {%- elsif country_code_var == 'au' -%}
+                                    {{ block.settings.au_fpc_desc_disount}}
+                                {%- else -%}
+                                    {{ block.settings.fpc_desc_disount }}
+                                {%- endif -%}
+                            </div>
+                        </div>
+                    {%- endif -%}
+                {%- endfor -%} 
+                {{ choose_you_color }}
+                {%- assign fpc_deliver_to = section.settings.fpc_deliver_to | strip_html -%}
+                {%- if fpc_deliver_to != blank -%}
+                    <div class="fbcur-deliver-to">
+                        <div class="fbcur-choose-title">
+                            {{ section.settings.fpc_deliver_to }}
+                        </div>
+                        {%- render 'customer-shop-item', section: section, type: 'deliver_to' -%}
+                    </div>
+                   
+                {%- endif -%}
+                {%- if section.settings.fpc_insurance_show -%}
+                    <div class="fb-insurance-box">
+                        <div id="fbInsuranceshow">
+                        </div>
+                    </div>
+                   
+                {%- endif -%}
+       
+                {%- for block in section.blocks -%}
+                    {%- if block.type == 'product_kinds'  -%}
+                      {%- if country_code_var == 'gb' -%}
+                        {%- if block.settings.fpc_gift_show_gb -%}
+                          {%- render 'customer-shop-item', section: section, block: block, type: 'customer_gift' -%}
+                        {%- endif -%}
+                      {%- elsif country_code_var == 'au' -%}
+                        {%- if block.settings.fpc_gift_show_au -%}
+                          {%- render 'customer-shop-item', section: section, block: block, type: 'customer_gift' -%}
+                        {%- endif -%}
+                      {%- else -%}
+                        {%- if block.settings.fpc_gift_show -%}
+                          {%- render 'customer-shop-item', section: section, block: block, type: 'customer_gift' -%}
+                        {%- endif -%}
+                      {%- endif -%}
+                    {%- endif -%}
+                {%- endfor -%} 
+
+                {%- render 'customer-shop-item', section: section, type: 'customer_service' -%}
+                {%- if section.settings.fpc_introduce_show -%}
+                    {%- render 'customer-shop-item', section: section, type: 'intro' -%}
+                {%- endif -%}
+            </div>
+            
+        </div>
+        <div class="fbcu-flex-bottom-pc">
+            <div class="fbcubt-content">
+                <div class="fbcubt-content-left">
+                    {%- render 'customer-shop-item', section: section, type: 'bike-service' -%}
+                </div>
+                <div class="fbcubt-content-right">
+                    {%- render 'customer-shop-item', section: section, type: 'sub-total' -%}
+                </div>
+            </div>
+        </div>
+        {% comment %} <div class="cs-mobshow-pchide cs-mobshow-shopfoot">
+            {%- render 'customer-shop-item', section: section, type: 'sub-total' -%}
+        </div> {% endcomment %}
+    </div>
+    
+</section>
+{% comment %} bike dimss 弹窗 {% endcomment %}
+{%- render 'customer-shop-dimens-dialog' ,  section: section -%}
+  
+{% schema %}
+{
+    "name": "FbCustomerShop",
+    "presets": [
+      {
+        "name": "fb-customer-shop",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "fpc_deliver_to",
+            "label": "Deliver to title",
+            "default": "<p>Deliver to</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "fpc_gift_title",
+            "label": "gift title",
+            "default": "<p>For A Limited Time!</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "fpc_gift_sub",
+            "label": "gift Sub",
+            "default": "<p>Buy Now & Get $162 <strong>FREE</strong> Gifts</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "gb_fpc_gift_sub",
+            "label": "GB gift Sub",
+            "default": "<p>Buy Now & Get <strong>FREE</strong> Gifts</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "au_fpc_gift_sub",
+            "label": "AU gift Sub",
+            "default": "<p>Buy Now & Get <strong>FREE</strong> Gifts</p>"
+        },
+        {
+            "type": "checkbox",
+            "id": "fpc_introduce_show",
+            "label": "show introduce",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "fpc_insurance_show",
+            "label": "Insurance style display",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "fpc_bikeservice_show",
+            "label": "show bike service",
+            "default": true
+        },
+        {
+            "type": "richtext",
+            "id": "add_to_cart_sec",
+            "label": "Add To Cart Desc",
+            "default": "<p>Use multiple codes at the CART for more savings</p>"
+        },
+        {
+            "type": "header",
+            "content": "Add To Cart Block"
+        },
+        {
+            "type": "text",
+            "id": "add_to_total_name",
+            "label": "EST. TOTAL",
+            "default": "EST. TOTAL"
+        },
+        {
+            "type": "text",
+            "id": "add_to_cart_name",
+            "label": "Add To Cart Name",
+            "default": "ADD TO CART"
+        }
+    ],
+    "blocks": [ 
+        {
+            "type": "product_kinds",
+            "name": "Product Kinds",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Naked bike"
+                },
+                {
+                    "type": "product",
+                    "id": "product_main",
+                    "label": "Main Product"
+                },
+                {
+                    "type": "select",
+                    "id": "product_slect_type",
+                    "label": "Select Bike Type",
+                    "info": "The code of the car, defined by the developer",
+                    "options": [
+                      {
+                        "value": "1",
+                        "label": "SpaceBlack Or MistGrey"
+                      },
+                      {
+                        "value": "2",
+                        "label": "SnowpeakWhite Or uscanyYellow"
+                      },
+                      {
+                        "value": "3",
+                        "label": "Moonbow Beige Or ArcticWhite"
+                      },
+                      {
+                        "value": "4",
+                        "label": "AuroraPink"
+                      },
+                      {
+                        "value": "5",
+                        "label": "Other"
+                      }
+                    ],
+                    "default": "1"
+                },
+                {
+                    "type": "url",
+                    "id": "fpc_goback_url",
+                    "label": "Back url"
+                },
+                {
+                    "type": "text",
+                    "id": "fpc_cus_name",
+                    "label": "customer product name"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fpc_main_img",
+                    "label": "Main Image"
+                },
+                {
+                    "type": "text",
+                    "id": "fpc_cus_select_name",
+                    "label": "customer select name",
+                    "default": "Naked bike"
+                },
+                {
+                    "type": "text",
+                    "id": "fpc_dimension_title",
+                    "label": "Dimension Title",
+                    "default": "Bike dimensions"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fpc_dimension_img",
+                    "label": "Dimension Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fpc_dimension_gbimg",
+                    "label": "Dimension GbImage"
+                },
+                {
+                    "type": "richtext",
+                    "id": "fpc_dimension_desc",
+                    "label": "Dimension Desc"
+                },
+                {
+                    "type": "richtext",
+                    "id": "fpc_cadimension_desc",
+                    "label": "CaDimension Desc"
+                },
+                {
+                    "type": "richtext",
+                    "id": "fpc_audimension_desc",
+                    "label": "AuDimension Desc"
+                },
+                {
+                    "type": "richtext",
+                    "id": "fpc_gbdimension_desc",
+                    "label": "GbDimension Desc"
+                },
+                {
+                    "type": "header",
+                    "content": "Public Data"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fpc_color_select_img",
+                    "label": "Select Select Color"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fpc_color_checked_img",
+                    "label": "Select Checked Color"
+                },
+                {
+                    "type": "richtext",
+                    "id": "fpc_color_name",
+                    "label": "customer Color Name",
+                    "default": "<p>Space<br/>Black</p>"
+                },
+                {
+                  "type": "header",
+                  "content": "Gift Block Country Show"
+                },
+                {
+                  "type": "checkbox",
+                  "id": "fpc_gift_show",
+                  "label": "CA Gift Block Show?",
+                  "default": true
+                },
+                {
+                  "type": "checkbox",
+                  "id": "fpc_gift_show_gb",
+                  "label": "GB Gift Block Show?",
+                  "default": true
+                },
+                {
+                  "type": "checkbox",
+                  "id": "fpc_gift_show_au",
+                  "label": "AU Gift Block Show?",
+                  "default": true
+                },
+                {
+                  "type": "header",
+                  "content": "Gift location Config"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gift_show1",
+                    "label": "Show Gift 1"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gb_gift_show1",
+                    "label": "GB Show Gift 1"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "au_gift_show1",
+                    "label": "AU Show Gift 1"
+                },
+                {
+                    "type": "product",
+                    "id": "gift_product1",
+                    "label": "Gift product 1"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img1",
+                    "label": "Gift Img 1"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img_mob1",
+                    "label": "Gift Img Mob 1"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_price1",
+                    "label": "Gift title 1"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_gift_service_price1",
+                    "label": "GB Gift title 1"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_gift_service_price1",
+                    "label": "AU Gift title 1"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_desc1",
+                    "label": "Gift desc 1"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gift_show2",
+                    "label": "Show Gift 2"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gb_gift_show2",
+                    "label": "GB Show Gift 2"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "au_gift_show2",
+                    "label": "AU Show Gift 2"
+                },
+                {
+                    "type": "product",
+                    "id": "gift_product2",
+                    "label": "Gift product 2"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img2",
+                    "label": "Gift Img 2"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img_mob2",
+                    "label": "Gift Img Mob 2"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_price2",
+                    "label": "Gift title 2"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_gift_service_price2",
+                    "label": "GB Gift title 2"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_gift_service_price2",
+                    "label": "AU Gift title 2"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_desc2",
+                    "label": "Gift desc 2"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gift_show3",
+                    "label": "Show Gift 3"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gb_gift_show3",
+                    "label": "GB Show Gift 3"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "au_gift_show3",
+                    "label": "AU Show Gift 3"
+                },
+                {
+                    "type": "product",
+                    "id": "gift_product3",
+                    "label": "Gift product 3"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img3",
+                    "label": "Gift Img 3"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img_mob3",
+                    "label": "Gift Img Mob 3"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_price3",
+                    "label": "Gift title 3"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_gift_service_price3",
+                    "label": "GB Gift title 3"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_gift_service_price3",
+                    "label": "AU Gift title 3"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_desc3",
+                    "label": "Gift desc 3"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gift_show4",
+                    "label": "Show Gift 4"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "gb_gift_show4",
+                    "label": "GB Show Gift 4"
+                },
+                 {
+                    "type": "checkbox",
+                    "id": "au_gift_show4",
+                    "label": "AU Show Gift 4"
+                },
+                {
+                    "type": "product",
+                    "id": "gift_product4",
+                    "label": "Gift product 4"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img4",
+                    "label": "Gift Img 4"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_service_img_mob4",
+                    "label": "Gift Img Mob 4"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_price4",
+                    "label": "Gift title 4"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_gift_service_price4",
+                    "label": "GB Gift title 4"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_gift_service_price4",
+                    "label": "AU Gift title 4"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gift_service_desc4",
+                    "label": "Gift desc 4"
+                },
+                {
+                    "type": "text",
+                    "id": "add_to_show_klarnades",
+                    "label": "show Klarna Description"
+                },
+                {
+                    "type": "header",
+                    "content": "Product parts Info"
+                },
+                {
+                    "type": "product",
+                    "id": "product_parts",
+                    "label": "Product parts"
+                },
+                {
+                    "type": "text",
+                    "id": "fpc_parts_select_name",
+                    "label": "parts select name",
+                    "default": "Portfolio products"
+                }
+            ]
+        },
+        {
+            "type": "bike_discount_desc",
+            "name": "Bike Discount Des",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "fpc_desc_disount",
+                    "label": "Tips",
+                    "default": " <p>Use code <strong>SAVE500</strong> at checkout to get <br/> $500 off your bike.</p>"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_fpc_desc_disount",
+                    "label": "GB Tips"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_fpc_desc_disount",
+                    "label": "AU Tips"
+                }
+            ]
+        },
+        {
+            "type": "introduce_service",
+            "name": "introduce Service",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "intoduce_service_img",
+                    "label": "Img"
+                },
+                {
+                    "type": "richtext",
+                    "id": "intoduce_service_desc",
+                    "label": "desc"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_intoduce_service_desc",
+                    "label": "GB desc"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_intoduce_service_desc",
+                    "label": "AU desc"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_tip_or_dialog",
+                    "label": "show tip  or dialog",
+                    "default": true
+                },
+                {
+                    "type": "richtext",
+                    "id": "intoduce_service_tip",
+                    "label": "Hover tips"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_intoduce_service_tip",
+                    "label": "GB Hover tips"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_intoduce_service_tip",
+                    "label": "AU Hover tips"
+                },
+                {
+                    "type": "text",
+                    "id": "fbcur_intro_dialog_title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "fbcur_intro_dialog_desc1",
+                    "label": "Desc1"
+                },
+                {
+                    "type": "text",
+                    "id": "fbcur_intro_dialog_desc2",
+                    "label": "Desc2"
+                },
+                {
+                    "type": "text",
+                    "id": "fbcur_intro_dialog_desc3",
+                    "label": "Desc3"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fbcur_intro_dialog_item_img1",
+                    "label": "Item Img1"
+                },
+                {
+                    "type": "url",
+                    "id": "fbcur_intro_dialog_item_img_url_1",
+                    "label": "Item Img1 Url "
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fbcur_intro_dialog_item_img2",
+                    "label": "Item Img2"
+                },
+                {
+                    "type": "url",
+                    "id": "fbcur_intro_dialog_item_img_url_2",
+                    "label": "Item Img2 Url "
+                },
+                {
+                    "type": "text",
+                    "id": "fbcur_intro_dialog_title_bottom",
+                    "label": "Title Bottom"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "fbcur_intro_dialog_item_img3",
+                    "label": "Item Img3"
+                },
+                {
+                    "type": "url",
+                    "id": "fbcur_intro_dialog_item_img_url_3",
+                    "label": "Item Img3 Url "
+                }
+            ]
+        },
+        {
+            "type": "bike_service",
+            "name": "Bike Service",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "bike_service_img",
+                    "label": "Img"
+                },
+                {
+                    "type": "richtext",
+                    "id": "bike_service_desc",
+                    "label": "desc"
+                },
+                {
+                    "type": "richtext",
+                    "id": "gb_bike_service_desc",
+                    "label": "GB desc"
+                },
+                {
+                    "type": "richtext",
+                    "id": "au_bike_service_desc",
+                    "label": "AU desc"
+                }
+            ]
+        },
+        {
+            "type": "customer_service",
+            "name": "Customer Service",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "customer_img",
+                    "label": "Customer Img"
+                },
+                {
+                    "type": "richtext",
+                    "id": "customer_title",
+                    "label": "customer_title",
+                    "default": "<p>Need more help?</p>"
+                },
+                {
+                    "type": "richtext",
+                    "id": "customer_desc",
+                    "label": "customer_desc",
+                    "default": "<p>Connect with a Specialist.</p>"
+                }
+            ]
+        }       
+    ]
+}
+{% endschema %}
+<style>
+    {% comment %} {%- if template == 'page.customer-shop' -%}
+        .fbcur-choose-ul{
+            justify-content: space-between;
+        }
+    {%- endif -%} {% endcomment %}
+</style>

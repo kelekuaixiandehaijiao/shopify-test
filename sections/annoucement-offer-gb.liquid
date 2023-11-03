@@ -1,0 +1,220 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if country_code_var == 'gb' -%}
+  <section
+    class="Drawer Drawer--fromRight annoucement-offer-container"
+    data-section-type="sidebar-annoucement-offer-gb"
+    aria-hidden="true"
+    id="sidebar-annoucement-offer-gb"
+  >
+    <div class="annoucement-offer-content">
+      <div class="annoucement-offer-header">
+        <div class="annoucement-offer-title">{{ section.settings.an_offer_title }}</div>
+        <div class="annoucement-offer-close">
+          <svg
+            class="js-annoucement-offer-close"
+            data-action="close-modal"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path d="M0.800049 0.799999L15.2 15.2M0.800049 15.2L15.2 0.799999" stroke="#333333" stroke-width="1.2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="Drawer__Content__fb">
+        <div class="Drawer__Main annoucement-offer-modelshow" data-drawer-animated-right data-scrollable>
+          <div class="annou-box-ul">
+            {%- for block in section.blocks -%}
+              {%- assign annou_title = block.settings.annou_title | strip_html -%}
+              {%- assign annou_desc = block.settings.annou_desc | strip_html- %}
+              {%- assign additional_desc = block.settings.additional_desc | strip_html -%}
+              <a class="annou-box-li annou-box-number-{{ forloop.index }}" href="{{ block.settings.annou_link }}">
+                {% assign annou_back_img = block.settings.annou_back_img | img_url: '' %}
+                <div class="annou-box-img">
+                  <img
+                    class="Image--lazyLoad Image--fadeIn activeroll-img-block2"
+                    data-src="{{ annou_back_img }}"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                  >
+                </div>
+                <div class="annou-box-text {{ block.settings.annou_text_position}}">
+                  {%- if annou_title != blank -%}
+                    <div class="an-box-title">
+                      <object>{{ block.settings.annou_title }}</object>
+                    </div>
+                  {%- endif -%}
+                  {%- if annou_desc != blank -%}
+                    <div class="an-box-desc">
+                      <object>{{ block.settings.annou_desc }}</object>
+                    </div>
+                  {%- endif -%}
+                  {%- if additional_desc != blank -%}
+                    <div class="an-box-additional">
+                      <object>{{ block.settings.additional_desc }}</object>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </a>
+            {%- endfor -%}
+            <div class="ios-div-space"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    {%- for block in section.blocks -%}
+        {%- assign annou_desc = block.settings.annou_desc | strip_html-%}
+        {%- assign additional_desc = block.settings.additional_desc | strip_html -%}
+        .annou-box-number-{{ forloop.index }} .an-box-title{
+            color: {{ block.settings.annou_title_color }};
+        }
+        .annou-box-number-{{ forloop.index }} .an-box-title em {
+            color: {{ block.settings.annou_color_italic }};
+            font-style: normal!important;
+        }
+  
+        .annou-box-number-{{ forloop.index }} .an-box-desc{
+            color: {{ block.settings.annou_title_color }};
+        }
+        .annou-box-number-{{ forloop.index }} .an-box-additional{
+            color: {{ block.settings.additional_desc_color }};
+        }
+        @media only screen and (min-width: 769px) {
+            .annou-box-number-{{ forloop.index }} .an-box-title em{
+                font-size: {{ block.settings.annou_title_font_size_pc }}px;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .annou-box-number-{{ forloop.index }} .an-box-title em{
+                font-size: {{ block.settings.annou_title_font_size_mob }}px;
+            }
+        }
+    {%- endfor -%}
+  </style>
+{%- endif -%}
+{% schema %}
+{
+  "name": "annoucement-offer-gb",
+  "settings": [
+    {
+      "type": "text",
+      "id": "an_offer_title",
+      "label": "Title",
+      "default": "YOUR OFFERS"
+    }
+  ],
+  "max_blocks": 9,
+  "blocks": [
+    {
+      "type": "Offers",
+      "name": "Offers",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "annou_back_img",
+          "label": "Img Background"
+        },
+        {
+          "type": "url",
+          "id": "annou_link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "annou_text_position",
+          "label": "Text Position",
+          "options": [
+            {
+              "value": "annou-left-center",
+              "label": "Left Center"
+            },
+            {
+              "value": "announ-left-top",
+              "label": "Left Top"
+            }
+          ],
+          "default": "announ-left-top"
+        },
+        {
+          "type": "header",
+          "content": "Title Settings"
+        },
+        {
+          "type": "color",
+          "id": "annou_title_color",
+          "label": "Default Title Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "annou_title",
+          "label": "Title",
+          "info": "Supports up to 4 rows"
+        },
+        {
+          "type": "color",
+          "id": "annou_color_italic",
+          "label": "Title italic Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "annou_title_font_size_pc",
+          "min": 10,
+          "max": 30,
+          "unit": "px",
+          "label": "Used Italic Font Size pc",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "annou_title_font_size_mob",
+          "min": 10,
+          "max": 30,
+          "unit": "px",
+          "label": "Used Italic Font Size Mob",
+          "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Desc Settings",
+          "info": "Italic represents color change, h6 represents font size selection"
+        },
+        {
+          "type": "color",
+          "id": "annou_desc_color",
+          "label": "Desc Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "annou_desc",
+          "label": "Desc",
+          "info": "Supports up to 2 rows"
+        },
+        {
+          "type": "header",
+          "content": "Additional Benefit Points"
+        },
+        {
+          "type": "color",
+          "id": "additional_desc_color",
+          "label": "Additional Desc Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "additional_desc",
+          "info": "Supports up to 6 rows",
+          "label": "Desc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,245 @@
+<div class="replenishment-notice">
+    <div class="close" id="close_pop">
+        <svg class="Icon Icon--close" role="presentation" viewBox="0 0 16 14">
+            <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+          </svg>
+    </div>
+    <div class="replenishment-notice_title">NOTIFY ME WHEN AVAILABLE</div>
+    <div class="replenishment-notice_des">Be the first to know when this product is back in stock!</div>
+    <div class="replenishment-notice-from">
+        {%- form 'contact', id: 'NotifySubPopup', class: "NotifySubPopup__Form" -%}
+            {%- if form.posted_successfully? -%}
+                <p class="Form__Alert Alert Alert--success">You have already subscribed for this item. We'll notify you when this product is back in stock!</p>
+            {%- else -%}
+                <input type="hidden" name="contact[tags]" value="notifySub">
+                <input type="email" name="contact[email]" class="Form__Input" required="required" aria-label="{{ 'general.popup.email_placeholder' | t }}" placeholder="Enter email to get notified">
+                <button class="Form__Submit Button Button--primary Button--full" id="gtm-popup-button" type="submit">NOTIFY ME</button>
+            {%- endif -%}
+        {%- endform -%}
+    </div>
+    <p class="replenishment-tips">We don't share your information with others.</p>
+</div>
+<style>
+    .replenishment-notice {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        background: #1c1b1b;
+        z-index: 999;
+    }
+    .replenishment-notice .Button, .replenishment-notice .Button::before{
+        background-color: #fff;
+        color: #000;
+        border: none;
+    }
+    .replenishment-notice .Form__Input {
+        border-color: rgba(var(--newsletter-popup-text-color-rgb), 0.4);
+        color: #fff;
+    }
+    .replenishment-notice .Form__Input:focus{
+        border-color: #fff;
+        color: #fff;
+    }
+    .close {
+        position: absolute;
+        top: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 400 !important;
+    }
+
+
+    .replenishment-notice {
+        width: 385px;
+        height: 340px;
+        padding: 30px;
+    }
+    .replenishment-notice-from{
+        margin-top: 30px;
+    }
+
+    .replenishment-notice_title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 26px;
+        text-align: center;
+    }
+    .replenishment-tips{
+        font-size: 14px;
+        color: #9b9797;
+        line-height: 26px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .replenishment-notice_des {
+        font-size: 17px;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 22px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .replenishment-notice_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 75px;
+    }
+
+    .replenishment-notice_item_image1 {
+        display: block;
+        width: 104px;
+        height: auto;
+        margin-right: 120px;
+    }
+
+    .replenishment-notice_item_image2 {
+        display: block;
+        width: 104px;
+        height: auto;
+
+    }
+
+    .replenishment-notice_item_image3 {
+        display: block;
+        width: 129px;
+        height: auto;
+        margin-left: 12px;
+    }
+
+    .replenishment-notice_title_bottom {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 24px;
+    }
+
+    .replenishment-notice_item:first-child {
+        margin-bottom: 32px;
+    }
+
+    @media only screen and(max-width: 1549px) {
+
+        .replenishment-notice {
+            width: 385px;
+            height: 291px;
+            padding: 39px 61px 48px;
+        }
+
+        .replenishment-notice_title {
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        .replenishment-notice_des {
+            font-size: 17px;
+            font-weight: 500;
+            color: #fff;
+            line-height: 24px;
+            text-align: center;
+        }
+
+
+        .replenishment-notice_item {
+            margin: 0 61px;
+        }
+
+        .replenishment-notice_item_image1 {
+            width: 84px;
+            margin-right: 97px;
+        }
+
+        .replenishment-notice_item_image2 {
+            width: 84px;
+
+        }
+
+        .replenishment-notice_item_image3 {
+            width: 104px;
+            margin-left: 10px;
+        }
+
+        .replenishment-notice_item:first-child {
+            margin-bottom: 26px;
+        }
+
+        .replenishment-notice_title_bottom {
+            font-size: 13px;
+            line-height: 19px;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .replenishment-notice {
+            width:calc(100% - 30px);
+            height: 360px;
+            padding: 24px 30px 30px;
+        }
+
+        .replenishment-notice_title {
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        .replenishment-notice_des {
+            font-size: 17px;
+            font-weight: 500;
+            color: #fff;
+            line-height: 24px;
+            text-align: center;
+        }
+
+
+        .replenishment-notice_item {
+            margin: 0 9px;
+        }
+
+        .replenishment-notice_item_image1 {
+            margin-right: 32px;
+        }
+
+        .replenishment-notice_item_image3 {
+            width: 104px;
+            margin: 8px 26px;
+        }
+
+        .replenishment-notice_item:first-child {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #E4E4E4;
+        }
+
+        .replenishment-notice_item:last-child {
+            flex-direction: column;
+            padding: 0 40px;
+        }
+
+        .replenishment-notice_title_bottom {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+</style>
+{% schema %}
+
+{
+    "name": "Notice Popup",
+    "settings": [],
+    "presets": [
+        {
+            "category": "fb-category",
+            "name": "Notice popup",
+            "settings": {}
+        }
+    ]
+}
+
+{% endschema %}
+<style></style>

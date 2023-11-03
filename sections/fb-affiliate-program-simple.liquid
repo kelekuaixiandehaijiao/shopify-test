@@ -1,0 +1,168 @@
+<div  id="section-{{ section.id }}" class="fb-affiliate-program-simple">
+
+    <div class="simple_apply affiliate_program_public">
+        <div class="simple_apply_con">
+            <div class="simple_apply_top">
+            <div class="simple_title">{{ section.settings.simple_title }}</div>
+            <div class="simple_desc">{{ section.settings.simple_desc }}</div>
+        </div>
+        <div class="simple_apply_line"></div>
+        <div class="simple_apply_bottom">
+            <div class="apply_title">{{ section.settings.apply_title }}</div>
+            <div class="apply_desc_pc">{{ section.settings.apply_desc_pc }}</div>
+            <div class="apply_desc_moble">{{ section.settings.apply_desc_moble }}</div>
+        </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+      "name": "FbAffiliateProgramSimple",
+      "presets": [
+        {
+          "name": "fb-affiliate-program-simple",
+          "category": "Fb Sections",
+          "blocks": []
+        }
+      ],
+      "settings": [
+        {
+            "type": "text",
+            "id": "simple_title",
+            "label": "Simple Title"
+        },
+        {
+            "type": "richtext",
+            "id": "simple_desc",
+            "label": "Simple Desc"
+        },
+        {
+            "type": "text",
+            "id": "apply_title",
+            "label": "Apply Title"
+        },
+        {
+            "type": "richtext",
+            "id": "apply_desc_pc",
+            "label": "Apply Desc Pc"
+        },
+        {
+            "type": "richtext",
+            "id": "apply_desc_moble",
+            "label": "Apply Desc Moble"
+        }
+      ]
+}
+{% endschema %}
+<style>
+    @media screen and (min-width: 1200px){
+        .apply_desc_moble{
+            display: none;
+        }
+        .fb-affiliate-program-simple{
+            background: #f5f5f5;
+            padding-top: 122px;
+        }
+        .simple_apply{
+            background: #FFFFFF;
+            border-radius: 16px 16px 16px 16px;
+        }
+        .simple_title{
+            font-size: 28px;
+            font-family: Montserrat-Bold, Montserrat;
+            font-weight: bold;
+            color: #121212;
+            line-height: 28px;
+            text-align: center;
+        }
+       .simple_desc{
+            font-size: 16px;
+            font-family: Montserrat-Medium, Montserrat;
+            color: #666666;
+            line-height: 24px;
+            padding-top: 24px;
+            text-align: center;
+       }
+        .simple_apply_line{
+            width: 100%;
+            height: 1px;
+            background: #121212;
+            opacity: 0.2;
+            margin: 40px 0;
+        }
+        .apply_title{
+            font-size: 28px;
+            font-family: Montserrat-Bold, Montserrat;
+            font-weight: bold;
+            color: #121212;
+            line-height: 28px;
+            text-align: center;
+       }
+       .apply_desc_pc{
+            font-size: 16px;
+            font-family: Montserrat-Medium, Montserrat;
+            color: #666666;
+            line-height: 24px;
+            padding-top: 24px;
+            text-align: center;
+       }
+    }
+    @media screen and (max-width: 1199px) {
+        .apply_desc_pc{
+            display: none;
+        }
+        .fb-affiliate-program-simple{
+            background: #f5f5f5;
+            padding-top: 40px;
+        }
+        .simple_apply{
+            width: 327px;
+            margin: auto;
+            background: #FFFFFF;
+            border-radius: 12px 12px 12px 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .simple_apply_con{
+            padding: 24px 20px;
+        }
+        .simple_title{
+            font-size: 16px;
+            font-family: Montserrat-Bold, Montserrat;
+            font-weight: bold;
+            color: #000;
+            line-height: 16px;
+        }
+       .simple_desc{
+            font-size: 12px;
+            font-family: Montserrat-Medium, Montserrat;
+            color: #666666;
+            line-height: 16px;
+            padding-top: 16px;
+       }
+       .simple_apply_line{
+            width: 100%;
+            height: 1px;
+            background: #121212;
+            opacity: 0.2;
+            margin: 24px 0;
+        }
+       .apply_title{
+            font-size: 16px;
+            font-family: Montserrat-Bold, Montserrat;
+            font-weight: bold;
+            color: #000;
+            line-height: 16px;
+       }
+       .apply_desc_moble{
+            font-size: 12px;
+            font-family: Montserrat-Medium, Montserrat;
+            font-weight: 500;
+            color: #666666;
+            line-height: 16px;
+            padding-top: 16px;
+       }
+    }
+</style>

@@ -1,0 +1,229 @@
+{% assign fbDesignCss = ''  %}
+{%- for block in section.blocks -%}
+  {% if forloop.length > 4 %}
+    {% assign fbDesignCss = 'fb-pages-klarba-content-length'  %}
+  {% endif %}
+{%- endfor -%}
+
+<div class="fb-pages-klarba-design" id="section-{{ section.id }}">
+  <div class="fb-pages-klarba-content {{ fbDesignCss }}" id="fb-pages-klarba-content">
+  {%- if section.settings.design_nav -%}
+    <div class="fb-pages-klarba-title">
+        {%- if section.settings.show_change_scrool -%}
+          <div class="fb-pages-klarba-title_img">
+              <div>
+                  {% comment %} <img class="fb-pages-klarba-title_img1" onclick="GoscroolImg('1')" 
+                    src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212617101.png?v=1643190077" alt=""> {% endcomment %}
+                    <img class="fb-pages-klarba-title_img1" onclick="GoscroolImg('1')" 
+                     src="{{ section.settings.show_change_left }}" alt="">
+              </div>
+              <div>
+                  <img class="fb-pages-klarba-title_img2" onclick="GoscroolImg('2')" 
+                    src="{{ section.settings.show_change_right }}" alt="">
+                  {% comment %} <img class="fb-pages-klarba-title_img2" onclick="GoscroolImg('2')" 
+                    src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212617102.png?v=1643190078" alt=""> {% endcomment %}
+              </div>
+          
+          </div> 
+         {%- endif -%}
+       {%- if section.settings.design_title -%}
+          <div class="fb-pages-klarba-title_con" style="color: {{ section.settings.design_title_color }}"> 
+            
+            {%- if template == 'page.lit-bike' or template == 'page.lit-bike-klarna' -%}
+                {{ section.settings.design_title | strip }}
+            {%- else -%}
+                  {{ section.settings.design_title | strip_html }} 
+            {%- endif -%}
+          </div>
+        {%- endif -%} 
+    </div>
+  {%- endif -%}
+
+    <div class="fb-pages-klarba_scroll">
+      {%- for block in section.blocks -%}
+        <div class="fb-pages-klarba_item">
+          <div class="fb-pages-klarba_imgblock">
+            <!-- {% assign imgpiker = block.settings.design_img %}  -->
+            {% assign imgpiker = block.settings.design_choose_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+            <img class="Image--lazyLoad Image--fadeIn" data-src="{{ imgpiker }}"  data-sizes="auto"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                alt="{{ block.settings.design_choose_img.alt }}"
+            >
+            <span class="Image__Loader"></span>
+          </div>
+          {%- if block.settings.design_img_title != blank -%}
+            <div class="fb-pages-klarba_item_title">
+              {{ block.settings.design_img_title }}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.design_img_sub_title != blank -%}
+            <div class="fb-pages-klarba_item_con">
+              {{ block.settings.design_img_sub_title }}
+            </div>
+         {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+</div>
+</div>
+{% schema %}
+  {
+    "name": "FbPagesKlarnaDesign",
+    "presets": [
+      {
+        "name": "fb-pages-klarna-design",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "design_nav",
+        "label": "show nav",
+        "default": false
+      },
+      {
+        "type": "url",
+        "id": "design_back_img",
+        "label": "background url"
+      },
+      {
+        "type": "text",
+        "id": "design_title",
+        "label": "title"
+      },
+       {
+        "type": "color",
+        "id": "design_title_color",
+        "label": "title color",
+         "default": "#000"
+      },
+      {
+        "type": "image_picker",
+        "id": "design_title_img",
+        "label": "title background Img"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_change_scrool",
+        "label": "Show change scrool",
+        "default": false
+      },
+      {
+        "type": "url",
+        "id": "show_change_left",
+        "label": "page left icon"
+      },
+       {
+        "type": "url",
+        "id": "show_change_right",
+        "label": "page right icon"
+      },
+      {
+        "type": "color",
+        "id": "design_color",
+        "label": "Pc Background color",
+        "default": "#f6f6f6"
+      },
+      {
+        "type": "color",
+        "id": "design_mobile_color",
+        "label": "Mobile Background color",
+        "default": "#fff"
+      }
+      
+    ],
+    "blocks": [
+      {
+        "type": "designImgBlock",
+        "name": "designImgBlock",
+        "settings": [
+          {
+            "type": "url",
+            "id": "design_img",
+            "label": "Image",
+            "info": "Abandoned"
+          },
+          {
+            "type": "text",
+            "id": "design_img_title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "design_img_sub_title",
+            "label": "Sub title"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "design_choose_img",
+            "label": "Choose Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script type="text/javascript">
+  function GoscroolImg(direction) {
+    let design_scroll = document.getElementsByClassName("fb-pages-klarba_scroll")[0];
+    switch (direction) {
+      case "1":
+        design_scroll.scrollLeft -= 300;
+        break;
+      case "2":
+        design_scroll.scrollLeft += 300;
+        break;
+    }
+  }
+  if(document.body.clientWidth > 1900) {
+    let fbklarnadesign = document.getElementById("fb-pages-klarba-content").classList.remove("fb-pages-klarba-content-length")
+  }
+</script>
+<style>
+  #section-{{ section.id }} {
+    background-color: {{ section.settings.design_color }};
+
+  }
+  {%- if section.settings.design_back_img != blank -%}
+    #section-{{ section.id }} {
+        background: url({{ section.settings.design_back_img }}) no-repeat;
+        background-size: cover;
+        margin-top: -2px;
+    }
+  {%- endif -%}
+   {%- if section.settings.design_title_img != blank -%}
+     .fb-pages-klarba-title_con{
+         background-image: url({{ section.settings.design_title_img | img_url: '' }});
+        /* background-image: url(https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221242118.png?v=1643115434); */
+        background-repeat: no-repeat;
+        background-size: 26%;
+        background-position: 88% 86%;
+     }
+   {%- endif -%}
+@media only screen and (max-width: 768px){
+  #section-{{ section.id }} {
+    background-color: {{ section.settings.design_mobile_color }}
+  }
+  {%- if template == 'page.lit-bike'  -%}
+      .fb-pages-klarba-title{
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 37px;
+        
+      }
+      .fb-pages-klarba-title_con{
+        margin-right: 0;
+      }
+  {%- else -%}
+    .fb-pages-klarba-title{
+        margin-bottom: 37px;
+      }
+   {%- endif -%}
+  
+}
+</style>
+

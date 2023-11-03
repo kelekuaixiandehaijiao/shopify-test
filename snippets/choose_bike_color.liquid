@@ -1,0 +1,210 @@
+<!-- bikeColor -->
+<!-- <link rel="stylesheet" href="{{ 'bikeColor.css' | asset_url }}" /> -->
+{%- if template contains 'product.lit-bike' -%}
+    {%- assign is_show_video_back = true -%}
+{%- else -%}
+    {%- assign is_show_video_back = false -%}
+{%- endif -%}
+<div class="chooseBikeColor">
+    <ul class="changecolorWrapper">
+        {%- assign product_bike_color1 = block.settings.product_bike_color1 -%}
+        {%- capture show_product1 -%}
+            {%- render 'customer-price-control', type:'showProduct', cpc_product: product_bike_color1 -%}
+        {%- endcapture -%}
+        {%- if show_product1 == true  or show_product1 == 'true' -%}
+            <li id="choose-item">
+                <div class="choose-circle">
+                  <a class="choose-circle-a" href="{{ block.settings.bike_color_url1 }}">
+                    {% assign imgdefault1 = block.settings.bike_img_defalut1 | img_url %}
+                    {% assign imgactive1 = block.settings.bike_img_active1 | img_url %}
+                    {%- if block.settings.is_color_active1 -%}
+                      <img class="change-active-block" src="{{ imgactive1 }}">
+                    {%- else -%}
+                      <img class="change-color-block" src="{{ imgdefault1 }}">
+                    {%- endif -%}
+                  </a>
+                </div>
+              </li>
+        {%- endif -%}   
+        {%- assign product_bike_color2 = block.settings.product_bike_color2 -%}
+        {%- capture show_product2 -%}
+            {%- render 'customer-price-control', type:'showProduct', cpc_product: product_bike_color2 -%}
+        {%- endcapture -%}
+        {%- if show_product2 == true  or show_product2 == 'true' -%}
+            <li id="choose-item">
+                <div class="choose-circle {% if is_show_video_back %} js-mpdp-show-video {% endif %} ">
+                  <a class="choose-circle-a" href="{{ block.settings.bike_color_url2 }}">
+                    {% assign imgdefault2 = block.settings.bike_img_defalut2 | img_url %}
+                    {% assign imgactive2 = block.settings.bike_img_active2 | img_url %}
+                    {%- if block.settings.is_color_active2 -%}
+                      <img class="change-active-block" src="{{ imgactive2 }}">
+                    {%- else -%}
+                      <img class="change-color-block" src="{{ imgdefault2 }}">
+                    {%- endif -%}
+                  </a>
+                   {%- if is_show_video_back -%}
+                        <a class="choose-circle-a js-mpdp-showback" href="{{ block.settings.bike_color_url2 }}">
+                            {%- if block.settings.is_color_active2 -%}
+                                <img class="change-active-block" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/PC-Snowpeak_White_95627e22-207a-4041-a1d4-40aa391cb565.png?v=1677577473">
+                            {%- else -%}
+                                <img class="change-color-block" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/PC-Space_Black_7b9231e2-5b92-47c4-b716-d626c7ce9ba8.png?v=1677577473">
+                            {%- endif -%}
+                        </a>
+                   {%- endif -%}
+                </div>
+            </li>
+        {%- endif -%}   
+       
+    
+        {%- assign product_bike_color3 = block.settings.product_bike_color3 -%}
+        {%- capture show_product3 -%}
+            {%- render 'customer-price-control', type:'showProduct', cpc_product: product_bike_color3 -%}
+        {%- endcapture -%}
+        {%- if show_product3 == true  or show_product3 == 'true' -%}
+            <li id="choose-item">
+                <div class="choose-circle {% if is_show_video_back %} js-mpdp-show-video {% endif %} ">
+                    <a class="choose-circle-a" href="{{ block.settings.bike_color_url3 }}">
+                        {% assign imgdefault3 = block.settings.bike_img_defalut3 | img_url %}
+                        {% assign imgactive3 = block.settings.bike_img_active3 | img_url %}
+                        {%- if block.settings.is_color_active3 -%}
+                            <img class="change-active-block" src="{{ imgactive3 }}">
+                        {%- else -%}
+                            <img class="change-color-block" src="{{ imgdefault3 }}">
+                        {%- endif -%}
+                    </a>
+                    {%- if is_show_video_back -%}
+                        <a class="choose-circle-a js-mpdp-showback" href="{{ block.settings.bike_color_url3 }}">
+                            {%- if block.settings.is_color_active3 -%}
+                                <img class="change-active-block" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/PC-Space_Black.png?v=1677577473">
+                            {%- else -%}
+                                <img class="change-color-block" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/PC-Snowpeak_White.png?v=1677577473">
+                            {%- endif -%}
+                        </a>
+                {%- endif -%}
+                </div>
+            </li>
+        {%- endif -%}
+        {%- assign product_bike_color4 = block.settings.product_bike_color4 -%}
+        {%- capture show_product4 -%}
+            {%- render 'customer-price-control', type:'showProduct', cpc_product: product_bike_color4 -%}
+        {%- endcapture -%}
+        {%- if show_product4 == true  or show_product4 == 'true' -%}
+            <li id="choose-item">
+            <div class="choose-circle">
+                <a class="choose-circle-a" href="{{ block.settings.bike_color_url4 }}">
+                {% assign imgdefault4 = block.settings.bike_img_defalut4 | img_url %}
+                {% assign imgactive4 = block.settings.bike_img_active4 | img_url %}
+                {%- if block.settings.is_color_active4 -%}
+                    <img class="change-active-block" src="{{ imgactive4 }}">
+                {%- else -%}
+                    <img class="change-color-block" src="{{ imgdefault4 }}">
+                {%- endif -%}
+                </a>
+            </div>
+            </li>
+        {%- endif -%}
+    </ul>
+    <div class="change-color-des">{{ block.settings.bike_color_title }}</div>
+  </div>
+  <style>
+    .changecolorWrapper {
+      list-style: none;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+      display: inline-flex;
+    }
+    .choose-circle-a {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .js-mpdp-showback{
+        display: none;
+    }
+    .changecolorWrapper li .choose-circle {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      text-align: center;
+      padding-top: 0px;
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+    }
+    .blackBorder {
+      border: 1px solid #000;
+      border-radius: 50%;
+    }
+    .changecolorWrapper li {
+      margin: 0;
+      padding: 0;
+    }
+    .changecolorWrapper .choose-circle .change-color-block {
+      width: 21px;
+      height: 21px;
+    }
+    .changecolorWrapper .choose-circle .change-active-block {
+      width: 100%;
+    }
+    .change-color-des {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1d1d1b;
+      line-height: 19px;
+      letter-spacing: 1px;
+    }
+    .changecolorWrapper .active-circle {
+      border: 1px solid #000;
+      background: #ffffff;
+      display: inline-block;
+      border-radius: 50%;
+    }
+  
+    @media only screen and (max-width: 640px) {
+      .changecolorWrapper {
+        width: auto;
+        position: none;
+        margin: 16px 0 0 24px;
+      }
+      .changecolorWrapper li .choose-circle {
+        margin-bottom: 0px;
+      }
+      .changecolorWrapper .active-circle {
+        margin-bottom: 0px;
+      }
+      .change-color-des {
+        display: none;
+      }
+      .chooseBikeColor {
+        position: absolute;
+        bottom: -20px;
+      }
+    }
+  
+    @media screen and (min-width: 641px) {
+      .chooseBikeColor {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+      }
+      .changecolorWrapper li .choose-circle {
+        width: 36px;
+        height: 36px;
+      }
+      .changecolorWrapper .choose-circle .change-color-block {
+        width: 30px;
+        height: 30px;
+      }
+      .change-color-des {
+        font-size: 20px;
+        color: #666;
+      }
+    }
+  </style>
+  

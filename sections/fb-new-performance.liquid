@@ -1,0 +1,614 @@
+{%- assign newPerformance = section.blocks | where: 'type', 'newSwiperContent' | first -%}
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div class="fb-mobile-device fb-new-performance" id="section-{{ section.id }}">
+  <div class="purchase-title">{{ section.settings.content_title }}</div>
+  <div class="swiper new-performance-mySwiper">
+    <div class="swiper-wrapper">
+      {% for item in section.blocks %}
+            {% if country_code_var == 'gb' and  item.settings.swiperTitle contains 'Financing' %}
+            {% elsif country_code_var == 'au' and  item.settings.swiperTitle contains 'Financing' %}
+            {%- else -%}
+                <div class="swiper-slide">
+                    <div class="new-performance-box">
+                        <div class="new-performance-top-list">
+                        {% assign imgPiker = item.settings.icon_img_choose | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img
+                            class="Image--lazyLoad Image--fadeIn new-performance-icon"
+                            data-src="{{ imgPiker  }}"
+                            data-sizes="auto"
+                            alt="{{ item.settings.icon_img_choose | escape }}"
+                        >
+                        <div class="new-performance-title">{{ item.settings.swiperTitle }}</div>
+                        </div>
+                        <div class="new-performance-des">{{ item.settings.swiperDes }}</div>
+                        <!--
+                        <a class="new-performance-href" href="{{item.settings.swiper_url}}" target="_blank">{{item.settings.linkDes}}<span>></span>
+                        </a>
+                        -->
+                        <a
+                        class="new-performance-href"
+                        {% if forloop.last %}
+                            href="javascript:void(0);" onclick="TidioShowFun()"
+                        {% else %}
+                            href="{{item.settings.swiper_url}}"
+                        {% endif %}
+                        >
+                        {{ item.settings.linkDes }}
+                        <span>></span>
+                        </a>
+                    </div>
+                </div>
+            {%- endif -%}
+      {% endfor %}
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+<div class="fb-new-performance-pc fb-pc-device" id="section-{{ section.id }}">
+  {%- if section.settings.content_title != blank -%}
+    <div class="purchase-title">
+      {{ section.settings.content_title }}
+    </div>
+  {%- endif -%}
+  <div class="fb_safe_footerIcon">
+    {%- for block in section.blocks -%}
+        {% if country_code_var == 'gb' and  block.settings.swiperTitle contains 'Financing' %}
+        {% elsif country_code_var == 'au' and  block.settings.swiperTitle contains 'Financing' %}
+        {%- else -%}
+            <div class="footerIcon_safe_item">
+                <div>
+                {% assign imgPiker = block.settings.icon_img_choose | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                <img
+                    class="Image--lazyLoad Image--fadeIn footerIcon_safe_item_icon"
+                    data-src="{{ imgPiker }}"
+                    data-sizes="auto"
+                    alt="{{ block.settings.icon_img_choose.alt | escape }}"
+                >
+                </div>
+                <div class="fb-perfomance-title" style="color: {{ block.settings.hands_top_onecolor }};">
+                {{ block.settings.swiperTitle }}
+                </div>
+                <div class="fb-perfomance-text" style="color: rgba(29, 29, 31, 0.8)">
+                <!-- Enjoy warranty up to 10 years for bike components and parts. -->
+                {{ block.settings.swiperDes }}
+                </div>
+                <div class="fb-perfomance-link" style="color: {{ block.settings.hands_learn_more_color }};">
+                <!-- <a href="{{ block.settings.swiper_url }}"> -->
+                <a
+                    {% if forloop.last %}
+                    href="javascript:void(0);" onclick="TidioShowFun()"
+                    {% else %}
+                    href="{{ block.settings.swiper_url }}"
+                    {% endif %}
+                >
+                    {{ block.settings.linkDes }}
+                </a>
+                <span style="margin:2px 0 0 4px;">></span>
+                </div>
+            </div>
+        {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+     .fb-new-performance{
+          background:#f7f7f7;
+          {% comment %} margin-top: 80px; {% endcomment %}
+          padding:52px 0 0 25px;
+      }
+      .purchase-title{
+          height: 76px;
+          font-size: 30px;
+          font-family: Montserrat-Bold, Montserrat;
+          font-weight: bold;
+          color: #1D1D1F;
+          line-height: 38px;
+          margin-bottom: 36px;
+          text-transform: uppercase;
+      }
+      .new-performance-box{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+      }
+      .new-performance-title{
+          font-size: 20px;
+          font-family: Montserrat-Bold, Montserrat;
+          font-weight: bold;
+          color: #1D1D1F;
+          line-height: 20px;
+       }
+       .new-performance-des {
+          width: 244px;
+          font-size: 16px;
+          font-family: Montserrat-Light, Montserrat;
+          font-weight: 300;
+          color: #666666;
+          line-height: 22px;
+          margin:10px 0 8px 0;
+       }
+       .new-performance-href{
+          font-size: 16px;
+          font-family: Montserrat-Regular, Montserrat;
+          font-weight: 400;
+          color: #02C0D9;
+          line-height: 16px;
+          margin-bottom: 30px;
+       }
+       .new-performance-href span{
+          margin-left: 4px;
+          position: relative;
+          top: 2px;
+       }
+       .fb-new-performance .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .fb-new-performance  .swiper-slide {
+          width: 84%!important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+      .fb-new-performance .swiper-horizontal>.swiper-scrollbar {
+          position: absolute;
+          left: 0!important;
+          bottom: 3px;
+          z-index: 50;
+          width: 90%;
+          height: 2px;
+          background: #EAEAEA;
+          border-radius: 3px;
+      }
+      .fb-new-performance .swiper-scrollbar {
+          border-radius: 10px;
+          position: relative;
+          -ms-touch-action: none;
+          background: #EAEAEA;
+      }
+      .fb-new-performance .swiper-scrollbar-drag {
+          height: 100%;
+          width: 100%;
+          position: relative;
+          background: #C3C3C3;
+          border-radius: 10px;
+          left: 0;
+          top: 0;
+      }
+      .fb-new-performance-pc{
+          width: 100%;
+          height: 460px;
+          display: flex;
+          align-items: center;
+          background: #FAFAFA;
+          padding: 80px
+      }
+      @media screen and (max-width: 768px) {
+          .fb-mobile-device{
+              display: block;
+          }
+          .fb-pc-device{
+              display: none;
+          }
+          .new-performance-box{
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+
+          }
+          .new-performance-top-list{
+              display:flex;
+              flex-direction:row;
+              justify-content:flex-start
+          }
+          .fb-new-performance{
+          padding-top: 60px;
+          }
+          .fb-new-performance  .swiper-slide:nth-child(1) .new-performance-box .new-performance-top-list img{
+            width:17px;
+            height:20px;
+            margin-right:8px;
+          }
+          .fb-new-performance  .swiper-slide:nth-child(2) .new-performance-box .new-performance-top-list img{
+              width:20px;
+              height:20px;
+              margin-right:8px;
+          }
+          .fb-new-performance  .swiper-slide:nth-child(3) .new-performance-box .new-performance-top-list img{
+              width:20px;
+              height:20px;
+              margin-right:8px;
+          }
+          .new-performance-title{
+              font-size: 20px;
+              font-family: Montserrat-Bold, Montserrat;
+              font-weight: bold;
+              color: #333333;
+              line-height: 20px;
+          }
+          .new-performance-des {
+              width: 244px;
+              font-size: 16px;
+              font-weight: 300;
+              color: #666666;
+              line-height: 22px;
+              margin:10px 0 8px 0;
+          }
+          .new-performance-href{
+              font-size: 16px;
+              font-weight: 400;
+              color: #02C0D9;
+              line-height: 16px;
+              margin-bottom: 30px;
+          }
+          .fb-new-performance  .swiper-slide {
+              width: 84%!important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              position: relative;
+          }
+          .fb-new-performance  .swiper-slide:last-child {
+              width:100%!important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              position: relative;
+          }
+      }
+      @media only screen and (min-width: 769px) {
+          .fb-mobile-device{
+              display: none;
+          }
+          .fb-pc-device{
+              display: block;
+          }
+      .fb-new-performance  .swiper-slide:first-child {
+          transition: transform 100ms;
+        }
+        .purchase-title{
+              width: 100%;
+              height: 76px;
+              font-size: 30px;
+              font-family: Montserrat-Bold, Montserrat;
+              font-weight: bold;
+              color: #333333;
+              line-height: 38px;
+              margin-bottom: 36px;
+              text-align: center;
+          }
+
+        .fb-new-performance  .swiper-slide:first-child img {
+          transition: box-shadow 500ms;
+        }
+
+        .fb-new-performance  .swiper-slide.swiper-slide-active:first-child {
+          transform: translateX(50%);
+          z-index: 2;
+        }
+
+        .fb-new-performance  .swiper-slide.swiper-slide-active:first-child img {
+          box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.35);
+        }
+
+        .fb-new-performance  .swiper-slide:nth-child(2) {
+          transition: transform 100ms;
+        }
+
+        .fb-new-performance  .swiper-slide.swiper-slide-next:nth-child(2) {
+          transform: translateX(55%);
+          z-index: 1;
+        }
+
+        .fb-new-performance  .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
+          transform: translateX(-50%);
+        }
+
+        .fb-new-performance  .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
+          transform: translateX(-55%);
+        }
+
+
+
+        /* pc css*/
+        .fb_safehands_title{
+      text-align: left;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 37px;
+      letter-spacing: 1px;
+      margin: 0 9% 62px;
+  }
+  .fb_safe_footerIcon{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    	margin-bottom: 100px;
+        padding-top: 2px;
+  }
+  .footerIcon_safe_item{
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .footerIcon_safe_item_icon{
+      display: block;
+      height: 60px;
+  }
+  .fb-new-performance-pc .fb-perfomance-title{
+      margin-top: 26px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      line-height: 24px;
+      text-align: center;
+      {% comment %} min-height: 32px; {% endcomment %}
+  }
+  .fb-perfomance-text{
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 19px;
+      text-align: center;
+      margin:12px 0;
+      {% comment %} min-height: 55px; {% endcomment %}
+  }
+  .fb-new-performance-pc .fb-perfomance-link{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18px;
+      /* margin-top: 26px; */
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+  }
+  @media only screen and (min-width: 1025px) and (max-width: 1550px) {
+      .fb_safehands_title{
+          font-size: 23px;
+          line-height: 28px;
+          margin: 0 9% 46px;
+          width: 50%;
+      }
+      .footerIcon_safe_item_icon{
+          display: block;
+          height: 45px;
+      }
+      .fb-new-performance-pc  .fb-perfomance-title{
+           margin-top: 26px;
+          font-size: 18px;
+          line-height: 18px;
+      }
+      .fb-perfomance-text{
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+      }
+      .fb-new-performance-pc  .fb-perfomance-link{
+          font-size: 16px;
+          line-height: 14px;
+          display:flex;
+          flex-direction:row;
+          align-items:center;
+          /* margin-top: 20px; */
+      }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px){
+      .fb_safehands_title{
+          font-size: 15px;
+          line-height: 15px;
+          margin: 0 9% 25px;
+      }
+      .footerIcon_safe_item_icon{
+          display: block;
+          height: 24px;
+      }
+      .fb-new-performance-pc  .fb-perfomance-title{
+          margin: 17px 0 12px;
+          font-size: 18px;
+          line-height: 16px;
+      }
+      .fb-perfomance-text{
+          font-size: 14px;
+          line-height: 14px;
+          text-align: center;
+      }
+      .fb-new-performance-pc  .fb-perfomance-link{
+          font-size: 12px;
+          line-height: 12px;
+          /* margin-top: 10px; */
+      }
+  }
+
+
+  @media only screen and (max-width: 768px){
+      .fb_safehands_title{
+          font-size: 24px;
+          line-height: 29px;
+          margin: 0 7% 30px;
+      }
+      .fb_safe_footerIcon{
+          flex-direction: column;
+          /* flex-wrap: wrap; */
+        	margin-bottom: 41px;
+          /* justify-content: flex-start; */
+      }
+      .footerIcon_safe_item{
+          width: 80%;
+          padding:22px 18px;
+      }
+      .footerIcon_safe_item_icon{
+          display: block;
+          height: 40px;
+      }
+      .fb-perfomance-title{
+          margin: 15px 0 8px;
+          font-size: 18px;
+          font-family: Montserrat-Bold, Montserrat;
+          font-weight: bold;
+          color: #FFFFFF;
+          line-height: 21px;
+          text-align: center;
+      }
+      .fb-perfomance-text{
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          font-family: Montserrat-Regular, Montserrat;
+          font-weight: 400;
+          color: #FFFFFF;
+      }
+      .fb-perfomance-link{
+          font-size: 14px;
+          font-family: Montserrat-Regular, Montserrat;
+          font-weight: 400;
+          color: #7D00FF;
+          line-height: 16px;
+          margin-top: 8px;
+      }
+  }
+
+  .fb-bike-hwbqTs  p {
+      font-weight: 300;
+      letter-spacing: 0.025em;
+      line-height: 1.5em;
+      font-size: 12px;
+      color: rgb(101, 102, 106);
+      margin: 0px auto 0px 0px;
+  }
+  .fb-bike-hwbqTs a{
+      text-decoration: revert;
+  }
+  .fb-bike-hwbqTs {
+      margin: 50px auto 0 0;
+      padding: 0 65px 100px;
+  }
+  @media only screen and (min-width: 1025px) and (max-width: 1550px){
+      .fb-bike-hwbqTs {
+          margin: 50px auto 0 0;
+          padding: 0 65px 80px;
+      }
+  }
+  @media only screen and  (max-width: 768px) {
+      .fb-bike-hwbqTs {
+          margin: 50px auto 0 0;
+          padding: 0 36px 30px
+      }
+  }
+
+
+
+      }
+</style>
+
+<script>
+  $(function () {
+    var Performswiper = new Swiper('.new-performance-mySwiper', {
+      slidesPerView: 'auto',
+      loopedSlides: 2,
+      centeredSlides: false,
+      slidesPerGroupSkip: 1,
+      grabCursor: true,
+      keyboard: {
+        enabled: true,
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "FbNewPerformance",
+  "presets": [
+    {
+      "name": "fb-new-performance",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "content_title",
+      "label": "Content Title",
+      "default": "Purchase Today, Worry-Free"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "newPerformance",
+      "name": "New Performance",
+      "settings": [
+        {
+          "type": "url",
+          "id": "swiper_url",
+          "label": "Swiper URL"
+        },
+        {
+          "type": "text",
+          "id": "swiperTitle",
+          "label": "Swiper Title"
+        },
+        {
+          "type": "text",
+          "id": "swiperDes",
+          "label": "Swiper Description"
+        },
+        {
+          "type": "text",
+          "id": "linkDes",
+          "label": "Link Des"
+        },
+        {
+          "type": "url",
+          "id": "img_url",
+          "label": "Img URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_img_choose",
+          "label": "Choose Icon Image"
+        },
+        {
+          "type": "color",
+          "id": "hands_top_onecolor",
+          "label": "one text color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "hands_top_twocolor",
+          "label": "one two color",
+          "default": "rgba(29, 29, 31, 0.8)"
+        },
+        {
+          "type": "color",
+          "id": "hands_learn_more_color",
+          "label": "learn more color",
+          "default": "#fff"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

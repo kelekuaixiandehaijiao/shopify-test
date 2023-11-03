@@ -1,0 +1,428 @@
+<div class="fb-host-application" id="section-{{ section.id }}">
+  <div class="js-become-host-one">
+    <div class="fha-flex-box">
+      <div class="fha-left-box">
+        <div class="fha-left-title">
+          {{ section.settings.showroom_title }}
+        </div>
+        <div class="fha-left-sub">
+          {{ section.settings.showroom_title_sub }}
+        </div>
+        <ul class="fha-left-ul">
+          {%- for block in section.blocks -%}
+            <li>
+              <div class="fha-circle">
+                <span></span>
+              </div>
+              <div class="fha-ul-li-text">
+                {{ block.settings.fha_list_li }}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="fha-right-box">
+        <div class="fha-right-box-title">
+          Start your application
+        </div>
+        <form class="needs-validation fb-host-form">
+          <div class="fb-md-3">
+            <label for="firstName" class="form-label fb-form-label">First Name *</label>
+            <input type="text" class="form-control" id="first_name" maxlength="64" required>
+            <div class="fb-invalid-feedback"></div>
+          </div>
+          <div class="fb-md-3">
+            <label for="lastName" class="form-label fb-form-label">Last Name *</label>
+            <input type="text" class="form-control" id="last_name" maxlength="64" required>
+            <div class="fb-invalid-feedback"></div>
+          </div>
+          <div class="fb-md-3">
+            <label for="email" class="form-label fb-form-label">Email *</label>
+            <input type="text" class="form-control" id="email" required>
+            <div class="fb-invalid-feedback">
+              {% comment %}
+
+                
+              {% endcomment %}
+              Please enter a valid email address
+            </div>
+          </div>
+          <div class="fb-md-3">
+            <label for="phone_number" class="form-label fb-form-label">Phone Number *</label>
+            <input type="text" class="form-control" id="phone_number" maxlength="20" required>
+            <div class="fb-invalid-feedback">
+
+              {% comment %}
+                Please enter a valid ten digit U.S. phone number.
+              {% endcomment %}
+            </div>
+          </div>
+          <div class="fb-md-btn">
+            <button class="btn-continue-next fb-btn-primary js-host-continue" disabled>
+              SUBMIT & CONTINUE
+              <i></i>
+            </button>
+          </div>
+        </form>
+        <div class="fb-host-desc">
+          {{ section.settings.showroom_input_desc }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="fb-next-application js-next-application fb-hide-next">
+    <div class="fb-host-next-title">
+      {{ section.settings.next_showroom_title }}
+    </div>
+    <div class="fb-host-next-subtitle">
+      {{ section.settings.next_showroom_subtitle}}
+    </div>
+    <div class="fb-host-next-form">
+      <form class="needs-validation fb-host-next-form" novalidate>
+        <div class="fb-md-3 js-address-combin">
+          <label for="address" class="form-label fb-form-label">What is your address? *</label>
+          <input type="text" class="form-control" id="address" maxlength="128" required>
+          <div class="js-address-show">
+            <div class="row fb-next-host-bottom">
+              <div class="col m-0 pb-0">
+                <input type="text" class="form-control text-start" id="unit" placeholder="Apt/unit" maxlength="64" aria-label="Apt/unit">
+              </div>
+              <div class="col m-0 pb-0">
+                <select placeholder="State" autocorrect="off" id="state" class="form-select fb-form-select">
+                  <option disabled selected>State</option>
+                  <option data-alternate-values="[&quot;Alabama&quot;]" value="AL">Alabama</option>
+                  <option data-alternate-values="[&quot;Alaska&quot;]" value="AK">Alaska</option>
+                  <option data-alternate-values="[&quot;American Samoa&quot;]" value="AS">American Samoa</option>
+                  <option data-alternate-values="[&quot;Arizona&quot;]" value="AZ">Arizona</option>
+                  <option data-alternate-values="[&quot;Arkansas&quot;]" value="AR">Arkansas</option>
+                  <option data-alternate-values="[&quot;California&quot;]" value="CA">California</option>
+                  <option data-alternate-values="[&quot;Colorado&quot;]" value="CO">Colorado</option>
+                  <option data-alternate-values="[&quot;Connecticut&quot;]" value="CT">Connecticut</option>
+                  <option data-alternate-values="[&quot;Delaware&quot;]" value="DE">Delaware</option>
+                  <option data-alternate-values="[&quot;Florida&quot;]" value="FL">Florida</option>
+                  <option data-alternate-values="[&quot;Georgia&quot;]" value="GA">Georgia</option>
+                  <option data-alternate-values="[&quot;Guam&quot;]" value="GU">Guam</option>
+                  <option data-alternate-values="[&quot;Hawaii&quot;]" value="HI">Hawaii</option>
+                  <option data-alternate-values="[&quot;Idaho&quot;]" value="ID">Idaho</option>
+                  <option data-alternate-values="[&quot;Illinois&quot;]" value="IL">Illinois</option>
+                  <option data-alternate-values="[&quot;Indiana&quot;]" value="IN">Indiana</option>
+                  <option data-alternate-values="[&quot;Iowa&quot;]" value="IA">Iowa</option>
+                  <option data-alternate-values="[&quot;Kansas&quot;]" value="KS">Kansas</option>
+                  <option data-alternate-values="[&quot;Kentucky&quot;]" value="KY">Kentucky</option>
+                  <option data-alternate-values="[&quot;Louisiana&quot;]" value="LA">Louisiana</option>
+                  <option data-alternate-values="[&quot;Maine&quot;]" value="ME">Maine</option>
+                  <option data-alternate-values="[&quot;Marshall Islands&quot;]" value="MH">Marshall Islands</option>
+                  <option data-alternate-values="[&quot;Maryland&quot;]" value="MD">Maryland</option>
+                  <option data-alternate-values="[&quot;Massachusetts&quot;]" value="MA">Massachusetts</option>
+                  <option data-alternate-values="[&quot;Michigan&quot;]" value="MI">Michigan</option>
+                  <option data-alternate-values="[&quot;Federated States of Micronesia&quot;]" value="FM">Micronesia</option>
+                  <option data-alternate-values="[&quot;Minnesota&quot;]" value="MN">Minnesota</option>
+                  <option data-alternate-values="[&quot;Mississippi&quot;]" value="MS">Mississippi</option>
+                  <option data-alternate-values="[&quot;Missouri&quot;]" value="MO">Missouri</option>
+                  <option data-alternate-values="[&quot;Montana&quot;]" value="MT">Montana</option>
+                  <option data-alternate-values="[&quot;Nebraska&quot;]" value="NE">Nebraska</option>
+                  <option data-alternate-values="[&quot;Nevada&quot;]" value="NV">Nevada</option>
+                  <option data-alternate-values="[&quot;New Hampshire&quot;]" value="NH">New Hampshire</option>
+                  <option data-alternate-values="[&quot;New Jersey&quot;]" value="NJ">New Jersey</option>
+                  <option data-alternate-values="[&quot;New Mexico&quot;]" value="NM">New Mexico</option>
+                  <option data-alternate-values="[&quot;New York&quot;]" value="NY">New York</option>
+                  <option data-alternate-values="[&quot;North Carolina&quot;]" value="NC">North Carolina</option>
+                  <option data-alternate-values="[&quot;North Dakota&quot;]" value="ND">North Dakota</option>
+                  <option data-alternate-values="[&quot;Northern Mariana Islands&quot;]" value="MP">Northern Mariana Islands</option>
+                  <option data-alternate-values="[&quot;Ohio&quot;]" value="OH">Ohio</option>
+                  <option data-alternate-values="[&quot;Oklahoma&quot;]" value="OK">Oklahoma</option>
+                  <option data-alternate-values="[&quot;Oregon&quot;]" value="OR">Oregon</option>
+                  <option data-alternate-values="[&quot;Palau&quot;]" value="PW">Palau</option>
+                  <option data-alternate-values="[&quot;Pennsylvania&quot;]" value="PA">Pennsylvania</option>
+                  <option data-alternate-values="[&quot;Puerto Rico&quot;]" value="PR">Puerto Rico</option>
+                  <option data-alternate-values="[&quot;Rhode Island&quot;]" value="RI">Rhode Island</option>
+                  <option data-alternate-values="[&quot;South Carolina&quot;]" value="SC">South Carolina</option>
+                  <option data-alternate-values="[&quot;South Dakota&quot;]" value="SD">South Dakota</option>
+                  <option data-alternate-values="[&quot;Tennessee&quot;]" value="TN">Tennessee</option>
+                  <option data-alternate-values="[&quot;Texas&quot;]" value="TX">Texas</option>
+                  <option data-alternate-values="[&quot;Virgin Islands&quot;]" value="VI">U.S. Virgin Islands</option>
+                  <option data-alternate-values="[&quot;Utah&quot;]" value="UT">Utah</option>
+                  <option data-alternate-values="[&quot;Vermont&quot;]" value="VT">Vermont</option>
+                  <option data-alternate-values="[&quot;Virginia&quot;]" value="VA">Virginia</option>
+                  <option data-alternate-values="[&quot;Washington&quot;]" value="WA">Washington</option>
+                  <option data-alternate-values="[&quot;District of Columbia&quot;]" value="DC">Washington DC</option>
+                  <option data-alternate-values="[&quot;West Virginia&quot;]" value="WV">West Virginia</option>
+                  <option data-alternate-values="[&quot;Wisconsin&quot;]" value="WI">Wisconsin</option>
+                  <option data-alternate-values="[&quot;Wyoming&quot;]" value="WY">Wyoming</option>
+                  <option data-alternate-values="[&quot;Armed Forces Americas&quot;]" value="AA">Armed Forces Americas</option>
+                  <option data-alternate-values="[&quot;Armed Forces Europe&quot;]" value="AE">Armed Forces Europe</option>
+                  <option data-alternate-values="[&quot;Armed Forces Pacific&quot;]" value="AP">Armed Forces Pacific</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" id="city" placeholder="City" maxlength="64" aria-label="City">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" id="zip_code" placeholder="Zip Code" maxlength="64" aria-label="Zip Code">
+              </div>
+            </div>
+          </div>
+          <div class="invalid-feedback fb-invalid-feedback"></div>
+        </div>
+        <div class="fb-md-3">
+          <label for="aboutFree" class="form-label fb-form-label-2">How did you hear about freebeat? *</label>
+          <select class="form-select js-select-text fb-form-select mb-3" aria-label="aboutFree">
+            <option disabled selected>Select an option</option>
+            <option value="freebeat official accounts (Instagram, Facebook, TikTok, Pinterest)">freebeat official accounts (Instagram, Facebook, TikTok, Pinterest)</option>
+            <option value="Advertisement on social media, deal sites, etc.">Advertisement on social media, deal sites, etc.</option>
+            <option value="Search engine">Search engine</option>
+            <option value="Influencer review">Influencer review</option>
+            <option value="Someone told me about it">
+              Someone told me about it</option>
+            <option value="Other">
+              Other
+            </option>
+          </select>
+          <div class="fb-invalid-feedback">
+            Select an option
+          </div>
+        </div>
+
+        <div class="fb-md-3">
+          <label for="planFreebeat" class="form-label fb-form-label">Where do you plan on placing your bike? *</label>
+          <select class="form-select fb-form-select mb-3 js-select-text" aria-label="planFreebeat">
+            <option disabled selected>Select an option</option>
+            <option value="Living Room">Living Room</option>
+            <option value="Bedroom">Bedroom</option>
+            <option value="Home-Studio">Home-Studio</option>
+            <option value="Garage/Basement">Garage/Basement</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="fb-invalid-feedback">
+            Select an option
+          </div>
+        </div>
+
+        <div class="fb-md-3">
+          <label for="purchasingFbt" class="form-label fb-form-label">When do you plan on purchasing a freebeat bike? *</label>
+          <select class="form-select fb-form-select mb-3 js-select-text" aria-label="purchasingFbt">
+            <option disabled selected>Select a timeframe</option>
+            <option value="This week">This week</option>
+            <option value="Within a month">Within a month</option>
+            <option value="Within three months">Within three months</option>
+            <option value="Haven't decided yet">Haven't decided yet</option>
+            <option value="I have already purchased a freebeat bike">I have already purchased a freebeat bike</option>
+          </select>
+          <div class="fb-invalid-feedback">
+            Select a timeframe
+          </div>
+        </div>
+
+        <div class="fb-md-3">
+          <label for="interestedFbt" class="form-label fb-form-label">Which bike are you interested in purchasing? *</label>
+          <select class="form-select fb-form-select mb-3 js-select-text" aria-label="interestedFbt" id="interestedFbt">
+            <option disabled selected>Select an option</option>
+            <option value="Lit Bike Moonbow Beige">Lit Bike Moonbow Beige</option>
+            <option value="Lit Bike Snowpeak White">Lit Bike Snowpeak White</option>
+            <option value="Lit Bike Space Black">Lit Bike Space Black</option>
+            <option value="Lit Bike Aurora Pink">Lit Bike Aurora Pink</option>
+            <option value="Boom Bike Arctic White">Boom Bike Arctic White</option>
+            <option value="I have already purchased a freebeat bike">I have already purchased a freebeat bike</option>
+          </select>
+          <div class="fb-invalid-feedback">
+            Select an option
+          </div>
+        </div>
+
+        <div class="fb-md-3">
+          <label for="weekFbt" class="form-label fb-form-label">How often do you workout? *</label>
+          <select class="form-select fb-form-select mb-3 js-select-text" aria-label="weekFbt">
+            <option disabled selected>Select an option</option>
+            <option value="1-2 times per week">1-2 times per week</option>
+            <option value="3-4 times per week">3-4 times per week</option>
+            <option value="5-6 times per week">5-6 times per week</option>
+            <option value="Every day">Every day</option>
+            <option value="Never">Never</option>
+          </select>
+          <div class="fb-invalid-feedback">
+            Select an option
+          </div>
+        </div>
+
+        <div class="fb-md-3">
+          <label for="socialplateform" class="form-label fb-form-label">What social media platform do you use? (optional)</label>
+          <select class="form-select fb-form-select mb-3 js-select-text" aria-label="socialplateform" data-norequired="true">
+            <option disabled selected>Select an option</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="fb-invalid-feedback">
+            Select an option
+          </div>
+        </div>
+        <div class="fb-md-3">
+          <label for="socialmediausername" class="form-label fb-form-label-2">Please leave your social media username. (optional)</label>
+          <textarea class="form-control-textrea" rows="3" id="socialmediausername" maxlength="500"></textarea>
+        </div>
+
+
+        <div class="fb-md-3" id="fb-workout-check-group" data-question="What type of exercise interests you?* (select all that apply)">
+          <label for="workFbt" class="form-label fb-form-label-2">What type of exercise interests you? * (select all that apply)</label>
+          <div class="form-check">
+            <input class="form-check-input" name="workout-checkbox" type="checkbox" id="flexCheckDefault1">
+            <label class="form-check-label" for="flexCheckDefault1">Balance training</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="workout-checkbox" type="checkbox" id="flexCheckChecked2">
+            <label class="form-check-label" for="flexCheckChecked2">Strength training</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="workout-checkbox" type="checkbox" id="flexCheckChecked3">
+            <label class="form-check-label" for="flexCheckChecked3">Endurance training</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="workout-checkbox" type="checkbox" id="flexCheckChecked4">
+            <label class="form-check-label" for="flexCheckChecked4">Flexibility training</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="workout-checkbox" type="checkbox" id="flexCheckChecked5">
+            <label class="form-check-label" for="flexCheckChecked5">None of the above.
+            </label>
+          </div>
+          <div class="form-check form-check-special">
+            <input class="form-check-input" name="workout-checkbox" type="checkbox" id="pleas-specify">
+            <label class="form-check-label" for="pleas-specify">Please specify * :</label>
+            <input type="text" class="pleasSpecify-input">
+            <span class="fb-invalid-specify">
+              specify is required!
+            </span>
+          </div>
+          <div class="fb-invalid-feedback fb-position-bot">
+            This field is required!
+          </div>
+        </div>
+
+        <div class="fb-md-3" id="fb-involved-check-group" data-question="How would you like to get involved? * (select all that apply)">
+          <label for="workInvolved" class="form-label fb-form-label-2">How would you like to get involved? * (select all that apply)</label>
+          <div class="fb-common-like">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="involved-checkbox" id="involved1">
+              <label class="form-check-label" for="involved1">Arrange home visits to show my freebeat bike to customers</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="involved-checkbox" id="involved2">
+              <label class="form-check-label" for="involved2">Answer customer questions via email or text</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="involved-checkbox" id="involved3">
+              <label class="form-check-label" for="involved3">Answer customer questions via phone call</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="involved-checkbox" id="involved4">
+              <label class="form-check-label" for="involved4">Chat with customers via video call</label>
+            </div>
+          </div>
+          {% comment %}
+            choose xbike
+          {% endcomment %}
+          <div class="fb-xbike-like fb-hide-like">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="involved-checkbox" id="like1">
+              <label class="form-check-label" for="like1">Arrange online tours to showcase my xbike.</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="involved-checkbox" id="like2">
+              <label class="form-check-label" for="like2">Answer customer questions via email or text</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="involved-checkbox" id="like3">
+              <label class="form-check-label" for="like3">Answer customer questions via phone call</label>
+            </div>
+          </div>
+          <div class="fb-invalid-feedback">
+            This field is required!
+          </div>
+        </div>
+        <div class="fb-md-8">
+          <label for="explain" class="form-label fb-form-label-2">Briefly explain why you and your home will be a good fit for our Showroom program. (optional)</label>
+          <textarea class="form-control-textrea" rows="3" id="explain" maxlength="500"></textarea>
+        </div>
+        <div class="fb-md-3">
+          <label for="showroomprogram" class="form-label fb-form-label-2">Please share with us images of the location and surroundings of where you plan to place your freebeat bike. * (10 images max)</label>
+          <div class="upload-img-box">
+            <ul class="fb-upload-ul d-flex" id="fbUploadBox">
+              <li class="fb-addImage js-fb-addImage">
+                <input type="file" class="form-control" accept=".bmp,.jpg,.png,.tif,.gif,.tga,.exif,.fpx,.raw,.webp,.avif,.apng" name="files" id="fbUploadImage">
+              </li>
+            </ul>
+            <div class="fb-invalid-feedback">
+              at least one photo
+            </div>
+          </div>
+        </div>
+
+        <div class="fb-md-btn flex-center">
+          <button class="btn-continue-next fb-btn-primary js-host-submit" disabled>
+            SUBMIT APPLICATION
+            <i></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "FbHostApplication",
+    "presets": [
+      {
+        "name": "fb-host-application",
+        "category": "Fb Sections"
+      }
+    ],
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "showroom_title",
+        "label": "title",
+        "default": "<p>The Next </p><p>Showroom</p> <p> Host</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "showroom_title_sub",
+        "label": "sub",
+        "default": "<p>Accompany our exploding community of fitness masters on a path towards a healthier lifestyle.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "showroom_input_desc",
+        "label": "sub desc"
+      },
+      {
+        "type": "richtext",
+        "id": "next_showroom_title",
+        "label": "next title",
+        "default": "<p>Complete your application</p>"
+      }, {
+        "type": "richtext",
+        "id": "next_showroom_subtitle",
+        "label": "next sub title",
+        "default": "<p>New freebeat customers will receive 10% cashback after getting accepted as a Showroom Host. Future freebeat riders are eager to visit your Showroom!</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "list-li",
+        "name": "list-li",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "fha_list_li",
+            "label": "text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

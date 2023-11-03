@@ -1,0 +1,1048 @@
+{
+  "sections": {
+    "16548279285c536a4d": {
+      "type": "fb-img-video-swiper",
+      "blocks": {
+        "165482792795c8825e-1": {
+          "type": "video_banner",
+          "settings": {
+            "banner_href": false,
+            "product": "",
+            "video_url": "https:\/\/cdn.shopifycdn.net\/s\/files\/1\/0592\/3766\/2905\/files\/heme_class_video.mp4?v=1629447517",
+            "video_mobile_url": "https:\/\/cdn.shopifycdn.net\/s\/files\/1\/0592\/3766\/2905\/files\/heme_class_video.mp4?v=1629447517",
+            "video_mobile_image": "shopify:\/\/shop_images\/xbike-shopO_I_-_OAE_x800_c08a67f7-a49c-4809-a8c2-a19caff70029.jpg",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "<p>Sign up now to get exclusive offers!<\/p>",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "<p>A NEW CLASS EVERY DAY, A BETTER YOU EVERY DAY<\/p>",
+            "original_price": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "BUY BIKES",
+            "button_1_text_color": "#000000",
+            "button_1_text_backgroundcolor": "#ffffff",
+            "button_1_text_bordercolor": "#ffffff",
+            "button_1_link": "https:\/\/www.freebeatfit.com\/collections\/exercise-bikes",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "shopify:\/\/pages\/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you",
+            "banner_more": ""
+          }
+        }
+      },
+      "block_order": [
+        "165482792795c8825e-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "top_banner_space": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "10dbede5-60ba-4ca1-8479-d5d18b8c7940": {
+      "type": "fb-class-banner",
+      "blocks": {
+        "template--16285687611577__10dbede5-60ba-4ca1-8479-d5d18b8c7940-168621691568e5bbb1-1": {
+          "type": "video_banner",
+          "settings": {
+            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f1625f017bfa40d592aa1b53153c52f5.mp4",
+            "banner_video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e5483698dab640739e6f4c60426144e9.mp4",
+            "class_banner_title": "<p>STUDIO CYCLING -GAMIFIED RIDING WITH EXPERT INSTRUCTOR<\/p>",
+            "class_banner_info": "<p>Led by expert instructors and set to the beat of the hottest tunes, get your heart racing and your body moving.<\/p>"
+          }
+        },
+        "493eabfd-cd62-44a8-99c5-f8b88b0ed57c": {
+          "type": "video_banner",
+          "settings": {
+            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f8f4765ebe84474c8f8ffbce4a82e2bc.mp4",
+            "banner_video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9c700093c7a94891a2d645bb12c3918f.mp4",
+            "class_banner_title": "<p>SCULPTING & STRETCHING<\/p>",
+            "class_banner_info": "<p>Sculpting and stretching help you achieve a lean and flexible physique. <\/p>"
+          }
+        },
+        "ee6a99cc-3165-4737-9357-ef906f83a231": {
+          "type": "video_banner",
+          "settings": {
+            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7930c94d32c74399b05d03498b49da99.mp4",
+            "banner_video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/49ccdb9ad32d4094b795750ccf947724.mp4",
+            "class_banner_title": "<p>SCENIC RIDE - RIDE THROUGH NATURE<\/p>",
+            "class_banner_info": "<p>With stunning visuals and immersive soundscapes, you'll feel like you're cycling through the mountains, across the beach, and through bustling cities.<\/p>"
+          }
+        },
+        "dccff7d9-1400-478f-b2e8-b8183fdf5f86": {
+          "type": "video_banner",
+          "settings": {
+            "banner_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/37618fc80f994730852d3feb511f15de.mp4",
+            "banner_video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/48296775c7af44af975a1b77a6f6a8d8.mp4",
+            "class_banner_title": "<p>RHYTHM GAME - RIDE TO THE RHYTHM<\/p>",
+            "class_banner_info": "<p>Experience the pulsating rhythm of our beat as you pedal and sweat your way to a better you.<\/p>"
+          }
+        },
+        "template--16285687611577__10dbede5-60ba-4ca1-8479-d5d18b8c7940-168621691568e5bbb1-0": {
+          "type": "image_banner",
+          "disabled": true,
+          "settings": {
+            "class_banner_title": "",
+            "class_banner_info": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16285687611577__10dbede5-60ba-4ca1-8479-d5d18b8c7940-168621691568e5bbb1-1",
+        "493eabfd-cd62-44a8-99c5-f8b88b0ed57c",
+        "ee6a99cc-3165-4737-9357-ef906f83a231",
+        "dccff7d9-1400-478f-b2e8-b8183fdf5f86",
+        "template--16285687611577__10dbede5-60ba-4ca1-8479-d5d18b8c7940-168621691568e5bbb1-0"
+      ],
+      "settings": {
+        "class_image_icon": "shopify:\/\/shop_images\/Vector_2x_5d624eb5-4353-4d24-a220-679f080b3700.png"
+      }
+    },
+    "0cb390fa-39b5-4902-b43b-2a48ce26d668": {
+      "type": "fb-class-features",
+      "blocks": {
+        "da990fe4-47c5-4fe9-9816-527613862070": {
+          "type": "features_list",
+          "disabled": true,
+          "settings": {
+            "fb_features_type": "Features"
+          }
+        },
+        "2d96ff1d-f18e-4b33-9d3f-b38feee21c7e": {
+          "type": "features_list",
+          "settings": {
+            "fb_features_type": "Class Types"
+          }
+        },
+        "df08e22a-8ae2-4e22-9dc4-f5572da0433a": {
+          "type": "features_list",
+          "settings": {
+            "fb_features_type": "Motivation Activities"
+          }
+        },
+        "c85cb62e-e675-4b47-a086-1ae38d1bea91": {
+          "type": "features_list",
+          "settings": {
+            "fb_features_type": "Price"
+          }
+        },
+        "9745f355-8fcc-4bb5-b9be-e496e7c2a329": {
+          "type": "features_list",
+          "disabled": true,
+          "settings": {
+            "fb_features_type": "Reviews"
+          }
+        }
+      },
+      "block_order": [
+        "da990fe4-47c5-4fe9-9816-527613862070",
+        "2d96ff1d-f18e-4b33-9d3f-b38feee21c7e",
+        "df08e22a-8ae2-4e22-9dc4-f5572da0433a",
+        "c85cb62e-e675-4b47-a086-1ae38d1bea91",
+        "9745f355-8fcc-4bb5-b9be-e496e7c2a329"
+      ],
+      "settings": {
+        "fb_features_button": "EXPLORE EXERCISE BIKES",
+        "fb_features_link": "shopify:\/\/collections\/exercise-bikes"
+      }
+    },
+    "15597f0d-6cbb-4641-ac2f-090761089bcd": {
+      "type": "fb-class-exercise",
+      "settings": {
+        "fb_class_exercise_title": "<p>GAMIFIED CLASS, ADDICTED TO CYCLING EXERCISE<\/p>",
+        "fb_class_exercise_img1": "shopify:\/\/shop_images\/image_27_2x_ebccd14c-4dd1-4fbc-a796-23059ce84dcc.png",
+        "fb_class_exercise_content1": "Variety Worth Raving About",
+        "fb_class_exercise_info1": "<p>Elevate your fitness game with cycling, stretching, and strength classes. With 1000+ options and daily updates, your workouts stay fresh and exciting!<\/p>",
+        "fb_class_exercise_img2": "shopify:\/\/shop_images\/image_32_2x_125300b2-c22e-4f24-9e9d-5df1475e0516.png",
+        "fb_class_exercise_content2": "Gamified Workout Experience",
+        "fb_class_exercise_info2": "<p>Embark on a gamified fitness adventure with our studio classes, rhythm games, and more. Enjoy vibe-synced special effects by world-class 3D artists. It's a ride, a rhythm game, and pure fun.<\/p>",
+        "fb_class_exercise_img3": "shopify:\/\/shop_images\/image_33_2x_bf99b25d-fe5b-4125-9515-e4a782c0dbf6.png",
+        "fb_class_exercise_content3": "Ride and Earn",
+        "fb_class_exercise_info3": "<p>Join our inspiring and competitive community that will motivate you to workout more and earn more - not just in terms of money and pride, but also your overall health and well-being!<\/p>",
+        "fb_class_exercise_img4": "shopify:\/\/shop_images\/image_34_2x_f628cc52-6db6-4611-8620-1903d5be1b92.png",
+        "fb_class_exercise_content4": "Performance Tracking",
+        "fb_class_exercise_info4": "<p>You won't miss a single pedal, and you'll get instant performance-tracking results at every beat. We recommend the best training programs according to your preferences.<\/p>"
+      }
+    },
+    "7eb1bcac-b938-4c5e-b4a9-754bbb47607b": {
+      "type": "fb-class-extended",
+      "settings": {
+        "header_title": "<p>EXTENDED REALITY<\/p>",
+        "select_title1": "<p>Immersive Workouts<\/p>",
+        "select_title2": "<p>Rotate Screen for More<\/p>",
+        "extended_info1": "<p>Artist-generated interactive stages turn every room into an immersive workout.<\/p>",
+        "extended_info2": "<p>Rotate the screen to seamlessly transition between a staggering array of cycling, stretching, strength training, and more classes all under one roof.<\/p>",
+        "extended_video1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9d6a39009601429d88169fac1ddfe239.mp4",
+        "extended_mob_video1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9d6a39009601429d88169fac1ddfe239.mp4",
+        "extended_video2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b7def76237094202b1445b05d44656f3.mp4",
+        "extended_mob_video2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b7def76237094202b1445b05d44656f3.mp4"
+      }
+    },
+    "ac3e42af-b436-4da9-8283-a1c3709e80d7": {
+      "type": "fb-class-various",
+      "blocks": {
+        "78af7b76-c86a-45b8-899e-0f68f53eeada": {
+          "type": "studio_list",
+          "settings": {
+            "various_studio_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9c072fded6234899a03b88d9555bde11.mp4",
+            "various_studio_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9c072fded6234899a03b88d9555bde11.mp4",
+            "various_studio_img": "shopify:\/\/shop_images\/riding2.jpg"
+          }
+        },
+        "404dccb4-5211-4a9c-8606-de323b46cf6a": {
+          "type": "studio_list",
+          "settings": {
+            "various_studio_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/28ac97af24e146c2809910958691d16a.mp4",
+            "various_studio_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/28ac97af24e146c2809910958691d16a.mp4",
+            "various_studio_img": "shopify:\/\/shop_images\/riding3.jpg"
+          }
+        },
+        "d0e051d1-17e4-466e-b751-0a171f295480": {
+          "type": "studio_list",
+          "settings": {
+            "various_studio_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b13adce608484f35823cf26d40e691d4.mp4",
+            "various_studio_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b13adce608484f35823cf26d40e691d4.mp4",
+            "various_studio_img": "shopify:\/\/shop_images\/riding4.jpg"
+          }
+        },
+        "ac3227cb-66fb-45d0-9a2f-357625becd84": {
+          "type": "studio_list",
+          "settings": {
+            "various_studio_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0d0502f31a2d4c1888b75d37a6a8e1fd.mp4",
+            "various_studio_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0d0502f31a2d4c1888b75d37a6a8e1fd.mp4",
+            "various_studio_img": "shopify:\/\/shop_images\/riding5.jpg"
+          }
+        },
+        "3c59cd8b-9734-4135-a6aa-6b5e3f459975": {
+          "type": "studio_list",
+          "settings": {
+            "various_studio_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f1b0dc181b3244b99032063f85db27b6.mp4",
+            "various_studio_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f1b0dc181b3244b99032063f85db27b6.mp4",
+            "various_studio_img": "shopify:\/\/shop_images\/riding6.jpg"
+          }
+        },
+        "8b7d6a3c-b42b-45db-8379-2bb0e6edceb2": {
+          "type": "studio_list",
+          "settings": {
+            "various_studio_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/98e1b2f72efa4a88a3114fd640689f5f.mp4",
+            "various_studio_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/98e1b2f72efa4a88a3114fd640689f5f.mp4",
+            "various_studio_img": "shopify:\/\/shop_images\/riding1.jpg"
+          }
+        },
+        "8e062c39-dc8b-48b5-9ecd-ec51999553a8": {
+          "type": "rhythm_list",
+          "settings": {
+            "various_rhythm_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/29ae0954b9d64263a387611ea17295f1.mp4",
+            "various_rhythm_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/29ae0954b9d64263a387611ea17295f1.mp4",
+            "various_rhythm_img": "shopify:\/\/shop_images\/rhythm_list.jpg"
+          }
+        },
+        "fa2b00f2-6c31-464e-b173-50f111e90d9b": {
+          "type": "scenic_list",
+          "settings": {
+            "various_scenic_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/de4a6523894845828709fbbde58b8fd8.mp4",
+            "various_scenic_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/de4a6523894845828709fbbde58b8fd8.mp4",
+            "various_scenic_img": "shopify:\/\/shop_images\/scenicride_1.jpg"
+          }
+        },
+        "9e43be47-4e8b-4a15-a74a-cf3ec0e005ef": {
+          "type": "scenic_list",
+          "settings": {
+            "various_scenic_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/75b3dd922f3946329dfcf11eaeacc667.mp4",
+            "various_scenic_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/75b3dd922f3946329dfcf11eaeacc667.mp4",
+            "various_scenic_img": "shopify:\/\/shop_images\/scenicride3.jpg"
+          }
+        },
+        "4bcf7bd9-f4c2-46c6-8a13-5245764afea4": {
+          "type": "scenic_list",
+          "settings": {
+            "various_scenic_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/22d45dc658ec47688453a2f2f2cf7283.mp4",
+            "various_scenic_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/22d45dc658ec47688453a2f2f2cf7283.mp4",
+            "various_scenic_img": "shopify:\/\/shop_images\/scenicride4.jpg"
+          }
+        },
+        "335cbc18-ba88-484e-9bbd-2c0c57f96b38": {
+          "type": "scenic_list",
+          "settings": {
+            "various_scenic_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/78d6b692f0674e9b995de5962a1a804a.mp4",
+            "various_scenic_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/78d6b692f0674e9b995de5962a1a804a.mp4",
+            "various_scenic_img": "shopify:\/\/shop_images\/scenicride5.jpg"
+          }
+        },
+        "9a441536-86d0-43d6-9136-b74a48d525eb": {
+          "type": "scenic_list",
+          "settings": {
+            "various_scenic_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4774027cced14d1cbea78b97bc6bf9fa.mp4",
+            "various_scenic_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4774027cced14d1cbea78b97bc6bf9fa.mp4",
+            "various_scenic_img": "shopify:\/\/shop_images\/scenicride5.jpg"
+          }
+        },
+        "699c0b3f-3d09-43c1-9e3c-d1ef3a620b44": {
+          "type": "scenic_list",
+          "settings": {
+            "various_scenic_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6fe1c87f2f8b416c9a7b5e31da67b297.mp4",
+            "various_scenic_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6fe1c87f2f8b416c9a7b5e31da67b297.mp4",
+            "various_scenic_img": "shopify:\/\/shop_images\/scenicride6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "78af7b76-c86a-45b8-899e-0f68f53eeada",
+        "404dccb4-5211-4a9c-8606-de323b46cf6a",
+        "d0e051d1-17e4-466e-b751-0a171f295480",
+        "ac3227cb-66fb-45d0-9a2f-357625becd84",
+        "3c59cd8b-9734-4135-a6aa-6b5e3f459975",
+        "8b7d6a3c-b42b-45db-8379-2bb0e6edceb2",
+        "8e062c39-dc8b-48b5-9ecd-ec51999553a8",
+        "fa2b00f2-6c31-464e-b173-50f111e90d9b",
+        "9e43be47-4e8b-4a15-a74a-cf3ec0e005ef",
+        "4bcf7bd9-f4c2-46c6-8a13-5245764afea4",
+        "335cbc18-ba88-484e-9bbd-2c0c57f96b38",
+        "9a441536-86d0-43d6-9136-b74a48d525eb",
+        "699c0b3f-3d09-43c1-9e3c-d1ef3a620b44"
+      ],
+      "settings": {
+        "various_title": "VARIOUS GAMIFIED CYCLING CLASSES",
+        "various_studio": "Studio Cycling",
+        "various_studio_info": "<p>Unleash your potential with our distinctive studio cycling classes, designed to help you find your beat with the support of our enthusiastic instructors.<\/p>",
+        "various_rhythm": "Rhythm Game",
+        "various_rhythm_info": "Align your goals with the rhythm of our classes and stay motivated throughout your workout.",
+        "various_scenic": "Scenic Ride",
+        "various_scenic_info": "Experience the beauty of nature like never before as you journey through picturesque landscapes on your scenic ride!",
+        "various_open_icon": "shopify:\/\/shop_images\/Group_135_2x_abefc375-a84f-41e0-8b09-c1c76eb08d25.png",
+        "various_pause_icon": "shopify:\/\/shop_images\/Group_136_2x_18602cd5-9398-4ce6-a17c-f60e01cc838c.png",
+        "various_link_title": "EXPLORE MORE CYCLING CLASSES",
+        "various_link": "https:\/\/members.freebeatfit.com"
+      }
+    },
+    "820ce45b-72c9-4d03-b9b9-5813ce7935bd": {
+      "type": "fb-class-course",
+      "blocks": {
+        "f9d2ef1f-6a96-4b07-91de-a303b66d5e9b": {
+          "type": "course_list",
+          "settings": {
+            "course_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a536ad0b97294cf4a95f48bbd39016cb.mp4",
+            "course_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a536ad0b97294cf4a95f48bbd39016cb.mp4",
+            "course_open_icon": "shopify:\/\/shop_images\/Group_135_2x_abefc375-a84f-41e0-8b09-c1c76eb08d25.png",
+            "course_pause_icon": "shopify:\/\/shop_images\/Group_136_2x_18602cd5-9398-4ce6-a17c-f60e01cc838c.png",
+            "course_video_img": "shopify:\/\/shop_images\/sculpturing1.jpg"
+          }
+        },
+        "90247eda-e854-4281-a1c3-e9106b550116": {
+          "type": "course_list",
+          "settings": {
+            "course_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a919b5b29f994182b5fda7ca48572813.mp4",
+            "course_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a919b5b29f994182b5fda7ca48572813.mp4",
+            "course_open_icon": "shopify:\/\/shop_images\/Group_135_2x_abefc375-a84f-41e0-8b09-c1c76eb08d25.png",
+            "course_pause_icon": "shopify:\/\/shop_images\/Group_136_2x_18602cd5-9398-4ce6-a17c-f60e01cc838c.png",
+            "course_video_img": "shopify:\/\/shop_images\/sculpturing2.jpg"
+          }
+        },
+        "e7d2e2a9-2d66-4d94-ace6-08a8f912cc2c": {
+          "type": "course_list",
+          "settings": {
+            "course_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dab214180ef240698a54f37d93a89efc.mp4",
+            "course_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dab214180ef240698a54f37d93a89efc.mp4",
+            "course_open_icon": "shopify:\/\/shop_images\/Group_135_2x_abefc375-a84f-41e0-8b09-c1c76eb08d25.png",
+            "course_pause_icon": "shopify:\/\/shop_images\/Group_136_2x_18602cd5-9398-4ce6-a17c-f60e01cc838c.png",
+            "course_video_img": "shopify:\/\/shop_images\/strentching.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f9d2ef1f-6a96-4b07-91de-a303b66d5e9b",
+        "90247eda-e854-4281-a1c3-e9106b550116",
+        "e7d2e2a9-2d66-4d94-ace6-08a8f912cc2c"
+      ],
+      "settings": {
+        "course_title": "SCULPTING & STRETCHING ClASSES"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "1654176225f0b2b1e3": {
+      "type": "fb-classes-richTextWithMedia",
+      "blocks": {
+        "16541762257a21c5f6-1": {
+          "type": "video_content",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopifycdn.net\/s\/files\/1\/0592\/3766\/2905\/files\/20221241637.mp4?v=1643013553"
+          }
+        }
+      },
+      "block_order": [
+        "16541762257a21c5f6-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "backgroundColor": "",
+        "textColor": "",
+        "subheading": "",
+        "title1": "GAMIFIED WORKOUTS",
+        "image_position": "right",
+        "content": "<p>Lighten up your fitness routine with vibe-synced effects. Feel the vibe and tune in to your fitness routine with various themes such as federal holidays and popular tunes!<\/p>",
+        "link_text": "PREVIEW CLASSES"
+      }
+    },
+    "165482867789b0873f": {
+      "type": "fb-img-video-swiper",
+      "blocks": {
+        "16548286776c48e6e2-0": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/instructor__1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/16.jpg",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "<p>Our rockstar instructors come from the world's top-notch studios such as Soulcycle, Flywheel, Equinox.<\/p>",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "<p>ROCKSTAR INSTRUCTORS<\/p>",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        }
+      },
+      "block_order": [
+        "16548286776c48e6e2-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "top_banner_space": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "162987924347a5d673": {
+      "type": "slideshow",
+      "blocks": {
+        "162987924347a5d673-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/instructor__1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/16.jpg",
+            "apply_overlay": true,
+            "content_position": "bottomLeft",
+            "subheading": "Our rockstar instructors come from the world's top-notch studios such as Soulcycle, Flywheel, Equinox.",
+            "title": "ROCKSTAR INSTRUCTORS",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "162987924347a5d673-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "16541766277128fb84": {
+      "type": "fb-richTextWithMedia",
+      "blocks": {
+        "1654176627fc420694-1": {
+          "type": "video_content",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopifycdn.net\/s\/files\/1\/0592\/3766\/2905\/files\/20221241359.mp4?v=1643004057"
+          }
+        }
+      },
+      "block_order": [
+        "1654176627fc420694-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "backgroundColor": "",
+        "textColor": "",
+        "subheading": "",
+        "title1": "PERFORMANCE TRACKING",
+        "image_position": "left",
+        "content": "<p>Our sensors won't miss a single pedal and you'll get instant performance tracking results at every beat. We would recommend the best training program according to your preferences.<\/p>",
+        "link_text": "LET'S RIDE",
+        "link_url": "shopify:\/\/pages\/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you"
+      }
+    },
+    "165482972779694645": {
+      "type": "fb-img-video-swiper",
+      "blocks": {
+        "165482972692362571-0": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/Variety_of_Class_2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Variety_of_Class_2_513c9e7f-3237-4f7c-8b97-f36c6bb552b9.jpg",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "<p>Take your fitness routine to the next level.<\/p>",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        },
+        "7202d02e-927a-499a-9c04-4fb30e15deed": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/Variety_of_Class.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Variety_of_Class_bbea1e25-827f-486b-92de-c2f66491c92c.jpg",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "<p>Discover exclusively selected classes.<\/p>",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        },
+        "53a76fb3-f78b-49b4-8745-420e53f41cdc": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/a1c1e73eba90b126e3266ae4a201d6d6.jpg",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "<p>Pedal to the beat of your own rhythm.<\/p>",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        },
+        "c87d3a89-c905-4d25-b04a-1ad0069f3628": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/760812eed02d1058dd877401a37dbedf.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/750_1100_c3fb9161-546e-4150-b824-f527c7e25f3a.jpg",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "<p>Say goodbye to the boring fitness routine.<\/p>",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        }
+      },
+      "block_order": [
+        "165482972692362571-0",
+        "7202d02e-927a-499a-9c04-4fb30e15deed",
+        "53a76fb3-f78b-49b4-8745-420e53f41cdc",
+        "c87d3a89-c905-4d25-b04a-1ad0069f3628"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "top_banner_space": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "d088fb46-ba98-4c0e-a715-7345746736ef": {
+      "type": "fb-content-class",
+      "disabled": true,
+      "settings": {
+        "text_position": "center",
+        "fb_online_name": "WHY TAKE ONLINE & AT-HOME SPIN BIKE & CYCLING CLASSES FROM freebeat™",
+        "fb_online_para": "Do you have a stationary bike at home? Maybe you like to hop on it occasionally and just spin the wheels for a while, but do you know how to get the best workout using your bike? If you’ve got a bike from freebeat™ fit, you know you’ve got tons of excellent at-home cycling classes to choose from. But if you don’t and have no clue how to get a good workout on your bike, it’s about time you looked for an online cycling class. freebeat™ has thousands of online spin bike classes that are fun, engaging, challenging, and unique. Here’s why you should consider trying out our online stationary bike classes.",
+        "fb_online_para1": "",
+        "fb_online_title1": "The Instructors",
+        "fb_online_desc1": "At freebeat™, we have a team of rockstar instructors who will guide you through your workout every step of the way. They come from some of the most well-known studios in the U.S., such as SoulCycle, Flywheel, and Equinox, so you know you’re getting the best online spin bike classes. The instructors are encouraging, so you’ll feel supported throughout the class. They also offer gamified workouts like riding to the rhythm of some of your favorite songs or competing against your friends and family to win challenges and earn rewards.",
+        "fb_online_title2": "The Workouts",
+        "fb_online_desc2": "Each online stationary bike class from freebeat™ offers the perfect balance of fun and challenging. Regardless of your age or skill level, you can always adjust your resistance according to your preferences to achieve the desired intensity. Taking an at-home cycling class is an excellent option for low-impact exercise, as it’s much easier on your joints than other high-intensity workouts. However, if you are looking for that high intensity, freebeat™ also offers access to online HIIT classes to add strength training to your routine and diversify your workouts.",
+        "fb_online_title3": "The Features",
+        "fb_online_desc3": "If you want to try an at-home spin bike class from freebeat™, we recommend purchasing a freebeat™ bike to get the most out of your workout. With the purchase of a bike, you’ll get a free 45-day interactive fitness membership valued at $59. Plus, you can register up to 10 accounts with just one membership, so your family and friends can join, too. Besides a great deal, we mainly recommend a freebeat™ bike to use with the online cycling classes because of all the amazing features. With advanced performance tracking, the bike sensors will track every pedal, giving you instant results on your performance throughout the entire class. It also has auto resistance features to adjust automatically to your riding style and the instructor’s cues, giving you an even more authentic online spin bike class experience.",
+        "fb_online_desc4": "So, there you have it. The online spin classes from freebeat™ fit are the best option for working out at home — on or off the bike. With thousands of classes to choose from and cool, immersive backgrounds, you can be sure you’ll never get bored. When you’re ready, hop on your bike and start riding.",
+        "fb_online_desc5": "",
+        "fb_online_link1": "LEARN MORE",
+        "fb_online_link2": "COLLAPSE"
+      }
+    },
+    "16548298496535691a": {
+      "type": "fb-img-video-swiper",
+      "blocks": {
+        "1654829849ec739086-0": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/Coach_quote_final__1_2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Coach_quote_final-06.jpg",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        },
+        "97cc52a1-b04c-4405-ab4c-cffd736b7b2f": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/Coach_quote_final__1_cda9837e-536f-4c44-be0b-6f871989829e.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Coach_quote_final-05_6ed897bd-ec28-402e-88b8-892036172566.jpg",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        },
+        "dca59fd0-a4c4-40c9-aecb-bef22c5d4f4b": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": false,
+            "image": "shopify:\/\/shop_images\/Coach_quote_final__1_002217ce-d2ec-4af4-9180-94d7f7052ae5.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Coach_quote_final-04.jpg",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "subheading": "",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "subheading_mo": "",
+            "subheading_color": "",
+            "title": "",
+            "title_color": "",
+            "banner_title": "",
+            "banner_sub_title": "",
+            "banner_desc": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_link": "",
+            "banner_more": ""
+          }
+        }
+      },
+      "block_order": [
+        "1654829849ec739086-0",
+        "97cc52a1-b04c-4405-ab4c-cffd736b7b2f",
+        "dca59fd0-a4c4-40c9-aecb-bef22c5d4f4b"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "top_banner_space": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "1629188557add1dbd4": {
+      "type": "instafeed",
+      "disabled": true,
+      "settings": {
+        "heading_size": 24,
+        "feed_width": 100,
+        "html_area": ""
+      }
+    },
+    "1629086012973d9032": {
+      "type": "blog-posts",
+      "blocks": {
+        "1629086012973d9032-0": {
+          "type": "blog",
+          "settings": {
+            "blog": "brand-story"
+          }
+        }
+      },
+      "block_order": [
+        "1629086012973d9032-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "FEATURED BLOGS",
+        "show_category": false,
+        "button_link": "",
+        "button_text": ""
+      }
+    },
+    "16548299659d01bd47": {
+      "type": "fb-stage-description-new",
+      "disabled": true,
+      "settings": {
+        "fb_stage_backgroundImage": "",
+        "fb_stage_backgroundcolor": "#ffffff",
+        "fb_stage_desc": "<p>1) Monthly payment for freebeat bike is based on 36 months at 0% APR and $0 down. Financing does not include the cost of freebeat all-access membership (approximately $39\/mo). Subject to credit check and approval. In cases of partial approval, a down payment may be required. Offer subject to change at any time. Previous purchases are ineligible. See <a href=\"https:\/\/www.klarna.com\/us\/what-is-klarna\/\" title=\"https:\/\/www.klarna.com\/us\/what-is-klarna\/\">What is Klarna<\/a> for details.<\/p>",
+        "fb_stage_color": "#65666a",
+        "fb_stage_desc_seconds": "",
+        "fb_stage_color_seconds": "#000000"
+      }
+    },
+    "c91fdb43-ecbf-4efc-9f52-18c531f879b7": {
+      "type": "fb-class-freebeat",
+      "blocks": {
+        "ccbee50f-9009-458c-9e21-b7393138adc6": {
+          "type": "freebeat_list",
+          "settings": {
+            "fb_video_title": "freebeat Camp",
+            "fb_video_desc": "<p>Learn skills through specialized training to kickstart your journey. The freebeat Camp serves as your comprehensive newbie guidance!<\/p>",
+            "fb_video_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cb9508fce9a347b3948a1d9bb67312c5.mp4",
+            "fb_video_mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/91abb121f5ba4983be25be603d016af7.mp4"
+          }
+        },
+        "b39488c7-b65b-47a7-8aa5-9f2930af2815": {
+          "type": "freebeat_list",
+          "settings": {
+            "fb_video_title": "Leaderboard Rank",
+            "fb_video_desc": "<p>Stay updated with the real-time leaderboard displayed on the right side of each class, allowing you to easily track your position among all riders.<\/p>",
+            "fb_video_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2760453eb18d4110b5335f41f3ca5a86.mp4",
+            "fb_video_mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/29a96f56b0af4fd39efc8ab960e09de4.mp4"
+          }
+        },
+        "ee85b588-a729-4523-bf9e-1ec948e11fdd": {
+          "type": "freebeat_list",
+          "settings": {
+            "fb_video_title": "Event",
+            "fb_video_desc": "<p>Engage in officially organized events where you can earn rewards by participating and achieving set goals.<\/p>",
+            "fb_video_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4c3641a5d4a042e6b98f21f7508b0dca.mp4",
+            "fb_video_mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a1149b6bffad4946b8574242e415b618.mp4"
+          }
+        },
+        "a1247d92-e885-4e23-b42b-74502a0100e9": {
+          "type": "freebeat_list",
+          "settings": {
+            "fb_video_title": "Rewarding Task",
+            "fb_video_desc": "<p>Enhance your fitness routine by completing daily and weekly tasks, earning points that can be redeemed for cash rewards!<\/p>",
+            "fb_video_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cd2248a71006471c963473831b22f138.mp4",
+            "fb_video_mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/87442c6170584ae3b401b82cdd3bc8bb.mp4"
+          }
+        },
+        "49181ae2-3553-4f8c-99dd-65c895ca0354": {
+          "type": "freebeat_list",
+          "settings": {
+            "fb_video_title": "One Membership For All",
+            "fb_video_desc": "<p>You can register up to 10 accounts with just one membership. We offer a free 45-day trail membership when you purchase a freebeat exercise bike. <\/p>",
+            "fb_video_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f6e91d2b67494f3d8277aefe222461ce.mp4",
+            "fb_video_mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b8d4135dcdc949e98b1f0a0fada9a0b0.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "ccbee50f-9009-458c-9e21-b7393138adc6",
+        "b39488c7-b65b-47a7-8aa5-9f2930af2815",
+        "ee85b588-a729-4523-bf9e-1ec948e11fdd",
+        "a1247d92-e885-4e23-b42b-74502a0100e9",
+        "49181ae2-3553-4f8c-99dd-65c895ca0354"
+      ],
+      "settings": {
+        "fb_freebeat_title": "<p>TAP INTO MOTIVATION WITH FREEBEAT<\/p>"
+      }
+    },
+    "a53813a1-ca3c-4035-83d4-bed035b4c201": {
+      "type": "fb-class-instructors",
+      "settings": {
+        "fb_instructors_title": "<p>PROFESSIONAL INSTRUCTORS PROFESSIONAL RIDE TRAINING<\/p>",
+        "fb_instructors_desc": "<p>Our rockstar instructors come from the world's top-notch studios such as Soulcycle, Flywheel, Equinox.<\/p>",
+        "fb_instructors_img": "shopify:\/\/shop_images\/introduce1.png",
+        "fb_instructors_img_mob": "shopify:\/\/shop_images\/introduce1.png"
+      }
+    },
+    "ce9e89e0-5186-4178-8396-aeb09e09a967": {
+      "type": "fb-class-ready",
+      "settings": {
+        "fb_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6faf38f3f4f040b982ca3cdeb2edfec8.mp4",
+        "fb_video_url_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/077f74f111bf4014b9137bce99ecfa64.mp4",
+        "fb_ready_title": "<p>EXPERIENCE STUDIO FITNESS FROM THE COMFORT OF YOUR OWN HOME<\/p>",
+        "fb_ready_desc": "<p>EXPLORE EXERCISE BIKES<\/p>",
+        "fb_ready_link": "shopify:\/\/collections\/exercise-bikes"
+      }
+    },
+    "68176fa0-c972-4dd4-84e6-db8835572ab0": {
+      "type": "fb-savings-calculator",
+      "settings": {
+        "fsc_peoper_prduct": "boom-bike-arctic-white",
+        "fsc_peoper_number": 10,
+        "fsc_week_number": 7,
+        "fsc_title": "<p>The Most Convenient Workout Option<\/p>",
+        "fsc_number_bike_text": "<p>Number of people using freebeat bike<\/p>",
+        "fsc_number_week_text": "<p>Number of <br\/> workouts per week<\/p>",
+        "fsc_per_workout": "Cost per workout",
+        "fsc_cheap_than": "<p>Cheaper than your average coffee shop visit!<\/p>",
+        "fsc_cheap_based": "",
+        "fsc_buy_now": "EXPLORE EXERCISE BIKES",
+        "fsc_buy_now_url": "shopify:\/\/collections\/exercise-bikes"
+      }
+    },
+    "640c7c69-5f2c-4340-9fdf-b91ccb530be8": {
+      "type": "fb-download",
+      "blocks": {
+        "20fcaaa9-a4da-449b-affa-cbb2e7471a05": {
+          "type": "indoorlist",
+          "settings": {
+            "download_progress_title": "Diverse Classes",
+            "download_progress_Info": "Experience studio fitness from the comfort of your own home with thousands of on-demand classes to choose from every day.",
+            "download_progress_pc_image": "shopify:\/\/shop_images\/pc-down1.png",
+            "download_progress_mobile_image": "shopify:\/\/shop_images\/mob-down1.png"
+          }
+        },
+        "ddddca3d-9a32-402c-89e9-c25f10737591": {
+          "type": "indoorlist",
+          "settings": {
+            "download_progress_title": "Connect with the Community",
+            "download_progress_Info": "Earn rewards and fame by riding with friends in freebeat fitness challenges, events, and games, discovering who will emerge victorious in the Events.",
+            "download_progress_pc_image": "shopify:\/\/shop_images\/0915down_pc2.png",
+            "download_progress_mobile_image": "shopify:\/\/shop_images\/0915down_mob2.png"
+          }
+        },
+        "9aae68bf-8659-4496-b3e2-a7a663ec99f8": {
+          "type": "indoorlist",
+          "settings": {
+            "download_progress_title": "Performance Tracking",
+            "download_progress_Info": "Our sensors won't miss a single pedal and receive instant performance tracking results at every beat.",
+            "download_progress_pc_image": "shopify:\/\/shop_images\/pc-down3.png",
+            "download_progress_mobile_image": "shopify:\/\/shop_images\/mob-down3.png"
+          }
+        },
+        "bf62ea83-d338-4acd-b568-100e618ec7b4": {
+          "type": "indoorlist",
+          "disabled": true,
+          "settings": {
+            "download_progress_title": "Recharge",
+            "download_progress_Info": "During indoor classes, your efforts directly recycle energy"
+          }
+        }
+      },
+      "block_order": [
+        "20fcaaa9-a4da-449b-affa-cbb2e7471a05",
+        "ddddca3d-9a32-402c-89e9-c25f10737591",
+        "9aae68bf-8659-4496-b3e2-a7a663ec99f8",
+        "bf62ea83-d338-4acd-b568-100e618ec7b4"
+      ],
+      "settings": {
+        "download-title": "DISCOVER APP",
+        "download_bg_background": "#e9edf3",
+        "download-store-app": "shopify:\/\/shop_images\/PC-APP.png",
+        "download-store-app-link": "https:\/\/apps.apple.com\/ca\/app\/freebeat\/id6450832508",
+        "download-google-play-link": "https:\/\/play.google.com\/store\/apps\/details?id=com.freebeat.freebeatapp",
+        "download-google-play": "shopify:\/\/shop_images\/PC-GOOGLE.png",
+        "download-mob-store-app": "shopify:\/\/shop_images\/PC-APP.png",
+        "download-mob-google-play": "shopify:\/\/shop_images\/M-GOOGLE.png"
+      }
+    },
+    "1629086008cc2691c7": {
+      "type": "newsletter",
+      "settings": {
+        "section_size": "small",
+        "image": "shopify:\/\/shop_images\/black_background_21d38ae1-f954-4a40-995d-f3965c058755.jpg",
+        "text_color": "#ffffff",
+        "button_color": "#000000",
+        "subheading": "",
+        "title": "JUST FOR YOU",
+        "content": "<p>Sign up now to get exclusive offers!<\/p>"
+      }
+    },
+    "1662430733b61ffd5b": {
+      "type": "fb-key-content",
+      "settings": {
+        "fb_customerkey_h1": "classes"
+      }
+    }
+  },
+  "order": [
+    "16548279285c536a4d",
+    "10dbede5-60ba-4ca1-8479-d5d18b8c7940",
+    "0cb390fa-39b5-4902-b43b-2a48ce26d668",
+    "15597f0d-6cbb-4641-ac2f-090761089bcd",
+    "7eb1bcac-b938-4c5e-b4a9-754bbb47607b",
+    "ac3e42af-b436-4da9-8283-a1c3709e80d7",
+    "820ce45b-72c9-4d03-b9b9-5813ce7935bd",
+    "main",
+    "1654176225f0b2b1e3",
+    "165482867789b0873f",
+    "162987924347a5d673",
+    "16541766277128fb84",
+    "165482972779694645",
+    "d088fb46-ba98-4c0e-a715-7345746736ef",
+    "16548298496535691a",
+    "1629188557add1dbd4",
+    "1629086012973d9032",
+    "16548299659d01bd47",
+    "c91fdb43-ecbf-4efc-9f52-18c531f879b7",
+    "a53813a1-ca3c-4035-83d4-bed035b4c201",
+    "ce9e89e0-5186-4178-8396-aeb09e09a967",
+    "68176fa0-c972-4dd4-84e6-db8835572ab0",
+    "640c7c69-5f2c-4340-9fdf-b91ccb530be8",
+    "1629086008cc2691c7",
+    "1662430733b61ffd5b"
+  ]
+}

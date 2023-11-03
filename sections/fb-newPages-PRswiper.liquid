@@ -1,0 +1,103 @@
+{%- assign newSwiperContent = section.blocks | where: 'type', 'newSwiperContent' | first -%}
+<div class="fb_newPages_PR_swiper" id="section-{{ section.id }}">
+    <div class="swiper newPages_PRswiper">
+        <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+            <div class="swiper-slide">
+                <div class="addWrapper">
+                    <div class="newPages_imgWrapper">
+                        {% assign imgPiker = block.settings.swiperImg | img_url: '1x1' | replace: '_1x1.','_{width}x.'
+                        %}
+                        <img class="Image--lazyLoad Image--fadeIn swiperImg" data-src="{{ imgPiker }}" data-sizes="auto"
+                            data-optimumx="1.2" data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+                    </div>
+                    <div class="newPages_PRswiper_text">{{block.settings.swiperDes}}</div>
+                </div>
+            </div>
+            {%- endfor -%}
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+<style>
+    .fb_newPages_PR_swiper {
+        background: {{section.settings.PR_swiper_background}};
+        font-family: Montserrat-Light, Montserrat;
+    }
+    .newPages_PRswiper_text {
+        color: {{section.settings.textColor}};
+    }
+    @media screen and (max-width: 768px) {
+
+        .newPages_PRswiper_text {
+            color: {{section.settings.textColor}};
+        }
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        var swiper = new Swiper(".newPages_PRswiper", {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                769: {  
+                    slidesPerView: 3,
+                    loopedSlides: 4,
+                }
+            },
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+            // scrollbar: {
+            //     el: ".swiper-scrollbar",
+            // },
+        });
+    })
+</script>
+
+{% schema %}
+{
+"name": "FbNewPRSwiper",
+"presets": [
+{
+"name": "fb-newPages-PR-swiper",
+"category": "Fb Sections",
+"blocks": []
+}
+],
+"settings": [
+{
+"type": "color",
+"id": "PR_swiper_background",
+"label": "Background color",
+"default": "#fafafa"
+},
+{
+"type": "color",
+"id": "textColor",
+"label": "Text Color",
+"default": "#666"
+}
+],
+"blocks": [
+{
+"type": "newSwiperContent",
+"name": "New Swiper Content",
+"settings": [
+{
+"type": "image_picker",
+"id": "swiperImg",
+"label": "Swiper Image"
+},
+{
+"type": "text",
+"id": "swiperDes",
+"label": "Swiper Description"
+}
+]
+}
+]
+}
+{% endschema %}

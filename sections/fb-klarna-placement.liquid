@@ -1,0 +1,59 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if country_code_var != 'gb' -%}
+    <div class="fb-klarna-placement" id="section-{{ section.id }}">
+        <klarna-placement
+            data-key="top-strip-promotion-auto-size"
+            data-locale="en-US"
+            data-preloaded="true"
+            data-purchase-amount="{{ section.settings.klarna_placemnet_number }}"
+        >
+        </klarna-placement>
+    </div>
+{%- endif -%}
+{% schema %}
+  {
+    "name": "FbKlarnaPlacement",
+    "presets": [
+      {
+        "name": "fb-klarna-placement",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "klarna_placement_back",
+            "label": "Background color",
+            "default": "#f6f6f6"
+        },
+        {
+            "type": "number",
+            "id": "klarna_placemnet_number",
+            "label": "Klarna Number",
+            "default": 0
+        }
+    ]
+  }
+{% endschema %}
+<style>
+    .fb-klarna-placement{
+        background-color: {{ section.settings.klarna_placement_back }};
+       
+    }
+    .fb-klarna-placement {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        background-color: {{ section.settings.klarna_placement_back }};
+        
+    }
+    @media only screen and (max-width: 414px){
+        .fb-klarna-placement {
+            padding-top: 40px;
+        }
+    }
+      
+</style>

@@ -1,0 +1,299 @@
+<div class="fb-progress-pc gFPgkd Section--spacingNormal" id="section-{{ section.id }}">
+    <div class="soft-left-box">
+         <div class="soft-left-top">
+            <div class="left-top-title">{{section.settings.pages_progress_title}}</div>
+            <div class="left-top-info">
+             {{section.settings.pages_progress_content}}
+            </div> 
+         </div>
+        <div class="soft-left-bottom">
+            <div class="sc-progress-bg"></div>
+            <ul>
+                {%- for block in section.blocks -%}
+                    <li class="sc-li">
+                        <div class="sc-progress"></div>
+                        <div class="item-title">
+                            {{ block.settings.pages_progress_title }}
+                        </div>
+                        <div class="item-info">
+                            {{ block.settings.pages_progress_Info }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="sc-izAXJK">
+        <img class="bg Image--lazyLoad"  data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/png_1_2.png?v=1659516087">
+        {%- for block in section.blocks -%}
+            <div class="sc-dx">
+                <video 
+                    class="bg-video Image--lazyLoad" 
+                    style="position: absolute;z-index:1;" webkit-playsinline="true" playsinline="true"
+                    autoplay="autoplay" 
+                    muted="muted" 
+                    loop="loop"
+                    data-src="{{ block.settings.pages_progress_pc_video }}"></video>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "FbSoftIntroductPc",
+    "presets": [
+      {
+        "name": "fb-soft-introduct-pc",
+        "category": "Fb Sections",
+        "blocks": [
+            {
+                "type": "progress_list"
+            }
+        ]
+      }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "pages_progress_backcolor",
+            "label": "background color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "pages_progress_textcolor",
+            "label": "text color",
+            "default": "#000"
+        },
+        {
+            "type": "text",
+            "id": "pages_progress_title",
+            "label":"Pages Progress Title"
+        },
+        {
+            "type": "text",
+            "id": "pages_progress_content",
+            "label":"Pages Progress Content"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "progress_list",
+            "name": "progress list",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "pages_progress_title",
+                    "label": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "pages_progress_Info",
+                    "label": "Info"
+                },
+                {
+                    "type": "url",
+                    "id": "pages_progress_pc_video",
+                    "label": "Pc Video"
+                },
+                 {
+                    "type": "url",
+                    "id": "pages_progress_mobile_video",
+                    "label": "Mobile Video"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}
+<style>
+    #section-{{ section.id }} {
+        margin: 0!important;
+        background-color: {{ section.settings.pages_progress_backcolor }};
+        color: {{ section.settings.pages_progress_textcolor }};
+    }
+    /* 切换动效 */
+.gFPgkd{
+	background: #fff;
+	display: flex;
+  
+} 
+ .fb-soft-pad{
+    display: none;
+}
+.soft-left-box{
+     -webkit-box-align: center;
+    align-items: flex-end;
+    display: flex;
+    flex: 1 1 40%;
+    flex-direction:column;
+    -webkit-box-pack: center;
+    justify-content: flex-end;
+    position: relative;
+    text-align: left;
+}
+.soft-left-top{
+    margin-bottom:60px;
+    max-width: 450px;
+    position: relative;
+}
+.left-top-info{
+    font-size: 18px;
+    font-weight: 300;
+    color: #1D1D1F;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+.left-top-title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #1D1D1F;
+    line-height: 24px;
+    letter-spacing: 1px;
+    margin-bottom:16px;
+}
+.sc-izAXJK{
+  	padding-top: 80px;
+  	display: grid;
+    flex: 1 1 60%;
+    max-width: 60vw;
+    overflow: hidden;
+    height: 600px;
+    pointer-events: none;
+  -webkit-box-pack: center;
+    justify-content: center;
+  position: relative;
+}
+.sc-izAXJK .bg{
+	 position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+/*   width: 100%; */
+  height: 90%;
+}
+.soft-left-bottom{
+	max-width: 450px;
+    position: relative;
+}
+.soft-left-bottom > ul{
+	
+}
+.soft-left-bottom li{
+	list-style: none;
+  	padding-left: 40px;
+  	position:relative;
+  	cursor: pointer;
+}
+.sc-progress-bg{
+    position: absolute;
+    content:'';
+    height:100%;
+    top:0;
+    left:0;
+    width:3px;
+	background-color: rgb(241, 241, 241);
+}
+
+ #section-{{ section.id }} .item-title{
+	font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.375em;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 30px;
+    transition: color 250ms ease 0s;
+  	opacity: .5;
+}
+.item-info{
+	font-weight: 300;
+    letter-spacing: 0.025em;
+    line-height: 1.5em;
+    font-size: 13px;
+    color: rgb(101, 102, 106);
+    opacity: 0;
+    transition: height .7s;
+  height:0;
+  overflow: hidden;
+}
+.soft-left-bottom li:first-child .item-info{
+  height:92px;
+  opacity: 1;
+}
+.soft-left-bottom li:first-child .item-title{
+  opacity: 1;
+}
+.sc-progress{
+	position: absolute;
+    top:0;
+    left:0;
+    width:3px;
+	background-color: #000000;
+  	height:30%;
+  	opacity: 0;
+}
+.soft-left-bottom li:first-child .sc-progress{
+	opacity: 1;
+}
+ @media screen and (max-width: 768px){
+     .fb-progress-pc{
+        display:none
+    }
+    .fb-soft-pad{
+        display: none;
+    }
+ }
+  @media screen and (min-width: 640px){
+    .fb-soft-pad{
+        display: none;
+    }
+    .fb-progress-pc{
+        display:flex
+
+ }
+
+@media only screen and (min-width: 100px) and (max-width: 640px) {
+    .fb-progress-pc{
+        display:none
+    }
+	.fb-soft-pc .gFPgkd{
+		display: none;
+	} 
+	.fb-soft-pc  .fb-soft-pad{
+        display: none;
+      padding: 30px;
+      text-align: center;
+  	}
+  .item-title-web{
+  	font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.375em;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  .item-info-web{
+	font-weight: 500;
+    letter-spacing: 0.025em;
+    line-height: 1.5em;
+    font-size: 13px;
+    color: rgb(101, 102, 106);
+	}
+  .sc-li-web img{
+  	width: 100%;
+    margin-bottom: 30px;
+    margin-top:30px;
+    display: block;
+  }
+  .sc-li-web video{
+    margin-bottom: 30px;
+    margin-top:30px;
+  }
+}
+
+
+</style>

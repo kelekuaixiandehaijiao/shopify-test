@@ -1,0 +1,98 @@
+<section id="section-{{ section.id }}">
+    <div class="klarna-loading-text">
+        Please wait, the page is redirecting...
+    </div>
+</section>
+<style> 
+.klarna-loading-text{
+    width: 100%;
+    height: 80vh;
+    padding-top: 10%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+</style>
+{% schema %}
+{
+    "name": "klarnaLoading",
+    "presets": [
+        {
+            "name": "klarna-loading",
+            "category": "My Sections",
+            "blocks": []
+        }
+    ],
+    "settings": [],
+    "blocks": [
+    ]
+}
+
+{% endschema %}
+
+
+<script type="text/javascript">
+    $(function () {
+        const klarnaLoaing = {
+            timer: 500,
+            token: null,
+            sid: null,
+            dataObj: {
+                session_id: null
+            },
+            init: function () {
+                this.dataObj.session_id = getQueryString('hppId')
+                if(this.dataObj.session_id) {
+                    this.setTimeGo()
+                }
+            },
+            clearCookie: function() {
+                var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+                if (keys) {
+                    for (var i = keys.length; i--;) {
+                        document.cookie = keys[i] + '=0;path=/;expires=' + new Date(0).toUTCString();
+                        document.cookie = keys[i] + '=0;path=/;domain=' + document.domain + ';expires=' + new Date(0).toUTCString();
+                    }
+                }
+            },
+            setTimeGo: function () {
+                let _this = this
+                _this.timer && clearTimeout(_this.timer)
+                fetch(`https://api.freebeatfit.com/shopify/v1/klarna/klarnaPaymentResult`, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(_this.dataObj)
+                }).then((response) => {
+                    return response.json();
+                }).then((data) => {
+                    if (data.code === 0 && data.data) {
+                        _this.clearCookie()
+                        let fb_url = data.data.url
+                        let fb_name = data.data.email
+                        let fb_orderid = data.data.id
+                        // if(fb_url.indexOf('?') > -1) {
+                        //     fb_url = fb_url + '&fb_name=' + fb_name + '&fb_orderid=' + fb_orderid
+                        // } else {
+                        //     fb_url = fb_url + '?fb_name=' + fb_name + '&fb_orderid=' + fb_orderid
+                        // }
+                        // console.log(fb_url,'链接地址')
+                        // debugger
+                        window.location.href = fb_url
+                    } else {
+                        setTimeout(()=> {
+                            _this.setTimeGo()
+                        }, 500)
+                    }
+                }).catch((error)=> {
+                    setTimeout(()=> {
+                        _this.setTimeGo()
+                    }, 500)
+                })
+            }
+        }
+        klarnaLoaing.init()
+    })
+</script>

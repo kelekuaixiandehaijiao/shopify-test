@@ -1,0 +1,458 @@
+<div id="section-{{ section.id }}" class="fri-buy-works">
+    <div class="fri-buy-works-con">
+        <div class="buy-works-home">
+            <div class="buy_works_home_title">{{ section.settings.buy_works_home_title }}</div>
+            <div class="buy_works_home_desc">
+                <div class="buy_works_home_desc_black1">{{ section.settings.buy_works_home_desc_black1 }}</div>
+                <div class="buy_works_home_desc_color">
+                   <a href="{{ section.settings.link_url }}">{{ section.settings.buy_works_home_desc_color  | escape }}</a>
+               </div>
+               <div class="buy_works_home_desc_black2">{{ section.settings.buy_works_home_desc_black2 }}</div>
+            </div>
+        </div>
+        <div class="buy-works-con">
+            {%- for block in section.blocks -%}
+                <div class="buy-works-item">
+                    {% assign buy_works_number = block.settings.buy_works_number | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+                    <img class="Image--lazyLoad Image--fadeIn buy_works_number" 
+                        data-src="{{ buy_works_number }}" 
+                        data-sizes="auto"
+                        data-optimumx="1.2"
+                        data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    >
+                    <div class="buy_works_text_pc">
+                        <div class="buy_works_title_pc">{{ block.settings.buy_works_title_pc }}</div>
+                        <div class="buy_works_desc_pc">{{ block.settings.buy_works_desc_pc }}</div>
+                        <div class="buy_works_desc_more buy_works_desc_more_pc">{{ block.settings.buy_works_desc_more_pc }}</div>
+                    </div>
+                    <div class="buy_works_text_mobile">
+                        <div class="buy_works_title_mobile">{{ block.settings.buy_works_title_mobile }}</div>
+                        <div class="buy_works_desc_mobile">{{ block.settings.buy_works_desc_mobile }}</div>
+                        <div class="buy_works_desc_more buy_works_desc_more_mobile js-open-termdialog">{{ block.settings.buy_works_desc_more_mobile }}</div>
+                    </div>
+                </div>
+        {%- endfor -%}
+        </div> 
+    </div>
+</div>
+<style>
+
+    @media only screen and (min-width: 821px) and (max-width:929px){
+        {%- if template == 'page.friendbuy' -%}
+            .buy_works_title_pc{
+                height: 200px;
+            }
+            .buy_works_desc_pc{
+                height: 100px; 
+            }
+            .buy-works-item{
+                width:33%;
+            }
+        {%- else -%}
+            .buy_works_title_pc{
+                height: 200px;
+            }
+            .buy_works_desc_pc{
+                height: 160px; 
+            }
+            .buy-works-item{
+                width:33%;
+            }
+            .buy-works-con .buy-works-item:nth-child(1) {
+                margin-left: 0;
+            }
+        {%- endif -%}
+    }
+
+    @media only screen and (min-width: 921px) and (max-width:1025px){
+        {%- if template == 'page.friendbuy' -%}
+            .buy_works_title_pc{
+                height: 144px;
+            }
+            .buy_works_desc_pc{
+                height: 80px;
+            }
+            .buy-works-item{
+                width:33%;
+            }
+        {%- else -%}
+            .buy_works_title_pc{
+                height: 200px;
+            }
+            .buy_works_desc_pc{
+                height: 160px;
+            }
+            .buy-works-item{
+                width:33%;
+            }
+        {%- endif -%}
+    }
+    @media only screen and (min-width: 1026px) and (max-width:1445px){
+        {%- if template == 'page.friendbuy' -%}
+            .buy_works_title_pc{
+                height: 62px;
+            }
+            .buy_works_desc_pc{
+                height: 54px;
+            }
+            .buy-works-item{
+                width:33%;
+            }
+        {%- else -%}
+            .buy-works-item{
+                width:33%;
+            }
+        {%- endif -%}
+    }
+    @media only screen and (min-width: 1446px) and (max-width:1500px){
+        {%- if template == 'page.friendbuy' -%}
+            .buy_works_title_pc{
+                height: 120px;
+            }
+            .buy_works_desc_pc{
+                height: 80px;
+            }
+            .buy-works-item{
+                width:33%;
+            }
+        {%- else -%}
+            .buy-works-item{
+                width:33%;
+            }
+        {%- endif -%}
+    }
+
+    @media only screen and (min-width: 1501px) and (max-width:1919px){
+        .buy_works_title_pc{
+            height: 72px;
+        }
+        .buy_works_desc_pc{
+            height: 40px;
+        }
+        .buy-works-item{
+            width:33%;
+        }
+    }
+    @media only screen and (min-width: 1920px) and (max-width:1920px){
+        .fri-buy-works-con{
+            width: 1520px;
+        }
+        .buy-works-con{
+            width: 100%;
+        }
+        .buy-works-item{
+            width:440px;
+        }
+        .buy_works_title_pc ,.buy_works_desc_pc ,.buy_works_desc_more_pc{
+            width: 440px;
+        }
+    }
+    @media only screen and (min-width: 1921px){
+        .buy_works_title_pc{
+            height: 72px;
+        }
+        .buy_works_desc_pc{
+            height: 40px;
+        }
+        .buy-works-item{
+            width:33%;
+        }
+    }
+
+
+    /* pc端 */
+    @media only screen and (min-width: 821px){
+        .buy_works_text_mobile{
+            display: none;
+        }
+    
+        .fri-buy-works-con{
+            margin: auto;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        {%- if template == 'page.friendbuy' -%}
+                .fri-buy-works-con{
+                    width: 80%;
+                }
+                 .buy-works-home{
+                    margin-top: 60px;
+                }
+        {%- else -%}
+                .fri-buy-works-con{
+                     width: calc(100% - 400px);
+                }
+                .buy-works-home{
+                    margin-top: 32px;
+                }
+                .fri-buy-works{
+                     margin-bottom: 120px;
+                }
+        {%- endif -%}
+       
+        .buy_works_home_title{
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 44px;
+            text-align: center;
+            color: #000000;
+            padding-top: 60px;
+        }
+        .buy_works_home_desc{
+            display: none;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #000000;
+            margin-top: 40px;
+        }
+        .buy_works_home_desc_black1{
+            display: inline;
+        }
+        .buy_works_home_desc_black2{
+            display: inline;
+        }
+        .buy_works_home_desc_color{
+            color: #02C0D9;
+            display: inline;
+            text-decoration: underline;
+            margin: 0 5px;
+        }
+        .buy-works-con{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            {% comment %} align-items: center; {% endcomment %}
+            gap: 50px;
+            padding-top: 57px;
+        }
+        .buy-works-item:nth-child(1){
+            {% comment %} margin-left: 50px; {% endcomment %}
+            padding-bottom: 73px;
+        }
+        .buy-works-item:nth-child(2){
+            {% comment %} margin-left: 50px; {% endcomment %}
+            padding-bottom: 73px;
+        }
+        .buy-works-item:nth-child(3){
+            {% comment %} margin: 0 50px; {% endcomment %}
+            padding-bottom: 60px;
+        }
+        .buy_works_number{
+            width: 60px;
+            border-radius: 10px;
+            margin: auto;
+            display: block;
+        }
+        .buy_works_title_pc{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            color: #000000;
+            margin-top: 24px;
+        }
+        .buy_works_desc_pc{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #747474;
+            margin-top: 12px;
+        }
+        .buy_works_desc_more_pc{
+            text-decoration: underline;
+            text-align: center;
+            font-size: 12px;
+            color: #747474;
+            line-height: 16px;
+            cursor: pointer;
+        }
+    }
+    
+    /* mobile端 */
+    @media only screen and (max-width: 820px){
+        .buy_works_text_pc{
+            display: none;
+        }
+        {%- if template == 'page.friendbuy' -%}
+            .fri-buy-works-con{
+                width: 325px;
+            }
+        {%- else -%}
+            .fri-buy-works-con{
+                 width: calc(100% - 50px);
+            }
+            .fri-buy-works{
+                 padding-bottom: 60px;
+            }
+        {%- endif -%}
+        .fri-buy-works-con{
+            margin: auto;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+        .buy_works_home_title{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            color: #000000;
+            padding-top: 32px;
+        }
+        .buy_works_home_desc{
+            display: none;
+        }
+        .buy-works-con{
+            width: 80%;
+            margin-top: 24px;
+        }
+        .buy-works-item{
+            width:295px;
+            overflow: hidden;
+            margin-left: 15px;
+        }
+        .buy-works-item:nth-child(1){
+            margin-bottom: 20px;
+        }
+        .buy-works-item:nth-child(2){
+            margin-bottom: 20px;
+        }
+        .buy-works-item:nth-child(3){
+            padding-bottom: 32px;
+        }
+        .buy_works_number{
+            width: 20px;
+            height: auto;
+            border-radius: 10px;
+            float: left;
+            display: inline;
+            margin-top: 3px;
+        }
+        .buy_works_text_mobile{
+            margin-left: 12%;
+        }
+        .buy_works_title_mobile{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            color: #000000;
+        }
+        .buy_works_desc_mobile{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.02em;
+            color: #747474;
+            margin-top: 8px;
+        }
+        .buy_works_desc_more_mobile{     
+            margin-top:4px;
+            text-decoration: underline;
+            font-size: 9px;
+            color: #747474;
+            line-height: 20px;
+            cursor: pointer;
+        }
+    }
+    @media only screen and (min-width: 770px) and (max-width :819px){
+        {%- if template == 'page.friendbuy' -%}
+            .fri-buy-works-con{
+                width: 325px;
+            }
+        {%- else -%}
+            .fri-buy-works-con{
+                 width: calc(100% - 400px);
+            }
+            .fri-buy-works{
+                 padding-bottom: 60px;
+            }
+        {%- endif -%}
+    }
+
+</style>
+<script>
+    $('.buy_works_desc_more').click(function() { 
+        $('.fri-terms-dialog').show()
+    })
+</script>
+{% schema %}
+  {
+    "name": "FbFriendbuyWorks",
+    "presets": [
+      {
+        "name": "fb-friendbuy-works",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "buy_works_home_title",
+            "label": "Buy Works Home Title"
+        },
+        {
+            "type": "text",
+            "id": "buy_works_home_desc_black1",
+            "label": "Buy Works Home Desc Black1"
+        },
+        {
+            "type": "text",
+            "id": "buy_works_home_desc_color",
+            "label": "Buy Works Home Desc Color"
+        },
+        {
+            "type": "text",
+            "id": "buy_works_home_desc_black2",
+            "label": "Buy Works Home Desc Black2"
+        }
+    ],
+    "blocks":[
+        {
+            "type":"friendbuy-works",
+            "name":"Friendbuy Works",
+            "settings":[
+                {
+                    "type": "image_picker",
+                    "id": "buy_works_number",
+                    "label": "Buy Works Number"
+                },
+                {
+                    "type": "text",
+                    "id": "buy_works_title_pc",
+                    "label": "Buy Works Title Pc"
+                },
+                {
+                    "type": "text",
+                    "id": "buy_works_desc_pc",
+                    "label": "Buy Works Desc Pc"
+                },
+                {
+                    "type": "text",
+                    "id": "buy_works_desc_more_pc",
+                    "label": "Buy Works Desc More Pc"
+                },
+                {
+                    "type": "text",
+                    "id": "buy_works_title_mobile",
+                    "label": "Buy Works Title Mobile"
+                },
+                {
+                    "type": "text",
+                    "id": "buy_works_desc_mobile",
+                    "label": "Buy Works Desc Mobile"
+                },
+                {
+                    "type": "text",
+                    "id": "buy_works_desc_more_mobile",
+                    "label": "Buy Works Desc More Mobile"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

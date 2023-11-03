@@ -1,0 +1,350 @@
+{% assign fbDesignCss = ''  %}
+{%- for block in section.blocks -%}
+  {% if forloop.length > 4 %}
+    {% assign fbDesignCss = 'fb-klarba-content-length'  %}
+  {% endif %}
+{%- endfor -%}
+
+<div class="fb-klarba-design" id="section-{{ section.id }}">
+  {%- if section.settings.design_tips != blank -%}
+    <div class="fb-klarba-tips">
+        {{ section.settings.design_tips }}
+    </div>
+  {%- endif -%}
+  <div class="fb-klarba-content {{ fbDesignCss }}" id="fb-klarba-content">
+    {% comment %} <div class="fb-klarba-title">
+        <div class="fb-klarba-title_img">
+          {%- if section.settings.show_change_scrool -%}
+            <div>
+                <img class="fb-klarba-title_img1" onclick="GoscroolImg('1')" src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212617101.png?v=1643190077" alt="">
+            </div>
+            <div>
+                <img class="fb-klarba-title_img2" onclick="GoscroolImg('2')" src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/202212617102.png?v=1643190078" alt="">
+            </div>
+          {%- endif -%}
+        </div> {% endcomment %}
+        {% comment %} {%- if section.settings.design_title -%}
+          <div class="fb-klarba-title_con"> 
+            {{ section.settings.design_title }} 
+          </div>
+        {%- endif -%} {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+    <div class="fb-klarba_scroll">
+      {%- for block in section.blocks -%}
+        <div class="fb-klarba_item">
+          <div class="fb-klarba_imgblock">
+            {% assign imgpiker = block.settings.design_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %} 
+            <img class="Image--lazyLoad Image--fadeIn" data-src="{{ imgpiker }}"  data-sizes="auto"
+            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            alt="{{ block.settings.design_img.alt }}"
+            >
+            <span class="Image__Loader"></span>
+          </div>
+          {%- if block.settings.design_img_title != blank -%}
+            <div class="fb-klarba_item_title">
+              {{ block.settings.design_img_title }}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.design_img_sub_title != blank -%}
+            <div class="fb-klarba_item_con">
+              {{ block.settings.design_img_sub_title }}
+            </div>
+         {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+</div>
+</div>
+{% schema %}
+  {
+    "name": "FbKlarnaDesign",
+    "presets": [
+      {
+        "name": "fb-klarna-design",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "design_title",
+        "label": "title"
+      },
+      {
+        "type": "richtext",
+        "id": "design_tips",
+        "label": "tips"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_change_scrool",
+        "label": "Show change scrool",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "design_color",
+        "label": "Background color",
+        "default": "#f6f6f6"
+      },
+      {
+        "type": "color",
+        "id": "design_mobile_color",
+        "label": "Background color",
+        "default": "#fff"
+      }
+      
+    ],
+    "blocks": [
+      {
+        "type": "designImgBlock",
+        "name": "designImgBlock",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "design_img",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "design_img_title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "design_img_sub_title",
+            "label": "Sub title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script type="text/javascript">
+  function GoscroolImg(direction) {
+    let design_scroll = document.getElementsByClassName("fb-klarba_scroll")[0];
+    switch (direction) {
+      case "1":
+        design_scroll.scrollLeft -= 300;
+        break;
+      case "2":
+        design_scroll.scrollLeft += 300;
+        break;
+    }
+  }
+  if(document.body.clientWidth > 1900) {
+    let fbklarnadesign = document.getElementById("fb-klarba-content").classList.remove("fb-klarba-content-length")
+  }
+</script>
+<style>
+  .fb-klarba-design {
+    background-color: {{ section.settings.design_color }}
+  }
+  .fb-klarba-tips{
+    display: none;
+  }
+  .fb-klarba-content{
+    padding-top: 66px;
+    padding-bottom: 66px;
+    padding-left: 0px;
+    padding-right: 0px;   
+  }
+  @media only screen and (min-width: 1441px)  {
+    .fb-klarba-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+  .fb-klarba-content-length{
+    padding-left: 50px;
+    padding-right: 0px;   
+  }
+  .fb-klarba-content-length .fb-klarba_scroll {
+    justify-content: left!important;
+  }
+
+  .fb-klarba-title{
+    margin-bottom: 42px;
+  }
+  .fb-klarba-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+  .fb-klarba-title_img{
+    display: flex;
+    margin-left: 30px;
+  }
+  .fb-klarba-title_img1, .fb-klarba-title_img2{
+    display: block;
+    width: 28px;
+  }
+  .fb-klarba-title_img1{
+    margin-right: 13px;
+  }
+  .fb-klarba-title_con{
+    font-size: 38px;
+    font-weight: 800;
+    color: #000;
+    line-height: 44px;
+    letter-spacing: 1px;
+  	margin-right: 150px;
+}
+  .fb-klarba-title_con{
+    font-size: 36px;
+    line-height: 41px;
+  }
+  .fb-klarba_scroll{
+    display: flex;
+    overflow-x: scroll;
+    justify-content: center;
+}
+.fb-klarba_scroll::-webkit-scrollbar{
+    display: none;
+}
+.fb-klarba_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  width: 288px;
+  height: 396px;
+  margin: 0 24px;
+  padding: 26px 14px;
+  position: relative;
+}
+.fb-klarba_item .fb-klarba_imgblock{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.fb-klarba_item .fb-klarba_imgblock img{
+  width: 100%;
+  height: 100%;
+}
+.fb-klarba_item_title{
+  width: 50%;
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.fb-klarba_item_con{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .fb-klarba-content{
+    padding: 28px 0px;  
+  }
+  .fb-klarba-title{
+    margin-bottom: 22px;
+  }
+  .fb-klarba-title_img{
+    display: flex;
+    margin-left: 15px;
+  }
+  .fb-klarba-title_con{
+    font-size: 19px;
+    line-height: 22px;
+  }
+  .fb-klarba-title_img1{
+    margin-right: 12px;
+  }
+  .fb-klarba-title_img1, .fb-klarba-title_img2{
+    display: block;
+    width: 20px;
+  }
+  .fb-klarba_scroll{
+    display: flex;
+    overflow-x: scroll;
+  }
+  .fb-klarba_item{
+    width: 123px;
+    height: 169px;
+    margin: 0 26px;
+    padding: 14px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  
+  .fb-klarba_item_title{
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 2px;
+  }
+ 
+  .fb-klarba_item_con{
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+@media only screen and (max-width: 768px){
+  .fb-klarba-design {
+    background-color: {{ section.settings.design_mobile_color }}
+  }
+  .fb-klarba-tips{
+    display: block;
+    padding: 29px 20px 37px 20px;
+  }
+  .fb-klarba-tips p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 24px;
+  }
+  .fb-klarba-title_img{
+    display: none;
+  }
+  .fb-klarba-content{
+    padding: 10px 0px 10px 16px;  
+  }
+  .fb-klarba-title_con{
+    font-size: 24px;
+    line-height: 27px;
+    margin-left: 12px;
+  }
+  .fb-klarba-title{
+    margin-bottom: 30px;
+  }
+  .fb-klarba_scroll{
+    display: flex;
+    overflow-x: scroll;
+    justify-content: left;
+  }
+  .fb-klarba_item{
+    width: 319px;
+    height: 442px;
+    margin: 0 12px;
+    padding: 32px 26px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .fb-klarba_item_con{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .fb-klarba_item_title{
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+}
+</style>
+

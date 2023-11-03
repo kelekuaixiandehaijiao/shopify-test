@@ -1,0 +1,307 @@
+/* pr boom  style*/
+.fb_value_prboom{
+    background-color: #EFEFEF;
+    margin-bottom: -2px;
+}
+.prboom_pc{
+    display:flex;
+    align-items: center;
+    overflow-x: auto;
+}
+.prboom_pc::-webkit-scrollbar{
+        display: none;
+}
+.prboom-box{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+}
+.prboom-box:last-child {
+    margin-right: 0px;
+}
+@media only screen and (min-width: 769px){ 
+    .fb_value_prboom{
+        height: auto;
+        padding-top: 8px;
+        padding-bottom: 40px;
+        position: relative;
+    }
+    .prboom_pc{
+        overflow-y: hidden;
+        height: 432px !important;
+        margin-bottom: 0px !important;
+    }
+    .prboom-box{
+        width: 340px;
+        height: 288px;
+        border-radius: 24px;
+        cursor: pointer;
+    }
+    .prboom-box:nth-child(4) {
+        margin-right: 0px;
+    }
+    .prboom-box:hover {
+        background: #fff;
+        /* background: linear-gradient(315deg, #9600FF 0%, #406CEF 47%, #00BCE3 100%); */
+    }
+    .prboom-box:hover .iconPic {
+        display: none;
+    }
+    .prboom-box:hover .iconHover {
+        display: block;
+    }
+    .prboom-box-shadown{
+        display: none;
+        position: absolute;
+        width: 137%;
+        height: 150%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /* background: linear-gradient(315deg, #9600FF 0%, #406CEF 47%, #00BCE3 100%); */
+        background: url("https://cdn.shopify.com/s/files/1/0592/3766/2905/files/showdown.png?v=1664342968") center;
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    .prboom-box:hover .prboom-box-shadown{
+        display: none;
+    }
+    /* .prboom_pc{
+        padding-top: 64px;
+        padding-bottom: 0px;
+    } */
+    .prboom_pc_item{
+        width: 100%;
+        height: 240px;
+        background-color: #fff;
+        border-radius: 24px;
+        color: #1D1D1F;
+        position: relative;
+        z-index: 2;
+    }
+    .prboom-box:hover .prboom_pc_item{
+        /* background-color: transparent; */
+        color: #000;
+    }
+    .prboom_imgWrapper{
+        width: 100%;
+        height: 36px;
+    }
+    .prboom_imgWrapper img{
+        width: auto;
+        height: 36px;
+    }
+    .prboom_title{
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 20px;
+        letter-spacing: 1px;
+        margin-top: 12px;
+    }
+    .prboom_des{
+        margin-top: 11px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+    .iconPic{
+        display: block;
+    }
+    .iconHover {
+        display: none;
+    }
+    .prboom-box-mobpadding{
+       display: none;
+    }
+}
+@media only screen and (min-width: 1481px){
+    .prboom_pc{
+        justify-content: center;
+    }
+    .prboom-box{
+        flex-shrink: 0;
+        margin-right: 30px;
+    }
+    .prboom-box{
+        width: 340px;
+    }
+    .prboom_pc_item{
+        padding: 28px 31px;
+    }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1480px){
+    .prboom_pc{
+        justify-content: center;
+        padding: 0px 10px 0px 20px;
+    }
+    .prboom_title{
+        font-size: 19px;
+    }
+    .prboom-box{
+        width: 300px;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+    .prboom_pc_item{
+        padding: 28px 20px;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1399px){ 
+    .prboom_pc{
+        justify-content: flex-start;
+        padding: 0px 0px 10px 20px;
+    }
+    .prboom-box{
+        width: 300px;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+    .prboom_pc_item{
+        padding: 28px 15px;
+    }
+    
+}
+/* mobile */
+@media only screen and (max-width: 768px){  
+    .prboom_pc{
+        justify-content: flex-start;
+        padding: 0px 0px 0px 25px;
+    }
+    .prboom-box{
+        width: 300px;
+        height: 300px;
+        background: #fff;
+        border-radius: 24px;
+        flex-shrink: 0;
+        margin-right: 20px
+        
+    }
+    .prboom-box:last-child{
+        margin-right: 0px;
+    }
+    .prboom-box-shadown{
+        display: none;
+    }
+    .prboom_pc{
+        padding-top: 40px;
+    }
+    .prboom_pc_item{
+        padding: 30px;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        color: #000;
+    }
+    .prboom_imgWrapper{
+        width: 100%;
+        height: 36px;
+    }
+    .prboom_imgWrapper img{
+        width: auto;
+        height: 36px;
+    }
+    .prboom_title{
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 20px;
+        letter-spacing: 1px;
+        margin-top: 12px;
+    }
+    .prboom_des{
+        margin-top: 11px;
+       
+    }
+    .prboom_des p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-top: 25px;
+    }
+    .iconPic{
+        display: none;
+    }
+    .iconHover {
+        display: block;
+    }
+    .prboom-box-mobpadding{
+        width: 5px;
+        padding: 0px 5px 0px 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 769px) { 
+    .prboom_pc{
+        /* position: relative; */
+        margin-bottom: 40px;
+    }
+    .prboom_button{
+        display: none;
+    }
+    .prboom_button_pc {
+        width: 100%;
+        height: 48px;
+        position: absolute;
+        top: 380px;
+        left: 0px;
+      }
+      .prboom_button_mob{
+        display: none;
+      }
+     
+      .prboom_button_pc_box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .prboom_button_pc a {
+        width: 320px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        border-radius: 14px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .prboom_button_one{
+        background: #1d1d1f;
+        color: #fff;
+        border: none!important;
+      }
+      .prboom_button_two{
+        background: #1d1d1f;
+        color: #fff;
+        margin-left: 27px;
+      }
+}
+@media screen and (max-width: 768px) { 
+    .prboom_pc{
+        padding-bottom: 40px;
+    }
+    .prboom_button_pc{
+        display: none;
+    }
+    .prboom_button{
+       position: absolute;
+        left: 50%;
+        margin-left: -120px;
+        right: 0;
+        bottom: 42px;
+        z-index: 2;
+        width: 160px;
+        line-height: 16px;
+        letter-spacing: 1px;
+        text-decoration-line: underline;
+        border-radius: 8px;
+    }
+    .prboom_button span{
+        font-size: 14px;
+        font-weight: 500;
+        color: #FFFFFF;
+        letter-spacing: 1px;
+    }
+}

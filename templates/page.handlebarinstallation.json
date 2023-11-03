@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "164354632386d792e4": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "",
+        "title": "How to secure handlebar onto the main frame",
+        "image_position": "right",
+        "content": "",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "164577119484cbb65b": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "",
+        "title": "handlebar_installation",
+        "html": ""
+      }
+    },
+    "1629795908485d4358": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164354632386d792e4",
+    "164577119484cbb65b",
+    "1629795908485d4358"
+  ]
+}

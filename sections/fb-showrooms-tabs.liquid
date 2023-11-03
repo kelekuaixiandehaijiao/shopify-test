@@ -1,0 +1,187 @@
+{%- assign tabItem = section.blocks | where: 'type', 'tabItem' | first -%}
+<div id="section-{{ section.id }}" class="fb-showrooms-tabs">
+   <div class="tabs-wrapper">
+   <div class="tabs-title">
+        {{ section.settings.title }}
+    </div>
+    <div class="tabs-subTitle">
+        {{ section.settings.subTitle}}
+    </div>
+    <div class="tabs-collapsible">
+        {%- for block in section.blocks -%}      
+          {%- assign title = block.settings.title -%}
+          {%- assign content = block.settings.content -%}
+            {%- if title != blank and content != blank -%}
+            <div class="Collapsible Collapsible--large" {{ block.shopify_attributes }}>
+                <button id="gtm-collapsibleButton-{{title}}" class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+                {{- title -}} <span class="Collapsible__Plus"></span>
+                </button>
+
+                <div class="Collapsible__Inner">
+                <div class="Collapsible__Content">
+                    <div class="Rte">
+                    {{- content -}}
+                    </div>
+                </div>
+                </div>
+            </div>
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+   </div> 
+  
+</div>
+<script>
+    $(function() {
+         $('.scrollable').each(function(item, index) {
+            
+         });
+            
+        
+    })
+</script>
+<style>
+.fb-showrooms-tabs{
+    padding:100px 200px 100px;
+    color: #1C1B1B;
+}
+.tabs-title{
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 44px;
+}
+.tabs-subTitle{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    padding:20px 0 40px;
+}
+.fb-showrooms-tabs .Collapsible .Collapsible__Button{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.fb-showrooms-tabs .Collapsible .Collapsible__Inner{
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 24px;
+}
+.fb-showrooms-tabs .tabs-collapsible .Collapsible:first-child{
+    border-top: none;
+}
+.fb-showrooms-tabs .tabs-collapsible .Collapsible:last-child{
+    border-bottom: none;
+}
+.fb-showrooms-tabs .Rte p{
+    margin-bottom: 0px;
+    line-height: 25px;
+}
+.fb-showrooms-tabs .Rte p:not(:first-child){
+    line-height: 22px;
+    margin-bottom: -5px;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1549px){
+    .fb-showrooms-tabs{
+        padding:80px 130px 80px;
+    }
+    .tabs-subTitle{
+        padding:16px 0 40px;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+    .fb-showrooms-tabs{
+        padding:53px 90px 53px;
+    }
+    .tabs-title{
+        font-size: 19px;
+        line-height: 23px;
+    }
+    .tabs-subTitle{
+        font-size: 12px;
+        line-height: 13px;
+        padding:11px 0 35px;
+    }
+    .fb-showrooms-tabs .Collapsible .Collapsible__Button{
+        font-size: 14px;
+        line-height: 16px;
+        padding:21px 15px 21px 0;
+    }
+    .fb-showrooms-tabs .Collapsible .Collapsible__Inner{
+        font-size: 12px;
+        line-height: 13px;
+    }
+}
+@media only screen and (max-width:768px){
+    .fb-showrooms-tabs{
+        padding:50px 30px;
+    }
+    .tabs-title{
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
+    }
+    .tabs-subTitle{
+        font-size: 14px;
+        line-height: 14px;
+        text-align: center;
+        padding:20px 0 34px;
+    }
+    .fb-showrooms-tabs .Collapsible .Collapsible__Button{
+        font-size: 14px;
+        line-height: 18px;
+        padding: 26px 15px 30px 0;
+    }
+    .fb-showrooms-tabs .Collapsible .Collapsible__Inner{
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+</style>
+{% schema %}
+{
+"name": "FbShowroomsTabs",
+"presets": [
+  {
+    "name": "fb-showrooms-tabs",
+    "category": "Fb Sections",
+    "blocks": []
+  }
+],
+"settings": [
+    {
+        "type": "color",
+        "id": "background-color",
+        "label": "Background"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+    },
+    {
+        "type": "text",
+        "id": "subTitle",
+        "label": "SubTitle"
+    }
+],
+"blocks":[
+    {
+        "type": "tabItem",
+        "name": "Tab Item",
+        "settings": [
+              {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+              },
+              {
+                "type": "richtext",
+                "id": "content",
+                "label": "Content"
+              }
+        ]
+    }
+]
+}
+{% endschema %}

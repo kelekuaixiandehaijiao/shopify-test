@@ -1,0 +1,366 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_large": false
+      }
+    },
+    "1629795908485d4358": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "footer nav",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "1631695119735c6fe5": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "calculate-page",
+        "html": "<p>Write your own custom HTML content<\/p>"
+      }
+    },
+    "461d947d-2dbf-41f9-b8a4-5f8d357aab9f": {
+      "type": "fb-friendbuy-banner",
+      "blocks": {
+        "d5ade805-07b6-49d4-ae83-4c2bf26572ed": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>le**n<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.10<\/p>"
+          }
+        },
+        "95ce0616-6dca-42db-be84-332517a4f66e": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>te**o<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.10<\/p>"
+          }
+        },
+        "3e73edf8-a9fb-4097-9433-3e31ce85f707": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>ch**s<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.10<\/p>"
+          }
+        },
+        "73d73846-81fe-4017-ba0d-4331479ed9d5": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ja**s<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "ed0e98a1-d8f1-4337-9ff4-56003820ea09": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ol**er<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "c306095b-74ae-4498-b098-38caa69ee416": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Da**el<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "db941284-e7bd-4739-95f8-20eea771ed06": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ge**ge<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "0674a759-706a-4fc7-821f-cdc4ba9c43a0": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ga**iel<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "b8eef4f5-075b-41b9-aea2-db1cc9579b3b": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ch**lie<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "4505d2cd-68ac-4dd8-91ba-954962cfc740": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Al**rt<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "521a61c4-3354-4976-a0ff-e87a5ec81b2d": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Jo**ph<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "440f2897-94ca-409c-b0d1-bb95e1f559fc": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>An**ony<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "7616c9e2-b87a-46ef-bc9a-06df7bff77a9": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Lu**s<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "97024826-587a-47ca-bc91-f299b711047b": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ca**er<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "cb4e8c12-8f53-4888-81f8-5f3b0e533033": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ja**son<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.10<\/p>"
+          }
+        },
+        "7b967d5b-ca71-4f4e-b772-9e84c0c41b86": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Lo**s<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.10<\/p>"
+          }
+        },
+        "ea1d7cce-3455-4b49-ba7c-36eab2869010": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ma**n<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10 <\/strong>to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "76ec4978-87d2-4121-94d2-cea850c0efb5": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Em**y<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "93266dba-245e-41a8-916f-23f2789306d9": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ju**an<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.11<\/p>"
+          }
+        },
+        "1de5c27f-3e43-4ffb-825d-59aaaa1980aa": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Be**l<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.13<\/p>"
+          }
+        },
+        "bf33cddd-5060-4fca-bd01-aa1ba5a19ba2": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Ca**y<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.13<\/p>"
+          }
+        },
+        "ff293381-dfbb-4c8a-9b96-11ed38500e5c": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>De**se<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.14<\/p>"
+          }
+        },
+        "08f0e2fc-bd76-46a5-8590-fee355415b7e": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Es**er<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.14<\/p>"
+          }
+        },
+        "5c011552-0231-405d-8ba4-abba30d37068": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Fr**a<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.14<\/p>"
+          }
+        },
+        "66114395-22d5-427f-97ef-1da19209c239": {
+          "type": "active-roll",
+          "settings": {
+            "active_name": "<p>Gr**e<\/p>",
+            "active_ac": "<p>has withdrawn <strong>$10<\/strong> to PayPal.<\/p>",
+            "active_date": "<p>2022.11.14<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d5ade805-07b6-49d4-ae83-4c2bf26572ed",
+        "95ce0616-6dca-42db-be84-332517a4f66e",
+        "3e73edf8-a9fb-4097-9433-3e31ce85f707",
+        "73d73846-81fe-4017-ba0d-4331479ed9d5",
+        "ed0e98a1-d8f1-4337-9ff4-56003820ea09",
+        "c306095b-74ae-4498-b098-38caa69ee416",
+        "db941284-e7bd-4739-95f8-20eea771ed06",
+        "0674a759-706a-4fc7-821f-cdc4ba9c43a0",
+        "b8eef4f5-075b-41b9-aea2-db1cc9579b3b",
+        "4505d2cd-68ac-4dd8-91ba-954962cfc740",
+        "521a61c4-3354-4976-a0ff-e87a5ec81b2d",
+        "440f2897-94ca-409c-b0d1-bb95e1f559fc",
+        "7616c9e2-b87a-46ef-bc9a-06df7bff77a9",
+        "97024826-587a-47ca-bc91-f299b711047b",
+        "cb4e8c12-8f53-4888-81f8-5f3b0e533033",
+        "7b967d5b-ca71-4f4e-b772-9e84c0c41b86",
+        "ea1d7cce-3455-4b49-ba7c-36eab2869010",
+        "76ec4978-87d2-4121-94d2-cea850c0efb5",
+        "93266dba-245e-41a8-916f-23f2789306d9",
+        "1de5c27f-3e43-4ffb-825d-59aaaa1980aa",
+        "bf33cddd-5060-4fca-bd01-aa1ba5a19ba2",
+        "ff293381-dfbb-4c8a-9b96-11ed38500e5c",
+        "08f0e2fc-bd76-46a5-8590-fee355415b7e",
+        "5c011552-0231-405d-8ba4-abba30d37068",
+        "66114395-22d5-427f-97ef-1da19209c239"
+      ],
+      "settings": {
+        "fb_fri_img_pc": "shopify:\/\/shop_images\/Background-PC-PlanB_1.png",
+        "fb_fri_img_mob": "shopify:\/\/shop_images\/bgback.jpg",
+        "fb_fri_title": "<p>Give $100 Earn $100 <\/p><p>in 3 Simple Steps <\/p>",
+        "fb_fri_subtitle": "<p>Sign up, Share your unique link, Earn Cash!<\/p>",
+        "fb_form_title": "<p>Get up to $100 in cash rewards for every friend you refer.<\/p>",
+        "fb_form_get_moneynumber": 100,
+        "fb_form_enter": "<p>Don't leave your friends behind!<\/p>",
+        "fb_form_btntext": "Start Earning",
+        "fb_form_btnback": "linear-gradient(90deg, #8003FE 0%, #FC5EA6 100%);",
+        "customer_img": "shopify:\/\/shop_images\/image_1.png",
+        "customer_title": "<p>Need more help?<\/p>",
+        "customer_desc": "<p>Connect with a Specialist.<\/p>",
+        "customer_ruletitle": "Terms & Conditions"
+      }
+    },
+    "49b44fb8-f104-4d6c-bb7e-71040102bb18": {
+      "type": "fb-friendbuy-works",
+      "blocks": {
+        "d253dede-778f-48d0-9eaa-9a228fc33d58": {
+          "type": "friendbuy-works",
+          "settings": {
+            "buy_works_number": "shopify:\/\/shop_images\/how_it_work_1.png",
+            "buy_works_title_pc": "Spread the love with your friends",
+            "buy_works_desc_pc": "Send invites to your friends over text, email, or social media.",
+            "buy_works_desc_more_pc": "",
+            "buy_works_title_mobile": "Spread the love with your friends",
+            "buy_works_desc_mobile": "Send invites to your friends over text, email, or social media.",
+            "buy_works_desc_more_mobile": ""
+          }
+        },
+        "7e095f7d-e12c-469c-bba6-9d71b1d1541f": {
+          "type": "friendbuy-works",
+          "settings": {
+            "buy_works_number": "shopify:\/\/shop_images\/how_it_work_2.png",
+            "buy_works_title_pc": "When your friend subscribes to our newsletter, get an instant $2 cash reward",
+            "buy_works_desc_pc": "You will only be eligible for this reward if your friend is a new subscriber.",
+            "buy_works_desc_more_pc": "",
+            "buy_works_title_mobile": "When your friend subscribes to our newsletter, get an instant $2 cash reward",
+            "buy_works_desc_mobile": "You will only be eligible for this reward if your friend is a new subscriber.",
+            "buy_works_desc_more_mobile": ""
+          }
+        },
+        "c046da7a-ad89-4c46-9780-21bce66a6dd3": {
+          "type": "friendbuy-works",
+          "settings": {
+            "buy_works_number": "shopify:\/\/shop_images\/how_it_work_3.png",
+            "buy_works_title_pc": "Earn $100 in cash when your friend purchases a freebeat bike",
+            "buy_works_desc_pc": "Your friend will also receive a $100 discount on their purchase. Win-win!",
+            "buy_works_desc_more_pc": "*For more details please read the Terms & Conditions.",
+            "buy_works_title_mobile": "Earn $100 in cash when your friend purchases a freebeat bike",
+            "buy_works_desc_mobile": "Your friend will also receive a $100 discount on their purchase. Win-win!",
+            "buy_works_desc_more_mobile": "*For more details please read the Terms & Conditions."
+          }
+        }
+      },
+      "block_order": [
+        "d253dede-778f-48d0-9eaa-9a228fc33d58",
+        "7e095f7d-e12c-469c-bba6-9d71b1d1541f",
+        "c046da7a-ad89-4c46-9780-21bce66a6dd3"
+      ],
+      "settings": {
+        "buy_works_home_title": "Here's How It Works",
+        "buy_works_home_desc_black1": "Spread the love of freebeat with your friends.",
+        "buy_works_home_desc_color": "Read the terms & conditions",
+        "buy_works_home_desc_black2": "for more info."
+      }
+    },
+    "3423c941-3dd5-4beb-9e9d-94be9fa87b76": {
+      "type": "fb-friendbuy-list",
+      "settings": {
+        "buy_list_title1": "What is the Referral Program?",
+        "buy_list_title2": "When will I receive my referral reward?",
+        "buy_list_title3": "How do I find my referral link?",
+        "buy_list_title4": "Who should I refer?",
+        "buy_list_title5": "When can I start referring?",
+        "buy_list_title6": "Why should I refer people to freebeat?",
+        "buy_list_desc1": "Our goal is to create the best products and help freebeat bike owners share their excitement and experiences with others. And for many, its even more fun when you're riding with a friend and swapping tips and advice about your favorite classes. So for each friend you invite to join, you’ll both be rewarded, making it a win for the both of you.",
+        "buy_list_desc2": "-Email subscription invitation reward can be instantly withdrawn through PayPal.                                                                                                   -Bike purchase reward can be withdrawn through PayPal after 60 days with no returns.",
+        "buy_list_desc3": "Click the 'Invite Friends' button to get your referral link.",
+        "buy_list_desc4": "Friends, family, or anyone around you that's interested in getting fit!",
+        "buy_list_desc5": "As soon as you’ve decided you’re loving your freebeat experience, let your world know! No matter where you are in your freebeat journey, your friends and family will want to hear your honest thoughts on what you love about the bike and why it works for your lifestyle.",
+        "buy_list_desc6": "Not only will your friends love our product, you'll feel good for helping them stay healthy and fit! By referring, you’re making sure they’re set up for success, and you’ll be working out together for the long haul. Cash rewards are also sweet- you're not limited to buying only our products, spend the money however you like!"
+      }
+    },
+    "dbf11ff8-eeff-4e15-847a-b5571be027d1": {
+      "type": "fb-friendbuy-dialog",
+      "settings": {
+        "fb_share_title": "<p>Earn up to $100 for every friend you refer<\/p>",
+        "fb_share_desc": "<p> Give your friends a $$ discount and you will <br\/> earn up to $100 in cash rewards after their <br\/> first purchase<\/p>",
+        "fb_twittershare_desc": "freebeat is awesome! Their bikes have helped me transition into a healthier lifestyle. Never thought I'd have so much fun exercising. Here's a $100 discount.",
+        "fb_share_writecontent": "<p>hello,friend<\/p>",
+        "customer_ruletitle": "Terms",
+        "customer_bigtitle": "Terms & Conditions",
+        "customer_ruledesc": "<p>As a member of the Referral Program, you are subject to freebeat's Terms of Use and freebeat's Privacy Policy (both available on our website), as well as the following additional Terms & Conditions for freebeat's Referral Program:<\/p><p><\/p><p>1. Qualified Referral. Qualified Referral is defined as a purchase made at <a href=\"http:\/\/freebeatfit.com\" target=\"_blank\">freebeatfit.com<\/a> by a person (a \"Referred Customer\") who arrives to our website by clicking your referral program link. You are limited to one Qualified Referral for each Referred Customer; in other words, additional\/repeat purchases made by a Referred Customer are not counted as additional Qualified Referrals.<\/p><p><\/p><p>2. Referred Customer. The Referred Customer and the Referrer cannot be the same person (for example, by using a different email address).<\/p><p><\/p><p>3. Referral Rewards. For you to earn referral rewards as a Referrer, the Referred Customer must complete an order greater than $500 in total value, minus all fees including taxes, discounts, shipping, returns, chargebacks, fraudulent payments, and\/or other 3rd party fees.<\/p><p><\/p><p>4. Reward Payments. The maximum Qualified Referrals earned per calendar year may be no more than 12 Qualified Referrals. As a Referrer, you are responsible for any and all tax liability resulting from Referral Rewards.<\/p><p><\/p><p>5. Eligibility. Eligibility is limited to individuals only. freebeat's Referral Program cannot be used by businesses for affiliate lead generation as determined in freebeat's sole discretion. (Corporations are not people, my friend!)<\/p><p><\/p><p>6. No Spam. You must comply with all up-to-date “SPAM” laws. For example, emails must be created and distributed in a personal manner and bulk email distribution is strongly discouraged. Any distribution of your referral link that could constitute unsolicited commercial email or \"spam\" under any applicable law or regulation is expressly prohibited and will be grounds for immediate termination of your account and exclusion from freebeat's Referral Program.<\/p><p><\/p><p>7. Right to Close Accounts. freebeat reserves the right to close the account(s) of any Referrer and\/or Referred Customer and to request proper payment if the Referrer and\/or Referred Customer attempts to use the freebeat Referral Program in a questionable manner or breaches any of these Terms & Conditions or is in violation of any law, statute or governmental regulation.<\/p><p><\/p><p>8. Right to Cancel Program or Change Terms. freebeat reserves the right to cancel the Referral Program or to change these Terms & Conditions at any time in its sole discretion. Any unclaimed referral rewards will be forfeited at that time. <\/p><p><\/p><p>9. Only email addresses and users registered in the United States are eligible for this Referral Program.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1629795908485d4358",
+    "1631695119735c6fe5",
+    "461d947d-2dbf-41f9-b8a4-5f8d357aab9f",
+    "49b44fb8-f104-4d6c-bb7e-71040102bb18",
+    "3423c941-3dd5-4beb-9e9d-94be9fa87b76",
+    "dbf11ff8-eeff-4e15-847a-b5571be027d1"
+  ]
+}

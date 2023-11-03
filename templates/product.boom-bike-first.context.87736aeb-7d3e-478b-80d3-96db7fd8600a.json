@@ -1,0 +1,8 @@
+{
+  "parent": "product.boom-bike-first.json",
+  "context": {
+    "market": "87736aeb-7d3e-478b-80d3-96db7fd8600a"
+  },
+  "sections": {
+  }
+}

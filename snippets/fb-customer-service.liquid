@@ -1,0 +1,50 @@
+<div class="customer_service">
+        <div class="customer_service_left">
+            {% assign handsimg = block.settings.customer_img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+            <img class="Image--lazyLoad Image--fadeIn footerIcon_safe_item_icon" data-src="{{ handsimg }}"
+                data-sizes="auto" data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                style="border-radius: 50%;"
+                alt="{{ block.settings.customer_img.alt | escape }}">
+        </div>
+        <div class="customer_service_right" >
+            <p class="customer_title">{{ block.settings.customer_title }}</p>
+            <p class="customer_desc" onclick="TidioShowFun()">{{ block.settings.customer_desc }}</p>
+        </div>
+</div>
+
+<style>
+    .customer_service {
+        width: 400px;
+        display: flex;
+    }
+
+    .customer_service_left {
+        width: 44px;
+        height: 44px;
+        padding-top:30px;
+    }
+
+    .customer_service_right {
+        padding-left: 14px;
+        padding-top: 35px;
+    }
+
+    .customer_title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #666666;
+        line-height: 14px;
+        margin: 0;
+    }
+
+    .customer_desc {
+        font-size: 14px;
+        padding-top: 6px;
+        font-weight: 400;
+        color: #02C0D9;
+        line-height: 14px;
+        text-decoration:underline;
+        cursor:pointer;
+    }
+</style>

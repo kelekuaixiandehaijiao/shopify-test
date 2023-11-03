@@ -1,0 +1,410 @@
+{
+  "sections": {
+    "16578715524957935b": {
+      "type": "notic-popup",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_meta": {
+          "type": "product_meta",
+          "settings": {
+            "top_banner_open_activity": false,
+            "show_vendor": false,
+            "show_sku": false,
+            "show_price": true,
+            "show_taxes_included": false,
+            "subheading": "Budget-Friendly Home Studio Bike",
+            "notice": "",
+            "noticeMb": "Plus delivery.",
+            "corner": "",
+            "content": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "f063d0fd-c54e-488d-a6fd-65049ba0d578": {
+          "type": "show_charity",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "c0069cdd-8686-47ea-b26e-c70e1a443b1d": {
+          "type": "paymentMethodButton",
+          "settings": {
+          }
+        },
+        "fbeda182-8c54-4b0e-94dd-d13cb0b45106": {
+          "type": "productPopup",
+          "disabled": true,
+          "settings": {
+            "gift_des": "A Gift For You",
+            "gift_price": "$103",
+            "gift_price_des": "FREE",
+            "charity_des": "Give Back To Charity",
+            "charity_des_right": "EVERY ORDER COUNTS"
+          }
+        },
+        "a97052a7-4c62-4766-b454-503eb09a7ac4": {
+          "type": "giftCharityPopup",
+          "disabled": true,
+          "settings": {
+            "acceImg": "shopify:\/\/shop_images\/gift-acce.png",
+            "gift_popup_title": "<p>MORE FOR YOU: FREE <strong>$103<\/strong> GIFT BOX<\/p>",
+            "contentA": "A. DUMBBELL SET",
+            "contentA-price": "($25 VALUE)",
+            "contentB": "B. SWEATBAND + BOTTLE",
+            "contentB-price": "($29 VALUE)",
+            "contentC": "C. RESISTANCE LOOP",
+            "contentC-price": "($49 VALUE)"
+          }
+        },
+        "share_buttons": {
+          "type": "share_buttons",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "32b6aa30-ec23-4892-b7fb-5df991554b7a": {
+          "type": "Delivers",
+          "settings": {
+            "delivers": "Shipping time: 3-5 business days.",
+            "tips": "<p>Currently we cannot ship to Alaska, Hawaii, Puerto Rico, U.S. Virgin Islands. Worldwide shipping will be available soon.<\/p>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
+          }
+        }
+      },
+      "block_order": [
+        "product_meta",
+        "description",
+        "f063d0fd-c54e-488d-a6fd-65049ba0d578",
+        "c0069cdd-8686-47ea-b26e-c70e1a443b1d",
+        "fbeda182-8c54-4b0e-94dd-d13cb0b45106",
+        "a97052a7-4c62-4766-b454-503eb09a7ac4",
+        "share_buttons",
+        "variant_selector",
+        "32b6aa30-ec23-4892-b7fb-5df991554b7a",
+        "buy_buttons"
+      ],
+      "settings": {
+        "show_sell_out": true,
+        "image_size": "large",
+        "stack_images": false,
+        "show_thumbnails": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false
+      }
+    },
+    "1657265307086326c5": {
+      "type": "fb-sr-footerIcon",
+      "blocks": {
+        "3311975b-dcd7-4459-95af-546f71d5ac16": {
+          "type": "sr-footerIcon",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/field.png",
+            "Icon-Title": "Product warranty",
+            "Description": "Enjoy warranty for up to 10 years on bike components and parts.",
+            "learnMore-url": "shopify:\/\/pages\/product-warranty",
+            "learnMore": "Learn more >"
+          }
+        },
+        "f43e735b-5812-426a-b086-e7cbee80eac4": {
+          "type": "sr-footerIcon",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/30.png",
+            "Icon-Title": "30-day return policy",
+            "Description": "If your purchase is not working for you, we've got you covered.",
+            "learnMore-url": "shopify:\/\/policies\/refund-policy",
+            "learnMore": "Learn more >"
+          }
+        },
+        "21ed8507-a153-4a38-a78d-206a28ff6f23": {
+          "type": "sr-footerIcon",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/chat.png",
+            "Icon-Title": "Talk to a Specialist",
+            "Description": "Our customer service team will find you the best solution.",
+            "learnMore-url": "",
+            "learnMore": "Launch Chat >"
+          }
+        }
+      },
+      "block_order": [
+        "3311975b-dcd7-4459-95af-546f71d5ac16",
+        "f43e735b-5812-426a-b086-e7cbee80eac4",
+        "21ed8507-a153-4a38-a78d-206a28ff6f23"
+      ],
+      "settings": {
+      }
+    },
+    "1650277572cbe0a258": {
+      "type": "fb-footerIcon",
+      "disabled": true,
+      "settings": {
+        "Icon-Title-1": "Product warranty",
+        "Description-1": "Enjoy warranty for up to 10 years on bike components and parts.",
+        "learnMore-url-1": "shopify:\/\/pages\/product-warranty",
+        "Icon-Title-2": "Free shipping",
+        "Description-2": "Read more about our shipping and return policies.",
+        "learnMore-url-2": "shopify:\/\/policies\/shipping-policy",
+        "Icon-Title-3": "30-day return policy",
+        "Description-3": "If your purchase is not working for you, we've got you covered.",
+        "learnMore-url-3": "shopify:\/\/pages\/return-policy",
+        "Icon-Title-4": "Chat with us",
+        "Description-4": "Our customer service team will find you the best solution.",
+        "learnMore-url-4": ""
+      }
+    },
+    "1646728846ad430ca3": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "163755335100a67d3c": {
+      "type": "custom-html",
+      "disabled": true,
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "xbike-bike-bottom",
+        "html": ""
+      }
+    },
+    "1657536589fce80d8a": {
+      "type": "fb-product-detailnav",
+      "blocks": {
+        "34ca5ba3-debd-469c-b6e1-8ad975feb7a7": {
+          "type": "name",
+          "settings": {
+            "product_bav_text": "OVERVIEW"
+          }
+        },
+        "f9c971d1-e282-40c0-9ac4-4b5485cdc863": {
+          "type": "name",
+          "settings": {
+            "product_bav_text": "REVIEWS"
+          }
+        },
+        "cf4fe750-dc22-4d00-bbf1-65412f7f5c5f": {
+          "type": "name",
+          "settings": {
+            "product_bav_text": "SPECS"
+          }
+        }
+      },
+      "block_order": [
+        "34ca5ba3-debd-469c-b6e1-8ad975feb7a7",
+        "f9c971d1-e282-40c0-9ac4-4b5485cdc863",
+        "cf4fe750-dc22-4d00-bbf1-65412f7f5c5f"
+      ],
+      "settings": {
+        "single_back": "#ffffff"
+      }
+    },
+    "165027795684dc4566": {
+      "type": "fb-klarna-design",
+      "blocks": {
+        "98820e29-2030-485c-bd55-f0b78d5f540b": {
+          "type": "designImgBlock",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/white1.webp",
+            "design_img_title": "INTUITIVE FEATURES",
+            "design_img_sub_title": "Spring lift assist enables you to adjust your handlebar height with ease."
+          }
+        },
+        "8f0dc290-57cd-4ba8-8e2c-6474286c0c4d": {
+          "type": "designImgBlock",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/white2.webp",
+            "design_img_title": "SLEEK DESIGN",
+            "design_img_sub_title": "Streamlined sleek design in the shape of X."
+          }
+        },
+        "7ea2f6a9-bb6a-48c0-9ad2-9b3146b46fea": {
+          "type": "designImgBlock",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/white3.webp",
+            "design_img_title": "QUIET & SMOOTH",
+            "design_img_sub_title": "Experience a smooth, friction-less and silent ride with magnetic resistance."
+          }
+        },
+        "c3df33de-0130-4236-8415-845b51c23e53": {
+          "type": "designImgBlock",
+          "settings": {
+            "design_img": "shopify:\/\/shop_images\/20221922561.webp",
+            "design_img_title": "Rotatable 22\" HD Touchscreen",
+            "design_img_sub_title": "Rotate your screen in any direction for cross-training workouts off the bike"
+          }
+        }
+      },
+      "block_order": [
+        "98820e29-2030-485c-bd55-f0b78d5f540b",
+        "8f0dc290-57cd-4ba8-8e2c-6474286c0c4d",
+        "7ea2f6a9-bb6a-48c0-9ad2-9b3146b46fea",
+        "c3df33de-0130-4236-8415-845b51c23e53"
+      ],
+      "settings": {
+        "design_title": "",
+        "design_tips": "<p>The bike is a gamified studio cycling + strength hub, and your ultimate fitness companion. You'll have an all-access membership (up to 10 accounts) to a variety of on-demand classes led by our rockstar instructors.<\/p>",
+        "show_change_scrool": false,
+        "design_color": "#f6f6f6",
+        "design_mobile_color": "#ffffff"
+      }
+    },
+    "16502789683bff35d3": {
+      "type": "fb-evaluate",
+      "settings": {
+        "fb_evaluate": true
+      }
+    },
+    "165027837895c570d1": {
+      "type": "fb-specifications",
+      "blocks": {
+        "4db2c342-ea51-47bf-9ba8-1fe8119a9dec": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "MEASUREMENTS",
+            "spe_box_desc": "<p>Dimensions: 55.5\" L x 55.8\" H x 22.2\" W<\/p><p>Screen: 21.5\" diagonal<\/p><p>Flywheel: 18.7 lbs<\/p><p>Weight: 99 lbs<\/p>"
+          }
+        },
+        "0d7baf6a-2e63-4fd8-a2fa-bd18841b7c62": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "USER REQUIREMENT",
+            "spe_box_desc": "<p>Height range: 4'11\" - 6'4\"<\/p><p>Weight maximum: 297 lbs<\/p><p>Age minimum: 14+<\/p>"
+          }
+        },
+        "a1ca4bd5-9f19-4ded-b352-707554f4de49": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "POWER",
+            "spe_box_desc": "<p>Input: 100V to 240V, 50Hz - 60Hz, 0.8A Max<\/p><p>Output: 12V, 3.0A<\/p>"
+          }
+        },
+        "4c89b489-42cf-441d-8236-6feebd58fff8": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "CONSTRUCTION",
+            "spe_box_desc": "<p>Frame: Welded steel<\/p><p>Resistance: Magnetic with mechanical adjustment<\/p><p>Drive: Power transmission belt drive<\/p>"
+          }
+        },
+        "6218ed02-49ff-469d-bec6-a26bae4d2d60": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "CONTROLS",
+            "spe_box_desc": "<p>Vertical and horizontal seat adjustment<\/p><p>Adjustable non-slip multi-position handlebar<\/p><p>Rotatable touchscreen with 180° of movement<\/p>"
+          }
+        },
+        "d6c8779d-d295-4189-abb2-542e3cf12b4d": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "DISPLAY AND SOUND",
+            "spe_box_desc": "<p>21.5\" Screen 1080p HD<\/p><p>10-Point multi-touch touchscreen<\/p><p>1.8GHz 8-Core CPU<\/p><p>2GB RAM<\/p><p>8GB internal flash storage<\/p><p>2-Channel 10 watts rear-facing stereo-speaker system<\/p><p>Micro USB port*2 (test port included)<\/p>"
+          }
+        },
+        "f2569c81-bb30-4844-b01e-c2a0621eaeb3": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "CONNECTION",
+            "spe_box_desc": "<p>802.11 a\/b\/g\/n\/ac - 2.4GHz & 5GHz<\/p><p>Bluetooth® 5.0<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4db2c342-ea51-47bf-9ba8-1fe8119a9dec",
+        "0d7baf6a-2e63-4fd8-a2fa-bd18841b7c62",
+        "a1ca4bd5-9f19-4ded-b352-707554f4de49",
+        "4c89b489-42cf-441d-8236-6feebd58fff8",
+        "6218ed02-49ff-469d-bec6-a26bae4d2d60",
+        "d6c8779d-d295-4189-abb2-542e3cf12b4d",
+        "f2569c81-bb30-4844-b01e-c2a0621eaeb3"
+      ],
+      "settings": {
+        "specail_color": "#ffffff",
+        "specail_title": "Specifications",
+        "mobile_specail_view_text": "VIEW ALL"
+      }
+    },
+    "1650278486ab161f1d": {
+      "type": "fb-stage-description",
+      "disabled": true,
+      "settings": {
+        "fb_stage_desc_start": "1) Monthly payment for freebeat bike is based on 36 months at 0% APR and $0 down. Financing does not include the cost of freebeat all-access membership (approximately $39\/mo). Subject to credit check and approval. In cases of partial approval, a down payment may be required. Offer subject to change at any time. Previous purchases are ineligible.See",
+        "fb_stage_desc_a": "https:\/\/www.klarna.com\/us\/what-is-klarna\/",
+        "fb_stage_desc_end": "for details",
+        "fb_stage_color": "#000000",
+        "fb_stage_desc_seconds": "",
+        "fb_stage_color_seconds": "#000000"
+      }
+    },
+    "1650278292acec5f4b": {
+      "type": "fb-xbike-comparision-klarna",
+      "settings": {
+        "product": "xbike",
+        "klarna_back_img": "",
+        "klarna_color": "#ffffff",
+        "klarna_mobile_color": "#f6f6f6",
+        "klarna_text_color": "#000000",
+        "klarna_left_logo": "shopify:\/\/shop_images\/freebeat.png",
+        "klarna_middle_logo": "shopify:\/\/shop_images\/close.png",
+        "klarna_right_logo": "shopify:\/\/shop_images\/klarna_fe65ade0-8715-4076-a9f4-42a32567ad91.png",
+        "klarna_first_unit": "$",
+        "klarna_first_number": "0",
+        "klarna_first_desc": "DOWN PAYMENT",
+        "klarna_sencond_unit": "$",
+        "klarna_sencond_number": "24.97",
+        "klarna_sencond_desc": "\/MONTH",
+        "klarna_third_unit": "%",
+        "klarna_third_number": "0",
+        "klarna_third_desc": "APR FINANCING"
+      }
+    },
+    "16572632099b07ba6a": {
+      "type": "fb-stage-description-new",
+      "settings": {
+        "fb_stage_backgroundImage": "",
+        "fb_stage_backgroundcolor": "#ffffff",
+        "fb_stage_desc": "<p>1) Monthly payments for xbike is based on 36 months at 0% APR and $0 down. Financing does not include the cost of freebeat all-access membership (approximately $39\/mo). Subject to credit check and approval. In cases of partial approval, a down payment may be required. Offer subject to change at any time. Previous purchases are ineligible. See <a href=\"https:\/\/www.klarna.com\/us\/what-is-klarna\/\" title=\"https:\/\/www.klarna.com\/us\/what-is-klarna\/\">What is Klarna<\/a> for details<\/p>",
+        "fb_stage_color": "#676a6a",
+        "fb_stage_desc_seconds": "",
+        "fb_stage_color_seconds": "#000000"
+      }
+    }
+  },
+  "order": [
+    "16578715524957935b",
+    "main",
+    "1657265307086326c5",
+    "1650277572cbe0a258",
+    "1646728846ad430ca3",
+    "163755335100a67d3c",
+    "1657536589fce80d8a",
+    "165027795684dc4566",
+    "16502789683bff35d3",
+    "165027837895c570d1",
+    "1650278486ab161f1d",
+    "1650278292acec5f4b",
+    "16572632099b07ba6a"
+  ]
+}

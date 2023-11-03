@@ -1,0 +1,203 @@
+<div class="fb-activeroll-section home-community-second" id="section-{{ section.id }}"  data-type="activeroll">
+    <div class="fb-activeroll-content fbActiveRollSwiper">
+      <div class="fb-activeroll_scroll swiper-wrapper">
+        <div class="fb-activeroll_item  swiper-slide" >
+          {% comment %} {% assign firstImgMobile = section.settings.first_img_mobile | img_url: '1x1' | replace: '_1x1.','_{width}x.' %} {% endcomment %}
+          {% assign firstImgPc = section.settings.first_img_pc | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}  
+          <div class="fb-activeroll_imgblock fb-activeroll-imgbackground">
+            <img class="Image--lazyLoad Image--fadeIn activeroll-img-block2" 
+                data-src="{{ firstImgPc }}" 
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            >
+            {% comment %} <img class="Image--lazyLoad Image--fadeIn activeroll-img-block2  hidden-phone" 
+                data-src="{{ firstImgPc }}" 
+                data-sizes="auto"
+                data-optimumx="1.2"
+                data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            > {% endcomment %}
+            <span class="Image__Loader"></span>
+          </div>
+        </div>
+        {%- for block in section.blocks -%}
+        
+          {% assign imgPiker = block.settings.activeroll_img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+          <div class="fb-activeroll_item js-activeroll-box swiper-slide"  
+              data-showvideo="false"
+              data-length="{{ forloop.length }}"
+              data-index="{{ forloop.index }}"
+          >
+              
+            <div class="fb-activeroll_imgblock fb-activeroll-imgbackground js-activeimg-box">
+              <img class="Image--lazyLoad Image--fadeIn activeroll-img-block2" 
+                  data-src="{{ imgPiker }}" 
+                  data-sizes="auto"
+                  data-optimumx="1.2"
+                  data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+              >
+              <span class="Image__Loader"></span>
+              <div class="fb-img-box-active">
+                  <img 
+                    data-sizes="auto"
+                    data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/playcircle.png?v=1652856289" 
+                    class="js-activeroll-icon-btn Image--lazyLoad" />
+              </div>
+            </div>
+             <div class="fb-activeroll_imgblock js-activevideo-box activeroll-img-block fgHideVideo" data-media-type="video">
+                <video class="js-active-video Image--lazyLoad utils-pc-hide activeroll-mobile-img-block" 
+                  x-webkit-airplay="allow" 
+                  webkit-playsinline="true" 
+                  playsinline="true" 
+                  controls="controls"
+                  data-index="{{ forloop.index }}"
+                  data-src="{{ block.settings.video_url_mobile }}"
+                >
+                </video>
+                <video class="js-active-video Image--lazyLoad utils-mobile-hide activeroll-img-block" 
+                  x-webkit-airplay="allow" 
+                  webkit-playsinline="true" 
+                  playsinline="true" 
+                  muted="muted"
+                  autoplay="autoplay"
+                  controls="controls"
+                  data-index="{{ forloop.index }}"
+                  data-src="{{ block.settings.video_url_pc }}"
+                >
+                </video>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {% comment %} <div class="activeroll-button-prev">
+        <img 
+          data-sizes="auto"
+          class="Image--lazyLoad"
+          data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/arrow-left-circle-line.png?v=1650787114" />
+    </div>
+    <div class="activeroll-button-next">
+        <img
+          data-sizes="auto"
+          class="Image--lazyLoad" 
+          data-src="https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/arrow-right-circle-line.png?v=1650787110" />
+    </div> {% endcomment %}
+      <div class="swiper-scrollbar"></div>
+  </div>
+  </div>
+  {% schema %}
+    {
+      "name": "FbActiveRoll",
+      "presets": [
+        {
+          "name": "fb-active-roll",
+          "category": "Fb Sections",
+          "blocks": []
+        }
+      ],
+      "settings": [
+        {
+          "type": "color",
+          "id": "activeroll_color",
+          "label": "Background color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "activeroll_mobile_color",
+          "label": "Background Mobile color",
+          "default": "#fff"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_img_pc",
+            "label": "background Pc Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_img_mobile",
+            "label": "background Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_img_pc",
+          "label": "First Image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "activerollImgBlock",
+          "name": "activerollImgBlock",
+          "settings": [
+            {
+              "type": "url",
+              "id": "video_url_pc",
+              "label": "PC Video Url"
+            },
+            {
+              "type": "url",
+              "id": "video_url_mobile",
+              "label": "Mobile Video Url"
+            },
+            {
+              "type": "image_picker",
+              "id": "activeroll_img",
+              "label": "Image Pc"
+            }
+          ]
+        }
+      ]
+    }
+  {% endschema %}
+  <style>
+     {%- if section.settings.background_img_pc != blank -%}
+        {% assign image_pc_url = section.settings.background_img_pc | img_url: '1000x' %}
+        #section-{{ section.id }} {
+           background: url("{{ image_pc_url }}") no-repeat;
+           background-size: 100% 100%;
+        }
+        #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+            background: rgba(255, 255, 255, 0.15);
+        }
+         #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+           background: rgba(255, 255, 255, 0.3); 
+        }
+    {%- else -%}
+        #section-{{ section.id }} {
+            background-color: {{ section.settings.activeroll_color }};
+        }
+        #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+            background: rgba(0, 0, 0, 0.06);
+        }
+         #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+           background: rgba(0, 0, 0, 0.15); 
+        }
+    {%- endif -%} 
+
+    @media only screen and (max-width: 768px){
+        {%- if section.settings.background_img_mobile != blank -%}
+            {% assign image_mobile_url = section.settings.background_img_mobile | img_url: '800x'  %}
+            #section-{{ section.id }} {
+                background: url("{{ image_mobile_url }}") no-repeat;
+                background-size: 100% 100%;
+            }
+            #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+                background: rgba(255, 255, 255, 0.15);
+            }
+            #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+                background: rgba(255, 255, 255, 0.3); 
+            }
+        {%- else -%}
+            #section-{{ section.id }} {
+                background-color: {{ section.settings.activeroll_mobile_color }};
+            }
+             #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+                background: rgba(0, 0, 0, 0.06);
+            }
+            #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+                background: rgba(0, 0, 0, 0.15); 
+            }
+        {%- endif -%}          
+    }
+  </style>
+  
+  
