@@ -1,0 +1,190 @@
+  /* pr boom  style*/
+  .fb_value_fstdealer {
+    background: #f5f5f5;
+    margin-bottom: -2px;
+  }
+  .fstdealer_pc {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+  }
+  .fstdealer_pc::-webkit-scrollbar {
+    display: none;
+  }
+  .fstdealer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+  }
+  @media only screen and (min-width: 769px) {
+    .fb_value_fstdealer {
+      /* height: 432px; */
+      padding-top: 80px;
+      padding-bottom: 80px;
+      height: auto;
+      position: relative;
+    }
+    .fstdealer-title{
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: #000000;
+        line-height: 48px;
+        margin-bottom: 60px;
+    }
+    .fstdealer-title p {
+        text-align: center;
+    }
+    .fstdealer-box {
+      border-radius: 16px;
+      cursor: pointer;
+      padding: 32px 20px  0px 20px;
+      background-color: #fff;
+      margin-right: 24px;
+      flex-shrink: 0;
+    }
+    .fstdealer_imgWrapper {
+      width: 100%;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+    }
+    .fstdealer_imgWrapper img {
+      width: auto;
+      height: 64px;
+    }
+    .fstdealer_title {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-top: 32px;
+      width: 100%;
+      text-align: center;
+    }
+    .fstdealer_des {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      width: 100%;
+      text-align: center;
+    }
+    .fstdealer-box-mobpadding {
+      display: none;
+    }
+    .fstdealer-box:nth-child(4n) {
+        margin-right: 0px!important;
+      }
+  }
+  @media only screen and (min-width: 1481px) {
+    .fstdealer_pc {
+      justify-content: center;
+    }
+    .fstdealer-box {
+        width: 362px;
+        min-height: 320px;
+    }
+  }
+  @media only screen and (min-width: 1400px) and (max-width: 1480px) {
+    .fstdealer_pc {
+      justify-content: center;
+      padding: 0px 20px;
+    }
+    .fstdealer-box {
+        width: 320px;
+        min-height: 320px;
+    }
+    .fstdealer-box{
+        margin-right: 20px;
+    }
+    .fstdealer-box:nth-child(4){
+        margin-right: 0px;
+    }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1399px) {
+    .fstdealer_pc{
+        justify-content: flex-start;
+        padding: 0px 20px;
+    }
+    .fstdealer-box {
+        width: 320px;
+        min-height: 320px;
+    }
+    .fstdealer-box{
+        margin-right: 20px;
+    }
+    .fstdealer-box:nth-child(4){
+        margin-right: 0px;
+    }
+  }
+  /* mobile */
+  @media only screen and (max-width: 768px) {
+    .fb_value_fstdealer{
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .fstdealer_pc {
+      justify-content: flex-start;
+      padding: 32px 0px 0px 24px;
+    }
+    .fstdealer-title{
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 28px;
+    }
+    .fstdealer-box {
+      width: 300px;
+      min-height: 280px;
+      background: #fff;
+      border-radius: 12px;
+      flex-shrink: 0;
+      margin-right: 16px;
+      padding: 24px 20px;
+        color: #121212;
+    }
+    .fstdealer_imgWrapper {
+      width: 100%;
+      height: 48px;
+      text-align: center;
+    }
+    .fstdealer_imgWrapper img {
+      width: auto;
+      height: 48px;
+    }
+    .fstdealer_title {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 18px;
+      margin-top: 24px;
+      text-align: center;
+      width: 100%;
+    }
+    .fstdealer_des {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .fstdealer_des p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    .iconPic {
+      display: none;
+    }
+    .iconHover {
+      display: block;
+    }
+    .fstdealer-box-mobpadding {
+      width: 24px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }

@@ -1,0 +1,358 @@
+{
+  "sections": {
+    "269a59df-967c-4f01-aa3d-1a6be9db8159": {
+      "type": "fb-exercise-title",
+      "settings": {
+        "exerise_title": "<p>JOIN FREEBEAT REVOLUTION<\/p>",
+        "exerise_sub_title": ""
+      }
+    },
+    "54697e38-8487-4489-88c5-9971fe7e461b": {
+      "type": "fb-exercise-bikes",
+      "blocks": {
+        "8cb7d10a-3af2-414a-bfad-28121b24ef79": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "1",
+            "bike_color": "#e788a1",
+            "bike_border_color": "#e788a1",
+            "exerise_product": "lit-bike-klarna-limited-edition",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Aurora Pink",
+            "bike_name_size": "<p>21.5\" HD Rotating Touchscreen<\/p><p>Auto Resistance<\/p><p>Saddle Detection+<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "2c68b071-7127-4eed-879d-39685a7758a0": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "1",
+            "bike_color": "#ecd0b5",
+            "bike_border_color": "#ecd0b5",
+            "exerise_product": "lit-bike-moonbow-beige",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Moonbow Beige",
+            "bike_name_size": "<p>21.5\" HD Rotating Touchscreen<\/p><p>Auto Resistance<\/p><p>Saddle Detection+<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "d4d33cd5-09f3-4a5a-bd1a-12cc633f209e": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "1",
+            "bike_color": "#ffffff",
+            "bike_border_color": "#1c1b1b",
+            "exerise_product": "lit-bike-snowpeak-white",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Snowpeak White",
+            "bike_name_size": "<p>21.5\" HD Rotating Touchscreen<\/p><p>Auto Resistance<\/p><p>Saddle Detection+<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "009b1fd6-0986-47d0-9e84-e8f455a2cc43": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "1",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "exerise_product": "lit-bike",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Space Black",
+            "bike_name_size": "<p>21.5\" HD Rotating Touchscreen<\/p><p>Auto Resistance<\/p><p>Saddle Detection+<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "628a9258-03cd-4066-9beb-03fe5d58baf9": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "2",
+            "bike_color": "#ffffff",
+            "bike_border_color": "#000000",
+            "exerise_product": "boom-bike-arctic-white",
+            "bike_name_1": "Boom Bike",
+            "bike_name_2": "Arctic White",
+            "bike_name_size": "<p>15.6\" HD Rotating Touchscreen<\/p><p>Auto Resistance<\/p><p>Dynamic Lightstrips<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "2e7fbffb-10ad-45f6-b6e3-8a7cf793fdc8": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "2",
+            "bike_color": "#797d80",
+            "bike_border_color": "#797d80",
+            "exerise_product": "boom-bike-mist-grey",
+            "bike_name_1": "Boom Bike",
+            "bike_name_2": "Mist Grey",
+            "bike_name_size": "<p>15.6\" HD Rotating Touchscreen<\/p><p>Auto Resistance<\/p><p>Dynamic Lightstrips<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "29473b23-3fb1-491e-b05a-7edf367ae25c": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "2",
+            "bike_color": "#faf297",
+            "bike_border_color": "#faf297",
+            "exerise_product": "boom-bike-tuscany-yellow",
+            "bike_name_1": "Boom Bike",
+            "bike_name_2": "Tuscany Yellow",
+            "bike_name_size": "<p>15.6\" HD Rotating Touchscreen<\/p><p>Auto Resistance<\/p><p>Dynamic Lightstrips<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "4e8fff64-6cb0-48fb-a2b3-23dcf527711d": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "3",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "exerise_product": "morphrover-2-in-1-ebike",
+            "bike_name_1": "MorphRover",
+            "bike_name_2": "",
+            "bike_name_size": "<p>28 MPH Top Speed<\/p><p>60 Miles Range<\/p><p>Indoor Fitness+Outdoor Exploration 2-in-1<\/p>",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "8cb7d10a-3af2-414a-bfad-28121b24ef79",
+        "2c68b071-7127-4eed-879d-39685a7758a0",
+        "d4d33cd5-09f3-4a5a-bd1a-12cc633f209e",
+        "009b1fd6-0986-47d0-9e84-e8f455a2cc43",
+        "628a9258-03cd-4066-9beb-03fe5d58baf9",
+        "2e7fbffb-10ad-45f6-b6e3-8a7cf793fdc8",
+        "29473b23-3fb1-491e-b05a-7edf367ae25c",
+        "4e8fff64-6cb0-48fb-a2b3-23dcf527711d"
+      ],
+      "settings": {
+        "exerise_bike": "Lit Bike",
+        "exerise_bike_kinds1": "Exercise Bike",
+        "exerise_bike_kinds2": "Exercise Bike",
+        "exerise_bike_kinds3": "2-in-1 eBike",
+        "exerise_bike_icon": "PREMIUM DESIGN",
+        "exerise_bike_desc": "<p>Raw performance and sleek designs add grace and modernity to your home.<\/p>"
+      }
+    },
+    "3cfdf8e6-b955-439f-bc42-5b7f5537dbe3": {
+      "type": "fb-dealmatch-guarantee",
+      "settings": {
+        "fb_dealmatch_guarantee_heading": "LOW PRICE GUARANTEE",
+        "fb_dealmatch_guarantee_desc": "<p>We've launched our Low Price Guarantee.<\/p><p>Starting 11\/1\/23, you can place your order now with confidence! You'll be getting all freebeat bikes at the season's lowest price - guaranteed.<\/p>",
+        "fb_dealmatch_guarantee_img": "shopify:\/\/shop_images\/BlackFriday_LowPriceGuarantee.png",
+        "fb_dealmatch_guarantee_url_btn": "LEARN MORE",
+        "fb_dealmatch_guarantee_url": "shopify:\/\/pages\/freebeat-black-friday-cyber-monday-low-price-guarantee"
+      }
+    },
+    "f9750108-7462-4327-92cd-42506e7fa7f3": {
+      "type": "fb-img-video-banner",
+      "blocks": {
+        "template--16336992698553__f9750108-7462-4327-92cd-42506e7fa7f3-image_banner-1": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": true,
+            "image": "shopify:\/\/shop_images\/CelticsXfreebeat_PC_WithoutCTA.webp",
+            "mobile_image": "shopify:\/\/shop_images\/CelticsXfreebeat_Mobile_WithoutCTA.webp",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "",
+            "banner_title_color": "",
+            "banner_title_mob": "",
+            "banner_title_color_mob": "",
+            "banner_desc": "",
+            "banner_desc_color": "",
+            "banner_desc_mob": "",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16336992698553__f9750108-7462-4327-92cd-42506e7fa7f3-image_banner-1"
+      ],
+      "settings": {
+        "additional_class": "",
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "a6bd14b6-cb39-45e4-97d5-773011fb3d09": {
+      "type": "fb-exercise-bikes",
+      "blocks": {
+        "1a3ecf6c-98d7-4fb9-aa1e-bef88edcad20": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "1",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "exerise_product": "boom-bike-arctic-white",
+            "bike_name_1": "",
+            "bike_name_2": "Arctic White",
+            "bike_name_size": "",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": ""
+          }
+        },
+        "c7f6e51d-2f35-4d50-bea1-57ff88a7f675": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "1",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "exerise_product": "boom-bike-tuscany-yellow",
+            "bike_name_1": "",
+            "bike_name_2": "Tuscany Yellow",
+            "bike_name_size": "",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": "shopify:\/\/products\/boom-bike-tuscany-yellow"
+          }
+        },
+        "6c9e9012-dcca-4c1f-89e4-3ebc1e09d79e": {
+          "type": "goods",
+          "settings": {
+            "exerise_type": "1",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "exerise_product": "boom-bike-mist-grey",
+            "bike_name_1": "",
+            "bike_name_2": "Mist Grey",
+            "bike_name_size": "",
+            "bike_new": "",
+            "open_sold_out": false,
+            "bike_sold_out_text": "Sold out",
+            "bike_btn_desc": "VIEW PRODUCT",
+            "bike_btn_url": "shopify:\/\/products\/boom-bike-mist-grey"
+          }
+        }
+      },
+      "block_order": [
+        "1a3ecf6c-98d7-4fb9-aa1e-bef88edcad20",
+        "c7f6e51d-2f35-4d50-bea1-57ff88a7f675",
+        "6c9e9012-dcca-4c1f-89e4-3ebc1e09d79e"
+      ],
+      "disabled": true,
+      "settings": {
+        "exerise_bike": "Boom Bike",
+        "exerise_bike_kinds1": "Exercise Bike",
+        "exerise_bike_kinds2": "Exercise Bike",
+        "exerise_bike_kinds3": "2-in-1 eBike",
+        "exerise_bike_icon": "ECONOMY",
+        "exerise_bike_desc": "<p>Colorful and expressive cardio.<\/p>"
+      }
+    },
+    "2204bda4-1d6a-4d27-9662-2d8a82a48f5a": {
+      "type": "fb-exercise-fit",
+      "settings": {
+        "fbex_fit": "<p>NOT SURE ABOUT EXERCISE BIKE? FIND THE PERFECT FIT!<\/p>",
+        "fbex_btn_text": "COMPARE BIKES",
+        "fbex_btn_url": "shopify:\/\/pages\/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you"
+      }
+    },
+    "7fcee5fb-bceb-4626-93ab-81d25de3a4ea": {
+      "type": "fb-content-class",
+      "settings": {
+        "text_position": "left",
+        "fb_online_name": "WHY YOU SHOULD THINK ABOUT BUYING AN INDOOR STATIONARY BIKE",
+        "fb_online_para": "Indoor cycling bikes are all the rage for many reasons. They provide a quick and easy way to work out from the comfort of your home, reducing commute time so you can fit in your fitness whenever is convenient. Before investing in a stationary bike for your home workout space, you might be wondering: Is it worth it?",
+        "fb_online_para1": "To that, we say yes. Here’s why.",
+        "fb_online_title1": "Getting in Shape and Losing Weight By Using Our Indoor Exercise Bike",
+        "fb_online_desc1": "First and foremost, the main reason for purchasing an exercise bike is to get in shape. Nowadays, especially with the rise of remote work, it’s common to spend most of our days sitting in front of a computer. With a lifestyle that’s mostly sedentary, it’s even more important to focus on adding cardio to our routines to get in shape. The spin bikes from freebeat™ fit offer thousands of fun and engaging fitness classes to choose from, so you don’t have to figure it out on your own. The combination of resistance and intensity you can incorporate into these classes is perfect for getting in shape. If weight loss is your goal, creating a diverse fitness plan with the classes offered using these indoor cycling bikes is easy. In addition to taking cycling classes, you can rotate the screen and use it for HIIT and strength training to create a well-rounded fitness routine.",
+        "fb_online_title2": "Stationary Bikes That Are Low-impact and Safe for Your Knee",
+        "fb_online_desc2": "When choosing your workout routine, looking at all the factors is essential. To prevent injury and keep your body safe, you’ll want to think about the impact of your workouts on your joints. Aside from sore muscles, you never want to do anything that causes physical pain, especially your knees. Luckily, riding an indoor stationary bike is a great option for a low-impact and safe workout. No matter your age or fitness level, you should be able to enjoy a smooth, pain-free, and fun ride.",
+        "fb_online_title3": "Indoor Exercise Bikes That Offer Convenience",
+        "fb_online_desc3": "Whether you’re a busy mom, a working professional, a busy working professional mom, or anything in between, you likely don’t have as much time as you’d like to dedicate to your fitness routine. We’ve all got a lot on our plates these days, and the less time we can spend browsing apps for available fitness classes, sitting in traffic trying to make it to the gym, or just trying to decide where to start, the better. ",
+        "fb_online_desc4": "A perk of getting a stationary bike is that you never have to leave your house. That cuts down on time, energy, and even outfits — who cares if your clothes match if no one can see you? Once you set your routine and have found your favorite classes on your spin bike, you can hop on and start riding whenever you have the time. ",
+        "fb_online_desc5": "Getting an indoor cycling bike is worth it, especially if you order one from freebeat™ fit. You’ll get access to all the classes, you’ll love the modern, sleek design, and you’ll get tons of unique features at an accessible price point. What’s not to love? ",
+        "fb_online_link1": "LEARN MORE",
+        "fb_online_link2": "COLLAPSE"
+      }
+    }
+  },
+  "order": [
+    "269a59df-967c-4f01-aa3d-1a6be9db8159",
+    "54697e38-8487-4489-88c5-9971fe7e461b",
+    "3cfdf8e6-b955-439f-bc42-5b7f5537dbe3",
+    "f9750108-7462-4327-92cd-42506e7fa7f3",
+    "a6bd14b6-cb39-45e4-97d5-773011fb3d09",
+    "2204bda4-1d6a-4d27-9662-2d8a82a48f5a",
+    "7fcee5fb-bceb-4626-93ab-81d25de3a4ea"
+  ]
+}

@@ -1,0 +1,67 @@
+{%- assign sale_des_index = 1 -%}
+<div class="fb-sale-des w-full  relative py-6 px-4 fb-sm:px-10 fb-sm:pt-16 fb-sm:bg-f5f5f5 fb-sm:flex-row  flex fb-sm:items-center fb-sm:justify-center">
+      <div class="bg-white fb-md:max-w-75r fb-sm:overflow-hidden fb-sm:w-full fb-sm:bg-f5f5f5 fb-sm:flex-row  fb-sm:flex fb-sm:items-start fb-sm:justify-between">
+            <div class="pb-6 border-b border-D9D9D9  fb-sm:border-f5f5f5 fb-md:max-w-40r fb-sm:flex-1 fb-sm:pr-20">
+                  <div class="font-bold text-2xl text-black mb-3 ">{{section.settings.one_des}}</div>
+                  <div class="text-base text-121212 font-medium">{{section.settings.two_des}}</div>
+            </div>
+            <div class="flex flex-row items-center justify-between fb-sm:rounded-lg border-white fb-sm:bg-white fb-sm:w-116  fb-sm:h-12 fb-sm:justify-between fb-sm:px-4">
+                  {%- for block in section.blocks -%}
+                        <div class="flex flex-col items-center justify-center pt-5 fb-sm:pt-0 fb-sm:flex-row "> 
+                              {% assign icon_img = block.settings.icon_img | img_url: '' %}
+                              <img src="{{ icon_img }}" class="w-6 h-6" loading="lazy" alt="{{ item.image.alt | escape }}" data-index="{{ sale_des_index }}">
+                              <div class="font-medium text-xs fb-sm:ml-2 text-black">
+                                    {{block.settings.icon_info}}
+                              </div>
+                        </div>
+                        {%- assign sale_des_index = sale_des_index | plus: 1 -%}
+
+                  {% endfor %}
+            </div>
+      </div>
+     
+</div>
+
+{% schema %}
+{
+"name": "FbSaleDes",
+"presets": [
+{
+"name": "fb-sale-des",
+"category": "Fb Sections",
+"blocks": []
+}
+],
+"settings": [
+{
+"type": "text",
+"id": "one_des",
+"label": "Label One Des",
+"default": "Electric Bike Sale!"
+},
+{
+"type": "text",
+"id": "two_des",
+"label": "Label Two Des",
+"default": "Aventon's range of electric bikes are relaxing and fun to ride. With ranges up to 40 miles, you can find new ways to adventure this summer. Buy an Aventon ebike today during our ebike blowout savings event! These deals won't last long!"
+}
+],
+"blocks": [
+{
+  "type": "TextBlock",
+  "name": "TextBlock",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon_img",
+      "label": "Icon img"
+    },
+    {
+      "type": "text",
+      "id": "icon_info",
+      "label": "Icon Info"
+    }
+  ]
+}]
+}
+{% endschema %}

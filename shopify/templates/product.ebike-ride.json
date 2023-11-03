@@ -1,0 +1,1502 @@
+{
+  "sections": {
+    "6a36fcd0-6343-4ca8-ab40-b0959a582e46": {
+      "type": "fb-ebike-nav-bar",
+      "settings": {
+        "nav_product": "morphrover-2-in-1-ebike",
+        "bike_type": "MorphRover",
+        "bike_button_text": "ADD TO CART"
+      }
+    },
+    "e2dc268d-083c-41cf-a3d8-280e7e55d406": {
+      "type": "ebike-product-model",
+      "blocks": {
+        "fe301f57-5dd2-45e0-8da3-24cc073a3177": {
+          "type": "fbStampStar",
+          "disabled": true,
+          "settings": {
+            "show_custom_product_star": "morphrover-2-in-1-ebike"
+          }
+        },
+        "share_buttons": {
+          "type": "share_buttons",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false
+          }
+        },
+        "9f74013d-24a8-4d8e-a7c9-653697afe049": {
+          "type": "customerService",
+          "settings": {
+            "customer_img": "shopify:\/\/shop_images\/kefu_482059bc-d0d3-4460-b53c-cc6f88c8809c.jpg",
+            "customer_title": "Need more help?",
+            "customer_desc": "Connect with a Specialist."
+          }
+        },
+        "7887ca75-9688-4b9d-a9c1-e560083e8065": {
+          "type": "introduce_service",
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-baozhan.png",
+            "intoduce_service_desc": "<p>2-year warranty. <a href=\"\/pages\/warranty\" title=\"\/pages\/warranty\">Learn more<\/a><\/p>",
+            "show_tip_or_dialog": false,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "f19f4b28-debd-42db-a9b3-0e271dddce42": {
+          "type": "introduce_service",
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-sousuo.png",
+            "intoduce_service_desc": "<p>Delivered in 3-7 business days<\/p>",
+            "show_tip_or_dialog": false,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "9ab30c73-8957-4e6b-93b8-eb9cd442a61b": {
+          "type": "introduce_service",
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-mianxi.png",
+            "intoduce_service_desc": "<p>0% Financing no hidden fees¹<\/p>",
+            "show_tip_or_dialog": true,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "f8feb95b-f3b5-4780-bb88-719f4b1886e5": {
+          "type": "introduce_service",
+          "disabled": true,
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-huiyuan.png",
+            "intoduce_service_desc": "<p>freebeat membership separate²<\/p>",
+            "show_tip_or_dialog": true,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "df9f9505-fd2b-40a3-95b8-3ad61e7c609b": {
+          "type": "bike_discount_desc",
+          "settings": {
+            "fpc_desc_disount": "<p>Use code <strong>MORPHSALE<\/strong> at checkout to get $100 off your bike.<\/p><p>Use multiple codes at the CART for more savings<\/p>"
+          }
+        },
+        "361cdc28-9344-4ca3-b028-d2d18ac02241": {
+          "type": "bike_left_icon_info",
+          "settings": {
+            "bike_left_icon_img": "shopify:\/\/shop_images\/top-speed.png",
+            "bike_left_icon_img_mob": "shopify:\/\/shop_images\/top-speed-mob.png",
+            "bike_left_icon_title": "28 MPH*",
+            "bike_left_icon_desc": "<p>TOP SPEED<\/p>",
+            "bike_icon_hover": ""
+          }
+        },
+        "26521ad8-279f-48ce-8869-6d7f76330f97": {
+          "type": "bike_left_icon_info",
+          "settings": {
+            "bike_left_icon_img": "shopify:\/\/shop_images\/tires_cdf227c6-d58c-4b28-bb6f-f25cd8b77e51.png",
+            "bike_left_icon_img_mob": "shopify:\/\/shop_images\/tires-mob.png",
+            "bike_left_icon_title": "4'' Fat Tires",
+            "bike_left_icon_desc": "<p>TIRES<\/p>",
+            "bike_icon_hover": ""
+          }
+        },
+        "432e4e75-538e-4de0-a9ee-cc04dcc82c41": {
+          "type": "bike_left_icon_info",
+          "settings": {
+            "bike_left_icon_img": "shopify:\/\/shop_images\/750w.png",
+            "bike_left_icon_img_mob": "shopify:\/\/shop_images\/750w-mob.png",
+            "bike_left_icon_title": "750W | 85Nm",
+            "bike_left_icon_desc": "<p>MOTOR<\/p>",
+            "bike_icon_hover": ""
+          }
+        },
+        "d869a16f-981f-4600-8819-37b79e51d966": {
+          "type": "bike_left_icon_info",
+          "settings": {
+            "bike_left_icon_img": "shopify:\/\/shop_images\/60miles.png",
+            "bike_left_icon_img_mob": "shopify:\/\/shop_images\/60miles-mob.png",
+            "bike_left_icon_title": "Up to 60 Miles",
+            "bike_left_icon_desc": "<p>RANGE<\/p>",
+            "bike_icon_hover": "Actual performance will vary depending on temperature, road conditions, rider's weight, etc."
+          }
+        },
+        "ce71a97f-9bf8-4518-a2eb-fce805ed7a28": {
+          "type": "bike_left_icon_info",
+          "settings": {
+            "bike_left_icon_img": "shopify:\/\/shop_images\/iosandriod.png",
+            "bike_left_icon_img_mob": "shopify:\/\/shop_images\/iosandriod-mob.png",
+            "bike_left_icon_title": "iOS, Android",
+            "bike_left_icon_desc": "<p>SMART APP<\/p>",
+            "bike_icon_hover": ""
+          }
+        },
+        "4e6bb67c-a5b4-4cde-92e3-515f52ba52ce": {
+          "type": "bike_left_icon_info",
+          "settings": {
+            "bike_left_icon_img": "shopify:\/\/shop_images\/2-in-bike.png",
+            "bike_left_icon_img_mob": "shopify:\/\/shop_images\/2-in-bike-mob.png",
+            "bike_left_icon_title": "2-in-1 eBike",
+            "bike_left_icon_desc": "<p>WORLD'S 1ST & ONLY<\/p>",
+            "bike_icon_hover": ""
+          }
+        },
+        "768a98e1-c8ee-421a-9c39-d8515c97db0e": {
+          "type": "pdpGiftRemake",
+          "settings": {
+            "gift_is_free": true,
+            "gift_service_product": "50-amazon-gift-card",
+            "gift_name": "",
+            "gift_name_hover": "<p>Will send to the email address you used to place your order 30 days after the date of receipt of the bike.<\/p>"
+          }
+        },
+        "f2e92385-9c28-4b4e-8f61-ffeebb4e9c93": {
+          "type": "pdpGiftRemake",
+          "settings": {
+            "gift_is_free": true,
+            "gift_service_product": "fender",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "aae3525d-e0be-4190-9cb5-17da96d69dd5": {
+          "type": "pdpGiftRemake",
+          "settings": {
+            "gift_is_free": true,
+            "gift_service_product": "kickstand",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "abbe792a-4395-4c29-9961-55e8405d23c2": {
+          "type": "pdpGiftRemake",
+          "settings": {
+            "gift_is_free": true,
+            "gift_service_product": "bike-mount",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "31901e2f-2668-47e8-b252-04e496691dff": {
+          "type": "pdpGiftRemake",
+          "disabled": true,
+          "settings": {
+            "gift_is_free": false,
+            "gift_service_product": "glass-water-bottle",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "abb12f82-aa9e-4020-a205-211bc20da80c": {
+          "type": "pdpGiftRemake",
+          "disabled": true,
+          "settings": {
+            "gift_is_free": false,
+            "gift_service_product": "dumbbell-set",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "f442540c-692a-4a85-9141-4cab563a256a": {
+          "type": "pdpGiftRemake",
+          "disabled": true,
+          "settings": {
+            "gift_is_free": false,
+            "gift_service_product": "resistance-loop-set",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "ac2d2bca-cf06-4a9a-91f2-9e571c9a0000": {
+          "type": "size_fit_table",
+          "settings": {
+            "size_fit_title": "Technical Specifications",
+            "size_fit_desc": ""
+          }
+        },
+        "bb9b80ed-c9a2-464f-8e78-9fe3e374e004": {
+          "type": "size_fit_table",
+          "settings": {
+            "size_fit_title": "Size & Fit",
+            "size_product_img": "shopify:\/\/shop_images\/ebike-size-teemo.jpg",
+            "size_fit_desc": "<p>Level comes in 2 sizes to suit most adults. <\/p><p><strong>High Step:<\/strong> 5'6\"-6'4\" <\/p><p><strong>Step Thru: <\/strong> 5'1\"-6'<\/p>"
+          }
+        },
+        "0fdea0f3-546a-464c-9c82-f90115f5c86c": {
+          "type": "fbStampStar",
+          "settings": {
+            "show_custom_product_star": "morphrover-2-in-1-ebike"
+          }
+        }
+      },
+      "block_order": [
+        "fe301f57-5dd2-45e0-8da3-24cc073a3177",
+        "share_buttons",
+        "variant_selector",
+        "buy_buttons",
+        "9f74013d-24a8-4d8e-a7c9-653697afe049",
+        "7887ca75-9688-4b9d-a9c1-e560083e8065",
+        "f19f4b28-debd-42db-a9b3-0e271dddce42",
+        "9ab30c73-8957-4e6b-93b8-eb9cd442a61b",
+        "f8feb95b-f3b5-4780-bb88-719f4b1886e5",
+        "df9f9505-fd2b-40a3-95b8-3ad61e7c609b",
+        "361cdc28-9344-4ca3-b028-d2d18ac02241",
+        "26521ad8-279f-48ce-8869-6d7f76330f97",
+        "432e4e75-538e-4de0-a9ee-cc04dcc82c41",
+        "d869a16f-981f-4600-8819-37b79e51d966",
+        "ce71a97f-9bf8-4518-a2eb-fce805ed7a28",
+        "4e6bb67c-a5b4-4cde-92e3-515f52ba52ce",
+        "768a98e1-c8ee-421a-9c39-d8515c97db0e",
+        "f2e92385-9c28-4b4e-8f61-ffeebb4e9c93",
+        "aae3525d-e0be-4190-9cb5-17da96d69dd5",
+        "abbe792a-4395-4c29-9961-55e8405d23c2",
+        "31901e2f-2668-47e8-b252-04e496691dff",
+        "abb12f82-aa9e-4020-a205-211bc20da80c",
+        "f442540c-692a-4a85-9141-4cab563a256a",
+        "ac2d2bca-cf06-4a9a-91f2-9e571c9a0000",
+        "bb9b80ed-c9a2-464f-8e78-9fe3e374e004",
+        "0fdea0f3-546a-464c-9c82-f90115f5c86c"
+      ],
+      "settings": {
+        "customer_product": "",
+        "product_big_title": "MorphRover",
+        "product_desc_title": "World's 1st Allroad 2-in-1 Fat Tire eBike",
+        "product_build_title": "Build Your MorphRover",
+        "product_but_text": "ADD TO CART",
+        "image_size": "large",
+        "stack_images": false,
+        "show_thumbnails": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "show_gift": true,
+        "show_protection": true,
+        "show_protection_title": "Add protection powered by",
+        "show_shop_payments": true,
+        "show_size_fit": true,
+        "show_bike_discount_desc": false,
+        "show_bike_left_icon_info": true,
+        "show_bike_dimensions": "",
+        "bike_promotion_desc": "<p><strong>Free Shipping. Extra $300 Off<\/strong> for 2 Bikes with code: <strong>BUYTWO<\/strong><\/p>",
+        "show_expected_ship_date": false
+      }
+    },
+    "63d0a684-280c-429f-935c-caed4d851b16": {
+      "type": "fb-img-video-banner",
+      "blocks": {
+        "template--16336994959545__63d0a684-280c-429f-935c-caed4d851b16-image_banner-1": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": true,
+            "image": "shopify:\/\/shop_images\/CelticsXfreebeat_PC_WithoutCTA.webp",
+            "mobile_image": "shopify:\/\/shop_images\/CelticsXfreebeat_Mobile_WithoutCTA.webp",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "",
+            "banner_title_color": "",
+            "banner_title_mob": "",
+            "banner_title_color_mob": "",
+            "banner_desc": "",
+            "banner_desc_color": "",
+            "banner_desc_mob": "",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16336994959545__63d0a684-280c-429f-935c-caed4d851b16-image_banner-1"
+      ],
+      "settings": {
+        "additional_class": "",
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "571f4a7a-a6a7-47eb-b329-b6d685527941": {
+      "type": "fb-ebike-ride",
+      "blocks": {
+        "882f9995-2e24-4644-adf4-5ac6a743e9e7": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4023_2x_68f725c6-3d2b-4856-a1b1-93ba4ca9688f.png",
+            "ebike_ride_desc": "<h3>750W | 85Nm Motor<\/h3>"
+          }
+        },
+        "b228aed1-6416-49e9-873a-6b9643d7681a": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4024_2x_dfc717ff-3d7f-473d-bdcb-7e4d63153df0.png",
+            "ebike_ride_desc": "<h3>720Wh Removable Battery<\/h3>"
+          }
+        },
+        "d9c23c49-f951-4810-b7cf-fcf538faa755": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4025_2x_cd9a359b-0507-4bc8-8ebd-6db19ed25b70.png",
+            "ebike_ride_desc": "<h3>4'' Fat Tires<\/h3>"
+          }
+        },
+        "2b68898a-2831-4bf5-9779-4ab97c5374f7": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4026_2x_2642dce1-b291-45bc-951b-3f149eaf2504.png",
+            "ebike_ride_desc": "<h3>Front Suspension w\/ Lockout<\/h3>"
+          }
+        },
+        "917aadf4-f1b7-4815-be9c-be037ff5a374": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4028_2x_52c3d23d-051b-4a04-aebd-320272b8ef76.png",
+            "ebike_ride_desc": "<h3>Shimano 8-speed Drivetrain<\/h3>"
+          }
+        },
+        "8f01fdc7-7adb-427a-9c08-171b7bd70e99": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4027_2x_aa0354a0-1487-4624-aeaf-96b31478e89e.png",
+            "ebike_ride_desc": "<h3>All-terrain Design<\/h3>"
+          }
+        },
+        "f5fd6665-5d43-4314-a751-6b5d96ff9a46": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4031_2x_70b94193-0e60-467d-aa9a-70bd11d8b6fb.png",
+            "ebike_ride_desc": "<h3>World's 1st 2in1 eBike<\/h3>"
+          }
+        },
+        "afbf74f9-c26b-45b9-b2ea-6b0aee19a133": {
+          "type": "ride_list",
+          "settings": {
+            "ebike_ride_icon": "shopify:\/\/shop_images\/Group_4030_2x_9663f05d-f956-4ae0-8799-7c1f386b427c.png",
+            "ebike_ride_desc": "<h3>Exercise to Earn CO2-free Range<\/h3>"
+          }
+        }
+      },
+      "block_order": [
+        "882f9995-2e24-4644-adf4-5ac6a743e9e7",
+        "b228aed1-6416-49e9-873a-6b9643d7681a",
+        "d9c23c49-f951-4810-b7cf-fcf538faa755",
+        "2b68898a-2831-4bf5-9779-4ab97c5374f7",
+        "917aadf4-f1b7-4815-be9c-be037ff5a374",
+        "8f01fdc7-7adb-427a-9c08-171b7bd70e99",
+        "f5fd6665-5d43-4314-a751-6b5d96ff9a46",
+        "afbf74f9-c26b-45b9-b2ea-6b0aee19a133"
+      ],
+      "settings": {
+        "ebike_image_pc": "shopify:\/\/shop_images\/20230801-165952.webp",
+        "ebike_image_mob": "shopify:\/\/shop_images\/20230801-165952.webp",
+        "ebike_ride_text": "MorphRover",
+        "ebike_ride_title": "A GAME-CHANGING EBIKE",
+        "ebike_ride_info": "<p>Embrace diverse terrains, harmonizing outdoor adventure and indoor fitness.<\/p>",
+        "ebike_ride_number1": "<p>720<\/p>",
+        "ebike_ride_unit1": "<p>Wh<\/p>",
+        "ebike_ride_text1": "<p>Removable Battery<\/p>",
+        "ebike_ride_tips1": "",
+        "ebike_ride_number2": "<p>750<\/p>",
+        "ebike_ride_unit2": "<p>W\/1kW<\/p>",
+        "ebike_ride_text2": "<p>Rated\/Peak Motor<\/p>",
+        "ebike_ride_tips2": "",
+        "ebike_ride_number3": "<p>28<\/p>",
+        "ebike_ride_unit3": "<p>MPH<\/p>",
+        "ebike_ride_text3": "<p>Top Speed<\/p>",
+        "ebike_ride_tips3": "<p>Unlockable to 28 MPH<\/p>",
+        "ebike_ride_number4": "<p>60<\/p>",
+        "ebike_ride_unit4": "<p>Miles<\/p>",
+        "ebike_ride_text4": "<p>Max Assisted Range<\/p>",
+        "ebike_ride_tips4": "<p>Actual performance will vary depending on temperature, road conditions, rider's weight, etc.<\/p>"
+      }
+    },
+    "1360bff3-b5e5-40d9-975b-a5d128e3b8f0": {
+      "type": "fb-ebike-indoor",
+      "blocks": {
+        "db9d8a42-f274-496a-8b8c-f23a2af45bfa": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "A Powerful eBike to Conquer all Terrains",
+            "pages_progress_Info": "Unleash the power to dominate every terrain and weather with this robust fat tire eBike.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/363d1bd4a0604230a18de5dedca5353a.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/outdoor1.webp?v=1690974842",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "582de6f5-0acf-489b-a48f-5dc015afbca6": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "750W | 85Nm Hub Motor",
+            "pages_progress_Info": "Feel the surge of the exhilarating 750W (1000W Peak) hub motor, propelling you to remote and extraordinary destinations.",
+            "pages_progress_pc_video": "",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/2._1png.webp?v=1690857256",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "3838ee20-440e-46c5-8c9b-13f03475f658": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "720Wh Removable Battery",
+            "pages_progress_Info": "The UL certified 720Wh LG battery delivers up to 60 miles of assisted range with a single charge.",
+            "pages_progress_pc_video": "",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/3..webp?v=1690857256",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "d7c7549f-3c7c-450a-9ef8-9230c842360f": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "Recharge On-the-Go",
+            "pages_progress_Info": "Never run out of power outdoors with our 2-in-1 motor technology. Extended range, extra fun. (Plug-in charging is available too)",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/957d62f466ac4d4cbf8899fffee86939.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/Charging_Outdoor.jpg?v=1692255973",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "a9ac6361-5398-4983-9982-3a532e0833f3": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "4'' Fat Tires",
+            "pages_progress_Info": "Embark on effortless exploration with puncture-resistant, durable 26x4\" fat tires.",
+            "pages_progress_pc_video": "",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/4._2.webp?v=1690857256",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "7aafac5f-2b87-4c56-a6e1-6796b4d12341": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "Front Suspension",
+            "pages_progress_Info": "Enjoy smooth off-road adventures with the 80mm travel suspension fork.",
+            "pages_progress_pc_video": "",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/5..webp?v=1690857256",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "7b063eaf-216a-49af-b9d5-3e07329bf075": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "Hydraulic Disc Brake",
+            "pages_progress_Info": "Ride with peace of mind! Hydraulic disc brakes provide superior stopping power in any conditions.",
+            "pages_progress_pc_video": "",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/6..webp?v=1690857256",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "4a89617e-cea8-4890-974e-81a75437b2dc": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "Shimano 8-speed Drivetrain",
+            "pages_progress_Info": "Take a quality ride with crisp cadence shifting whether you're a beginner or an avid cyclist.",
+            "pages_progress_pc_video": "",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/7..webp?v=1690857256",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "ffba6d44-3f60-4f1a-92ab-72e23cb1e0b4": {
+          "type": "outdoorlist",
+          "settings": {
+            "pages_progress_title": "Stay Connected and Guided",
+            "pages_progress_Info": "Sync with the freebeat App for real-time ride recording, performance tracking, and navigation.",
+            "pages_progress_pc_video": "",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/8.Smart_Riding._Connected_Journey.webp?v=1690857256",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "812a217b-a445-4260-8839-9b8fe86f63e7": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "A Revolutionary Smart Bike Trainer",
+            "pages_progress_Info": "This eBike seamlessly morphs into a smart bike trainer, delivering the thrilling gamified workouts to your family.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/de6f926c8a7c421abf2147ac3b7b1cc7.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/indoor1.webp?v=1690974841",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "1e2a576a-513e-4d3b-9ecd-7529ae949729": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "3 Simple Steps to Indoor Mode",
+            "pages_progress_Info": "In 3 easy steps, enjoy convenient and comfortable workouts from home.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b27370c291234f1a81045e34dd3fd1d0.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/indoor2.webp?v=1690974842",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "09f52b8e-4041-4483-86e7-1ef54fffef24": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "Earn 100% CO2-free Energy",
+            "pages_progress_Info": "Our patented dual-function motor technology converts calories into clean energy. 30 mins exercise = up to 10 miles³ outdoor riding range.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/96b06e60f57b404eb7b4c91140d4856e.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/indoor3.webp?v=1690974841",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "4c23f897-234a-4cc6-a69f-38cd248eece4": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "Diverse Interactive Content",
+            "pages_progress_Info": "Access thousands of studio classes, scenic rides, and rhythm games anytime². Compete globally or go at your own pace.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e7c33a1435242b6b27353af80fb1a15.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/indoor5.webp?v=1690974841",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3df1fef9f0de4413835552771156151b.mp4"
+          }
+        },
+        "927029b2-3d6f-42a7-99bd-2cc3fbf9049c": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "Gamified Workouts on Any Displays",
+            "pages_progress_Info": "Experience immersive workouts on any iOS or Android device, or cast to a smart TV for an enhanced fitness journey.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6adeecec30d1482397a361f33b11258b.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/Any_Displays.jpg?v=1692956432",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "66746a62-d0d5-46e2-97e7-4da71ac4dfd2": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "Auto Resistance System",
+            "pages_progress_Info": "Auto-adjusts based on the instructor's cue and adapts to your unique riding style.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4c8726a8322442139dfa23002e5a227f.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/indoor6.webp?v=1690974841",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "bbf19719-9170-47c3-b318-e66f1496d862": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "Smart Saddle Detection+",
+            "pages_progress_Info": "Detects in and out of saddle riding via sensors to deliver intense and fulfilling results.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dac2e8bf7aab4a81aa561a39c581caee.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/indoor7.webp?v=1690974842",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        },
+        "5ee03058-8c64-4807-b2e7-0a45bf1c9a57": {
+          "type": "indoorlist",
+          "settings": {
+            "pages_progress_title": "Personal Trainer Algorithm",
+            "pages_progress_Info": "Evaluates your performance and delivers an ideal blend of challenging yet fun program to suit each rider at the right level.",
+            "pages_progress_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5dc1178387344125ab5b8975863ddefb.mp4",
+            "pages_progress_pc_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/indoor8.webp?v=1690974841",
+            "pages_progress_mobile_image": "",
+            "pages_progress_mobile_video": ""
+          }
+        }
+      },
+      "block_order": [
+        "db9d8a42-f274-496a-8b8c-f23a2af45bfa",
+        "582de6f5-0acf-489b-a48f-5dc015afbca6",
+        "3838ee20-440e-46c5-8c9b-13f03475f658",
+        "d7c7549f-3c7c-450a-9ef8-9230c842360f",
+        "a9ac6361-5398-4983-9982-3a532e0833f3",
+        "7aafac5f-2b87-4c56-a6e1-6796b4d12341",
+        "7b063eaf-216a-49af-b9d5-3e07329bf075",
+        "4a89617e-cea8-4890-974e-81a75437b2dc",
+        "ffba6d44-3f60-4f1a-92ab-72e23cb1e0b4",
+        "812a217b-a445-4260-8839-9b8fe86f63e7",
+        "1e2a576a-513e-4d3b-9ecd-7529ae949729",
+        "09f52b8e-4041-4483-86e7-1ef54fffef24",
+        "4c23f897-234a-4cc6-a69f-38cd248eece4",
+        "927029b2-3d6f-42a7-99bd-2cc3fbf9049c",
+        "66746a62-d0d5-46e2-97e7-4da71ac4dfd2",
+        "bbf19719-9170-47c3-b318-e66f1496d862",
+        "5ee03058-8c64-4807-b2e7-0a45bf1c9a57"
+      ],
+      "settings": {
+        "menu-title": "A UNIQUE INNOVATION",
+        "bg_background": "#ffffff",
+        "sub-title": "Where Outdoor Exploration Meets Indoor Fitness",
+        "indoor-Title": "Indoor Fitness. Green Impact.",
+        "outdoor-Title": "Outdoor Exploration. Ultimate Power.",
+        "indoor-mb-title": "INDOOR FITNESS.",
+        "indoor-mb-sub-title": "Green Impact.",
+        "outdoor-mb-title": "OUTDOOR EXPLORATION.",
+        "outdoor-mb-sub-title": "Ultimate Power."
+      }
+    },
+    "b26601ac-d3f7-4b34-97c2-f588ce2df31f": {
+      "type": "ebike-break-traditional",
+      "settings": {
+        "ebt_prduct": "morphrover-2-in-1-ebike",
+        "ebt_title": "<h2>DOUBLE THE FUN, HALF THE COST<\/h2>",
+        "ebt_title_mob": "<h2>DOUBLE THE FUN<\/p><p>HALF THE COST<\/h2>",
+        "ebt_sub_title": "<p>The 2-in-1 eBike Revolution<\/p>",
+        "ebt_number_1": "2000",
+        "ebt_desc_1": "<p>Premium Indoor Fitness Bike x 1<\/p>",
+        "ebt_number_2": "2000",
+        "ebt_desc_2": "<p>All-terrain Fat Tire eBike x 1<\/p>",
+        "ebt_number_3": "1000",
+        "ebt_desc_3": "<p>Electricity Bill Saving from Workouts⁴<\/p>",
+        "ebt_price": "Your Final Price:",
+        "ebt_price_desc": "",
+        "ebt_price_equel_img": "shopify:\/\/shop_images\/ride-compare.png"
+      }
+    },
+    "7118ef34-44be-42c4-b65f-b864e581d186": {
+      "type": "fb-img-video-banner",
+      "blocks": {
+        "template--16303300870329__7118ef34-44be-42c4-b65f-b864e581d186-video_banner-1": {
+          "type": "video_banner",
+          "settings": {
+            "banner_href": true,
+            "product": "morphrover-2-in-1-ebike",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7c6e81f4caaf409990fef7ffb088ae6d.mp4",
+            "video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7c6e81f4caaf409990fef7ffb088ae6d.mp4",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "<p>POWERFUL HUB MOTOR<\/p>",
+            "banner_title_color": "",
+            "banner_title_mob": "<p>POWERFUL HUB MOTOR<\/p>",
+            "banner_title_color_mob": "",
+            "banner_desc": "<p>48V, 750W Brushless Hub Motor, Max Torque 85Nm with Hydraulic Disc Breaks<\/p>",
+            "banner_desc_color": "",
+            "banner_desc_mob": "<p>48V, 750W Brushless Hub Motor, Max Torque 85Nm with Hydraulic Disc Breaks<\/p>",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        },
+        "dc88635f-52da-46c3-8af1-cfdddbcc93be": {
+          "type": "video_banner",
+          "settings": {
+            "banner_href": true,
+            "product": "morphrover-2-in-1-ebike",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0996f5153dce4cb5be1f1b5dc806680c.mp4",
+            "video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0996f5153dce4cb5be1f1b5dc806680c.mp4",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "<p>SUSPENSION FORK<\/p>",
+            "banner_title_color": "",
+            "banner_title_mob": "<p>SUSPENSION FORK<\/p>",
+            "banner_title_color_mob": "",
+            "banner_desc": "<p>Hydraulic Suspension with 80mm Travel, with Lock-out, WB-355-26\" ALLOY<\/p>",
+            "banner_desc_color": "",
+            "banner_desc_mob": "<p>Hydraulic Suspension with 80mm Travel, with Lock-out, WB-355-26\" ALLOY<\/p>",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        },
+        "8dfe107c-4187-434f-9208-d90f9e3b9d0a": {
+          "type": "video_banner",
+          "settings": {
+            "banner_href": true,
+            "product": "morphrover-2-in-1-ebike",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/47114bc7bf664e9d8c7b31e6e7d481cd.mp4",
+            "video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/47114bc7bf664e9d8c7b31e6e7d481cd.mp4",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "<p>FAT TIRE<\/p>",
+            "banner_title_color": "",
+            "banner_title_mob": "<p>FAT TIRE<\/p>",
+            "banner_title_color_mob": "",
+            "banner_desc": "<p>26 x 4\", Puncture-Resistant Liner<\/p>",
+            "banner_desc_color": "",
+            "banner_desc_mob": "<p>26 x 4\", Puncture-Resistant Liner<\/p>",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16303300870329__7118ef34-44be-42c4-b65f-b864e581d186-video_banner-1",
+        "dc88635f-52da-46c3-8af1-cfdddbcc93be",
+        "8dfe107c-4187-434f-9208-d90f9e3b9d0a"
+      ],
+      "settings": {
+        "additional_class": "",
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "99e960f1-096c-4d00-9dfd-2a0c72c2016a": {
+      "type": "fb-img-video-banner",
+      "blocks": {
+        "template--16303300870329__99e960f1-096c-4d00-9dfd-2a0c72c2016a-video_banner-1": {
+          "type": "video_banner",
+          "settings": {
+            "banner_href": false,
+            "product": "",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b34dcea433be4c9cb6bd32777e16b71d.mp4",
+            "video_mobile_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1a263ca657864b3c843fb629435348b5.mp4",
+            "apply_overlay": false,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "",
+            "banner_title_color": "",
+            "banner_title_mob": "",
+            "banner_title_color_mob": "",
+            "banner_desc": "",
+            "banner_desc_color": "",
+            "banner_desc_mob": "",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16303300870329__99e960f1-096c-4d00-9dfd-2a0c72c2016a-video_banner-1"
+      ],
+      "settings": {
+        "additional_class": "",
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "7769125f-be1e-4dc6-9b49-057e8977add5": {
+      "type": "online-reviewers-index",
+      "blocks": {
+        "b27d427c-3b2e-4901-822f-ffe94112f2c9": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "Out of the Ordinary",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/dU9rQ8myMdQ",
+            "online_reviews_circle": "shopify:\/\/shop_images\/pc-color-Midnight_Black.png",
+            "online_reviews_color": "MorphRover Midnight Black",
+            "online_reviews_talk": "shopify:\/\/shop_images\/pc-talk-Midnight_Black.png",
+            "online_reviews_text": "\"Really dope! So far, one of my best experiences with an eBike - impressive build quality and features, and the special indoor component of the bike, making it a game-changing concept!\""
+          }
+        },
+        "6a8a208a-2120-45cd-b9cf-fee6d9bf4874": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "The Revolutionary eBike",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/W7-lpSqhw2M",
+            "online_reviews_circle": "shopify:\/\/shop_images\/pc-color-Sage_Green.png",
+            "online_reviews_color": "MorphRover Sage Green",
+            "online_reviews_talk": "shopify:\/\/shop_images\/pc-talk-Sage_Green.png",
+            "online_reviews_text": "\"There are no ebikes out there that are going to give you the same indoor exercise experience as the freebeat MorphRover. I took a 15-minute class, and I earned back 9.3 miles of outdoor use! Brilliant.\""
+          }
+        },
+        "92ead11c-371a-4c74-b428-a475cfe60bac": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "Ride Beyond Limits",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/YWo8hi36RNs",
+            "online_reviews_circle": "shopify:\/\/shop_images\/pc-color-Sahara_Sand.png",
+            "online_reviews_color": "MorphRover Sahara Sand",
+            "online_reviews_talk": "shopify:\/\/shop_images\/pc-talk-Sahara_Sand.png",
+            "online_reviews_text": "\"The ginormous fat tires, which are resistant to punctures and soak up the terrain, make this thing utterly insane! It's perhaps the most fun I've had on an electric bike in quite some time.\""
+          }
+        },
+        "1d9e339f-4424-4a0f-b559-b26e3809f2aa": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "Charge Your Adventure",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/RfusXYUdciY",
+            "online_reviews_circle": "shopify:\/\/shop_images\/pc-color-Midnight_Black.png",
+            "online_reviews_color": "MorphRover Midnight Black",
+            "online_reviews_talk": "shopify:\/\/shop_images\/pc-talk-Midnight_Black.png",
+            "online_reviews_text": "\"There's a certain level of satisfaction that comes from knowing that I put a few of the miles into this bike with my own power. I feel accomplished more than I would if I just plugged it into the wall.\""
+          }
+        }
+      },
+      "block_order": [
+        "b27d427c-3b2e-4901-822f-ffe94112f2c9",
+        "6a8a208a-2120-45cd-b9cf-fee6d9bf4874",
+        "92ead11c-371a-4c74-b428-a475cfe60bac",
+        "1d9e339f-4424-4a0f-b559-b26e3809f2aa"
+      ],
+      "settings": {
+        "online_reviewers_max_title": "<p>Reviews You Have to See To Believe<\/p>",
+        "online_reviewers_btn": "COMPARE BIKES",
+        "fb_show_reviewers_tab": false,
+        "fb_show_reviewers_button": false
+      }
+    },
+    "2b81c838-178c-4e0d-8633-bc853ac74659": {
+      "type": "fb-evaluate",
+      "settings": {
+        "fb_evaluate": true,
+        "product": "morphrover-2-in-1-ebike"
+      }
+    },
+    "5da53189-be6f-4822-8f92-b4072ff2cf27": {
+      "type": "fb-unboxing",
+      "settings": {
+        "content_title": "EASY TO ASSEMBLE",
+        "content_des": "MorphRover",
+        "btn_des": "WATCH UNBOXING VIDEO",
+        "pc_bg": "shopify:\/\/shop_images\/20230829-142006.jpg",
+        "paly_video": "https:\/\/youtu.be\/6i5AYhJ9vEk"
+      }
+    },
+    "7a5b43da-7e00-44e3-bc56-a7a044f111d4": {
+      "type": "fb-plan-trees",
+      "settings": {
+        "content_des": "ONE TREE PLANTED   FOR EVERY EBIKE PURCHASED",
+        "btn_des": "READ MORE",
+        "pc_bg": "shopify:\/\/shop_images\/20230828-191845.jpg",
+        "logo_img": "shopify:\/\/shop_images\/image_111_2x_072c1dbf-10e0-4cac-af68-839ae469e6c5.png",
+        "trees": "shopify:\/\/shop_images\/image_110_2x_9675c046-f91e-4b6c-969e-af0c7a2add31.png",
+        "logo_img_mb": "shopify:\/\/shop_images\/image_111_2x_7908d7e5-0e07-4434-a6dd-3fce2e4f8745.png",
+        "trees_mb": "shopify:\/\/shop_images\/image_110_2x_dc350875-0175-4770-aa81-74283f579fc0.png",
+        "play_link": "https:\/\/www.freebeatfit.com\/blogs\/brand-story\/freebeat-is-planting-for-the-future-with-one-tree-planted"
+      }
+    },
+    "15a18c58-c1ff-4d79-a517-dfb34b072890": {
+      "type": "fb-ebike-specifications",
+      "blocks": {
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-0": {
+          "type": "section_image",
+          "settings": {
+            "ebike_imgtype_title": "<p>What’s in the Box<\/p>",
+            "ebike_imgtype_pcimg": "shopify:\/\/shop_images\/What_s_in_the_Box_PC0911.webp",
+            "ebike_imgtype_mobimg": "shopify:\/\/shop_images\/What_s_in_the_Box_Mobile0911.webp"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-1": {
+          "type": "one_has_label",
+          "settings": {
+            "oneLabTitle": "<p>Electronics<\/p>"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-2": {
+          "type": "two_has_label",
+          "settings": {
+            "twoLabTitle": "<p>Performance<\/p>"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-3": {
+          "type": "one_NoLabel",
+          "settings": {
+            "one_Nolabel_title": "<p>Component<\/p>"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-6": {
+          "type": "section_geometry",
+          "settings": {
+            "ebike_text_img_title": "<p>Geometry<\/p>",
+            "spec_geometry_pcimg": "shopify:\/\/shop_images\/Geometry-high-step0905.webp",
+            "spec_geometry_mobimg": "shopify:\/\/shop_images\/Geometry-high-step0905.webp"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-4": {
+          "type": "section_FAQ",
+          "disabled": true,
+          "settings": {
+            "ebike_section_FAQ_title": "<p>FAQ<\/p>"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-5": {
+          "type": "FAQ_content",
+          "disabled": true,
+          "settings": {
+            "write_children_title": "<p>Why should you invest in a Lit Bike Space Black cycling bike?<\/p>",
+            "write_children_info": "<p>The freebeat™ Lit Bike is a black indoor bike with many features that differentiate it from other black stationary bikes. With thousands of on-demand classes to choose from, you’ll never get bored. Not only that, but this black exercise bike offers unique gamification that allows you to compete with friends and family to earn points and rewards. Challenges, events, and games will add a new level of fun and competition to your at-home workouts.<\/p>"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-8": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Motor Hub<\/p>",
+            "textinfo_children_info1": "<p>48V, 750W Brushless hub motor, max torque 85Nm<\/p>"
+          }
+        },
+        "ebd94907-198b-4740-a10d-d3e786f4c290": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Display<\/p>",
+            "textinfo_children_info1": "<p>3.5’’ Backlit LCD display with speed, trip, battery, assist Level and more<\/p>"
+          }
+        },
+        "7cb59bb5-757f-4d5c-8b00-357df6eca29f": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Battery<\/p>",
+            "textinfo_children_info1": "<p>Removable internal lithium-ion battery, 48V, 15Ah (720Wh). 21700 LG cells with UL2271 certification<\/p>"
+          }
+        },
+        "197b0816-9239-48ee-914d-41d4071cebe4": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Cell<\/p>",
+            "textinfo_children_info1": "<p>LG 21700<\/p>"
+          }
+        },
+        "fb89974c-6e7e-40a2-a9e3-ccc50f38f16e": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Charger<\/p>",
+            "textinfo_children_info1": "<p>48V, 2A, Operates on 100V-240V AC, 50-60HZ, 6-7 hour charging<\/p>"
+          }
+        },
+        "71312ce5-316b-4906-af2a-1127c4b1d04c": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Charging Time<\/p>",
+            "textinfo_children_info1": "<p>0-80% 6 Hours, 0-100% 8 Hours<\/p>"
+          }
+        },
+        "4b36454a-c68b-4fb4-a962-aa49b59871d1": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Controller<\/p>",
+            "textinfo_children_info1": "<p>12-tube controller for 750W motor<\/p>"
+          }
+        },
+        "86e0fbcc-75d4-4d2f-bc30-54345813962a": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Sensor<\/p>",
+            "textinfo_children_info1": "<p>Cadence sensor<\/p>"
+          }
+        },
+        "1b6b91fc-00f2-4a41-9e1b-1c87d0f368a7": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Throttle<\/p>",
+            "textinfo_children_info1": "<p>Removable thumb-control<\/p>"
+          }
+        },
+        "d9b4f183-3e8c-499f-81cf-f681bd700586": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Water Resistant<\/p>",
+            "textinfo_children_info1": "<p>IPX5<\/p>"
+          }
+        },
+        "d641da5e-9296-4c21-8a3d-f535d7ea81ca": {
+          "type": "one_ourdoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Lighting<\/p>",
+            "textinfo_children_info1": "<p>High output integrated LED, adjustable angle<\/p>"
+          }
+        },
+        "bf424abb-523f-4f0b-b590-c260e20b6fc0": {
+          "type": "one_indoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Resistance Type<\/p>",
+            "textinfo_children_info1": "<p>Electromagnetic<\/p>"
+          }
+        },
+        "de041baf-d1d3-41be-b5f9-f4c936cf3e70": {
+          "type": "one_indoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Connectivity<\/p>",
+            "textinfo_children_info1": "<p>Bluetooth<\/p>"
+          }
+        },
+        "98c013f6-878b-421a-9e08-68f75d8f2ddb": {
+          "type": "one_indoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Maximum Power Output<\/p>",
+            "textinfo_children_info1": "<p>1000W<\/p>"
+          }
+        },
+        "40f781c4-a2bb-47f1-a6d1-5fbaa3dd25d8": {
+          "type": "one_indoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Drivetrain<\/p>",
+            "textinfo_children_info1": "<p>Chain drive<\/p>"
+          }
+        },
+        "50f7b113-7a79-4d4d-ab6f-d590a57d7760": {
+          "type": "one_indoor",
+          "settings": {
+            "textinfo_children_title1": "<p>Power Control Accuracy<\/p>",
+            "textinfo_children_info1": "<p>+ \/ - 1%<\/p>"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-9": {
+          "type": "two_outdoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Top Speed<\/p>",
+            "textinfo_children_info2": "<p>28MPH (Unlockable)<\/p>"
+          }
+        },
+        "69433971-2bd0-499a-a257-bce725edcc8a": {
+          "type": "two_outdoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Range<\/p>",
+            "textinfo_children_info2": "<p>Up to 60Miles<\/p>"
+          }
+        },
+        "51d8049e-8e5a-4557-8999-1ec1da11c218": {
+          "type": "two_outdoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Weight Limit<\/p>",
+            "textinfo_children_info2": "<p>Max load 400lbs (181kg)<\/p>"
+          }
+        },
+        "009d551e-6ad9-4ad0-a0a2-962b655d3fcc": {
+          "type": "two_outdoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Net Weight<\/p>",
+            "textinfo_children_info2": "<p>77lbs (35kg)<\/p>"
+          }
+        },
+        "a90415ba-33a7-47a6-9803-7d61ed31816e": {
+          "type": "two_outdoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Gross Weight<\/p>",
+            "textinfo_children_info2": "<p>100lbs (45kg)<\/p>"
+          }
+        },
+        "f52bde05-b293-4e79-ad2d-c0eec5fed0c7": {
+          "type": "two_outdoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Wheelbase<\/p>",
+            "textinfo_children_info2": "<p>26 * 4<\/p>"
+          }
+        },
+        "071ab757-1f8e-4e98-b05e-545ad55d7628": {
+          "type": "two_outdoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Spoke<\/p>",
+            "textinfo_children_info2": "<p>13G Steel Bed<\/p>"
+          }
+        },
+        "4fce327d-c815-4d8a-979e-8396bfe3d513": {
+          "type": "two_indoor",
+          "settings": {
+            "textinfo_children_title2": "<p>Maximum Rider Weight<\/p>",
+            "textinfo_children_info2": "<p>250lbs (113kg)<\/p>"
+          }
+        },
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-7": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Chainrings<\/p>",
+            "introduce_children_info": "<p>3\/32 * 32T * 170 ABC+PC with double chain cover<\/p>"
+          }
+        },
+        "ca76cbd2-7847-4935-b1e4-8529bb1dfbfd": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Crankset<\/p>",
+            "introduce_children_info": "<p>Aluminum alloy, 170mm<\/p>"
+          }
+        },
+        "b760949d-52af-4178-ad45-4230341ebe2c": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Frame<\/p>",
+            "introduce_children_info": "<p>Aluminum alloy, fully integrated & lockable down tube battery, internal cable routing, front and rear fenders<\/p>"
+          }
+        },
+        "17f12f92-613d-4223-bea5-ba8fabecf135": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Fork<\/p>",
+            "introduce_children_info": "<p>Hydraulic suspension with 80mm travel, with Lock-out WB-355-26\" ALLOY<\/p>"
+          }
+        },
+        "e4a98a57-ec41-404e-a650-ff9142ac48c4": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Brake<\/p>",
+            "introduce_children_info": "<p>Hydraulic brakes for eBike<\/p>"
+          }
+        },
+        "deca3ff4-0008-4ae3-91f6-810a22a6d189": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Brake Lever<\/p>",
+            "introduce_children_info": "<p>Radius DS100H-E Hydraulic Disc Brake<\/p>"
+          }
+        },
+        "9105efe8-213e-4bf9-a88e-c732b458de40": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Cassette<\/p>",
+            "introduce_children_info": "<p>SHIMANO 8 Speeds,  13T-34T<\/p>"
+          }
+        },
+        "42d42586-ebbc-4af4-8899-fa01e8c579ab": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Rear Derailleur<\/p>",
+            "introduce_children_info": "<p>REAR DERAILLEUR, RD-M310-L, ALTUS, 7\/8-SPEED DIRECT ATTACHMENT<\/p>"
+          }
+        },
+        "ed743e41-578c-48f0-8717-deb24016072a": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Shift Lever<\/p>",
+            "introduce_children_info": "<p>SHIMANO M315-8R, 8 Speed trigger<\/p>"
+          }
+        },
+        "e56e77a7-aa3b-4982-ab68-a9152159a149": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Tire<\/p>",
+            "introduce_children_info": "<p>26 x 4’’, puncture-resistant liner<\/p>"
+          }
+        },
+        "d1f7e778-d843-4d1a-8120-4b88aa5ac619": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Chain<\/p>",
+            "introduce_children_info": "<p>1\/2 * 3\/32 * L126 <\/p>"
+          }
+        },
+        "901d8b53-31f5-4b26-8ce2-5c37cc36979c": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Fenders<\/p>",
+            "introduce_children_info": "<p>ALLOY MATT BLACK, front and rear full coverage<\/p>"
+          }
+        },
+        "438ad719-5801-4e69-ad4d-a79147d59937": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Saddle<\/p>",
+            "introduce_children_info": "<p>Freebeat urban comfort ergonomic seat, 220mm wide<\/p>"
+          }
+        },
+        "1d608d9b-055d-4346-ac93-5531ea9c3e7e": {
+          "type": "one_nolabel_content",
+          "settings": {
+            "introduce_children_title": "<p>Pedal<\/p>",
+            "introduce_children_info": "<p>9\/16\" inner hexagon locking; BS\/CPSC reflective sheet with R\/L label<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-0",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-1",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-2",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-3",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-6",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-4",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-5",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-8",
+        "ebd94907-198b-4740-a10d-d3e786f4c290",
+        "7cb59bb5-757f-4d5c-8b00-357df6eca29f",
+        "197b0816-9239-48ee-914d-41d4071cebe4",
+        "fb89974c-6e7e-40a2-a9e3-ccc50f38f16e",
+        "71312ce5-316b-4906-af2a-1127c4b1d04c",
+        "4b36454a-c68b-4fb4-a962-aa49b59871d1",
+        "86e0fbcc-75d4-4d2f-bc30-54345813962a",
+        "1b6b91fc-00f2-4a41-9e1b-1c87d0f368a7",
+        "d9b4f183-3e8c-499f-81cf-f681bd700586",
+        "d641da5e-9296-4c21-8a3d-f535d7ea81ca",
+        "bf424abb-523f-4f0b-b590-c260e20b6fc0",
+        "de041baf-d1d3-41be-b5f9-f4c936cf3e70",
+        "98c013f6-878b-421a-9e08-68f75d8f2ddb",
+        "40f781c4-a2bb-47f1-a6d1-5fbaa3dd25d8",
+        "50f7b113-7a79-4d4d-ab6f-d590a57d7760",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-9",
+        "69433971-2bd0-499a-a257-bce725edcc8a",
+        "51d8049e-8e5a-4557-8999-1ec1da11c218",
+        "009d551e-6ad9-4ad0-a0a2-962b655d3fcc",
+        "a90415ba-33a7-47a6-9803-7d61ed31816e",
+        "f52bde05-b293-4e79-ad2d-c0eec5fed0c7",
+        "071ab757-1f8e-4e98-b05e-545ad55d7628",
+        "4fce327d-c815-4d8a-979e-8396bfe3d513",
+        "template--16294600638649__15a18c58-c1ff-4d79-a517-dfb34b072890-16893308441a0c7519-7",
+        "ca76cbd2-7847-4935-b1e4-8529bb1dfbfd",
+        "b760949d-52af-4178-ad45-4230341ebe2c",
+        "17f12f92-613d-4223-bea5-ba8fabecf135",
+        "e4a98a57-ec41-404e-a650-ff9142ac48c4",
+        "deca3ff4-0008-4ae3-91f6-810a22a6d189",
+        "9105efe8-213e-4bf9-a88e-c732b458de40",
+        "42d42586-ebbc-4af4-8899-fa01e8c579ab",
+        "ed743e41-578c-48f0-8717-deb24016072a",
+        "e56e77a7-aa3b-4982-ab68-a9152159a149",
+        "d1f7e778-d843-4d1a-8120-4b88aa5ac619",
+        "901d8b53-31f5-4b26-8ce2-5c37cc36979c",
+        "438ad719-5801-4e69-ad4d-a79147d59937",
+        "1d608d9b-055d-4346-ac93-5531ea9c3e7e"
+      ],
+      "settings": {
+        "ebike_icon_open": "shopify:\/\/shop_images\/faqopen.png",
+        "ebike_icon_close": "shopify:\/\/shop_images\/faqclose.png"
+      }
+    },
+    "9275d3cb-b586-45f6-97f3-6f3ba29be5c3": {
+      "type": "fb-writing-pdp",
+      "settings": {
+        "fb_writing_img": "shopify:\/\/shop_images\/jiantou-icon1.png",
+        "fb_writing_img2": "shopify:\/\/shop_images\/jiantou-icon2.png",
+        "fb_writing_title1": "How Do freebeat™ Electric Bikes Work?",
+        "fb_writing_desc1": "freebeat™ MorphRover ebikes operate with a pedal assist, combining the rider’s pedaling with an integrated electric motor. freebeat™ electric bike is equipped with a rechargeable battery that fuels the motor, offering an extra boost during uphill climbs or against strong winds. The central processing unit, or controller, receives input from the rider through either the throttle or the pedal-assist sensors. It then delivers the appropriate power from the battery to the motor. This power is transmitted through the drivetrain, pushing the bike forward with reduced effort from the rider, providing a unique biking experience. With regards to the battery, freebeat™ MorphRover eBike has created a sully sustainable green ride by allowing riders to charge their electric bike by pedaling indoors and participating in spin classes online from the comfort of their own home, leading to a 2-in-1 innovative experience where outdoor enthusiasts can charge bike battery without charger. The freebeat™ electric bikes deliver a smooth ride indoors and turn calories into mileage during indoor cycling rides. With just 30 minutes of stationary bike workout indoors, you'll generate green energy to cover 10 miles outside.",
+        "fb_writing_title2": "Why Choose Class 2 E-bikes For Your Outdoor Adventures?",
+        "fb_writing_desc2": "Class 2 eBikes have a maximum speed of 28 mph and are the only ebike class that supports both throttle assist and pedal assist. Therefore, class 2 ebikes are ideal for longer rides and can help you navigate steep climbs and rough terrains with ease, making them perfect for outdoor enthusiasts who want a little extra boost to their ride. freebeat™ MorphRover are the best class 2 electric bikes because they're extremely eco-friendly and produce zero emissions, making them the best alternative to gas cars or motorcycles. Besides, you won't need a license or registration when riding a class 2 ebike on public roads, sidewalks, or bike lanes.",
+        "fb_writing_title3": "What Are Fat Tire eBikes For?",
+        "fb_writing_desc3": "freebeat™ 4-inch fat tire ebikes make for the best outdoor adventure companion. Fat tires provide greater control while riding the freebeat™ MorphRover ebike. The added grip helps tackle tough terrains such as sand or rocks or navigate tricky terrains like mud and snow or even steep downhill routes, making mountain biking a safer sport overall. freebeat™ larger tires absorb shocks and vibrations, improving stability whether you're exploring off-road trails, cruising through the city, exploring various types of landscapes including beaches, mountains, and forests and any terrain in between, making it a more comfortable and enjoyable ride.",
+        "fb_writing_desc4": "",
+        "fb_writing_desc5": ""
+      }
+    },
+    "4e09e14b-d358-4649-bb30-3785e043f34d": {
+      "type": "fb-stage-description-new",
+      "settings": {
+        "fb_stage_backgroundImage": "",
+        "fb_stage_backgroundcolor": "#ffffff",
+        "fb_stage_desc": "<p>1) Monthly payment for freebeat bike is based on 36 months at 0% APR and $0 down. Financing does not include the cost of freebeat all-access membership (approximately $39\/mo). Subject to credit check and approval. In cases of partial approval, a down payment may be required. Offer subject to change at any time. Previous purchases are ineligible. See <a href=\"https:\/\/www.klarna.com\/us\/what-is-klarna\/\" target=\"_blank\">What is Klarna<\/a> for details.freebeat membership ($39\/mo) required to access full content on freebeat bikes.<\/p>",
+        "fb_stage_color": "#000000",
+        "fb_stage_desc_seconds": "<p>2) freebeat membership ($39\/mo) required to access full content on freebeat bikes.<\/p>",
+        "fb_stage_color_seconds": "#000000",
+        "fb_stage_desc_third": "<p>3) Actual green milages earned vary depending on riding intensity, temperature, road conditions, rider's weight, etc.<\/p>",
+        "fb_stage_color_third": "#000000",
+        "fb_stage_desc_four": "<p>4) Save on electricity bills with energy regeneration: five 30-minute workouts per week for 5 years.<\/p>",
+        "fb_stage_desc_five": "<p>* Unlockable to 28 MPH<\/p>",
+        "fb_stage_desc_six": ""
+      }
+    },
+    "cbcef7d0-0997-42f2-9e96-ebe9f5e4bae4": {
+      "type": "fb-dealmatch-guarantee",
+      "settings": {
+        "fb_dealmatch_guarantee_heading": "LOW PRICE GUARANTEE",
+        "fb_dealmatch_guarantee_desc": "<p>We've launched our Low Price Guarantee.<\/p><p>Starting 11\/1\/23, you can place your order now with confidence! You'll be getting all freebeat bikes at the season's lowest price - guaranteed.<\/p>",
+        "fb_dealmatch_guarantee_img": "shopify:\/\/shop_images\/BlackFriday_LowPriceGuarantee.png",
+        "fb_dealmatch_guarantee_url_btn": "LEARN MORE",
+        "fb_dealmatch_guarantee_url": "shopify:\/\/pages\/freebeat-black-friday-cyber-monday-low-price-guarantee"
+      }
+    }
+  },
+  "order": [
+    "6a36fcd0-6343-4ca8-ab40-b0959a582e46",
+    "e2dc268d-083c-41cf-a3d8-280e7e55d406",
+    "63d0a684-280c-429f-935c-caed4d851b16",
+    "571f4a7a-a6a7-47eb-b329-b6d685527941",
+    "1360bff3-b5e5-40d9-975b-a5d128e3b8f0",
+    "b26601ac-d3f7-4b34-97c2-f588ce2df31f",
+    "7118ef34-44be-42c4-b65f-b864e581d186",
+    "99e960f1-096c-4d00-9dfd-2a0c72c2016a",
+    "7769125f-be1e-4dc6-9b49-057e8977add5",
+    "2b81c838-178c-4e0d-8633-bc853ac74659",
+    "5da53189-be6f-4822-8f92-b4072ff2cf27",
+    "7a5b43da-7e00-44e3-bc56-a7a044f111d4",
+    "15a18c58-c1ff-4d79-a517-dfb34b072890",
+    "9275d3cb-b586-45f6-97f3-6f3ba29be5c3",
+    "4e09e14b-d358-4649-bb30-3785e043f34d",
+    "cbcef7d0-0997-42f2-9e96-ebe9f5e4bae4"
+  ]
+}

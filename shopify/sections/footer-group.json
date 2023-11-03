@@ -1,0 +1,66 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "4644809f-85d6-4d16-8c8a-8542e2b721d7": {
+          "type": "links",
+          "settings": {
+            "menu": "products"
+          }
+        },
+        "1ec8b816-7cbc-4880-97c4-e581380698a4": {
+          "type": "links",
+          "settings": {
+            "menu": "about"
+          }
+        },
+        "d4f16716-87d1-4e76-832b-81ea83423a40": {
+          "type": "links",
+          "settings": {
+            "menu": "support"
+          }
+        },
+        "dbc989e7-2bfb-45ca-8f27-89dd447cc053": {
+          "type": "links",
+          "settings": {
+            "menu": "faqs"
+          }
+        },
+        "5ae69148-44d4-4d5c-b629-f6755ba388fd": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Newsletter",
+            "content": "<p>Sign up to get the latest!<\/p>"
+          }
+        },
+        "6697307a-73f2-413c-b354-405e0d4e1e95": {
+          "type": "text",
+          "settings": {
+            "title": "CONTACT US",
+            "content": "<p><\/p><p><strong>Email: <\/strong><a href=\"mailto:customerservice@freebeatfit.com\" target=\"_blank\" title=\"customerservice@freebeatfit.com\">customerservice@freebeatfit.com<\/a><\/p><p><strong>Phone: <\/strong><a href=\"tel:+1-833-534-8418\" target=\"_blank\" title=\"tel:+1 833-534-8418\">+1 833-534-8418 <\/a> <\/p><p>11:00 AM - 5:00 PM PST, Monday to Friday<\/p><p><strong>Become a Sales Partner:<\/strong> <a href=\"mailto:sales@freebeatfit.com\" title=\"mailto:sales@freebeatfit.com\">sales@freebeatfit.com<\/a><\/p><p><strong>Company Name: <\/strong>Stochastic Technology LLC; Random Walk Limited<\/p><p><strong>Company Address: <\/strong>1460 Broadway, New York, NY 10036, USA<\/p><p><\/p>",
+            "show_social_media": true
+          }
+        }
+      },
+      "block_order": [
+        "4644809f-85d6-4d16-8c8a-8542e2b721d7",
+        "1ec8b816-7cbc-4880-97c4-e581380698a4",
+        "d4f16716-87d1-4e76-832b-81ea83423a40",
+        "dbc989e7-2bfb-45ca-8f27-89dd447cc053",
+        "5ae69148-44d4-4d5c-b629-f6755ba388fd",
+        "6697307a-73f2-413c-b354-405e0d4e1e95"
+      ],
+      "settings": {
+        "show_payment_methods": true,
+        "show_currency_selector": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

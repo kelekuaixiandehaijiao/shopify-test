@@ -1,0 +1,187 @@
+{%- assign Social = section.blocks | where: 'type', 'Social' | first -%}
+<div
+  class="fb-home-social home-community w-ful mx-auto px-5 pt-10 fb-sm:px-10 fb-sm:pt-15 fb-md:px-0 fb-md:pt-[80px]"
+  id="section-{{ section.id }}"
+>
+  <div class="mx-auto flex w-full flex-col fb-sm:flex-row fb-sm:items-end fb-sm:justify-between fb-md:max-w-75r">
+    <div
+      class="w-full fb-sm:w-[584px] fb-md:w-[700px]"
+    >
+      <div
+        class="
+          w-full text-left text-h-20 font-bold
+          text-121212
+          fb-sm:text-20
+          fb-md:text-32
+        "
+      >
+        {{ section.settings.socialTitle }}
+      </div>
+      <div
+        class="
+          fb-text-a w-full pt-[16px]
+          text-h-12 font-normal
+          fb-sm:text-12
+          fb-md:pt-6 fb-md:text-16
+        "
+      >
+        {%- if section.settings.subTitle2 != blank -%}
+          <div class="home-social-subtitle font-bold text-121212 text-14 fb-md:text-20 mb-3">
+            <h3>{{ section.settings.subTitle2 }}</h3>
+          </div>
+        {%- endif -%}
+        {{ section.settings.socialDes2 }}
+      </div>
+    </div>
+    <div
+      class="
+        w-full
+        pt-6
+        fb-sm:flex-1
+        fb-sm:pt-0
+      "
+    >
+      <div
+        class="
+          flex w-full  items-center
+          justify-start space-x-[20px]
+          fb-sm:justify-end
+           fb-md:space-x-[40px]
+        "
+      >
+        {%- for block in section.blocks -%}
+          <a
+            href="{{ block.settings.social_url}}"
+            class="
+              block
+              h-5
+              fb-sm:h-6
+              fb-md:h-[28px]
+            "
+            target="_blank"
+          >
+            <img
+              src="{{  block.settings.social_img | img_url: '' }}"
+              alt="{{  block.settings.social_img.alt | escape }}"
+              loading="lazy"
+              class="swiperImg h-full w-auto object-cover object-center"
+            >
+          </a>
+        {%- endfor -%}
+      </div>
+      <div
+        class="
+          w-full  pt-2
+          text-left text-10 text-666666
+          fb-sm:text-right
+          fb-sm:text-[10px]
+          fb-md:pt-[16px] fb-md:text-[14px]
+        "
+      >
+        {{ section.settings.tips | default: '*Click on icon to check us out' }}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbHomeSocial",
+  "presets": [
+    {
+      "name": "fb-home-social",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "socialColor",
+      "label": "Background"
+    },
+    {
+      "type": "color",
+      "id": "textColor",
+      "label": "Text Color",
+      "default": "#1c1b1b"
+    },
+    {
+      "type": "color",
+      "id": "tipsColor",
+      "label": "Tips Color",
+      "default": "#888888"
+    },
+    {
+      "type": "color",
+      "id": "linkColor",
+      "label": "Link Color",
+      "default": "#891af5"
+    },
+    {
+      "type": "text",
+      "id": "litBike-color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "litBike-color-mb",
+      "label": "Background Color Mb"
+    },
+    {
+      "type": "text",
+      "id": "socialTitle",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subTitle1",
+      "label": "SubTitle 1"
+    },
+    {
+      "type": "richtext",
+      "id": "socialDes1",
+      "label": "Description 1"
+    },
+    {
+      "type": "text",
+      "id": "subTitle2",
+      "label": "SubTitle 2"
+    },
+    {
+      "type": "richtext",
+      "id": "socialDes2",
+      "label": "Description 2"
+    },
+    {
+      "type": "text",
+      "id": "tips",
+      "label": "Tips"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Social",
+      "name": "Social Share",
+      "settings": [
+        {
+          "type": "url",
+          "id": "social_url",
+          "label": "Social URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "social_img",
+          "label": "Social Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .fb-text-a a {
+    color: #00cc45;
+    font-weight: 700;
+    text-decoration-line: underline;
+  }
+</style>

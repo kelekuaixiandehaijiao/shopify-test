@@ -1,0 +1,295 @@
+{{ 'custom-style.css' | asset_url | stylesheet_tag }}
+{{ 'payment-info.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-js.js' | asset_url }}" defer></script>
+<script src="{{ 'payment-info.js' | asset_url }}" defer></script>
+
+<div id="section-{{ section.id }}" class="fb-membership-package">
+  <!-- 会员订阅 -->
+  <div class="unsubscribeConfirmation-showhide">
+    <!-- 立减优惠弹窗 -->
+    <div id="subscription-box">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/1_2x_1_2x_327c155d-10fd-4ef5-92a6-49800941bf0f.png?v=1690269340"
+        alt="freebeat membership card"
+        class="membership-card"
+        id="card-grey"
+      >
+      <div class="u-title">Choose the plan that's right for you</div>
+      <div class="content-box">
+        <div class="left-box-sub common-box" id="thirtyNinePointNine">
+          <div class="top-class">most popular choice</div>
+          <div class="box-tit">Family Plan</div>
+          <!-- second -->
+          <div class="second-class">
+            Worth up to <span>$199.90</span> for only <span>$39</span> per month! This Plan offers the best bang for
+            your buck.
+          </div>
+          <!-- three -->
+          <div class="third-des">
+            <div class="top-des">
+              <span>$39</span>
+              <div class="off-box">80% OFF</div>
+            </div>
+            <div class="bot-des">/mo billed monthly</div>
+          </div>
+          <!-- four -->
+          <div class="four-box">
+            <div class="four-tit">START 45-DAY TRIAL</div>
+            <!-- <div class="four-des">most popular choice</div> -->
+          </div>
+          <!-- five 1 -->
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des">
+                Benefits of <span>10</span> accounts worth up to <span>$199.9</span>
+                <img
+                  onmouseover="showTips(this)"
+                  onmouseout="hideTips()"
+                  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                  alt="tips logo"
+                  class="five-tips"
+                >
+              </div>
+            </div>
+            <div class="m-tips-box">Our $39 Family Plan, equivalent to 10 accounts × $19.99 Individual Plan.</div>
+          </div>
+          <!-- 2 -->
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des">Up to <span>10</span> accounts access</div>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+              alt="done logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des">Access to all contents and features</div>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des">
+                Connect with your family
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                  alt="tips logo"
+                  class="five-tips"
+                  onmouseover="showTips(this)"
+                  onmouseout="hideTips()"
+                >
+              </div>
+            </div>
+            <div class="tips-box-one">
+              You can challenge family for the best score. Climb up the leaderboard to make the most of your home
+              fitness adventure.
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des">
+                Performance tracking for whole family
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                  alt="tips logo"
+                  class="five-tips"
+                  onmouseover="showTips(this)"
+                  onmouseout="hideTips()"
+                >
+              </div>
+            </div>
+            <div class="m-tips-box m-tips-box-last">
+              You can enjoy the benefit of tracking the performance of all your family members. Stay on top of
+              everyone's progress and achievements with ease.
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des">
+                Personalized training algorithm for whole family
+                <img
+                  onmouseover="showTips(this)"
+                  onmouseout="hideTips()"
+                  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                  alt="tips logo"
+                  class="five-tips"
+                >
+              </div>
+            </div>
+            <div class="m-tips-box m-tips-box-last">
+              Evaluates each rider's performance and applies the perfect balance of a challenging yet fun intensity to
+              push every rider at the right speed, level, and time.
+            </div>
+          </div>
+        </div>
+        <div class="right-box-sub common-box" id="eighteenPointEight">
+          <div class="box-tit u-tit-color">Individual Plan</div>
+          <!-- second -->
+          <div class="second-class u-tit-color">
+            This plan provides you the access to all our features, ensuring you can enjoy the full experience.
+          </div>
+          <!-- three -->
+          <div class="third-des">
+            <div class="top-des ">
+              <span class="price-val">$19.99</span>
+            </div>
+            <div class="bot-des bott-des">/mo billed monthly</div>
+          </div>
+          <!-- four -->
+          <div class="four-box bg">
+            <div class="four-tit tit">SELECT PLAN</div>
+          </div>
+          <!-- five -->
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des comm">Benefits of 10 accounts worth up to $199.9</div>
+            </div>
+          </div>
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_1_aa312eee-bb00-47f3-9d48-bea02f543d40.png?v=1689927367"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des commo">
+                Only
+                <span
+                  style="color: rgba(136, 136, 136, 1);font-weight: bold;"
+                  >1</span
+                >
+                account access
+                <img
+                  onmouseover="showTips(this)"
+                  onmouseout="hideTips()"
+                  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_1_daf897fb-1fa0-47a4-84d5-9617d1c8da74.png?v=1689927367"
+                  alt="tips logo"
+                  class="five-tips"
+                >
+              </div>
+            </div>
+            <div class="tips-box-one">
+              This plan includes only 1 user login. When you're ready to have multiple users, upgrade to the Family
+              Plan.
+            </div>
+          </div>
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_1_aa312eee-bb00-47f3-9d48-bea02f543d40.png?v=1689927367"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des commo">Access to all contents and features</div>
+            </div>
+          </div>
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des comm">Connect with your family</div>
+            </div>
+          </div>
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des comm">Performance tracking for whole family</div>
+            </div>
+          </div>
+          <div class="five-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+              alt="check logo"
+              class="five-done"
+            >
+            <div class="five-right">
+              <div class="five-des comm">Personalized training algorithm for whole family</div>
+            </div>
+          </div>
+        </div>
+        <span class="loading" id="SubscribeLoading">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="40px"
+            height="40px"
+            viewBox="0 0 50 50"
+            style="enable-background:new 0 0 50 50"
+            xml:space="preserve"
+          >
+            <path fill="#02c0D9"
+                d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+                transform="rotate(275.098 25 25)">
+                <animateTransform attributeType="xml" attributeName="transform"
+                    type="rotate" from="0 25 25" to="360 25 25" dur="0.6s"
+                    repeatCount="indefinite">
+                </animateTransform>
+            </path>
+          </svg>
+        </span>
+        <div class="content-box-mb"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .loading svg {
+    left: 46%;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fb Membership package",
+  "presets": [
+    {
+      "name": "fb-membership-package",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,202 @@
+{%- assign for_drawer = false -%}
+{% capture css_Cart__ItemList %} w-full{% endcapture %}
+{% capture css_cart_item %} w-full mb-6 flex items-start justify-between space-x-[16px] fb-md:mb-10 fb-md:space-x-[20px]{% endcapture %}
+{% capture css_CartItem__Info %} flex-1 flex-shrink-0{% endcapture %}
+{%- capture css_img_left -%} w-20 h-20 text-left fb-md:w-[120px] fb-md:h-30 flex-shrink-0{%- endcapture -%}
+{% capture css_price_sale %} text-121212 font-bold text-12 fb-md:text-16{% endcapture %}
+{% capture css_price_sale_gray %}  text-12 text-999999 line-through font-normal ml-2 fb-md:ml-3{% endcapture %}
+{% capture css_CartItem__Discount %} align-middle bg-e6e6e6 rounded-md	 py-[6px] px-[8px] text-[10px] leading-[14px] font-bold inline-block last:mr-0 fb-md:text-[12px] fb-md:px-[12px]{% endcapture %}
+{% capture css_CartItem__Discount_img %} inline-block mr-1 w-[10px] mt-[-1px] h-[10px] fb-md:mt-[-2px] fb-md:mr-[6px] fb-md:w-[12px] fb-md:h-[12px] fb-md:mt-[-2px]{% endcapture %}
+{% capture css_cartitem__propertylist %} mb-[6px] w-full fb-md:mb-[8px]{% endcapture %}
+{% capture css_cart_other_desc %} text-666666 text-10 font-normal fb-md:text-14{% endcapture %}
+{% capture css_CartItem__PlanAllocation %} mb-[6px] w-full fb-md:mb-[8px]{% endcapture %}
+{%- capture css_CartItem__Actions -%} fb-flex-x-between mt-3 fb-md:mt-4{%- endcapture -%}
+{% capture css_CartItem__Meta %} mt-2 w-full fb-md:mt-2{% endcapture %}
+{% capture css_cart_remove %} underline text-999999 text-10 font-medium cursor-pointer fb-md:text-12{% endcapture %}
+{% capture pc_table_cart2 %}{% endcapture %}
+{% capture pc_table_cart3 %}{% endcapture %}
+{%- if section.id == 'mini-cart' or section.id == null -%}
+  {%- assign for_drawer = true -%}
+{%- else -%}
+  {% capture css_Cart__ItemList %} w-full fb-sm:border-b fb-sm:border-cccccc{% endcapture %}
+  {% capture css_cart_item %}w-full mb-6 flex items-start justify-between space-x-[16px] fb-sm:space-x-0 fb-sm:items-center fb-md:mb-[32px]{% endcapture %}
+  {%- capture css_CartItem__Actions -%}fb-flex-x-between mt-3 fb-sm:mt-0 fb-sm:w-17{%- endcapture -%}
+  {% capture css_CartItem__Meta %}mt-[6px] w-full fb-md:mt-2{% endcapture %}
+  {% capture css_CartItem__Info %} flex-1 flex-shrink-0 fb-sm:pl-[16px] fb-md:pl-[20px] fb-sm:min-h-20 fb-md:min-h-30{% endcapture %}
+  {% capture css_price_sale %} text-121212 font-bold text-12 fb-sm:text-16{% endcapture %}
+  {% capture css_price_sale_gray %} text-12 text-999999 line-through font-normal ml-2 fb-sm:text-16 fb-sm:ml-3 fb-md:ml-4 fb-md:text-20{% endcapture %}
+  {% capture pc_table_cart2 %} fb-sm:w-17 fb-md:w-[96px]{% endcapture %}
+  {% capture pc_table_cart3 %} fb-sm:w-[154px] fb-md:w-[309px]{% endcapture %}
+  {% capture css_CartItem__PlanAllocation %} mb-[6px] w-full fb-md:mb-2.5{% endcapture %}
+  {% capture css_cart_other_desc %} text-666666 text-10 font-normal fb-sm:my-[6px] fb-md:my-[8px] fb-md:text-12 fb-md:leading-4{% endcapture %}
+  {% capture css_cart_remove %} underline text-999999 text-10 font-medium cursor-pointer fb-md:text-12 fb-sm:mt-3 fb-md:mt-4 fb-sm:block fb-sm:w-full{% endcapture %}
+{%- endif -%}
+<div class="Cart__ItemList{{css_Cart__ItemList}}">
+  {%- unless for_drawer -%}
+    {% capture css_table_header %}text-[12px] text-999999 font-normal fb-sm:text-16{% endcapture %}
+    <div class="Cart__Head hidden w-full fb-sm:flex items-start justify-between h-[28px] border-b border-cccccc mb-6 fb-md:h-10 fb-md:mb-[32px]">
+      <span class="Cart__HeadItem {{ css_table_header }} text-left">
+        Product
+      </span>
+      <span class="Cart__HeadItem {{ css_table_header }} flex-1">
+      </span>
+      <span class="Cart__HeadItem {{ css_table_header }} text-center {{ pc_table_cart2 }}">
+        Quantity
+      </span>
+      <span class="Cart__HeadItem {{ css_table_header }} text-right {{ pc_table_cart3 }}">
+        Total
+      </span>
+    </div>
+  {%- endunless -%}
+  {%- for line_item in cart.items -%}
+    {%- if for_drawer -%} 
+      <div class="CartItemWrapper overflow-hidden w-full">
+    {%- endif -%}
+      {% comment %} Extend - Hide shipping protection in cart {% endcomment %}
+        <div
+          class="CartItem {{css_cart_item}}"
+          {% if line_item.title contains 'Extend Shipping Protection Plan' %}
+            style="display: none;"
+          {% endif %}
+          >
+          {% comment %} Extend - End Extend code {% endcomment %}
+          <div class="CartItem__ImageWrapper {{ css_img_left }}">
+            <img
+              class="CartItem__Image w-full h-auto object-fit"
+              src="{{ line_item.image | img_url: '240x' }}"
+              alt="{{ line_item.image.alt | escape }}"
+            >
+          </div>
+          <div class="CartItem__Info {{ css_CartItem__Info }}">
+            <h2 class="CartItem__Title w-ful {{css_price_sale}}">
+              <a href="{{ line_item.url }}" class="{{css_price_sale}}">{{ line_item.product.title }} </a>
+            </h2>
+            <div class="CartItem__Meta Heading {{css_CartItem__Meta}}">
+              {%- unless line_item.product.has_only_default_variant -%}
+                <p class="CartItem__Variant {{css_cart_other_desc}}">
+                  {{ line_item.variant.title }}
+                </p>
+              {%- endunless -%}
+              {% comment %} {%- if line_item.selling_plan_allocation -%}
+                <p class="CartItem__PlanAllocation {{css_price_sale}} {{css_CartItem__PlanAllocation}}">
+                  {{ line_item.selling_plan_allocation.selling_plan.name }}
+                </p>
+              {%- endif -%} {% endcomment %}
+              {%- if line_item.properties != empty -%}
+                <ul class="CartItem__PropertyList {{css_cartitem__propertylist}}">
+                  {%- for property in line_item.properties -%}
+                    {%- assign first_character_in_key = property.first | truncate: 1, '' -%}
+                    {%- if property.last == blank or first_character_in_key == '_' -%}
+                      {%- continue -%}
+                    {%- endif -%}
+                    <li class="CartItem__Property {{css_cart_other_desc}} w-full">{{ property.first }}: {{ property.last }}</li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+              <div class="CartItem__PriceList">
+                {%- if line_item.original_price != line_item.final_price -%}
+                  <span class="CartItem__Price Price Price--highlight--cart {{ css_price_sale }}">
+                    {{ line_item.final_price | money_without_trailing_zeros }}
+                  </span>
+                  <span class="CartItem__OriginalPrice Price Price--compareAt Price--compareAt-cart {{ css_price_sale_gray }}">
+                    {{ line_item.original_price | money_without_trailing_zeros }}
+                  </span>
+                {%- else -%}
+                  <span class="CartItem__Price Price Price--highlight--cart {{ css_price_sale }}">
+                    {{ line_item.final_price | money_without_trailing_zeros }}
+                  </span>
+                {%- endif -%}
+                {%- if line_item.line_level_discount_allocations != blank -%}
+                  <ul class="CartItem__DiscountList mt-[6px] fb-md:mt-2">
+                    {%- for discount_allocation in line_item.line_level_discount_allocations -%}
+                      <li class="CartItem__Discount {{css_CartItem__Discount}}">
+                        <img class="{{ css_CartItem__Discount_img }}" alt="discount logo" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/img-zhekou.png?v=1697685033" loading="lazy">
+                        <span>{{- discount_allocation.discount_application.title -}}</span>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </div>
+              {% comment %}
+                {%- if line_item.unit_price_measurement -%}
+                  <div class="CartItem__UnitPriceMeasurement">
+                    <div class="UnitPriceMeasurement Heading Text--subdued">
+                      <span class="UnitPriceMeasurement__Price">{{ line_item.unit_price | money_without_trailing_zeros }}
+                      </span>
+                      <span class="UnitPriceMeasurement__Separator">/
+                      </span>
+
+                      {%- if line_item.unit_price_measurement.reference_value != 1 -%}
+                        <span class="UnitPriceMeasurement__ReferenceValue">{{ line_item.unit_price_measurement.reference_value }}
+                        </span>
+                      {%- endif -%}
+
+                      <span class="UnitPriceMeasurement__ReferenceUnit">{{ line_item.unit_price_measurement.reference_unit }}
+                      </span>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {% endcomment %}
+            </div>
+            {%- capture item_actions -%}
+                <div class="CartItem__Actions {{ css_CartItem__Actions}} {{ pc_table_cart2 }}">
+                  <div class="CartItem__QuantitySelector w-17 h-[28px] rounded-md	 border border-e6e6e6 fb-md:w-[96px] fb-md:h-8">
+                    <div class="QuantitySelector w-full h-full flex items-center justify-around px-[8px] fb-md:px-[12px]">
+                      {%- assign quantity_minus_one = line_item.quantity | minus: 1 -%}
+                      <a class="QuantitySelector__Button Link Link--primary w-[10px] inline-block flex-shrink-0 fb-md:w-[12px]" title="Set quantity to {{quantity_minus_one }}" href="{{ routes.cart_change_url }}?quantity={{ quantity_minus_one }}&line={{ forloop.index }}" data-quantity="{{ quantity_minus_one }}" data-line="{{ forloop.index }}" data-action="update-item-quantity">
+                          <svg class="w-full h-auto" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="&#230;&#144;&#156;&#231;&#180;&#162;">
+                            <path id="Line 10" d="M1.25 5H8.75" stroke="#666666" stroke-width="0.833334" stroke-linecap="round"/>
+                            </g>
+                          </svg>
+                      </a>
+                      <input  class="QuantitySelector__CurrentQuantity w-5 fb-md:w-6 border-none text-12 font-bold text-center flex-shrink-0 fb-md:text-16" type="text" name="updates[]" id="updates_{{ line_item.key }}" pattern="[0-9]*" data-line="{{ forloop.index }}" value="{{ line_item.quantity }}">
+                      {%- assign quantity_plus_one = line_item.quantity | plus: 1 -%}
+                      <a class="QuantitySelector__Button Link Link--primary w-[10px] inline-block  flex-shrink-0  fb-md:w-[12px]" title="Set quantity to {{quantity_plus_one }}" href="{{ routes.cart_change_url }}?quantity={{ quantity_plus_one }}&line={{ forloop.index }}" data-quantity="{{ quantity_plus_one }}" data-line="{{ forloop.index }}" data-action="update-item-quantity">
+                          <svg  class="w-full h-full" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="&#230;&#144;&#156;&#231;&#180;&#162;">
+                            <path id="Line 10" d="M1.25 5H8.75" stroke="#666666" stroke-width="0.833334" stroke-linecap="round"/>
+                            <path id="Line 11" d="M5 1.25L5 8.75" stroke="#666666" stroke-width="0.833334" stroke-linecap="round"/>
+                            </g>
+                          </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <a href="{{ routes.cart_change_url }}?quantity=0&line={{ forloop.index }}" class="CartItem__Remove{{ css_cart_remove }}" data-quantity="0" data-line="{{ forloop.index }}" data-action="remove-item">
+                    Remove
+                  </a>
+                </div>
+            {%- endcapture -%}
+            {{ item_actions }}
+          </div>
+          {%- unless for_drawer -%}
+            {% comment %} pc cartpage 页面特有 {% endcomment %}
+            {{ item_actions }}
+            <div class="CartItem__LinePriceList {{ pc_table_cart3 }}" style="text-align: right">
+              {%- if line_item.original_line_price != line_item.final_line_price -%}
+                <span class="CartItem__Price Price {{ css_price_sale }}">
+                  {{- line_item.final_line_price | money_without_trailing_zeros }}
+                </span>
+                <span class="CartItem__Price Price Price--compareAt Price--compareAt-cart {{ css_price_sale_gray }}">
+                  {{- line_item.original_line_price | money_without_trailing_zeros }}
+                </span>
+              {%- else -%}
+                <span class="CartItem__Price Price {{ css_price_sale }}">
+                  {{- line_item.final_line_price | money_without_trailing_zeros }}
+                </span>
+              {%- endif -%}
+            </div>
+          {%- endunless -%}
+        </div>
+    {%- if for_drawer -%}
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+<style>
+  .QuantitySelector__Button svg {
+    width: 100%;
+  }
+  .CartItem__DiscountList svg {
+  }
+</style>

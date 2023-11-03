@@ -1,0 +1,185 @@
+{
+  "sections": {
+    "22529741-d4cb-4dda-becf-5a3953f6c5ef": {
+      "type": "fb-affiliate-program-banner",
+      "blocks": {
+        "5ade742e-7dac-4d7a-a24a-232b062318db": {
+          "type": "ApplyNowBlock",
+          "settings": {
+            "alliance_entrance_icon_pc": "shopify:\/\/shop_images\/Mask_group_2x_1696f259-540d-436c-a2b2-2da5c3b84a07.png",
+            "alliance_entrance_icon_mobile": "shopify:\/\/shop_images\/Mask_group_2x_2.png",
+            "alliance_entrance_button": "APPLY NOW",
+            "alliance_entrance_url": "http:\/\/app.impact.com\/campaign-campaign-info-v2\/freebeat.brand"
+          }
+        },
+        "fb7c4f3e-1701-4825-b73e-6aee2515137e": {
+          "type": "ApplyNowBlock",
+          "settings": {
+            "alliance_entrance_icon_pc": "shopify:\/\/shop_images\/shareasale_pc.png",
+            "alliance_entrance_icon_mobile": "shopify:\/\/shop_images\/shareasale_mobile.png",
+            "alliance_entrance_button": "APPLY NOW",
+            "alliance_entrance_url": "https:\/\/www.shareasale.com\/shareasale.cfm?merchantID=132585"
+          }
+        },
+        "8034aa25-e12d-435a-b5b1-4bfcad3e2dc4": {
+          "type": "ApplyNowBlock",
+          "settings": {
+            "alliance_entrance_icon_pc": "shopify:\/\/shop_images\/pc_2x_08c25500-b067-45e2-9c05-af867c2f6158.png",
+            "alliance_entrance_icon_mobile": "shopify:\/\/shop_images\/m_2x_076ff52f-1b34-4808-b9fd-838ec80fa5e2.png",
+            "alliance_entrance_button": "APPLY NOW",
+            "alliance_entrance_url": "https:\/\/www.avantlink.com\/programs\/26897\/"
+          }
+        }
+      },
+      "block_order": [
+        "5ade742e-7dac-4d7a-a24a-232b062318db",
+        "fb7c4f3e-1701-4825-b73e-6aee2515137e",
+        "8034aa25-e12d-435a-b5b1-4bfcad3e2dc4"
+      ],
+      "settings": {
+        "banner_img_mobile": "shopify:\/\/shop_images\/Normal-banner-Mobile_2x_a68f3cdd-5526-4d6a-9c8a-bf33945f72fc.png",
+        "banner_headline": "<p>JOIN THE freebeat<\/p><p>AFFILIATE PROGRAM<\/p>",
+        "banner_sub_headline": "Enjoy up to 8% commission on every validated sale"
+      }
+    },
+    "d040af1d-b5f2-401c-98e9-1349b94549fa": {
+      "type": "fb-affiliate-program-simple",
+      "settings": {
+        "simple_title": "We Keep Things Simple",
+        "simple_desc": "<p>The freebeat Affiliate Program is stripped down to the essentials and turns your passion for exercise bikes into hard-earned cash seamlessly.<\/p>",
+        "apply_title": "Who Can Apply",
+        "apply_desc_pc": "<p>· Publishers  &nbsp  · Bicycle Forums &nbsp   · Social Media Sites   &nbsp · Cycling Hobby Sites &nbsp   · Product Review Sites  &nbsp  · And more…<\/p>",
+        "apply_desc_moble": "<p>· Publishers<br\/>· Bicycle Forums<br\/>· Social Media Sites<br\/>· Cycling Hobby Sites<br\/>· Product Review Sites<br\/>· And more…<\/p>"
+      }
+    },
+    "cdec9667-037c-40df-a604-83a218692b90": {
+      "type": "fb-affiliate-program-why",
+      "blocks": {
+        "d1b38f9d-4df2-4722-b24f-ec0c9034d037": {
+          "type": "AffiliateProgramBlock",
+          "settings": {
+            "affiliate_program_icon_pc": "shopify:\/\/shop_images\/1_pc.png",
+            "affiliate_program_icon_mobile": "shopify:\/\/shop_images\/1_mobile.png",
+            "affiliate_program_title": "Great Commission",
+            "affiliate_program_desc": "<p>Earn a <strong>4%-8% <\/strong>commission from all sales driven by you.<\/p>"
+          }
+        },
+        "2757fa64-674a-4134-8b2d-8ab14ce26cf6": {
+          "type": "AffiliateProgramBlock",
+          "settings": {
+            "affiliate_program_icon_pc": "shopify:\/\/shop_images\/2_pc.png",
+            "affiliate_program_icon_mobile": "shopify:\/\/shop_images\/2_mobile.png",
+            "affiliate_program_title": "Long Cookie Period",
+            "affiliate_program_desc": "<p>Enjoy a <strong>30-day<\/strong> cookie period and never miss earnings.<\/p>"
+          }
+        },
+        "9ba7ff0c-7180-4cdb-9f98-27fb9fa5efe3": {
+          "type": "AffiliateProgramBlock",
+          "settings": {
+            "affiliate_program_icon_pc": "shopify:\/\/shop_images\/3_pc.png",
+            "affiliate_program_icon_mobile": "shopify:\/\/shop_images\/3_mobile.png",
+            "affiliate_program_title": "Simple Process",
+            "affiliate_program_desc": "<p>Fill in our application form and start right away.<\/p>"
+          }
+        },
+        "a18a7c17-edd9-4ba6-96e3-38e68f105fb9": {
+          "type": "AffiliateProgramBlock",
+          "settings": {
+            "affiliate_program_icon_pc": "shopify:\/\/shop_images\/4_pc.png",
+            "affiliate_program_icon_mobile": "shopify:\/\/shop_images\/4_mobile.png",
+            "affiliate_program_title": "Free of Charge",
+            "affiliate_program_desc": "<p>Membership is totally free, with no entry fee.<\/p>"
+          }
+        },
+        "3ca1c83e-b681-46f7-84db-237ae93ea755": {
+          "type": "AffiliateProgramBlock",
+          "settings": {
+            "affiliate_program_icon_pc": "shopify:\/\/shop_images\/5_pc.png",
+            "affiliate_program_icon_mobile": "shopify:\/\/shop_images\/5_mobile.png",
+            "affiliate_program_title": "Own Your Account",
+            "affiliate_program_desc": "<p>Watch your account balance grow in real-time.<\/p>"
+          }
+        },
+        "832cbc8e-a7b5-426c-a62e-28d7ade9ed65": {
+          "type": "AffiliateProgramBlock",
+          "settings": {
+            "affiliate_program_icon_pc": "shopify:\/\/shop_images\/6_pc.png",
+            "affiliate_program_icon_mobile": "shopify:\/\/shop_images\/6_mobile.png",
+            "affiliate_program_title": "Promotional Material",
+            "affiliate_program_desc": "<p>Banners, videos, and more, all provided by freebeat.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d1b38f9d-4df2-4722-b24f-ec0c9034d037",
+        "2757fa64-674a-4134-8b2d-8ab14ce26cf6",
+        "9ba7ff0c-7180-4cdb-9f98-27fb9fa5efe3",
+        "a18a7c17-edd9-4ba6-96e3-38e68f105fb9",
+        "3ca1c83e-b681-46f7-84db-237ae93ea755",
+        "832cbc8e-a7b5-426c-a62e-28d7ade9ed65"
+      ],
+      "settings": {
+        "why_headline": "Why the freebeat Affiliate Program?"
+      }
+    },
+    "a4a82c15-cc77-4890-a6db-13d1c2bb3b43": {
+      "type": "fb-affiliate-program-started",
+      "blocks": {
+        "2f18bfda-4dbb-46a9-bb08-8082cf5a801b": {
+          "type": "StartedBlock",
+          "settings": {
+            "started_icon_pc": "shopify:\/\/shop_images\/started1_pc.png",
+            "started_icon_mobile": "shopify:\/\/shop_images\/started_1_mobile.png",
+            "started_desc": "<p><strong>Get started <\/strong>by filling out the sign-up form.<\/p>"
+          }
+        },
+        "36f1a050-f3ff-45e4-89db-f4a891c35136": {
+          "type": "StartedBlock",
+          "settings": {
+            "started_icon_pc": "shopify:\/\/shop_images\/started2_pc.png",
+            "started_icon_mobile": "shopify:\/\/shop_images\/started_2_mobile.png",
+            "started_desc": "<p><strong>Drive traffic <\/strong>to our website, utilizing our promotional materials.<\/p>"
+          }
+        },
+        "2e20eb03-53fe-4854-831b-20345015a725": {
+          "type": "StartedBlock",
+          "settings": {
+            "started_icon_pc": "shopify:\/\/shop_images\/started3_pc.png",
+            "started_icon_mobile": "shopify:\/\/shop_images\/started_3_mobile.png",
+            "started_desc": "<p><strong>Earn commission <\/strong>when customers purchase within the cookie period.<\/p>"
+          }
+        },
+        "ae6c2ccc-5b27-4d43-96dc-6fc393bf0b26": {
+          "type": "StartedBlock",
+          "settings": {
+            "started_icon_pc": "shopify:\/\/shop_images\/started4_pc.png",
+            "started_icon_mobile": "shopify:\/\/shop_images\/started_mobile.png",
+            "started_desc": "<p><strong>Complete!<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2f18bfda-4dbb-46a9-bb08-8082cf5a801b",
+        "36f1a050-f3ff-45e4-89db-f4a891c35136",
+        "2e20eb03-53fe-4854-831b-20345015a725",
+        "ae6c2ccc-5b27-4d43-96dc-6fc393bf0b26"
+      ],
+      "settings": {
+        "started_headline": "How to Get Started?",
+        "started_earning_img_mobile": "shopify:\/\/shop_images\/Normal-banner-Mobile.png",
+        "started_earning_title": "START EARNING TODAY",
+        "started_earning_desc_pc": "<p>We will reward all validated sales with up to 8% commission.<br\/>Sign up for the program and start earning today!<\/p>",
+        "started_earning_desc_mobile": "<p>We will reward all validated sales with up to 8% commission. Sign up for the program and start earning today!<\/p>",
+        "started_earning_button": "APPLY NOW",
+        "started_earning_url": "https:\/\/app.impact.com\/campaign-campaign-info-v2\/freebeat.brand",
+        "started_earning_more": "<p>*If you have any questions, please contact us at <\/p><p><a href=\"mailto:affiliate@freebeatfit.com\" title=\"mailto:affiliate@freebeatfit.com\">affiliate@freebeatfit.com<\/a><\/p>"
+      }
+    }
+  },
+  "order": [
+    "22529741-d4cb-4dda-becf-5a3953f6c5ef",
+    "d040af1d-b5f2-401c-98e9-1349b94549fa",
+    "cdec9667-037c-40df-a604-83a218692b90",
+    "a4a82c15-cc77-4890-a6db-13d1c2bb3b43"
+  ]
+}

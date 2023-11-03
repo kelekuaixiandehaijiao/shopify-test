@@ -1,0 +1,82 @@
+{
+  "sections": {
+    "c7df9bd3-c6b1-4193-9852-f3364caa9889": {
+      "type": "fb-dealer-banner",
+      "settings": {
+        "dealer_banner_pc": "shopify:\/\/shop_images\/delear-banner.png",
+        "dealer_banner_mob": "shopify:\/\/shop_images\/dealer-banner-mob.png",
+        "dealer_img_title": "<p>BECOME  A freebeat DEALER<\/p>",
+        "dealer_img_sub_title": "<p>Exercise bike partnerships to boost your business<\/p>",
+        "dealer_img_mob_title": "<p>BECOME <br\/> A freebeat DEALER<\/p>",
+        "dealer_img_mob_sub_title": "<p>Exercise bike partnerships <br\/> to boost your business<\/p>"
+      }
+    },
+    "1662430569b8c44052": {
+      "type": "fb-key-content",
+      "settings": {
+        "fb_customerkey_h1": "become a dealer"
+      }
+    },
+    "7fda403d-cf95-475e-934e-bf0c471f8c88": {
+      "type": "fb-single-text-dealer",
+      "blocks": {
+        "f16e33bb-0ade-47f6-bae8-c67bf7eb18e9": {
+          "type": "fstdealerSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/mmheart.png",
+            "prop_title": "MORE OPPORTUNITIES",
+            "prop_des": "<p>Your store will be listed on our website for test ride opportunities, helping to increase footfall and bring new customers from our online traffic.<\/p>"
+          }
+        },
+        "bceb9921-ae22-49a1-8046-fd3a5b2a547c": {
+          "type": "fstdealerSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/mmdoller.png",
+            "prop_title": "SEASONAL DEALS",
+            "prop_des": "<p>Your business interests are important to us. We run regular seasonal promotions to help you bring even greater value to your customers.<\/p>"
+          }
+        },
+        "e54c1bf4-2262-4f83-8211-82984099f9b4": {
+          "type": "fstdealerSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/mmlaba.png",
+            "prop_title": "MARKETING SOLUTIONS",
+            "prop_des": "<p>Full marketing support comes with our all-in-one package, including promotional materials and brand giftware, to help your business thrive.<\/p>"
+          }
+        },
+        "7070599c-0396-4c3a-ad3b-660be1890c0f": {
+          "type": "fstdealerSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/mmerji.png",
+            "prop_title": "PROFESSIONAL SUPPORT",
+            "prop_des": "<p>We continually provide you with professional training and guidance for servicing our exercise bikes.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f16e33bb-0ade-47f6-bae8-c67bf7eb18e9",
+        "bceb9921-ae22-49a1-8046-fd3a5b2a547c",
+        "e54c1bf4-2262-4f83-8211-82984099f9b4",
+        "7070599c-0396-4c3a-ad3b-660be1890c0f"
+      ],
+      "settings": {
+        "dealer_title": "<p>Provide Professional Support <br\/> To Boost Your Business<\/p>"
+      }
+    },
+    "3ffe6395-6b61-4bd3-beb4-4b6468609bfd": {
+      "type": "fb-a-dealer",
+      "settings": {
+        "dealer_form_title": "<p>Become A freebeat Dealer<\/p>",
+        "dealer_form_subtitle1": "<p>freebeat dealer opportunities<\/p>",
+        "dealer_form_subtitle2": "<p>Your company \/ organization<\/p>",
+        "dealer_form_subtitle3": "<p>Your message \/ information<\/p>"
+      }
+    }
+  },
+  "order": [
+    "c7df9bd3-c6b1-4193-9852-f3364caa9889",
+    "1662430569b8c44052",
+    "7fda403d-cf95-475e-934e-bf0c471f8c88",
+    "3ffe6395-6b61-4bd3-beb4-4b6468609bfd"
+  ]
+}

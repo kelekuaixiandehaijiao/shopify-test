@@ -1,0 +1,87 @@
+{%- capture section_settings -%}
+  {
+      "type":{{ settings.cart_type | json }},
+      "itemCount":{{ cart.item_count }},
+      "drawer": true,
+      "hasShippingEstimator": false
+  }
+{%- endcapture -%}
+<div id="sidebar-cart" class="Drawer fb-drawer-cart Drawer--fromRight w-80 h-full bg-white !z-[100000000000] fb-md:w-[400px]" 
+  aria-hidden="true" 
+  data-section-id="cart" 
+  data-section-type="cart" 
+  data-section-settings='{{ section_settings }}'
+>
+  <div class="Drawer__Header w-full px-4 border-b border-[#E6E6E6] fb-flex-x-between relative z-2 fb-md:px-[20px]">
+    <span class="text-121212 text-12 font-bold fb-md:text-16">
+      CART
+    </span>
+    <button class="Drawer__Close w-4 h-[16px] fb-md:w-5 fb-md:h-5" data-action="close-drawer" data-drawer-id="sidebar-cart" aria-label="Close cart">
+      <svg class="w-full h-full" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1151 3.45042C13.2713 3.29421 13.2713 3.04095 13.1151 2.88474C12.9589 2.72853 12.7057 2.72853 12.5495 2.88474L7.99895 7.43523L3.44847 2.88474C3.29226 2.72853 3.03899 2.72853 2.88278 2.88474C2.72657 3.04095 2.72657 3.29421 2.88278 3.45042L7.43327 8.00091L2.88279 12.5514C2.72658 12.7076 2.72658 12.9609 2.88279 13.1171C3.039 13.2733 3.29226 13.2733 3.44847 13.1171L7.99895 8.5666L12.5494 13.1171C12.7056 13.2733 12.9589 13.2733 13.1151 13.1171C13.2713 12.9609 13.2713 12.7076 13.1151 12.5514L8.56464 8.00091L13.1151 3.45042Z" fill="black"/>
+      </svg>
+    </button>
+  </div>
+  <form class="Cart Drawer__Content js-cart-drawer w-full" 
+    action="{{ routes.cart_url }}" 
+    method="POST" 
+    novalidate
+  >
+    <div class="Drawer__Main w-full relative" data-scrollable>
+      {%- if cart.item_count == 0 -%}
+        <p class="Cart__Empty Heading card_drawer_title fb-center-translate text-center text-12 font-semibold text-999999 fb-md:text-16">
+          {{ settings.drawer_empty_title }}
+          <a href="{{settings.drawer_empty_url | default:'/collections/exercise-bikes'}}" 
+            class="block border border-121212 text-h-12 w-60 h-10 leading-10 mt-6 text-121212 text-center mr-auto font-bold rounded-[6px] fb-md:rounded-lg fb-md:text-16 fb-md:w-80 fb-md:h-12 fb-md:leading-[48px]">
+            {{settings.drawer_empty_button}}
+          </a>
+        </p>
+      {%- else -%}
+        <div class="Drawer__Container w-full px-4 pt-6 fb-md:px-[20px] fb-md:pt-10">
+          <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
+          <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+          {% render 'cart-items' %}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- unless cart.item_count == 0 -%}
+      <div class="Drawer__Footer border-t border-e6e6e6 py-[15px] px-[40px] fb-md:py-[20px]" data-drawer-animated-bottom>       
+        <button type="submit" name="checkout" fb_checkout="checkout" class="fb_Cart__Checkout w-full h-10 fb-flex-xy-center space-x-[8px] text-h-12-s font-bold text-white bg-121212 rounded-md	 fb-md:h-12 fb-md:text-[16px] fb-md:space-x-[12px]">
+          <span>{{ settings.checkout_button_text | default:'CHECKOUT'}}</span>
+          <span class="Button__SeparatorDot inline-block w-[3px] h-[3px] rounded-full bg-white fb-md:w-[4px] fb-md:h-1"></span>
+          <span>{{cart.total_price | money_without_trailing_zeros}}</span>
+        </button>
+        {%- if settings.shipping_and_taxes_notice != blank -%}
+            <p class="Cart__Taxes Text--subdued mt-2 w-full text-center text-00cc45 text-10 fb-md:mt-3 fb-md:text-12">
+              {{ settings.shipping_and_taxes_notice }}
+            </p>
+        {%- endif -%}
+        <ul class="fb-minicart-payment fb-flex-xy-center space-x-[10px] h-[24px] mt-2 fb-md:space-x-[12px]"> 
+            {%- for type in shop.enabled_payment_types -%}
+                <li class="fb-minicart-payment-item h-[24px] leading-6">{{ type | payment_type_svg_tag }}</li>
+            {%- endfor -%}
+            <li class="fb-minicart-payment-item">{{ 'klarna' | payment_type_svg_tag }}</li>
+        </ul>
+        {% comment %} {%- if settings.cart_enable_notes -%}
+          <div class="Cart__OffscreenNoteContainer" aria-hidden="true">
+            {%- if cart.note == blank -%}
+              <span class="Cart__NoteButton">{{ 'cart.general.add_note' | t }}
+              </span>
+            {%- else -%}
+              <span class="Cart__NoteButton">{{ 'cart.general.edit_note' | t }}
+              </span>
+            {%- endif -%}
+
+            <div class="Form__Item">
+              <textarea class="Cart__Note Form__Textarea" name="note" id="cart-note" rows="3" placeholder="{{ 'cart.general.note_placeholder' | t }}" data-scrollable>{{ cart.note }}
+              </textarea>
+            </div>
+
+            <button type="button" class="Button Button--primary Button--full" data-action="toggle-cart-note">{{ 'cart.general.save_note' | t }}
+            </button>
+          </div>
+        {%- endif -%} {% endcomment %}
+      </div>
+    {%- endunless -%}
+  </form>
+</div>

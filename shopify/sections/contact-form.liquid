@@ -1,0 +1,210 @@
+<div class="Container px-5 py-10 fb-sm:px-10 fb-sm:py-20 fb-md:px-0">
+  <header class="PageHeader">
+    <h1 class="text-121212 w-full text-24 text-center font-bold">{{ page.title }}</h1>
+  </header>
+
+  <div class="PageContent PageContent--narrow my-8 mx-auto max-w-60r fb-sm:mt-20">
+    <div class="Rte">
+      {{- page.content -}}
+
+      {%- form 'contact', class: 'Form Form--spacingTight' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="Alert Alert--success font-bold text-16 text-121212 mb-6">Your message has been successfully sent.</p>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="Form__Alert Alert Alert--error">
+            <ul class="Alert__ErrorList">
+              {%- for field in form.errors -%}
+                {%- if field == 'form' -%}
+                  <li class="Alert__ErrorItem">{{ form.errors.messages[field] }}</li>
+                {%- else -%}
+                  <li class="Alert__ErrorItem">
+                    <strong>{{ form.errors.translated_fields[field] }}</strong> {{ form.errors.messages[field] }}
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        <div class="Form__Group relative fb-sm:flex fb-sm:gap-5 flex-row">
+          <div class="Form__Item fb-sm:basis-1/2">
+            <input
+              type="text"
+              class="Form__Input peer w-full bg-666666/10 border border-121212/50 px-4 py-3"
+              name="contact[name]"
+              aria-label="Your name"
+              placeholder="Your name"
+              required
+              {% if customer %}
+                value="{{ customer.name }}"
+              {% endif %}
+            >
+            <label class="Form__FloatingLabel absolute -top-3 bg-white left-2 peer-placeholder-shown:hidden">Your name</label>
+          </div>
+
+          <div class="Form__Item relative mt-5 fb-sm:basis-1/2 fb-sm:mt-0">
+            <input
+              type="email"
+              class="Form__Input peer w-full bg-666666/10 border border-121212/50 px-4 py-3"
+              name="contact[email]"
+              aria-label="Your email"
+              placeholder="Your email"
+              required
+              {% if customer %}
+                value="{{ customer.email }}"
+              {% endif %}
+            >
+            <label class="Form__FloatingLabel absolute -top-3 bg-white left-2 peer-placeholder-shown:hidden">Your email</label>
+          </div>
+        </div>
+
+        {%- for block in section.blocks -%}
+          {%- assign field_title = block.settings.title -%}
+
+          {%- if field_title == blank -%}
+            {%- capture field_title -%}Custom field {% increment custom_field %}{%- endcapture -%}
+          {%- endif -%}
+
+          {%- if block.type == 'text' -%}
+            <div class="Form__Item mt-5 relative">
+              {%- if block.settings.use_long_text -%}
+                <textarea
+                  name="contact[{{ field_title | escape }}]"
+                  cols="30"
+                  rows="10"
+                  class="Form__Textarea"
+                  aria-label="{{ block.settings.title | escape }}"
+                  placeholder="{{ block.settings.title | escape }}"
+                  {% if block.settings.is_required %}
+                    required
+                  {% endif -%}
+                ></textarea>
+                <label class="Form__FloatingLabel">{{ block.settings.title | escape }}</label>
+              {%- else -%}
+                <input
+                  type="text"
+                  class="Form__Input peer w-full bg-666666/10 border border-121212/50 px-4 py-3"
+                  name="contact[{{ field_title | escape }}]"
+                  aria-label="{{ block.settings.title | escape }}"
+                  placeholder="{{ block.settings.title | escape }}"
+                  {% if block.settings.is_required %}
+                    required
+                  {% endif %}
+                >
+                <label class="Form__FloatingLabel absolute -top-3 bg-white left-2 peer-placeholder-shown:hidden">{{ block.settings.title | escape }}</label>
+              {%- endif -%}
+            </div>
+          {%- elsif block.type == 'dropdown' -%}
+            {%- assign values = block.settings.values | split: ',' -%}
+
+            {%- if values == empty -%}
+              {%- continue -%}
+            {%- endif -%}
+
+            <div class="Form__Item mt-5 bg-white">
+              <div class="Form__Select Select w-full Select--primary relative bg-white border border-121212/50">
+                
+                <select class="w-full py-3 px-3 bg-white focus:bg-white" name="contact[{{ field_title | escape }}]" title="{{ block.settings.title | escape }}" required>
+                  <option value="" disabled selected>{{ block.settings.title | escape }}</option>
+
+                  {%- for value in values -%}
+                    {%- assign trim_value = value | strip -%}
+
+                    <option value="{{ trim_value | escape }}">{{ trim_value | escape }}</option>
+                  {%- endfor -%}
+                </select>
+
+                <div class="h-full w-8 flex items-center bg-white absolute right-0 top-0 pr-3">
+                  <svg class="w-4 h-4" role="presentation" viewBox="0 0 19 12">
+                    <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="Form__Item mt-5 relative">
+          <textarea
+            name="contact[body]"
+            cols="30"
+            rows="10"
+            class="Form__Textarea peer w-full bg-666666/10 border border-121212/50 px-4 py-3"
+            aria-label="Your message"
+            placeholder="Your message"
+            required
+          ></textarea>
+          <label class="Form__FloatingLabel absolute -top-3 bg-white left-2 peer-placeholder-shown:hidden">Your message</label>
+        </div>
+
+        <button type="submit" class="Form__Submit uppercase text-white bg-black font-bold mt-5 w-full h-12 text-center">
+          SEND MESSAGE
+        </button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact page",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Custom field"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_long_text",
+          "label": "Use long text",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "is_required",
+          "label": "Field is required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "name": "Dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name",
+          "default": "Custom field"
+        },
+        {
+          "type": "text",
+          "id": "values",
+          "label": "Values",
+          "info": "Separate each value by a comma.",
+          "default": "value 1, value 2, value 3"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "text",
+        "settings": {
+          "title": "Your phone (optional)"
+        }
+      }
+    ]
+  }
+}
+{% endschema %}

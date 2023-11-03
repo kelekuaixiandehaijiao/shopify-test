@@ -1,0 +1,231 @@
+<div id="section-{{ section.id }}" class="fb-affiliate-program-why">
+  <div class="why_headline">
+    <h2>{{ section.settings.why_headline }}</h2>
+  </div>
+  <div class="why_content affiliate_program_public">
+    {%- for block in section.blocks -%}
+      <div class="why_item">
+        <div class="why_item_con">
+          {% assign affiliate_program_icon_pc = block.settings.affiliate_program_icon_pc | img_url: '' %}
+          {% assign affiliate_program_icon_mobile = block.settings.affiliate_program_icon_mobile | img_url: '' %}
+          <img
+            class="Image--lazyLoad Image--fadeIn affiliate_program_icon_pc"
+            data-sizes="auto"
+            data-optimumx="1.2"
+            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            src="{{ affiliate_program_icon_pc }}"
+            alt="{{ affiliate_program_icon_pc.alt | escape }}"
+          >
+          <img
+            class="Image--lazyLoad Image--fadeIn affiliate_program_icon_mobile"
+            data-sizes="auto"
+            data-optimumx="1.2"
+            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            src="{{ affiliate_program_icon_mobile }}"
+            alt="{{ affiliate_program_icon_mobile.alt | escape }}"
+          >
+          <div class="affiliate_program_title">
+            <h3>{{ block.settings.affiliate_program_title }}</h3>
+          </div>
+          <div class="affiliate_program_desc">{{ block.settings.affiliate_program_desc }}</div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbAffiliateProgramWhy",
+  "presets": [
+    {
+      "name": "fb-affiliate-program-why",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "why_headline",
+      "label": "Headline"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "AffiliateProgramBlock",
+      "name": "AffiliateProgramBlock",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "affiliate_program_icon_pc",
+          "label": "Icon Pc"
+        },
+        {
+          "type": "image_picker",
+          "id": "affiliate_program_icon_mobile",
+          "label": "Icon Mobile"
+        },
+        {
+          "type": "text",
+          "id": "affiliate_program_title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "affiliate_program_desc",
+          "label": "Desc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  @media screen and (min-width: 1201px) and (max-width: 1379px){
+      .affiliate_program_desc{
+          height: 72px!important;
+      }
+  }
+  @media screen and (min-width: 1200px){
+      .fb-affiliate-program-why{
+          background: #F5F5F5;
+          padding-top: 80px;
+      }
+      .affiliate_program_icon_mobile{
+          display: none;
+      }
+      .why_headline{
+          font-size: 36px;
+          font-weight: bold;
+          color: #121212;
+          line-height: 36px;
+          text-align: center;
+          padding-bottom: 60px;
+      }
+      .why_content{
+          overflow: hidden;
+      }
+      .why_item{
+          width: 31.58%;
+          height: 46.48%;
+          background: #FFFFFF;
+          border-radius: 16px 16px 16px 16px;
+          display: inline-block;
+          float: left;
+          margin-right: 2.63%;
+          margin-bottom: 2.63%;
+      }
+      .why_item:nth-of-type(3),
+      .why_item:nth-of-type(6)
+      {
+          margin-right: 0;
+      }
+      .why_item:nth-of-type(4),
+      .why_item:nth-of-type(5),
+      .why_item:nth-of-type(6){
+          margin-bottom: 0;
+      }
+      {% comment %} .why_item_con{
+          padding: 8.247% 16.494%;
+      } {% endcomment %}
+      .affiliate_program_icon_pc{
+          width: 64px;
+          display: block;
+          margin: auto;
+      }
+      .affiliate_program_title{
+          font-size: 20px;
+          font-weight: bold;
+          color: #000000;
+          line-height: 20px;
+          text-align: center;
+          padding-top: 32px;
+          text-transform: uppercase;
+      }
+      .affiliate_program_desc{
+          font-size: 16px;
+          font-weight: 500;
+          color: #666666;
+          line-height: 24px;
+          text-align: center;
+          padding-top: 20px;
+      }
+      .affiliate_program_desc strong{
+          color: #121212;
+      }
+  }
+  @media screen and (max-width: 1199px) {
+      .fb-affiliate-program-why{
+          background: #F5F5F5;
+          padding-top: 60px;
+      }
+      .affiliate_program_icon_pc{
+          display: none;
+      }
+      .why_headline{
+          width:193px;
+          margin:auto;
+          padding-bottom:32px;
+          font-size: 20px;
+          font-weight: bold;
+          color: #000000;
+          line-height: 28px;
+          text-align: center;
+      }
+      .why_content{
+          width: 327px;
+          margin: auto;
+          overflow: hidden;
+      }
+      .why_item{
+          width: 156px;
+          height: 176px;
+          background: #FFFFFF;
+          border-radius: 12px 12px 12px 12px;
+          display: inline-block;
+          float: left;
+          margin-right: 15px;
+          margin-bottom: 15px;
+      }
+      .why_item:nth-of-type(2),
+      .why_item:nth-of-type(4),
+      .why_item:nth-of-type(6)
+      {
+          margin-right: 0;
+      }
+      .why_item:nth-of-type(5),
+      .why_item:nth-of-type(6){
+          margin-bottom: 0;
+      }
+      .why_item_con{
+          padding: 20px 12px;
+      }
+      .affiliate_program_icon_mobile{
+          width: 32px;
+          display: block;
+          margin: auto;
+      }
+      .affiliate_program_title{
+          width: 100px;
+          margin: auto;
+          font-size: 12px;
+          font-weight: bold;
+          color: #000000;
+          line-height: 16px;
+          text-align: center;
+          padding-top: 16px;
+          text-transform: uppercase;
+      }
+      .affiliate_program_desc{
+          font-size: 12px;
+          font-weight: 500;
+          color: #666666;
+          line-height: 16px;
+          text-align: center;
+          padding-top: 8px;
+      }
+      .affiliate_program_desc strong{
+          color: #121212;
+      }
+  }
+</style>

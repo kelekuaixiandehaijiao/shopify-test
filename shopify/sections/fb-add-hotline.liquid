@@ -1,0 +1,131 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div class="fb-add-hotline w-full py-10 px-5 fb-sm:px-10 fb-sm:py-15 fb-md:px-0 fb-md:py-20" id="section-{{ section.id }}">
+  <div class="w-full mx-auto fb-md:max-w-75r">
+    <div class="hotline_max_title text-20 font-bold text-121212 text-center fb-md:text-32">
+      {{ section.settings.hotline_max_title }}
+    </div>
+    <div class="hotline_max_desc text-12 text-121212 text-center w-full mt-4 mb-4 fb-md:mt-6 fb-md:mb-6 fb-md:text-16">
+      {{ section.settings.hotline_max_desc }}
+    </div>
+    <div class="add-hotline-content w-full flex flex-col items-center justify-center space-y-8 fb-sm:flex-row fb-sm:space-y-0 fb-sm:justify-between">
+      {%- for block in section.blocks -%}
+          {%- if country_code_var == 'gb' and block.settings.hotline_title contains 'Phone' -%}
+          {%- else -%}
+              <div class="add-hotline-item min-h-32 text-center fb-sm:w-94 fb-md:w-[373px]">
+                  <a
+                  {% if forloop.first %}
+                      href="javascript:void(0);" onclick="TidioShowFun()"
+                  {% else %}
+                      href="{{ block.settings.swiper_url }}"
+                  {% endif %}
+                  class="w-full block text-center"
+                  >
+                  {% assign hotline_img = block.settings.hotline_img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+                    <img
+                        class="hotline_img w-9 h-9 inline-block fb-md:w-12 fb-md:h-12 Image--lazyLoad Image--fadeIn"
+                        data-src="{{ hotline_img }}"
+                        alt="{{block.settings.hotline_img.alt}}"
+                        data-sizes="auto"
+                        data-optimumx="1.2"
+                        data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    >
+                  </a>
+                  <div class="hotline_text w-full mt-4 fb-md:mt-6">
+                    <div class="hotline_title text-16 text-121212 font-bold fb-md:text-20">
+                        {{ block.settings.hotline_title }}
+                    </div>
+                    <div class="hotline_desc mt-3 text-121212 text-12 fb-md:mt-4 fb-md:text-16">
+                        {{ block.settings.hotline_desc }}
+                    </div>
+                    <div class="hotline_contact w-full text-center mt-2 text-00cc45 fb-md:mt-3 fb-md:text-16">
+                        <a
+                        {% if forloop.first %}
+                            href="javascript:void(0);" onclick="TidioShowFun()"
+                        {% else %}
+                            href="{{ block.settings.swiper_url }}"
+                        {% endif %}
+                        class="text-12 font-bold fb-md:text-16"
+                        >
+                        <object>{{ block.settings.hotline_contact }}</object>
+                        </a>
+                    </div>
+                  </div>
+              </div>
+          {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<style>
+@media only screen and (min-width: 640px) {
+    {% if template == 'index' %}
+      .fb-add-hotline {
+        display: none;
+      }
+    {% endif %}
+  }
+  @media only screen and (max-width: 639px) {
+    {% if template == 'index' %}
+      .fb-add-hotline {
+         padding-top: 60px;
+      }
+    {% endif %}
+  }
+</style>
+{% schema %}
+{
+  "name": "Fb Add Hotline",
+  "presets": [
+    {
+      "name": "fb-add-hotline",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "hotline_max_title",
+      "label": "Hotline Max Title"
+    },
+    {
+      "type": "richtext",
+      "id": "hotline_max_desc",
+      "label": "Hotline Max Desc"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "HotlineBlock",
+      "name": "HotlineBlock",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hotline_img",
+          "label": "Hotline Img"
+        },
+        {
+          "type": "richtext",
+          "id": "hotline_title",
+          "label": "Hotline Title"
+        },
+        {
+          "type": "richtext",
+          "id": "hotline_desc",
+          "label": "Hotline Desc"
+        },
+        {
+          "type": "richtext",
+          "id": "hotline_contact",
+          "label": "Hotline Contact"
+        },
+        {
+          "type": "url",
+          "id": "swiper_url",
+          "label": "Swiper URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

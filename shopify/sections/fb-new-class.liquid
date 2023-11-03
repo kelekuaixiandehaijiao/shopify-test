@@ -1,0 +1,266 @@
+{%- if product -%}
+{%- else -%}
+  {%- assign product = section.settings.customer_product -%}
+{%- endif -%}
+{%- assign class_index = 1 -%}
+<div
+  id="section-{{ section.id }}"
+  class="
+    fb-new-class relative w-full py-10 px-5 overflow-hidden
+    fb-sm:py-15 fb-sm:px-0
+    fb-md:py-20 fb-md:px-0
+  "
+>
+  <div class="w-full text-center text-121212 font-bold text-20 fb-md:text-32">
+    {{ section.settings.content_tit }}
+  </div>
+  <div class="class-content-box new-class w-full relative overflow-hidden mx-auto mt-8 fb-md:mt-10">
+    <div
+      class="swiper-box swiper-wrapper w-full z-1"
+    >
+      {%- for block in section.blocks -%}
+        <div
+          class="
+            swiper-slide fb-new-slide-box w-full flex flex-col
+            fb-sm:w-[453px] fb-md:w-[453px] fb-sm:mx-4 fb-md:mx-5
+          "
+          data-index="{{ forloop.index }}"
+        >
+          <div class="relative rounded-2xl overflow-hidden w-full h-47 fb-sm:h-63 fb-md:h-63">
+            <video
+              class="Image--lazyLoad new-class-vedio absolute z-1 w-full h-full "
+              webkit-playsinline="true"
+              playsinline="true"
+              muted="muted"
+              loop="loop"
+              data-index="{{ forloop.index }}"
+              poster="{{ block.settings.pages_mb_image }}"
+              data-src="{{ block.settings.pages_pc_video }}"
+            ></video>
+          </div>
+          <div
+            class="
+              slide-tit w-full text-121212 font-bold text-16 pt-15 text-center
+              fb-sm:pt-[16px] fb-md:pt-6 fb-md:text-20
+            "
+          >
+            {{ block.settings.pages_swiper_title }}
+          </div>
+          <div
+            class="
+              slide-info w-full text-center mt-3 text-121212 font-normal text-12
+              fb-md:mt-4 fb-md:text-16
+            "
+          >
+            {{ block.settings.pages_swiper_Info }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="fb-class-list absolute w-full h-[34px] top-50 fb-sm:hidden">
+      <div class="swiper-wrapper w-full flex flex-row justify-start items-center space-x-[12px]">
+        {%- for block in section.blocks -%}
+          <div
+            class="
+              swiper-slide class-img-box clicked
+              w-[57px] h-8 rounded relative
+            "
+            data-index="{{ class_index }}"
+          >
+           <img
+              data-src="{{ block.settings.pages_mb_image }}"
+              alt="{{ block.settings.pages_mb_image.alt | escape }}"
+              class="class-sub-img w-full h-auto rounded Image--lazyLoad Image--fadeIn"
+              data-index="{{ forloop.index }}"
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            > 
+            <img
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector_2x_56353b1b-c43c-4184-8e22-76ec8a8d01db.png?v=1690882609"
+              alt="video play"
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+              class="class-pause absolute w-3 z-1 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 Image--lazyLoad Image--fadeIn"
+            >
+          </div>
+          {%- assign class_index = class_index | plus: 1 -%}
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="class-button-prev z-2 hidden absolute fb-sm:block w-11 h-11 fb-sm:left-[60px] fb-sm:top-[104px] fb-md:left-[120px]">
+      <img
+        alt="green left arrow"
+        loading="lazy"
+        class="w-full h-auto"
+        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_85_2x_e2c2b29c-135f-43a1-8060-a955138bbb47.png?v=1693202579"
+      >
+    </div>
+    <div class="class-button-next z-2 hidden absolute fb-sm:block w-11 h-11 fb-sm:right-15 fb-sm:top-[104px] fb-md:right-[120px]">
+      <img
+        alt="green right arrow"
+        loading="lazy"
+        class="w-full h-auto"
+        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_86_2x_db24e443-ba97-4c65-ad90-41691a808466.png?v=1693202579"
+      >
+    </div>
+  </div>
+  <div class="class-swiper-pagination hidden fb-sm:flex fb-sm:items-center fb-sm:justify-center fb-sm:mt-8"></div>
+  <div
+    class="
+      btn-box flex flex-col-reverse w-full justify-center items-center mt-8
+      fb-sm:flex-row fb-sm:space-x-[32px]
+      fb-md:space-x-[39px] fb-md:mt-10
+    "
+  >
+    {%- if section.settings.show_cart_button -%}
+      <button
+        class="
+          btn-right js-ebike-addtocart w-60 fb-sm:w-70
+          h-11 text-center text-121212 rounded-lg leading-11 mt-4
+            text-h-12-s font-bold border-solid border border-[#121212]
+            fb-sm:mt-0 fb-md:h-12 fb-md:leading-12 fb-md:text-[16px]
+        "
+        data-variantid="{{ product.selected_or_first_available_variant.id }}"
+        data-price="{{ product.price | money }}"
+        data-title="{{ product.title }}"
+        data-soldout="SOLD OUT"
+        data-soldout-style="true"
+        data-origintext="{{ section.settings.product_but_text }}"
+      >
+        <span>{{ section.settings.product_but_text }}</span>
+      </button>
+    {%- else -%}
+      <a
+        href="{{section.settings.btn_one_link}}"
+        class="
+          w-60 block
+          fb-sm:w-70
+        "
+      >
+        <div
+          class="
+            btn-left w-full h-11 text-center text-121212 rounded-lg leading-10 mt-4
+            text-h-12-s font-bold border-solid border border-[#121212] 
+            fb-sm:mt-[0px] fb-md:h-12 fb-md:leading-[48px] fb-md:text-[16px]
+          "
+        >
+          {{ section.settings.btn_one_des }}
+        </div>
+      </a>
+      <a href="{{section.settings.btn_two_link}}" class="w-60 block fb-sm:w-70">
+        <div
+          class="
+            btn-right  w-full h-11 text-center rounded-lg bg-[#121212] text-white text-h-12-s leading-10
+            fb-md:h-12 fb-md:leading-[48px] fb-md:text-[16px] font-bold
+          "
+        >
+          {{ section.settings.btn_two_des }}
+        </div>
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbNewClass",
+  "presets": [
+    {
+      "name": "fb-new-class",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "content_tit",
+      "label": "Content Title",
+      "default": "DIVE INTO A GAMIFIED WONDERLAND"
+    },
+    {
+      "type": "text",
+      "id": "product_but_text",
+      "label": "Button text",
+      "default": "ADD TO CART"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_button",
+      "label": "Show Add Cart",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "btn_one_des",
+      "label": "btn one des",
+      "default": "VIEW DETAILS"
+    },
+    {
+      "type": "url",
+      "id": "btn_one_link",
+      "label": "btn one link"
+    },
+    {
+      "type": "text",
+      "id": "btn_two_des",
+      "label": "btn two des",
+      "default": "EXPLORE BIKES"
+    },
+    {
+      "type": "url",
+      "id": "btn_two_link",
+      "label": "btn two link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "videoBlock",
+      "name": "videoBlock",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pages_swiper_title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "pages_swiper_Info",
+          "label": "Info"
+        },
+        {
+          "type": "url",
+          "id": "pages_pc_video",
+          "label": "Pc Video"
+        },
+        {
+          "type": "url",
+          "id": "pages_mb_image",
+          "label": "MB Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .fb-new-class .swiper-pagination-bullet {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .fb-new-class .swiper-pagination-bullet-active {
+    background: black !important;
+  }
+  @media screen and (max-width: 768px) {
+    .class-content-box .clicked::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+</style>

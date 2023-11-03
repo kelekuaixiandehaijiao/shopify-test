@@ -1,0 +1,269 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<section id="section-{{ section.id }} w-full">
+  <div class="fb-fau-writing max-w-75r mx-auto px-5 fb-sm:px-10 fb-md:px-0">
+    <div class="fb-fau-content">
+      <div class="item">
+        <div class="item-content">
+          <div class="item-content-title">
+            <h2>{{ section.settings.fb_writing_title1 }}</h2>
+          </div>
+          <div class="item-content-image">
+            {% assign img1 = section.settings.fb_writing_img | img_url %}
+            {% assign img2 = section.settings.fb_writing_img2 | img_url %}
+            <img
+              class="fb-writing-img1"
+              loading="lazy"
+              src="{{img1}}"
+              alt="{{section.settings.fb_writing_img.alt}}"
+            >
+            <img
+              class="fb-writing-img2"
+              src="{{img2}}"
+              loading="lazy"
+              alt="{{section.settings.fb_writing_img2.alt}}"
+            >
+          </div>
+        </div>
+        <div class="item-desc">{{ section.settings.fb_writing_desc1 }}</div>
+      </div>
+      <div class="item">
+        <div class="item-content">
+          <div class="item-content-title">
+            <h2>{{ section.settings.fb_writing_title2 }}</h2>
+          </div>
+          <div class="item-content-image">
+            {% assign img1 = section.settings.fb_writing_img | img_url %}
+            {% assign img2 = section.settings.fb_writing_img2 | img_url %}
+            <img
+              class="fb-writing-img1"
+              src="{{img1}}"
+              loading="lazy"
+              alt="{{section.settings.fb_writing_img.alt}}"
+            >
+            <img
+              class="fb-writing-img2"
+              src="{{img2}}"
+              loading="lazy"
+              alt="{{section.settings.fb_writing_img2.alt}}}}"
+            >
+          </div>
+        </div>
+        <div class="item-desc">{{ section.settings.fb_writing_desc2 }}</div>
+      </div>
+      <div class="item" style="border-bottom:none;">
+        <div class="item-content">
+          <div class="item-content-title">
+            <h2>{{ section.settings.fb_writing_title3 }}</h2>
+          </div>
+          <div class="item-content-image">
+            {% assign img1 = section.settings.fb_writing_img | img_url %}
+            {% assign img2 = section.settings.fb_writing_img2 | img_url %}
+            <img
+              class="fb-writing-img1"
+              src="{{img1}}"
+              loading="lazy"
+              alt="{{section.settings.fb_writing_img.alt}}"
+            >
+            <img
+              class="fb-writing-img2"
+              src="{{img2}}"
+              loading="lazy"
+              alt="{{section.settings.fb_writing_img2.alt}}}}"
+            >
+          </div>
+        </div>
+        <div class="item-desc item-desc-teshu">{{ section.settings.fb_writing_desc3 }}</div>
+        <div class="item-desc">{{ section.settings.fb_writing_desc4 }}</div>
+        <div class="item-desc">{{ section.settings.fb_writing_desc5 }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  $(function () {
+    $('.fb-fau-content .item').click(function () {
+      $(this).children('.item-content').siblings().toggle();
+      if ($(this).find('.fb-writing-img1').css('display') == 'block') {
+        console.log('hahahahhahah');
+        $(this).find('.fb-writing-img1').css('display', 'none');
+        $(this).find('.fb-writing-img2').css('display', 'block');
+      } else {
+        console.log('hlalallal');
+        $(this).find('.fb-writing-img1').css('display', 'block');
+        $(this).find('.fb-writing-img2').css('display', 'none');
+      }
+    });
+  });
+</script>
+<style>
+  .fb-fau-writing {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+  }
+  .fb-fau-content {
+    width: 100%;
+    height: 100%;
+    margin: 56px 0;
+  }
+  .fb-fau-content .item {
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .item-content .item-content-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin: 24px 0;
+    cursor: pointer;
+  }
+  .item-content .item-content-image {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    line-height: 28px;
+  }
+  .item .item-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: #121212;
+    line-height: 24px;
+    margin-bottom: 24px;
+    margin-top: -6px;
+    display: none;
+  }
+  .item .item-desc-teshu {
+    margin-bottom: 12px;
+  }
+  .fb-writing-img1 {
+    display: block;
+  }
+  .fb-writing-img2 {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .fb-fau-writing {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+    }
+    .fb-fau-content {
+      width: 345px;
+      height: 100%;
+      margin: 24px 15px;
+    }
+    .fb-fau-content .item {
+      width: 345px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .item-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .item-content .item-content-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333333;
+      line-height: 20px;
+      width: 321px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+    .item-content .item-content-image {
+      width: 16px;
+      height: 16px;
+      line-height: 28px;
+    }
+    .item .item-desc {
+      font-size: 12px;
+      font-weight: 400;
+      color: #121212;
+      line-height: 18px;
+      margin-bottom: 16px;
+      width: 345px;
+      display: none;
+      margin-top: -4px;
+    }
+    .item .item-desc-teshu {
+      margin-bottom: 8px;
+    }
+    .fb-writing-img1 {
+      display: block;
+    }
+    .fb-writing-img2 {
+      display: none;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "FbWritingPdp",
+  "presets": [
+    {
+      "name": "fb-writing-pdp",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "fb_writing_img",
+      "label": "Writing Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "fb_writing_img2",
+      "label": "Writing2 Icon"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_title1",
+      "label": "Writing Title1"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_desc1",
+      "label": "Writing Desc1"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_title2",
+      "label": "Writing Title2"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_desc2",
+      "label": "Writing Desc2"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_title3",
+      "label": "Writing Title3"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_desc3",
+      "label": "Writing Desc3"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_desc4",
+      "label": "Writing Desc4"
+    },
+    {
+      "type": "text",
+      "id": "fb_writing_desc5",
+      "label": "Writing Desc5"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,265 @@
+<div class="fb-content w-full mx-auto px-6 py-10 fb-sm:py-15 fb-md:py-20">
+  <header class="PageHeader mb-9 fb-sm:mb-12">
+    <div class="SectionHeader SectionHeader--center">
+      <h1 class="text-24 text-121212 text-center font-bold">{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <div class="PageContent fb-Rte mx-auto max-w-[680px]">
+    {{ page.content }}
+  </div>
+</div>
+<style>
+  .fb-Rte h2{
+    font-size: 22px;
+    line-height: 1.2 !important;
+    font-weight: 700;
+    margin-top: 40px;
+    color: #1c1b1b;
+  }
+  .fb-Rte a, .fb-Rte a:not(.Button) {
+    color: #00CC45;
+    text-decoration: underline;
+    text-underline-position: under;
+    transition: color 0.2s ease-in-out, -webkit-text-decoration-color 0.2s ease-in-out;
+  }
+  .fb-Rte a:not(.Button):hover {
+    color: #00CC45;
+  }
+  
+  .fb-Rte p:not(:last-child),
+  .fb-Rte ul:not(:last-child),
+  .fb-Rte ol:not(:last-child) {
+    margin-bottom: 1.6em;
+  }
+  
+  .fb-Rte img,
+  .fb-Rte blockquote,
+  .fb-Rte .VideoWrapper,
+  .fb-Rte .Form {
+    margin-top: 2.4em;
+    margin-bottom: 2.4em;
+  }
+  
+  .fb-Rte ul,
+  .fb-Rte ol {
+    margin-left: 30px;
+    padding-left: 0;
+    list-style-position: outside;
+  }
+  .fb-Rte p{
+    margin-bottom: 1.6em;
+  }
+  .fb-Rte ol,  .fb-Rte ul,  .fb-Rte menu{
+    list-style: auto !important;
+  }
+  .fb-Rte li {list-style: inherit !important;}
+  .fb-Rte {
+    word-break: break-word;
+    /* Prevent long words to go outside the container */
+    /* Simple, minimum clearfix added to every fb-RTE text to avoid issue with float */
+    }
+  .fb-Rte li {
+    padding: 5px 0;
+  }
+  
+  .fb-Rte::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  .fb-Rte iframe {
+    max-width: 100%;
+  }
+  
+  .fb-Rte img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  .fb-Rte p:not(:last-child),
+  .fb-Rte ul:not(:last-child),
+  .fb-Rte ol:not(:last-child) {
+    margin-bottom: 1.6em;
+  }
+  
+  .fb-Rte img,
+  .fb-Rte blockquote,
+  .fb-Rte .VideoWrapper,
+  .fb-Rte .Form {
+    margin-top: 2.4em;
+    margin-bottom: 2.4em;
+  }
+  
+  .fb-Rte ul,
+  .fb-Rte ol {
+    margin-left: 30px;
+    padding-left: 0;
+    list-style-position: outside;
+  }
+  
+  .fb-Rte li {
+    padding: 5px 0;
+  }
+  
+  .fb-Rte h1,
+  .fb-Rte h2,
+  .fb-Rte h3,
+  .fb-Rte h4,
+  .fb-Rte h5,
+  .fb-Rte h6 {
+
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .features--heading-uppercase .fb-Rte h1,
+  .features--heading-uppercase .fb-Rte h2,
+  .features--heading-uppercase .fb-Rte h3,
+  .features--heading-uppercase .fb-Rte h4,
+  .features--heading-uppercase .fb-Rte h5,
+  .features--heading-uppercase .fb-Rte h6 {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  
+  .fb-Rte h1 {
+    margin: 2.2em 0 0.8em;
+  }
+  
+  .fb-Rte h2 {
+    margin: 40px 0px 20px 0px;
+  }
+  
+  .fb-Rte h3 {
+    margin: 40px 0px 20px 0px;
+  }
+  
+  .fb-Rte h4 {
+    margin: 40px 0px 20px 0px;
+  }
+  
+  .fb-Rte h5 {
+    margin: 2.2em 0 1.6em;
+  }
+  
+  .fb-Rte h6 {
+    margin: 2.2em 0 1.8em;
+  }
+  
+  .fb-Rte p:last-child,
+  .fb-Rte blockquote:last-child,
+  .fb-Rte ul:last-child,
+  .fb-Rte ol:last-child,
+  .fb-Rte h1:last-child,
+  .fb-Rte h2:last-child,
+  .fb-Rte h3:last-child,
+  .fb-Rte h4:last-child,
+  .fb-Rte h5:last-child,
+  .fb-Rte h6:last-child {
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: 1008px) {
+
+    .fb-Rte img,
+    .fb-Rte .VideoWrapper,
+    .fb-Rte .Form {
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+  
+    .fb-Rte blockquote {
+      margin-left: 40px;
+    }
+  }
+  .Table,
+.fb-Rte table {
+  width: 100%;
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));
+  border-collapse: separate;
+  white-space: nowrap;
+}
+
+.Table th,
+.Table td,
+.fb-Rte table th,
+.fb-Rte table td {
+  padding: 18px 10px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.Table th:first-child,
+.Table td:first-child,
+.Table tfoot td:empty+td,
+.fb-Rte table th:first-child,
+.fb-Rte table td:first-child,
+.fb-Rte table tfoot td:empty+td {
+  padding-left: 0;
+}
+
+.Table th:last-child,
+.Table td:last-child,
+.fb-Rte table th:last-child,
+.fb-Rte table td:last-child {
+  padding-right: 0;
+}
+.Table th,
+.fb-Rte table th {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.Table thead th:first-child:empty,
+.Table tbody th:first-child,
+.fb-Rte table thead th:first-child:empty,
+.fb-Rte table tbody th:first-child {
+  position: sticky;
+  left: 0;
+  min-width: 40px;
+  max-width: 100px;
+  z-index: 1;
+  white-space: normal;
+}
+.Table tfoot td:empty,
+.fb-Rte table tfoot td:empty {
+  border-bottom: none;
+}
+
+.Table--large td {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.Table--noBorder tbody tr:not(:last-child) td {
+  border-bottom: none;
+}
+.fb-Rte a{
+  color: #00cc45!important;
+  text-decoration:underline;
+}
+</style>
+{% schema %}
+{
+  "name": "FbMainPage",
+  "presets": [
+    {
+      "name": "fb-main-page",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_large",
+      "label": "Large width",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,294 @@
+{{ 'fb-user-manual.css' | asset_url | stylesheet_tag }}
+<div class="fb-user-manual" id="section-{{ section.id }}">
+  <div class="user-manual-content">
+    <div class="user-manual-bigtitle">
+      <h1>{{ section.settings['user-manual-bigtitle'] }}</h1>
+    </div>
+    <div class="user-manual-bigdesc">{{ section.settings['user-manual-bigdesc'] }}</div>
+    <div class="user-manual-tabs">
+      <div class="manual-tabs-title select-tab-title" data-tabs="1">
+        <h2>{{ section.settings['ebike-manual-tabtitle1'] }}</h2>
+      </div>
+      <div class="manual-tabs-title" data-tabs="2">
+        <h2>{{ section.settings['ebike-manual-tabtitle2'] }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="user-manual-con">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'user-manual' -%}
+          <div class="user-manual-item">
+            {% assign user-manual-img = block.settings['user-manual-img'] | img_url: '' %}
+            <img
+              class="Image--lazyLoad Image--fadeIn user-manual-img"
+              src="{{ user-manual-img }}"
+              alt="{{ block.settings.user-manual-img.alt | escape }}"
+            >
+            <div class="user-manual-right">
+              <div class="user-manual-sign">{{ block.settings['user-manual-sign'] }}</div>
+              <div class="user-manual-title">
+                <h3>{{ block.settings['user-manual-title'] }}</h3>
+              </div>
+              <div class="user-manual-desc">{{ block.settings['user-manual-desc'] }}</div>
+              <div class="user-manual-link-con">
+                <a
+                  class="user-manual-link user-manual-link1"
+                  href="{{ block.settings.user-manual-link1 }}"
+                  target="_blank"
+                >
+                  <span class="user-manual-link-title user-manual-link1-title">
+                    {{- block.settings['user-manual-link1-title'] -}}
+                  </span>
+                </a>
+                <a
+                  class="user-manual-link user-manual-link2"
+                  href="{{ block.settings.user-manual-link2 }}"
+                  target="_blank"
+                >
+                  <span class="user-manual-link-title user-manual-link2-title">
+                    {{- block.settings['user-manual-link2-title'] -}}
+                  </span>
+                </a>
+                <a
+                  class="user-manual-link user-manual-link3"
+                  href="{{ block.settings.user-manual-link3 }}"
+                  target="_blank"
+                >
+                  <span class="user-manual-link-title user-manual-link3-title">
+                    {{- block.settings['user-manual-link3-title'] -}}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+    {%- endfor -%}
+  </div>
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'ebikelist' -%}
+        <div class="ebike-manual-main">
+          <div class="ebike-manual-left">
+            {% assign ebike-manual-img = block.settings['ebike-manual-img'] | img_url: '' %}
+            {% assign ebike-manual-mobimg = block.settings['ebike-manual-mobimg'] | img_url: '' %}
+            <img
+              class="Image--lazyLoad Image--fadeIn ebike-manual-pcimg"
+              src="{{ ebike-manual-img }}"
+              alt="{{ block.settings.ebike-manual-img.alt | escape }}"
+            >
+            <img
+              class="Image--lazyLoad Image--fadeIn ebike-manual-mobimg"
+              src="{{ ebike-manual-mobimg }}"
+              alt="{{ block.settings.ebike-manual-mobimg.alt | escape }}"
+            >
+            {% comment %} alt="{{ block.settings.user-manual-img.alt | escape }}" {% endcomment %}
+          </div>
+          <div class="ebike-manual-right">
+            {% comment %} <div class="ebike-manual-title">{{ section.settings.ebike-manual-title }}</div> {% endcomment %}
+            <div class="ebike-manual-title ebike-manual-pc">{{ block.settings['ebike-manual-title'] }}</div>
+            <div class="ebike-manual-title ebike-manual-mob">{{ block.settings['ebike-manual-title'] }}</div>
+
+            <div class="ebike-manual-desc">{{ block.settings['ebike-manual-desc'] }}</div>
+            <div class="ebike-manual-link">
+              <div class="manual-link-text">
+                <a href="{{ block.settings.ebike-manual-link1 }}">{{ block.settings['ebike-manual-text1'] }}</a>
+              </div>
+              <div class="manual-link-text">
+                <a href="{{ block.settings.ebike-manual-link2 }}">{{ block.settings['ebike-manual-text2'] }}</a>
+              </div>
+              <div class="manual-link-text">
+                <a href="{{ block.settings.ebike-manual-link3 }}">{{ block.settings['ebike-manual-text3'] }}</a>
+              </div>
+              <div class="manual-link-text">
+                <a href="{{ block.settings.ebike-manual-link4 }}">{{ block.settings['ebike-manual-text4'] }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
+<script>
+  $(function () {
+    $('.manual-tabs-title').click(function () {
+      $(this).addClass('select-tab-title');
+      $(this).siblings().removeClass('select-tab-title');
+      if (window.screen.width > 768) {
+        if ($(this).attr('data-tabs') == 1) {
+          $('.user-manual-con').css('display', 'block');
+          $('.ebike-manual-main').css('display', 'none');
+        } else {
+          $('.ebike-manual-main').css('display', 'flex');
+          $('.user-manual-con').css('display', 'none');
+        }
+      } else {
+        if ($(this).attr('data-tabs') == 1) {
+          $('.user-manual-con').css('display', 'block');
+          $('.ebike-manual-main').css('display', 'none');
+        } else {
+          $('.ebike-manual-main').css('display', 'block');
+          $('.user-manual-con').css('display', 'none');
+        }
+      }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "FbUserManual",
+  "presets": [
+    {
+      "name": "fb-user-manual",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "user-manual-bigtitle",
+      "label": "Big Title"
+    },
+    {
+      "type": "text",
+      "id": "user-manual-bigdesc",
+      "label": "Big Desc"
+    },
+    {
+      "type": "text",
+      "id": "ebike-manual-tabtitle1",
+      "label": "Tab Title1"
+    },
+    {
+      "type": "text",
+      "id": "ebike-manual-tabtitle2",
+      "label": "Tab Title2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "user-manual",
+      "name": "usermanual",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "user-manual-img",
+          "label": "Img"
+        },
+        {
+          "type": "text",
+          "id": "user-manual-sign",
+          "label": "Sign"
+        },
+        {
+          "type": "text",
+          "id": "user-manual-title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "user-manual-desc",
+          "label": "Desc"
+        },
+        {
+          "type": "url",
+          "id": "user-manual-link1",
+          "label": "Link1"
+        },
+        {
+          "type": "text",
+          "id": "user-manual-link1-title",
+          "label": "Link1 Title"
+        },
+        {
+          "type": "url",
+          "id": "user-manual-link2",
+          "label": "Link2"
+        },
+        {
+          "type": "text",
+          "id": "user-manual-link2-title",
+          "label": "Link2 Title"
+        },
+        {
+          "type": "url",
+          "id": "user-manual-link3",
+          "label": "Link3"
+        },
+        {
+          "type": "text",
+          "id": "user-manual-link3-title",
+          "label": "Link3 Title"
+        }
+      ]
+    },
+    {
+      "type": "ebikelist",
+      "name": "ebike list",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "ebike-manual-img",
+          "label": "Img"
+        },
+        {
+          "type": "image_picker",
+          "id": "ebike-manual-mobimg",
+          "label": "Mob Img"
+        },
+        {
+          "type": "text",
+          "id": "ebike-manual-title",
+          "label": "Manual Title"
+        },
+        {
+          "type": "richtext",
+          "id": "ebike-manual-desc",
+          "label": "Manual Desc"
+        },
+        {
+          "type": "url",
+          "id": "ebike-manual-link1",
+          "label": "Link1"
+        },
+        {
+          "type": "text",
+          "id": "ebike-manual-text1",
+          "label": "Link1 Text"
+        },
+        {
+          "type": "url",
+          "id": "ebike-manual-link2",
+          "label": "Link2"
+        },
+        {
+          "type": "text",
+          "id": "ebike-manual-text2",
+          "label": "Link2 Text"
+        },
+        {
+          "type": "url",
+          "id": "ebike-manual-link3",
+          "label": "Link3"
+        },
+        {
+          "type": "text",
+          "id": "ebike-manual-text3",
+          "label": "Link3 Text"
+        },
+        {
+          "type": "url",
+          "id": "ebike-manual-link4",
+          "label": "Link4"
+        },
+        {
+          "type": "text",
+          "id": "ebike-manual-text4",
+          "label": "Link4 Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,125 @@
+<div class="fb-customer relative w-full overflow-hidden">
+  <img
+    loading="lazy"
+    src="{{ section.settings.pc_bg | img_url:'' }}"
+    alt="{{ section.settings.pc_bg | escape }}"
+    class="absolute left-0 hidden h-full w-full fb-sm:block"
+  >
+  <div class="flex w-full flex-col px-5 fb-sm:flex-row fb-sm:justify-between fb-sm:px-10 fb-sm:py-4 fb-md:py-12 fb-md:mx-auto fb-md:max-w-75r fb-md:px-0">
+    <div
+      class="z-1 w-full pt-10  text-center fb-sm:flex fb-sm:w-[48.3%] fb-sm:flex-col fb-sm:justify-center fb-sm:pt-0 fb-sm:text-left"
+    >
+      <h2 class="mb-4 text-20 font-bold uppercase text-121212 fb-sm:text-20 fb-md:mb-6 fb-md:text-32">
+        {{ section.settings.content_title }}
+      </h2>
+      <p class="mb-8 text-12 font-normal text-121212  fb-sm:text-12 fb-md:mb-10 fb-md:text-16">
+        {{ section.settings.content_des }}
+      </p>
+      <div
+        class="dark-btn-normal cursor-pointer mx-auto flex h-10 w-50 flex-row content-center items-center justify-center fb-sm:mx-0 fb-sm:h-10 fb-sm:w-60 fb-md:h-12 fb-md:w-70"
+        onclick="TidioShowFun()"
+      >
+        <img
+          loading="lazy"
+          class="mr-2 h-4 w-4 fb-md:mr-2 fb-md:h-5 fb-md:w-5"
+          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_ef2543e0-68d3-43bc-b355-d9feab35c563.png?v=1685958156"
+          alt="text logo"
+        >
+        <span class="text-12 fb-md:text-16">{{ section.settings.btn_des }}</span>
+      </div>
+    </div>
+
+    <div class="z-2 h-59 w-full text-center fb-sm:h-full fb-sm:w-[48.3%]">
+      {{
+        section.settings.pc_right
+        | image_url: width: 750
+        | image_tag:
+          sizes: '(min-width: 1200px) 600px, (min-width: 640px) calc((100vw - 80px) / 2), calc((100vw - 40px) / 2)',
+          class: 'h-auto w-full',
+          widths: '375, 550, 750, 1100, 1500',
+          loading: "lazy",
+          alt: section.settings.pc_right.alt
+      }}
+    </div>
+  </div>
+</div>
+<script>
+  function TidioShowFun() {
+    if (tidioChatApi) {
+      tidioChatApi.open();
+    }
+  }
+</script>
+{% schema %}
+{
+  "name": "FbCustomer",
+  "presets": [
+    {
+      "name": "fb-customer",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "content_title",
+      "label": "Content Title",
+      "default": "TALK LIVE WITH A FREEBEAT BIKE SPECIALIST"
+    },
+    {
+      "type": "text",
+      "id": "content_des",
+      "label": "Content Des",
+      "default": "Our specialists are here to assist with all of your questions and can help you pick the perfect bike for your needs."
+    },
+    {
+      "type": "text",
+      "id": "btn_des",
+      "label": "btn Des",
+      "default": "TALK TO A SPECIALIST"
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_bg",
+      "label": "PC Bg"
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_right",
+      "label": "PC Right Img"
+    },
+    {
+      "type": "image_picker",
+      "id": "mb_right",
+      "label": "MB Right Img"
+    },
+    {
+      "type": "image_picker",
+      "id": "mb_bg",
+      "label": "MB Bg"
+    },
+    {
+      "type": "text",
+      "id": "button_des",
+      "label": "Button Des",
+      "default": "Learn more"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  @media only screen and (min-width: 640px) {
+    .fb-customer {
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.25) 63.58%);
+      backdrop-filter: blur(7.5px);
+    }
+  }
+  @media only screen and (max-width: 639px) {
+    {% if template == 'index' %}
+      .fb-customer {
+        display: none;
+      }
+    {% endif %}
+  }
+</style>

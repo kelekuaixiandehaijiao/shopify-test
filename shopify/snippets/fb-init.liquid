@@ -1,0 +1,190 @@
+<script type="text/javascript">
+  (function (f, b) {
+    if (!b.__SV) {
+      var e, g, i, h;
+      window.mixpanel = b;
+      b._i = [];
+      b.init = function (e, f, c) {
+        function g(a, d) {
+          var b = d.split('.');
+          2 == b.length && ((a = a[b[0]]), (d = b[1]));
+          a[d] = function () {
+            a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        }
+        var a = b;
+        'undefined' !== typeof c ? (a = b[c] = []) : (c = 'mixpanel');
+        a.people = a.people || [];
+        a.toString = function (a) {
+          var d = 'mixpanel';
+          'mixpanel' !== c && (d += '.' + c);
+          a || (d += ' (stub)');
+          return d;
+        };
+        a.people.toString = function () {
+          return a.toString(1) + '.people (stub)';
+        };
+        i =
+          'disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove'.split(
+            ' ',
+          );
+        for (h = 0; h < i.length; h++) g(a, i[h]);
+        var j = 'set set_once union unset remove delete'.split(' ');
+        a.get_group = function () {
+          function b(c) {
+            d[c] = function () {
+              call2_args = arguments;
+              call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+              a.push([e, call2]);
+            };
+          }
+          for (var d = {}, e = ['get_group'].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++)
+            b(j[c]);
+          return d;
+        };
+        b._i.push([e, f, c]);
+      };
+      b.__SV = 1.2;
+      e = f.createElement('script');
+      e.type = 'text/javascript';
+      e.async = !0;
+      e.src =
+        'undefined' !== typeof MIXPANEL_CUSTOM_LIB_URL
+          ? MIXPANEL_CUSTOM_LIB_URL
+          : 'file:' === f.location.protocol && '//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js'.match(/^\/\//)
+          ? 'https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js'
+          : '//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js';
+      g = f.getElementsByTagName('script')[0];
+      g.parentNode.insertBefore(e, g);
+    }
+  })(document, window.mixpanel || []);
+
+  // Enabling the debug mode flag is useful during implementation,
+  // but it's recommended you remove it for production
+  mixpanel.init('003a091996a83f873ca03671c00fdc3c', { debug: true, track_pageview: true, persistence: 'localStorage' });
+</script>
+<!-- Global site tag (gtag.js) - Google Ads: {{ fa_google_ads_audience_tag_id }} -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-{{ settings.fa_google_ads_audience_tag_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'AW-{{ settings.fa_google_ads_audience_tag_id }}');
+</script>
+
+<script>
+  (function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webtrafficsource.com/track/code.js';
+    var a = document.getElementsByTagName('script')[0];
+    a.parentNode.insertBefore(s, a);
+  })();
+</script>
+<script>
+  try {
+    if(PerformanceObserver.supportedEntryTypes.indexOf('largest-contentful-paint') === -1) {
+      setTimeout(function(){
+        {%- if template contains 'index' or template contains 'product' or template contains 'cart' or template contains 'membership' -%}
+          console.log('load review')
+          window.loadReview();
+          window.uetLoad();
+          window.googleAdsLoad();
+        {%- endif -%}
+        {%- if template contains 'collection' -%}
+            window.loadReview();
+        {%- endif -%}
+      },4000);
+    }
+    let timer;
+    let startLoadTime = new Date().getTime();
+    window.addEventListener('load', function() {
+
+      let endLoadTime = new Date().getTime() - startLoadTime;
+      window.mixpanel.track_pageview({'loadTime': endLoadTime});
+      console.log('window loaded', endLoadTime);
+    });
+    let lcpObserver = new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if(timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          window.mixpanel.track('LCP', {'LCPTime': entry.startTime, 'URL Path': window.location.pathname});
+          console.log('LCP', entry.startTime);
+
+          lcpObserver.disconnect();
+          {%- if template contains 'index' or template contains 'product' or template contains 'cart' or template contains 'membership' -%}
+            window.loadReview();
+            window.uetLoad();
+            window.googleAdsLoad();
+          {%- endif -%}
+          {%- if template contains 'collection' -%}
+            window.loadReview();
+          {%- endif -%}
+        }, 1000)
+      }
+    })
+    lcpObserver.observe({type: 'largest-contentful-paint', buffered: true});
+  } catch(e) {
+    console.log('Mixpanel not loaded');
+  }
+</script>
+
+<!-- Stamped - Begin script -->
+<script>
+  function loadReview() {
+    var x = document.getElementsByTagName('script')[0];
+    var stampedScript = document.createElement('script');
+    stampedScript.type = 'text/javascript';
+    stampedScript.src = 'https://cdn1.stamped.io/files/widget.min.js';
+    x.parentNode.insertBefore(stampedScript, x);
+    console.log('review loaded1');
+    stampedScript.onload = function () {
+      console.log('review onload');
+      StampedFn.init({ apiKey: 'pubkey-BanRn9UeSCnGiI5sBqQ9gwdL76g298', sId: '233008' });
+    };
+  }
+</script>
+<!-- Stamped - End script -->
+
+<!-- uet tag -->
+<script>
+  function uetLoad() {
+    (function (w, d, t, r, u) {
+      var f, n, i;
+      (w[u] = w[u] || []),
+        (f = function () {
+          var o = { ti: '52011437', tm: 'shpfy_ui', enableAutoSpaTracking: true };
+          (o.q = w[u]), (w[u] = new UET(o)), w[u].push('pageLoad');
+        }),
+        (n = d.createElement(t)),
+        (n.src = r),
+        (n.async = 1),
+        (n.onload = n.onreadystatechange =
+          function () {
+            var s = this.readyState;
+            (s && s !== 'loaded' && s !== 'complete') || (f(), (n.onload = n.onreadystatechange = null));
+          }),
+        (i = d.getElementsByTagName(t)[0]),
+        i.parentNode.insertBefore(n, i);
+    })(window, document, 'script', '//bat.bing.com/bat.js', 'uetq');
+  }
+</script>
+<!-- uet tag -->
+
+<script>
+  function googleAdsLoad() {
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-{{ settings.fa_google_ads_audience_gtm_id }}');
+  }
+</script>

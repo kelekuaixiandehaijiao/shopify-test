@@ -1,0 +1,507 @@
+{%- assign meta_perksdesc = section.blocks | where: 'type', 'perksdesc' | first -%}
+<div class="fb-image-text-contact utils-timg-content" id="section-{{ section.id }}">
+  <div class="utils-timg-block itc-content utils-timg-block-column-reverse">
+    <div class="itc-box-image utils-timg-box-img utils-timg-box-space">
+      {% assign imgPiker = section.settings.itc_image | img_url: '' %}
+      <img
+        class="itc-box-image-image"
+        src="{{ imgPiker }}"
+        loading="lazy"
+        alt="{{ imgPiker.alt | escape }}"
+      >
+    </div>
+    <div class="itc-box-p utils-timg-box-p utils-timg-box-p-padding">
+      {%- if section.settings.itc_title -%}
+        <div class="itc-box-title">
+          {{ section.settings.itc_title }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.itc_sub_title -%}
+        <div class="itc-box-sub-title">
+          {{ section.settings.itc_sub_title }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.itc_box_desc1 -%}
+        <div class="itc-box-desc itc-com-margin">
+          {{ section.settings.itc_box_desc1 }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.itc_box_desc2 -%}
+        <div class="itc-box-desc">
+          {{ section.settings.itc_box_desc2 }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.perks -%}
+        <div class="itc-box-perk">
+          {{ section.settings.perks }}
+        </div>
+      {%- endif -%}
+      <ul class="itc-perk-ul">
+        {%- for block in section.blocks -%}
+          {%- if meta_perksdesc != blank -%}
+            {%- if block.settings.perks_desc -%}
+              <li class="itc-perk-li">
+                <p class="itc-perk-circle">·&nbsp;</p>
+                {{ block.settings.perks_desc }}
+              </li>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      {%- if section.settings.show_fb_contact_us -%}
+        <div class="itc-concat-form">
+          {%- render 'fb-contact-us', block: block -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbImageTextContact",
+  "presets": [
+    {
+      "name": "fb-image-text-contact",
+      "category": "Fb Sections",
+      "blocks": [
+        {
+          "type": "contact_dialog"
+        },
+        {
+          "type": "contact_info"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_fb_contact_us",
+      "label": "show cantact us",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "itc_back_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "itc_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "text",
+      "id": "itc_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "itc_sub_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "itc_box_desc1",
+      "label": "Desc1"
+    },
+    {
+      "type": "richtext",
+      "id": "itc_box_desc2",
+      "label": "Desc2"
+    },
+    {
+      "type": "text",
+      "id": "perks",
+      "label": "perks"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text color"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border color"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "perksdesc",
+      "name": "Perks desc",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "perks_desc",
+          "label": "perks_desc"
+        }
+      ]
+    },
+    {
+      "type": "contact_dialog",
+      "name": "Contact Dialog",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "contact_dialog_title",
+          "label": "Title",
+          "default": "Thank you for applying"
+        },
+        {
+          "type": "text",
+          "id": "contact_dialog_subtitle",
+          "label": "Sub Title",
+          "default": "We will be in contact with you soon. Meanwhile, RIDE on! Let's go!"
+        },
+        {
+          "type": "text",
+          "id": "contact_dialog_btn_text",
+          "label": "Button Text",
+          "default": "Okay"
+        }
+      ]
+    },
+    {
+      "type": "contact_info",
+      "name": "Contact Info",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "contact_info_name",
+          "label": "NAME",
+          "default": "NAME"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_email",
+          "label": "EMAIL",
+          "default": "EMAIL"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_username",
+          "label": "SOCIAL MEDIA USERNAME",
+          "default": "SOCIAL MEDIA USERNAME"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_platform",
+          "label": "SOCIAL MEDIA PLATFORM",
+          "default": "SOCIAL MEDIA PLATFORM"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_select_values",
+          "label": "Select Values",
+          "info": "Separate each value by a comma.",
+          "default": "value 1, value 2, value 3"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_select_input_name",
+          "label": "Select Input Name",
+          "default": "Select"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_followers",
+          "label": "AMOUNT OF FOLLOWERS",
+          "default": "AMOUNT OF FOLLOWERS"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_media_link",
+          "label": "SOCIAL MEDIA LINK",
+          "default": "SOCIAL MEDIA LINK"
+        },
+        {
+          "type": "text",
+          "id": "contact_info_submit_botton_name",
+          "label": "Submit Botton Name",
+          "default": "SEND"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  body {
+      overflow-x: hidden;
+  }
+   .fb-image-text-contact{
+       background-color: {{ section.settings.itc_back_color }};
+       width: 100%;
+       padding-bottom: 180px;
+   }
+   .itc-box-image-image{
+       width: 100%;
+       height: auto;
+   }
+   .itc-box-p{
+     text-align: left;
+   }
+   .itc-box-title{
+      font-size: 36px;
+      font-weight: bold;
+      color: #1C1B1B;
+      line-height: 44px;
+      margin-bottom: 12px;
+  }
+  .itc-box-sub-title{
+      font-size: 16px;
+      font-weight: bold;
+      color: #1C1B1B;
+      margin-bottom: 30px;
+  }
+  .itc-com-margin{
+      margin-bottom: 20px;
+  }
+  .itc-box-desc p{
+      font-size: 16px;
+      font-weight: 400;
+      color: #1C1B1B;
+      line-height: 24px;
+  }
+  .itc-box-desc a, .itc-perk-li p a{
+      color: #891AF5;
+  }
+  .itc-box-perk{
+      font-size: 16px;
+      font-weight: bold;
+      color: #1C1B1B;
+      line-height: 19px;
+      margin-top: 40px;
+      margin-bottom: 12px;
+  }
+  .itc-perk-ul{
+      margin: 0;
+      padding: 0;
+      margin-bottom: 15px;
+  }
+  .itc-perk-li{
+      font-size: 12px;
+      font-weight: 400;
+      color: #666666;
+      list-style: none;
+      display: flex;
+  }
+
+  .itc-perk-li p {
+      margin: 0;
+      padding: 0;
+      line-height: 24px;
+  }
+  {% comment %} form表单重写 {% endcomment %}
+  .itc-concat-form{
+      width: 100%;
+      padding-right: 5%;
+  }
+  .itc-concat-form .fb-form-itc-label{
+      font-size: 12px;
+      font-weight: bold;
+      color: #1C1B1B;
+      line-height: 15px;
+      margin-bottom: 4px;
+      text-align: left;
+      width: 100%;
+      display: inline-block;
+  }
+  .itc-concat-form .fb-form-itc-label span{
+      color: #CC3232;
+      margin-left: 2px;
+  }
+  .itc-concat-form .Form__Input{
+      height: 36px;
+      padding: 0px 0px 0px 15px;
+      border: 1px solid #888888;
+  }
+  .itc-concat-form .Form__Input, .itc-concat-form .Select--primary {
+      font-size: 12px;
+  }
+  .itc-concat-form .Select--primary select{
+      height: 36px;
+      padding: 0px 0px 0px 28px;
+      border: 1px solid #888888;
+  }
+  .itc-concat-form .Form--spacingTight .Form__Item {
+      margin-bottom: 4px;
+  }
+  .itc-concat-form .Select--primary svg {
+      color: #666;
+      left: 15px;
+      width: 8px;
+      height: 5px;
+      top: 16px;
+  }
+  .itc-concat-form .Form__Submit {
+      width: 74px;
+      height: 36px;
+      border: 2px solid {{ section.settings.button_border_color }};
+      color: {{ section.settings.button_text_color }};
+      background: {{ section.settings.button_background_color }};
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+  }
+  .itc-concat-form  input::-ms-input-placeholder{text-align: left;font-size: 12px;}
+  .itc-concat-form  input::-webkit-input-placeholder{text-align: left;font-size: 12px;}
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+      .fb-image-text-contact{
+        position: relative;
+        padding-bottom: 0px;
+        margin-bottom: 300px;
+      }
+      .itc-concat-form{
+          position: absolute;
+          left: 0px;
+          right: 0px;
+          width: 100%;
+          bottom: -300px;
+          padding: 0% 8%;
+      }
+  }
+  @media only screen and (max-width: 768px){
+      .itc-concat-form {
+          padding-right: 0;
+      }
+      .itc-concat-form .fb-form-itc-label span{
+          color: #CC3232;
+          margin-left: 0px;
+      }
+      .itc-concat-form .Form__Group {
+          display: flex;
+        }
+        .itc-concat-form .Form__Group > .Form__Item {
+          flex: 1;
+        }
+        .itc-concat-form  .Form__Item{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+
+        .itc-concat-form .Form__Group > :nth-child(2) {
+          margin-left: 15px;
+        }
+        .itc-concat-form .Form--spacingTight .Form__Group > :nth-child(2) {
+          margin-left: 15px;
+        }
+      .itc-concat-form .fb-form-itc-label{
+          font-size: 11px;
+          line-height: 14px;
+          margin-bottom: 2px;
+      }
+      .itc-concat-form .Form__Input, .itc-concat-form .Select--primary {
+          font-size: 13px;
+      }
+      .itc-concat-form .Form__Input{
+          height: 40px;
+          padding: 0px 0px 0px 11px;
+          width: 100%;
+      }
+      .itc-concat-form .Select--primary select{
+          height: 40px;
+          padding: 0px 0px 0px 24px;
+          width: 100%;
+      }
+      .itc-concat-form .Select--primary::after{
+          display: none;
+      }
+      .itc-concat-form .Form__Submit {
+          width: 82px;
+          height: 40px;
+          font-size: 13px;
+          margin-top: 18px;
+      }
+      .itc-concat-form .Select--primary svg {
+          left: 11px;
+          top: 18px;
+      }
+  }
+   {% comment %} form表单重写 end{% endcomment %}
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+      {% comment %}设计稿810的部分 小于12px的 直接忽略掉 {% endcomment %}
+      .fb-image-text-contact{
+          padding-bottom: 79px;
+       }
+       .itc-concat-form{
+          margin-bottom: 33px;
+      }
+      .itc-box-p .itc-box-title{
+           font-size: 28px;
+           line-height: 40px;
+       }
+      .itc-box-sub-title{
+          margin-bottom: 15px;
+      }
+      .itc-box-perk, .itc-box-sub-title{
+          font-size: 18px;
+      }
+      .itc-perk-ul{
+          margin-bottom: 7px;
+      }
+      .itc-com-margin{
+          margin-bottom: 10px;
+      }
+      .itc-box-perk{
+          margin-top: 15px;
+          margin-bottom: 8px;
+      }
+  }
+   {% comment %} 移动端设置 {% endcomment %}
+   @media only screen and (max-width: 768px){
+      .fb-image-text-contact{
+           padding-bottom: 88px;
+       }
+      .itc-box-p{
+          text-align: center;
+      }
+       .itc-box-p .itc-box-title{
+           font-size: 24px;
+           line-height: 30px;
+           margin-bottom: 13px;
+       }
+       .itc-box-p .itc-box-sub-title{
+           font-size: 15px;
+           line-height: 20px;
+           margin-bottom: 30px;
+       }
+       .itc-box-p  .itc-box-desc p{
+           font-size: 13px;
+       }
+       .itc-com-margin{
+          margin-bottom: 18px;
+      }
+      .itc-box-perk{
+          font-size: 15px;
+          line-height: 20px;
+          margin-top: 44px;
+          margin-bottom: 13px;
+          text-align: left;
+      }
+      .itc-perk-li{
+          font-size: 11px;
+          text-align: left;
+      }
+      .itc-perk-li p {
+          line-height: 26px;
+      }
+      .itc-perk-ul{
+          margin-bottom: 22px;
+      }
+      .itc-box-p{
+          margin-bottom: 33px;
+      }
+   }
+</style>

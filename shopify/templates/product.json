@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "6c9d84d8-b41d-4838-99c6-1f87a9f6b911": {
+      "type": "ebike-product-model-other",
+      "blocks": {
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        }
+      },
+      "block_order": [
+        "variant_selector"
+      ],
+      "settings": {
+        "customer_product": "",
+        "product_big_title": "",
+        "product_big_sub_title": "",
+        "product_desc_title": "",
+        "product_build_title": "",
+        "product_but_text": "ADD TO CART",
+        "image_size": "large",
+        "stack_images": true,
+        "show_thumbnails": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false
+      }
+    }
+  },
+  "order": [
+    "6c9d84d8-b41d-4838-99c6-1f87a9f6b911"
+  ]
+}

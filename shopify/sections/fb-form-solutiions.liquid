@@ -1,0 +1,470 @@
+<div class="fb-classes-work" id="fb-commerical">
+  <!-- bg -->
+  {% assign pc_bg = section.settings.pc_bg | img_url: '' %}
+  {% assign mb_bg = section.settings.mb_bg | img_url: '' %}
+  <img
+    class="pc_bg_img"
+    src="{{ pc_bg }}"
+    loading="lazy"
+    alt="{{section.settings.pc_bg.alt}}"
+  >
+  <img
+    class="mb_bg_img"
+    src="{{ mb_bg }}"
+    oading="lazy"
+    alt="{{section.settings.mb_bg.alt}}"
+  >
+  <div class="des-box">
+    <div class="u-des-box">
+      <div class="m-tit">
+        {{ section.settings.content_title }}
+      </div>
+      <div class="m-des">
+        {{ section.settings.content_des }}
+      </div>
+    </div>
+    <div class="solution-form">
+      <div class="top-input">
+        <input type="text" class="form-input common" id="first_name" placeholder="First Name" required>
+        <input type="text" class="form-input common" id="last_name" placeholder="Last Name" required>
+      </div>
+      <input type="text" class="form-input" id="email_name" placeholder="Email" required>
+      <input type="text" class="form-input" id="phone_name" placeholder="Phone Number" required>
+      <input type="text" class="form-input" id="address_name" placeholder="Address" required>
+      <textarea
+        type="textarea"
+        class="form-input form-texarea"
+        id="message_name"
+        placeholder="Message"
+      ></textarea>
+    </div>
+
+    <div class="class-work-btn">
+      {{ section.settings.button_des }}
+    </div>
+    <div class="m-bottom">
+      <div class="u-des-bott">For more information, please contact</div>
+      <a href="mailto:sales@freebeatfit.com"> sales@freebeatfit.com </a>
+    </div>
+  </div>
+</div>
+<script></script>
+<style>
+  #fb-commerical {
+    display: block;
+  }
+
+  .fb-classes-work {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .fb-classes-work .pc_bg_img {
+    display: block;
+    width: 100%;
+    height: 910px;
+  }
+
+  .fb-classes-work .des-box {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .fb-classes-work .u-des-box {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .fb-classes-work .u-des-box .m-tit {
+    font-size: 48px;
+    font-weight: 800;
+    color: #000000;
+    line-height: 48px;
+    text-transform: uppercase;
+  }
+
+  .fb-classes-work .u-des-box .m-des {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 20px;
+    margin-top: 18px;
+  }
+
+  .fb-classes-work .solution-form {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 880px;
+    min-width: 880px;
+  }
+
+  .fb-classes-work .top-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .fb-classes-work .common {
+    width: calc(calc(100% - 20px) / 2) !important;
+  }
+
+  .fb-classes-work .form-input {
+    margin-top: 24px;
+    width: 100%;
+    height: 64px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+
+  .fb-classes-work .form-texarea {
+    height: 150px !important;
+  }
+
+  .fb-classes-work input {
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 14px;
+    text-align: left;
+    padding: 25px 30px;
+    box-sizing: border-box;
+  }
+
+  .fb-classes-work textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 14px;
+    text-align: left;
+    padding: 25px 30px;
+    box-sizing: border-box;
+  }
+
+  .fb-classes-work input::placeholder {
+    text-align: left;
+  }
+
+  .fb-classes-work .m-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  .fb-classes-work .u-des-bott {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #000000;
+  }
+
+  .fb-classes-work a {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    color: rgba(2, 192, 217, 1);
+    margin-left: 2px;
+  }
+
+  .fb-classes-work .mb_bg_img {
+    display: none;
+  }
+
+  .fb-classes-work .class-work-btn {
+    margin-top: 60px;
+    width: 300px;
+    height: 48px;
+    background: #000000;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 48px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 768px) {
+    .fb-classes-work .pc_bg_img {
+      display: none;
+    }
+
+    .fb-classes-work .mb_bg_img {
+      position: relative;
+      width: 100%;
+      height: 914px;
+      display: block;
+    }
+
+    .fb-classes-work .des-box {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    .fb-classes-work .u-des-box {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .fb-classes-work .u-des-box .m-tit {
+      font-size: 32px;
+      font-weight: 800;
+      color: #000000;
+      line-height: 32px;
+    }
+
+    .fb-classes-work .u-des-box .m-des {
+      width: 275px;
+      height: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #000000;
+      line-height: 20px;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .fb-classes-work .solution-form {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+    .fb-classes-work .top-input {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .fb-classes-work .common {
+      width: 100% !important;
+    }
+
+    .fb-classes-work .form-input {
+      margin-top: 20px;
+      width: 100%;
+      height: 64px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+    }
+
+    .fb-classes-work .form-texarea {
+      height: 120px !important;
+    }
+
+    .fb-classes-work input {
+      outline: none;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 14px;
+      text-align: left;
+      padding: 25px 30px;
+      box-sizing: border-box;
+    }
+
+    .fb-classes-work textarea {
+      outline: none;
+      border: none;
+      resize: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 14px;
+      text-align: left;
+      padding: 25px 30px;
+      box-sizing: border-box;
+    }
+
+    .fb-classes-work input::placeholder {
+      text-align: left;
+    }
+
+    .fb-classes-work .m-bottom {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+    }
+
+    .fb-classes-work .u-des-bott {
+      width: 100%;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 500;
+      color: #000000;
+      text-align: center;
+    }
+
+    .fb-classes-work a {
+      width: 100%;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 500;
+      color: rgba(2, 192, 217, 1);
+      margin-left: 0;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .fb-pdp-color-lit-c {
+      font-size: 14px;
+      font-weight: 600;
+      color: #666666;
+      line-height: 14px;
+      margin-top: 20px;
+    }
+
+    .fb-classes-work .class-work-btn {
+      margin-top: 40px;
+      width: 300px;
+      height: 48px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 48px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FbFormSolutions",
+  "presets": [
+    {
+      "name": "fb-form-solution",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "content_title",
+      "label": "Content Title",
+      "default": "get in touch"
+    },
+    {
+      "type": "text",
+      "id": "content_des",
+      "label": "Content Des",
+      "default": "Our team will be in contact to customize your fitness solutions."
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_bg",
+      "label": "PC Bg"
+    },
+    {
+      "type": "image_picker",
+      "id": "mb_bg",
+      "label": "MB Bg"
+    },
+    {
+      "type": "richtext",
+      "id": "how_max_title",
+      "label": "How Our Classes Work?"
+    },
+    {
+      "type": "text",
+      "id": "button_des",
+      "label": "Button Des",
+      "default": "SUBMIT"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  $(function () {
+    $('.class-work-btn').click(function () {
+      let first_name = $('#first_name').val();
+      console.log(first_name, 'hhahahhah ');
+      let obj = {
+        first_name: $('#first_name').val(),
+        last_name: $('#last_name').val(),
+        email: $('#email_name').val(),
+        phone: $('#phone_name').val(),
+        address: $('#address_name').val(),
+        message: $('#message_name').val(),
+      };
+      var isEmpty = false;
+      for (var key in obj) {
+        if (obj[key] == '') {
+          isEmpty = true;
+          break;
+        }
+      }
+      console.log("MsgBox", MsgBox)
+      if (isEmpty) {
+        MsgBox.init('Please fill out all the fields.', 1000);
+        return false;
+      }
+      fetch(`https://api.freebeatfit.com/shopify/v1/collectUserData`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+      })
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (res) {
+          let { code, msg } = res;
+          if (code == 0) {
+            MsgBox.init('Your submission has been received!', 1000);
+          } else {
+            MsgBox.init(msg, 1000);
+          }
+        });
+    });
+  });
+</script>

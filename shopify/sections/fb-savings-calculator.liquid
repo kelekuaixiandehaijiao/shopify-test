@@ -1,0 +1,277 @@
+{%- assign productcal = section.settings.fsc_peoper_prduct -%}
+
+{%- capture has_bike_default_url -%}
+    {%- render 'customer-price-control', cpc_product: productcal, type: 'bikeDefaultPdpUrl' -%}
+{%- endcapture -%}
+{%- if section.settings.fsc_number_bike_img != blank -%}
+  {% assign oneimg = section.settings.fsc_number_bike_img | img_url: '' %}
+{%- else -%}
+  {% assign oneimg = 'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/1_2edecd79-2b64-400d-aba9-4967a2cdc761.png' %}
+{%- endif -%}
+{%- if section.settings.fsc_number_week_img != blank -%}
+  {% assign twoimg = section.settings.fsc_number_week_img | img_url: '' %}
+{%- else -%}
+  {% assign twoimg = 'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2_541fbb75-6a3d-48a6-9b78-70b5ee649bea.png' %}
+{%- endif -%}
+{%- if section.settings.fsc_number_workout_img != blank -%}
+  {% assign threeimg = section.settings.fsc_number_workout_img | img_url: '' %}
+{%- else -%}
+  {% assign threeimg = 'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/3_c8900846-57ba-4d70-bbf4-e320d6b8a3e0.png' %}
+{%- endif -%}
+<div
+  id="section-{{ section.id }}"
+  class="fb-savings-calculator bg-black "
+  data-people="{{ section.settings.fsc_peoper_number }}"
+  data-week="{{ section.settings.fsc_week_number }}"
+  data-price="{%- render 'customer-price-control', type:'saleInt', cpc_product: productcal -%}"
+>
+  <div class="px-5 py-10 fb-sm:py-15 fb-sm:px-10 fb-md:py-20 fb-md:px-0 max-w-75r mx-auto flex flex-col justify-center items-center w-full h-full">
+    <div class="fb_savCal_upperContainer w-full h-full">
+      <div class=" text-20 uppercase font-bold text-white w-full text-center fb-md:text-32">
+        {{ section.settings.fsc_title }}
+      </div>
+      <div class="flex flex-row justify-center items-center mt-6 gap-5 fb-md:mt-10">
+        <div class="savCal_numberOf_bike flex-half-center-col">
+          <img
+            class="w-10 h-10 fb-md:w-4r fb-md:h-4r"
+            src="{{ oneimg }}"
+            loading="lazy"
+            alt="freebeat membership"
+          >
+          <div class=" mt-3 text-12 text-cccccc max-w-10r text-center fb-md:text-16">
+            {{ section.settings.fsc_number_bike_text }}
+          </div>
+        </div>
+        <div class="savCal_numberOf_week flex-half-center-col">
+          <img
+            class="w-10 h-10 fb-md:w-4r fb-md:h-4r"
+            src="{{ twoimg }}"
+            loading="lazy"
+            alt="freebeat strenth training"
+          >
+          <div class="mt-3 text-12 text-cccccc text-center fb-md:text-16">
+            {{ section.settings.fsc_number_week_text }}
+          </div>
+        </div>
+        <div class="savCal_numberOf_workout hidden fb-sm:flex-half-center-col">
+          <img
+            class="w-10 h-10 fb-md:w-4r fb-md:h-4r"
+            src="{{ threeimg }}"
+            loading="lazy"
+            alt="freebeat pad screen"
+          >
+          <div class="mt-3 text-12 text-cccccc text-center font-bold w-18 fb-md:text-16">
+            {{ section.settings.fsc_per_workout }}
+          </div>
+        </div>
+      </div>
+      <div class="fb_savCal_calculatorMainDiv flex flex-row justify-center items-center mt-6">
+        <div class="fb_savCal_calculator_people flex-half-center h-10 gap-3 fb-md:h-4r fb-md:gap-6">
+          <div class="js_savCal_people_number text-white text-32 font-bold fb-md:text-4r">02</div>
+          <div class="fb_savCal_arrows_div flex justify-around h-full flex-col">
+            <span class="savCal_upArrow js_upArrow" data-change="js_savCal_people_number">
+              {% render 'fb-icon-up', class: 'fb-md:w-5 fb-md:h-5' %}
+              {% render 'fb-icon-up-disabled', class: 'hidden fb-md:w-5 fb-md:h-5'%}
+            </span>
+            <span class="savCal_downArrow js_downArrow" data-change="js_savCal_people_number">
+              {% render 'fb-icon-down', class: 'fb-md:w-5 fb-md:h-5' %}
+              {% render 'fb-icon-down-disabled', class: 'hidden fb-md:w-5 fb-md:h-5' %}
+            </span>
+          </div>
+        </div>
+        <div class="fb_savCal_closeIcon ">
+          <span>
+            <svg class="fb-md:w-10 fb-md:h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0995 5.59833C20.5681 5.1297 20.5681 4.36991 20.0995 3.90128C19.6309 3.43265 18.8711 3.43265 18.4024 3.90128L12.0009 10.3028L5.59931 3.90128C5.13068 3.43265 4.37088 3.43265 3.90225 3.90128C3.43362 4.36991 3.43362 5.1297 3.90225 5.59833L10.3038 11.9999L3.90245 18.4013C3.43382 18.8699 3.43382 19.6297 3.90245 20.0983C4.37108 20.5669 5.13088 20.5669 5.59951 20.0983L12.0009 13.697L18.4022 20.0983C18.8708 20.5669 19.6306 20.5669 20.0993 20.0983C20.5679 19.6297 20.5679 18.8699 20.0993 18.4013L13.6979 11.9999L20.0995 5.59833Z" fill="#CCCCCC"/>
+            </svg>
+          </span>
+        </div>
+        <div class="fb_savCal_calculator_workout flex-half-center h-10 gap-3 fb-md:h-4r fb-md:gap-6">
+          <span class="js_savCal_week_number text-white text-32 font-bold fb-md:text-4r">03</span>
+          <div class="fb_savCal_arrows_div flex justify-around h-full flex-col">
+            <span class="savCal_upArrow js_upArrow" data-change="js_savCal_week_number">
+              {% render 'fb-icon-up', class: 'fb-md:w-5 fb-md:h-5' %}
+              {% render 'fb-icon-up-disabled', class: 'hidden fb-md:w-5 fb-md:h-5'%}
+            </span>
+            <span class="savCal_downArrow js_downArrow" data-change="js_savCal_week_number">
+              {% render 'fb-icon-down', class: 'fb-md:w-5 fb-md:h-5' %}
+              {% render 'fb-icon-down-disabled', class: 'hidden fb-md:w-5 fb-md:h-5' %}
+            </span>
+          </div>
+        </div>
+        <div class="fb_savCal_equalIcon hidden fb-sm:block">
+          <span>
+            <svg class="fb-md:w-10 fb-md:h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0007 8.1998C21.6635 8.1998 22.2007 7.66254 22.2007 6.9998C22.2007 6.33706 21.6635 5.7998 21.0007 5.7998H3.00078C2.33804 5.7998 1.80078 6.33706 1.80078 6.9998C1.80078 7.66254 2.33804 8.1998 3.00078 8.1998H21.0007ZM3.00079 18.2003L21.0007 18.2001C21.6635 18.2001 22.2007 17.6628 22.2007 17.0001C22.2007 16.3373 21.6634 15.8001 21.0007 15.8001L3.00077 15.8003C2.33803 15.8003 1.80077 16.3375 1.80078 17.0003C1.80079 17.663 2.33805 18.2003 3.00079 18.2003Z" fill="#CCCCCC"/>
+            </svg>
+          </span>
+        </div>
+        <div class="hidden fb-sm:block fb-sm:flex-half-center relative">
+          <div class="fb_lower_title_block w-full text-center h-10 flex-half-center fb-md:h-4r">
+            <div class="js_calculator_number text-32 text-a1f200 font-bold fb-md:text-4r">$2.13</div>
+          </div>
+          <div class=" mt-3 absolute text-center w-full flex justify-center items-center">
+            <div class="testclass max-w-12r text-12 text-cccccc fb-md:text-16 fb-md:max-w-16r">
+              {{ section.settings.fsc_cheap_than }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fb_savCal_lowerContainer mt-6">
+      <div class="mobile fb-sm:hidden">
+        <div class=" w-full bg-666666 h-[1px]"></div>
+        <div class="flex-half-center-col mt-6">
+          <img
+            class="w-10 h-10"
+            src="{{ threeimg }}"
+            loading="lazy"
+            alt="freebeat pad screen"
+          >
+          <div class=" mt-3 text-12 text-cccccc text-center font-bold">
+            {{ section.settings.fsc_per_workout }}
+          </div>
+        </div>
+        <div class="fb_lower_title_block mt-3 w-full text-center">
+          <div class="js_calculator_number text-32 text-a1f200 font-bold">$2.13</div>
+          <div class="text-12 text-cccccc mt-3">
+            {{ section.settings.fsc_cheap_than }}
+          </div>
+        </div>
+      </div>
+      <div class="fb_lowerCalc_text w-full flex justify-center items-center flex-col">
+        <div class="mt-6 fb-md:text-16 fb-md:max-w-20r text-12 text-cccccc w-full text-center">
+          {{ section.settings.fsc_cheap_based }}
+        </div>
+        <a
+          {% if template contains 'product' %}
+            {% if has_bike_default_url != '' %}
+              href="{{ has_bike_default_url }}"
+              class="fb_lowerCalc_href"
+            {% else %}
+              href="javascript:void(0)"
+              class="fb_lowerCalc_href js-keep-biketype"
+              data-url="{{ section.settings.fsc_buy_now_url }}"
+              data-keep-biketype="{%- render 'customer-price-control', cpc_product: productcal, type: 'bikeType' -%}"
+            {% endif %}
+          {% else %}
+            href="{{ section.settings.fsc_buy_now_url }}"
+            class="fb_lowerCalc_href"
+          {% endif %}
+        >
+          <div class="w-50 fb-md:w-18r fb-md:text-16 fb-md:mt-6 py-3 mt-3 text-white text-center text-12 font-bold border border-white rounded-md">
+            {%- if has_bike_default_url != '' -%}
+              EXPLORE OTHER BIKES
+            {%- else -%}
+              {{- section.settings.fsc_buy_now -}}
+            {%- endif -%}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{{ 'fb-calculator.js' | asset_url }}"></script>
+{% schema %}
+{
+  "name": "FbSavingsCalculator",
+  "presets": [
+    {
+      "name": "fb-savings-calculator",
+      "category": "fb-section",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "fsc_peoper_prduct",
+      "label": "product"
+    },
+    {
+      "type": "number",
+      "id": "fsc_peoper_number",
+      "label": "max people number",
+      "default": 10
+    },
+    {
+      "type": "number",
+      "id": "fsc_week_number",
+      "label": "max week number",
+      "default": 7
+    },
+    {
+      "type": "richtext",
+      "id": "fsc_title",
+      "label": "Title",
+      "default": "<p>The Most Convenient Workout Option</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "fsc_number_bike_img",
+      "label": "Number of people using freebeat bike"
+    },
+    {
+      "type": "richtext",
+      "id": "fsc_number_bike_text",
+      "label": "Number of people using freebeat bike",
+      "default": "<p>Number of people using freebeat bike</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "fsc_number_week_img",
+      "label": "Number of workouts per week"
+    },
+    {
+      "type": "richtext",
+      "id": "fsc_number_week_text",
+      "label": "Number of workouts per week",
+      "default": "<p>Number of <br/> workouts per week</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "fsc_number_workout_img",
+      "label": "Cost per workout"
+    },
+    {
+      "type": "text",
+      "id": "fsc_per_workout",
+      "label": "Cost per workout",
+      "default": "Cost per workout"
+    },
+    {
+      "type": "richtext",
+      "id": "fsc_cheap_than",
+      "label": "Cheaper than your average coffee shop visit!",
+      "default": "<p>Cheaper than your average coffee shop visit!</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "fsc_cheap_based",
+      "label": "Based on a 5 years",
+      "default": "<p>Based on a 5 years time horizon with best 36 month payment financing offer.</p>"
+    },
+    {
+      "type": "text",
+      "id": "fsc_buy_now",
+      "label": "button text",
+      "default": "BUY NOW"
+    },
+    {
+      "type": "url",
+      "id": "fsc_buy_now_url",
+      "label": "button text url"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  {%- if template contains 'boom-bike' -%}
+      @media screen and  (max-width: 1330px)  {
+          .fb-product-pagesbike{
+              border-radius: 0px!important;
+          }
+      }
+  {%- endif -%}
+</style>

@@ -1,0 +1,861 @@
+<div id="section-{{ section.id }}" class="delear-map-container">
+  <div class="delear-map-bigtitle">{{ section.settings.delear_bigtitle1 }}</div>
+  <div class="delear-tabs">
+    <div class="delear-tabs-title delear-selected-title" data-delear-status="0">{{ section.settings.delear_tab_title1 }}</div>
+    <div class="delear-tabs-title" data-delear-status="1">{{ section.settings.delear_tab_title2 }}</div>
+  </div>
+  <div class="delear-map-main">
+    <div class="delear-desc">{{ section.settings.delear_desc }}</div>
+    <div class="delear-network-content">
+      <div class="delear-network-image">
+        {% assign delear-network-icon = section.settings.delear_network_icon | img_url: '' %}
+        <img
+          class="Image--lazyLoad Image--fadeIn delear-network-icon"
+          data-src="{{ delear-network-icon }}"
+          data-sizes="auto"
+          alt="{{ section.settings.delear_network_icon.alt | escape}}"
+        >
+      </div>
+      <div class="delear-network-info">{{ section.settings.delear_network_title }}</div>
+    </div>
+    <div class="delear-map-content" id="beeline-locator"></div>
+    <div class="delear-map-bigtitle">{{ section.settings.delear_bigtitle2 }}</div>
+    <div class="delear-info">{{ section.settings.delear_info }}</div>
+    <a href="{{ section.settings.delear_link }}">
+      <div class="deleat-link">
+        {{ section.settings.delear_link_text }}
+      </div>
+    </a>
+    <div class="choose-delear">
+      <div class="choose-delear-image">
+        {% assign delear-map-pcimg = section.settings.delear-map-pcimg | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        {% assign delear-map-mobimg = section.settings.delear-map-mobimg | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        {% comment %} <img
+          class="Image--lazyLoad Image--fadeIn delear-map-pcimg"
+          data-src="{{ delear-map-pcimg }}"
+          data-sizes="auto"
+          data-optimumx="1.2"
+          data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+          alt="{{ section.settings.delear-map-pcimg.alt | escape }}"
+        > {% endcomment %}
+        {% comment %} <img
+          class="Image--lazyLoad Image--fadeIn delear-map-mobimg"
+          data-src="{{ delear-map-mobimg }}"
+          data-sizes="auto"
+          data-optimumx="1.2"
+          data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+          alt="{{ section.settings.delear-map-mobimg.alt | escape }}"
+        > {% endcomment %}
+      </div>
+      <div class="choose-delear-content">
+        <div class="choose-delear-wrapper">
+          <div class="choose-delear-title">{{ section.settings.choose_delear_title }}</div>
+          <div class="choose-delear-desc">{{ section.settings.choose_delear_desc }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="delear-stay-title">{{ section.settings.delear_bigtitle3 }}</div>
+    <div class="delear-info">{{ section.settings.delear_stay_desc }}</div>
+    <div class="delear-map-email-content">
+      {%- form 'customer', id: 'footer-newsletter', class: 'Footer__Newsletter Form delear-map-email' -%}
+        {% assign shwoTips = false %} 
+        {%- if form.posted_successfully? -%}
+          {% assign shwoTips = true %}
+        {%- else -%}
+          {% assign shwoTips = false %} 
+        {%- endif -%}
+          <input type="email" name="contact[email]" class="Form__Input delear-map-input" aria-label="Enter Email Address" placeholder="Enter Email Address" required>
+          <button type="submit" onclick="handleEmail()" class="Form__Submit Button Button--primary">{{ section.settings.delear_submit }}</button>
+      {%- endform -%}
+      {% comment %} <input class="delear-map-input" placeholder="Enter Email Address" type="text" />
+      <div class="submit-btn">{{ section.settings.delear_submit }}</div> {% endcomment %}
+    </div>
+    {%- if shwoTips == true -%}
+      <div class="delear-thanks-main">
+        <div class="delear-icon">
+          {% assign delear-map-icon = section.settings.delear-map-icon | img_url: '' %}
+          <img
+            class="delear-map-icon"
+            src="{{ delear-map-icon }}"
+            loading="lazy"
+            alt="{{ section.settings.delear-map-icon.alt | escape }}"
+            sizes="auto"
+          >
+        </div>
+        <div class="delear-thanks-text">{{ section.settings.delear_text }}</div>
+      </div>
+    {%- endif -%}
+  </div>
+  <div class="delear-exercise-content">
+    <div class="delear-exercise-img">
+      {% assign delear-exercise-image = section.settings.delear-exercise-image | img_url: '' %}
+      <img
+        class="delear-exercise-image"
+        src="{{ delear-exercise-image }}"
+        alt="{{ section.settings.delear-exercise-image.alt | escape }}"
+        loading="lazy"
+        sizes="auto"
+      >
+    </div>
+  </div>
+</div>
+<script id="beeline-locator-script" async></script>
+<script type="text/javascript">
+  function handleEmail(){
+    window.uetq = window.uetq || [];
+    window.uetq.push('event', 'subscribe', {});
+    {% comment %} $('.delear-thanks-main').css('display','flex') {% endcomment %}
+    {% comment %} $('.delear-exercise-content').css('display','none') {% endcomment %}
+  }
+  $(function(){
+    function handleEmail(){
+    }
+    $('.delear-tabs-title').click(function(){
+      if($(this).attr('data-delear-status') == '0'){
+        $('.delear-map-main').css('display','block')
+        $('.delear-exercise-content').css('display','none')
+      }else{
+        $('.delear-map-main').css('display','none')
+        $('.delear-exercise-content').css('display','block')
+      }
+      console.log()
+      $(this).addClass('delear-selected-title')
+      $(this).siblings().removeClass('delear-selected-title')
+    })
+    const config = {
+      "api_key": "At_9Xi-7pYhb_kATIXRtLf48OcGcRgZt_cbEX2JSOZw",
+      "search_type": "locator",
+      "tags": "",
+      "title": "Find an E-Bike Dealer",
+      "search_text": "Search for E-Bike Dealers within",
+      "map_style": "standard",
+      "primary_button": "#000000",
+      "primary_button_hover": "#484746",
+      "secondary_button": "#ffffff",
+      "secondary_button_hover": "#6c757d",
+      "selected_button": "#000000",
+      "opaque": ""
+    };
+
+    const qs = Object.keys(config).reduce(function(a, k) {
+      a.push(encodeURIComponent(k) + "=" + encodeURIComponent(config[k]));
+      return a
+    }, []).join("&");
+
+    document.getElementById("beeline-locator-script").src = "https://brand-api.beelineconnect.com/embed/locator.js?" + qs;
+  })
+</script>
+<style>
+  .delear-map-email-content .Form__Input{
+    border:none;
+    font-weight: 500!important;
+    padding:0;
+    font-size: 20px!important;
+    color: #666666!important;
+  }
+  .delear-map-email-content .Form__Input::placeholder{
+    font-size: 20px;
+  }
+  .delear-map-email-content .Button--primary:before{
+    background:none;
+  }
+  .delear-map-email-content .Form__Submit{
+    margin-top:0px!important;
+    width: 144px;
+    height: 56px;
+    border-radius: 62px;
+    margin-right:4px;
+    font-size: 16px!important;
+    font-weight: bold!important;
+    color: #FFFFFF;
+    text-align:center;
+    background: #121212;
+    letter-spacing: 0px!important;
+  }
+  .delear-map-pcimg{
+    display:block;
+  }
+  .delear-map-mobimg{
+    display:none;
+  }
+  .delear-map-container{
+    width: 100%;
+    height:100%;
+    padding-bottom:68px;
+    background:#FFFFFF;
+  }
+  .delear-map-bigtitle{
+    padding-top:80px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #121212;
+    line-height: 48px;
+    text-align:center;
+  }
+  .delear-tabs{
+    {% comment %} width:1200px; {% endcomment %}
+    margin:0 auto;
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+    border-bottom: 1px solid #E6E6E6;
+  }
+  .delear-tabs-title{
+    width:600px;
+    font-size: 24px;
+    font-weight: 600;
+    color:rgba(18,18,18,0.5);
+    line-height: 24px;
+    text-align:center;
+    padding-bottom:22px;
+    cursor:pointer;
+  }
+  .delear-selected-title{
+    font-weight: 800;
+    border-bottom:3px solid #121212;
+    color: #121212;
+  }
+  .delear-desc{
+    width:1200px;
+    margin:0 auto;
+    margin-top:60px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 28px;
+    text-align:center;
+  }
+  .delear-network-content{
+    width:100%;
+    height:48px;
+    background: #E6E6E6;
+    margin-top:81px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .delear-network-image{
+    width:20px;
+    height:20px;
+  }
+  .delear-network-image image{
+    width:100%;
+    height:100%;
+  }
+  .delear-network-info{
+    margin-left:8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 20px;
+  }
+  .delear-map-content{
+    width:100%;
+    height:800px;
+    {% comment %} margin-top:80px; {% endcomment %}
+  }
+  .delear-info{
+    margin-top:24px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 28px;
+    text-align:center;
+  }
+  .deleat-link{
+    margin:0 auto;
+    margin-top:48px;
+    width: 386px;
+    height: 56px;
+    background: #121212;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 56px;
+    text-align:center;
+  }
+  .choose-delear{
+    width:100%;
+    height:604px;
+    background:#000000;
+    {% comment %} background:url("{{ section.settings.delear-background | image_url }}") no-repeat;
+    background-size: contain; {% endcomment %}
+    
+    {% comment %} background-size: 100% 100%; {% endcomment %}
+    {% comment %} background-position:left bottom; {% endcomment %}
+    {% comment %} background-size:100% 100%; {% endcomment %}
+    {% comment %} background:#000000; {% endcomment %}
+    position:relative;
+    margin-top:80px;
+    background-origin:border-box;
+  }
+  .choose-delear-image{
+    width:100%;
+    height:100%;
+    background:pink;
+    background:url("{{ section.settings.delear-background | image_url }}") no-repeat;
+    background-size: cover;
+    background-position:bottom;
+    {% comment %} width:100%;
+    height:100%; {% endcomment %}
+    {% comment %} object-fit:cover; {% endcomment %}
+  }
+  .choose-delear-image img{
+    width:100%;
+    height:100%;
+  }
+  .choose-delear-content{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+  .choose-delear-wrapper{
+    width:1200px;
+    height:100%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;
+  }
+  .choose-delear-title{
+    width: 590px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 48px;
+  }
+  .choose-delear-desc{
+    margin-top:24px;
+    width: 590px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 28px;
+  }
+  .delear-stay-title{
+    margin:0 auto;
+    margin-top:80px;
+    width: 701px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #121212;
+    line-height: 48px;
+    text-align:center;
+  }
+  .delear-map-email{ 
+    width:590px;
+    height:64px;
+    margin:0 auto;
+    margin-top:48px;
+    border: 1px solid #888888;
+    border-radius:42px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .delear-map-email .delear-map-input{
+    {% comment %} width:100%; {% endcomment %}
+    width:418px;
+    {% comment %} height:64px; {% endcomment %}
+    {% comment %} height:100%; {% endcomment %}
+    border:none;
+    margin-left:24px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 28px;
+  }
+  .delear-map-email .delear-map-input::placeholder{
+    text-align: left;
+  }
+  .submit-btn{
+    width: 144px;
+    height: 56px;
+    background: #121212;
+    border-radius: 62px;
+    margin-right:4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 56px;
+    text-align:center;
+  }
+  .delear-thanks-main{
+    width:264px;
+    margin:0 auto;
+    margin-top:24px;
+    {% comment %} display:flex; {% endcomment %}
+    align-items:center;
+    display:flex;
+    {% comment %} display:none; {% endcomment %}
+  }
+  .delear-icon{
+    width:20px;
+    height:20px;
+  }
+  .delear-icon image{
+    width:100%;
+    height:100%;
+  }
+  .delear-thanks-text{
+    margin-left:8px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #00CC45;
+    line-height: 28px;
+  }
+  .delear-exercise-content{
+    display:none;
+    padding-top:120px;
+    padding-bottom:72px;
+  }
+  .delear-exercise-img{
+    width:328px;
+    height:116px;
+    margin: 0 auto;
+  }
+  .delear-exercise-img image{
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (max-width: 1210px){
+    .delear-tabs-title{
+      padding:0 5px;
+      padding-bottom:22px;
+      width:50%;
+    }
+    .delear-desc{
+      width:100%;
+    }
+    .choose-delear-wrapper{
+      width:100%;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .delear-map-email-content .Form__Input{
+      padding:0;
+      font-size: 14px!important;
+      font-weight: 500!important;
+      color: #666666!important;
+    }
+    .delear-map-email-content .Form__Input::placeholder{
+      font-size: 14px;
+    }
+    .delear-map-email-content .Button{
+      padding:0px!important;
+    }
+    .delear-map-email-content .Button--primary:before{
+      background:none;
+    }
+    .delear-map-email-content .Form__Submit{
+      margin-top:0px!important;
+      width: 108px!important;
+      height: 40px!important;
+      background: #121212;
+      border-radius: 62px;
+      margin-right:3px;
+      font-size: 14px!important;
+      font-weight: bold;
+      color: #FFFFFF;
+      text-align:center;
+      line-height:40px!important;
+      letter-spacing: 0px!important;
+      {% comment %} line-height: 40px; {% endcomment %}
+      {% comment %} text-align:center; {% endcomment %}
+      {% comment %} margin-top:0px!important;
+      width: 144px;
+      height: 56px;
+      border-radius: 62px;
+      margin-right:4px;
+      font-size: 16px!important;
+      font-weight: bold!important;
+      color: #FFFFFF;
+      text-align:center;
+      background: #121212; {% endcomment %}
+    }
+    .delear-map-pcimg{
+      display:none;
+    }
+    .delear-map-mobimg{
+      display:block;
+    }
+    .delear-map-container{
+      width: 100%;
+      height:100%;
+      padding-bottom:68px;
+      background:#FFFFFF;
+    }
+    .delear-map-bigtitle{
+      padding-top:60px;
+      width:327px;
+      margin:0 auto;
+      font-size: 30px;
+      color: #121212;
+      line-height: 36px;
+      text-align:center;
+    }
+    .delear-tabs{
+      {% comment %} width:1200px; {% endcomment %}
+      width:327px;
+      height:44px;
+      background: rgba(18,18,18,0.1);
+      border-radius: 36px;
+      margin:0 auto;
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      {% comment %} justify-content:space-between; {% endcomment %}
+    }
+    .delear-tabs-title{
+      width:160px;
+      height:36px;
+      border-radius: 27px;
+      font-weight: 600;
+      font-size: 12px;
+      color: rgba(18,18,18,0.5);
+      line-height: 36px;
+      text-align:center;
+      padding-bottom:0px;
+    }
+    .delear-selected-title{
+      background: #121212;
+      border-radius: 27px;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+    .delear-desc{
+      width:327px;
+      margin:0 auto;
+      margin-top:20px;
+      font-size: 14px;
+      color: rgba(18,18,18,0.8);
+      line-height: 24px;
+      text-align:center;
+    }
+    .delear-network-content{
+      width:100%;
+      height:48px;
+      background: #E6E6E6;
+      margin-top:32px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .delear-network-image{
+      width:20px;
+      height:20px;
+    }
+    .delear-network-image image{
+      width:100%;
+      height:100%;
+    }
+    .delear-network-info{
+      width:307px;
+      margin-left:4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #121212;
+      line-height: 14px;
+    }
+    .delear-map-content{
+      width:100%;
+      height:800px;
+      {% comment %} margin-top:40px; {% endcomment %}
+    }
+    .delear-info{
+      margin:0 auto;
+      width: 327px;
+      margin-top:24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(18,18,18,0.8);
+      line-height: 20px;
+      text-align:center;
+    }
+    .deleat-link{
+      margin:0 auto;
+      margin-top:24px;
+      width: 243px;
+      height: 48px;
+      background: #121212;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 48px;
+      text-align:center;
+    }
+    .choose-delear{
+      width:100%;
+      height:720px;
+      background:#000000;
+      position:relative;
+      margin-top:60px;
+    }
+    .choose-delear-image{
+      width:100%;
+      height:100%;
+      background:url("{{ section.settings.delear-map-mobimg | image_url }}") no-repeat;
+      background-size: cover;
+      background-position:bottom;
+    }
+    .choose-delear-image img{
+      width:100%;
+      height:100%;
+    }
+    .choose-delear-content{
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .choose-delear-wrapper{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+    .choose-delear-title{
+      padding-top:60px;
+      width: 327px;
+      margin:0 auto;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 36px;
+      text-align:center;
+    }
+    .choose-delear-desc{
+      margin:0 auto;
+      margin-top:20px;
+      width: 327px;
+      font-size: 14px;
+      font-weight: 500;
+      color:rgba(255,255,255,0.8);
+      line-height: 22px;
+      text-align: center;
+    }
+    .delear-stay-title{
+      margin:0 auto;
+      margin-top:60px;
+      width: 327px;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 36px;
+      text-align:center;
+    }
+    .delear-map-email{
+      width:325px;
+      height:46px;
+      margin:0 auto;
+      margin-top:24px;
+      border: 1px solid #888888;
+      border-radius:42px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .delear-map-email .delear-map-input{
+      {% comment %} width:100%; {% endcomment %}
+      width:195px;
+      height:100%;
+      border:none;
+      margin-left:20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666666;
+      line-height: 22px;
+      background:none;
+    }
+    .delear-map-email .delear-map-input::placeholder{
+      text-align: left;
+    }
+    .submit-btn{
+      width: 108px;
+      height: 40px;
+      background: #121212;
+      border-radius: 62px;
+      margin-right:4px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 40px;
+      text-align:center;
+    }
+    .delear-thanks-main{
+      width:188px;
+      margin:0 auto;
+      margin-top:20px;
+      {% comment %} display:flex; {% endcomment %}
+      align-items:center;
+      {% comment %} display:none; {% endcomment %}
+      display:flex;
+    }
+    .delear-icon{
+      width:16px;
+      height:16px;
+    }
+    .delear-icon image{
+      width:100%;
+      height:100%;
+    }
+    .delear-thanks-text{
+      margin-left:6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #00CC45;
+      line-height: 22px;
+    }
+    .delear-exercise-content{
+      display:none;
+      padding-top:60px;
+      padding-bottom:4px;
+    }
+    .delear-exercise-img{
+      width:181px;
+      height:64px;
+      margin: 0 auto;
+    }
+    .delear-exercise-img image{
+      width: 100%;
+      height: 100%;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "FbDelearMap",
+  "presets": [
+    {
+      "name": "fb-delear-map",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings":[
+    {
+      "type": "text",
+      "id": "delear_bigtitle1",
+      "label": "DelearTitle1",
+      "default": "FIND A DEALER"
+    },
+    {
+      "type": "text",
+      "id": "delear_tab_title1",
+      "label": "Tab Title1",
+      "default": "2-IN-1 EBIKE"
+    },
+    {
+      "type": "text",
+      "id": "delear_tab_title2",
+      "label": "Tab Title2",
+      "default": "EXERCISE BIKE"
+    },
+    {
+      "type": "richtext",
+      "id": "delear_desc",
+      "label": "Delear Desc",
+      "default": "<p> Experience the exhilaration of test riding a freebeat eBike at our Elite Dealer across the United States. Our extensive network of Elite electric bike dealers ensures you have access to the widest range of freebeat eBikes and exceptional customer service. Find the nearest dealer in your area by searching with your City, Zip, or County below.<\/p>"
+    },
+    {
+      "type": "text",
+      "id": "delear_bigtitle2",
+      "label": "DelearTitle2",
+      "default": "CAN'T FIND A DEALER NEAR YOU?"
+    },
+    {
+      "type": "richtext",
+      "id": "delear_info",
+      "label": "Delear Info",
+      "default": "<p> Shop online and enjoy the convenience of doorstep delivery for your eBike.<\/p>"
+    },
+    {
+      "type": "url",
+      "id": "delear_link",
+      "label": "Delear Link"
+    },
+    {
+      "type": "text",
+      "id": "delear_link_text",
+      "label": "Delear Link Text",
+      "default": "SHOP EBIKE"
+    },
+    {
+      "type": "image_picker",
+      "id": "delear-map-pcimg",
+      "label": "PC Img"
+    },
+    {
+      "type": "image_picker",
+      "id": "delear-map-mobimg",
+      "label": "Mob Img"
+    },
+    {
+      "type": "richtext",
+      "id": "choose_delear_title",
+      "label": "Choose Delear Title",
+      "default": "<p> WHY CHOOSE A FREEBEAT ELITE DEALER?<\/p>"
+    },
+    {
+      "type": "richtext",
+      "id": "choose_delear_desc",
+      "label": "Choose Delear Desc",
+      "default": "<p> Discover the unparalleled experience of shopping for freebeat electric bikes at our elite dealer network. Immerse yourself in a world of choices as you test ride multiple freebeat models under the guidance of our knowledgeable eBike professionals. Find the perfect fit and embark on your electric biking journey with confidence.<\/p>"
+    },
+    {
+      "type": "text",
+      "id": "delear_bigtitle3",
+      "label": "DelearTitle3",
+      "default": "STAY TUNED WITH UPDATES AND DISCOUNTS."
+    },
+    {
+      "type": "richtext",
+      "id": "delear_stay_desc",
+      "label": "Delear Stay Desc",
+      "default": "<p> Get ready for an upcoming wave of new and exciting things that will keep you in the loop.<\/p>"
+    },
+    {
+      "type": "text",
+      "id": "delear_submit",
+      "label": "Delear Submit",
+      "default": "SUBCRIBE"
+    },
+    {
+      "type": "image_picker",
+      "id": "delear-map-icon",
+      "label": "Delear Icon"
+    },
+    {
+      "type": "richtext",
+      "id": "delear_text",
+      "label": "Delear Text",
+      "default": "<p> Thanks for subscribing!<\/p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "delear-exercise-image",
+      "label": "Delear Exercise Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "delear-background",
+      "label": "Delear Background"
+    },
+    {
+      "type": "richtext",
+      "id": "delear_network_title",
+      "label": "Delear Network Title",
+      "default": "<p>ONE OF THE MOST EXTENSIVE EBIKE DEALER NETWORKS, WITH 400+ LOCAL BIKE SHOPS AND COUNTING.<\/p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "delear_network_icon",
+      "label": "Delear Network Icon"
+    }
+  ]
+}
+{% endschema %}

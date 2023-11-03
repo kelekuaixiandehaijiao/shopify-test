@@ -1,0 +1,37 @@
+<div class="fb-exercise-title" id="section-{{ section.id }}">
+    {%- assign exerise_title = section.settings.exerise_title | strip_html -%}
+    {%- if exerise_title != blank -%}
+        <div class="fb-exercies-title fb-exeries-pc-show">
+           {{ section.settings.exerise_title}}
+        </div>
+        <div class="fb-exercies-title fb-exeries-mob-show">
+            {{ section.settings.exerise_title }} 
+        </div>
+    {%- endif -%}
+</div>
+{% schema %}
+{
+    "name": "FbExerciseTitle",
+    "presets": [
+      {
+          "name": "fb-exercise-title",
+          "category": "My Sections",
+          "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "exerise_title",
+            "label": "Title",
+            "default": "<p>Join the Home <br\/> Workout Revolution<\/p>"
+        },
+        {
+            "type": "richtext",
+            "id": "exerise_sub_title",
+            "label": "Sub Title",
+            "default": "<p>Explore our bikes to enhance your cycling experience</p>"
+        }
+    ]
+  }
+{% endschema %}

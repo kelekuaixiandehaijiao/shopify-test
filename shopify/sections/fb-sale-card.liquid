@@ -1,0 +1,96 @@
+{%- assign sale_card_index = 1 -%}
+<div
+      class="fb-sale-card w-full  relative h-auto  px-3.5 fb-sm:px-10  fb-sm:pb-15 fb-md:px-0 fb-sm:pt-0 bg-f5f5f5 fb-sm:flex-row  flex fb-sm:items-center fb-sm:justify-center flex-col">
+      {%- assign blockCount = section.blocks | size -%}
+      {%- for block in section.blocks -%}
+      {% assign pc_bg = block.settings.pc_bg | img_url: '' %}
+      {% assign mb_bg = block.settings.mb_bg | img_url: '' %}
+      <div class="fb-sm:max-w-75r fb-sm:h-55 fb-sm:mb-0 h-55 mb-4 {% if blockCount == 1 %} fb-sm:w-full  {% endif %} {% if blockCount > 1 %} fb-sm:w-145 {% endif %} fb-sm:even:ml-10 fb-sm:rounded-2xl relative">
+            <div class="fb-sm:w-full h-full fb-sm:absolute top-0 left-0 z-1 rounded-2xl">
+                  <img class="relative h-55 fb-sm:h-full w-full object-cover hidden rounded-2xl fb-sm:block"
+                        src="{{ pc_bg }}" loading="lazy" alt="{{ item.image.alt | escape }}">
+                  <img class="h-full w-full object-cover fb-sm:hidden rounded-2xl" src="{{ mb_bg }}" loading
+                  ="lazy" alt="{{ item.image.alt | escape }}">
+                  <!-- <div class="absolute inset-0 bg-gradient-to-br from-0% from-[#00000099] via-[#80000000] via-58% to-transparent rounded-2xl"></div> -->
+                  <div class="absolute inset-0 card-bg rounded-2xl"></div>
+            </div>
+            {% assign myString = block.settings.two_des %}
+            {% assign stringLength = myString | size %}
+            <div class="absolute left-8 right-8 top-13 {% if stringLength > 19 %} top-9  {% endif %} fb-sm:top-8  {% if blockCount == 1 %} fb-sm:left-20 {% endif %} {% if blockCount > 1 %} fb-sm:left-12 {% endif %}">
+                  <div class="m-tit z-2 text-white relative text-2xl font-bold max-w-18r {% if blockCount == 1 %}fb-sm:max-w-50r {% endif %} {% if blockCount > 1 %}fb-sm:max-w-40r {% endif %}">
+                        {{ block.settings.one_des}}
+                  </div>
+                  <div class="m-des z-2 text-white relative text-base mt-2 mb-6 leading-4"> 
+                        {{ block.settings.two_des}}
+                  </div>
+                  <a href="{{ block.settings.play_link}}" >
+                        <div class="m-des z-2 w-45 h-10 rounded-md bg-white flex items-center justify-center uppercase text-black relative text-sm font-semibold">{{
+                              block.settings.btn_des }}
+                        </div>
+                  </a>
+            </div>
+      </div>
+      {%- assign sale_des_index = sale_card_index | plus: 1 -%}
+      {% endfor %}
+
+</div>
+<style>
+      .card-bg{
+            background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+      }
+      @media screen {
+            
+      }
+</style>
+{% schema %}
+{
+"name": "FbSaleCard",
+"presets": [
+{
+"name": "fb-sale-card",
+"category": "Fb Sections",
+"blocks": []
+}
+],
+"blocks": [
+{
+"type": "TextBlock",
+"name": "cardBlock",
+"settings": [
+{
+"type": "text",
+"id": "one_des",
+"label": "Label One Des",
+"default": "WHEELIN DEAL OF THE DAY"
+},
+{
+"type": "text",
+"id": "two_des",
+"label": "Label Two Des",
+"default": "Select Ebikes At $999"
+},
+{
+"type": "text",
+"id": "btn_des",
+"label": "Btn Des",
+"default": "learn more"
+},
+{
+"type": "image_picker",
+"id": "pc_bg",
+"label": "PC Bg"
+},
+{
+"type": "image_picker",
+"id": "mb_bg",
+"label": "MB Bg"
+},
+{
+"type": "url",
+"id": "play_link",
+"label": "Content link"
+}
+]
+}]
+}
+{% endschema %}

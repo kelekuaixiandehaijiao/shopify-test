@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'shopify-style.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'shopify-public.css' | asset_url }}">
+{%- if template == 'product.lit-bike-white'
+  or template == 'product.lit-bike-beige'
+  or template contains 'product.boom-bike'
+  or template == 'product.lit-bike-black'
+  or template == 'product.lit-bike-pink'
+  or template contains 'ebike'
+  or template == 'product.lit-bikec-commercial'
+-%}
+<link rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css">
+{%- endif -%}
+{%- if  template == 'product' -%}
+  <link rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css">
+{%- endif -%}
+
+{%- if template == 'page.community' -%}
+  <link
+    rel="preload"
+    href="{{ 'utils-media.css' | asset_url }}"
+    as="style"
+    onload="this.rel='stylesheet'"
+  >
+    <link
+      rel="preload"
+      href="{{ 'theme-form.css' | asset_url }}"
+      as="style"
+      onload="this.rel='stylesheet'"
+    >
+{%- endif -%}

@@ -1,0 +1,490 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if country_code_var == 'us' -%}
+  {%- assign fb_code_name = '' -%}
+{%- else -%}
+  {%- assign fb_code_name = country_code_var | append: '_' -%}
+{%- endif -%}
+{%- if product -%}
+{%- else -%}
+  {%- assign product = section.settings.customer_product -%}
+{%- endif -%}
+{%- capture klarna_dom -%}
+  {%- if country_code_var == 'us' -%}
+    <div class="ebike-main-product-klarna-box flex items-center min-h-[12px] w-full leading-3 fb-769:min-h-4 fb-769:flex-wrap fb-769:justify-start">
+      <span class="text-h-10 text-[#666666] font-semibold fb-769:text-12 fb-769:font-medium ">
+        Pay ${%- render 'customer-price-control', type:'mo', cpc_product: product -%}/mo<sup>1</sup>, at 0% APR with 
+      </span>
+      <img  class="h-[11px] w-auto fb-769:" loading="lazy" alt="freebeat klarna payment" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/klarna_8710e8a4-99ca-435f-85c4-7f0cf97fe6ca.png?v=1673943565" />
+      <span class="span1 mr-[2px] text-h-10 text-[#666666] font-semibold">or</span>
+      <img  class="h-[11px] w-auto" loading="lazy" alt="paypal payment" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/PAYPAL_1f1d1cab-1389-4461-a6ee-8bbc288f76cc.png?v=1673943574" />
+    </div>
+  {%- else -%}
+    {% unless country_code_var == 'au'  %}
+      <div class="ebike-main-product-klarna-box flex items-center min-h-[12px] w-full leading-3 fb-769:min-h-4 fb-769:flex-wrap fb-769:justify-start">
+        <span class="text-h-10 text-[#666666] font-semibold fb-769:text-12 fb-769:font-medium ">
+          Pay ${%- render 'customer-price-control', type:'mo', cpc_product: product -%}/mo<sup>1</sup>, at 0% APR with 
+        </span>
+        <img  class="h-[11px] w-auto fb-769:" loading="lazy" alt="freebeat klarna payment" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/klarna_8710e8a4-99ca-435f-85c4-7f0cf97fe6ca.png?v=1673943565" />
+      </div>
+    {% endunless %}   
+  {%- endif -%}
+   
+{%- endcapture -%}
+{%- capture product_price -%}
+    <div class="ebike-priceA w-1/2 fb-flex-x-start fb-769:mb-[14px] fb-769:w-full">
+        <span class="ebike-current text-[26px] leading-[26px] text-00cc45 font-bold
+          fb-769:text-[48px] fb-769:leading-[48px]
+          ">
+            {% render 'customer-price-control', type:'sale', cpc_product: product %}
+        </span>
+        {%- capture origin_price -%}
+            {%- render 'customer-price-control', type:'origin', cpc_product: product -%}
+        {%- endcapture -%}
+        {%- if origin_price != blank -%}
+            <div class="ebike-mobi text-left ml-[6px] fb-769:ml-3">
+                <div class="ebike-lowPrice text-[10px] leading-[8px] text-[#888888] font-medium
+                  fb-769:font-normal fb-769:text-[18px] fb-769:leading-[18px] fb-769:text-[#12121299]
+                  ">
+                    {% render 'customer-price-control',type:'off',cpc_product: product %} OFF
+                </div>
+                <div class="ebike-origin text-[10px] leading-[8px] text-[#666666] mt-[6px] line-through font-semibold
+                  fb-769:mt-1 fb-769:text-[18px] fb-769:leading-[18px] fb-769:text-[#12121299]
+                  ">
+                    {% render 'customer-price-control', type:'origin', cpc_product: product %}
+                </div>
+            </div>
+        {%- endif -%}
+    </div>
+    <div class="ebike-main-product-klarna mt-3 w-full">
+        {{ klarna_dom }}
+    </div>
+    <style>
+      .ebkie-product-mob-price .ebike-main-product-klarna-box {
+        justify-content: flex-start;
+      }
+      @media screen and (min-width: 769px){
+        .ebike-fbm-top-box .ebike-main-product-klarna {
+            margin-top: 0;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .ebike-mbf-section-mob .ebike-main-product-klarna-box {
+          justify-content: center;
+        }
+      }
+    </style>
+{%- endcapture -%}
+{%- capture bike_promotion_dom -%}
+    {%- assign bike_promotion_desc = fb_code_name | append: 'bike_promotion_desc' -%}
+    {%- assign bike_promotion_desc_strip = bike_promotion_desc | strip_html -%}
+    {%- if bike_promotion_desc_strip != blank -%}
+    <div class="ebike-main-promotion mt-[10px] w-full text-left flex items-stretch justify-start fb-769:mt-[10px]">
+      <a class="ebike-pro-box-icon w-6 min-h-[24px] bg-[#d3f6de] leading-normal fb-flex-xy-center rounded-l-[2px]"  href="javascript:void(0);">
+        <svg  class="w-[12px] h-[12px]" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <g id="Group 4038">
+          <path id="Vector" d="M5.32138 0.549832C5.63577 0.23484 6.06036 0.0554749 6.50466 0.0499617L10.2475 0.000118733C10.7038 -0.0052288 11.1437 0.170245 11.4717 0.488419C11.7998 0.806593 11.9894 1.24176 11.9994 1.69939L12 1.73598L11.9181 5.48371C11.9089 5.92416 11.7305 6.34402 11.4201 6.65574L6.59111 11.5C5.92278 12.1702 4.83572 12.1661 4.1628 11.4911L0.507284 7.82402C-0.165633 7.14898 -0.169654 6.05849 0.498667 5.38805L5.32109 0.549832H5.32138Z" fill="#00CC45" fill-opacity="0.8"/>
+          <path id="Vector_2" d="M7.41214 2.52714C7.276 2.66026 7.16758 2.81918 7.09315 2.99466C7.01872 3.17015 6.97976 3.35872 6.97855 3.54943C6.97733 3.74013 7.01387 3.92919 7.08605 4.10562C7.15824 4.28205 7.26462 4.44234 7.39904 4.57721C7.53346 4.71207 7.69324 4.81881 7.8691 4.89125C8.04497 4.96369 8.23342 5.00037 8.42353 4.99918C8.61364 4.99798 8.80162 4.95893 8.97656 4.88429C9.15151 4.80965 9.30994 4.7009 9.44266 4.56436C9.70424 4.29267 9.84899 3.92878 9.84571 3.55108C9.84244 3.17337 9.69142 2.81206 9.42517 2.54497C9.15892 2.27788 8.79875 2.12638 8.42223 2.1231C8.04571 2.11982 7.68297 2.26502 7.41214 2.52743V2.52714Z" fill="white"/>
+          </g>
+        </svg>
+      </a>
+      <a class="ebike-main-pro-box bg-[#e8faee] rounded-r-[2px] inline-block text-00cc45 font-semibold text-[12px] leading-[14px]" href="javascript:void(0);">
+        {% comment %} {{ section.settings.bike_promotion_desc }} {% endcomment %}
+         {{ section.settings[bike_promotion_desc] }}
+      </a>
+    </div>
+  {%- endif -%}
+{%- endcapture -%}
+{%- if pdptype == 'gift' -%}
+  {% comment %}
+    <div class="ebike-choose-title">
+        Compatible Accessories
+    </div>
+  {% endcomment %}
+  {%- assign free_gift_number = 0 -%}
+  {%- assign nofree_gift_number = 0 -%}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'pdpGiftRemake' -%}
+        {%- assign gift_product = block.settings.gift_service_product -%}
+        {%- if block.settings.gift_customer_img == blank -%}
+        {% assign gift_img = gift_product.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        {%- else -%}
+        {% assign gift_img = block.settings.gift_customer_img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        {%- endif -%}
+        {% capture egl_checkbox_default %}w-5 h-5 rounded-[4px] text-center leading-5{% endcapture %}
+        {%- capture gift_dom -%}
+          <div class="ebike-gift-li w-full fb-flex-x-between h-[74px] border-b border-e6e6e6 last:border-none fb-769:h-[82px]">
+            <div class="ebike-gift-lileft fb-flex-x-start">
+              <div class="egl-checkbox w-5">
+                {% if block.settings.gift_is_free %}
+                  <div class="egl-checkbox-disabled {{ egl_checkbox_default }} egl-checkbox-checked js-gift-getselect" data-gift="{{ gift_product.selected_or_first_available_variant.id }}"  data-checked="true">
+                    <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/grey-gou.png?v=1687688171" alt="check logo">
+                  </div>
+                {% else %}
+                  <div class="egl-checkbox-default {{ egl_checkbox_default }} js-egl-select-gift js-gift-getselect"  
+                    data-checked="false"
+                    data-gift="{{ gift_product.selected_or_first_available_variant.id }}">
+                  <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/white-gou.png?v=1687688171" alt="check logo"  class="checkd-gou" >
+                  </div>
+                {% endif %}
+              </div> 
+              <div class="egl-img w-[34px] h-[34px] ml-5">
+                  <img  class="Image--lazyLoad Image--fadeIn w-[34px] h-[34px]" data-src="{{ gift_img }}"  alt="{{gift_product.featured_media.alt}}"  data-sizes="auto">
+              </div> 
+              {%- assign gift_icon_hover = block.settings.gift_name_hover | strip_html -%}
+              <div class="egl-name relative ml-[14px] {% if gift_icon_hover != blank %}w-23{% endif %} fb-769:w-auto fb-769:fb-flex-x-start font-medium text-h-12-s text-121212 fb-769:text-h-14 group align-middle">
+                  <span class="mr-1 fb-769:mr-2 text-12 fb-769:text-h-14">{{ block.settings.gift_name | default: gift_product.title }}</span>
+                  {%- if gift_icon_hover != blank -%}
+                    <img
+                      data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/wenhaopc.png?v=1691041176"
+                      class="Image--lazyLoad Image--fadeIn inline align-middle cursor-pointer w-3 h-3 fb-769:w-[14px] fb-769:h-[14px]"
+                      alt="question logo"
+                    > 
+                    <div class="p-3 absolute top-6 fb-769:top-5 w-72 -left-22 fb-769:-left-1/2 fb-1120:left-0 bg-white rounded-lg z-2 hidden group-hover:block text-12 text-121212" style="box-shadow:0px 0px 8px 0px rgba(0,0,0,0.2);">
+                      {{ block.settings.gift_name_hover }}
+                    </div>
+                  {%- endif -%}
+              </div> 
+            </div>
+            <div class="ebike-gift-liright">
+                <div class="egl-price  {% if block.settings.gift_is_free %}egl-price-youhui{% endif %}">
+                    <span class="egl-price-1 text-h-14 text-121212 font-medium">{{ gift_product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+                    <span class="egl-price-free ml-3 font-extrabold hidden text-h-14 text-00cc45 fb-769:ml-2">FREE</span>
+                </div>  
+            </div>
+          </div>
+        {%- endcapture -%}
+        {% capture ebike_choose_title2 %}text-h-14 text-[#121212] font-semibold pt-5 fb-769:text-h-16 fb-769:pt-6{% endcapture %}
+        {%- if block.settings.gift_is_free -%}
+          {%- assign free_gift_number = free_gift_number | plus: 1 -%}
+          {%- if free_gift_number == 1 -%}
+            <div class="ebike-choose-title2 {{ ebike_choose_title2 }}">Exclusive Offer</div>
+          {%- endif -%}
+          {{ gift_dom }}
+        {%- else -%}
+          {%- assign nofree_gift_number = nofree_gift_number | plus: 1 -%}
+          {%- if nofree_gift_number == 1 -%}
+            <div class="ebike-choose-title2 {{ ebike_choose_title2 }}">Compatible Accessories</div>
+          {%- endif -%}
+          {%- if nofree_gift_number <= 3 -%}
+            {{ gift_dom }}
+          {%- else -%}
+            <div class="ebkie-gift-showhide">
+              {{ gift_dom }}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+    {%- endcase -%}
+  {%- endfor -%}
+  {%- assign needshow_more = nofree_gift_number | minus: 3 -%}
+  {%- if needshow_more and needshow_more > 0 -%}
+    <div class="ebkie-gift-more w-full h-[38px] leading-[38px] text-right text-[12px] font-medium text-00cc45">
+      <span class="js-ebkie-showmore-gift cursor-pointer" data-text="Show ({{needshow_more}}) more" data-open="false">
+        Show ({{ needshow_more }}) more
+      </span>
+    </div>
+  {%- endif -%}
+{%- elsif pdptype == 'intro' -%}
+  <div class="ebike-fbcur-introduce-color fbEbikIntroSwiper py-5 relative -mt-5 w-full fb-max-768:overflow-hidden
+    fb-769:py-6 fb-769:m-0 fb-769:border-b fb-769:border-e6e6e6">
+    {% comment %} <p class="ebike-fbcur-introduce-title">Choose your color</p> {% endcomment %}
+    <ul class="ebike-fbcur-introduce-ul swiper-wrapper fb-max-768:h-5 w-full fb-769:flex fb-769:justify-between fb-769:flex-col">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'introduce_service' -%}
+          <li class="ebike-fbcur-introduce-item swiper-slide leading-5 mr-5 flex flex-shrink-0  w-auto items-center
+            fb-769:mr-0 fb-769:h-6 fb-769:leading-6 fb-769:w-full fb-769:mb-5 fb-769:jkustify-start fb-769:last:mb-0
+            ">
+            {% assign intoduce_service_img = block.settings.intoduce_service_img | img_url: '' %}
+            <img
+              class="Image--lazyLoad Image--fadeIn ebike-fbcur-introduce-imgcheck w-5 h-auto mr-2.5 fb-769:mr-[15px] fb-769:w-6{% if block.settings.show_tip_or_dialog == false %}js-introduce-service-dialog-ab {% endif %}"
+              data-src="{{ intoduce_service_img }}"
+              alt="{{ block.settings.intoduce_service_img.alt }}"
+            >
+            <div
+              class="ebike-fbcur-introduce-product-name font-medium text-[12px] text-333333 fb-769:text-121212 fb-769:text-[14px] {% if block.settings.show_tip_or_dialog == false %}js-introduce-service-dialog-ab{% endif %}"
+            >
+              {{ block.settings.intoduce_service_desc }}
+            </div>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      {% comment %}
+        <div class="elii-padding-1 ebike-mobshow-pchide">
+            11
+        </div>
+      {% endcomment %}
+    </ul>
+    <div class="ebike-fbcur-leftmodel ebike-mobshow-pchide"></div>
+    <div class="ebike-fbcur-rightmodel ebike-mobshow-pchide"></div>
+  </div>
+  <style>
+    @media only screen and (max-width: 768px) {
+      .ebike-fbcur-leftmodel,
+      .ebike-fbcur-rightmodel {
+        width: 76px;
+        height: 34px;
+        position: absolute;
+        top: 10px;
+        z-index: 2;
+      }
+
+      .ebike-fbcur-leftmodel {
+        left: -24px;
+        background: linear-gradient(90deg, #ffffff 30%, rgba(255, 255, 255, 0) 100%);
+      }
+
+      .ebike-fbcur-rightmodel {
+        right: -24px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 64%);
+      }
+
+      .ebike-fbcur-leftmodel.swiper-button-disabled,
+      .ebike-fbcur-rightmodel.swiper-button-disabled {
+        display: none;
+      }
+    }
+  </style>
+{%- elsif pdptype == 'customer_service' -%}
+  <div class="ebike-customer-service w-full">
+    <div class="friab-buy-customer w-full py-6 fb-flex-x-start border-t border-b border-[#e6e6e6]">
+      {%- if block.settings.customer_img -%}
+        {% assign handsimg = block.settings.customer_img | img_url: '' %}
+      {%- else -%}
+        {% assign handsimg = 'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/image_1.png?v=1667636453' %}
+      {%- endif -%}
+      <img
+        class="friab-customer-img cursor-pointer rounded-full w-6 h-[24px] mr-2.5 fb-769:w-10 fb-769:h-10 fb-769:mr-4"
+        src="{{ handsimg }}"
+        loading="lazy"
+        onclick="TidioShowFun()"
+        alt="{{ block.settings.customer_img.alt }}"
+      >
+      <div
+        class="abcustomer_service_right flex items-start justify-between flex-col h-8 text-h-12-s font-medium text-666666
+        fb-769:h-12 fb-769:text-14"
+        onclick="TidioShowFun()"
+      >
+        <p class="text-left font-medium fb-769:text-666666">{{ block.settings.customer_title | default: 'Need more help?' }}</p>
+        <p class="text-left text-121212 font-medium underline">{{ block.settings.customer_desc | default: 'Connect with a Specialist.'}}</p>
+      </div>
+    </div>
+  </div>
+  <style>
+    @media only screen and (max-width: 768px) {
+      .abcustomer_service_right p:nth-child(2n) {
+        text-decoration: underline;
+        color: #121212;
+      }
+    }
+  </style>
+{%- elsif pdptype == 'bike_discount_desc' -%}
+  <div class="ebike-fbcur-discount-desc">
+    <div class="ebike-fbcur-discount-p">
+      {{ block.settings.fpc_desc_disount }}
+    </div>
+  </div>
+  <style>
+    .ebike-fbcur-discount-desc{
+        background: #F7FCF9;
+        border: 1px solid #00CC45;
+
+    }
+    .ebike-fbcur-discount-desc p {
+        color: #00CC45;
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen and (min-width: 769px) {
+        .ebike-fbcur-discount-desc{
+            width: 100%;
+            /* min-height: 80px; */
+            {% comment %} margin-top: 24px; {% endcomment %}
+            border-radius: 8px;
+            padding: 11px 20px 11px 20px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .ebike-fbcur-discount-p{
+            width: 100%;
+        }
+
+        .ebike-fbcur-discount-desc p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 14px;
+        }
+        .ebike-fbcur-discount-desc p:last-child{
+            font-size: 12px;
+            line-height: 12px;
+            margin-top: 7px;
+            font-weight: 500;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .ebike-fbm-test-show-mob{
+            padding: 0px 24px;
+        }
+        .ebike-fbcur-discount-desc{
+            width: 100%;
+            /* min-height: 64px; */
+            background: transparent;
+            border: none;
+        }
+        .ebike-fbcur-discount-p{
+            width: 100%;
+            background: rgba(0,204,69,0.05);
+            border: 1px solid #00CC45;
+            border-radius: 8px;
+            padding: 10px 15px 8px 15px;
+        }
+        .ebike-fbcur-discount-desc p {
+            width: 100%;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+        }
+        .ebike-fbcur-discount-desc p:last-child{
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 10px;
+            margin-top: 12px;
+        }
+
+    }
+  </style>
+
+{%- elsif pdptype == 'bike_klara' -%}
+  {{ klarna_dom }}
+{%- elsif pdptype == 'top_desc' -%}
+  <div class="ebike-main-top-container fb-769:h-45 fb-1120:h-[160px] mt-2 mb-5 pt-10 flex items-start justify-between">
+    <div class="abmtc-left">
+      <div class="abmtc-title text-[48px] leading-[48px] text-left font-bold text-black">
+        {{ section.settings.product_big_title }}
+      </div>
+      <div class="abmtc-desc mt-[14px] font-medium text-121212 text-[18px] leading-[18px]">
+        <h2>{{ section.settings.product_desc_title }}</h2>
+      </div>
+    </div>
+    <div class="abmtc-right text-right flex flex-col justify-end">
+      {{ product_price }}
+      {{ bike_promotion_dom }}
+    </div>
+  </div>
+{%- elsif pdptype == 'top_mob_desc' -%}
+  <div class="epmp-content w-full pt-5 pb-[22px] border-t border-e6e6e6 relative">
+    {{ product_price }}
+    {{ bike_promotion_dom }}
+  </div>
+{%- elsif pdptype == 'bike_icon_info' -%}
+  <div class="elii-item flex items-start flex-shrink-0 mr-[32px] text-white justify-start fb-769:items-center fb-769:mr-0 fb-769:mt-[30px] fb-769:h-10 fb-769:min-w-[50%] fb-1211:min-w-[31%]">
+    {% assign elii_icon_img = block.settings.bike_left_icon_img | img_url:'' %}
+    {% assign elii_icon_img_mob = block.settings.bike_left_icon_img_mob | img_url:''%}
+    <div class="elii-item-img ebike-pcshow-mobhide w-10 h-10 mr-[18px] relative">
+      <img
+        class="w-full h-auto object-fill Image--lazyLoad Image--fadeIn"
+        data-src="{{ elii_icon_img }}" 
+        alt="{{block.settings.bike_left_icon_img.alt}}"
+        data-sizes="auto"
+      >
+        <span class="Image__Loader"></span>
+    </div>
+    <div class="elii-item-img ebike-mobshow-pchide w-7 h-[28px] relative">
+      <img
+        class="w-full h-full relative Image--lazyLoad Image--fadeIn"
+        src="{{ elii_icon_img_mob }}"
+        alt="{{block.settings.bike_left_icon_img_mob.alt}}"
+        data-sizes="auto"
+      >
+        <span class="Image__Loader"></span>
+    </div>
+    <div class="elii-item-text flex items-start justify-start ml-[6px] flex-col-reverse fb-769:flex-col fb-769:justify-between fb-769:h-10">
+      <div class="elii-item-desc mt-[2px] text-[10px] font-medium text-[#fff9] text-left flex items-start justify-start cursor-pointer relative fb-769:text-[12px] fb-769:text-[#12121299]">
+        {{ block.settings.bike_left_icon_desc }}
+        {%- assign bike_icon_hover = block.settings.bike_icon_hover | strip_html -%}
+        {%- if bike_icon_hover != blank -%}
+          <div class="js-hover-edesc-icon elii-item-icon w-[12px] h-[12px] ml-[2px] fb-769:w-3.5 fb-769:h-[14px] fb-769:ml-1">
+            <img
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/wenhaopc.png?v=1691041176"
+              class="ebike-pcshow-mobhide w-full h-auto Image--lazyLoad Image--fadeIn"
+              alt="question logo"
+            >
+            <img
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/wenhaomob.png?v=1691041177"
+              class="ebike-mobshow-pchide js-hover-edesc-icon w-full h-auto Image--lazyLoad Image--fadeIn"
+              alt="question logo"
+            >
+          </div>
+          <div class="elii-item-hover-desc ebike-pcshow-mobhide px-4 py-[18px] absolute top-5 w-85 left-0 bg-white rounded-lg z-2 hidden text-121212" style="box-shadow:0 6px 12px #0003">
+            {{ block.settings.bike_icon_hover }}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="elii-item-title text-h-12-s text-white font-bold text-center fb-769:text-h-16 fb-769:text-121212">
+        {{ block.settings.bike_left_icon_title }}
+      </div>
+    </div>
+  </div>
+{%- elsif pdptype == 'stamp' -%}
+  {% comment %} <span
+    class="stamped-product-reviews-badge stamped-main-badge"
+    data-product-id="{{ product.id }}"
+    data-name="{{ product.title | escape }}"
+    data-url="{{ shop.url }}{{ product.url }}"
+    data-description="{{ product.description | escape }}"
+    data-product-sku="{{ product.handle }}"
+    data-product-title="{{product.title}}"
+    data-product-type="{{product.type}}"
+  >
+  </span> {% endcomment %}
+  <span class="stampedRating2 absolute right-0 top-2 text-h-14 font-bold"></span>
+  {{ product.metafields.stamped.badge }}
+  <script>
+    if ($('.ebike-fbm-stamp-container .stamped-badge').length) {
+      let stampedRating2 = $('.ebike-fbm-stamp-container .stamped-badge').attr('data-rating') || ''
+      $('.stampedRating2').text(stampedRating2);
+    }
+  </script>
+{%- elsif pdptype == 'dimens' -%}
+  <div class="ebike-dimens-dialog js-dimens-dialog-ebike fb-popup-fixed">
+    <div class="ebike-dimens-container w-full h-full fb-flex-xy-center">
+      <div class="ebike-dimens-content w-[327px] h-[472px] rounded-xl bg-white relative fb-769:w-[617px] fb-769:h-[632px] fb-769:rounded-xl">
+        <div class="ebike-dimens-close w-[12px] h-[12px] right-[19px] top-[19px] absolute z-2 fb-769:w-[15px] fb-769:h-[15px] fb-769:right-[25px] fb-769:top-[25px]">
+          <svg
+            class="js-dimens-close-ebike w-full h-full cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path d="M0.800049 0.799999L15.2 15.2M0.800049 15.2L15.2 0.799999" stroke="#333333" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div class="js-show-dimensionimg-ebike w-full">
+          <div class="ebike-dimens-box pt-6 w-full fb-flex-x-start flex-col fb-769:pt-2">
+            <div class="ebike-dimens-mainimg w-[279px] h-[296px] relative fb-769:w-[377px] fb-769:h-[400px]">
+              {% assign dimess_image_url = block.settings.fpc_dimension_img | img_url: '' %}
+              <img
+                class="w-full h-auto object-fill"
+                loading="lazy"
+                src="{{ dimess_image_url }}"
+                data-sizes="auto"
+                alt="{{ block.settings.fpc_dimension_img.alt }}"
+              >
+            </div>
+            <div class="ebike-dimens-textbox mt-10px w-[279px] h-auto text-left font-medium text-12 text-333333 leading-5
+              fb-769:w-[309px] fb-769:text-14 fb-769:leading-6
+              ">
+              <p class="textbox-title font-semibold text-14 text-333333 mb-2.5 fb-769:mb-5 fb-769:text-[16px] fb-769:leading-4">
+                {{ block.settings.fpc_dimension_title }}
+              </p>
+              {{ block.settings.fpc_dimension_desc }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- else -%}
+{%- endif -%}

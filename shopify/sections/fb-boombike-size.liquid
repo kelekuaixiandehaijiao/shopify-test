@@ -1,0 +1,74 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<section
+  id="section-{{ section.id }}"
+  class=" bg-[rgb(239,239,239)] px-5 py-10 fb-sm:bg-[#B8A6FF] fb-sm:px-10 fb-md:px-20"
+>
+  <div class="fb-boombike-size mx-auto max-w-75r rounded-2xl bg-[#B8A6FF]">
+    {%- if country_code_var != 'gb' -%}
+      <div class="fb-boombile-content px-6 py-6 fb-sm:flex fb-sm:flex-row fb-sm:items-center fb-sm:justify-center">
+        <div class="fb-boombike-left fb-sm:basis-1/2">
+          <div class="mb-4 text-24 font-bold uppercase text-121212">
+            <h2>{{ section.settings.fb_boombike_title }}</h2>
+          </div>
+          <div class="text-16 text-121212">{{ section.settings.fb_boombike_desc }}</div>
+        </div>
+        <div class="fb-boombike-right mt-6 fb-sm:ml-6 fb-sm:mt-0 fb-sm:basis-1/2">
+          {{
+            section.settings.fb-boombike_img
+            | image_url: width: 1500
+            | image_tag:
+              loading: 'lazy',
+              sizes: '(min-width: 1200px) 600px, (min-width: 640px) calc((100vw - 80px) / 2), calc((100vw - 40px) / 2)',
+              class: 'hidden fb-sm:block h-20r w-auto fb-md:h-38r',
+              widths: '375, 550, 750, 1100, 1500',
+              alt: section.settings.fb-boombike_img.alt
+          }}
+          {{
+            section.settings.fb-boombike_img_mob
+            | image_url: width: 750
+            | image_tag:
+              loading: 'lazy',
+              sizes: '(min-width: 1200px) 600px, (min-width: 640px) calc((100vw - 80px) / 2), calc((100vw - 40px) / 2)',
+              class: 'fb-sm:hidden w-full h-auto',
+              widths: '375, 550, 750, 1100, 1500',
+              alt: section.settings.fb-boombike_img_mob.alt
+          }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "FbBoomLikeSize",
+  "presets": [
+    {
+      "name": "fb-boombike-size",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "fb_boombike_title",
+      "label": "Boombike title"
+    },
+    {
+      "type": "text",
+      "id": "fb_boombike_desc",
+      "label": "Boombike desc"
+    },
+    {
+      "type": "image_picker",
+      "id": "fb-boombike_img",
+      "label": "Boombike img PC"
+    },
+    {
+      "type": "image_picker",
+      "id": "fb-boombike_img_mob",
+      "label": "Boombike img Mob"
+    }
+  ]
+}
+{% endschema %}

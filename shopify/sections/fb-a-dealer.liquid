@@ -1,0 +1,180 @@
+<div class="fb-dealer-page-form" id="section-{{ section.id }}">
+    <div class="fb-dealer-application">
+        <div class="fbad-title">
+            {{ section.settings.dealer_form_title }}
+        </div>
+        <div class="fbad-first-step">
+            <div class="fbad-sub-title">
+                {{ section.settings.dealer_form_subtitle1 }}
+            </div>
+            <form class="needs-validation fb-dealer-form" id="dealer_form">
+                <div class="fb-dlex-row">
+                    <div class="fb-md-3">
+                        <label for="dealer_firstName" class="form-label fb-form-label">First Name *</label>
+                        <input type="text" class="form-control" id="dealer_firstName"  name="firstName" maxlength="64" required>
+                        <div class="fb-invalid-feedback"></div>
+                    </div>
+                    <div class="fb-md-3">
+                        <label for="dealer_lastName" class="form-label fb-form-label">Last Name *</label>
+                        <input type="text" class="form-control" id="dealer_lastName" maxlength="64" name="lastName" required>
+                        <div class="fb-invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="fb-dlex-row">
+                    <div class="fb-md-3">
+                        <label for="dealer_email" class="form-label fb-form-label">Email *</label>
+                        <input type="text" class="form-control" id="dealer_email" required name="email">
+                        <div class="fb-invalid-feedback">
+                            Please enter a valid email address
+                        </div>
+                    </div>
+                    <div class="fb-md-3">
+                        <label for="dealer_phoneNumber" class="form-label fb-form-label">Phone Number *</label>
+                        <input type="text" class="form-control" id="dealer_phoneNumber" maxlength="20"  name="phoneNumber" required>
+                        <div class="fb-invalid-feedback">
+                            Please enter a valid ten digit U.S. phone number.
+                        </div>
+                    </div>
+                </div>
+                <div class="fb-organization-form">
+                    <div class="fbad-sub-title">
+                        {{ section.settings.dealer_form_subtitle2 }}
+                    </div>
+                    <div class="fb-dlex-row">
+                        <div class="fb-md-3">
+                            <label for="dealer_companyName" class="form-label fb-form-label">Company Name *</label>
+                            <input type="text" class="form-control" id="dealer_companyName" maxlength="64" name="companyName" required>
+                            <div class="fb-invalid-feedback">name</div>
+                        </div>
+                        <div class="fb-md-3">
+                            <label for="tax_taxNumber" class="form-label fb-form-label">Tax ID/ABN/VAT Number</label>
+                            <input type="text" class="form-control" id="tax_taxNumber" maxlength="64" name="taxNumber" required>
+                            <div class="fb-invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="fb-dlex-row">
+                        <div class="fb-md-3">
+                            <label for="dealer_address1" class="form-label fb-form-label">Address 1 *</label>
+                            <input type="text" class="form-control" id="dealer_address1" maxlength="64" name="address1" required>
+                            <div class="fb-invalid-feedback"></div>
+                        </div>
+                        <div class="fb-md-3">
+                            <label for="dealer_address2" class="form-label fb-form-label">Address 2 *</label>
+                            <input type="text" class="form-control" id="dealer_address2" maxlength="64" name="address2" required>
+                            <div class="fb-invalid-feedback"></div>
+                        </div>
+                    </div>
+
+                    <div class="fb-dlex-row">
+                        <div class="fb-md-3">
+                            <label for="dealer_city" class="form-label fb-form-label">City *</label>
+                            <input type="text" class="form-control" id="dealer_city" maxlength="64" name="city" required>
+                            <div class="fb-invalid-feedback"></div>
+                        </div>
+                        <div class="fb-md-3">
+                            <label for="dealer_postcode" class="form-label fb-form-label">Postcode/ZIP *</label>
+                            <input type="text" class="form-control" id="dealer_postcode" maxlength="64" name="postcode" required>
+                            <div class="fb-invalid-feedback"></div>
+                        </div>
+                    </div>
+
+                    <div class="fb-dlex-row">
+                        <div class="fb-md-3">
+                            <label for="dealer_country" class="form-label fb-form-label">Country *</label>
+                            <select name="country" id="dealer_country" class="form-control form-select" required>
+                                <option disabled selected value="">Select a country</option>
+                                {{ all_country_option_tags | remove: '<option value="---" data-provinces="[]">---</option>'}}
+                            </select>
+                            {% comment %} <select class="form-control form-select" aria-label="dealer_country">
+                                <option disabled selected>Select a country</option>
+                                <option value="freebeat official accounts (Instagram, Facebook, TikTok, Pinterest)">freebeat official accounts (Instagram, Facebook, TikTok, Pinterest)</option>
+                                <option value="Advertisement on social media, deal sites, etc.">Advertisement on social media, deal sites, etc.</option>
+                            </select> {% endcomment %}
+                            <div class="fb-invalid-feedback"></div>
+                        </div>
+                        <div class="fb-md-3">
+                            <label for="dealer_businessType" class="form-label fb-form-label">Business type *</label>
+                            <select class="form-control form-select" aria-label="dealer_businessType" id="dealer_businessType" name="businessType" required>
+                                <option value="Online shop" selected>Online shop</option>
+                                <option value="Retail shop">Retail shop</option>
+                            </select>
+                            <div class="fb-invalid-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fb-organization-form">
+                    <div class="fbad-sub-title">
+                        {{ section.settings.dealer_form_subtitle3 }}
+                    </div>
+                    <div class="fb-md-12">
+                        <label for="dealer_message" class="form-label fb-form-label">Message</label>
+                        <textarea class="form-control-textrea" rows="3" id="dealer_message" maxlength="500" name="message"></textarea>
+                        <div class="fb-invalid-feedback"></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" checked="true" id="dealer_emailNews" name="emailNews" >
+                        <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dealer-nocheck.png?v=1680762852" alt="check" class="dealer-email-nocheck" />
+                        <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dealer-checked.png?v=1680762813" alt="white check" class="dealer-email-check" />
+                        <label class="form-check-label" for="">Email me with news and offers.</label>
+                    </div>
+                </div>
+                <div class="fb-md-btn">
+                    <button class="fb-btn-black js-dealer-sumbmit" disabled>
+                        SUBMIT
+                        <i></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+  {% schema %}
+    {
+      "name": "FbADealer",
+      "presets": [
+        {
+          "name": "fb-a-dealer",
+          "category": "Fb Sections"
+        }
+      ],
+      "settings": [
+        {
+            "type": "richtext",
+            "id": "dealer_form_title",
+            "label": "Form Title",
+            "default": "<p>Become A freebeat Dealer</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "dealer_form_subtitle1",
+            "label": "Form Sub Title 1",
+            "default": "<p>freebeat dealer opportunities</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "dealer_form_subtitle2",
+            "label": "Form Sub Title 2",
+            "default": "<p>Your company / organization</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "dealer_form_subtitle3",
+            "label": "Form Sub Title 3",
+            "default": "<p>Your message / information</p>"
+        }
+      ],
+      "blocks": [
+      ]
+    }
+  {% endschema %}
+  <style>
+    .fb-dealer-page-form {
+        background: #f5f5f5;
+        padding-bottom: 80px;
+    }
+    @media only screen and (max-width: 768px) {
+        .fb-dealer-page-form {
+            padding-bottom: 40px;
+        }
+    }
+  </style>

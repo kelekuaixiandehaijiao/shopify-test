@@ -1,0 +1,167 @@
+<script>
+
+    // Run scripts on DOMContentLoaded to avoid affecting site load time
+    window.addEventListener('DOMContentLoaded', function () {
+
+        // Checks if Extend lives in the window and the active currency is USD before showing Extend offers
+        if (window.Extend && window.ExtendShopify && window.Shopify && window.Shopify.currency && window.Shopify.currency.active === 'USD' && window.meta.page.pageType == 'product') {
+            
+            /************************/
+            /* Initial Variables    */
+            /************************/
+            const productForm = document.querySelector('form[class="ProductForm"]'); // Change this to the product form element
+            const addToCartButton = document.querySelectorAll('.js-ebike-addtocart'); // Change this to the Add-To-Cart element
+            const productCategory = (meta && meta.product) ? meta.product.type : null;
+            const extendOffer = document.createElement('div');
+            const extendUtils = window.Extend.integration.utils;
+            const extendLogger = extendUtils.logger;
+            {% comment %} var offerDiv = document.querySelector('#xbike-add-to-cart-main') 
+                ? document.querySelector('#xbike-add-to-cart-main')
+                : null;
+            if(!offerDiv) {
+                offerDiv = getComputedStyle(document.querySelector('.ab-fbm-top-box')).display == 'block'
+                    ? document.querySelector('.ab-main-product-buy-bottom')
+                    : document.querySelector('.paymentMethodFrame');
+            } {% endcomment %}
+
+            var offerDiv = document.querySelector('.ebkie-protection-box')
+            if (!offerDiv) offerDiv = addToCartButton[2]
+            extendOffer.className = 'extend-offer';
+            offerDiv.parentElement.prepend(extendOffer);
+
+            /************************/
+            /* QA Cypress Variables */
+            /************************/
+            window.Extend.integration.pdpProductForm = productForm;
+            window.Extend.integration.pdpAddToCartButton = addToCartButton;
+            window.Extend.integration.pdpExtendOffer = extendOffer;
+
+            /************************/
+            /* initProductOffer     */
+            /************************/
+            // Initializes product offers and handles ATC button functionality for the main PDP ATC
+            function initProductOffer() {
+                try {
+                    extendLogger({ productForm, addToCartButton, extendOffer });
+
+                    // Fail safes
+                    if (!productForm || !addToCartButton || !extendOffer) {
+                        throw new Error("Exiting - missing productForm, addToCartButton, or extendOffer")
+                    }
+
+                    // Check if product is an extend warranty, if so disable the atc
+                    function isExtend() {
+                        if (meta.product && meta.product.vendor === 'Extend') {
+                            addToCartButton.forEach((el) => {
+                                el.disabled = true;
+                            });
+                        }
+                    }
+
+                    // Checks if product is an Extend warranty and if so disables
+                    isExtend();
+
+                    // Grabs the variantId from the productForm and renders the initial offers for it
+                    let variantId = productForm.id.value;
+
+                    // Grabs the product price from the metadata
+                    let productPrice = parseInt(meta.product.variants.filter(variant => variant.id.toString() === variantId.toString())[0].price);
+                    
+                    // Renders Extend offer
+                    Extend.buttons.render(extendOffer, { referenceId: variantId, price: productPrice, category: productCategory });
+
+                    // Listens for changes to the productForm and sets the activeProduct for extend via variantID
+                    productForm.addEventListener('change', function () {
+                        variantId = productForm.id.value
+                        if (variantId) {
+                            productPrice = parseInt(meta.product.variants.filter(variant => variant.id.toString() === variantId.toString())[0].price);
+                            Extend.setActiveProduct(extendOffer, { referenceId: variantId, price: productPrice, category: productCategory });
+                            isExtend();
+                        }
+                    });
+
+                    // Custom - Listens for clicks on the MorphRover color seletions and sets the activeProduct for extend via variantID
+                    document.addEventListener('click', function (e)  {
+                    if(e.target.parentElement.matches('.ebike-choose-item')) {
+	                        variantId = window.location.search.match(/variant=(\d+)/)[1]
+                        if (variantId) {
+                            productPrice = parseInt(meta.product.variants.filter(variant => variant.id.toString() === variantId.toString())[0].price);
+                            Extend.setActiveProduct(extendOffer, { referenceId: variantId, price: productPrice, category: productCategory });
+                            isExtend();
+                        }
+                      }
+                    });
+
+                    // Custom - Listens for clicks on the MorphRover frame seletions and sets the activeProduct for extend via variantID
+                    document.addEventListener('click', function (e)  {
+                    if(e.target.matches('.span-2-1')) {
+                            variantId = window.location.search.match(/variant=(\d+)/)[1]
+                            if (variantId) {
+                                productPrice = parseInt(meta.product.variants.filter(variant => variant.id.toString() === variantId.toString())[0].price);
+                                Extend.setActiveProduct(extendOffer, { referenceId: variantId, price: productPrice, category: productCategory });
+                                isExtend();
+                            }
+                      }
+                    });
+
+
+                    // Custom - Listens for clicks on the MorphRover frame seletions and sets the activeProduct for extend via variantID
+                    document.addEventListener('click', function (e)  {
+                    if(e.target.matches('li[class="ebike-choose-size-mob js-ebike-productsize ebike-choose-item-checked"]')) {
+                            variantId = window.location.search.match(/variant=(\d+)/)[1]
+                            if (variantId) {
+                                productPrice = parseInt(meta.product.variants.filter(variant => variant.id.toString() === variantId.toString())[0].price);
+                                Extend.setActiveProduct(extendOffer, { referenceId: variantId, price: productPrice, category: productCategory });
+                                isExtend();
+                            }
+                      }
+                    });
+
+                    // click simulation handling add to cart
+                    function handleAddToCart(e) {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+                        const quantityEl = productForm.querySelector('[name="quantity"]');
+                        const quantity = quantityEl && quantityEl.value;
+                        ExtendShopify.handleAddToCart(extendOffer, {
+                            quantity: quantity,
+                            modal: true,
+                            done: function () {
+
+                                // Trigger Analytics
+                                if (window.Extend.integration.analytics)
+                                    window.Extend.integration.productAnalytics(variantId, quantity);
+                                    
+                                // remove default click listener
+                                addToCartButton[0].removeEventListener('click', handleAddToCart, true);
+
+                                // click atc button
+                                addToCartButton[0].click();
+
+                                // add default click listener back
+                                addToCartButton[0].addEventListener('click', handleAddToCart, true);
+                            }
+                        });
+                    }
+
+                    // run handleCaddtoCart when we click ATC, capturing event
+                    addToCartButton.forEach((el) => { el.addEventListener('click', handleAddToCart, true); });
+                } catch (error) {
+                    console.error("EXTEND:", error)
+                }
+            }
+
+            // Initial product offer render
+            if (!Extend.buttons.instance(extendOffer)) {
+                {% comment %} 判断是否有库存 只用于大库存 {% endcomment %}
+                if(window.fbproduct && !window.fbproduct.available) {
+                    return false
+                } else {
+                    initProductOffer();
+                }
+                
+            }
+        }
+
+    })
+</script>

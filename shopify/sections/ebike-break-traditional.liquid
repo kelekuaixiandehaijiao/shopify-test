@@ -1,0 +1,464 @@
+{%- if product != blank -%}
+{%- else -%}
+  {%- assign product = section.settings.ebt_prduct -%}
+{%- endif -%}
+
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- capture has_bike_default_url -%}
+    {%- render 'customer-price-control', cpc_product: productcal, type: 'bikeDefaultPdpUrl' -%}
+{%- endcapture -%}
+<div id="section-{{ section.id }}" class="ebike-break-traditional">
+  <div class="ebtr-title ebike-pcshow-mobhide">
+    {{ section.settings.ebt_title }}
+  </div>
+  <div class="ebtr-title ebike-mobshow-pchide">
+    {{ section.settings.ebt_title_mob }}
+  </div>
+  <div class="ebtr-sub-title">
+    {{ section.settings.ebt_sub_title }}
+  </div>
+  <div class="ebtr-price-box">
+    <div class="ebtr-price-item">
+      <div class="ebtr-price-item-title">
+        {{ section.settings.ebt_number_1 | times: 100 | money_without_trailing_zeros }}
+      </div>
+      <div class="ebtr-price-item-desc item-width-1">
+        {{ section.settings.ebt_desc_1 }}
+      </div>
+    </div>
+    <div class="ebtr-price-imgitem">
+      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/ebike-add-add.png?v=1688957032" alt="plus logo">
+    </div>
+    <div class="ebtr-price-item">
+      <div class="ebtr-price-item-title">
+        {{ section.settings.ebt_number_2 | times: 100 | money_without_trailing_zeros }}
+      </div>
+      <div class="ebtr-price-item-desc item-width-2">
+        {{ section.settings.ebt_desc_2 }}
+      </div>
+    </div>
+    <div class="ebtr-price-imgitem">
+      <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/ebike-add-add.png?v=1688957032" alt="plus logo">
+    </div>
+    <div class="ebtr-price-item">
+      <div class="ebtr-price-item-title">
+        {{ section.settings.ebt_number_3 | times: 100 | money_without_trailing_zeros }}
+      </div>
+      <div class="ebtr-price-item-desc item-width-3">
+        {{ section.settings.ebt_desc_3 }}
+      </div>
+    </div>
+  </div>
+  <div class="ebtr-price-equel">
+    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/ebike-dengdeng.png?v=1688957032" alt="equals logo">
+  </div>
+  <div class="ebtr-price-equel-img">
+    {{
+      section.settings.ebt_price_equel_img
+      | image_url: width: 1500
+      | image_tag:
+        loading: 'lazy',
+        sizes: '(min-width: 1200px) 600px, (min-width: 640px) calc((100vw - 80px) / 2), calc((100vw - 40px) / 2)',
+        class: '',
+        widths: '375, 550, 750, 1100, 1500',
+        alt: section.settings.ebt_price_equel_img.alt
+    }}
+  </div>
+  <div class="ebtr-bottom">
+    <div class="ebtr-bottom-title">
+      <h2>
+        <span class="span1"> {{ section.settings.ebt_price }} </span>
+        <span class="span2">{%- render 'customer-price-control', cpc_product: product, type: 'sale' -%}</span>
+      </h2>
+    </div>
+    {%- if section.settings.ebt_price_desc != blank -%}
+      <div class="ebtr-bottom-desc">
+        {{ section.settings.ebt_price_desc }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "EbikeBreakTraditional",
+  "presets": [
+    {
+      "name": "ebike-break-traditional",
+      "category": "fb-section",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "ebt_prduct",
+      "label": "product"
+    },
+    {
+      "type": "image_picker",
+      "id": "ebt_img",
+      "label": "Img"
+    },
+    {
+      "type": "richtext",
+      "id": "ebt_title",
+      "label": "Title",
+      "default": "<p>BREAK THE MOLD OF TRADITIONAL EBIKE</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "ebt_title_mob",
+      "label": "MOB Title",
+      "default": "<p>DOUBLE THE FUN HALF THE COST</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "ebt_sub_title",
+      "label": "Sub Title",
+      "default": "<p>Say hello to the ultimate fitness and outdoor exploration experience with Freebeat Bike. Our innovative, feature-loaded Bike doubles as an indoor exercise bike, allowing you to take your workout to the next level with virtual instruction from top trainers.</p>"
+    },
+    {
+      "type": "text",
+      "id": "ebt_number_1",
+      "label": "Number 1",
+      "default": "2000"
+    },
+    {
+      "type": "richtext",
+      "id": "ebt_desc_1",
+      "label": "desc 1",
+      "default": "<p>Premium Indoor Fitness Bike x 1</p>"
+    },
+    {
+      "type": "text",
+      "id": "ebt_number_2",
+      "label": "Number 2",
+      "default": "2000"
+    },
+    {
+      "type": "richtext",
+      "id": "ebt_desc_2",
+      "label": "desc 2",
+      "default": "<p>All-terrain Fat Tire eBike x 1</p>"
+    },
+    {
+      "type": "text",
+      "id": "ebt_number_3",
+      "label": "Number 3",
+      "default": "1000"
+    },
+    {
+      "type": "richtext",
+      "id": "ebt_desc_3",
+      "label": "desc 3",
+      "default": "<p>Electricity Bill Regen from Workouts in 5 Years</p>"
+    },
+    {
+      "type": "text",
+      "id": "ebt_price",
+      "label": "Price title",
+      "default": "Your Final Price:"
+    },
+    {
+      "type": "text",
+      "id": "ebt_price_desc",
+      "label": "Price desc",
+      "default": "5 workouts per week, each time consisting of a 30 min lesson with an instructor."
+    },
+    {
+      "type": "image_picker",
+      "id": "ebt_price_equel_img",
+      "label": "Price Equel Img"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  /* Break the mold of traditional ebike start */
+  .ebike-break-traditional {
+    width: 100%;
+    background: #e9edf3;
+  }
+  .ebtr-100-width {
+    width: 100%;
+  }
+  .ebtr-title {
+    width: 100%;
+    text-align: center;
+  }
+  .ebtr-price-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .ebtr-price-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .ebtr-price-equel img {
+    display: inline-block;
+  }
+  @media screen and (min-width: 769px) {
+    .ebtr-price-box {
+      align-items: center;
+    }
+    .ebike-break-traditional {
+      padding-top: 80px;
+    }
+    .ebtr-title p,
+    .ebtr-title h2 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #121212;
+      line-height: 40px;
+    }
+    .ebtr-sub-title {
+      text-align: center;
+      width: 930px;
+      margin: 0 auto;
+      padding-top: 16px;
+    }
+    .ebtr-sub-title p {
+      font-size: 16px;
+      font-weight: 500;
+      color: #121212;
+      line-height: 16px;
+    }
+    .ebtr-bottom {
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(90deg, rgba(18, 18, 18, 0.88) 0%, #121212 100%);
+      /* min-height: 120px; */
+      padding-top: 26px;
+      padding-bottom: 26px;
+    }
+    .ebtr-bottom-title {
+      width: 100%;
+      line-height: 40px;
+    }
+    .ebtr-bottom-title .span1 {
+      font-size: 40px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 40px;
+      margin-right: 18px;
+    }
+    .ebtr-bottom-title .span2 {
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 40px;
+      letter-spacing: 1px;
+      background: linear-gradient(45deg, #2fdf13 0%, #b0ff4a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .ebtr-bottom-desc {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 14px;
+      margin-top: 14px;
+    }
+    .ebtr-price-box {
+      margin-top: 40px;
+    }
+    .ebtr-price-imgitem {
+      width: 36px;
+      height: 36px;
+      margin: 0px 52px;
+    }
+    .ebtr-price-imgitem img {
+      width: 36px;
+      height: 36px;
+    }
+    .ebtr-price-item {
+      min-width: 141px;
+      text-align: center;
+    }
+    .ebtr-price-box .item-width-1 {
+      width: 161px;
+    }
+    .ebtr-price-box .item-width-2 {
+      width: 129px;
+    }
+    .ebtr-price-box .item-width-3 {
+      width: 219px;
+    }
+
+    .ebtr-price-item-title {
+      font-size: 40px;
+      font-weight: bold;
+      color: #121212;
+      line-height: 48px;
+    }
+    .ebtr-price-item-desc {
+      margin-top: 14px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #000000;
+      line-height: 20px;
+      text-align: center;
+    }
+    .ebtr-price-equel {
+      margin-top: 52px;
+      width: 100%;
+      text-align: center;
+      line-height: 48px;
+      height: 48px;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .ebtr-price-equel img {
+      width: 48px;
+      height: 48px;
+    }
+    .ebtr-price-equel-img {
+      width: 528px;
+      margin: 0 auto;
+
+      height: 332px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .ebtr-price-equel-img img {
+      width: auto;
+      height: 332px;
+      display: inline-block;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .ebtr-price-box {
+      align-items: flex-start;
+    }
+    .ebtr-price-item {
+      justify-content: flex-start;
+    }
+    .ebike-break-traditional {
+      padding-top: 60px;
+    }
+    .ebtr-title {
+      padding: 0px 40px;
+      text-align: center;
+    }
+    .ebtr-title p,
+    .ebtr-title h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #121212;
+      line-height: 28px;
+    }
+    .ebtr-sub-title {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      padding: 10px 24px 0px 24px;
+    }
+    .ebtr-sub-title p {
+      font-size: 14px;
+      font-weight: 500;
+      color: #121212;
+      line-height: 22px;
+    }
+    .ebtr-bottom {
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(90deg, rgba(18, 18, 18, 0.88) 0%, #121212 100%);
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+    .ebtr-bottom-title {
+      width: 100%;
+      line-height: 24px;
+    }
+    .ebtr-bottom-title .span1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 24px;
+      margin-right: 16px;
+    }
+    .ebtr-bottom-title .span2 {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 24px;
+      letter-spacing: 1px;
+      background: linear-gradient(45deg, #2fdf13 0%, #b0ff4a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .ebtr-bottom-desc {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 18px;
+      padding-top: 12px;
+      max-width: 315px;
+      margin: 0 auto;
+    }
+    .ebtr-price-box {
+      margin-top: 34px;
+    }
+    .ebtr-price-imgitem {
+      width: 20px;
+      height: 20px;
+    }
+    .ebtr-price-imgitem img {
+      width: 20px;
+      height: 20px;
+    }
+    .ebtr-price-item {
+      text-align: center;
+    }
+    .ebtr-price-box .item-width-1 {
+      width: 102px;
+    }
+    .ebtr-price-box .item-width-2 {
+      width: 102px;
+    }
+    .ebtr-price-box .item-width-3 {
+      width: 102px;
+    }
+    .ebtr-price-item-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #121212;
+      line-height: 20px;
+    }
+    .ebtr-price-item-desc {
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #000000;
+      line-height: 16px;
+      text-align: center;
+    }
+    .ebtr-price-equel {
+      margin-top: 25px;
+      width: 100%;
+      text-align: center;
+      line-height: 30px;
+      height: 30px;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .ebtr-price-equel img {
+      width: 30px;
+      height: 30px;
+    }
+    .ebtr-price-equel-img {
+      min-width: 368px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .ebtr-price-equel-img img {
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+  }
+  /* Break the mold of traditional ebike end */
+</style>

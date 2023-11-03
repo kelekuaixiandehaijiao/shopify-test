@@ -1,0 +1,298 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div
+  class="fb-boom-klarna js-prodcutpage-specail px-5 fb-sm:px-10 pb-10 pt-0 fb-md:pt-0 fb-md:pb-20 fb-md:px-5r"
+  id="section-{{ section.id }}"
+  style="background-color: {{ section.settings.klarna_color }}"
+>
+  {%- assign productnew = section.settings.product -%}
+  {%- capture has_bike_default_url -%}
+    {%- render 'customer-price-control', cpc_product: productnew, type: 'bikeDefaultPdpUrl' -%}
+  {%- endcapture -%}
+  <a
+    {% if has_bike_default_url != '' %}
+      href="{{ has_bike_default_url }}"
+    {% else %}
+      href="javascript:void(0);"
+      data-url="{{- section.settings.klarna_link_url  -}}"
+      data-keep-biketype="{%- render 'customer-price-control', cpc_product: productnew, type: 'bikeType' -%}"
+      class="js-keep-biketype flex items-center justify-center"
+    {% endif %}
+  >
+    <div
+      class=" flex h-17r w-full  flex-col items-center overflow-hidden rounded-2xl px-5 py-5 fb-sm:h-26r fb-sm:max-w-62r fb-sm:py-10"
+      style="background: linear-gradient({{ section.settings.klarna_Gradient_deg }}deg, {{ section.settings.klarna_Gradient_colorA }} 52%, {{ section.settings.klarna_Gradient_colorB }} 100%);"
+    >
+      {%- assign klarna_title_block_s_oprichtext = section.settings.klarna_title_block_s | strip_html -%}
+      {%- if klarna_title_block_s_oprichtext != blank -%}
+        <div class="block w-14r text-center fb-sm:w-25r" style="color: {{ section.settings.klarna_text_color }};">
+          <span class="fb_xc_home_payTxt text-center align-middle text-20 font-bold fb-sm:text-32">
+            {{- section.settings.klarna_title_block_s -}}
+          </span>
+        </div>
+      {%- elsif section.settings.klarna_title_new_block_s != blank -%}
+        <div class="block w-14r text-center fb-sm:w-25r" style="color: {{ section.settings.klarna_text_color }};">
+          <span class="fb_xc_home_payTxt text-center align-middle text-20 font-bold fb-sm:text-32">
+            {{- section.settings.klarna_title_new_block_s -}}
+          </span>
+          <img
+            class=" inline-block w-17 align-middle fb-sm:w-29 Image--lazyLoad Image--fadeIn"
+            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/klarna_440af7f3-c54b-413c-9345-0d95726ff5ac.png?v=1668743821"
+            alt="klarna logo"
+          >
+        </div>
+      {%- endif -%}
+
+      <div class="fb_xc_klarna_con_price flex w-full items-start justify-center">
+        <div class=" flex basis-1/3 flex-col items-center justify-center pt-10 fb-sm:pt-18">
+          <div class="block items-start align-top">
+            {%- if section.settings.klarna_first_unit != blank -%}
+              <span class=" fb_xc_home_color inline-block text-12 fb-sm:text-32">
+                {{ section.settings.klarna_first_unit }}
+              </span>
+            {%- endif -%}
+            {%- if section.settings.klarna_first_number != blank -%}
+              <span class="fb_xc_home_color inline-block align-top text-32 font-bold fb-sm:text-6xl">
+                {{ section.settings.klarna_first_number }}
+              </span>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.klarna_first_desc != blank -%}
+            <div class=" fb_xc_home_color mt-2 max-w-[86px] text-center text-12 font-bold fb-sm:mt-3 fb-sm:max-w-none fb-sm:text-16">
+              {{ section.settings.klarna_first_desc }}
+            </div>
+          {%- endif -%}
+        </div>
+        <div class="h-23 w-3  fb-sm:w-5 fb-sm:h-30 my-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 14 92" fill="none">
+            <path d="M13 1L1 91" stroke="#E6E6E6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="relative flex !min-w-[100px] basis-1/3 flex-col items-center justify-center pt-10 fb-sm:!min-w-50 fb-sm:pt-18">
+          {%- if section.settings.klarna_sencond_top_desc != blank -%}
+            <div class="fb_xc_home_color absolute left-0 top-6 w-full pb-2 text-center text-12 fb-sm:top-10 fb-sm:text-16">
+              {{ section.settings.klarna_sencond_top_desc }}
+            </div>
+          {%- endif -%}
+          <div class="block items-start align-top">
+            {%- if section.settings.klarna_sencond_unit != blank -%}
+              <span class="fb_xc_klarna_as_low_as inline-block text-12 fb-sm:text-32">
+                {{ section.settings.klarna_sencond_unit }}
+              </span>
+            {%- endif -%}
+            {%- if section.settings.klarna_sencond_number != blank -%}
+              <span class="fb_xc_klarna_as_low_as inline-block align-top text-32 font-bold fb-sm:text-6xl">
+                {%- assign product = section.settings.product -%}
+                {% if product != blank %}
+                  {%- render 'customer-price-control', type: 'mo', cpc_product: product -%}
+                {%- else -%}
+                  {{ section.settings.klarna_sencond_number }}
+                {% endif %}
+              </span>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.klarna_sencond_desc != blank -%}
+            <div class="fb_xc_home_color mt-2 flex h-7 items-center justify-center text-center text-12 font-bold fb-sm:mt-3 fb-sm:h-auto fb-sm:text-16">
+              {{ section.settings.klarna_sencond_desc -}}
+              <sup>1</sup>
+            </div>
+          {%- endif -%}
+        </div>
+        <div class="h-23 w-3 fb-sm:w-5 fb-sm:h-30 my-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 14 92" fill="none">
+            <path d="M13 1L1 91" stroke="#E6E6E6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="flex basis-1/3 flex-col items-center justify-center pt-10  fb-sm:pt-18">
+          <div class="block items-start align-top">
+            {%- if section.settings.klarna_third_number != blank -%}
+              <span class="fb_xc_home_color inline-block align-top text-32 font-bold fb-sm:text-6xl">
+                {{ section.settings.klarna_third_number }}
+              </span>
+            {%- endif -%}
+            {%- if section.settings.klarna_third_unit != blank -%}
+              <span class="fb_xc_home_color inline-block text-12 fb-sm:text-32">
+                {{ section.settings.klarna_third_unit }}
+              </span>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.klarna_third_desc != blank -%}
+            <div class="fb_xc_home_color mt-2 max-w-[86px] text-center text-12 font-bold fb-sm:mt-3 fb-sm:max-w-none fb-sm:text-16">
+              {{ section.settings.klarna_third_desc }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="dark-btn-normal  mt-3 w-12r text-center text-14 font-bold  uppercase text-white fb-sm:mt-10 fb-sm:w-18r fb-sm:text-16">
+        {%- if has_bike_default_url != '' -%}
+          <button>EXPLORE OTHER BIKES</button>
+        {%- else -%}
+          <button>ADD TO CART</button>
+        {%- endif -%}
+      </div>
+    </div>
+  </a>
+</div>
+<style>
+  #section-{{ section.id }} {
+    background-color: {{ section.settings.klarna_color }}
+  }
+  .fb_xc_home_title {
+    color: {{ section.settings.klarna_text_color }};
+  }
+  .fb_xc_klarna_as_low_as{
+    color:{{ section.settings.klarna_as_low_as_text_color }};
+  }
+  #section-{{ section.id }} .fb_xc_home_color{
+    color: {{ section.settings.klarna_text_color }}
+  }
+  {%- if template contains 'page.boom-bike' -%}
+      @media screen and (max-width: 820px){
+          #shopify-section-{{section.id}} {
+              padding-top: 20px;
+              background-color: #EFEFEF;
+          }
+      }
+      @media screen and (min-width: 821px){
+          #shopify-section-{{section.id}} {
+             padding-top: 40px;
+             background-color: #EFEFEF;
+          }
+      }
+  {%- endif -%}
+  {%- if country_code_var == 'gb' -%}
+    .fb-boom-klarna{
+        display: none!important;
+    }
+  {%- endif -%}
+</style>
+{% schema %}
+{
+  "name": "FbBoomKlarna",
+  "presets": [
+    {
+      "name": "fb-boom-klarna",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "url",
+      "id": "klarna_link_url",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "klarna_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+
+    {
+      "type": "number",
+      "id": "klarna_Gradient_deg",
+      "label": "Gradient Deg",
+      "default": 180
+    },
+    {
+      "type": "color",
+      "id": "klarna_Gradient_colorA",
+      "label": "Gradient Second",
+      "default": "#75C2EF"
+    },
+    {
+      "type": "color",
+      "id": "klarna_Gradient_colorB",
+      "label": "Gradient Third",
+      "default": "#5399CD"
+    },
+    {
+      "type": "color",
+      "id": "klarna_text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "klarna_as_low_as_text_color",
+      "label": "as low as Text Color",
+      "default": "#00cc45"
+    },
+    {
+      "type": "text",
+      "id": "klarna_title_new_block_s",
+      "label": "Main new title"
+    },
+    {
+      "type": "richtext",
+      "id": "klarna_title_block_s",
+      "label": "Main title"
+    },
+    {
+      "type": "text",
+      "id": "klarna_first_unit",
+      "label": "first unit",
+      "default": "$"
+    },
+    {
+      "type": "text",
+      "id": "klarna_first_number",
+      "label": "first number",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "klarna_first_desc",
+      "label": "first description",
+      "default": "DOWN PAYMENT"
+    },
+    {
+      "type": "text",
+      "id": "klarna_sencond_unit",
+      "label": "sencond unit",
+      "default": "$"
+    },
+    {
+      "type": "text",
+      "id": "klarna_sencond_number",
+      "label": "sencond number",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "klarna_sencond_top_desc",
+      "label": "sencond top desc"
+    },
+    {
+      "type": "text",
+      "id": "klarna_sencond_desc",
+      "label": "sencond description",
+      "default": "/MONTH"
+    },
+    {
+      "type": "text",
+      "id": "klarna_third_unit",
+      "label": "third unit",
+      "default": "%"
+    },
+    {
+      "type": "text",
+      "id": "klarna_third_number",
+      "label": "third number",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "klarna_third_desc",
+      "label": "third description",
+      "default": "APR FINANCING"
+    }
+  ]
+}
+{% endschema %}

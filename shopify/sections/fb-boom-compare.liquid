@@ -1,0 +1,242 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div
+  id="section-{{ section.id }}"
+  class="fb-lit-compare relative flex flex-col items-center bg-white px-5 pb-20 pt-10 fb-sm:py-15 fb-md:py-5r"
+>
+  <div class="w-full px-4r pb-2r text-center text-20 font-bold uppercase text-121212 fb-md:pb-3r fb-md:text-32">
+    <h2>Which bike is right for you?</h2>
+  </div>
+
+  <div class="relative flex w-full flex-col items-center justify-center fb-sm:max-w-32r fb-md:max-w-50r">
+    {% render 'fb-bike-desc', section: section %}
+    <div class="lit_compare_content w-full">
+      <div class="flex w-full items-center justify-center fb-sm:gap-6 fb-md:gap-12r">
+        <div class="flex h-10r w-10r basis-1/2 justify-center fb-sm:h-12r fb-md:h-18r">
+          {% assign lit_bike_pc = section.settings.lit_bike_pc | img_url: '' %}
+          {% assign lit_bike_mobile = section.settings.lit_bike_mobile | img_url: '' %}
+          <img
+            class="hidden fb-sm:block  fb-sm:max-h-12r fb-md:max-h-18r"
+            loading="lazy"
+            src="{{ lit_bike_pc }}"
+            alt="{{ section.settings.lit_bike_pc.alt }}"
+          >
+          <img
+            class="fb-sm:hidden"
+            loading="lazy"
+            src="{{ lit_bike_mobile }}"
+            alt="{{ section.settings.lit_bike_mobile.alt }}"
+          >
+        </div>
+        <div class="flex h-10r w-10r basis-1/2 justify-center fb-sm:h-12r fb-md:h-18r">
+          <img
+            class="hidden fb-sm:block fb-sm:max-h-12r fb-md:max-h-18r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pb.png?v=1680501305"
+            loading="lazy"
+            alt="peloton bike"
+          >
+          <img
+            class="fb-sm:hidden"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pb.png?v=1680501305"
+            loading="lazy"
+            alt="peloton bike"
+          >
+        </div>
+      </div>
+      <div class="mt-7 flex w-full items-center justify-between fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-center">
+          <img
+            class="h-5 w-26 fb-md:h-7 fb-md:w-30"
+            data-src="{{ section.settings.bike_tip_img | img_url: '' }}"
+            src="{{ section.settings.bike_tip_img | img_url: '' }}"
+            alt="{{ section.settings.bike_tip_img.alt }}"
+            loading="lazy"
+          >
+        </div>
+        <div class="flex-half-center"></div>
+      </div>
+      <div class="mt-3 flex h-4r w-full items-center justify-between fb-sm:gap-6 fb-md:mt-4 fb-md:gap-12r">
+        <div class="flex-half-center h-full w-full flex-col">
+          <h2 class="text-20 font-bold text-121212 fb-md:text-32">Boom Bike</h2>
+          <div class="w-full text-center text-12 text-666666 fb-md:mt-3 fb-md:text-16">
+            Colorful and expressive cardio
+          </div>
+        </div>
+        <div class="flex-half-center items-start">
+          <h2 class="w-full max-w-6r text-center text-20 font-bold text-121212 fb-md:max-w-none fb-md:text-32">
+            Peloton 
+            Bike
+          </h2>
+        </div>
+      </div>
+      {%- capture origin_price -%}
+        {%- render 'customer-price-control', type:'origin', cpc_product: product -%}
+      {%- endcapture -%}
+      <div class="mt-6 flex w-full items-start fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-start">
+          <div class="text-12 text-121212 fb-md:text-16">starting at</div>
+          <div class="mt-2 text-20 font-bold text-121212 fb-md:text-32">
+            {% render 'customer-price-control', type: 'sale', cpc_product: product %}
+          </div>
+          {%- if origin_price != blank -%}
+            <div class="mt-1 text-12 text-666666 line-through fb-md:mt-3 fb-md:text-16">{{ origin_price }}</div>
+          {%- endif -%}
+        </div>
+
+        <div class="flex-half-start">
+          <div class="text-12 text-121212 fb-md:text-16">starting at</div>
+          <div class="mt-2 text-20 font-bold text-121212 fb-md:mt-3 fb-md:text-32">$1,445</div>
+        </div>
+      </div>
+      <div class="mt-6 flex w-full items-center fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-start">
+          <img
+            class="h-3r w-3r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_b86fc8d9-e86f-4417-b5d4-950d4aad26e8.png?v=1680503926"
+            loading="lazy"
+            alt="freebeat exercise bike logo"
+          >
+          <div class="mt-2 px-4 text-center text-12 text-121212 fb-md:mt-3 fb-md:text-16">Dynamic Lightstrips</div>
+        </div>
+        <div class="flex-half-start">
+          <div class="h-1 w-8 rounded-lg bg-121212"></div>
+        </div>
+      </div>
+      <div class="mt-6 flex w-full items-center fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-start">
+          <img
+            class="h-3r w-3r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/24__2x_b04ea300-b9dd-4422-ade4-f807a3f96766.png?v=1680517365"
+            loading="lazy"
+            alt="freebeat exercise bike with touchscreen"
+          >
+          <div class="mt-2 text-center text-12 text-121212 fb-md:mt-3  fb-md:text-16">Gamified Classes</div>
+        </div>
+        <div class="flex-half-start">
+          <div class="h-1 w-8 rounded-lg bg-121212"></div>
+        </div>
+      </div>
+      <div class="mt-6 flex w-full items-center justify-between fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-start">
+          <div class="text-20 font-bold text-121212 fb-md:text-32">15.6" HD</div>
+          <div class="mt-2 text-center text-12 text-121212 fb-md:mt-3 fb-md:text-16">15.6" HD Rotating Touchscreen</div>
+        </div>
+        <div class="flex-half-start">
+          <div class="text-20 font-bold text-121212 fb-md:text-32">21.5" HD</div>
+          <div class="mt-2 text-center text-12 text-121212 fb-md:mt-3 fb-md:text-16">21.5" HD Rotating Touchscreen</div>
+        </div>
+      </div>
+      <div class="mt-6 flex w-full items-center justify-between fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-start">
+          <img
+            class="h-3r w-3r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_1.png?v=1680504161"
+            loading="lazy"
+            alt="freebeat exercise bike size"
+          >
+          <div class="mt-2 text-center text-12 text-121212 fb-md:mt-3 fb-md:text-16">51.5" L x 51.5" H x 24.7" W</div>
+        </div>
+        <div class="flex-half-start">
+          <img
+            class="h-3r w-3r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_9bce6999-54a5-4d5a-8da2-10876d0aaa07.png?v=1680517482"
+            loading="lazy"
+            alt="peloton bike size"
+          >
+          <div class="mt-2 text-center text-12 text-121212 fb-md:mt-3 fb-md:text-16">59" L x 53" H x 23" W</div>
+        </div>
+      </div>
+      <div class="mt-6 flex w-full items-center justify-between fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-start">
+          <img
+            class="h-3r w-3r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_1_20518f9b-ca9d-4178-b706-f60b7f424a3d.png?v=1680517489"
+            loading="lazy"
+            alt="freebeat exercise bike auto resistance"
+          >
+          <div class="mt-2 px-4 text-center text-12 text-121212 fb-md:mt-3 fb-md:text-16">Auto Resistance System</div>
+        </div>
+        <div class="flex-half-start">
+          <img
+            class="h-3r w-3r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/13_2x_1_b655f1a5-e37d-4f4e-8572-9a63b5066bbe.png?v=1680505351"
+            loading="lazy"
+            alt="peloton gears"
+          >
+          <div class="mt-2 px-4 text-center text-12 text-121212 fb-md:mt-3 fb-md:text-16">Magnetic with 
+          mechanical adjustment</div>
+        </div>
+      </div>
+      <div class="mt-6 flex w-full items-center fb-sm:gap-6 fb-md:mt-10 fb-md:gap-12r">
+        <div class="flex-half-start">
+          <img
+            class="h-3r w-3r"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_14_2x_b5dbb8a6-fcbf-4c62-8dcd-437b6a584467.png?v=1680517497"
+            loading="lazy"
+            alt="exercise bike pedals"
+          >
+          <div class="mt-2 text-center text-12 text-121212 fb-md:mt-3  fb-md:text-16">Smart Saddle Detection+</div>
+        </div>
+        <div class="flex-half-start">
+          <div class="h-1 w-8 rounded-lg bg-121212"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="mt-6 block w-full text-center fb-md:mt-10"
+    href="https://www.freebeatfit.com/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you"
+  >
+    <span class="text-12 font-bold uppercase text-121212 underline fb-md:mt-10 fb-md:text-16">COMPARE BIKES</span>
+  </a>
+</div>
+{% schema %}
+{
+  "name": "FbLitCompare",
+  "presets": [
+    {
+      "name": "fb-lit-compare",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "lit_bike_pc",
+      "label": "Bike Pc"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_bike_mobile",
+      "label": "Bike Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "bike_tip_img",
+      "label": "Bike tip img"
+    },
+    {
+      "type": "image_picker",
+      "id": "learn_more_img",
+      "label": "Learn More PC"
+    },
+    {
+      "type": "image_picker",
+      "id": "learn_more_img_mob",
+      "label": "Learn More Mob"
+    },
+    {
+      "type": "richtext",
+      "id": "learn_more_desc",
+      "label": "Learn More Desc"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  {%- if country_code_var == 'gb' -%}
+      .fb-lit-compare{
+          display: none!important;
+      }
+  {%- endif -%}
+</style>

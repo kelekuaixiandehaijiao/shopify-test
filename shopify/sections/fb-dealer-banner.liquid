@@ -1,0 +1,196 @@
+
+<div class="fb-dealer-banner Slideshow--fullscreen" id="section-{{ section.id }}">
+    {% assign bannerPc = section.settings.dealer_banner_pc | img_url: '1x1' | replace: '_1x1.','_{width}x.'
+    %}
+    {% assign bannerMob = section.settings.dealer_banner_mob | img_url: '1x1' | replace: '_1x1.','_{width}x.'
+    %}
+    <div class="fb-dealer-banner-img fdbt-pcshow">
+        <img class="Image--lazyLoad Image--fadeIn"
+            data-src="{{ bannerPc }}"
+            data-optimumx="1.2"
+            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            data-sizes="auto"
+            alt="{{ bannerPc.alt }}"
+        >
+    </div>
+    <div class="fb-dealer-banner-img fdbt-mobshow">
+        <img class="Image--lazyLoad Image--fadeIn"
+            data-src="{{ bannerMob }}"
+            data-optimumx="1.2"
+            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+            data-sizes="auto"
+            alt="{{ bannerMob.alt }}}}"
+        >
+    </div>
+    {%- capture dealer_banner_text -%}
+        <div class="fdbt-banner-title">
+          {{ section.settings.dealer_img_title }} 
+        </div>
+        <div class="fdbt-banner-subtitle">
+         {{ section.settings.dealer_img_sub_title }}
+        </div>
+    {%- endcapture -%}
+    {%- capture dealer_banner_mob_text -%}
+        <div class="fdbt-banner-title">
+            {{ section.settings.dealer_img_mob_title }} 
+        </div>
+        <div class="fdbt-banner-subtitle">
+             {{ section.settings.dealer_img_mob_sub_title }}
+        </div>
+    {%- endcapture -%}
+    <div class="fb-dealer-banner-text fdbt-pcshow fb-dealer-middleLeft">
+       {{ dealer_banner_text }}
+    </div>
+    <div class="fb-dealer-banner-text fdbt-mobshow fb-dealer-topCenter">
+        {%- if section.settings.dealer_img_mob_title == blank -%}
+            {{ dealer_banner_text }}
+        {%- else -%}
+            {{ dealer_banner_mob_text }}   
+        {%- endif -%}
+       
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "FbDealerBanner",
+    "presets": [
+      {
+        "name": "fb-dealer-banner",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "dealer_banner_pc",
+            "label": "Pc banner"
+        },
+        {
+            "type": "image_picker",
+            "id": "dealer_banner_mob",
+            "label": "Mob banner"
+        },
+        {
+            "type": "richtext",
+            "id": "dealer_img_title",
+            "label": "Title",
+            "default": "<p>BECOME A freebeat DEALER</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "dealer_img_sub_title",
+            "label": "Sub Title",
+            "default": "<p>Exercise bike partnerships to boost your business</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "dealer_img_mob_title",
+            "label": "Title Mob",
+            "default": "<p>BECOME <br\/> A freebeat DEALER</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "dealer_img_mob_sub_title",
+            "label": "Sub Title Mob",
+            "default": "<p>Exercise bike partnerships <br\/> to boost your business</p>"
+        }
+    ]
+  }
+{% endschema %}
+<style>
+  .fb-dealer-banner{
+        width: 100%;
+        position: relative;
+    } 
+    .fb-dealer-banner-img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    } 
+    .fb-dealer-banner-img img{
+        display: block;
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+        font-family: 'object-fit: cover; object-position: center;';
+    }
+    .fb-dealer-banner-text{
+        position: absolute;
+        width: 100%;
+    }
+    .fb-dealer-middleLeft{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+        padding: 0px 8%;
+    }
+    .fb-dealer-topCenter{
+        left: 50%;
+        top: 0px;
+        transform: translateX(-50%);
+        text-align: center;
+        padding: 58px 13px 0px 13px;
+        
+    }
+    @media only screen and (min-width: 769px) {
+        .fdbt-pcshow{
+            display: block;
+        }
+        .fdbt-mobshow{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .fdbt-pcshow{
+            display: none;
+        }
+        .fdbt-mobshow{
+            display: block;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .fdbt-banner-title p{
+            font-size: 40px;
+            font-weight: 800;
+            color: #121212;
+            line-height: 40px;
+        }
+        .fdbt-banner-subtitle{
+            margin-top: 18px;
+        }
+        .fdbt-banner-subtitle p {
+            font-size: 20px;
+            font-weight: 600;
+            color: #121212;
+            line-height: 20px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .fdbt-banner-title{
+           width: 100%;
+        }
+        .fdbt-banner-title p{
+            font-size: 26px;
+            font-weight: 800;
+            color: #000000;
+            line-height: 26px;
+        }
+        .fdbt-banner-subtitle{
+            padding-top: 8px;
+            width:
+        }
+        .fdbt-banner-subtitle p {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000;
+            line-height: 18px;
+        }
+    }
+    
+</style>
+

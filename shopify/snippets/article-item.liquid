@@ -1,0 +1,41 @@
+<article
+  class="ArticleItem mt-6"
+  {% if block %}
+    {{- block.shopify_attributes -}}
+  {% endif %}
+>
+
+  {%- if article.image != blank -%}
+    <a
+      class="block mb-4 fb-md:mb-6 rounded-xl overflow-hidden w-full aspect-video {% if isBlog  %} rounded-none {% endif %}"
+      style="background: url({{ article.image | img_url: '1x1', format: 'jpg' }}); "
+      href="{{ article.url }}"
+    >
+      {%- assign article_image = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <img
+        class="rounded-xl object-cover Image--lazyLoad Image--fadeIn w-full h-full {% if isBlog  %} rounded-none {% endif %}"
+        data-src="{{ article_image }}"
+        alt="{{ article.image.alt | escape }}"
+        data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+        data-sizes="auto"
+      >
+    </a>
+  {%- endif -%}
+
+  <div>
+    {%- if section.settings.show_category -%}
+      <span class=" fb-md:text-16 text-666666 text-12 font-bold mb-3 fb-md:mb-4 block">{{ article.tags.first }}</span>
+    {%- endif -%}
+
+    <h2 class=" text-121212 text-16 font-bold mb-3 fb-md:text-20 fb-md:mb-4 {% if isBlog  %} text-white {% endif %}">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h2>
+
+    {%- unless template.name == 'article' -%}
+      <p class="text-12 text-121212 mb-3 fb-md:text-16 fb-md:mb-4">
+        {{ article.excerpt_or_content | strip_html | truncate: 150 }}
+      </p>
+      <a href="{{ article.url }}" class=" underline text-00cc45 font-bold text-12 uppercase fb-md:text-16"> read more </a>
+    {%- endunless -%}
+  </div>
+</article>

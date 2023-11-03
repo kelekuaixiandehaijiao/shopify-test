@@ -1,0 +1,72 @@
+<script
+  src="https://cdn.polyfill.io/v3/polyfill.min.js?unknown=polyfill&features=fetch,Element.prototype.closest,Element.prototype.remove,Element.prototype.classList,Array.prototype.includes,Array.prototype.fill,Object.assign,CustomEvent,IntersectionObserver,IntersectionObserverEntry,URL"
+  defer
+></script>
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+<script src="{{ 'utils.js' | asset_url }}" defer></script>
+<script src="{{ 'libs.min.js' | asset_url }}" defer></script>
+<script src="{{ 'shopify-public.js' | asset_url }}" defer></script>
+<script src="{{ 'fb-new-class.js' | asset_url }}" defer></script>
+<script src="{{ "fb-img-video-banner.js" | asset_url }}" defer></script>
+<script src="{{ 'fb-download.js' | asset_url}}" defer></script>
+<script src="{{ 'fb-customer.js' | asset_url}}" defer></script>
+{%- if template == 'index'
+  or template contains 'product.lit-bike'
+  or template contains 'product.boom-bike'
+  or template contains 'product.ebike'
+-%}
+  <script src="{{ 'fb-active-roll.js' | asset_url }}" defer></script>
+{%- endif -%}
+{% if template contains 'ebike' %}
+  <script src="{{ 'ScrollMagic.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'fb-ebike-indoor.js' | asset_url }}" defer></script>
+{%- endif -%}
+{%- if template == 'product.lit-bike-white'
+  or template == 'product.lit-bike-beige'
+  or template contains 'product.boom-bike'
+  or template == 'product.lit-bike-black'
+  or template == 'product.lit-bike-pink'
+  or template contains 'ebike'
+  or template == 'product.lit-bikec-commercial'
+-%}
+  <script
+    type="module"
+    defer=""
+    src="https://cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.en.js"
+  ></script>
+  <script src="{{ 'ebike-product-model.js' | asset_url }}" defer></script>
+  <script src="{{ 'ebike-factory.js' | asset_url }}" defer></script>
+  <script src="{{ 'fb-product-card.js' | asset_url}}" defer></script>
+{%- endif -%}
+{%- if  template == 'product' -%}
+  <script
+    type="module"
+    defer=""
+    src="https://cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.en.js"
+  ></script>
+  <script src="{{ 'ebike-other-factory.js' | asset_url }}" defer></script>
+{%- endif -%}
+{%- if template == 'page.classes' -%}
+  <script src="{{ 'fb-class.js' | asset_url }}" defer></script>
+{% endif %}
+{%- if template contains 'membership' -%}
+  <script src="https://js.stripe.com/v3/" defer></script>
+{%- endif -%}
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = "{{ 'fb-all-playvideo-dialog.js' | asset_url }}";
+    tag.type = 'text/javascript';
+    var script = document.getElementsByTagName('script')[0];
+    script.parentNode.insertBefore(tag, script);
+  });
+</script>
+{% comment %} <script src="{{ 'change-country-utils.js' | asset_url }}" defer></script> {% endcomment %}
+{%- if template == 'page.become-a-host-application' -%}
+  <script src="{{ 'fb-host-application.js' | asset_url }}" defer></script>
+{%- endif -%}
+
+{%- if template == 'page.become-a-dealer' -%}
+  <script src="{{ 'fb-become-dealer.js' | asset_url }}" defer></script>
+{%- endif -%}

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "fb-main-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

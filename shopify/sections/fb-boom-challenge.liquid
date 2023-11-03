@@ -1,0 +1,159 @@
+<div
+  class="fb-boomclg-section js-prodcutpage-overview overflow-hidden fb-sm:px-10  bg-f5f5f5 py-10 fb-md:pt-20 fb-sm:flex fb-sm:justify-center fb-sm:items-center"
+  id="section-{{ section.id }}"
+  data-type="boomclg"
+>
+  {%- capture boomclg_section_text -%}
+        <div class="fb-boonclg-maxtitle pb-4 fb-md:pb-8 text-center text-20 font-bold uppercase text-121212 fb-sm:text-32">
+            {{ section.settings.boomlg_max_title }}
+        </div>
+        <div class="fb-boonclg-maxdesc text-center text-14 text-121212 fb-sm:max-w-20r fb-sm:text-16 fb-sm:text-start">
+            {{ section.settings.boomlg_max_desc }}
+        </div>
+    {%- endcapture -%}
+
+  <!-- mobile style -->
+  <div class="mobile flex h-auto w-full flex-col fb-sm:hidden">
+    <div class="fb-boonclg-max-block max-w-xs self-center pb-6 px-5">
+      {{ boomclg_section_text }}
+    </div>
+    <div class="fb-boomclg-content fbboomclgSwiper flex h-28r w-full ">
+      <div class="fb-boomclg_scroll swiper-wrapper h-full w-full px-5">
+        {%- for block in section.blocks -%}
+          <div class="fb-boomclg_item swiper-slide relative mr-5 h-full w-18r rounded-2xl bg-white last:mr-0">
+            <div class="fb-boomclg-text mx-6 mt-6">
+              <div class="text-20 font-bold uppercase text-121212">
+                {{ block.settings.boomlg_title }}
+              </div>
+              <div class=" mt-4 text-14 text-121212">
+                {{ block.settings.boomlg_desc }}
+              </div>
+            </div>
+            <div class="fb-boomclg-video h-18r w-full absolute left-0 bottom-0">
+              <!-- Image--lazyLoad Image--fadeIn -->
+              <video
+                class="Image--lazyLoad js-boomclg-video h-full w-full object-cover rounded-b-2xl"
+                data-index="{{ forloop.index }}"
+                data-showvideo="{%- if forloop.index == 1 -%}true{%- else -%}false{%- endif -%}"
+                x-webkit-airplay="allow"
+                webkit-playsinline="true"
+                playsinline="true"
+                preload="auto"
+                muted
+                loop
+                data-index="{{ forloop.index }}"
+                data-src="{{ block.settings.video_url_mobile }}"
+                {%- if forloop.index == 1 -%}
+                  autoplay="autoplay"
+                {%- endif -%}
+              ></video>
+              <!-- <span class="Image__Loader"></span> -->
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <!-- <div class="swiper-scrollbar boom-challenge-scrollbar"></div> -->
+    </div>
+  </div>
+  <!-- pc style -->
+  <div class="fb-boomclgpc-box hidden fb-sm:block fb-sm:max-w-62r max-h-34r bg-white rounded-2xl relative overflow-hidden">
+    <div class="pl-5r pt-5r pb-2r flex justify-start flex-col items-start absolute top-0 left-0 z-2">
+      {{ boomclg_section_text }}
+    </div>
+    <div class="fb-boomclg-content fbboomclgSwiperMob w-full h-full overflow-hidden ">
+      <div class="fb-boomclg_scroll swiper-wrapper w-full h-full">
+        {%- for block in section.blocks -%}
+          <div class="fb-boomclg_item swiper-slide flex justify-between w-full h-full bg-white">
+            <div class="fb-boomclg-text pl-5r  mt-20r flex flex-col">
+              <div class=" text-20 text-121212 font-bold uppercase mb-1r w-full">
+                {{ block.settings.boomlg_title }}
+              </div>
+              <div class="text-121212 text-14 max-w-20r">
+                {{ block.settings.boomlg_desc }}
+              </div>
+            </div>
+            <div class="fb-boomclg-video max-w-34r h-full">
+              <video
+                class="Image--lazyLoad js-boomclg-video h-full w-full object-cover aspect-square rounded-r-2xl"
+                data-index="{{ forloop.index }}"
+                x-webkit-airplay="allow"
+                webkit-playsinline="true"
+                playsinline="true"
+                preload="auto"
+                muted
+                loop
+                data-index="{{ forloop.index }}"
+                data-src="{{ block.settings.video_url_pc }}"
+                autoplay="autoplay"
+              ></video>
+              <!-- <span class="Image__Loader"></span> -->
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="swiper-scrollbar boom-challenge-scrollbar w-20 h-1 bg-[#d8d8d8] rounded-sm z-3 left-5r bottom-5r"></div>
+  </div>
+</div>
+<script src="{{ 'fb-boom-challenge.js' | asset_url }}"></script>
+{% schema %}
+{
+  "name": "FbBoomChallenge",
+  "presets": [
+    {
+      "name": "fb-boom-challenge",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "boomlg_max_title",
+      "label": "Title",
+      "default": "<p>RIDE MORE. <br/>EARN MORE</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "boomlg_max_desc",
+      "label": "Desc",
+      "default": "<p>Earn rewards, points, and fame by competing against friends in freebeat fitness challenges, events, and games.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "boomclgImgBlock",
+      "name": "boomclgImgBlock",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "boomlg_title",
+          "label": "Title",
+          "default": "<p>Challenges And Rewards</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "boomlg_desc",
+          "label": "Desc",
+          "default": "<p>Show off your competitive side in our always-updating games and challenges. </p>"
+        },
+        {
+          "type": "url",
+          "id": "video_url_pc",
+          "label": "PC Video Url"
+        },
+        {
+          "type": "url",
+          "id": "video_url_mobile",
+          "label": "Mobile Video Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "boomclg_img",
+          "label": "Image Pc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

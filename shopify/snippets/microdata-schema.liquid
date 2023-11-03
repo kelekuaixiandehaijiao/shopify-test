@@ -1,0 +1,752 @@
+
+{%- comment -%}
+This snippet structures the micro-data using JSON-LD specification. Please note that for Product especially,
+the schema often changes. We try to output as much info as possible, but Google may add new requirements over time,
+or change the format of some info
+{%- endcomment -%}
+
+{%- if request.page_type == 'product' -%}
+    {%- assign days_product_price_valid_until = 10 | times: 86400 -%}
+  
+    {%- assign gtin_option = 'gtin' -%}
+    {%- if product.selected_or_first_available_variant.barcode != blank -%}
+      {%- assign is_barcode_available = true -%}
+      {%- assign gtin_string_length = product.selected_or_first_available_variant.barcode | size -%}
+  
+      {%- if gtin_string_length == 8 or gtin_string_length == 12 or gtin_string_length == 13 or gtin_string_length == 14 -%}
+        {%- assign is_valid_gtin_length = true -%}
+        {%- assign gtin_option = gtin_option | append: gtin_string_length -%}
+      {%- endif -%}
+    {%- endif -%}
+      {%- assign setDiscountPrice = 0 -%}
+      {%- assign settransPrice = 0 -%}
+      {%- assign reviewCount = 0 -%}
+      {%- assign reviewScore = 0 -%}
+      {%- assign isBike = false -%}
+      {%- if settings.product_black.id == product.id or template == 'product.lit-bike' -%}
+          {%- assign  setDiscountPrice = settings.lbsb_discount | default: 0 | times: 100 -%}
+          {%- assign  settransPrice = settings.lbsb_te | default: 0 | times: 100 -%}
+          {%- assign  reviewCount = 277 -%}
+          {%- assign  reviewScore = 4.8 -%}
+          {%- assign isBike = true -%}
+      {%- endif -%}
+  
+      {% if settings.product_pink.id == product.id  or template == 'product.lit-bike-pink' %}
+          {%- assign  setDiscountPrice = settings.lbap_discount | default: 0 | times: 100 -%}
+          {%- assign  settransPrice = settings.lbap_te | default: 0 | times: 100 -%}
+          {%- assign  reviewCount = 277 -%}
+          {%- assign  reviewScore = 4.8 -%}
+          {%- assign isBike = true -%}
+      {% endif %}
+  
+      {% if settings.product_beige.id == product.id  or template == 'product.lit-bike-beige-blogger' or template == 'product.lit-bike-beige' %}
+          {%- assign  setDiscountPrice = settings.lbmb_discount | default: 0 | times: 100 -%}
+          {%- assign  settransPrice = settings.lbmb_te | default: 0 | times: 100 -%}
+          {%- assign  reviewCount = 277 -%}
+          {%- assign  reviewScore = 4.8 -%}
+          {%- assign isBike = true -%}
+      {% endif %}
+  
+      {% if settings.product_white.id == product.id or template == 'product.lit-bike-white' %}
+          {%- assign  setDiscountPrice = settings.lbsw_discount | default: 0 | times: 100 -%}
+          {%- assign  settransPrice = settings.lbsw_te | default: 0 | times: 100 -%}
+          {%- assign  reviewCount = 277 -%}
+          {%- assign  reviewScore = 4.8 -%}
+          {%- assign isBike = true -%}
+      {% endif %}
+  
+      {% if settings.product_boom_white.id == product.id or template == 'product.boom-bike-first'  %}
+          {%- assign  setDiscountPrice = settings.bbaw_discount | default: 0 | times: 100 -%}
+          {%- assign  settransPrice = settings.bbaw_te | default: 0 | times: 100 -%}
+          {%- assign  reviewCount = 22 -%}
+          {%- assign  reviewScore = 4.7 -%}
+          {%- assign isBike = true -%}
+      {% endif %}
+      
+      {% if settings.product_boom_grey.id == product.id or template == 'product.boom-bike-mist-grey'  %}
+          {%- assign  setDiscountPrice = settings.bbgd_discount | default: 0 | times: 100 -%}
+          {%- assign  settransPrice = settings.bbgd_te | default: 0 | times: 100 -%}
+          {%- assign  reviewCount = 22 -%}
+          {%- assign  reviewScore = 4.7 -%}
+          {%- assign isBike = true -%}
+      {% endif %}
+  
+      {% if settings.product_boom_yellow.id == product.id or template == 'product.boom-bike-tuscany-yellow'  %}
+          {%- assign  setDiscountPrice = settings.bbyd_discount | default: 0 | times: 100 -%}
+          {%- assign  settransPrice = settings.bbyd_te | default: 0 | times: 100 -%}
+          {%- assign  reviewCount = 22 -%}
+          {%- assign  reviewScore = 4.7 -%}
+          {%- assign isBike = true -%}
+      {% endif %}
+  
+    {%- capture main_entity_microdata -%}
+      "@type": "Product",
+      "@id": {{ canonical_url | append: '#product' | json }},
+      "offers": [
+        {%- for variant in product.variants -%}
+          {
+            "@type": "Offer",
+            "name": {{ variant.title | json }},
+            "availability": {%- if variant.available -%}"https://schema.org/InStock"{%- else -%}"https://schema.org/OutOfStock"{%- endif -%},
+            "price": {{ variant.price | divided_by: 100.0 | json }},
+            "priceCurrency": {{ cart.currency.iso_code | json }},
+            "priceValidUntil": "{{ 'now' | date: '%s' | plus: days_product_price_valid_until | date: '%Y-%m-%d'}}",
+            {%- if variant.sku != blank -%}
+              "sku": {{ variant.sku | json }},
+            {%- endif -%}
+            "url": "{{ product.url }}?variant={{ variant.id }}"
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ],
+      {%- if is_barcode_available and is_valid_gtin_length %}
+        "{{gtin_option}}": {{ product.selected_or_first_available_variant.barcode | json }},
+        "productId": {{ product.selected_or_first_available_variant.barcode | json }},
+      {%- elsif is_barcode_available %}
+        "mpn": {{ product.selected_or_first_available_variant.barcode | json }},
+        "productId": {{ product.selected_or_first_available_variant.barcode | json }},
+      {%- endif %}
+      "brand": {
+        "name": {{ product.vendor | json }}
+      },
+      "name": {{ product.title | json }},
+      "description": {{ product.description | strip_html | json }},
+      "category": {{ product.type | json }},
+      "url": "{{ product.url }}",
+      "sku": {{ product.selected_or_first_available_variant.sku | json }},
+      {%- if isBike %}
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": {{ reviewScore }},
+          "reviewCount": {{ reviewCount }}
+        },
+      {%- endif %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "https:{{ product.featured_media | img_url: '1024x' }}",
+        "image": "https:{{ product.featured_media | img_url: '1024x' }}",
+        "name": {{ product.featured_media.alt | json }},
+        "width": "1024",
+        "height": "1024"
+      }
+      
+    {%- endcapture -%}
+  {%- elsif request.page_type == 'article' -%}
+    {%- capture main_entity_microdata -%}
+      "@type": "BlogPosting",
+      "mainEntityOfPage": "{{ article.url }}",
+      "articleSection": {{ blog.title | json }},
+      "keywords": "{{ article.tags | join: ', ' }}",
+      "headline": {{ article.title | json }},
+      "description": {{ article.excerpt_or_content | strip_html | truncatewords: 25 | json }},
+      "dateCreated": "{{ article.created_at | date: '%Y-%m-%dT%T' }}",
+      "datePublished": "{{ article.published_at | date: '%Y-%m-%dT%T' }}",
+      "dateModified": "{{ article.published_at | date: '%Y-%m-%dT%T' }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https:{{ article.image | img_url: '1024x' }}",
+        "image": "https:{{ article.image | img_url: '1024x' }}",
+        "name": {{ article.image.alt | json }},
+        "width": "1024",
+        "height": "1024"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "{{ article.user.first_name | escape }} {{ article.user.last_name | escape }}",
+        "givenName": {{ article.user.first_name | json }},
+        "familyName": {{ article.user.last_name | json }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      },
+      "commentCount": {{ article.comments_count }},
+      "comment": [
+        {%- for comment in article.comments limit: 5 -%}
+          {
+            "@type": "Comment",
+            "author": {{ comment.author | json }},
+            "datePublished": "{{ comment.created_at | date: '%Y-%m-%dT%T' }}",
+            "text": {{ comment.content | json }}
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    {%- endcapture -%}
+  {%- endif -%}
+  
+  {%- capture breadcrumb_entity_microdata -%}
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": {{ 'general.breadcrumb.home' | t | json }},
+        "item": "{{ shop.url }}"
+      }
+  
+      {%- if request.page_type == 'product' -%}
+        {%- if collection -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ collection.title | json }},
+            "item": "{{ shop.url }}{{ collection.url }}"
+          }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": {{ product.title | json }},
+            "item": "{{ shop.url }}{{ product.url | within: collection }}"
+          }
+        {%- else -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ product.title | json }},
+            "item": "{{ shop.url }}{{ product.url }}"
+          }
+        {%- endif -%}
+      {%- elsif request.page_type == 'collection' -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ collection.title | json }},
+            "item": "{{ shop.url }}{{ collection.url }}"
+          }
+      {%- elsif request.page_type == 'blog' -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ blog.title | json }},
+            "item": "{{ shop.url }}{{ blog.url }}"
+          }
+      {%- elsif request.page_type == 'article' -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ blog.title | json }},
+            "item": "{{ shop.url }}{{ blog.url }}"
+          }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": {{ blog.title | json }},
+            "item": "{{ shop.url }}{{ article.url }}"
+          }
+      {%- elsif request.page_type == 'page' -%}
+         ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ page.title | json }},
+            "item": "{{ shop.url }}{{ page.url }}"
+          }
+      {%- endif -%}
+    ]
+  {%- endcapture -%}
+  
+  {% if main_entity_microdata != blank %}
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      {{ main_entity_microdata }}
+    }
+    </script>
+  {% endif %}
+  
+  {% if breadcrumb_entity_microdata != blank %}
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      {{ breadcrumb_entity_microdata }}
+    }
+    </script>
+  {% endif %}
+  {%- if canonical_url contains 'faqs' -%}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "name": "{{ page.title }}",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How much is shipping?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>hipping cost is $99. We can ship to most areas in United States.However, at this time, we cannot ship to Alaska, Hawaii, Puerto Rico, U.S. Virgin Islands. Worldwide shipping will be available soon.</p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "When can I expect my order to arrive?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>Under COVID-19 circumstances, you can expect your shipping confirmation email within 1 - 3 business days. From there, our standard shipping within the US is 3 - 5 business days. Please bear in mind that your local delivery services may currently be limited, so it may take a little longer than usual to receive your package. You’ll receive a notification when your order is on the way with tracking information. If you have any questions, you can always contact us at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a>.</p>"
+                    }
+                }, 
+                {
+                    "@type": "Question",
+                    "name": "What does my order look like when it’s shipped?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>The components are delicate, and you need to follow the instruction (manual pdf + tutorial video) to assemble it, but don't worry, it's super easy.</p>"
+                    }
+                }, 
+                {
+                    "@type": "Question",
+                    "name": "I’ve placed my order but I need to change my address, what can I do?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>If you wish to change your address, and have not yet received a shipping notification or tracking information, please email us at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a> and we will try our best to change your order information!</p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What if my box arrives damaged?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            We definitely hope this never happens, but if it does, email us at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a> and we’ll do our best to resolve things quickly. We will be happy to replace damaged parts accordingly.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will you be able to stream other content on the screen?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            The freebeat app is not compatible with other apps at the moment. We're working on improving your experience and will keep in mind.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will it be Bluetooth compatible to connect to external speakers or wireless earbuds?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Sure it can. You can connect your audio device to the bike and ride with the music of our classes.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How to connect your bluetooth headphones:",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        1. Make sure your freebeat application is installed with the latest version.
+                        <br />2. Place both headphones in their charging case, and make sure both headphones are charging.
+                        <br />3. Remove your headphones and place them in/on your ears.
+                        <br />4. If your headphones are connected to the bike, check to make sure they're selected as your audio device. If your headphones appear in the list of devices but don't connect, go to the next step.
+                        <br />5. Return both headphones to their case, close the lid, wait 15 seconds, then open the lid. Press and hold the setup button on the charging case for up to 10 seconds. The status light should flash white, which means your headphones are ready to connect.
+                        <br />6. With your headphones inside the case and the lid open, hold the case next to your freebeat bike.
+                        <br />7. Refresh the bluetooth list on the bike.
+                        <br />8. Choose your headphones from the list of available bluetooth devices.
+                        <br />9. Test your headphones. If you still can't connect, repeat this process or contact customer service.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are there built-in programs to use the bike, or do we always need a subscription?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        We have our own app so you can exercise with our <a href=https://www.freebeatfit.com/pages/classes>professional classes</a> led by our Rockstar instructors. And yes, you need subscriptions but trust me, it’s absolutely worth it!
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "I have a problem with my bike, is there a warranty?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            - Ten years from the date of purchase
+                            <br />- Screen - 1 year
+                            <br />- Parts (eg. Components, pedals) - 2 years, free replacement.
+                            <br />Please contact <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a> and provide your order number. Our after-sales team will immediately provide assistance to help you solve the problem!
+                        </p>"
+                    }
+                },{
+                    "@type": "Question",
+                    "name": "How can I access the user manual?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            <a href=https://www.freebeatfit.com/pages/user-manual>Click here</a> to download the user manual.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can the bike function without a membership?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            You can still use the bike without membership and enjoy the Just Ride mode. Additionally, you can try out our 15-minute free trial class before deciding whether to join as a member.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I use this bike without power and electricity?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            You can use the bike without power and electricity. <br />
+                            Please note the resistance can only be adjusted when the bike's power is on. <br />
+                            The auto resistance feature, which automatically adjusts the resistance based on the class you're following, is only available when you're riding along to one of our classes. <br />
+                            We hope this helps clarify the benefits of our membership and how you can use the bike without one.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much is the membership?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            In addition to your purchase, we offer a free 45-day interactive fitness membership ($59 value). You can register up to 10 accounts with just one membership. Once you get the bike, you may turn on the monitor and register your account, then the 45-day free membership will be activated automatically. After the trial period ends, the membership is $39 per month. Our membership is competitively priced against our competitors, saving you money while ensuring top quality. You can cancel the auto-renewing subscription at any time.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How easy is it to assemble a freebeat product?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        The components are professionally crafted, and you need to follow the instructions (<a href=https://www.freebeatfit.com/pages/user-manual>manual pdf + tutorial video</a>) for assembly, but don't worry, it's super easy. Our patented 'easy assembly' bikes guarantee simplicity and ease. Most people are able to assemble their bike with the assistance of the detailed assembly manual and supplemental assembly videos on the site within a few hours. However, we encourage you to take a look at the online manual for enhanced detail.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does freebeat have scenic rides?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Yes, Scenic rides are available on freebeat bikes with an active membership. Two scenic categories are available: the Country Ride and Valley Ride. To access Scenic Rides on the bike:<br />
+                            1. Navigate to 'More Rides'<br />
+                            2. Locate Scenic Rides to the right of the screen.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is the bike fit for seniors?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            The freebeat bike offers beginner-level cycling classes for those just starting out with cycling and exercise. Additionally, we have low-impact classes that even seniors can participate in, such as stretching, toning, and sculpting. You can also try our free 45-day membership trial to check out our classes and see if they suit your needs.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How many classes are provided on the app?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Currently, we have over 500 classes in our library. After activating your membership you will have access to cycling, toning, sculpting, fat-burning and stretching classes. Our rockstar instructors will guide you to benefit your mind and body with a one-of-a-kind gamified experience through the classes.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does freebeat have live classes?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Currently, we do not offer any live streaming courses. However, we are constantly looking to expand and improve our services, and we appreciate your interest. Please stay tuned for any updates in the future.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What shoes should I wear?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        freebeat's bikes use toe cage pedals. We recommend the user wear athletic shoes. Never ride in open toed shoes, slippers, flip flops, or barefoot. You can also swap out the pedals on our bike with any pedal of your preference. You may switch to SPD or Delta-compatible pedals and ride with your indoor cycling shoes. We have <a href=https://www.freebeatfit.com/collections/accessories/products/pedals>Delta pedals</a> for sale.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you ride a freebeat bike if your height is under 5'0",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        For both Boom Bike and Lit Bike, please see the user requirements below: Height range: 5'0 - 6'4 Weight maximum: 300 lbs Age minimum: 14+
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you have padded shorts for sale?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            At this time, we do not sell any padded shorts. However, if you are experiencing discomfort while cycling, we recommend wearing padded shorts to alleviate any discomfort.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you sell the product on another e-commerce platform?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            freebeat Boom Bike and Lit Bike are available for purchase on Amazon in the United States. To shop freebeat on Amazon, please visit <a href=https://www.amazon.com/gp/product/B0BSGJY1CC?communicationDeliveryId=f589ee38-83f9-4756-a1c8-e249a428a8f4>freebeat On Amazon</a>
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What clothing should I wear?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                             Dry athletic clothing is recommended (because you WILL sweat!). <br/>
+                             DO NOT ride in loose-fitting clothing, especially flare-bottom pants as the cuff could catch on the pedals and/or crank arm assembly.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What does the freebeat bike's display show?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Just Ride: Calories, Distance, Cadence (RPM), Resistance, Speed
+                            <br />Classes: Calories, Cadence (RPM), On Beat, Resistance, Score, Leaderboard
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I purchase freebeat products at a local store?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Currently, all of our sales channels are online. If you would like to receive the latest updates regarding any potential offline sales channels, we recommend subscribing to our email. This will allow you to stay up-to-date on any new developments and receive the information as soon as it becomes available.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What should I do if I cannot connect my bike to WIFI?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        If your bike is unable to connect to WIFI, please check if the permissions in your home router settings are preventing access to the freebeat Bike. If the permissions are the issue, removing them should allow the bike to connect to WIFI normally. If the problem persists, please contact us at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a>, and we will be happy to assist you further.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What should I do if my monitor doesn't turn on?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                                If your bike screen is not turning on, please check if the bike's power adapter is functioning properly and that the internal power cable is properly connected. <br />
+                                To turn on the screen, make sure to hold down the button for a few seconds. <br />
+                                If the issue persists, please follow the troubleshooting below: <br />
+                                1. Power off your device and then turn it back on. <br />
+                                2. While keeping the volume increase button pressed, briefly press the power on button for 2 seconds at the same time. Then release the power on button but keep pressing the volume increasing button. <br />
+                                3. Check the screen. <br />
+                                If the robot appears, power off your device and turn it back on again. The monitor should turn on. <br/>
+                                If there is no robot on the screen, please contact us at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a> and we will be happy to assist you further.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is auto-resistance on the classes page？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        Our auto resistance has two resistance levels, high and low. When you're riding at a low RPM, your resistance will automatically increase as you ride. When you're riding at a high RPM and increasing your speed, your resistance will automatically decrease. Riding with resistance not only helps you gain strength, but excels your fitness performance to the next level. If you manually adjust the auto resistance two times during one class, the system will automatically turn it off. You can manually turn it back on again at any time. The next time you begin a class auto resistance will be on. Auto resistance will automatically turn off if you step off during a ride or take a break. Say, for example, you stop pedaling or take a break to answer your phone, our system will recognize this situation as the resistance being too high for you. As a result, the system will turn off auto resistance until you manually turn it on again.
+                        Our self-adjusting algorithm tracks your riding data and analyzes whether or not you are comfortable at the current resistance level. If the current setting is giving you trouble or is too easy, the algorithm will automatically set the resistance to a level that best fits you at the given RPM. Everyone's riding style is unique, resistance should be too.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I add friends?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            To connect with your friends on our platform, follow these steps: <br/>
+                            1. Search for the class your friend has joined.<br />
+                            2. On the class leaderboard, you'll find your friend's profile picture.<br />
+                            3. Click on their picture to visit their personal page, then hit the 'Follow' button to start following them
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I add a sub-account on the bike?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        To create a sub-account for your main membership, please follow these steps: 1. Log in to your main account on the bike screen.<br/>
+                        2. Once you're on the homepage, click on the icon in the bottom left corner, and select 'Add'. 
+                        3. Register your sub-account on the new page.
+                        4. After registering, you can log in to your sub-account, and it will be automatically linked to the main account's membership plan.
+                        5. To switch between accounts, click on the icon in the bottom left corner of the homepage and select the account you want to use. By following these steps, you'll be able to create a sub-account and manage it with ease.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What should I do if the seat is unstable during riding?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        1. Please find two screwdrivers. <br/>
+                        2. Locate the screws on both sides of the seat cushion. - Use the first screwdriver to secure the screw on the left side. <br/>
+                        3. Use the second screwdriver to tighten the screw on the right side. <br/>
+                        4. Use the same steps to tighten the screw on the left side.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I assemble the clip-in pedal?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            1. Release the screw <br/>
+                            <img src=https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Clip-in_pedal_1_480x480.png?v=1677147490 /> <br/>
+                            2. Push the cleat in
+                            <img src=https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Clip-in_pedal_2_480x480.png?v=1677147538 /> <br/>
+                            3. Make sure the top of cleat touches the edge of the Clip-in pedal <br/>
+                            <img src=https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Clip-in_pedal_3_480x480.jpg?v=1677147562 />
+                            <img src=https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Clip-in_pedal_4_480x480.jpg?v=1677147580 /> <br/>
+                            4. Press the cleat into the correct position <br/>
+                            <img src=https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Clip-in_pedal_5_480x480.jpg?v=1677147602  />
+                            <img src=https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Clip-in_pedal_6_480x480.jpg?v=1677147627 /> <br/>
+                            5. Tighten the screw
+                            <img src=https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Clip-in_pedal_7_480x480.jpg?v=1677147640 />
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer any First Responder, Teacher, Medical, or Military discounts?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        freebeat offers preferential deals on memberships for all first responders, medical, U.S. Military personnel and students. Simply click the link below and provide proof of your occupation to be eligible for a $100 discount on freebeat bikes:
+                        <br />Military: <a href=https://services.sheerid.com/verify/629837812b4ba00d8a0e0913/?layout=landing>US Military program</a>
+                        <br />Medical: <a href=https://services.sheerid.com/verify/62986877de2fef5fc9be2c9b/?layout=landing>US Medical program</a>
+                        <br />First Responder: <a href=https://services.sheerid.com/verify/62986ddcae3e4877313d14a8/?layout=landing>US First Responder program</a>
+                        <a href=https://services.sheerid.com/verify/62987061ae3e4877313d27ee/?layout=landing><br />
+                        </a>Student: <a href=https://services.sheerid.com/verify/62e34a10ffabbf00e1c4083f/?layout=landing>US Student program</a>
+                        <br />This discount cannot be combined with any other discounts or promotions.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer discounts to licensed fitness instructors?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            freebeat proudly supports the amazing people who help spread the joy of health + wellness through teaching. If you are a fitness, yoga, pilates, or dance instructor, you may be eligible to apply for freebeat's fitness instructor special discounts!
+                            To apply for freebeat fitness instructor discounts please contact our Live Chat to provide the following:
+                            <br />- A photo showing your name, your company name, current date/month/year, and a current teaching schedule (if possible).
+                            <br />- Alternatively, you may provide your instructor certificate, a current pay stub, or a letter from the studio manager (including their contact information on letterhead). Confirming you teach in a studio will qualify you for discounts!
+                            Once your verification has been completed, we will provide you with a discount code for $100 off a freebeat bike.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I remove or change a saved payment method?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Of course! You can make this change on your Account page. If you need help, feel free to email us at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a>.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What payment methods do you accept?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        We accept Visa, MasterCard, JCB, American Express, Diners Club, Discover, and PayPal.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What can I do if my payment is declined?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Oh no! There are a few things you can check if your payment didn’t go through: Check that your card’s billing details (billing address and name) match what you’ve entered into our system. Also double check that your credit card number, expiry, CVC and zip code are all correct. If you’re still having trouble, shoot us an email at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a> and we’ll do our best to troubleshoot!
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I update my payment information?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                            Thank you for contacting us!<br/>
+                            Follow these easy steps to update your payment method on your monitor:<br/>
+                            1. Please log in on your monitor, go to 'Settings', select 'Membership', and click 'UPDATE'. <br />
+                            2. You will be redirected to the following page. Under 'Payment Method', click 'Make default'.<br/>
+                            3. Update your payment method there.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "1. I have a question that isn't listed above, who should I ask?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        We're here for you! Email us at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a> and we'd be happy to help you out.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "I'm a brand interested in a partnership, who do I email?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        We're always looking for new brands to partner with. Please send us an email to <a href=mailto:press@freebeatfit.com>press@freebeatfit.com</a> with information about your brand to explore opportunities.
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How can I become a brand ambassador?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        We're always looking for new partners! Please simply <a href=https://www.freebeatfit.com/pages/community>click here</a> with your social media handles and submit an application. We hope to hear from you soon!
+                        </p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I keep in touch with freebeat?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>
+                        Let's connect! Follow us on Instagram, Facebook, Twitter (we respond to DMs!) @freebeatfit or shoot us an email at <a href=mailto:customerservice@freebeatfit.com>customerservice@freebeatfit.com</a>.
+                        </p>"
+                    }
+                }
+            ]
+        }
+    </script>    
+  {%- endif -%}

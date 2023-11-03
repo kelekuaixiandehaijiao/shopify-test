@@ -1,0 +1,124 @@
+<div
+  class="fb-key-specifical js-prodcutpage-specail py-10 px-5 fb-sm:py-15 fb-sm:px-10 fb-md:py-5r w-full"
+  id="section-{{ section.id }}"
+  style="background-color: {{ section.settings.specail_color }}"
+>
+  {%- if section.settings.specail_title -%}
+    <div class="mb-8 text-20 font-bold uppercase text-center text-121212 fb-md:text-32">
+      {{ section.settings.specail_title }}
+    </div>
+  {%- endif -%}
+  <div class="fb-key-spec-ul w-full max-w-75r mx-auto h-auto {{ fbSpecialCss }}" id="fb-key-spec-ul-control">
+    {%- for block in section.blocks -%}
+      <div class="fb-key-spec-li w-full bg-white rounded-xl px-5 py-4 mt-3 fb-md:py-6 fb-md:px-10">
+        <div class="fb-key-spec-li-title text-16 fb-md:text-20 text-121212 font-bold transition-all duration-300 flex justify-between items-center">
+          <h3>{{ block.settings.spe_box_title }}</h3>
+         
+          <img
+            class="fb-key-tabIcon w-4 fb-md:w-5 transition-all duration-300 rotate-180"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/updaown.png?v=1668668770"
+            alt="up down logo"
+          >
+        </div>
+        <div class="fb-key-spec-li-content flex fb-sm:justify-end fb-md:text-16 text-14 overflow-hidden transition-all duration-300 max-h-0 text-121212">
+          {%- assign spe_box_label_oprichtext = block.settings.spe_box_label | strip_html -%}
+          {%- if spe_box_label_oprichtext != blank -%}
+            <div class="fb-sm:w-34r fb-md:w-42r flex justify-between items-center w-full">
+              <div class="specifications-label font-bold">
+                {{ block.settings.spe_box_label }}
+              </div>
+              <div class="specifications-desc">
+                {{ block.settings.spe_box_desc }}
+              </div>
+            </div>
+          {%- else -%}
+
+            <div class="specifications-desc text-right overflow-hidden w-full">
+              {{ block.settings.spe_box_desc }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+<script src="{{ 'fb-key-specifications.js' | asset_url }}"></script>
+{% schema %}
+{
+  "name": "FbKeySpecifications",
+  "presets": [
+    {
+      "name": "fb-key-specifications",
+      "category": "Fb key specifications",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "specail_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "specail_title",
+      "label": "Title",
+      "default": "Key Specifications"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "spe_box_title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "spe_box_label",
+          "label": "Label"
+        },
+        {
+          "type": "richtext",
+          "id": "spe_box_desc",
+          "label": "Desc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .specifications-desc p{
+    padding-top: 16px;
+    text-align:right;
+  }
+
+  .specifications-desc h2{
+    padding-top: 16px;
+    text-align:right;
+  }
+
+  .specifications-label p{
+    padding-top: 16px;
+    text-align:left;
+  }
+
+  .fb-key-spec-li-title.openContent{
+    padding-bottom: 16px;
+  }
+  
+  .fb-key-tabIcon.openContent{
+    transform: rotate(0deg);
+  }
+ 
+  .fb-key-spec-li-content.openContent{
+    border-top: 1px solid #1D1D1F;
+    max-height: 1000px;
+  }
+</style>

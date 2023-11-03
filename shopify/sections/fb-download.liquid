@@ -1,0 +1,230 @@
+<div
+  id="section-{{ section.id }}"
+  class="fb-download-container flex h-[795px] items-center justify-center fb-sm:relative fb-sm:h-27r fb-md:h-45r"
+  style="background-color:{{ section.settings.download_bg_background}}"
+>
+  <div class="flex h-full w-full flex-col fb-sm:w-1/2 fb-sm:items-start">
+    <div class="mb-8 mt-10 text-center  text-20 font-bold text-121212 fb-sm:mb-4 fb-sm:ml-auto fb-sm:mr-0 fb-sm:mt-15 fb-sm:w-21r fb-sm:text-start fb-md:mb-10 fb-md:mt-37 fb-md:w-32r fb-md:text-32">
+      {{ section.settings['download-title'] }}
+    </div>
+    <div class="swiper left-download-container relative mr-0 h-full w-full fb-sm:w-21r fb-md:w-32r">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <!-- pc -->
+          <div class="hidden fb-sm:flex">
+            <div class="soft-left-bottom">
+              <div class=" absolute left-0 top-0 h-full w-1 bg-121212/20"></div>
+              <ul>
+                {%- for block in section.blocks -%}
+                  <li class="left-download-li relative cursor-pointer list-none pl-10">
+                    <div class="left-download-progress absolute left-0 top-0 h-1/5 w-1 rounded-lg bg-121212"></div>
+                    <div class="left-download-title text-16 font-bold text-121212 fb-md:text-20">
+                      <h3>{{ block.settings.download_progress_title }}</h3>
+                    </div>
+                    <div class="left-download-info fb-md:text16 fb-md: max-w-sm overflow-hidden text-14 font-medium text-121212/80 transition-all duration-700">
+                      {{ block.settings.download_progress_Info }}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <!-- mb -->
+          <div class="mb-download relative flex w-full flex-col items-center fb-sm:hidden">
+            <div class="mbDoLoad relative w-full">
+              <div class="swiper-wrapper relative h-auto w-full overflow-hidden">
+                {%- for block in section.blocks -%}
+                  {% assign downloadImgPiker = block.settings.download_progress_mobile_image
+                    | img_url: '1x1'
+                    | replace: '_1x1.', '_{width}x.'
+                  %}
+                  <div class="swiper-slide flex h-full w-full items-center  justify-center overflow-hidden">
+                    <img
+                      class="Image--lazyLoad Image--fadeIn fixed-bg h-auto w-full max-w-[380px]"
+                      data-src="{{ downloadImgPiker }}"
+                      data-sizes="auto"
+                      data-optimumx="1.2"
+                      data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                      alt="{{ block.settings.download_progress_mobile_image.alt }}"
+                    >
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- mb -->
+            <div class="relative mt-2 h-28 w-full">
+              <div class="fbdownloadSwiper h-full px-5">
+                <div class="fb_download_mb_scroll swiper-wrapper">
+                  {%- for block in section.blocks -%}
+                    <div class="swiper-slide mr-5 w-[285px]">
+                      <div class="mb-2 text-16 font-bold text-121212">
+                        {{ block.settings.download_progress_title }}
+                      </div>
+                      <div class=" text-12 text-black">
+                        {{ block.settings.download_progress_Info }}
+                      </div>
+                    </div>
+                  {%- endfor -%}
+                </div>
+                <div class="swiper-scrollbar mb-download-swiper-scrollbar !relative !left-0 !w-full">
+                  <div class="swiper-scrollbar-drag w-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-10 mt-8 flex flex-row  justify-center gap-6 fb-sm:ml-auto fb-sm:mr-0 fb-sm:w-21r fb-sm:justify-start fb-md:mb-9r fb-md:w-32r">
+      {% assign downloadStorePiker = section.settings['download-store-app'] | img_url: '' %}
+      {% assign downloadGooglePiker = section.settings['download-google-play'] | img_url: '' %}
+      {% assign downloadMobStorePiker = section.settings['download-mob-store-app'] | img_url: '' %}
+      {% assign downloadMobGooglePiker = section.settings['download-mob-google-play'] | img_url: '' %}
+      <a href="{{ section.settings.download-store-app-link }}" class=" hidden fb-sm:block">
+        <img class="h-11 w-32 fb-md:h-3r fb-md:w-9r" src="{{ downloadStorePiker }}" loading="lazy" data-sizes="auto" alt="{{ downloadStorePiker.alt }}">
+      </a>
+      <a href="{{ section.settings.download-google-play-link }}" class="hidden fb-sm:block">
+        <img class="h-11 w-36 fb-md:h-3r fb-md:w-10r" src="{{ downloadGooglePiker }}" loading="lazy" data-sizes="auto" alt="{{ downloadGooglePiker.alt }}">
+      </a>
+      <a href="{{ section.settings.download-store-app-link }}" class="fb-sm:hidden">
+        <img class="h-11 w-32" src="{{ downloadMobStorePiker }}" loading="lazy" data-sizes="auto" alt="{{ downloadMobStorePiker.alt }}">
+      </a>
+      <a href="{{ section.settings.download-google-play-link }}" class="fb-sm:hidden">
+        <img class=" h-11 w-36" src="{{ downloadMobGooglePiker }}" loading="lazy" data-sizes="auto" alt="{{ downloadMobGooglePiker.alt }}">
+      </a>
+    </div>
+  </div>
+  <div class="hidden h-full w-1/2 overflow-hidden fb-sm:block fb-md:relative">
+    {%- for block in section.blocks -%}
+      {% assign downloadImgPiker = block.settings.download_progress_pc_image
+        | img_url: '1x1'
+        | replace: '_1x1.', '_{width}x.'
+      %}
+      <div class="download-right-img relative top-0 h-full w-full overflow-hidden">
+        <img
+          class="Image--lazyLoad Image--fadeIn download-bg-img top-0 h-full w-auto overflow-hidden object-cover object-left"
+          data-src="{{ downloadImgPiker }}"
+          data-sizes="auto"
+          data-optimumx="1.2"
+          data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+          alt="{{ block.settings.download_progress_pc_image.alt }}"
+        >
+        <span class="Image__Loader"></span>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<style>
+    .left-download-container .soft-left-bottom li:first-child .left-download-info {
+      opacity: 1;
+      height: 102px;
+    }
+
+    .left-download-container .soft-left-bottom li:first-child .left-download-title {
+      opacity: 1;
+    }
+
+    .left-download-container .soft-left-bottom li:first-child .left-download-progress {
+      opacity: 1;
+      {% comment %} height:100px; {% endcomment %}
+    }
+    {% comment %} @media screen and (max-width: 768px){
+      .fbdownloadSwiper .swiper-scrollbar {
+        position: relative;
+        left: 0 !important;
+        bottom: 3px!important;
+        z-index: 50;
+        width: 100%!important;
+        height: 5px!important;
+        background: #121212!important;
+        border-radius: 10px!important;
+        background: rgba(0, 0, 0, .1);
+    } {% endcomment %}
+  {% comment %} } {% endcomment %}
+</style>
+
+{% schema %}
+{
+  "name": "FbDownload",
+  "presets": [
+    {
+      "name": "fb-download-app",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "download-title",
+      "label": "downloadTitle",
+      "default": "DISCOVER APP"
+    },
+    {
+      "type": "color",
+      "id": "download_bg_background",
+      "label": "downloadBackground",
+      "default": "rgba(233, 237, 243, 1)"
+    },
+    {
+      "type": "image_picker",
+      "id": "download-store-app",
+      "label": "Download APP Store"
+    },
+    {
+      "type": "url",
+      "id": "download-store-app-link",
+      "label": "Download APP Store Link"
+    },
+    {
+      "type": "url",
+      "id": "download-google-play-link",
+      "label": "Download Google Play Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "download-google-play",
+      "label": "Download Google Play"
+    },
+    {
+      "type": "image_picker",
+      "id": "download-mob-store-app",
+      "label": "Download Mob  APP Store"
+    },
+    {
+      "type": "image_picker",
+      "id": "download-mob-google-play",
+      "label": "Download Google Play"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "indoorlist",
+      "name": "indoor list",
+      "settings": [
+        {
+          "type": "text",
+          "id": "download_progress_title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "download_progress_Info",
+          "label": "Info"
+        },
+        {
+          "type": "image_picker",
+          "id": "download_progress_pc_image",
+          "label": "Pc Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "download_progress_mobile_image",
+          "label": "Mobile Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

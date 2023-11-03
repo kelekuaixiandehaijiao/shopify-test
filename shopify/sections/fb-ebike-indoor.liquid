@@ -1,0 +1,625 @@
+<div id="section-{{ section.id }}" class="fb-ebike-indoor-morph">
+  <div class="fb-ebike-indoor">
+    <div class="menuTitle"><h2>{{ section.settings.menu-title }}</h2></div>
+    <div class="subTitle">{{ section.settings.sub-title }}</div>
+    <!-- <div class="deliver-line"></div> -->
+    <div class="ebike-tab swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide common-tab">
+          outdoor
+        </div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Frame_2x_1_d7710275-1e7c-4df3-a8ac-950c69ba0e4c.png?v=1689317962"
+          alt=""
+          class="u-change"
+          id="u-static-change">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/20230801-134455.gif?v=1690871407"
+          alt=""
+          class="u-change"
+          id="u-animation">
+        <div class="swiper-slide common-tab">
+          indoor
+        </div>
+      </div>
+    </div>
+    <div class="ebike-container swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide-box" id="ebike-container-one">
+          <!-- pc -->
+          <div class="soft-left-box">
+            <div class="soft-left-top">
+              <div class="left-top-title">{{ section.settings.outdoor-Title }}</div>
+            </div>
+            <div class="soft-left-bottom u-first-bottom">
+              <div class="sc-progress-bg"></div>
+              <div class="progress-box progress-box1">
+                <ul>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'outdoorlist' -%}
+                      <li class="sc-li">
+                        <div class="sc-progress"></div>
+                        <div class="item-title">
+                          {{ block.settings.pages_progress_title }}
+                        </div>
+                        <div class="item-info">
+                          {{ block.settings.pages_progress_Info }}
+                        </div>
+                      </li>
+                    {% endcase %}
+                  {% endfor %}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="sc-izAXJK">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'outdoorlist' -%}
+                <div class="sc-dx sc-dx-right">
+                  {%- if block.settings.pages_progress_pc_video != blank -%}
+                    <video
+                      class="bg-video ebike-common-media Image--lazyLoad"
+                      style="position: absolute;z-index:1;"
+                      webkit-playsinline="true"
+                      playsinline="true"
+                      autoplay
+                      muted="muted"
+                      loop="loop"
+                      data-index="{{ forloop.index }}"
+                      data-src="{{ block.settings.pages_progress_pc_video }}"></video>
+                  {% else %}
+                    <img loading="lazy" src="{{ block.settings.pages_progress_pc_image }}" class="bg-video ebike-common-media"style="position: absolute;z-index:1;"alt="">
+                  {%- endif -%}
+                </div>
+              {% endcase %}
+            {% endfor %}
+
+          </div>
+        </div>
+        <div class="swiper-slide slide-box" id="ebike-container-two">
+          <!-- pc -->
+          <div class="soft-left-box">
+            <div class="soft-left-top">
+              <div class="left-top-title">{{ section.settings.indoor-Title }}</div>
+            </div>
+            <div class="soft-left-bottom  u-second-bottom">
+              <div class="sc-progress-bg"></div>
+              <div class="progress-box progress-box2">
+                <ul>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'indoorlist' -%}
+                      <li class="sc-li">
+                        <div class="sc-progress"></div>
+                        <div class="item-title">
+                          {{ block.settings.pages_progress_title }}
+                        </div>
+                        <div class="item-info">
+                          {{ block.settings.pages_progress_Info }}
+                        </div>
+                      </li>
+                    {% endcase %}
+                  {% endfor %}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="sc-izAXJK">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'indoorlist' -%}
+                <div class="sc-dx sc-dx-right">
+                  {%- if block.settings.pages_progress_pc_video != blank -%}
+                    <video
+                      class="bg-video ebike-common-media Image--lazyLoad"
+                      style="position: absolute;z-index:1;"
+                      webkit-playsinline="true"
+                      playsinline="true"
+                      autoplay
+                      muted="muted"
+                      loop="loop"
+                      data-index="{{ forloop.index }}"
+                      data-src="{{ block.settings.pages_progress_pc_video }}"></video>
+                  {% else %}
+                    <img src="{{ block.settings.pages_progress_pc_image }}" class="bg-video ebike-common-media" loading="lazy" style="position: absolute;z-index:1;"alt="">
+                  {%- endif -%}
+                </div>
+              {% endcase %}
+            {% endfor %}
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+  {%- render 'fb-ebike-indoor_mb', section: section, -%}
+
+</div>
+
+<style>
+  .fb-ebike-indoor {
+    background: "{{ section.settings.bg_background }}";
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    /* min-width:1200px; */
+    overflow-x: hidden;
+  }
+
+  .fb-ebike-indoor .menuTitle {
+    font-size: 40px;
+    font-weight: 800;
+    color: #121212;
+    line-height: 40px;
+  }
+
+  .fb-ebike-indoor .subTitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #121212;
+    line-height: 16px;
+    margin: 16px 0 60px;
+  }
+
+  .fb-ebike-indoor .deliver-line {
+    position: absolute;
+    width: 100%;
+    top: 270px;
+    height: 1px;
+    border: 1px solid rgba(230, 230, 230, 1)
+  }
+
+  .fb-ebike-indoor .ebike-tab {
+    width: 360px;
+    height: 48px;
+    background: rgba(18, 18, 18, 0.05);
+    border-radius: 38px;
+    padding: 4px;
+    position: absolute;
+    left: calc(calc(100% - 1200px) / 2);
+    top: 212px;
+    z-index: 3;
+  }
+
+  .fb-ebike-indoor .swiper-wrapper {
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fb-ebike-indoor .ebike-tab .swiper-slide-thumb-active {
+    width: 148px !important;
+    height: 40px;
+    background: #121212;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 40px;
+  }
+
+  .fb-ebike-indoor .common-tab {
+    width: 148px !important;
+    height: 100%;
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    color: #121212;
+    line-height: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .fb-ebike-indoor .u-change {
+    position: absolute;
+    left: calc(calc(100% - 20px) / 2);
+    top: 10px;
+    width: 20px;
+    height: 20px;
+
+
+  }
+
+  #u-animation {
+    display: none;
+    transform: rotate(90deg);
+  }
+
+  .fb-ebike-indoor .ebike-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ebike-container .slide-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    /* pointer-events: none;  */
+  }
+
+  #ebike-container-two {
+    pointer-events: none;
+  }
+
+  .ebike-container li {
+    width: 456px;
+    /* word-break: normal; */
+  }
+
+  .ebike-container .soft-left-box {
+    width: 450px;
+    -webkit-box-align: center;
+    align-items: flex-end;
+    display: flex;
+    /* flex: 1 1 40%; */
+    flex-direction: column;
+    -webkit-box-pack: center;
+    position: relative;
+    text-align: left;
+    margin-top: 78px;
+  }
+
+  .fb-ebike-indoor .u-first-bottom {
+    max-height: 230px;
+    /* max-height: auto; */
+  }
+
+  .fb-ebike-indoor .u-second-bottom {
+    /* max-height: auto; */
+    max-height: 230px;
+    /* max-height: 350px; */
+  }
+  .sc-izAXJK {
+    font-size: 100px;
+  }
+  .sc-dx {
+    position: absolute;
+    background: #fff;
+    transition: all 0.5s;
+    opacity: 0;
+    width: 580px;
+    height: 314px;
+    left: 50%;
+    top: 85px;
+    transform: translateX(-50%);
+    /*   display: none; */
+  }
+  .ebike-container .sc-dx-right {
+    background: #D9D9D9;
+    transition: all 0.5s;
+    opacity: 0;
+    left: 50%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* width: 880px;
+            height: 580px; */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .ebike-container .sc-dx-right img {
+    object-fit: cover;
+    /* 或者使用 contain，取决于您的需求 */
+    width: 100%;
+    height: 406px;
+    /* height: auto; */
+  }
+
+  .ebike-container .soft-left-top {
+    margin-bottom: 30px;
+    margin-right: 120px;
+    max-width: 330px;
+    position: relative;
+  }
+
+  .ebike-container .left-top-info {
+    font-size: 18px;
+    font-weight: 300;
+    color: #1D1D1F;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+
+  .ebike-container .left-top-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 36px;
+
+  }
+
+  .ebike-container .progress-box {
+    max-height: 230px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    direction: rtl;
+  }
+  .progress-box ul {
+    direction: ltr;
+    margin-left: -8px;
+  }
+  .soft-left-bottom ::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 18px;
+  }
+
+  .soft-left-bottom ::-webkit-scrollbar-track {
+    background-color: rgba(18, 18, 18, 0.2);
+    min-height: 40px;
+  }
+
+  .soft-left-bottom ::-webkit-scrollbar-thumb {
+    background-color: rgba(18, 18, 18, 1);
+    border-radius: 18px;
+    min-height: 40px !important;
+  }
+
+/* 
+  .sc-dx-right:last-child .bg-video {
+    border-radius: 20px;
+    width: 100%;
+    height: 406px !important;
+    object-fit: contain !important;
+  } */
+
+  .ebike-container .sc-izAXJK {
+    flex: 1;
+    /* width: calc(100% - 550px); */
+    /* width: 880px; */
+    /* width: 50%; */
+    overflow: hidden;
+    margin-left: 40px;
+    height: 406px;
+    pointer-events: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  .ebike-container .soft-left-bottom {
+    max-width: 450px;
+    position: relative;
+  }
+
+
+  .ebike-container .soft-left-bottom li {
+    list-style: none;
+    padding-left: 40px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .ebike-container .sc-progress-bg {
+    position: absolute;
+    content: '';
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 4px;
+    border-radius: 18px;
+    background-color: rgba(18, 18, 18, 0.2);
+    display: none;
+  }
+
+  .ebike-container .item-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 16px;
+    transition: color 250ms ease 0s;
+    opacity: .5;
+  }
+
+  .ebike-container .item-info {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(18, 18, 18, 0.8);
+    line-height: 20px;
+    opacity: 0;
+    /* transition: all .7s; */
+    height: 0;
+    overflow: hidden;
+  }
+
+  .soft-left-bottom li:first-child .item-info {
+    opacity: 1;
+    height: 102px;
+  }
+
+  .soft-left-bottom li:first-child .item-title {
+    opacity: 1;
+  }
+
+  .ebike-container .sc-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    background-color: rgba(18, 18, 18, 1);
+    border-radius: 18px;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .ebike-container .soft-left-bottom li:first-child .sc-progress {
+    opacity: 0;
+  }
+
+  .ebike-container .mb-left-box {
+    display: none;
+  }
+
+  .ebike-content-mb {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .fb-ebike-indoor {
+      display: none;
+    }
+  }
+  .bg-video {
+    pointer-events: none;
+    min-width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+    -o-object-fit: cover;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "FbEbikeDoor",
+    "presets": [
+      {
+        "name": "fb-ebike-door",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "menu-title",
+        "label": "menuTitle",
+        "default": "FREEBEAT MORPH 2-IN-1 EBIKE"
+      },
+      {
+        "type": "color",
+        "id": "bg_background",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "sub-title",
+        "label": "subTitle",
+        "default": "Where Indoor Fitness Meets Outdoor Exploration"
+      },
+      {
+        "type": "text",
+        "id": "indoor-Title",
+        "label": "indoorTitle",
+        "default": "Indoor Fitness. Smart & Green."
+      }, {
+        "type": "text",
+        "id": "outdoor-Title",
+        "label": "outdoorTitle",
+        "default": "Outdoor Exploration. Full of Power."
+      }, {
+        "type": "text",
+        "id": "indoor-mb-title",
+        "label": "indoorMbTitle",
+        "default": "INDOOR FITNESS."
+      }, {
+        "type": "text",
+        "id": "indoor-mb-sub-title",
+        "label": "indoorMbSubTitle",
+        "default": "Smart & Green."
+      }, {
+        "type": "text",
+        "id": "outdoor-mb-title",
+        "label": "outdoorMbTitle",
+        "default": "OUTDOOR EXPLORATION."
+      }, {
+        "type": "text",
+        "id": "outdoor-mb-sub-title",
+        "label": "outdoorMbSubTitle",
+        "default": "Full of Power."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "indoorlist",
+        "name": "indoor list",
+        "settings": [
+          {
+            "type": "text",
+            "id": "pages_progress_title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "pages_progress_Info",
+            "label": "Info"
+          },
+          {
+            "type": "url",
+            "id": "pages_progress_pc_video",
+            "label": "Pc Video"
+          },
+          {
+            "type": "url",
+            "id": "pages_progress_pc_image",
+            "label": "Pc Image"
+          }, {
+            "type": "url",
+            "id": "pages_progress_mobile_image",
+            "label": "Mobile Image"
+          }, {
+            "type": "url",
+            "id": "pages_progress_mobile_video",
+            "label": "Mobile Video"
+          }
+        ]
+      }, {
+        "type": "outdoorlist",
+        "name": "outdoor list",
+        "settings": [
+          {
+            "type": "text",
+            "id": "pages_progress_title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "pages_progress_Info",
+            "label": "Info"
+          },
+          {
+            "type": "url",
+            "id": "pages_progress_pc_video",
+            "label": "Pc Video"
+          },
+          {
+            "type": "url",
+            "id": "pages_progress_pc_image",
+            "label": "Pc Image"
+          }, {
+            "type": "url",
+            "id": "pages_progress_mobile_image",
+            "label": "Mobile Image"
+          }, {
+            "type": "url",
+            "id": "pages_progress_mobile_video",
+            "label": "Mobile Video"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

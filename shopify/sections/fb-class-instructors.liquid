@@ -1,0 +1,225 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-class-instructors">
+    <div class="fb-instructors-text">
+      <div class="instructors-title">{{ section.settings.fb_instructors_title }}</div>
+      <div class="instructors-desc">{{ section.settings.fb_instructors_desc }}</div>
+    </div>
+    <div class="fb-instructors-image">
+      {% assign imgPc = section.settings.fb_instructors_img | img_url: '' %}
+      {% assign imgMob = section.settings.fb_instructors_img_mob | img_url: '' %}
+      <img class="Image--lazyLoad Image--fadeIn fb-instructors-img-pc" src="{{ imgPc }}" alt="{{ imgPc.alt}}" />
+      <img class="Image--lazyLoad Image--fadeIn fb-instructors-img-mob" src="{{ imgMob }}" alt="{{ imgMob.alt }}" />
+    </div>
+  </div>
+</section>
+<style>
+  .fb-class-instructors{
+    width:100%;
+    height:964px;
+    background: #FFFFFF;
+    display:flex;
+    padding-right:100px;
+    padding-left:360px;
+  }
+  .fb-instructors-text{
+    {% comment %} margin-left:360px; {% endcomment %}
+    margin-top:373px;
+  }
+  .instructors-title{
+    width: 584px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 40px;
+  }
+  .instructors-desc{
+    width: 554px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 24px;
+    margin-top:24px;
+  }
+  .fb-instructors-image{
+    width:764px;
+    height:764px;
+    margin-left:112px;
+    margin-top:100px;
+  }
+  .fb-instructors-image img{
+    width:100%;
+    height:100%;
+  }
+  .fb-instructors-img-mob{
+    display:none;
+  }
+  @media screen and (max-width: 1800px) and (min-width:1367px){
+    .fb-class-instructors{
+      padding-right:40px;
+      padding-left:40px;
+    }
+    .fb-instructors-image{
+      width:764px;
+      height:764px;
+      margin-left:0px;
+      {% comment %} margin-left:112px; {% endcomment %}
+      margin-top:180px;
+    }
+    .fb-instructors-image img{
+      width:100%;
+      height:100%;
+    }
+  }
+  @media screen and (max-width: 1366px){
+    .fb-class-instructors{
+      padding-right:0px;
+      padding-left:18px;
+    }
+    .fb-instructors-image{
+      width:764px;
+      height:764px;
+      margin-left:0px;
+      {% comment %} margin-left:112px; {% endcomment %}
+      margin-top:180px;
+    }
+    .fb-instructors-image img{
+      width:100%;
+      height:100%;
+    }
+  }
+  @media screen and (max-width: 1365px){
+    .fb-class-instructors{
+      padding-left:40px;
+      padding-right:40px;
+    }
+    .fb-instructors-image{
+      width:336px;
+      height:336px;
+      margin-left:0px;
+      margin-top:300px;
+    }
+    .fb-instructors-image img{
+      width:100%;
+      height:100%;
+    }
+  }
+  {% comment %} @media screen and (max-width: 1450px) and (min-width: 1366px){
+    .fb-class-instructors{
+      padding-left:100px;
+    }
+    .fb-instructors-image{
+      width:560px;
+      height:560px;
+      margin-left:0px;
+      margin-top:180px;
+    }
+    .fb-instructors-image img{
+      width:100%;
+      height:100%;
+    }
+  } 
+  @media screen and (max-width: 1365px) and (min-width: 1000px){
+    .fb-class-instructors{
+      padding-left:40px;
+      padding-right:40px;
+    }
+    .fb-instructors-image{
+      width:336px;
+      height:336px;
+      margin-left:0px;
+      margin-top:300px;
+    }
+    .fb-instructors-image img{
+      width:100%;
+      height:100%;
+    }
+  }  {% endcomment %}
+  @media screen and (max-width: 768px){
+    .fb-class-instructors{
+      width:100%;
+      height:737px;
+      background: #FFFFFF;
+      display:flex;
+      flex-direction:column;
+      padding:0;
+    }
+    .fb-instructors-text{
+      width:100%;
+      background:#ffffff;
+      margin-left:0px;
+      margin-top:60px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .instructors-title{
+      width: 328px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #000000;
+      line-height: 32px;
+      text-align:center;
+    }
+    .instructors-desc{
+      width: 275px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #000000;
+      line-height: 20px;
+      margin-top:24px;
+      text-align:center;
+    }
+    .fb-instructors-image{
+      width:375px;
+      height:375px;
+      margin-top:30px;
+      margin:0 auto;
+    }
+    .fb-instructors-image img{
+      width:100%;
+      height:100%;
+    }
+    .fb-instructors-img-pc{
+      display:none;
+    }
+    .fb-instructors-img-mob{
+      display:block;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbClassesInstructors",
+    "presets": [
+      {
+        "name": "fb-classes-instructors",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "fb_instructors_title",
+        "label": "Instructors title"
+      }, 
+      {
+        "type": "richtext",
+        "id": "fb_instructors_desc",
+        "label": "Instructors desc"
+      },
+      {
+        "type": "image_picker",
+        "id": "fb_instructors_img",
+        "label": "Instructors img PC"
+
+      },
+      {
+        "type": "image_picker",
+        "id": "fb_instructors_img_mob",
+        "label": "Instructors img Mob"
+
+      }
+    ]
+  }
+{% endschema %}

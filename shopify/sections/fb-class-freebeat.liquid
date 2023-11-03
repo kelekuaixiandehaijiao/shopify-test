@@ -1,0 +1,493 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-class-freebeat">
+    <div class="freebeat-title">{{ section.settings.fb_freebeat_title }}</div>
+    <div class="freebeat-video-content swiper-pc">
+      <div class="swiper swiper-content" id="freebeatSwiper">
+        <div class="swiper-wrapper video-main">
+          {%- for block in section.blocks -%}
+            <div class="video-item swiper-slide">
+              <video 
+                class="Image--lazyLoad video-item-main" 
+                style="position: absolute;z-index:1;" 
+                webkit-playsinline="true" 
+                playsinline="true"
+                autoplay="autoplay" 
+                muted="muted" 
+                loop="loop"
+                data-src="{{ block.settings.fb_video_pc_video }}">
+              </video>
+              {% comment %} <div class="freebeat-masking"></div> {% endcomment %}
+            </div>
+          {%- endfor -%}
+        </div>
+        <div class="swiper-pagination">
+          <div class="pagination-wrapper">
+            {%- for block in section.blocks -%}
+                <div class="pagination-item item-showborder-{{ forloop.index }}">
+                  <div class="pagination-item-title title-show-{{ forloop.index }}" data-index="{{ forloop.index }}"><h4>{{ block.settings.fb_video_title }}</h4></div>
+                  <div class="pagination-item-desc desc-show-{{ forloop.index }} desc-active">{{ block.settings.fb_video_desc }}</div>
+                </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div> 
+    </div>
+    
+    <div class="mob-comtent swiper-mob">
+      <div class="swiper swiper-content-mob fb-freebeat-swipercss" id="freebeatSwiperMob">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            <div class="swiper-slide video-main-mob">
+              <video 
+                class="Image--lazyLoad video-item-main"
+                webkit-playsinline="true" 
+                playsinline="true"
+                autoplay="autoplay" 
+                muted="muted" 
+                loop="loop"
+                data-src="{{ block.settings.fb_video_mobile_video }}">
+              </video>
+              <div class="freebeat-masking-mob">
+                <div class="pagination-item-mob">
+                  <div class="item-title-mob title-show-mob{{ forloop.index }}">{{ block.settings.fb_video_title }}</div>
+                  <div class="item-desc-mob desc-show-mob{{ forloop.index }}">{{ block.settings.fb_video_desc }}</div> 
+                </div>
+              </div>
+            </div>
+          {%- endfor-%}
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $(function(){
+    const fbFreebeatBanner = {
+      init:function(){
+        this.swiperFun()
+        this.swiperMobFun()
+      },
+      swiperFun:function(){
+        const headerSwiper = new Swiper("#freebeatSwiper",{
+          direction: 'vertical',
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          loop: true,
+          effect: "fade",
+          fadeEffect: {
+              crossFade: true
+          },
+          on:{
+            slideChange: function () {  
+              let realIndex = parseInt(this.realIndex) + 1
+              let showdesc = `.desc-show-${realIndex}`
+              $(showdesc).show()
+              $(showdesc).parent().find('.pagination-item-title').addClass('pagination-active')
+              $(showdesc).parent().siblings().find('.pagination-item-title').removeClass('pagination-active')
+              $(showdesc).parent().siblings().find('.pagination-item-title').removeClass('title-show-1')
+              $(showdesc).parent().siblings().find(`.pagination-item-desc`).hide()
+              $(showdesc).parent().addClass('item-active')
+              $(showdesc).parent().siblings().removeClass('item-active')
+              $(showdesc).parent().siblings().removeClass('item-showborder-1')
+            }
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable:true,
+            type:'custom'
+          },
+        })
+        $('.pagination-item-title').click(function(){
+          let click_index = $(this).attr('data-index')
+          click_index = parseInt(click_index)
+          headerSwiper.slideTo(click_index, 1000, false)
+          $(this).addClass('pagination-active')
+          $(this).parent().siblings().find('.pagination-item-title').removeClass('pagination-active')
+          $(this).parent().siblings().find('.pagination-item-title').removeClass('title-show-1')
+          $(this).siblings('.pagination-item-desc').css('display','block')
+          $(this).parent().siblings().find('.pagination-item-desc').css('display','none')
+          $(this).removeClass('desc-show-1')
+          $(this).parent().addClass('item-active')
+          $(this).parent().siblings().removeClass('item-active')
+          $(this).parent().siblings().removeClass('item-showborder-1')
+        })
+      },
+      swiperMobFun:function(){
+        const headerMobSwiper = new Swiper("#freebeatSwiperMob",{
+           autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+          }, 
+          loop: false,
+          effect: "fade",
+          fadeEffect: {
+              crossFade: true
+          },
+          on:{
+            {% comment %} slideChange: function () {
+              let realIndex = parseInt(this.realIndex) + 1
+              $(`.title-show-mob${realIndex}`).css('display','block')
+              $(`.title-show-mob${realIndex}`).parent().siblings().find(`.item-title-mob`).css('display','none')
+              $(`.desc-show-mob${realIndex}`).css('display','block')
+              $(`.desc-show-mob${realIndex}`).parent().siblings().find(`.item-desc-mob`).css('display','none')
+            } {% endcomment %}
+          },
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        })
+      }
+    }
+    fbFreebeatBanner.init()
+  })
+</script>
+<style>
+  .swiper-mob{
+    display:none
+  }
+  .fb-class-freebeat{
+    width:100%;
+    height:816px;
+    background: #F5F5F5;
+  }
+  
+  .freebeat-title{
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 36px;
+    text-align:center;
+    padding-top:100px;
+  }
+  .freebeat-video-content{
+    margin-top:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  .swiper-content{
+    position:relative;
+    width:1320px;
+    margin:0 auto;
+  }
+  .video-main{
+    width:920px;
+    height:520px;
+    border-radius:20px;
+    float:right;
+  }
+  
+  .video-item{ 
+    width:920px;
+    height:520px;
+    border-radius:20px;
+    position:relative;
+  }
+  .freebeat-masking{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    {% comment %} background:rgba(0,0,0,0.5); {% endcomment %}
+    background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
+    border-radius:20px;
+    z-index:9;
+  }
+  .video-item-main{
+    width:920px;
+    height:520px;
+    border-radius:20px;
+    object-fit:cover;
+    object-position:center;
+  }
+  .freebeat-mask{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    z-index:99;
+    border-radius:20px;
+  }
+  .freebeat-progress-bg{
+    width: 4px;
+    height: 580px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    opacity: 0.1;
+  }
+  .fbs-li{
+    position:absolute;
+    top:0;
+    left:0;
+  }
+  .item-progress{
+    width: 4px;
+    height: 116px;
+    background: #FFFFFF;
+    border-radius: 17px; 
+  }
+  .item-title{
+    width: 158px;
+    height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 20px;
+    margin-left:20px;
+  }
+  .item-desc{
+    width: 324px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 20px;
+  }
+  .swiper-pagination{
+    float:left;
+    height:500px;
+    width:400px;
+    border-left:4px solid rgba(0,0,0,0.1);
+  }
+  .pagination-item{
+    padding-left:40px;
+    cursor:pointer;
+    margin-bottom:82px;
+  }
+  .item-showborder-1{
+    {% comment %} border-left:4px solid rgba(0,0,0,0.1);
+    font-weight: bold; {% endcomment %}
+    {% comment %} border-left:4px solid #FFFFFF;
+    font-weight: bold; {% endcomment %}
+  }
+  .item-active{
+    border-left:4px solid rgba(0,0,0);
+    font-weight: bold;
+    margin-left:-4px;
+  }
+  .pagination-item-title{
+    {% comment %} width: 169px; {% endcomment %}
+    height: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.5);
+    line-height: 18px;
+    text-align:left;
+  }
+  .title-show-1{
+    color:rgba(0,0,0,0.5)
+  }
+  .pagination-active{
+    color: #000000;
+    font-weight: bold;
+  }
+  .pagination-item-desc{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 20px;
+    margin-top:12px;
+    text-align:left;
+    width:280px;
+  }
+  .desc-show-1{
+    display:block;
+  }
+  @media screen and (max-width: 1200px){
+    .swiper-content{
+      width:1200px;
+    }
+    .video-main{
+      width:900px;
+    }
+    .video-item{
+      width:900px;
+    }
+    .video-item-main{
+      width:900px;
+    }
+    .swiper-pagination{
+      width:360px;
+    }
+    .pagination-item{
+      margin-bottom:72px;
+    }
+    .pagination-item-desc{
+      width:240px;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .swiper-pc{
+      display:none;
+    }
+    .swiper-mob{
+      display:block;
+    }
+    .fb-class-freebeat{
+      width:100%;
+      {% comment %} width:100%; {% endcomment %}
+      height:640px;
+      background: #F5F5F5;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      border-radius:10px;
+    }
+    .freebeat-title{
+      position:absolute;
+      width:328px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 32px;
+      text-align:center;
+      padding-top:40px;
+      z-index:9;
+    }
+    .mob-comtent{
+      width:100%;
+      height:640px;
+      {% comment %} position:relative; {% endcomment %}
+    }
+    {% comment %} .swiper-content-mob{
+      width:100%;
+      height:640px;
+    } {% endcomment %}
+    .video-main-mob{
+      position:relative;
+      width:100%;
+      height:640px;
+    }
+    .video-main-mob .video-item-main{
+      width:100%;
+      height:640px;
+      object-fit:cover;
+      border-radius:0px;
+    }
+    .freebeat-masking-mob{
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:9;
+      background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 33%, rgba(0,0,0,0.1) 51%, rgba(0,0,0,0.15) 69%, rgba(0,0,0,0.7) 100%);
+    }
+    .swiper-slide-title{
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 24px;
+      text-align:center;
+    }
+    .swiper-slide-desc{
+      margin:0 auto;
+      margin-top:10px;
+      width: 324px;
+      height: 40px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 20px;
+      text-align:center;
+    }
+    .swiper-pagination{
+      border-left:none;
+    }
+    .pagination-item-mob{
+      width:100%;
+      margin:0 auto;
+      position:fixed;
+      bottom:32px;
+      z-index:9;
+    }
+    .item-title-mob{
+      height: 24px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 24px;
+      text-align:center;
+    }
+    .item-desc-mob{
+      width: 324px;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+      line-height: 20px;
+      margin:0 auto;
+      text-align:center;
+      margin-top:10px;
+      margin-bottom:30px;
+    }
+    .fb-freebeat-swipercss .swiper-scrollbar{
+      width:92%!important;
+      {% comment %} width:345px!important; {% endcomment %}
+      height:2px!important;
+      bottom:30px!important;
+      background:rgba(255,255,255,0.2);
+      left:4%!important;
+      {% comment %} left:15px!important; {% endcomment %}
+    }
+    .fb-freebeat-swipercss .swiper-scrollbar-drag{
+      border-radius:5px;
+      height: 2px;
+      background: #FFFFFF;
+      border-radius:5px;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbClassesFreebeat",
+    "presets": [
+      {
+        "name": "fb-classes-freebeat",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "fb_freebeat_title",
+        "label": "Freebeat title"
+      }    
+    ],
+    "blocks": [
+      {
+        "type": "freebeat_list",
+        "name": "freebeat list",
+        "settings": [
+            {
+              "type": "text",
+              "id": "fb_video_title",
+              "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "fb_video_desc",
+              "label": "Info"
+            },
+            {
+              "type": "url",
+              "id": "fb_video_pc_video",
+              "label": "Pc Video"
+            },
+            {
+              "type": "url",
+              "id": "fb_video_mobile_video",
+              "label": "Mobile Video"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}

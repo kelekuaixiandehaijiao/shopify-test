@@ -1,0 +1,226 @@
+<div  id="section-{{ section.id }}" class="mx-auto w-full px-5 fb-sm:px-10 fb-md:px-0 bg-[#F7F7F7]" >
+  <div class="fb-trustpilot mx-auto fb-md:max-w-75r py-10 fb-sm:pt-15 fb-sm:pb-25 fb-md:py-20" id="trustpilotBox">
+    <h2 class="fb-trustpilot-tit text-center font-bold text-20 text-121212 fb-md:text-32">
+      {{ section.settings.content_title }}
+    </h2>
+    <div class="fb-start-box mt-[34px] w-full fb-flex-xy-center space-x-2 fb-md:mt-10 fb-md:space-x-3">
+      <div id="fbstartbox" class="fb-flex-xy-center space-x-1.5 fb-md:space-x-3"></div>
+      <div id="u-start-num" class="text-20 text-121212 font-semibold fb-md:text-32"></div>
+    </div>
+    <div class="u-trustPilot mt-3 w-full text-12 text-center fb-md:mt-4 fb-md:text-16">
+      <span id="reviewsNum" class=" text-black mr-2 fb-md:mr-3"></span>
+      <a href="{{ section.settings.TrustPilot_url}}" class="text-00cc45 font-bold underline" target="_blank">
+        <span class="TrustPilot-des">TrustPilot</span>
+      </a>
+    </div>
+    <div class="m-trustpilot-content swiper mt-6 border-t border-e6e6e6 pt-6 fb-md:mt-8 fb-md:pt-8">
+      <div class="swiper-wrapper w-full">
+        {%- for block in section.blocks -%}
+          <div class="swiper-slide w-full" data-index="{{ forloop.index }}">
+            <div class="trustpilot-tit text-16 text-121212 font-bold fb-md:text-20">{{ block.settings.pages_swiper_title }}</div>
+            <div class="trustpilot-info mt-2 text-12 text-121212 fb-md:mt-3 fb-md:text-16">{{ block.settings.pages_swiper_Info }}</div>
+            <div class="trustpilot-author mt-2 text-12 font-bold text-666666 fb-md:mt-3 fb-md:text-16">- {{ block.settings.pages_swiper_author }}</div>
+          </div>
+        {% endfor %}
+      </div>
+      {% capture btn_prev %} w-8 h-8 rounded-full bg-e6e6e6{% endcapture %}
+      <div class="trustpilot-bottom w-full mt-6 fb-flex-x-between h-8 fb-md:mt-8">
+        <div class="trustpilot-button-prev {{btn_prev}}">
+          <img
+            loading="lazy"
+            class="w-full h-auto"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_87_2x_370830ea-be9b-46a0-b940-5afeded671ef.png?v=1695711347"
+            alt="left arrow"
+          >
+        </div>
+        <div class="trustpilo-swiper-pagination flex-1 fb-flex-xy-center"></div>
+        <div class="trustpilot-button-next {{btn_prev}}">
+          <img
+            loading="lazy"
+            class="w-full h-auto"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_88_2x_55d0ada5-4af3-45b4-87a4-34dff2e1c252.png?v=1695711347"
+            alt="right arrow"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbTrustpilot",
+  "presets": [
+    {
+      "name": "fb-trustpilot",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "content_title",
+      "label": "Content Title",
+      "default": "WHY PEOPLE LOVE FREEBEAT"
+    },
+    {
+      "type": "url",
+      "id": "TrustPilot_url",
+      "label": "TrustPilot Url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "TextBlock",
+      "name": "TextBlock",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pages_swiper_title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "pages_swiper_Info",
+          "label": "Info"
+        },
+        {
+          "type": "text",
+          "id": "pages_swiper_author",
+          "label": "Author"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<script>
+  $(function () {
+    function TrustpilotClass() {
+      this.currentIndex = 0;
+      this.productUrl = 'https://api.freebeatfit.com/';
+    }
+    TrustpilotClass.prototype = {
+      init: function () {
+        this.trustpiloSwiperFun();
+        this.getStart();
+      },
+
+      trustpiloSwiperFun: function () {
+        let _this = this;
+        var trustpilotSwiper = new Swiper('.m-trustpilot-content', {
+          loop: true,
+          initialSlide: 0,
+          speed: 500,
+          spaceBetween: 1,
+          slidesPerView: 1,
+          navigation: {
+            nextEl: '.trustpilot-button-next',
+            prevEl: '.trustpilot-button-prev',
+          },
+          pagination: {
+            el: '.trustpilo-swiper-pagination',
+            clickable: true,
+          },
+          loopedSlides: 3,
+        });
+      },
+      getStart: function () {
+        let _this = this;
+        ajax({
+          type: 'GET',
+          url: `${_this.productUrl}shopify/v1/getTrustpilotReviewsStars`,
+          success: async function (res) {
+            if (res.code == 0) {
+              let num = res.data.score;
+              let reviews = res.data.reviews;
+              $('#reviewsNum').text(`(${reviews} Reviews)`);
+              $('#u-start-num').text(num);
+              let starStyle = await calculateStarStyle(num);
+              const fbStarBox = document.querySelector('#fbstartbox');
+              fbStarBox.innerHTML = '';
+              const fullStars = parseFloat(starStyle.fullStars);
+              const halfStar = parseFloat(starStyle.halfStar);
+              // 计算剩余星星数量
+              const remainingStars = 5 - (fullStars + halfStar);
+
+              for (let i = 0; i < starStyle.fullStars; i++) {
+                const starImg = document.createElement('img');
+                starImg.src =
+                  'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Subtract_2x_2c0e9992-b360-4c13-9650-f89b6149c883.png?v=1695711347'; // 替换为满星的图像路径
+                fbStarBox.appendChild(starImg);
+              }
+              for (let i = 0; i < starStyle.halfStar; i++) {
+                const starImg = document.createElement('img');
+                starImg.src =
+                  'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_89_2x_e05a9822-44ca-42f7-970d-472b7b7e63db.png?v=1695711352'; // 替换为满星的图像路径
+                fbStarBox.appendChild(starImg);
+              }
+              for (let i = 0; i < remainingStars; i++) {
+                const starImg = document.createElement('img');
+                starImg.src = 'https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Subtract_2x_1.png?v=1695711347'; // 替换为满星的图像路径
+                fbStarBox.appendChild(starImg);
+              }
+              console.log(`满星：${starStyle.fullStars}，半星：${starStyle.halfStar}，零星：${starStyle.emptyStars}`);
+            }
+          },
+        });
+      },
+    };
+    function calculateStarStyle(score) {
+      // 将评分字符串转换为数字
+      const scoreNumber = parseFloat(score);
+
+      // 获取整数部分和小数部分
+      const integerPart = Math.floor(scoreNumber);
+      const decimalPart = Math.round((scoreNumber - integerPart) * 10);
+
+      // 初始化星级样式
+      let fullStars = integerPart; // 初始满星个数
+      let halfStar = 0; // 初始半星个数
+      let emptyStars = 5 - fullStars; // 总共5个星，初始剩余的星为零星
+
+      // 根据小数部分调整星级样式
+      if (decimalPart >= 0 && decimalPart <= 2) {
+        // 不需要改变星级样式
+      } else if (decimalPart >= 3 && decimalPart <= 7) {
+        halfStar = 1; // 叠加半星
+      } else if (decimalPart >= 8 && decimalPart <= 9) {
+        fullStars += 1; // 叠加满星
+      }
+
+      // 返回星级样式
+      return {
+        fullStars,
+        halfStar,
+        emptyStars,
+      };
+    }
+
+    if ($('.fb-trustpilot').length > 0) {
+      var TrustpilotClass = new TrustpilotClass();
+      TrustpilotClass.init();
+    }
+  });
+</script>
+<style>
+  .fb-trustpilot .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgb(76 79 68 / 76%);
+    margin: 0 4px;
+  }
+  .fb-trustpilot .swiper-pagination-bullet-active{
+     background: #121212;
+  }
+  #fbstartbox img{
+    width: 24px;
+    height: 24px;
+  }
+  @media (min-width: 1280px){
+    #fbstartbox img{
+      width: 38px;
+      height: 38px;
+    }
+  }
+</style>

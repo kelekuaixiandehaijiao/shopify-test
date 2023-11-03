@@ -1,0 +1,266 @@
+{%- capture section_settings -%}
+{
+  "type": {{ settings.cart_type | json }},
+  "itemCount": {{ cart.item_count }},
+  "drawer": false,
+  "hasShippingEstimator": {% if section.settings.show_shipping_estimator and cart.item_count > 0 %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+<section data-section-id="{{ section.id }}" data-section-type="cart" data-section-settings='{{ section_settings }}'
+    class="fb-new-maincart w-full pb-[50px]"
+>
+  {%- if cart.item_count == 0 -%}
+    <div class="EmptyState my-35 fb-md:my-50">
+      <div class="Container relative text-center">
+        <p class="Cart__Empty text-center text-12 font-semibold fb-md:text-16">
+          {{ settings.drawer_empty_title }}
+          <a href="{{settings.drawer_empty_url | default:'/collections/exercise-bikes'}}" 
+            class="block border border-121212 text-h-12 w-[182px] h-[42px] leading-[42px] mt-6 text-121212 text-center mx-auto font-bold
+            fb-md:w-80 fb-md:h-12 fb-md:text-h-16 fb-md:leading-[48px] fb-md:border rounded-[6px] fb-md:rounded-lg
+            ">
+            {{settings.drawer_empty_button}}
+          </a>
+        </p>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="Container relative px-5 py-10 w-full fb-sm:px-10 fb-md:py-20">
+      <header class="PageHeader w-full mb-[32px] fb-md:mb-10">
+        <div class="SectionHeader SectionHeader--center"> 
+          <h1 class="w-full text-center text-20 text-121212 font-bold fb-sm:text-[20px] fb-md:text-[32px]">
+            {{ section.settings.cart_page_header }}
+          </h1>
+        </div>
+      </header>
+      <div class="PageContent w-full fb-md:w-[1200px] fb-md:ml-auto fb-md:mr-auto">
+        <form action="{{ routes.cart_url }}" method="POST" class="Cart Cart--expanded js-cart-expand" novalidate>
+          <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
+          <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+          {% render 'cart-items', section: section %}
+          <footer class="Cart__Footer">
+            {% comment %} 暂时不需要 {% endcomment %}
+            {% comment %} {%- if settings.cart_enable_notes -%}
+              <div class="Cart__NoteContainer">
+                {%- if settings.bike_fill_discount or settings.bike_use_discount_price -%}
+                    {% assign is_show_litbike = false %}
+                    {% assign is_show_boombike = false %}
+                    {%- for line_item in cart.items -%}
+                    {%- if line_item.product.title contains 'Lit Bike' -%}
+                        {% assign is_show_litbike = true %}
+                    {%- endif -%}
+                    {%- if line_item.product.title contains 'Boom Bike' -%}
+                        {% assign is_show_boombike = true %}
+                    {%- endif -%}
+                    {%- endfor -%}
+                    {%- unless is_show_litbike == false and is_show_boombike == false -%}
+                    <div class="fb-main-cart-warn">
+                        {%- if is_show_litbike == true and is_show_boombike == false -%}
+                        {{ settings.litbike_shipping_main_cart_warn }}
+                        {%- elsif is_show_litbike == false and is_show_boombike == true -%}
+                        {{ settings.boombike_shipping_main_cart_warn }}
+                        {%- elsif is_show_litbike == true and is_show_boombike == true -%}
+                            {{ settings.shipping_main_cart_warn }}
+                        {%- endif -%}
+                    </div>
+                    {%-endunless-%}
+                {%- endif -%}
+                <span class="Cart__NoteButton">
+                    <span class="new-maincart-border new-maincart-opennot js-open-ordernot">{{ 'cart.general.add_note' | t }}</span>
+                    <span class="new-maincart-not js-open-ordernot">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 19V5H12V12H19V13C19.7 13 20.37 13.13 21 13.35V9L15 3H5C3.89 3 3 3.89 3 5V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H13.35C13.13 20.37 13 19.7 13 19H5ZM14 4.5L19.5 10H14V4.5ZM23 18V20H20V23H18V20H15V18H18V15H20V18H23Z" fill="#6A6A6A"></path>
+                        </svg>
+                    </span>
+                </span>
+              
+                <textarea class="Cart__Note Form__Textarea js-maincart-textarea-input" name="note" id="cart-note" rows="4" placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}</textarea>
+              </div>
+            {%- endif -%} {% endcomment %}
+            <div class="fb-cart-total hidden fb-sm:block text-right w-full pt-6 fb-md:pt-[32px]">
+              <span class="text-121212 text-16 font-bold fb-md:text-20">Total:{{cart.total_price | money_without_trailing_zeros}}</span>
+            </div>
+            <div class="Cart__Recap w-full pt-[10px] text-center fb-sm:pt-[32px] fb-md:pt-10">
+              {% comment %} {%- if cart.cart_level_discount_applications != blank -%}
+                {%- for discount_application in cart.cart_level_discount_applications -%}
+                  <p class="Cart__Discount Heading u-h6">{{ 'cart.general.discount' | t }} ({{ discount_application.title }}): -<span>{{ discount_application.total_allocated_amount | money_without_trailing_zeros }}</span></p>
+                {%- endfor -%}
+              {%- endif -%} {% endcomment %}
+              {% comment %} <p class="Cart__Total Heading u-h6">{{ 'cart.general.total' | t }}: <span>{{ cart.total_price | money_without_trailing_zeros }}</span></p> {% endcomment %}
+              {% comment %} {%- if section.settings.is_payments_show  and cart.items_subtotal_price > 0 -%}
+                <div class="new_klarna_fb_initialized">
+                    {% render 'fb-klarna-customer' %}
+                </div>
+              {%- endif -%} {% endcomment %}
+              
+              {% comment %} <button type="submit" name="checkout" class="Cart__Checkout fb-cart-checkout-button">CHECKOUT</button>
+              {%- if shipping_and_taxes_notice != blank -%}
+                <p class="Cart__Taxes Text--subdued fb-cart-taxes">{{ shipping_and_taxes_notice }}</p>
+              {%- endif -%}
+                <ul class="fb-cart-payment"> 
+                    {%- for type in shop.enabled_payment_types -%}
+                        <li class="fb-cart-payment-item">{{ type | payment_type_svg_tag }}</li>
+                {%- endfor -%}
+                    <li class="fb-cart-payment-item">{{ 'klarna' | payment_type_svg_tag }}</li>
+                </ul> {% endcomment %}
+                <button type="submit" name="checkout" fb_checkout="checkout" class="fb_Cart__Checkout w-60 h-10 ml-auto mr-auto fb-flex-xy-center space-x-[8px] text-h-12-s font-bold text-white bg-121212 rounded-md	 fb-md:h-12 fb-md:w-[328px] fb-md:text-[16px] fb-md:space-x-[12px] fb-md:rounded-lg">
+                  <span>{{ settings.checkout_button_text | default:'CHECKOUT'}}</span>
+                  <span class="Button__SeparatorDot inline-block w-[3px] h-[3px] rounded-full bg-white fb-md:w-[4px] fb-md:h-1 fb-sm:hidden"></span>
+                  <span class="fb-sm:hidden">{{cart.total_price | money_without_trailing_zeros}}</span>
+                </button>
+                {%- if settings.shipping_and_taxes_notice != blank -%}
+                    <p class="Cart__Taxes Text--subdued mt-2 w-full text-center text-00cc45 text-10 fb-md:mt-3 fb-md:text-12">
+                      {{ settings.shipping_and_taxes_notice }}
+                    </p>
+                {%- endif -%}
+                <ul class="fb-minicart-payment fb-flex-xy-center space-x-[10px] h-6 mt-2 fb-md:space-x-[12px] fb-md:mt-3"> 
+                    {%- for type in shop.enabled_payment_types -%}
+                        <li class="fb-minicart-payment-item h-6 leading-6">{{ type | payment_type_svg_tag }}</li>
+                    {%- endfor -%}
+                    <li class="fb-minicart-payment-item">{{ 'klarna' | payment_type_svg_tag }}</li>
+                </ul>
+            </div>
+          </footer>
+        </form>
+        {% comment %} {%- if section.settings.show_shipping_estimator -%}
+          <div class="Section Section--spacingExtraLarge">
+            <div class="Panel">
+              <h2 class="Panel__Title Heading u-h2">{{ 'cart.shipping_estimator.title' | t }}</h2>
+
+              <div class="Panel__Content">
+                <div class="ShippingEstimator">
+                  <div class="ShippingEstimator__Form">
+                    <div class="ShippingEstimator__Country Form__Select Select Select--primary">
+                      {%- render 'icon' with 'select-arrow' -%}
+                      <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}" data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">{{ country_option_tags }}</select>
+                    </div>
+
+                    <div class="ShippingEstimator__Province Form__Select Select Select--primary" style="display: none">
+                      {%- render 'icon' with 'select-arrow' -%}
+                      <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
+                    </div>
+
+                    <input type="text" class="ShippingEstimator__Zip Form__Input" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+
+                    <button type="button" class="ShippingEstimator__Submit Button Button--primary">{{ 'cart.shipping_estimator.estimate' | t }}</button>
+                  </div>
+
+                  <div class="ShippingEstimator__Error Alert Alert--error" style="display: none"></div>
+                  <div class="ShippingEstimator__Results">
+                    <div class="ShippingEstimator__ResultsInner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%} {% endcomment %}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cart_page_header",
+      "label": "Header",
+      "default": "YOUR CART"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_estimator",
+      "label": "Show shipping rates calculator",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "shipping_estimator_default_country",
+      "label": "Default country to use",
+      "info": "If your customer is logged-in, the country in his default shipping address will be selected.",
+      "default": "United States"
+    },
+    {
+        "type": "checkbox",
+        "id": "is_payments_show",
+        "label": "Show Payments",
+        "default": true
+    },
+    {
+        "type": "richtext",
+        "id": "payments_title_show",
+        "label": "payments available title show",
+        "default": "<p>Flexible payments available with</p>"
+    },
+    {
+        "type": "text",
+        "id": "payments_des_show",
+        "label": "Pay as low as",
+        "default": "Pay as low as"
+    },
+    {
+        "type": "text",
+        "id": "shipping_and_taxes_notice",
+        "label": "Shipping calculated at checkout",
+        "default": "Shipping calculated at checkout" 
+    }
+  ]
+}
+{% endschema %}
+<script>
+$(function() {
+    const cartFun = {
+        isOpen: false,
+        init: function () {
+            this.event()
+        },
+        event: function () {
+            let _this = this
+            $('body').on('click', '.js-open-ordernot', function (e) {
+                _this.isOpen = !_this.isOpen
+                if(_this.isOpen) {
+                    $('.js-maincart-textarea-input').show()
+                    $('.new-maincart-opennot').removeClass('new-maincart-border')
+                } else {
+                    $('.js-maincart-textarea-input').hide()
+                    $('.new-maincart-opennot').addClass('new-maincart-border')
+                }
+            })
+            
+        }
+    }
+    cartFun.init() 
+})
+
+</script>
+<script id="docapp-discount-speedup">
+(() => { if (!document.documentElement.innerHTML.includes('\\/shop' + '\\/js' + '\\/discount-on-cart-pro.min.js') || window.discountOnCartProAppLoaded) return; let script = document.createElement('script'); script.src = "https://d9fvwtvqz2fm1.cloudfront.net/shop/js/discount-on-cart-pro.min.js?shop=freebeat-fit.myshopify.com"; document.getElementById('docapp-discount-speedup').after(script); })();
+</script>
+<style>
+  html{
+    height: auto!important;
+    overflow-y: auto!important;
+  }
+  #sidebar-cart{
+    width:0px;
+  }
+  @media screen and (max-width: 639px) {
+    .CartItem__Info~.CartItem__Actions,.CartItem__Info~.CartItem__LinePriceList {
+      display: none;
+    }
+    .fb-compute-cart-show{
+    }
+  }
+  @media screen and (min-width: 640px){
+    .Cart--expanded .CartItem__Info>.CartItem__Actions{
+      display: none;
+    }
+    .Cart--expanded .CartItem__Info~.CartItem__Actions, .Cart--expanded .CartItem__Info~.CartItem__LinePriceList {
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+    }
+  }
+</style>

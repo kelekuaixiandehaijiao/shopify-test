@@ -1,0 +1,186 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if cpc_product -%}
+  {%- assign bike_by_stage_number = country_code_var | append: '_bike_by_stage_number' -%}
+  {%- assign fbstage = settings[bike_by_stage_number] | default: 0 | times: 100.0 -%}
+  {%- if settings.product_beige.id == cpc_product.id -%}
+    {%- comment -%} Lit Bike Moonbow Beige 1 {%- endcomment -%}
+    {%- assign name_discount = 'lbmb_discount' -%}
+    {%- assign name_te = 'lbmb_te' -%}
+    {%- assign name_show = 'lbmb_show' -%}
+    {%- assign setBikeType = 1 -%}
+  {%- elsif settings.product_white.id == cpc_product.id -%}
+    {%- comment -%} Lit Bike Snowpeak White 2{%- endcomment -%}
+    {%- assign name_discount = 'lbsw_discount' -%}
+    {%- assign name_te = 'lbsw_te' -%}
+    {%- assign name_show = 'lbsw_show' -%}
+    {%- assign setBikeType = 2 -%}
+  {%- elsif settings.product_black.id == cpc_product.id -%}
+    {%- comment -%} Lit Bike Space Black 3 {%- endcomment -%}
+    {%- assign name_discount = 'lbsb_discount' -%}
+    {%- assign name_te = 'lbsb_te' -%}
+    {%- assign name_show = 'lbsb_show' -%}
+    {%- assign setBikeType = 3 -%}
+  {%- elsif settings.product_pink.id == cpc_product.id -%}
+    {%- assign name_discount = 'lbap_discount' -%}
+    {%- assign name_te = 'lbap_te' -%}
+    {%- assign name_show = 'lbap_show' -%}
+    {%- comment -%} Lit Bike Aurora Pink 4 {%- endcomment -%}
+    {%- assign setBikeType = 4 -%}
+  {%- elsif settings.product_boom_grey.id == cpc_product.id -%}
+    {%- assign name_discount = 'bbgd_discount' -%}
+    {%- assign name_te = 'bbgd_te' -%}
+    {%- assign name_show = 'bbgd_show' -%}
+    {%- comment -%} Boom Bike Mist Grey 1 {%- endcomment -%}
+    {%- assign setBikeType = 1 -%}
+  {%- elsif settings.product_boom_yellow.id == cpc_product.id -%}
+    {%- assign name_discount = 'bbyd_discount' -%}
+    {%- assign name_te = 'bbyd_te' -%}
+    {%- assign name_show = 'bbyd_show' -%}
+    {%- comment -%} Boom Bike Tuscany Yellow 2 {%- endcomment -%}
+    {%- assign setBikeType = 2 -%}
+  {%- elsif settings.product_boom_white.id == cpc_product.id -%}
+    {%- comment -%} Boom Bike Arctic White 3 {%- endcomment -%}
+    {%- assign name_discount = 'bbaw_discount' -%}
+    {%- assign name_te = 'bbaw_te' -%}
+    {%- assign name_show = 'bbaw_show' -%}
+    {%- assign setBikeType = 3 -%}
+  {%- elsif settings.product_jenselter_bike.id == cpc_product.id -%}
+    {%- assign name_discount = 'jslb_discount' -%}
+    {%- assign name_te = 'jslb_te' -%}
+  {%- elsif settings.product_morph_2_in_1_ebike.id == cpc_product.id -%}
+    {%- assign name_discount = 'morph_2_in_1_ebike_discount' -%}
+    {%- assign name_te = 'morph_2_in_1_ebike_te' -%}
+    {%- assign name_show = 'ebike_show' -%}
+  {%- else -%}
+    {%- assign name_discount = '' -%}
+    {%- assign name_te = '' -%}
+    {%- assign name_show = '' -%}
+  {%- endif -%}
+  {%- assign name_discount_new = country_code_var | append: '_' | append: name_discount -%}
+  {%- assign name_te_new = country_code_var | append: '_' | append: name_te -%}
+  {%- assign setDiscountPrice = settings[name_discount_new] | default: 0 | times: 100 -%}
+  {%- assign setTransPrice = settings[name_te_new] | default: 0 | times: 100 -%}
+  {%- if name_show -%}
+    {%- assign name_show_new = country_code_var | append: '_' | append: name_show -%}
+    {%- assign setShowProduct = settings[name_show_new] -%}
+  {%- else -%}
+    {%- assign setShowProduct = false -%}
+  {%- endif -%}
+  {%- comment -%} 目前支持两种价格展示 1.price减去折扣算的sale，这种一定开启自动填充 2.price的sale，小折扣填充自由开启 {%- endcomment -%}
+  {%- assign bike_use_discount_price = bike_use_discount_price | append: 'bike_use_discount_price' -%}
+  {%- if settings[bike_use_discount_price] -%}
+    {%- assign sale_price = cpc_product.price | minus: setDiscountPrice | money_without_trailing_zeros -%}
+    {%- assign sale_int_price = cpc_product.price | minus: setDiscountPrice | divided_by: 100 -%}
+    {%- if setDiscountPrice == 0 or setDiscountPrice == blank -%}
+      {%- assign off_price = 0 -%}
+      {%- assign off_int_price = 0 -%}
+      {%- assign origin_price = blank -%}
+      {%- assign origin_int_price = 0 -%}
+    {%- else -%}
+      {%- assign off_price = setDiscountPrice | money_without_trailing_zeros -%}
+      {%- assign off_int_price = setDiscountPrice | default: 0 | divided_by: 100 -%}
+      {%- assign origin_price = cpc_product.price | money_without_trailing_zeros -%}
+      {%- assign origin_int_price = cpc_product.price | default: 0 | divided_by: 100 -%}
+    {%- endif -%}
+    {%- assign mo_price = cpc_product.price
+      | minus: setDiscountPrice
+      | plus: setTransPrice
+      | divided_by: fbstage
+      | round: 2
+    -%}
+    {%- assign momoney_price = cpc_product.price | minus: setDiscountPrice | plus: setTransPrice -%}
+  {%- else -%}
+    {%- assign sale_price = cpc_product.price | money_without_trailing_zeros -%}
+    {%- assign sale_int_price = cpc_product.price | divided_by: 100 -%}
+    {%- if cpc_product.compare_at_price and cpc_product.compare_at_price > cpc_product.price -%}
+      {%- assign off_price = cpc_product.compare_at_price | minus: cpc_product.price | money_without_trailing_zeros -%}
+      {%- assign off_int_price = cpc_product.compare_at_price
+        | minus: cpc_product.price
+        | default: 0
+        | divided_by: 100
+      -%}
+      {%- assign origin_price = cpc_product.compare_at_price | money_without_trailing_zeros -%}
+      {%- assign origin_int_price = cpc_product.compare_at_price | default: 0 | divided_by: 100 -%}
+    {%- else -%}
+      {%- assign off_price = 0 -%}
+      {%- assign off_int_price = 0 -%}
+      {%- assign origin_price = blank -%}
+      {%- assign origin_int_price = 0 -%}
+    {%- endif -%}
+    {%- assign mo_price = cpc_product.price | plus: setTransPrice | divided_by: fbstage | round: 2 -%}
+    {%- assign momoney_price = cpc_product.price | plus: setTransPrice -%}
+  {%- endif -%}
+  {%- comment -%} 配置车折扣价格展示 {%- endcomment -%}
+  {%- if settings.percentage_off -%}
+    {%- assign offTypeVal = off_int_price | times: 100 | divided_by: origin_int_price | round -%}
+    {%- if offTypeVal == blank -%}
+      {%- assign offTypeVal = null -%}
+    {%- else -%}
+      {%- capture offTypeVal -%}
+        {{offTypeVal}}% OFF
+      {%- endcapture -%}
+    {%- endif -%}
+  {%- elsif settings.num_off -%}
+    {%- if off_int_price == 0 -%}
+      {%- assign offTypeVal = null -%}
+    {%- else -%}
+      {%- capture offTypeVal -%}
+        ${{off_int_price}} OFF
+      {%- endcapture -%}
+    {%- endif -%}
+  {%- elsif settings.on_sale -%}
+    {%- assign offTypeVal = 'ON SALE' -%}
+  {%- else -%}
+    {%- assign offTypeVal = null -%}
+  {%- endif -%}
+  {%- capture offTypeVal -%}
+      {{offTypeVal}}
+  {%- endcapture -%}
+  {%- if type == 'offTypeVal' -%}
+    {{- offTypeVal -}}
+  {%- endif -%}
+  {%- if type == 'sale' -%}
+    {{- sale_price -}}
+  {%- elsif type == 'saleInt' -%}
+    {{- sale_int_price -}}
+  {%- elsif type == 'off' -%}
+    {{- off_price -}}
+  {%- elsif type == 'offInt' -%}
+    {{- off_int_price -}}
+  {%- elsif type == 'origin' -%}
+    {{- origin_price -}}
+  {%- elsif type == 'showProduct' -%}
+    {{- setShowProduct -}}
+  {%- elsif type == 'originInt' -%}
+    {{- origin_int_price -}}
+  {%- elsif type == 'mo' -%}
+    {{- mo_price -}}
+  {%- elsif type == 'momoney' -%}
+    {{- momoney_price -}}
+  {%- elsif type == 'bikeType' -%}
+    {{- setBikeType -}}
+  {%- elsif type == 'bikeDefaultPdpUrl' -%}
+    {%- assign product_available = cpc_product.available -%}
+    {%- capture product_default_url -%}
+          {%- if cpc_product.title contains 'Lit Bike' -%}
+              {{- settings.litbike_product_default_url -}}
+          {%- elsif cpc_product.title contains 'Boom Bike' -%}
+              {{- settings.boombike_product_default_url -}}
+          {%- endif -%}
+      {%- endcapture -%}
+    {%- comment -%} product_available true 是有库存 false是无库存 {%- endcomment -%}
+    {%- comment -%} hasSoldOutDefaultUrl 为‘’ 是有库存  反之有库存 {%- endcomment -%}
+    {%- if product_available == false and product_default_url -%}
+      {%- assign hasSoldOutDefaultUrl = product_default_url -%}
+    {%- else -%}
+      {%- assign hasSoldOutDefaultUrl = '' -%}
+    {%- endif -%}
+    {{- hasSoldOutDefaultUrl -}}
+  {%- else -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign setShowProduct = false -%}
+  {%- if type == 'showProduct' -%}
+    {{- setShowProduct -}}
+  {%- endif -%}
+{%- endif -%}

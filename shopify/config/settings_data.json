@@ -1,0 +1,827 @@
+{
+  "current": {
+    "bike_fill_discount": false,
+    "on_sale": false,
+    "percentage_off": false,
+    "num_off": true,
+    "product_black": "lit-bike",
+    "us_lbsb_discount": 0,
+    "us_lbsb_te": 0,
+    "product_pink": "lit-bike-klarna-limited-edition",
+    "product_beige": "lit-bike-moonbow-beige",
+    "product_white": "lit-bike-snowpeak-white",
+    "product_boom_grey": "boom-bike-mist-grey",
+    "product_boom_white": "boom-bike-arctic-white",
+    "product_boom_yellow": "boom-bike-tuscany-yellow",
+    "logo": "shopify:\/\/shop_images\/icon__1.jpg",
+    "logo_width": 90,
+    "favicon": "shopify:\/\/shop_images\/icon__1.jpg",
+    "type_header_font": "sans-serif",
+    "heading_scale": 100,
+    "type_body_font": "sans-serif",
+    "body_scale": 100,
+    "page_width": 1200,
+    "spacing_sections": 0,
+    "spacing_grid_horizontal": 8,
+    "spacing_grid_vertical": 8,
+    "animations_reveal_on_scroll": true,
+    "animations_hover_elements": "none",
+    "buttons_border_thickness": 1,
+    "buttons_border_opacity": 100,
+    "buttons_radius": 0,
+    "buttons_shadow_opacity": 0,
+    "buttons_shadow_horizontal_offset": 0,
+    "buttons_shadow_vertical_offset": 4,
+    "buttons_shadow_blur": 5,
+    "variant_pills_border_thickness": 1,
+    "variant_pills_border_opacity": 55,
+    "variant_pills_radius": 40,
+    "variant_pills_shadow_opacity": 0,
+    "variant_pills_shadow_horizontal_offset": 0,
+    "variant_pills_shadow_vertical_offset": 4,
+    "variant_pills_shadow_blur": 5,
+    "inputs_border_thickness": 1,
+    "inputs_border_opacity": 55,
+    "inputs_radius": 0,
+    "inputs_shadow_opacity": 0,
+    "inputs_shadow_horizontal_offset": 0,
+    "inputs_shadow_vertical_offset": 4,
+    "inputs_shadow_blur": 5,
+    "card_style": "standard",
+    "card_image_padding": 0,
+    "card_text_alignment": "left",
+    "card_color_scheme": "background-2",
+    "card_border_thickness": 0,
+    "card_border_opacity": 10,
+    "card_corner_radius": 0,
+    "card_shadow_opacity": 0,
+    "card_shadow_horizontal_offset": 0,
+    "card_shadow_vertical_offset": 4,
+    "card_shadow_blur": 5,
+    "collection_card_style": "standard",
+    "collection_card_image_padding": 0,
+    "collection_card_text_alignment": "left",
+    "collection_card_color_scheme": "background-2",
+    "collection_card_border_thickness": 0,
+    "collection_card_border_opacity": 10,
+    "collection_card_corner_radius": 0,
+    "collection_card_shadow_opacity": 0,
+    "collection_card_shadow_horizontal_offset": 0,
+    "collection_card_shadow_vertical_offset": 4,
+    "collection_card_shadow_blur": 5,
+    "blog_card_style": "standard",
+    "blog_card_image_padding": 0,
+    "blog_card_text_alignment": "left",
+    "blog_card_color_scheme": "background-2",
+    "blog_card_border_thickness": 0,
+    "blog_card_border_opacity": 10,
+    "blog_card_corner_radius": 0,
+    "blog_card_shadow_opacity": 0,
+    "blog_card_shadow_horizontal_offset": 0,
+    "blog_card_shadow_vertical_offset": 4,
+    "blog_card_shadow_blur": 5,
+    "text_boxes_border_thickness": 0,
+    "text_boxes_border_opacity": 10,
+    "text_boxes_radius": 0,
+    "text_boxes_shadow_opacity": 0,
+    "text_boxes_shadow_horizontal_offset": 0,
+    "text_boxes_shadow_vertical_offset": 4,
+    "text_boxes_shadow_blur": 5,
+    "media_border_thickness": 1,
+    "media_border_opacity": 5,
+    "media_radius": 0,
+    "media_shadow_opacity": 0,
+    "media_shadow_horizontal_offset": 0,
+    "media_shadow_vertical_offset": 4,
+    "media_shadow_blur": 5,
+    "popup_border_thickness": 1,
+    "popup_border_opacity": 10,
+    "popup_corner_radius": 0,
+    "popup_shadow_opacity": 5,
+    "popup_shadow_horizontal_offset": 0,
+    "popup_shadow_vertical_offset": 4,
+    "popup_shadow_blur": 5,
+    "drawer_border_thickness": 1,
+    "drawer_border_opacity": 10,
+    "drawer_shadow_opacity": 0,
+    "drawer_shadow_horizontal_offset": 0,
+    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_blur": 5,
+    "badge_position": "bottom left",
+    "badge_corner_radius": 40,
+    "sale_badge_color_scheme": "accent-2",
+    "sold_out_badge_color_scheme": "inverse",
+    "brand_headline": "",
+    "brand_description": "<p><\/p>",
+    "brand_image_width": 100,
+    "social_facebook_link": "",
+    "social_instagram_link": "",
+    "social_youtube_link": "",
+    "social_tiktok_link": "",
+    "social_twitter_link": "",
+    "social_snapchat_link": "",
+    "social_pinterest_link": "",
+    "social_tumblr_link": "",
+    "social_vimeo_link": "",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "currency_code_enabled": true,
+    "cart_type": "drawer",
+    "show_vendor": false,
+    "show_cart_note": false,
+    "cart_drawer_collection": "",
+    "social_facebook": "https:\/\/www.facebook.com\/freebeatfit",
+    "social_twitter": "https:\/\/twitter.com\/freebeat10",
+    "social_instagram": "https:\/\/www.instagram.com\/freebeatfit\/",
+    "social_youtube": "https:\/\/www.youtube.com\/channel\/UCSob0frzoq6jUnbiMj-jZow",
+    "bike_use_discount_price": false,
+    "sections": {
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "color_scheme": "background-1"
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {
+          "color_scheme": "background-1"
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "blocks": {
+          "8733b0c6-d12c-4f6f-8231-ad0b4f961e18": {
+            "type": "scrollBarImg",
+            "disabled": true,
+            "settings": {
+              "announcement_link": "shopify:\/\/collections\/bikes",
+              "announcement_offer_mob_img": "shopify:\/\/shop_images\/freebeatXCeltics-Mobile.jpg"
+            }
+          },
+          "1dc7421b-7483-4c9c-9523-dcded812e86f": {
+            "type": "scrollBar",
+            "disabled": true,
+            "settings": {
+              "announcement_text_color": "#ffffff",
+              "announcement_link": "shopify:\/\/collections\/bikes",
+              "announcement_text": "<p>Klarna Financing with 24 months, 0% APR. <a href=\"\/collections\/bikes\" title=\"Exercise Bike | Indoor Cycling & Spin Bike | freebeat™\">Get Yours Now.<\/a><\/p>",
+              "announcement_text_mobile": "<p>Klarna Financing with 24 months, 0% APR. <a href=\"\/collections\/bikes\" title=\"Exercise Bike | Indoor Cycling & Spin Bike | freebeat™\">Get Yours Now.<\/a><\/p>"
+            }
+          },
+          "27d353ba-06bf-4623-b52c-247b46227143": {
+            "type": "scrollBar",
+            "settings": {
+              "announcement_text_color": "#ffffff",
+              "announcement_link": "shopify:\/\/collections\/bikes-sale",
+              "announcement_text": "<p>BLACK FRIDAY SUPER SALE | UP TO $300 OFF<\/p>",
+              "announcement_text_mobile": "<p>BLACK FRIDAY SUPER SALE<\/p><p>UP TO $300 OFF<\/p>"
+            }
+          },
+          "9165fab7-70ca-4a02-b8e2-fd71e3b092a0": {
+            "type": "scrollBar",
+            "disabled": true,
+            "settings": {
+              "announcement_text_color": "#ffffff",
+              "announcement_link": "shopify:\/\/products\/morphrover-2-in-1-ebike",
+              "announcement_text": "<p>New Launch Deal: Save $300 on MorphRover eBike<\/p>",
+              "announcement_text_mobile": "<p>New Launch Deal<\/p><p>Save $300 on MorphRover eBike<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "8733b0c6-d12c-4f6f-8231-ad0b4f961e18",
+          "1dc7421b-7483-4c9c-9523-dcded812e86f",
+          "27d353ba-06bf-4623-b52c-247b46227143",
+          "9165fab7-70ca-4a02-b8e2-fd71e3b092a0"
+        ],
+        "settings": {
+          "enable_bar": true,
+          "delear_address_link": "https:\/\/www.freebeatfit.com\/pages\/ebike-shop-dealer-locator",
+          "is_view_offer": true,
+          "is_show_two_line": true,
+          "view_offer_text": "VIEW OFFERS"
+        }
+      },
+      "annoucement-offer": {
+        "type": "annoucement-offer",
+        "blocks": {
+          "34a36482-a84e-4b82-a65b-48b270d033e8": {
+            "type": "Offers",
+            "disabled": true,
+            "settings": {
+              "annou_link": "shopify:\/\/collections\/bikes",
+              "annou_text_position": "annou-left-center",
+              "annou_title_color": "#ffffff",
+              "annou_title": "<p>Klarna Financing<\/p><p><em>24 Months<\/em><\/p><p><em>0% APR<\/em><\/p><p>With all freebeat bikes<\/p>",
+              "annou_color_italic": "#a1f200",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": ""
+            }
+          },
+          "2498b8ce-69aa-43b9-bcfb-7f48fed5130f": {
+            "type": "Offers",
+            "settings": {
+              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-LitBike-AuroraPink-BlackFriday-231101.webp",
+              "annou_link": "shopify:\/\/products\/lit-bike-klarna-limited-edition",
+              "annou_text_position": "annou-left-center",
+              "annou_title_color": "#ffffff",
+              "annou_title": "<p>LOWEST PRICE<\/p><p>OF THE YEAR<\/p><p><em>$300 OFF<\/em><\/p><p>LIT BIKE PINK!<\/p>",
+              "annou_color_italic": "#a1f200",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "<p>+ Free $25 Dumbbell Set<\/p><p>+ $50 Amazon Gift Card<\/p>",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": ""
+            }
+          },
+          "d709f017-355e-4f72-b0f4-8e5c878cecdf": {
+            "type": "Offers",
+            "settings": {
+              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-LitBike-MoonbowBeige-BlackFriday-231101.webp",
+              "annou_link": "shopify:\/\/products\/lit-bike-moonbow-beige",
+              "annou_text_position": "annou-left-center",
+              "annou_title_color": "#ffffff",
+              "annou_title": "<p>BLACK FRIDAY<\/p><p>SUPER SALE<\/p><p><em>$250 OFF<\/em><\/p><p>LIT BIKE!<\/p>",
+              "annou_color_italic": "#a1f200",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "<p>+ Free $25 Dumbbell Set<\/p><p>+ $50 Amazon Gift Card<\/p>",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": ""
+            }
+          },
+          "344b6397-d788-479b-b523-371a21bd5909": {
+            "type": "Offers",
+            "settings": {
+              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-BoomBike-SnowpeakWhite-BlackFriday-231101.webp",
+              "annou_link": "shopify:\/\/products\/boom-bike-arctic-white",
+              "annou_text_position": "annou-left-center",
+              "annou_title_color": "#ffffff",
+              "annou_title": "<p>BLACK FRIDAY<\/p><p>SUPER SALE<\/p><p><em>$50 OFF<\/em><\/p><p>BOOM BIKE!<\/p>",
+              "annou_color_italic": "#a1f200",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "<p>+ Free $25 Dumbbell Set<\/p><p>+ $25 Amazon Gift Card<\/p>",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": ""
+            }
+          },
+          "d9f08c97-1f36-4fa7-a7a7-17419c80a076": {
+            "type": "Offers",
+            "settings": {
+              "annou_link": "shopify:\/\/products\/morphrover-2-in-1-ebike",
+              "annou_text_position": "annou-left-center",
+              "annou_title_color": "#ffffff",
+              "annou_title": "<p>BLACK FRIDAY<\/p><p>SUPER SALE<\/p><p><em>$300 OFF<\/em><\/p><p>MORPHROVER EBIKE!<\/p>",
+              "annou_color_italic": "#a1f200",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": "<ul><li>Free $133 Bundled Accessories<\/li><li>$50 Amazon Gift Card<\/li><li>Free professional assembly and fulfillment<\/li><\/ul>"
+            }
+          },
+          "3c5c6c7b-bb9a-4a28-a77a-3fb01ed8c672": {
+            "type": "Offers",
+            "settings": {
+              "annou_link": "shopify:\/\/products\/morphrover-2-in-1-ebike",
+              "annou_text_position": "annou-left-center",
+              "annou_title_color": "#ffffff",
+              "annou_title": "<p>BLACK FRIDAY<\/p><p>SUPER SALE<\/p><p><em>EXTRA $300 OFF!<\/em><\/p>",
+              "annou_color_italic": "#a1f200",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "<p>Buy two eBikes in one order<\/p><p>Coupon Code: BUYTWO<\/p>",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": ""
+            }
+          },
+          "cf88fa9c-b2dc-4b51-abcc-78ec6b32dd4f": {
+            "type": "Offers",
+            "settings": {
+              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-FreeShipping-BlackFriday-231101.webp",
+              "annou_link": "shopify:\/\/collections\/bikes-sale",
+              "annou_text_position": "annou-left-center",
+              "annou_title_color": "#ffffff",
+              "annou_title": "<p><em>FREE <\/em><\/p><p><em>SHIPPING <\/em><\/p>",
+              "annou_color_italic": "#a1f200",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "<p>On all bikes<\/p>",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": ""
+            }
+          },
+          "163f2f56-e13b-4272-a9c7-0c3556a33acf": {
+            "type": "Offers",
+            "disabled": true,
+            "settings": {
+              "annou_link": "",
+              "annou_text_position": "announ-left-top",
+              "annou_title_color": "#ffffff",
+              "annou_title": "",
+              "annou_color_italic": "#ffffff",
+              "annou_title_font_size_pc": 20,
+              "annou_title_font_size_mob": 16,
+              "annou_desc_color": "#ffffff",
+              "annou_desc": "",
+              "additional_desc_color": "#ffffff",
+              "additional_desc": ""
+            }
+          }
+        },
+        "block_order": [
+          "34a36482-a84e-4b82-a65b-48b270d033e8",
+          "2498b8ce-69aa-43b9-bcfb-7f48fed5130f",
+          "d709f017-355e-4f72-b0f4-8e5c878cecdf",
+          "344b6397-d788-479b-b523-371a21bd5909",
+          "d9f08c97-1f36-4fa7-a7a7-17419c80a076",
+          "3c5c6c7b-bb9a-4a28-a77a-3fb01ed8c672",
+          "cf88fa9c-b2dc-4b51-abcc-78ec6b32dd4f",
+          "163f2f56-e13b-4272-a9c7-0c3556a33acf"
+        ],
+        "settings": {
+          "an_offer_title": "YOUR OFFERS"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "7eb9ea16-e1c6-4855-9de8-7e9927b8d4d2": {
+            "type": "adv_sapce",
+            "settings": {
+              "text_color": "#ffffff",
+              "adv_btn_url": "shopify:\/\/collections\/bikes-sale",
+              "adv_name1": "",
+              "adv_name2": "<p>BLACK FRIDAY SUPER SALE IS LIVE<\/p>",
+              "adv_name3": ""
+            }
+          },
+          "55d11cf4-0b4c-4b58-aca2-d8066932e8b9": {
+            "type": "ebike_collection",
+            "settings": {
+              "bike_name_desc": "Shop All Bikes",
+              "bike_btn_url": "shopify:\/\/collections\/bikes"
+            }
+          },
+          "e8b0caf1-9316-4a40-b27a-ac6993701df7": {
+            "type": "ebike_collection",
+            "settings": {
+              "bike_name_desc": "Black Friday Sale",
+              "bike_btn_url": "shopify:\/\/collections\/bikes-sale"
+            }
+          },
+          "5ddf3cff-da54-4b46-8cab-faa03bdd3e24": {
+            "type": "ebike_collection",
+            "disabled": true,
+            "settings": {
+              "bike_name_desc": "Sale",
+              "bike_btn_url": ""
+            }
+          },
+          "9c3292f2-8305-432a-a042-c38ff0ce301e": {
+            "type": "ebike_collection",
+            "disabled": true,
+            "settings": {
+              "bike_name_desc": "Financing Acailable",
+              "bike_btn_url": ""
+            }
+          },
+          "a17cf5f9-7f6e-467e-bab0-e551994b8a35": {
+            "type": "ebike_collection",
+            "disabled": true,
+            "settings": {
+              "bike_name_desc": "Gift Cards",
+              "bike_btn_url": ""
+            }
+          },
+          "f7b2b286-b108-4fb0-8a6e-73f1fcd6bc00": {
+            "type": "ebike_collection",
+            "disabled": true,
+            "settings": {
+              "bike_name_desc": "Compare Ebikes",
+              "bike_btn_url": ""
+            }
+          },
+          "d43a46f9-6a76-4516-be63-135ae7cef2af": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "1",
+              "bike_color": "#e788a1",
+              "bike_border_color": "#e788a1",
+              "bike_product": "lit-bike-klarna-limited-edition",
+              "bike_name_1": "Lit Bike",
+              "bike_name_2": "Aurora Pink",
+              "bike_name_desc": "Premium Home Gym with Gamified Techs",
+              "bike_btn_url": ""
+            }
+          },
+          "c0a719a2-5fa5-47a7-92a6-c19a6fa4fb8a": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "1",
+              "bike_color": "#ecd0b5",
+              "bike_border_color": "#ecd0b5",
+              "bike_product": "lit-bike-moonbow-beige",
+              "bike_name_1": "Lit Bike",
+              "bike_name_2": "Moonbow Beige",
+              "bike_name_desc": "Premium Home Gym with Gamified Techs",
+              "bike_btn_url": ""
+            }
+          },
+          "bd49381d-f2c0-4f0b-bc95-4c0e8bcbbf4c": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "1",
+              "bike_color": "#ffffff",
+              "bike_border_color": "#1c1b1b",
+              "bike_product": "lit-bike-snowpeak-white",
+              "bike_name_1": "Lit Bike",
+              "bike_name_2": "Snowpeak White",
+              "bike_name_desc": "Premium Home Gym with Gamified Techs",
+              "bike_btn_url": ""
+            }
+          },
+          "54c32780-bf7c-46dc-a342-856455dc30a7": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "1",
+              "bike_color": "#000000",
+              "bike_border_color": "#000000",
+              "bike_product": "lit-bike",
+              "bike_name_1": "Lit Bike",
+              "bike_name_2": "Space Black",
+              "bike_name_desc": "Premium Home Gym with Gamified Techs",
+              "bike_btn_url": ""
+            }
+          },
+          "81609f35-3b4c-4cd0-a710-a9b5cfac2bbc": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "2",
+              "bike_color": "#ffffff",
+              "bike_border_color": "#000000",
+              "bike_product": "boom-bike-arctic-white",
+              "bike_name_1": "Boom Bike",
+              "bike_name_2": "Arctic White",
+              "bike_name_desc": "Value-Packed Full Body Workout",
+              "bike_btn_url": ""
+            }
+          },
+          "12eb321c-dfdf-444a-b832-c7e19437d293": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "2",
+              "bike_color": "#797d80",
+              "bike_border_color": "#797d80",
+              "bike_product": "boom-bike-mist-grey",
+              "bike_name_1": "Boom Bike",
+              "bike_name_2": "Mist Grey",
+              "bike_name_desc": "Value-Packed Full Body Workout",
+              "bike_btn_url": ""
+            }
+          },
+          "0bc55481-f502-4792-a20c-43a668e842a5": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "2",
+              "bike_color": "#faf297",
+              "bike_border_color": "#faf297",
+              "bike_product": "boom-bike-tuscany-yellow",
+              "bike_name_1": "Boom Bike",
+              "bike_name_2": "Tuscany Yellow",
+              "bike_name_desc": "Value-Packed Full Body Workout",
+              "bike_btn_url": ""
+            }
+          },
+          "6c610d19-9a51-441c-b1c0-1a64f3ad75c8": {
+            "type": "goods",
+            "settings": {
+              "introcardtype": "3",
+              "bike_color": "#000000",
+              "bike_border_color": "#000000",
+              "bike_product": "morphrover-2-in-1-ebike",
+              "bike_name_1": "MorphRover",
+              "bike_name_2": "",
+              "bike_name_desc": "World's 1st Allroad 2-in-1 Fat Tire eBike",
+              "bike_btn_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "7eb9ea16-e1c6-4855-9de8-7e9927b8d4d2",
+          "55d11cf4-0b4c-4b58-aca2-d8066932e8b9",
+          "e8b0caf1-9316-4a40-b27a-ac6993701df7",
+          "5ddf3cff-da54-4b46-8cab-faa03bdd3e24",
+          "9c3292f2-8305-432a-a042-c38ff0ce301e",
+          "a17cf5f9-7f6e-467e-bab0-e551994b8a35",
+          "f7b2b286-b108-4fb0-8a6e-73f1fcd6bc00",
+          "d43a46f9-6a76-4516-be63-135ae7cef2af",
+          "c0a719a2-5fa5-47a7-92a6-c19a6fa4fb8a",
+          "bd49381d-f2c0-4f0b-bc95-4c0e8bcbbf4c",
+          "54c32780-bf7c-46dc-a342-856455dc30a7",
+          "81609f35-3b4c-4cd0-a710-a9b5cfac2bbc",
+          "12eb321c-dfdf-444a-b832-c7e19437d293",
+          "0bc55481-f502-4792-a20c-43a668e842a5",
+          "6c610d19-9a51-441c-b1c0-1a64f3ad75c8"
+        ],
+        "settings": {
+          "navigation_menu_pc": "main-menu",
+          "show_our_ebike": true,
+          "our_ebike_desc": "<p>Tour our bike<br\/>Collection<\/p>",
+          "show_adv": true
+        }
+      },
+      "sidebar-menu": {
+        "type": "sidebar-menu",
+        "blocks": {
+          "95d33d85-4b3d-4a93-8be3-171b87bcd2a7": {
+            "type": "adv_sapce",
+            "settings": {
+              "text_color": "#ffffff",
+              "adv_btn_url": "shopify:\/\/collections\/bikes-sale",
+              "adv_name1": "",
+              "adv_name2": "<p>BLACK FRIDAY SUPER SALE IS LIVE<\/p>",
+              "adv_name3": ""
+            }
+          }
+        },
+        "block_order": [
+          "95d33d85-4b3d-4a93-8be3-171b87bcd2a7"
+        ],
+        "settings": {
+          "primary_menu": "submenu",
+          "secondary_menu": "",
+          "show_social_media": true,
+          "lit_bike_discount": "UP TO $300 OFF",
+          "boom_bike_discount": "$50 OFF",
+          "e_bike_discount": "$300 OFF",
+          "show_adv": true
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "color_schemes": {
+      "background-1": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "background-2": {
+        "settings": {
+          "background": "#f3f3f3",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#f3f3f3",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "inverse": {
+        "settings": {
+          "background": "#242833",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#000000",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "accent-1": {
+        "settings": {
+          "background": "#121212",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#121212",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "accent-2": {
+        "settings": {
+          "background": "#334fb4",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#334fb4",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "logo_width": 90,
+      "color_schemes": {
+        "background-1": {
+          "settings": {
+            "background": "#FFFFFF",
+            "background_gradient": "",
+            "text": "#121212",
+            "button": "#121212",
+            "button_label": "#FFFFFF",
+            "secondary_button_label": "#121212",
+            "shadow": "#121212"
+          }
+        },
+        "background-2": {
+          "settings": {
+            "background": "#F3F3F3",
+            "background_gradient": "",
+            "text": "#121212",
+            "button": "#121212",
+            "button_label": "#F3F3F3",
+            "secondary_button_label": "#121212",
+            "shadow": "#121212"
+          }
+        },
+        "inverse": {
+          "settings": {
+            "background": "#242833",
+            "background_gradient": "",
+            "text": "#FFFFFF",
+            "button": "#FFFFFF",
+            "button_label": "#000000",
+            "secondary_button_label": "#FFFFFF",
+            "shadow": "#121212"
+          }
+        },
+        "accent-1": {
+          "settings": {
+            "background": "#121212",
+            "background_gradient": "",
+            "text": "#FFFFFF",
+            "button": "#FFFFFF",
+            "button_label": "#121212",
+            "secondary_button_label": "#FFFFFF",
+            "shadow": "#121212"
+          }
+        },
+        "accent-2": {
+          "settings": {
+            "background": "#334FB4",
+            "background_gradient": "",
+            "text": "#FFFFFF",
+            "button": "#FFFFFF",
+            "button_label": "#334FB4",
+            "secondary_button_label": "#FFFFFF",
+            "shadow": "#121212"
+          }
+        }
+      },
+      "type_header_font": "assistant_n4",
+      "heading_scale": 100,
+      "type_body_font": "assistant_n4",
+      "body_scale": 100,
+      "page_width": 1200,
+      "spacing_sections": 0,
+      "spacing_grid_horizontal": 8,
+      "spacing_grid_vertical": 8,
+      "animations_reveal_on_scroll": true,
+      "animations_hover_elements": "none",
+      "buttons_border_thickness": 1,
+      "buttons_border_opacity": 100,
+      "buttons_radius": 0,
+      "buttons_shadow_opacity": 0,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "buttons_shadow_blur": 5,
+      "variant_pills_border_thickness": 1,
+      "variant_pills_border_opacity": 55,
+      "variant_pills_radius": 40,
+      "variant_pills_shadow_opacity": 0,
+      "variant_pills_shadow_horizontal_offset": 0,
+      "variant_pills_shadow_vertical_offset": 4,
+      "variant_pills_shadow_blur": 5,
+      "inputs_border_thickness": 1,
+      "inputs_border_opacity": 55,
+      "inputs_radius": 0,
+      "inputs_shadow_opacity": 0,
+      "inputs_shadow_horizontal_offset": 0,
+      "inputs_shadow_vertical_offset": 4,
+      "inputs_shadow_blur": 5,
+      "card_style": "standard",
+      "card_image_padding": 0,
+      "card_text_alignment": "left",
+      "card_color_scheme": "background-2",
+      "card_border_thickness": 0,
+      "card_border_opacity": 10,
+      "card_corner_radius": 0,
+      "card_shadow_opacity": 0,
+      "card_shadow_horizontal_offset": 0,
+      "card_shadow_vertical_offset": 4,
+      "card_shadow_blur": 5,
+      "collection_card_style": "standard",
+      "collection_card_image_padding": 0,
+      "collection_card_text_alignment": "left",
+      "collection_card_color_scheme": "background-2",
+      "collection_card_border_thickness": 0,
+      "collection_card_border_opacity": 10,
+      "collection_card_corner_radius": 0,
+      "collection_card_shadow_opacity": 0,
+      "collection_card_shadow_horizontal_offset": 0,
+      "collection_card_shadow_vertical_offset": 4,
+      "collection_card_shadow_blur": 5,
+      "blog_card_style": "standard",
+      "blog_card_image_padding": 0,
+      "blog_card_text_alignment": "left",
+      "blog_card_color_scheme": "background-2",
+      "blog_card_border_thickness": 0,
+      "blog_card_border_opacity": 10,
+      "blog_card_corner_radius": 0,
+      "blog_card_shadow_opacity": 0,
+      "blog_card_shadow_horizontal_offset": 0,
+      "blog_card_shadow_vertical_offset": 4,
+      "blog_card_shadow_blur": 5,
+      "text_boxes_border_thickness": 0,
+      "text_boxes_border_opacity": 10,
+      "text_boxes_radius": 0,
+      "text_boxes_shadow_opacity": 0,
+      "text_boxes_shadow_horizontal_offset": 0,
+      "text_boxes_shadow_vertical_offset": 4,
+      "text_boxes_shadow_blur": 5,
+      "media_border_thickness": 1,
+      "media_border_opacity": 5,
+      "media_radius": 0,
+      "media_shadow_opacity": 0,
+      "media_shadow_horizontal_offset": 0,
+      "media_shadow_vertical_offset": 4,
+      "media_shadow_blur": 5,
+      "popup_border_thickness": 1,
+      "popup_border_opacity": 10,
+      "popup_corner_radius": 0,
+      "popup_shadow_opacity": 5,
+      "popup_shadow_horizontal_offset": 0,
+      "popup_shadow_vertical_offset": 4,
+      "popup_shadow_blur": 5,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "badge_position": "bottom left",
+      "badge_corner_radius": 40,
+      "sale_badge_color_scheme": "accent-2",
+      "sold_out_badge_color_scheme": "inverse",
+      "brand_headline": "",
+      "brand_description": "<p><\/p>",
+      "brand_image_width": 100,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_show_price": false,
+      "currency_code_enabled": true,
+      "cart_type": "drawer",
+      "show_vendor": false,
+      "show_cart_note": false,
+      "cart_drawer_collection": "",
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        }
+      }
+    }
+  }
+}

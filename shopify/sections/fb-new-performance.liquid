@@ -1,0 +1,112 @@
+{%- assign newPerformance = section.blocks | where: 'type', 'newSwiperContent' | first -%}
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<div class="fb-new-performance-section flex w-full flex-col px-5 fb-md:justify-center fb-sm:px-10 fb-sm:items-center fb-md:py-20 fb-md:mx-auto fb-md:px-0 fb-md:max-w-75r" id="section-{{ section.id }}">
+  <div class="px-3r text-center  fb-md:text-32 text-20 font-bold uppercase text-121212">{{ section.settings.content_title }}</div>
+  <div class="w-full relative mt-8 pb-3 flex fb-sm:justify-between snap-x snap-mandatory gap-5  overflow-x-auto fb-md:mt-10 fb-md:gap-10">
+    {% for item in section.blocks %}
+      <div class="fb-md:w-22r w-15r shrink-0 snap-start pb-3 flex flex-col">
+        <div class="flex flex-row items-center justify-start fb-md:flex-col fb-md:justify-center">
+          {% assign imgPiker = item.settings.icon_img_choose | img_url: '' %}
+          <img
+            class="h-4 w-4 fb-md:w-3r fb-md:h-3r object-contain"
+            loading="lazy"
+            src="{{ imgPiker  }}"
+            alt="{{ item.settings.icon_img_choose.alt | escape }}"
+          >
+          <div class="fb-md:ml-0 fb-md:text-20 fb-md:mt-6 ml-2 text-16 font-bold text-121212">{{ item.settings.swiperTitle }}</div>
+        </div>
+        <div class="h-auto fb-md:py-4 fb-md:text-16 fb-md:text-center flex-auto w-full py-3 text-14 text-121212">{{ item.settings.swiperDes }}</div>
+
+        <a
+          class="text-14 fb-md:text-16 fb-md:text-center font-bold uppercase text-00cc45 underline"
+          {% if forloop.last %}
+            href="javascript:void(0);" onclick="TidioShowFun()"
+          {% else %}
+            href="{{item.settings.swiper_url}}" 
+          {% endif %}
+        >
+          {{ item.settings.linkDes }}
+          <span>></span>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FbNewPerformance",
+  "presets": [
+    {
+      "name": "fb-new-performance",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "content_title",
+      "label": "Content Title",
+      "default": "Purchase Today, Worry-Free"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "newPerformance",
+      "name": "New Performance",
+      "settings": [
+        {
+          "type": "url",
+          "id": "swiper_url",
+          "label": "Swiper URL"
+        },
+        {
+          "type": "text",
+          "id": "swiperTitle",
+          "label": "Swiper Title"
+        },
+        {
+          "type": "text",
+          "id": "swiperDes",
+          "label": "Swiper Description"
+        },
+        {
+          "type": "text",
+          "id": "linkDes",
+          "label": "Link Des"
+        },
+        {
+          "type": "url",
+          "id": "img_url",
+          "label": "Img URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_img_choose",
+          "label": "Choose Icon Image"
+        },
+        {
+          "type": "color",
+          "id": "hands_top_onecolor",
+          "label": "one text color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "hands_top_twocolor",
+          "label": "one two color",
+          "default": "rgba(29, 29, 31, 0.8)"
+        },
+        {
+          "type": "color",
+          "id": "hands_learn_more_color",
+          "label": "learn more color",
+          "default": "#fff"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

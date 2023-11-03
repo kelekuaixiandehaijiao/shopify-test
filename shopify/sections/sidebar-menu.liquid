@@ -1,0 +1,487 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- assign main_menu_handle = section.settings.primary_menu | default: 'main-menu' -%}
+{%- assign main_menu = linklists[main_menu_handle] -%}
+{% capture bike_des %}mt-[26px] mb-[16px] text-h-14 font-semibold{% endcapture %}
+{% capture u_des_center %}w-[161px] flex flex-col items-start justify-start ml-5 mr-5{% endcapture %}
+{% capture dom_circle %}w-2 h-2 rounded-full mr-[6px]{% endcapture %}
+{% capture u_desc %}w-[161px] text-12 h-[28px] text-[#8e8d8d] mt-[6px] font-normal{% endcapture %}
+{% capture Collapsible__Inner %}block invisible h-0{% endcapture %}
+{%- capture sec_color -%}text-[rgba(255,255,255,0.5)] text-h-14{%- endcapture -%}
+{% comment %} {% capture Collapsible__Plus %}absolute r-0 top-[calc(50%-5.5px)] w-[11px]{% endcapture %} {% endcomment %}
+<section
+  id="sidebar-menu"
+  class="SidebarMenu Drawer Drawer--fromLeft bg-[#1c1b1b] w-[310px]"
+  aria-hidden="true"
+  data-section-id="{{ section.id }}"
+  data-section-type="sidebar-menu"
+>
+  <header class="Drawer__Header w-full h-15 relative" data-drawer-animated-left>
+    <button
+      class="Icon-Wrapper--clickable Drawer__Close text-gray-50 fb-y-translate left-[18px]"
+      data-action="close-drawer"
+      data-drawer-id="sidebar-menu"
+    >
+      <svg class="Icon Icon--close w-[15px] h-[15px] stroke-[1.25px]" role="presentation" viewBox="0 0 16 14">
+        <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+      </svg>
+    </button>
+  </header>
+
+  <div class="Drawer__Content">
+    <div class="Drawer__Main" data-drawer-animated-left data-scrollable>
+      <div class="Drawer__Container w-full pl-[18px] pr-6">
+        <nav
+          class="SidebarMenu__Nav SidebarMenu__Nav--primary text-white text-[15px] font-bold"
+          aria-label="{{ 'header.navigation.sidebar_title' | t }}"
+        >
+          <div class="Collapsible border-b-[0.5px] border-[rgba(255,255,255,0.3)] bg-[#1c1b1b] relative z-2">
+            <a href="/" class="Collapsible__Button block relative w-full pt-5 pb-2.5">HOME</a>
+          </div>
+          {%- for link in main_menu.links -%}
+            <div class="Collapsible border-b-[0.5px] border-[rgba(255,255,255,0.4)] NewCollapsible bg-[#1c1b1b] relative z-2">
+              {%- if link.links != blank -%}
+                <button
+                  class="Collapsible__Button block relative w-full pt-5 pb-2.5 text-left"
+                  data-action="toggle-collapsible"
+                  {% if link.links != blank %}
+                    aria-expanded="false"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                  <span class="Collapsible__Plus"></span>
+                </button>
+
+                <div class="Collapsible__Inner {{ Collapsible__Inner }}">
+                  <!-- 注意事项，要处理车的名称 -->
+
+                  {%- if link.title contains 'BIKE' -%}
+                    {%- if link.title == 'EXERCISE BIKE' -%}
+                      <div class="Collapsible__Content pb-[18px]">
+                        <div class="u-tips flex items-center justify-start">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_521a45f1-69aa-41cd-8a0b-3d10973194e2.png?v=1686220803"
+                            class="w-4.5 h-[18px] mr-2"
+                            alt="shipping logo"
+                            loading="lazy"
+                          >
+                          <div class="des text-h-12-s font-normal">Delivered in 3-7 business days</div>
+                        </div>
+                        <div class="u-tips flex items-center justify-start mt-3">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_eb729e5f-ae7a-46b5-81dd-8dc532ff25b4.png?v=1686220804"
+                            class="w-4.5 h-[18px] mr-2"
+                            loading="lazy"
+                            alt="freebeat care"
+                          >
+                          <div class="des text-h-12-s font-normal">Give back to charity with every order</div>
+                        </div>
+                        <div class="bike-des {{bike_des}}">Lit Bike</div>
+                        <a href="/products/lit-bike-moonbow-beige">
+                          <div class="Collapsible flex items-center justify-start mt-4 mb-2.5">
+                            <img
+                              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/lit_bike_beige_2x_aad70b0c-cc57-4242-aa9e-d19b53e25082.png?v=1686192650"
+                              alt="beige exercise bike Lit bike"
+                              loading="lazy"
+                              class="u-bike-img w-16 h-16 Image--lazyLoad Image--fadeIn"
+                            >
+                            <div class="u-des-center {{ u_des_center }}">
+                              {%- if section.settings.lit_bike_discount != blank -%}
+                                <div class="text-00cc45 text-h-10 fb-flex-x-start font-medium mb-2">
+                                  <img class="inline w-3 h-3 Image--lazyLoad" data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/sale-img_a24584ad-b8fe-4387-aff2-e82f6dca300c.png?v=1698841697" /> <span class="ml-1">{{ section.settings.lit_bike_discount }}</span>
+                                </div>
+                              {%- endif -%}
+                              <div class="menu-dot-box flex">
+                                <div class="u-menu-dot {{dom_circle}} bg-[#ECD0B5] "></div>
+                                <div class="u-menu-dot {{dom_circle}} bg-white"></div>
+                                <div
+                                  class="u-menu-dot {{dom_circle}} bg-black border border-white"
+                                ></div>
+                                <div class="u-menu-dot {{dom_circle}} bg-[#E788A1]"></div>
+                              </div>
+                              <div class="u-des {{u_desc}}">Premium Home Gym with Gamified Techs</div>
+                            </div>
+                            <img
+                              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1_2x_f6b98d0d-be9a-4d1b-a71d-fc67d00e05b2.png?v=1686220804"
+                              alt="right arrow"
+                              class="u-right-icon w-[11px] h-[11px] Image--lazyLoad Image--fadeIn"
+                            >
+                          </div>
+                        </a>
+
+                        <div class="bike-des {{bike_des}}">Boom Bike</div>
+                        <a href="/products/boom-bike-arctic-white">
+                          <div class="Collapsible flex items-center justify-start mt-4 mb-2.5">
+                            <img
+                              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/boom_bike_white_2x_ceae674d-23bf-42ce-8150-cb510806cde2.png?v=1686192650"
+                              alt="freebeat Boom Bike White stationary bike"
+                              class="u-bike-img w-16 h-16 Image--lazyLoad Image--fadeIn"
+                            >
+                            <div class="u-des-center {{ u_des_center }}">
+                              {%- if section.settings.boom_bike_discount != blank -%}
+                                <div class="text-00cc45 text-h-10 fb-flex-x-start font-medium mb-2">
+                                  <img class="inline w-3 h-3 Image--lazyLoad" data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/sale-img_a24584ad-b8fe-4387-aff2-e82f6dca300c.png?v=1698841697" /> <span class="ml-1">{{ section.settings.boom_bike_discount }}</span>
+                                </div>
+                              {%- endif -%}
+                              <div class="menu-dot-box flex">
+                                <div class="u-menu-dot {{dom_circle}} bg-white"></div>
+                                <div class="u-menu-dot {{dom_circle}} bg-[#797D80]"></div>
+                                <div class="u-menu-dot {{dom_circle}} bg-[#FAF297]"></div>
+                              </div>
+                              <div class="u-des {{u_desc}}">Value-Packed Full Body Workout</div>
+                            </div>
+                            <img
+                              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1_2x_f6b98d0d-be9a-4d1b-a71d-fc67d00e05b2.png?v=1686220804"
+                              alt="right arrow"
+                              class="u-right-icon w-[11px] h-[11px] Image--lazyLoad Image--fadeIn"
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    {%- else -%}
+                      <div class="Collapsible__Content pb-[18px]">
+                        <div class="u-tips flex items-center justify-start mt-3">
+                          <img
+                            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_521a45f1-69aa-41cd-8a0b-3d10973194e2.png?v=1686220803"
+                            class="w-4.5 h-[18px] mr-2 Image--lazyLoad Image--fadeIn"
+                            alt="freebeat shipping"
+                          >
+                          <div class="des text-h-12-s font-normal">Delivered in 3-7 business days</div>
+                        </div>
+                        <div class="u-tips flex items-center justify-start mt-3">
+                          <img
+                            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_eb729e5f-ae7a-46b5-81dd-8dc532ff25b4.png?v=1686220804"
+                            class="w-4.5 h-[18px] mr-2 Image--lazyLoad Image--fadeIn"
+                            loading="lazy"
+                            alt="freebeat care"
+                          >
+                          <div class="des text-h-12-s font-normal">Give back to charity with every order</div>
+                        </div>
+                        <div class="bike-des {{bike_des}}">MorphRover</div>
+                        <a href="/products/morphrover-2-in-1-ebike?variant=43286594912441">
+                          <div class="Collapsible flex items-center justify-start mt-4 mb-2.5">
+                            <img
+                              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Mask_group_2x_1_37c60fea-7be9-4939-aab8-9d32ea412c48.png?v=1691565878"
+                              alt="freebeat ebike black morphrover ebike"
+                              loading="lazy"
+                              class="u-bike-img w-16 h-16"
+                            >
+                            <div class="u-des-center {{ u_des_center }}">
+                              {%- if section.settings.e_bike_discount != blank -%}
+                                <div class="text-00cc45 text-h-10 fb-flex-x-start font-medium mb-2">
+                                  <img class="inline w-3 h-3 Image--lazyLoad" data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/sale-img_a24584ad-b8fe-4387-aff2-e82f6dca300c.png?v=1698841697" /> <span class="ml-1">{{ section.settings.e_bike_discount }}</span>
+                                </div>
+                              {%- endif -%}
+                              <div class="menu-dot-box flex">
+                                <div
+                                  class="u-menu-dot {{dom_circle}} bg-black border border-white"
+                                ></div>
+                                <div class="u-menu-dot {{dom_circle}} bg-[#8A9B8E]"></div>
+                                <div class="u-menu-dot {{dom_circle}} bg-[#DBD5CD]"></div>
+                              </div>
+                              <div class="u-des {{u_desc}}">World's Ist All-Terrain 2-in-1 Fat Tire eBike</div>
+                            </div>
+                            <img
+                              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1_2x_f6b98d0d-be9a-4d1b-a71d-fc67d00e05b2.png?v=1686220804"
+                              alt="right arrow"
+                              loading="lazy"
+                              class="u-right-icon w-[11px] h-[11px]"
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    {%- endif -%}
+                  {%- else -%}
+                    <div class="Collapsible__Content pb-[18px]">
+                      {%- for sub_link in link.links -%}
+                        <div class="Collapsible ml-4 overflow-hidden">
+                          {%- if sub_link.links != blank -%}
+                            <button
+                              class="Collapsible__Button  text-left block relative w-full py-1 text-[rgba(255,255,255,0.5)] text-[13px]"
+                              data-action="toggle-collapsible"
+                              {% if sub_link.links != blank %}
+                                aria-expanded="false"
+                              {% endif %}
+                            >
+                              {{- sub_link.title | escape -}}
+                              <span class="Collapsible__Plus"></span>
+                            </button>
+
+                            <div class="Collapsible__Inner {{ Collapsible__Inner }}">
+                              <div class="Collapsible__Content">
+                                <ul class="Linklist Linklist--bordered Linklist--spacingLoose">
+                                  {%- for sub_sub_link in sub_link.links -%}
+                                    <li class="Linklist__Item">
+                                      <a
+                                        href="{{ sub_sub_link.url }}"
+                                        class="Text--subdued block relative w-full py-1 text-[rgba(255,255,255,0.5)] text-[13px]"
+                                      >
+                                        {{- sub_sub_link.title | escape -}}
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              </div>
+                            </div>
+                          {%- else -%}
+                            <a
+                              href="{{ sub_link.url }}"
+                              class="Collapsible__Button block relative w-full py-1 text-[rgba(255,255,255,0.5)] text-[13px]"
+                            >
+                              {{- sub_link.title | escape -}}
+                            </a>
+                          {%- endif -%}
+                        </div>
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- else -%}
+                  {% capture collapsible_button %}
+                    <a href="{{ link.url }}" class="Collapsible__Button block relative w-full pt-5 pb-2.5">
+                      {{ link.title | escape }}
+                    </a>
+                  {% endcapture %}
+                  {% comment %} sale open {% endcomment %}
+                  {% capture collapsible_button2 %}
+                    <a href="{{ link.url }}" class="Collapsible__Button relative w-full pt-5 pb-2.5 text-00cc45 fb-flex-x-start">
+                      <img class="inline w-[15px] h-[15px] Image--lazyLoad" data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/sale-img_a24584ad-b8fe-4387-aff2-e82f6dca300c.png?v=1698841697" /><span class="ml-1">{{ link.title | escape }}</span>
+                    </a>
+                  {% endcapture %}
+                {%- if country_code_var != 'gb' -%}
+                    {%- if link.title contains 'SALE' -%}
+                      {{ collapsible_button2}}
+                    {%- else -%}
+                      {{ collapsible_button }}
+                   {%- endif -%}
+                {%- else -%}
+                  {%- if link.url contains '/collections/accessories'
+                    or link.url contains '/pages/become-a-host'
+                    or link.url contains '/pages/refer-maintain'
+                  -%}
+                  {%- else -%}
+                    {{ collapsible_button }}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </nav>
+
+        {%- assign secondary_menu = linklists[section.settings.secondary_menu] -%}
+
+        <nav class="SidebarMenu__Nav SidebarMenu__Nav--secondary mt-7">
+          <ul class="Linklist Linklist--spacingLoose">
+            {%- for link in secondary_menu.links -%}
+              <li class="Linklist__Item mb-[18px] relative w-full text-left">
+                <a href="{{ link.url }}" class="{{ sec_color }}">{{ link.title | escape }}</a>
+              </li>
+            {%- endfor -%}
+
+            {%- if shop.customer_accounts_enabled -%}
+              <li class="Linklist__Item relative w-full text-left">
+                <a href="{{ routes.account_url }}" class="{{ sec_color }}"> Account </a>
+              </li>
+            {%- endif -%}
+          </ul>
+        </nav>
+        {%- if section.settings.show_adv -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'adv_sapce' -%}
+                <a
+                  class="w-full h-25r my-5 fb-flex-xy-center relative cursor-pointer"
+                  href="{{block.settings.adv_btn_url}}"
+                >
+                  <div class="w-full h-full rounded-md bg-808080 absolute left-0 top-0 overflow-auto">
+                    {%- if block.settings.adv_img_back -%}
+                      {% assign adv_img_back = block.settings.adv_img_back
+                        | img_url: '1x1'
+                        | replace: '_1x1.', '_{width}x.'
+                      %}
+                      <img
+                        data-src="{{ adv_img_back }}"
+                        alt="{{ block.settings.adv_img_back.alt | escape }}"
+                        data-sizes="auto"
+                        data-optimumx="1.2"
+                        data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                        class="Image--lazyLoad Image--fadeIn cursor-pointer w-full h-full object-cover rounded-md"
+                      >
+                      <span class="Image__Loader"></span>
+                    {%- endif -%}
+                  </div>
+                  <div class="w-full h-full px-8 py-6 relative z-2" style="color:{{ block.settings.text_color }}">
+                    <div class="text-12 mb-2.5 w-full font-semibold">
+                      {{ block.settings.adv_name1 }}
+                    </div>
+                    <div class="text-h-20 mb-2.5 w-full font-bold">
+                      {{ block.settings.adv_name2 }}
+                    </div>
+                    <div class="text-12 mb-2.5 w-full font-medium">
+                      {{ block.settings.adv_name3 }}
+                    </div>
+                  </div>
+                </a>
+            {%- endcase -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+    {%- if section.settings.show_social_media -%}
+      {%- capture social_media -%}
+        {% render 'social-media', class: 'SidebarMenu__Social w-max-[20px] h-[17px] text-white text-center', containerClass:"px-5", fillcolor:'fill-white', spacing: 'fill' %}
+      {%- endcapture -%}
+    {%- endif -%}
+    {%- capture social_media -%}
+    {% render 'social-media', class: 'SidebarMenu__Social w-max-[20px] h-[17px] text-white text-center', containerClass:"px-5", fillcolor:'fill-white', spacing: 'fill' %}
+   {%- endcapture -%}
+    {%- if social_media != blank -%}
+      <aside
+        class="flex flex-none items-center justify-center w-full py-1.5 h-13 border-t border-[#ffffff80]"
+        data-drawer-animated-bottom
+      >
+        {%- if social_media != blank -%}
+          {{ social_media }}
+        {%- endif -%}
+      </aside>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sidebar menu",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "primary_menu",
+      "label": "Primary menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "secondary_menu",
+      "label": "Secondary menu",
+      "info": "This menu won't show dropdown items."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_media",
+      "label": "Show social media",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "lit_bike_discount",
+      "label": "Lit Bike Discount",
+      "default": "UP TO 200 OFF"
+    },
+    {
+      "type": "text",
+      "id": "boom_bike_discount",
+      "label": "Boom Bike Discount",
+      "default": "UP TO 200 OFF"
+    },
+    {
+      "type": "text",
+      "id": "e_bike_discount",
+      "label": "EBike Discount",
+      "default": "200 OFF ON HIGH-STEP"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_adv",
+      "label": "IS SHOW WHEELIN DEAL OF THE DAY",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "adv_sapce",
+      "name": "Advertising space",
+      "settings": [
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "image_picker",
+          "id": "adv_img_back",
+          "label": "background"
+        },
+        {
+          "type": "url",
+          "id": "adv_btn_url",
+          "label": "go Url"
+        },
+        {
+          "type": "richtext",
+          "id": "adv_name1",
+          "label": "text1",
+          "default": "<p>WHEELIN DEAL OF THE DAY<\/p>"
+        },
+        {
+          "type": "richtext",
+          "id": "adv_name2",
+          "label": "text2",
+          "default": "<p>Select Ebikes At $999<\/p>"
+        },
+        {
+          "type": "richtext",
+          "id": "adv_name3",
+          "label": "text3",
+          "default": "<p>Budget-Friendly Home Studio Bike<\/p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  /*** Collapsible*/
+  .Collapsible + .Collapsible {
+    border-top: none;
+  }
+  .Collapsible__Plus {
+    position: absolute;
+    right: 0;
+    top: calc(50% - (11px / 2));
+    width: 11px;
+    height: 11px;
+  }
+  .Collapsible__Plus::before,
+  .Collapsible__Plus::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    background-color: currentColor;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+  .Collapsible__Plus::before {
+    width: 11px;
+    height: 1px;
+    opacity: 1;
+  }
+  .Collapsible__Plus::after {
+    width: 1px;
+    height: 11px;
+  }
+  .Collapsible__Button[aria-expanded='true'] .Collapsible__Plus::before,
+  .Collapsible__Button[aria-expanded='true'] .Collapsible__Plus::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .Collapsible__Button[aria-expanded='true'] .Collapsible__Plus::before {
+    opacity: 0;
+  }
+  .Collapsible__Button[aria-expanded='true'] + .Collapsible__Inner {
+    visibility: visible;
+    transition: height 0.35s ease-in-out;
+  }
+  .Collapsible__Inner {
+    transition: height 0.35s ease-in-out, visibility 0s ease-in-out 0.35s;
+    overflow: hidden;
+  }
+</style>

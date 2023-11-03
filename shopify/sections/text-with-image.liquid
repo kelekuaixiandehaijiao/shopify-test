@@ -1,0 +1,143 @@
+<section class="Section">
+  {%- capture section_content -%}
+    <div class="FeatureText__ContentWrapper relative pt-13 pb-5 px-6 fb-sm:p-12.5 fb-md:pl-25" style="position:relative;">
+      <div class="FeatureText__Content w-full fb-sm:max-w-[428px] fb-md:max-w-[530px]">
+        {%- if section.settings.subheading != blank or section.settings.title != blank or section.settings.content != blank -%}
+          <header class="SectionHeader">
+            {%- if section.settings.subheading != blank -%}
+              <h3 class="SectionHeader__SubHeading text-20 font-bold text-[#1c1b1b] tracking-wide text-center fb-sm:text-left">{{ section.settings.subheading | escape }}</h3>
+            {%- endif -%}
+
+            {%- if section.settings.title != blank -%}
+              <h2 class="SectionHeader__Heading text-24 font-bold text-[#1c1b1b] tracking-wide text-center fb-sm:text-left fb-sm:text-[36px]">{{ section.settings.title | escape }}</h2>
+            {%- endif -%}
+
+            {%- if section.settings.content != blank -%}
+              <div class="SectionHeader__Description Rte mt-6 mb-5 text-center break-words text-16 text-[#1c1b1b] fb-sm:text-left">
+                {{ section.settings.content }}
+              </div>
+            {%- endif -%}
+            {%- if section.settings.link_text != blank -%}
+              <a href="{{ section.settings.link_url }}" id="gtm-home{{ section.settings.title | escape }}-xBikeButton-{{ section.settings.link_text | escape }}" class="Link Link--underline">{{ section.settings.link_text | escape }}</a>
+            {%- endif -%}
+          </header>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endcapture -%}
+  {%- capture section_image -%}
+    {%- if section.settings.image != blank -%}
+      <div class="FeatureText__ImageWrappe relative;" style="position:">
+        <div class="AspectRatio" style="max-width: {{ section.settings.image.width }}px; --aspect-ratio: {{ section.settings.image.aspect_ratio }}">
+          {%- assign image_url = section.settings.image | img_url: '' -%}
+          <img class="" loading="lazy" src="{{ image_url }}" data-expand="-200" alt="{{ section.settings.image.alt | escape }}">
+          <noscript>
+            <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt | escape }}">
+          </noscript>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+  <div class="FeatureText {% if section.settings.image != blank %}FeatureText--withImage FeatureText--image{{ section.settings.image_position | capitalize }}{% endif %}">
+    {%- if section.settings.image_position == 'left' -%}
+      {{- section_image -}}
+      {{- section_content -}}
+    {%- else -%}
+      {{- section_content -}}
+      {{- section_image -}}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rich text with image",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "Sub-heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>Add your own custom content to give more information about your store, availability details...</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Rich text with image",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .Rte p:not(:last-child), .Rte ul:not(:last-child), .Rte ol:not(:last-child) {
+    margin-bottom: 1.6em;
+  }
+  @media screen and (min-width: 641px) {
+    .FeatureText__Content {
+      margin: 0 auto;
+    }
+  
+    .FeatureText--withImage {
+      display: table;
+      width: 100%;
+      text-align: left;
+      table-layout: fixed;
+    }
+    .FeatureText--withImage .FeatureText__ContentWrapper,
+    .FeatureText--withImage .FeatureText__ImageWrapper {
+      display: table-cell;
+      width: 50%;
+      vertical-align: middle;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .FeatureText--imageLeft {
+      display: block !important;
+    }
+  }
+</style>
