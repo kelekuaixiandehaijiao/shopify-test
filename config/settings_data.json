@@ -86,7 +86,7 @@
     "au_bbaw_oversold": false,
     "ca_bbyd_show": false,
     "gb_bbyd_show": false,
-    "heading_color": "#1c1b1b",
+    "heading_color": "#f94c43",
     "text_color": "#1c1b1b",
     "text_light_color": "#6a6a6a",
     "link_color": "#12f4ca",
@@ -177,10 +177,10 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "submenu",
-          "gb_primary_menu": "gb-submenu",
-          "au_primary_menu": "au-mob-submenu",
-          "secondary_menu": "secondary-barmenu",
+          "primary_menu": "",
+          "gb_primary_menu": "",
+          "au_primary_menu": "",
+          "secondary_menu": "",
           "show_social_media": true
         }
       },
@@ -193,7 +193,6 @@
             "settings": {
               "show_announcement_img": true,
               "announcement_piker_pc": "shopify:\/\/shop_images\/freebeatXCeltics-PC.jpg",
-              "announcement_piker_mob": "shopify:\/\/shop_images\/freebeatXCeltics-Mobile_7e39cb45-25da-4400-af09-85ab0f999ca1.jpg",
               "announcement_text_color": "#ffffff",
               "announcement_link": "shopify:\/\/collections\/exercise-bikes",
               "announcement_text": "<p>Free Shipping On All Bikes<\/p>",
@@ -201,7 +200,6 @@
               "announcement_cycle_speed": 5,
               "show_announcement_gb_img": true,
               "announcement_piker_gb_pc": "shopify:\/\/shop_images\/freebeatXCeltics-PC.jpg",
-              "announcement_piker_gb_mob": "shopify:\/\/shop_images\/freebeatXCeltics-Mobile_7e39cb45-25da-4400-af09-85ab0f999ca1.jpg",
               "announcement_text_gb_color": "#ffffff",
               "announcement_gb_link": "shopify:\/\/collections\/exercise-bikes",
               "announcement_gb_text": "<p>Free Shipping On All Bikes<\/p>",
@@ -209,18 +207,11 @@
               "announcement_cycle_gb_speed": 5,
               "show_announcement_img_au": true,
               "announcement_piker_pc_au": "shopify:\/\/shop_images\/freebeatXCeltics-PC.jpg",
-              "announcement_piker_mob_au": "shopify:\/\/shop_images\/freebeatXCeltics-Mobile_7e39cb45-25da-4400-af09-85ab0f999ca1.jpg",
               "announcement_text_color_au": "#ffffff",
               "announcement_link_au": "shopify:\/\/collections\/exercise-bikes",
               "announcement_text_au": "<p>Free Shipping On All Bikes<\/p>",
               "announcement_text_mobile_au": "<p>Free Shipping On All Bikes<\/p>",
-              "announcement_cycle_speed_au": 5,
-              "header_left": "shopify:\/\/shop_images\/header-left.png",
-              "header_right": "shopify:\/\/shop_images\/header-right.png",
-              "header_left_au": "shopify:\/\/shop_images\/header-left.png",
-              "header_right_au": "shopify:\/\/shop_images\/header-right.png",
-              "header_left_gb": "shopify:\/\/shop_images\/header-left.png",
-              "header_right_gb": "shopify:\/\/shop_images\/header-right.png"
+              "announcement_cycle_speed_au": 5
             }
           },
           "68f6b57d-8cf3-4d75-a41c-84b702a1a1f4": {
@@ -243,13 +234,7 @@
               "announcement_link_au": "shopify:\/\/collections\/exercise-bikes",
               "announcement_text_au": "<p>BLACK FRIDAY SUPER SALE | UP TO $300 OFF<\/p>",
               "announcement_text_mobile_au": "<p>BLACK FRIDAY SUPER SALE<\/p><p>UP TO $300 OFF<\/p>",
-              "announcement_cycle_speed_au": 5,
-              "header_left": "shopify:\/\/shop_images\/header-left.png",
-              "header_right": "shopify:\/\/shop_images\/header-right.png",
-              "header_left_au": "shopify:\/\/shop_images\/header-left.png",
-              "header_right_au": "shopify:\/\/shop_images\/header-right.png",
-              "header_left_gb": "shopify:\/\/shop_images\/header-left.png",
-              "header_right_gb": "shopify:\/\/shop_images\/header-right.png"
+              "announcement_cycle_speed_au": 5
             }
           },
           "f3d9f142-4710-422a-97ab-ac1822d54dd4": {
@@ -273,13 +258,7 @@
               "announcement_link_au": "shopify:\/\/products\/lit-bike",
               "announcement_text_au": "<p>Support Breast Cancer Awareness Month<\/p><p>$200 off Lit Bike. Offer Ends on Oct 31st<\/p>",
               "announcement_text_mobile_au": "<p>BCAM Sale: $200 off Lit Bike<\/p><p>Offer Ends on Oct 31st<\/p>",
-              "announcement_cycle_speed_au": 5,
-              "header_left": "shopify:\/\/shop_images\/header-left.png",
-              "header_right": "shopify:\/\/shop_images\/header-right.png",
-              "header_left_au": "shopify:\/\/shop_images\/header-left.png",
-              "header_right_au": "shopify:\/\/shop_images\/header-right.png",
-              "header_left_gb": "shopify:\/\/shop_images\/header-left.png",
-              "header_right_gb": "shopify:\/\/shop_images\/header-right.png"
+              "announcement_cycle_speed_au": 5
             }
           }
         },
@@ -328,14 +307,13 @@
           "header_pay_one": "",
           "header_pay_two": "",
           "header_pay_three": "",
-          "logo": "shopify:\/\/shop_images\/shopify_logo.png",
           "logo_max_width": 140,
           "mobile_logo_max_width": 90,
           "show_currency_selector": true,
           "show_locale_selector": true,
           "navigation_menu": "main-menu",
-          "gb_navigation_menu": "gb-menu",
-          "au_navigation_menu": "au-pc-menu",
+          "gb_navigation_menu": "",
+          "au_navigation_menu": "",
           "navigation_style": "logoLeft",
           "show_icons": false,
           "enable_transparent_header": false,
@@ -350,33 +328,33 @@
           "b2144324-c094-4bc7-88eb-02bb5d07f5f0": {
             "type": "links",
             "settings": {
-              "menu": "products",
-              "gb_menu": "gb-products",
-              "au_menu": "au-products"
+              "menu": "",
+              "gb_menu": "",
+              "au_menu": ""
             }
           },
           "cc7cfada-50b2-4680-9c6b-7e5befdae3f6": {
             "type": "links",
             "settings": {
-              "menu": "about",
-              "gb_menu": "about",
-              "au_menu": "about"
+              "menu": "",
+              "gb_menu": "",
+              "au_menu": ""
             }
           },
           "ac04ca4f-b90e-4788-9c40-134fae86f2b3": {
             "type": "links",
             "settings": {
-              "menu": "support",
-              "gb_menu": "gb-support",
-              "au_menu": "au-support"
+              "menu": "",
+              "gb_menu": "",
+              "au_menu": ""
             }
           },
           "6acdbbe9-45bf-4492-9ddb-c7cf2be218b2": {
             "type": "links",
             "settings": {
-              "menu": "faqs",
-              "gb_menu": "gb-faqs",
-              "au_menu": "au-faqs"
+              "menu": "",
+              "gb_menu": "",
+              "au_menu": ""
             }
           },
           "footer-2": {
@@ -420,19 +398,14 @@
           "show_only_once": true,
           "title": "PRICES TOO GOOD TO PRINT.",
           "content": "<p>When you sign up for emails!<\/p>",
-          "circle_img": "shopify:\/\/shop_images\/libao_2x_791877a3-3504-438f-ae30-24ee999b29cd.png",
           "mb_img_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0667\/5555\/9723\/files\/POPUP_Mobile_2x_3777e2c1-af69-4664-a729-823ff3f36896.png?v=1673257098",
           "pc_img_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0667\/5555\/9723\/files\/POPUP_PC_2x_e7f06e67-9225-47f2-baee-3aae1f4164c1.png?v=1673257098",
           "show_newsletter": true,
           "apparition_delay": 1,
           "succ_title": "<p>Hello, friend!<\/p>",
           "succ_desc": "<p> You've successfully signed up!  Go ahead and join our online community, where all your questions will be answered by our customer service representatives.<\/p>",
-          "succ_whatsapp_img": "shopify:\/\/shop_images\/whatsapp_4b5d9d08-cb37-4416-826c-0ad15c232a62.png",
-          "succ_whatsapp_imgmob": "shopify:\/\/shop_images\/social-whatsapp-circle-512_1.webp",
           "succ_whatsapp_text": "Join on WhatsApp",
           "succ_whatsapp_link": "https:\/\/wa.me\/message\/5YTTVYB4HY5BH1",
-          "succ_facebook_img": "shopify:\/\/shop_images\/img_v2_bcd265c5-e455-4c9d-a874-607f9c1bb1ag_1.png",
-          "succ_facebook_imgmob": "shopify:\/\/shop_images\/Facebook_Messenger_logo_2020.svg_563ec9cd-23d3-4ed4-9d4d-fa766b91d6fc_1.png",
           "succ_facebook_text": "Join on Messenger",
           "succ_facebook_link": "https:\/\/m.me\/106396621406155?ref=engagement:1iku:0",
           "succ_bot_desc": "<p>Say hi 👋 to us first if joining on WhatsApp. Don’t be shy!<\/p>",
@@ -570,7 +543,6 @@
           "d6da2654-2ec7-4113-8bee-759c173ebd43": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-LitBike-AuroraPink-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/products\/lit-bike-klarna-limited-edition",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -587,7 +559,6 @@
           "e4f12049-d615-4f73-97f5-cc7521c90045": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-LitBike-MoonbowBeige-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/products\/lit-bike-moonbow-beige",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -604,7 +575,6 @@
           "c10f09f1-6081-4d82-abf0-ff551909cede": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-BoomBike-SnowpeakWhite-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/products\/boom-bike-arctic-white",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -621,7 +591,6 @@
           "29c2b8fd-7aae-4a5e-812d-f6348acaffee": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-FreeShipping-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/collections\/exercise-bikes",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -653,7 +622,6 @@
             "type": "Offers",
             "disabled": true,
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/1-2.png",
               "annou_link": "shopify:\/\/products\/boom-bike-arctic-white",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -671,7 +639,6 @@
             "type": "Offers",
             "disabled": true,
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/1-2.png",
               "annou_link": "shopify:\/\/products\/lit-bike",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -688,7 +655,6 @@
           "808324a3-099b-4d32-a438-b671d6ac0d99": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-LitBike-MoonbowBeige-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/products\/lit-bike-moonbow-beige",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -705,7 +671,6 @@
           "8cfd39c2-18df-45fe-b428-441fde3a01cd": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-BoomBike-SnowpeakWhite-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/products\/boom-bike-arctic-white",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -722,7 +687,6 @@
           "af66a780-3275-470d-9280-e249c641a4dc": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-FreeShipping-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/collections\/exercise-bikes",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -755,7 +719,6 @@
             "type": "Offers",
             "disabled": true,
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/1-2.png",
               "annou_link": "shopify:\/\/products\/boom-bike-arctic-white",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -773,7 +736,6 @@
             "type": "Offers",
             "disabled": true,
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/1-2.png",
               "annou_link": "shopify:\/\/products\/lit-bike",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -790,7 +752,6 @@
           "391d50b0-a718-4687-8052-12e948d91ac9": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-LitBike-MoonbowBeige-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/products\/lit-bike-moonbow-beige",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -807,7 +768,6 @@
           "1270d5f6-38db-441b-b9ac-8f3ab93313b1": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-BoomBike-SnowpeakWhite-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/products\/boom-bike-arctic-white",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
@@ -824,7 +784,6 @@
           "4d639bf0-5f25-495e-b346-b10162de0524": {
             "type": "Offers",
             "settings": {
-              "annou_back_img": "shopify:\/\/shop_images\/annoucement-offer-FreeShipping-BlackFriday-231101.webp",
               "annou_link": "shopify:\/\/collections\/exercise-bikes",
               "annou_text_position": "annou-left-center",
               "annou_title_color": "#ffffff",
