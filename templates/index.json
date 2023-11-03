@@ -7,10 +7,8 @@
           "type": "image_banner",
           "disabled": true,
           "settings": {
-            "product": "",
+            "product": "3d-test-product",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/20230428-155028.png",
-            "mobile_image": "shopify:\/\/shop_images\/20230428-155059.png",
             "apply_overlay": false,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "bottomLeft",
@@ -63,8 +61,6 @@
           "settings": {
             "product": "",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/BlackFriday_Banner_CA_PC.webp",
-            "mobile_image": "shopify:\/\/shop_images\/BlackFriday_Banner_CA_Mobile.webp",
             "apply_overlay": false,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "topCenter",
@@ -118,8 +114,6 @@
           "settings": {
             "product": "boom-bike-arctic-white",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/Normal-banner-0417-white-PC2.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/Normal-banner-0417-white-Mobile2.jpg",
             "apply_overlay": false,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "topCenter",
@@ -411,8 +405,6 @@
           "settings": {
             "product": "",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/20230428-155028.png",
-            "mobile_image": "shopify:\/\/shop_images\/20230428-155059.png",
             "apply_overlay": false,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "bottomLeft",
@@ -466,8 +458,6 @@
           "settings": {
             "product": "",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/UK_AUS_Boom_White_PC_Gradient_2.webp",
-            "mobile_image": "shopify:\/\/shop_images\/UK_AUS_Boom_White_Mobile_Gradient_2.webp",
             "apply_overlay": true,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "topCenter",
@@ -520,8 +510,6 @@
           "settings": {
             "product": "",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/BlackFriday_Banner_UK_PC.webp",
-            "mobile_image": "shopify:\/\/shop_images\/BlackFriday_Banner_UK_Mobile.webp",
             "apply_overlay": true,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "topCenter",
@@ -703,8 +691,6 @@
           "settings": {
             "product": "",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/20230428-155028.png",
-            "mobile_image": "shopify:\/\/shop_images\/20230428-155059.png",
             "apply_overlay": false,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "bottomLeft",
@@ -757,8 +743,6 @@
           "settings": {
             "product": "",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/BlackFriday_Banner_AU_PC.webp",
-            "mobile_image": "shopify:\/\/shop_images\/BlackFriday_Banner_AU_Mobile.webp",
             "apply_overlay": false,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "topCenter",
@@ -812,8 +796,6 @@
           "settings": {
             "product": "lit-bike",
             "banner_href": true,
-            "image": "shopify:\/\/shop_images\/UK_AUS_Lit_Black_PC_Gradient_2.webp",
-            "mobile_image": "shopify:\/\/shop_images\/UK_AUS_Lit_Black_Mobile_Gradient_2.webp",
             "apply_overlay": false,
             "content_position_pc": "middleLeft",
             "content_position_mobile": "topCenter",
@@ -992,32 +974,24 @@
         "e520f847-a738-40a9-b784-d5fb976a18e1": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/Bloomberg_new_logo.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/Bloomberg_new_logo.png",
             "swiperDes": ""
           }
         },
         "48d00edf-541c-4b05-b3f3-88d970e25c1a": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/elle_new_logo.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/elle_new_logo.png",
             "swiperDes": ""
           }
         },
         "c73fabf5-5938-4562-9b91-cbc5a7d2f5f2": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/20230512-181255.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/20230512-181255.png",
             "swiperDes": ""
           }
         },
         "c86102df-5a8e-48d5-b12a-3cbd77705c4f": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/sun_new_logp.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/sun_new_logp.png",
             "swiperDes": ""
           }
         },
@@ -1032,8 +1006,6 @@
         "c4426538-d168-482b-aacb-6988876b2a2c": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/sports_illustrated_pc_0511.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/sl_new_logo.png",
             "swiperDes": ""
           }
         },
@@ -1048,16 +1020,12 @@
         "7fe47d8e-30b3-4066-a145-17544126f378": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/shape_new_logo.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/shape_new_logo.png",
             "swiperDes": ""
           }
         },
         "eb56c114-aaf5-46fd-8cd8-76f3cc218ad7": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/self_new_logo.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/self_new_logo.png",
             "swiperDes": ""
           }
         },
@@ -1072,8 +1040,6 @@
         "f483a13d-7271-4913-9af2-d5fb917ed4df": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/vwf_new_logo.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/vwf_new_logo.png",
             "swiperDes": ""
           }
         },
@@ -1088,8 +1054,6 @@
         "c329855b-93d9-4934-acc3-b2e27a7e8410": {
           "type": "newSwiperContent",
           "settings": {
-            "swiperImg": "shopify:\/\/shop_images\/runner_new_logo.png",
-            "swiperMbImg": "shopify:\/\/shop_images\/runner_new_logo.png",
             "swiperDes": ""
           }
         },
@@ -1141,8 +1105,6 @@
         "5f3e52f0-b8ee-4f99-b420-f43f524083fa": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/freebeatXCeltics-V4-Part2-PC.png",
-            "mobile_image": "shopify:\/\/shop_images\/freebeatXCeltics-V4-Part2-Mobile.png",
             "apply_overlay": false,
             "content_position": "bottomLeft",
             "subheading": "",
@@ -1227,7 +1189,6 @@
             "pay_as_low_as": "Pay as low as",
             "introduce_bikes_stage_price": "29.14",
             "shop_now": "SHOP LIT BIKE",
-            "bike_img_defalut": "shopify:\/\/shop_images\/beige.png",
             "bike_img_active": "shopify:\/\/shop_images\/beigeactive.png"
           }
         },
@@ -1266,9 +1227,7 @@
             "starting_at": "Starting at",
             "pay_as_low_as": "Pay as low as",
             "introduce_bikes_stage_price": "19.39",
-            "shop_now": "SHOP BOOM BIKE",
-            "bike_img_defalut": "shopify:\/\/shop_images\/white-default_small_5ecf5a69-fc7e-491b-983e-c75e45a352c7.png",
-            "bike_img_active": "shopify:\/\/shop_images\/white-active_small_59fc5791-2bab-4866-a30d-42d6d81ab73f.webp"
+            "shop_now": "SHOP BOOM BIKE"
           }
         },
         "1667695c-86fd-47ab-a129-8aa0188aa747": {
@@ -1313,7 +1272,6 @@
       "settings": {
         "fb_dealmatch_guarantee_heading": "LOW PRICE GUARANTEE",
         "fb_dealmatch_guarantee_desc": "<p>We've launched our Low Price Guarantee.<\/p><p>Starting 11\/1\/23, you can place your order now with confidence! You'll be getting all freebeat bikes at the season's lowest price - guaranteed.<\/p>",
-        "fb_dealmatch_guarantee_img": "shopify:\/\/shop_images\/BlackFriday_LowPriceGuarantee.png",
         "fb_dealmatch_guarantee_url_btn": "LEARN MORE",
         "fb_dealmatch_guarantee_url": "shopify:\/\/pages\/freebeat-black-friday-low-price-guarantee"
       }
@@ -1325,7 +1283,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/Bloomberg-Logo.png",
             "swiperDes": "\"Take your fitness journey to the next level.\""
           }
         },
@@ -1333,7 +1290,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/ELLE_freebeat.png",
             "swiperDes": "\"[freebeat Boom Bike] A chic, compact addition to my space.\""
           }
         },
@@ -1341,7 +1297,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/SI.png",
             "swiperDes": "\"The freebeat Boom Bike is one of the best indoor exercise bikes for those on a budget.\""
           }
         },
@@ -1357,7 +1312,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/Yahoo-Logo.png",
             "swiperDes": "\"Lit Bike Elevated At-Home Workouts\""
           }
         },
@@ -1365,7 +1319,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/Digital-Journal-Logo.png",
             "swiperDes": "\"Sleek and modern fitted design.\""
           }
         },
@@ -1373,7 +1326,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/14778879868979.5cd0aa0317915.png",
             "swiperDes": "\"[Lit Bike x Klarna] The feel of a professional gym all in the comfort of my home.\""
           }
         },
@@ -1381,7 +1333,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/Markets_Herald.png",
             "swiperDes": "\"Lit Bike is a confidence and inspiration booster.\""
           }
         },
@@ -1389,7 +1340,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/toms-guide-logo.gif",
             "swiperDes": "\"The best exercise bike for music lovers.\""
           }
         },
@@ -1397,7 +1347,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/marketwatch-logo.png",
             "swiperDes": "\"Easily convert cardio exercise into full-body workouts\""
           }
         },
@@ -1405,7 +1354,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/markets-insider-logo-for-website.png",
             "swiperDes": "\"[Lit Bike] A feeling of accomplishment and awakening.\""
           }
         },
@@ -1413,7 +1361,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/the_ritz_herald_corporate_identity.png",
             "swiperDes": "\"[Lit Bike x Klarna] a beautiful accent to every room.\""
           }
         },
@@ -1421,7 +1368,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/the_hudson_weekly.png",
             "swiperDes": "\"[freebeat] putting fitness and personal growth first.\""
           }
         },
@@ -1429,7 +1375,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/freebeat_KnowTechie.png",
             "swiperDes": "\"[Lit Bike] high-performance exercise bike.\""
           }
         },
@@ -1437,7 +1382,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/freebeat_ClicheMag.png",
             "swiperDes": "\"[Lit Bike] helps you to reach your goals in no time.\""
           }
         },
@@ -1445,7 +1389,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/NEWSANYWAY.png",
             "swiperDes": "\"[Lit Bike] No-nonsense, performance-driven bike.\""
           }
         },
@@ -1453,7 +1396,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/freebeat_FG_MAGAZINE.png",
             "swiperDes": "\"[Lit Bike] Wii Sports in real life.\""
           }
         },
@@ -1461,7 +1403,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/Viva_Glam_Magazine_c96a0bde-0be7-468d-8493-535ebced735f.png",
             "swiperDes": "\"[Lit Bike x Klarna] An experience like no other.\""
           }
         },
@@ -1469,7 +1410,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/Madison_1.png",
             "swiperDes": "\"[Boom Bike] taking the home workout scene to a new level\""
           }
         },
@@ -1477,7 +1417,6 @@
           "type": "swiperContent",
           "settings": {
             "swiper_url": "",
-            "swiperImg": "shopify:\/\/shop_images\/FAIRMONTPOST_1.png",
             "swiperDes": "\"The freebeat Boom Bike is nothing short of excellent.\""
           }
         }
@@ -1507,7 +1446,6 @@
       "disabled": true,
       "settings": {
         "PR_swiper_background": "#ffffff",
-        "PRimg": "shopify:\/\/shop_images\/freebeat_on_NASDAQ_NYC.png",
         "PR-title": "FREEBEAT ON NASDAQ",
         "litBike-leftColor": "",
         "litBike-rightColor": "",
@@ -1542,12 +1480,10 @@
             "swiss_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/swiss1.png",
             "freebeat_klarna_image": "",
             "link_image_product_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/products\/SKU-_-4.jpg",
-            "link_image_product_chooseImage": "shopify:\/\/shop_images\/SKU_images-Lit-beige-CA.jpg",
             "fsgblock_title": "Lit Bike",
             "fsgblock_title_sub": "Moonbow Beige",
             "starting_at": "",
             "shop_now": "SHOP NOW",
-            "bike_img_defalut": "shopify:\/\/shop_images\/beige.png",
             "bike_img_active": "shopify:\/\/shop_images\/beigeactive.png"
           }
         },
@@ -1905,13 +1841,11 @@
         "fdb2e7a8-d1bc-4a19-9172-0ef4fb1b5329": {
           "type": "showfieldSwiper",
           "settings": {
-            "swiperPic": "shopify:\/\/shop_images\/On-qr-code-fixed_700X700_67ef047a-00f6-46b8-8779-56012af19f28.png"
           }
         },
         "7cbea315-71be-4684-8e46-f4bc17e299e3": {
           "type": "showfieldSwiper",
           "settings": {
-            "swiperPic": "shopify:\/\/shop_images\/sec.png"
           }
         }
       },
@@ -1922,7 +1856,6 @@
       "disabled": true,
       "settings": {
         "swiper_background": "#ffffff",
-        "map": "shopify:\/\/shop_images\/mapB.png",
         "showfields_title": "freebeat x Showfield",
         "showfields_title_des": "Join us for a one-of-a-kind curated shopping experience at Showfields and meet our freebeat x Klarna Lit Bike!",
         "subway_title_1": "TIME:",
