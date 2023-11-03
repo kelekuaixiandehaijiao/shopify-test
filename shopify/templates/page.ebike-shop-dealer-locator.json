@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "dc0c001c-8097-4cad-8ee5-9e34ec72e3a4": {
+      "type": "fb-delear-map",
+      "settings": {
+        "delear_bigtitle1": "FIND A DEALER",
+        "delear_tab_title1": "2-IN-1 EBIKE",
+        "delear_tab_title2": "EXERCISE BIKE",
+        "delear_desc": "<p> Experience the exhilaration of test riding a freebeat eBike at our Elite Dealer across the United States. Our extensive network of Elite electric bike dealers ensures you have access to the widest range of freebeat eBikes and exceptional customer service. Find the nearest dealer in your area by searching with your City, Zip, or County below.<\/p>",
+        "delear_bigtitle2": "CAN'T FIND A DEALER NEAR YOU?",
+        "delear_info": "<p>Shop online and enjoy the convenience of doorstep delivery for your eBike.<\/p>",
+        "delear_link": "https:\/\/www.freebeatfit.com\/products\/morphrover-2-in-1-ebike",
+        "delear_link_text": "SHOP EBIKE",
+        "delear-map-pcimg": "shopify:\/\/shop_images\/delear-map.png",
+        "delear-map-mobimg": "shopify:\/\/shop_images\/delear-map-mob.png",
+        "choose_delear_title": "<p>WHY CHOOSE A FREEBEAT ELITE DEALER?<\/p>",
+        "choose_delear_desc": "<p>Discover the unparalleled experience of shopping for freebeat electric bikes at our elite dealer network. Immerse yourself in a world of choices as you test ride multiple freebeat models under the guidance of our knowledgeable eBike professionals. Find the perfect fit and embark on your electric biking journey with confidence.<\/p>",
+        "delear_bigtitle3": "STAY TUNED WITH UPDATES AND DISCOUNTS.",
+        "delear_stay_desc": "<p>Get ready for an upcoming wave of new and exciting things that will keep you in the loop.<\/p>",
+        "delear_submit": "SUBCRIBE",
+        "delear-map-icon": "shopify:\/\/shop_images\/success.png",
+        "delear_text": "<p> Thanks for subscribing!<\/p>",
+        "delear-exercise-image": "shopify:\/\/shop_images\/coming_soon.png",
+        "delear-background": "shopify:\/\/shop_images\/delear-map.png",
+        "delear_network_title": "<p>ONE OF THE MOST EXTENSIVE EBIKE DEALER NETWORKS, WITH 400+ LOCAL BIKE SHOPS AND COUNTING.<\/p>",
+        "delear_network_icon": "shopify:\/\/shop_images\/delear-address.png"
+      }
+    }
+  },
+  "order": [
+    "dc0c001c-8097-4cad-8ee5-9e34ec72e3a4"
+  ]
+}

@@ -1,0 +1,153 @@
+<div
+  id="section-{{ section.id }}"
+  class="fb-increase-banner w-full h-13 fb-md:h-19 fb-sm:px-10 fb-md:px-20  box-border"
+>
+  {%- assign newSwiperContent = section.blocks | where: 'type', 'newSwiperContent' | first -%}
+  <div class="flex justify-between items-center divide-x w-full h-full py-2">
+    <div class="fb-increase-trust justify-center items-center w-1/2 fb-md:w-[87%] flex-auto h-full">
+      <div class="swiper increase-trust-swiper w-full h-full">
+        <div class="swiper-wrapper w-full h-full flex justify-start items-center">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.swiperImg -%}
+              <div class="swiper-slide text-center h-full fb-md:w-55 fb-md:mr-10">
+                <div class="h-full hidden fb-md:flex justify-center items-center relative">
+                  {% assign imgPiker = block.settings.swiperImg | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                  <img
+                    data-src="{{ imgPiker }}"
+                    alt="{{ block.settings.swiperImg.alt | escape }}"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    class="swiperImg w-auto h-15 object-cover object-center Image--lazyLoad Image--fadeIn"
+                  >
+                  <span class="Image__Loader"></span>
+                </div>
+                <div class="h-full flex fb-md:hidden justify-center items-center relative">
+                  {% assign imgMbPikermob = block.settings.swiperMbImg | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                  <img
+                    data-src="{{ imgMbPikermob }}"
+                    alt="{{ block.settings.swiperMbImg.alt | escape }}"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    class="swiperImg w-auto h-9 object-cover object-center Image--lazyLoad Image--fadeIn"
+                  >
+                    <span class="Image__Loader"></span>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        {% comment %} <div class="swiper-scrollbar"></div> {% endcomment %}
+      </div>
+    </div>
+    {% comment %} flex justify-center items-center {% endcomment %}
+    <div class="fb-right-box h-full w-1/2 fb-md:w-48 flex flex-none justify-center fb-md:justify-end  items-center">
+      <div class="u-start fb-increase-star w-full h-9 fb-md:h-15  relative ">
+        {%- if section.settings.show_custom_product_star != blank -%}
+          {%- render 'fb-star-trust', product: section.settings.show_custom_product_star -%}
+        {%- else -%}
+          {%- render 'fb-star-trust', product: product -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    var swiper = new Swiper('.increase-trust-swiper', {
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      allowTouchMove: false,
+      loop: true,
+      slidesPerView: 'auto',
+      breakpoints: {
+        480: {
+          slidesPerView: 1,
+          loopedSlides: 19,
+        },
+        769: {
+          slidesPerView: 2,
+          loopedSlides: 19,
+        },
+        1080: {
+          slidesPerView: 3,
+          loopedSlides: 19,
+        },
+        1280: {
+          slidesPerView: 4,
+          loopedSlides: 19,
+        },
+        1600: {
+          slidesPerView: 5,
+          loopedSlides: 19,
+        },
+        1920: {
+          slidesPerView: 6,
+          loopedSlides: 19,
+        },
+      },
+      simulateTouch: false,
+      // scrollbar: {
+      //     el: ".swiper-scrollbar",
+      // },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FbINCREASETRUST",
+  "presets": [
+    {
+      "name": "fb-increase-trust",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "PR_swiper_background",
+      "label": "Background color",
+      "default": "#fafafa"
+    },
+    {
+      "type": "color",
+      "id": "textColor",
+      "label": "Text Color",
+      "default": "#666"
+    },
+    {
+      "type": "product",
+      "id": "show_custom_product_star",
+      "label": "Product"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "newSwiperContent",
+      "name": "New Swiper Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "swiperImg",
+          "label": "Swiper Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "swiperMbImg",
+          "label": "Mbolie Swiper Image"
+        },
+        {
+          "type": "text",
+          "id": "swiperDes",
+          "label": "Swiper Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1296 @@
+{
+  "sections": {
+    "cd1465af-d91f-4402-9d36-da4ce1b072ea": {
+      "type": "fb-ebike-nav-bar",
+      "blocks": {
+        "5a07d0a1-3a1c-46c9-8f56-7e95fcf9a875": {
+          "type": "colorArr",
+          "settings": {
+            "is_colorlitbike_name": "Moonbow Beige",
+            "is_colorlitbike_product": "lit-bike-moonbow-beige",
+            "colorlitbike_default_img": "shopify:\/\/shop_images\/M-Moonbow_Beige_88de1e6f-dfe7-4abe-98dc-657b78576630.png",
+            "colorlitbike_url": ""
+          }
+        },
+        "607dbe5d-9e26-4302-8915-a2ca31ea113e": {
+          "type": "colorArr",
+          "settings": {
+            "is_colorlitbike_name": "Snowpeak White",
+            "is_colorlitbike_product": "lit-bike-snowpeak-white",
+            "colorlitbike_default_img": "shopify:\/\/shop_images\/M-Snowpeak_White_88deaf1c-b0fa-4e1c-bf0b-f39978482960.png",
+            "colorlitbike_url": ""
+          }
+        },
+        "c2141f3c-5e72-4ca7-b2f0-bd8369084238": {
+          "type": "colorArr",
+          "settings": {
+            "is_colorlitbike_name": "Space Black",
+            "is_colorlitbike_product": "lit-bike",
+            "colorlitbike_default_img": "shopify:\/\/shop_images\/M-Space_Black.png",
+            "colorlitbike_url": ""
+          }
+        },
+        "673e77bf-a593-42f3-a48b-89a224c915f5": {
+          "type": "colorArr",
+          "settings": {
+            "is_colorlitbike_name": "Aurora Pink",
+            "is_colorlitbike_product": "lit-bike-klarna-limited-edition",
+            "colorlitbike_default_img": "shopify:\/\/shop_images\/M-Aurora_Pink.png",
+            "colorlitbike_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "5a07d0a1-3a1c-46c9-8f56-7e95fcf9a875",
+        "607dbe5d-9e26-4302-8915-a2ca31ea113e",
+        "c2141f3c-5e72-4ca7-b2f0-bd8369084238",
+        "673e77bf-a593-42f3-a48b-89a224c915f5"
+      ],
+      "settings": {
+        "nav_product": "",
+        "bike_type": "Lit Bike",
+        "bike_button_text": "ADD TO CART"
+      }
+    },
+    "cb30ccaf-1306-459d-b1c0-6be81eab04a9": {
+      "type": "ebike-product-model",
+      "blocks": {
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "ed0862d2-e97c-4e89-8257-047355ca8478": {
+          "type": "choose_single_bikeColor",
+          "settings": {
+            "bike_color_title": "Moonbow Beige",
+            "color_product1": "lit-bike-moonbow-beige",
+            "is_color_title1": "Moonbow Beige",
+            "is_color_title2": "Snowpeak White",
+            "color_product2": "lit-bike-snowpeak-white",
+            "bike_color_url2": "",
+            "is_color_title3": "Space Black",
+            "color_product3": "lit-bike",
+            "bike_color_url3": "",
+            "is_color_title4": "Aurora Pink",
+            "color_product4": "lit-bike-klarna-limited-edition",
+            "bike_color_url4": ""
+          }
+        },
+        "4803ad31-b28e-4aeb-9c6f-1b139909c0b2": {
+          "type": "pdpGiftRemake",
+          "settings": {
+            "gift_is_free": true,
+            "gift_service_product": "50-amazon-gift-card",
+            "gift_name": "",
+            "gift_name_hover": "<p>Will send to the email address you used to place your order 30 days after the date of receipt of the bike.<\/p>"
+          }
+        },
+        "template--16314299613369__cb30ccaf-1306-459d-b1c0-6be81eab04a9-pdpGiftRemake-1": {
+          "type": "pdpGiftRemake",
+          "settings": {
+            "gift_is_free": true,
+            "gift_service_product": "dumbbell-set",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "d334a344-864f-47d6-a193-af8eea76e61d": {
+          "type": "pdpGiftRemake",
+          "disabled": true,
+          "settings": {
+            "gift_is_free": false,
+            "gift_service_product": "glass-water-bottle",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "9ab8763a-40cf-4518-9149-59d0017b321c": {
+          "type": "pdpGiftRemake",
+          "disabled": true,
+          "settings": {
+            "gift_is_free": false,
+            "gift_service_product": "resistance-loop-set",
+            "gift_name": "",
+            "gift_name_hover": ""
+          }
+        },
+        "2cb997ff-4fa8-48be-b3c4-41b78b02d7b0": {
+          "type": "fbStampStar",
+          "settings": {
+            "show_custom_product_star": ""
+          }
+        },
+        "template--16314299613369__cb30ccaf-1306-459d-b1c0-6be81eab04a9-customerService-1": {
+          "type": "customerService",
+          "settings": {
+            "customer_title": "Need more help?",
+            "customer_desc": "Connect with a Specialist."
+          }
+        },
+        "89f1ff44-f11b-4ca6-8f18-e077d8f772ec": {
+          "type": "introduce_service",
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-baozhan.png",
+            "intoduce_service_desc": "<p>Up to 10-year warranty<\/p>",
+            "show_tip_or_dialog": false,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "47243c10-7b91-48df-8376-799cc376baf3": {
+          "type": "introduce_service",
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-sousuo.png",
+            "intoduce_service_desc": "<p>Your bike will be delivered in 3-7 days<\/p>",
+            "show_tip_or_dialog": false,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "d6e50d4f-f03e-452c-8d1a-ed45daacb92a": {
+          "type": "introduce_service",
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-mianxi.png",
+            "intoduce_service_desc": "<p>0% Financing no hidden fees¹<\/p>",
+            "show_tip_or_dialog": false,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "1e5ab8f0-f70d-49b3-93ea-b848be4e2cdf": {
+          "type": "introduce_service",
+          "settings": {
+            "intoduce_service_img": "shopify:\/\/shop_images\/pdp-huiyuan.png",
+            "intoduce_service_desc": "<p>freebeat membership separate²<\/p>",
+            "show_tip_or_dialog": false,
+            "intoduce_service_tip": "",
+            "fbcur_intro_dialog_title": "",
+            "fbcur_intro_dialog_desc1": "",
+            "fbcur_intro_dialog_desc2": "",
+            "fbcur_intro_dialog_desc3": "",
+            "fbcur_intro_dialog_item_img_url_1": "",
+            "fbcur_intro_dialog_item_img_url_2": "",
+            "fbcur_intro_dialog_title_bottom": "",
+            "fbcur_intro_dialog_item_img_url_3": ""
+          }
+        },
+        "e9d9bab5-bb05-4b27-a7de-ad26d7e61eda": {
+          "type": "bike_dismess",
+          "settings": {
+            "fpc_dimension_title": "Bike dimensions",
+            "fpc_dimension_img": "shopify:\/\/shop_images\/lit-bike-moonbow-beige-548763_1200x_371139ac-686a-4b90-9a48-c7505b073c84.webp",
+            "fpc_dimension_desc": "<p>1. Dimensions: 49.3\" L × 58.8\" H × 22.6\" W<br\/>2. Screen: 21.5\" diagonal<br\/>3. Flywheel: 28.6 lbs<br\/>4. Weight: 113.3 lbs (N.W)<\/p>"
+          }
+        },
+        "97041017-952d-4024-a62a-bba50fb55fa2": {
+          "type": "size_fit_table",
+          "settings": {
+            "size_fit_title": "Lit Bike Overview",
+            "size_fit_desc": "<ul><li>Immersive 21.5\" HD Rotatable Touchscreen: dive into full-body workouts<\/li><li>Screen rotation for easy transitions to strength, sculpt, stretch, and more<\/li><li>Sleek Swiss Design that blends precision, durability and elegance<\/li><li>Advanced Auto Resistance System that automatically adjusts to match instructor recommendations<\/li><li>Innovative Smart Saddle Detection+ that detects in and out of saddle riding via sensors to deliver intense and fulfilling results<\/li><li>Tailored Workouts with Personal Trainer Algorithm that evaluates each rider's performance<\/li><li>Ride, Earn, and Enjoy Cash Rewards<\/li><li>Fresh, Gamified Workouts Updated Daily<\/li><li>Real-time In-workout Metrics<\/li><li>Sync with Your Heart Rate Monitor for Comprehensive Tracking<\/li><li>Space-saving Design: Fits within the Size of a Yoga Mat<\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "variant_selector",
+        "ed0862d2-e97c-4e89-8257-047355ca8478",
+        "4803ad31-b28e-4aeb-9c6f-1b139909c0b2",
+        "template--16314299613369__cb30ccaf-1306-459d-b1c0-6be81eab04a9-pdpGiftRemake-1",
+        "d334a344-864f-47d6-a193-af8eea76e61d",
+        "9ab8763a-40cf-4518-9149-59d0017b321c",
+        "2cb997ff-4fa8-48be-b3c4-41b78b02d7b0",
+        "template--16314299613369__cb30ccaf-1306-459d-b1c0-6be81eab04a9-customerService-1",
+        "89f1ff44-f11b-4ca6-8f18-e077d8f772ec",
+        "47243c10-7b91-48df-8376-799cc376baf3",
+        "d6e50d4f-f03e-452c-8d1a-ed45daacb92a",
+        "1e5ab8f0-f70d-49b3-93ea-b848be4e2cdf",
+        "e9d9bab5-bb05-4b27-a7de-ad26d7e61eda",
+        "97041017-952d-4024-a62a-bba50fb55fa2"
+      ],
+      "settings": {
+        "customer_product": "",
+        "product_big_title": "Lit Bike",
+        "product_desc_title": "Premium Home Gym With Gamified Techs",
+        "product_build_title": "",
+        "product_but_text": "ADD TO CART",
+        "image_size": "large",
+        "stack_images": true,
+        "show_thumbnails": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "show_gift": true,
+        "show_protection": true,
+        "show_protection_title": "Add protection powered by",
+        "show_shop_payments": true,
+        "show_size_fit": true,
+        "show_bike_discount_desc": true,
+        "show_bike_left_icon_info": false,
+        "show_bike_dimensions": "Bike dimensions",
+        "bike_promotion_desc": "<p><strong>Free Shipping<\/strong><\/p>",
+        "show_expected_ship_date": false
+      }
+    },
+    "5df2fc69-40f8-4b2a-a3f3-168e96cd6bf5": {
+      "type": "fb-dealmatch-guarantee",
+      "settings": {
+        "fb_dealmatch_guarantee_heading": "LOW PRICE GUARANTEE",
+        "fb_dealmatch_guarantee_desc": "<p>We've launched our Low Price Guarantee.<\/p><p>Starting 11\/1\/23, you can place your order now with confidence! You'll be getting all freebeat bikes at the season's lowest price - guaranteed.<\/p>",
+        "fb_dealmatch_guarantee_img": "shopify:\/\/shop_images\/BlackFriday_LowPriceGuarantee.png",
+        "fb_dealmatch_guarantee_url_btn": "LEARN MORE",
+        "fb_dealmatch_guarantee_url": "shopify:\/\/pages\/freebeat-black-friday-cyber-monday-low-price-guarantee"
+      }
+    },
+    "5bfa46a8-9416-4c7d-a985-21675487d12d": {
+      "type": "fb-boom-PRswiper",
+      "blocks": {
+        "5a42f03d-45dd-49fe-b395-41b42fc7f588": {
+          "type": "prboomSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/prboomswiper-tech.png",
+            "iconHover": "shopify:\/\/shop_images\/prboomswiper-tech.png",
+            "prop_title": "Cutting-Edge Ride Tech",
+            "prop_des": "<p>Lit Bike's intelligent hardware suite boasts a 21.5\" rotatable HD touchscreen, an intuitive Auto Resistance System, and pioneering Smart Saddle Detection, ensuring a cutting-edge cycling experience.<\/p>",
+            "prop_button": "ADD TO CART",
+            "btn_url": "shopify:\/\/products\/lit-bike-moonbow-beige"
+          }
+        },
+        "4dab40b3-5614-42e1-8a09-9ee4cd062411": {
+          "type": "prboomSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/prboomswiper-game.png",
+            "iconHover": "shopify:\/\/shop_images\/prboomswiper-game.png",
+            "prop_title": "Swiss Design & Engineering",
+            "prop_des": "<p>A showcase of Swiss precision, durability and elegance. A wood-covered flywheel blends innovative design and natural aesthetics, delivering a premium riding experience.<\/p>",
+            "prop_button": "ADD TO CART",
+            "btn_url": "shopify:\/\/products\/lit-bike-moonbow-beige"
+          }
+        },
+        "909a19c2-93c4-4973-a587-a98a1bf13278": {
+          "type": "prboomSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/prboomswiper-hourse.png",
+            "iconHover": "shopify:\/\/shop_images\/prboomswiper-hourse.png",
+            "prop_title": "freebeat = Convenience",
+            "prop_des": "<p>Exciting and engaging classes at home. No extra equipment or shoes to start riding!<\/p>",
+            "prop_button": "ADD TO CART",
+            "btn_url": "shopify:\/\/products\/lit-bike-moonbow-beige"
+          }
+        },
+        "d44fb198-012d-42f5-b592-628db79e63e2": {
+          "type": "prboomSwiper",
+          "settings": {
+            "iconPic": "shopify:\/\/shop_images\/prboomswiper-sheji.png",
+            "iconHover": "shopify:\/\/shop_images\/prboomswiper-sheji.png",
+            "prop_title": "Match Your Aesthetic",
+            "prop_des": "<p>A variety of aesthetics, colors, and designs by experts in Switzerland to match any room.<\/p>",
+            "prop_button": "ADD TO CART",
+            "btn_url": "shopify:\/\/products\/lit-bike-moonbow-beige"
+          }
+        }
+      },
+      "block_order": [
+        "5a42f03d-45dd-49fe-b395-41b42fc7f588",
+        "4dab40b3-5614-42e1-8a09-9ee4cd062411",
+        "909a19c2-93c4-4973-a587-a98a1bf13278",
+        "d44fb198-012d-42f5-b592-628db79e63e2"
+      ],
+      "settings": {
+        "fb_boompr_prduct": "lit-bike-moonbow-beige",
+        "swiper_background": "#f5f5f5",
+        "title_color": "#1c1b1b",
+        "des_color": "#333333",
+        "prop_btn_txtcolor": "#1c1b1b",
+        "prop_btn_background": "",
+        "lit_bike_background": "",
+        "btn_txt": "ADD TO CART",
+        "btn_url": ""
+      }
+    },
+    "e572e311-dd82-466a-a78d-9945c3374188": {
+      "type": "fb-newPages-PRswiper",
+      "blocks": {
+        "fab45c63-a2b0-488c-981b-354788213b6e": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/5_2x_c39eaa58-736b-4dfe-afa0-b3f0f2f6d7e4.png",
+            "swiperDes": "\"Take your fitness journey to the next level\""
+          }
+        },
+        "831111b0-5f47-4f4b-b70a-04566c83af60": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/Elle_logo_svg.png",
+            "swiperDes": "\"Always step off the bike in a better mood\""
+          }
+        },
+        "cdac82bc-5f68-4f33-bb98-22109643dbbe": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/20230512-181255_f99bdfdf-4c99-44e2-8256-ea915980d2d4.png",
+            "swiperDes": "\"Quite a nice array of classes\""
+          }
+        },
+        "73d9ef0a-34a9-4148-b40d-dbc999471aa5": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/sun_new_logp.png",
+            "swiperDes": "\"A one-of-a-kind at-home cycling experience\""
+          }
+        },
+        "e2c14f35-98b0-42ae-94ac-27b907c41559": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/tom_guide_pc_0511.png",
+            "swiperDes": "\"First stationary bikes to turn spinning into a game\""
+          }
+        },
+        "aecf3524-b458-416a-baa4-94d085ef0727": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/sl_new_logo.png",
+            "swiperDes": "\"Shines as a high-quality, technology-enhanced home cardio exercise bike\""
+          }
+        },
+        "6faefff2-b209-45da-b4ed-c374fe6dfcf3": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/Frame_3926_2x_ca432546-8630-4147-b92e-0801af4ecf97.png",
+            "swiperDes": "\"Leading players in the stationary indoor exercise bike\""
+          }
+        },
+        "a9789f71-fac5-4b09-987f-58b0468495e8": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/shape_logo.png",
+            "swiperDes": "\"Perfect if you’re new to cycling\""
+          }
+        },
+        "f8bfa0e2-b684-4aca-91af-75b2ab990029": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/Self_magazine_logo_svg.png",
+            "swiperDes": "\"Classes to rev up your heart rate\""
+          }
+        },
+        "799b2bec-79a6-4c91-9045-eae485a432a6": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/digi-pre_1000x_72f54939-1275-4620-baf9-a02e9a5ea572.png",
+            "swiperDes": "\"Lit Bike Elevated At-Home Workouts\""
+          }
+        },
+        "fef69aaa-3e14-4f7b-9b41-6f85562110b6": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/verywell_fit_logo.png",
+            "swiperDes": "\"Get into cycling and have room to progress\""
+          }
+        },
+        "e7649852-aa1a-4704-96d2-5f87870ff628": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/know_techie.png",
+            "swiperDes": "\"Auto Resistance System that matches its rider\""
+          }
+        },
+        "878f6928-6a68-4551-ad2c-aaa124ece3f3": {
+          "type": "newSwiperContent",
+          "settings": {
+            "swiperImg": "shopify:\/\/shop_images\/Runners-World.png",
+            "swiperDes": "\"Heart-Pumping workout at home\""
+          }
+        }
+      },
+      "block_order": [
+        "fab45c63-a2b0-488c-981b-354788213b6e",
+        "831111b0-5f47-4f4b-b70a-04566c83af60",
+        "cdac82bc-5f68-4f33-bb98-22109643dbbe",
+        "73d9ef0a-34a9-4148-b40d-dbc999471aa5",
+        "e2c14f35-98b0-42ae-94ac-27b907c41559",
+        "aecf3524-b458-416a-baa4-94d085ef0727",
+        "6faefff2-b209-45da-b4ed-c374fe6dfcf3",
+        "a9789f71-fac5-4b09-987f-58b0468495e8",
+        "f8bfa0e2-b684-4aca-91af-75b2ab990029",
+        "799b2bec-79a6-4c91-9045-eae485a432a6",
+        "fef69aaa-3e14-4f7b-9b41-6f85562110b6",
+        "e7649852-aa1a-4704-96d2-5f87870ff628",
+        "878f6928-6a68-4551-ad2c-aaa124ece3f3"
+      ],
+      "settings": {
+        "PR_swiper_background": "#f5f5f5",
+        "textColor": "#666666"
+      }
+    },
+    "64b9fdcc-767d-4e1d-8ff2-3098146c747a": {
+      "type": "fb-img-video-banner",
+      "blocks": {
+        "template--16345725599929__64b9fdcc-767d-4e1d-8ff2-3098146c747a-image_banner-1": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": true,
+            "image": "shopify:\/\/shop_images\/CelticsXfreebeat_PC_WithoutCTA.webp",
+            "mobile_image": "shopify:\/\/shop_images\/CelticsXfreebeat_Mobile_WithoutCTA.webp",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "",
+            "banner_title_color": "",
+            "banner_title_mob": "",
+            "banner_title_color_mob": "",
+            "banner_desc": "",
+            "banner_desc_color": "",
+            "banner_desc_mob": "",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16345725599929__64b9fdcc-767d-4e1d-8ff2-3098146c747a-image_banner-1"
+      ],
+      "settings": {
+        "additional_class": "",
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "059be1d3-7558-4981-97fb-414e17200dd8": {
+      "type": "fb-pages-video-introduce",
+      "settings": {
+        "backgroundColor": "#f5f5f5",
+        "backgroundImage": "",
+        "video_introduce_title": "<h2><strong>SWISS ENGINEERING<\/strong><\/h2>",
+        "video_introduce_desc": "<p>Lit Bike showcases Swiss precision, durability and elegance. With a wood-covered flywheel, it seamlessly blends innovative design and natural aesthetics, delivering a premium riding experience.<\/p>",
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c5573b6a3017474e87f8b878fc3c6f06.mp4",
+        "mob_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f77992261d954194938437415125f15d.mp4"
+      }
+    },
+    "ec95daa8-b3f8-4444-9427-a0ddcf7beab4": {
+      "type": "fb-product-card-cro",
+      "blocks": {
+        "3776623d-bca0-49dc-890f-b84c8a8782c0": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "1",
+            "fpc_video_pc": "",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/27b2443a8023439f8a92c7fc9fc25ae4.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>21.5\" HD Touchscreen<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Artist-generated interactive 3D stages turn every room into an immersive workout via our 21.5\" HD touchscreen.<\/p>"
+          }
+        },
+        "05361e51-d20c-47ae-8fbe-cf6cfbaba670": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "2",
+            "fpc_video_pc": "",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f3075d55c2e6417abd6bd29ade3a5a7a.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Rotate for More<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Rotate the screen to seamlessly transition between a staggering array of cycling, stretching, strength training, and more classes all under one roof.<\/p>"
+          }
+        },
+        "6dd7f5df-c7a4-4865-bfce-abedb5ce0088": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "1",
+            "fpc_video_pc": "",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/36733c63e65b42b3a13aba68c50e0a18.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Auto Resistance System<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Auto-adjusts based on the instructor's cue and adapts to each unique riding style.<\/p>"
+          }
+        },
+        "d6f35550-299a-4a4e-b285-fe778951c46e": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "2",
+            "fpc_video_pc": "",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3503c40003fe41b386e83971d8c7b07f.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Smart Saddle Detection+<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Detects in and out of saddle riding via sensors to deliver intense and fulfilling results. <\/p>"
+          }
+        },
+        "d27a23fd-cf9a-46a3-a48f-a1f243e58302": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "3",
+            "fpc_video_pc": "",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c4eefc0c755c4647927ba6edfdf774e6.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Personal Trainer Algorithm<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Evaluates each rider's performance and applies the perfect balance of a challenging yet fun intensity to push every rider at the right speed, level, and time.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3776623d-bca0-49dc-890f-b84c8a8782c0",
+        "05361e51-d20c-47ae-8fbe-cf6cfbaba670",
+        "6dd7f5df-c7a4-4865-bfce-abedb5ce0088",
+        "d6f35550-299a-4a4e-b285-fe778951c46e",
+        "d27a23fd-cf9a-46a3-a48f-a1f243e58302"
+      ],
+      "settings": {
+        "fpc_big_title": "<p>IMMERSIVE FITNESS, INTELLIGENT TRAINING<\/p>"
+      }
+    },
+    "efbb2679-14c7-4513-8637-dfecfb3d197c": {
+      "type": "fb-product-card",
+      "blocks": {
+        "4b0a1002-be21-4888-883a-5cea7b3cd20e": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "1",
+            "fpc_video_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/12b368fd47244119b6662c42950a91f8.mp4",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/27b2443a8023439f8a92c7fc9fc25ae4.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>21.5\" HD Touchscreen<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Artist-generated interactive 3D stages turn every room into an immersive workout via our 21.5\" HD touchscreen.<\/p>"
+          }
+        },
+        "39c08555-19e2-4a91-b906-dfb1ce7bbe14": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "2",
+            "fpc_video_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c29c00d0c55b4d4399c99c6b9b61e019.mp4",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f3075d55c2e6417abd6bd29ade3a5a7a.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Rotate for More<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Rotate the screen to seamlessly transition between a staggering array of cycling, stretching, strength training, and more classes all under one roof.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4b0a1002-be21-4888-883a-5cea7b3cd20e",
+        "39c08555-19e2-4a91-b906-dfb1ce7bbe14"
+      ],
+      "settings": {
+        "fpc_big_title": "<h2>EXTENDED REALITY<\/h2>"
+      }
+    },
+    "d0a7b552-4dfb-48cc-a399-a5cc9e43fc52": {
+      "type": "fb-product-card",
+      "blocks": {
+        "b6c116c9-384e-4b2a-b185-1b700bb46c6f": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "1",
+            "fpc_video_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f24dba0a842a4547b811250da9ed0f11.mp4",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/36733c63e65b42b3a13aba68c50e0a18.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Auto Resistance System<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Auto-adjusts based on the instructor's cue and adapts to each unique riding style.<\/p>"
+          }
+        },
+        "08b1f9d6-f96d-45f0-b9f7-c3d1c8f12e47": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "2",
+            "fpc_video_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/fbf37e36fca1494eb99ffdc6aabe27a0.mp4",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3503c40003fe41b386e83971d8c7b07f.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Smart Saddle Detection+<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Detects in and out of saddle riding via sensors to deliver intense and fulfilling results. <\/p>"
+          }
+        },
+        "531ddc58-fa52-41c1-a526-62d4c73e6580": {
+          "type": "video_and_text",
+          "settings": {
+            "selector_order": "3",
+            "fpc_video_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c4eefc0c755c4647927ba6edfdf774e6.mp4",
+            "fpc_video_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c4eefc0c755c4647927ba6edfdf774e6.mp4",
+            "fpc_video_title_color": "#ffffff",
+            "fpc_video_title": "<p>Personal Trainer Algorithm<\/p>",
+            "fpc_video_desc_color": "#ffffff",
+            "fpc_video_desc": "<p>Evaluates each rider's performance and applies the perfect balance of a challenging yet fun intensity to push every rider at the right speed, level, and time.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b6c116c9-384e-4b2a-b185-1b700bb46c6f",
+        "08b1f9d6-f96d-45f0-b9f7-c3d1c8f12e47",
+        "531ddc58-fa52-41c1-a526-62d4c73e6580"
+      ],
+      "settings": {
+        "fpc_big_title": "<h2>INCREDIBLY SMART<\/h2>"
+      }
+    },
+    "94069461-18bc-426a-91e4-86ab991cc70e": {
+      "type": "fb-new-class",
+      "blocks": {
+        "a1780a45-e50d-4092-b821-e1daa25d837a": {
+          "type": "videoBlock",
+          "settings": {
+            "pages_swiper_title": "Studio Cycling",
+            "pages_swiper_Info": "Led by expert instructors and set to the beat of the hottest tunes, get your heart racing and your body moving.",
+            "pages_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/503dae2f160547babbd8e731403f521b.mp4",
+            "pages_mb_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/Cycling_Class_01.jpg?v=1694594306"
+          }
+        },
+        "7a4cea35-7fe7-4130-b82c-4593db04d15b": {
+          "type": "videoBlock",
+          "settings": {
+            "pages_swiper_title": "Sculpting & Stretching",
+            "pages_swiper_Info": "Sculpt and tone your muscles, while simultaneously improving your flexibility and range of motion. With each rep and stretch, you'll feel the beat pulsating through your body.",
+            "pages_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3c220310d5d64ee197b16dbd8d699c0b.mp4",
+            "pages_mb_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/Sculpt_Stretching_Class_02.jpg?v=1694594306"
+          }
+        },
+        "e37be05b-7492-4643-a9a6-122ff3701d69": {
+          "type": "videoBlock",
+          "settings": {
+            "pages_swiper_title": "Rhythm Game",
+            "pages_swiper_Info": "Amplify your workout experience with Rhythm Game! It's the perfect combination of fitness and music. Step to the beat and let loose in our exhilarating music game.",
+            "pages_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a601171667554e34a4b77c36b9a08466.mp4",
+            "pages_mb_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/Rythym_Game_03_tiny.jpg?v=1694593264"
+          }
+        },
+        "c5b678f1-dc0f-4c1e-9bbf-8f4435e1fd5d": {
+          "type": "videoBlock",
+          "settings": {
+            "pages_swiper_title": "Scenic Ride",
+            "pages_swiper_Info": "With stunning visuals and immersive soundscapes, you'll feel like you're cycling through the mountains, across the beach, and through bustling cities.",
+            "pages_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4958748abe664e9c9046a16576eaf5c6.mp4",
+            "pages_mb_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/Scenic_Ride_04.jpg?v=1694594306"
+          }
+        },
+        "620bcf0f-b853-4928-a09f-aaf3d1076406": {
+          "type": "videoBlock",
+          "settings": {
+            "pages_swiper_title": "Motivational Events",
+            "pages_swiper_Info": "Participate in organized events, earn rewards by achieving goals. Enhance fitness routine, complete tasks, redeem points for cash rewards!",
+            "pages_pc_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/df017d93c8cb45d185e92ae858a8ee6c.mp4",
+            "pages_mb_image": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/Ride_More_Earn_More_05.jpg?v=1694594306"
+          }
+        }
+      },
+      "block_order": [
+        "a1780a45-e50d-4092-b821-e1daa25d837a",
+        "7a4cea35-7fe7-4130-b82c-4593db04d15b",
+        "e37be05b-7492-4643-a9a6-122ff3701d69",
+        "c5b678f1-dc0f-4c1e-9bbf-8f4435e1fd5d",
+        "620bcf0f-b853-4928-a09f-aaf3d1076406"
+      ],
+      "settings": {
+        "content_tit": "DIVE INTO A GAMIFIED WONDERLAND",
+        "product_but_text": "ADD TO CART",
+        "show_cart_button": true,
+        "btn_one_des": "VIEW DETAILS",
+        "btn_one_link": "",
+        "btn_two_des": "EXPLORE BIKES",
+        "btn_two_link": ""
+      }
+    },
+    "5cba4598-56e2-4065-8c17-31ab531f7ad9": {
+      "type": "fb-boom-challenge",
+      "blocks": {
+        "6fd78c61-1ebb-4ac6-8e19-1cd5bac3d519": {
+          "type": "boomclgImgBlock",
+          "settings": {
+            "boomlg_title": "<p>Challenges and Rewards<\/p>",
+            "boomlg_desc": "<p>Show off your competitive side in our always-updating games and challenges.<\/p>",
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a41d3c254fe44dfc9e3ea083038f4f71.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b3b203bedb5948bdae8bef50448b5a94.mp4"
+          }
+        },
+        "9331f2fe-0db7-4aed-8660-5d231c8e300c": {
+          "type": "boomclgImgBlock",
+          "settings": {
+            "boomlg_title": "<p>Connect With Your Pals<\/p>",
+            "boomlg_desc": "<p>Challenge friends and family for the best score. Climb up the leaderboard to make the most of your home fitness adventure.<\/p>",
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a3e81b6120de40eeb5ee3b641eb7c360.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/72d4e0d481564caebd16ecbdd1e5dfff.mp4"
+          }
+        },
+        "f24a65c8-11bd-400f-8f19-7c12986b1c57": {
+          "type": "boomclgImgBlock",
+          "settings": {
+            "boomlg_title": "<p>Train With A Rhythm Game<\/p>",
+            "boomlg_desc": "<p>Experience a fun interactive game in which you ride to the rhythm and score by your rhythmic pedal accuracy.<\/p>",
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/63cb1c411cf3415a93f271dc90601fae.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1821d5dfc5864a438e312d942856f96b.mp4"
+          }
+        },
+        "f741810b-2d48-483f-b400-5fb405d6492e": {
+          "type": "boomclgImgBlock",
+          "settings": {
+            "boomlg_title": "<p>Performance Tracking<\/p>",
+            "boomlg_desc": "<p>Our sensors won't miss a single pedal and receive instant performance tracking results at every beat.<\/p>",
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a41d3c254fe44dfc9e3ea083038f4f71.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1d4f5a20d3434c72a16c7e2300a0601c.mp4"
+          }
+        },
+        "fda17ab2-9b9d-4ddb-9e8e-9df91f225e7a": {
+          "type": "boomclgImgBlock",
+          "settings": {
+            "boomlg_title": "<p>Diverse Classes<\/p>",
+            "boomlg_desc": "<p>Experience studio fitness from the comfort of your own home with thousands of on-demand classes to choose from every day.<\/p>",
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1e565a029d144a5d8aa0158f5ae62e6d.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d3eb976a16fe431ebfeb68498e08bca2.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "6fd78c61-1ebb-4ac6-8e19-1cd5bac3d519",
+        "9331f2fe-0db7-4aed-8660-5d231c8e300c",
+        "f24a65c8-11bd-400f-8f19-7c12986b1c57",
+        "f741810b-2d48-483f-b400-5fb405d6492e",
+        "fda17ab2-9b9d-4ddb-9e8e-9df91f225e7a"
+      ],
+      "settings": {
+        "boomlg_max_title": "<p>RIDE MORE. <br\/>EARN MORE<\/p>",
+        "boomlg_max_desc": "<p>Earn rewards, points, and fame by competing against friends in freebeat fitness challenges, events, and games.<\/p>"
+      }
+    },
+    "78a7d0dc-3d3e-453d-8efd-1cd228d70025": {
+      "type": "fb-boom-klarna",
+      "settings": {
+        "product": "lit-bike-moonbow-beige",
+        "klarna_link_url": "",
+        "klarna_color": "#f5f5f5",
+        "klarna_Gradient_deg": 180,
+        "klarna_Gradient_colorA": "#ffffff",
+        "klarna_Gradient_colorB": "#ffffff",
+        "klarna_text_color": "#121212",
+        "klarna_as_low_as_text_color": "#00cc45",
+        "klarna_title_new_block_s": "BUY NOW, PAY LATER with",
+        "klarna_title_block_s": "",
+        "klarna_first_unit": "$",
+        "klarna_first_number": "0",
+        "klarna_first_desc": "DOWN PAYMENT",
+        "klarna_sencond_unit": "$",
+        "klarna_sencond_number": "0",
+        "klarna_sencond_top_desc": "AS LOW AS",
+        "klarna_sencond_desc": "\/MONTH",
+        "klarna_third_unit": "%",
+        "klarna_third_number": "0",
+        "klarna_third_desc": "APR FINANCING"
+      }
+    },
+    "376b5096-be09-49b9-94d5-4fd9c7538bc4": {
+      "type": "fb-savings-calculator",
+      "settings": {
+        "fsc_peoper_prduct": "lit-bike-moonbow-beige",
+        "fsc_peoper_number": 10,
+        "fsc_week_number": 7,
+        "fsc_title": "<p>The Most Convenient Workout Option<\/p>",
+        "fsc_number_bike_text": "<p>Number of people using freebeat bike<\/p>",
+        "fsc_number_week_text": "<p>Number of <br\/> workouts per week<\/p>",
+        "fsc_per_workout": "Cost per workout",
+        "fsc_cheap_than": "<p>Cheaper than your average coffee shop visit!<\/p>",
+        "fsc_cheap_based": "<p>Based on a 5 years time horizon with best 36 month payment financing offer.<\/p>",
+        "fsc_buy_now": "ADD TO CART",
+        "fsc_buy_now_url": "\/pages\/configure-lit-bike"
+      }
+    },
+    "dafafc4e-05c7-467e-baf9-1114f21f5b08": {
+      "type": "fb-lit-compare",
+      "settings": {
+        "lit_bike_pc": "shopify:\/\/shop_images\/lbm.png",
+        "lit_bike_mobile": "shopify:\/\/shop_images\/lbm.png",
+        "bike_tip_img": "shopify:\/\/shop_images\/Group_24_2x_e00e5d65-8098-467f-a2b7-11cd1d91ec2d.png",
+        "learn_more_img": "shopify:\/\/shop_images\/litPc.png",
+        "learn_more_img_mob": "shopify:\/\/shop_images\/litMob.png",
+        "learn_more_desc": "<p>Take your fitness routine into your own hands with the freebeatfit Moonbow Beige spin bike. This dreamy stationary bike might be a beauty, but it’s also a beast. With its innovative, smart design, unique immersive environment, and thousands of fully gamified workout options, the freebeat™ Moonbow Beige exercise bike takes home fitness to a new level. <\/p>"
+      }
+    },
+    "e53601f0-558b-4f7c-8e80-efb4410ccafb": {
+      "type": "fb-new-performance",
+      "blocks": {
+        "e0666992-1521-4af5-b72c-d29563d09ead": {
+          "type": "newPerformance",
+          "settings": {
+            "swiper_url": "shopify:\/\/pages\/product-warranty",
+            "swiperTitle": "Product warranty",
+            "swiperDes": "Enjoy warranty for up to 10 years on bike components and parts.",
+            "linkDes": "Learn more",
+            "img_url": "https:\/\/cdn.shopifycdn.net\/s\/files\/1\/0592\/3766\/2905\/files\/202212615171.png?v=1643181540",
+            "icon_img_choose": "shopify:\/\/shop_images\/Product_Warranty.png",
+            "hands_top_onecolor": "#1d1d1f",
+            "hands_top_twocolor": "#1d1d1f",
+            "hands_learn_more_color": "#02c0d9"
+          }
+        },
+        "570f0e28-0670-4504-baf7-a25dfb368325": {
+          "type": "newPerformance",
+          "settings": {
+            "swiper_url": "https:\/\/www.klarna.com\/us\/customer-service\/what-is-financing-and-how-does-it-work\/",
+            "swiperTitle": "0% Financing",
+            "swiperDes": "Immersive fitness with easy monthly payments and no hidden fees.",
+            "linkDes": "Learn more",
+            "img_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0592\/3766\/2905\/files\/2x_b7f26be2-6ac0-480f-a4d5-9b8d1995fe6e.png?v=1660186897",
+            "icon_img_choose": "shopify:\/\/shop_images\/0_Financing.webp",
+            "hands_top_onecolor": "#1d1d1f",
+            "hands_top_twocolor": "#1d1d1f",
+            "hands_learn_more_color": "#02c0d9"
+          }
+        },
+        "9bd0a0c4-1317-466c-a581-653fbcb31c05": {
+          "type": "newPerformance",
+          "settings": {
+            "swiper_url": "mailto:customerservice@freebeatfit.com",
+            "swiperTitle": "Customer Service",
+            "swiperDes": "Our customer service team will find you the best solution.",
+            "linkDes": "Launch chat",
+            "img_url": "https:\/\/cdn.shopifycdn.net\/s\/files\/1\/0592\/3766\/2905\/files\/202212615174.png?v=1643181540",
+            "icon_img_choose": "shopify:\/\/shop_images\/24_7_Customer_Service.png",
+            "hands_top_onecolor": "#1d1d1f",
+            "hands_top_twocolor": "#1d1d1f",
+            "hands_learn_more_color": "#02c0d9"
+          }
+        }
+      },
+      "block_order": [
+        "e0666992-1521-4af5-b72c-d29563d09ead",
+        "570f0e28-0670-4504-baf7-a25dfb368325",
+        "9bd0a0c4-1317-466c-a581-653fbcb31c05"
+      ],
+      "settings": {
+        "content_title": "Purchase Today, Worry-Free"
+      }
+    },
+    "907333dc-5566-4ed8-bb22-0a2b494d8261": {
+      "type": "online-reviewers-index",
+      "blocks": {
+        "79bfa7c6-609b-4e24-b382-59e999c9e3ae": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "Fresh from the Box Review",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/onadyuZAOtk",
+            "online_reviews_circle": "shopify:\/\/shop_images\/circle_black.png",
+            "online_reviews_color": "Lit Bike Snowpeak White",
+            "online_reviews_talk": "shopify:\/\/shop_images\/talk_black.png",
+            "online_reviews_text": "\"When you've assembled and ridden as many bikes as I have, you start to know a quality build. This thing was just built well! I was impressed and I think it's a model that will last a long time!\""
+          }
+        },
+        "6bb1da6c-0f7b-422b-adcb-3d36075e1559": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "Speaks for Itself",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/Cb_FJ7J03rE",
+            "online_reviews_circle": "shopify:\/\/shop_images\/pc-white_2x_9c38d1d7-c5c5-4b65-8310-4545e63ffa54.png",
+            "online_reviews_color": "Boom Bike Arctic White",
+            "online_reviews_talk": "shopify:\/\/shop_images\/talk_black.png",
+            "online_reviews_text": "\"Whoa, when you are riding there will be a light that pops up under the bike and it adds a premium element to the bike. I have never seen this with another bike before I think it's a really cool feature!\""
+          }
+        },
+        "19b81273-025d-4491-8524-e1d8d0e4134a": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "It's All About the Experience",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/LSW0MblzIV0",
+            "online_reviews_circle": "shopify:\/\/shop_images\/circle_beige.png",
+            "online_reviews_color": "Lit Bike Moonbow Beige",
+            "online_reviews_talk": "shopify:\/\/shop_images\/talk_beige.png",
+            "online_reviews_text": "\"Resistance works pretty snappy and the resistance goes pretty darn high and it changes pretty quickly and the bike has a good feel overall. It is a party right away!\""
+          }
+        },
+        "9abb82e0-9c96-49ce-9a41-fabe616b9b45": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "A Lit Ride",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/opksLfH-O0M",
+            "online_reviews_circle": "shopify:\/\/shop_images\/pc-black_2x_ffa62d37-6876-4417-9a0b-e94a49615508.png",
+            "online_reviews_color": "Lit Bike Space Black",
+            "online_reviews_talk": "shopify:\/\/shop_images\/talk_black.png",
+            "online_reviews_text": "\"The huge screen and one-on-one lessons feature great instructors from around the world with really cool music! If you're looking for great music and just a great workout, it's fantastic!\""
+          }
+        },
+        "fc00f96e-8e9c-4317-ba8c-c301f0c9673c": {
+          "type": "OnlineReviewersBlock",
+          "settings": {
+            "online_reviews_icon": "shopify:\/\/shop_images\/icon_f819f70a-e9e8-4356-81ed-cdcb70dc77e5.png",
+            "online_reviews_title": "Riding in Style with the Lit Bike",
+            "online_reviews_url": "https:\/\/www.youtube.com\/embed\/tagLvzzoCiI",
+            "online_reviews_circle": "shopify:\/\/shop_images\/circle_pink.png",
+            "online_reviews_color": "Lit Bike Aurora Pink",
+            "online_reviews_talk": "shopify:\/\/shop_images\/talk_pink.png",
+            "online_reviews_text": "\"Great durability and stability, helping create the smooth, consistent pedal stroke that you want. The wood panel is fun I feel like it adds a little bit of extra flair!\""
+          }
+        }
+      },
+      "block_order": [
+        "79bfa7c6-609b-4e24-b382-59e999c9e3ae",
+        "6bb1da6c-0f7b-422b-adcb-3d36075e1559",
+        "19b81273-025d-4491-8524-e1d8d0e4134a",
+        "9abb82e0-9c96-49ce-9a41-fabe616b9b45",
+        "fc00f96e-8e9c-4317-ba8c-c301f0c9673c"
+      ],
+      "settings": {
+        "online_reviewers_max_title": "<p>Reviews You Have to See To Believe<\/p>",
+        "online_reviewers_btn": "COMPARE BIKES",
+        "fb_show_reviewers_tab": false,
+        "fb_show_reviewers_button": true
+      }
+    },
+    "884aee2e-b658-4303-a01b-eec6d14286c5": {
+      "type": "fb-evaluate",
+      "settings": {
+        "fb_evaluate": true,
+        "product": "lit-bike-moonbow-beige"
+      }
+    },
+    "16d6d9dc-5196-4654-b638-cd29cb4ed39d": {
+      "type": "fb-home-social",
+      "blocks": {
+        "59fbe346-71b8-418f-a13c-b62aef27ae09": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.instagram.com\/freebeatfit\/",
+            "social_img": "shopify:\/\/shop_images\/Instagram2.png"
+          }
+        },
+        "cfbcd386-e346-4920-8ae2-6ff9fc1653a3": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.youtube.com\/channel\/UCSob0frzoq6jUnbiMj-jZow",
+            "social_img": "shopify:\/\/shop_images\/Youtube2.png"
+          }
+        },
+        "2b2af66a-663f-4022-a4ca-0158a1b90dff": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.tiktok.com\/@freebeatfitusa",
+            "social_img": "shopify:\/\/shop_images\/TikTok2.png"
+          }
+        },
+        "a9549148-8732-4911-8912-b18940ae735f": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.facebook.com\/freebeatfit",
+            "social_img": "shopify:\/\/shop_images\/Facebook2.png"
+          }
+        },
+        "bdb38603-9746-4139-a522-5ea8eadf7c28": {
+          "type": "Social",
+          "settings": {
+            "social_url": "https:\/\/www.pinterest.com\/freebeatfit\/_created\/",
+            "social_img": "shopify:\/\/shop_images\/Pinterest2.png"
+          }
+        }
+      },
+      "block_order": [
+        "59fbe346-71b8-418f-a13c-b62aef27ae09",
+        "cfbcd386-e346-4920-8ae2-6ff9fc1653a3",
+        "2b2af66a-663f-4022-a4ca-0158a1b90dff",
+        "a9549148-8732-4911-8912-b18940ae735f",
+        "bdb38603-9746-4139-a522-5ea8eadf7c28"
+      ],
+      "settings": {
+        "socialColor": "#ffffff",
+        "textColor": "#1c1b1b",
+        "tipsColor": "#888888",
+        "linkColor": "#1d1d1f",
+        "litBike-color": "",
+        "litBike-color-mb": "",
+        "socialTitle": "UNITED, WE ARE FREEBEAT",
+        "subTitle1": "Freebeat Community",
+        "socialDes1": "",
+        "subTitle2": "Freebeat Ambassador",
+        "socialDes2": "<p>The freebeat ambassador squad is an elite club of athletes and influencers. Join health and fitness gurus to inspire rising workout warriors on their path to a healthy lifestyle. <\/p><p><a href=\"\/pages\/community\" title=\"COMMUNITY\">Learn more<\/a><\/p>",
+        "tips": "Check us out today!"
+      }
+    },
+    "924d01bd-f34b-4104-990a-87d26cb90450": {
+      "type": "fb-active-roll",
+      "blocks": {
+        "ec078e30-dcc5-40fa-8b54-640cd88e5f39": {
+          "type": "activerollImgBlock",
+          "settings": {
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/37a4c9d0f5ed42c4810e1ae4c3a53c45.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c74b67e6535f42abb1cc58391c876603.mp4",
+            "activeroll_img": "shopify:\/\/shop_images\/1_0043ae39-8136-4068-8f99-d0251fedd0e8.jpg"
+          }
+        },
+        "8366772f-d1d3-4248-a20a-350336d51b43": {
+          "type": "activerollImgBlock",
+          "settings": {
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/81816fd40edc441b9f58deb48764ab93.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f3e8edc064f4403985eb33d663b286c4.mp4",
+            "activeroll_img": "shopify:\/\/shop_images\/2_1fae407f-f981-420b-be74-8d7e9926288d.jpg"
+          }
+        },
+        "539b2b43-a280-4464-93c6-6f758a933955": {
+          "type": "activerollImgBlock",
+          "settings": {
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b0b2b1b498db46a9afd384aa719410d5.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/76ef8178b795460cbb99c7b76bc25f15.mp4",
+            "activeroll_img": "shopify:\/\/shop_images\/3_b2c28978-6c93-45d4-99f3-e1d86fb929d0.jpg"
+          }
+        },
+        "e33fa511-34cb-411c-b55c-7fa009aed2ba": {
+          "type": "activerollImgBlock",
+          "settings": {
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3b338663d8304485ade56b98e5c2fd40.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/39feb2db5457469d8e7635051679ff72.mp4",
+            "activeroll_img": "shopify:\/\/shop_images\/4_938e950e-95e7-4050-b0b3-df4623a0f1f2.jpg"
+          }
+        },
+        "1378bc88-03e0-40bc-84e3-33ebf171fe50": {
+          "type": "activerollImgBlock",
+          "settings": {
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/00bd8e2175a84494a1c265a61776b677.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/72eeac2c1cac4b70b8d3f33119b30128.mp4",
+            "activeroll_img": "shopify:\/\/shop_images\/5.jpg"
+          }
+        },
+        "69d131af-49e5-4ce0-abc5-b9e5191b8ad3": {
+          "type": "activerollImgBlock",
+          "settings": {
+            "video_url_pc": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/df90a68fc8974e05bd9905cd0546e169.mp4",
+            "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/89b7fe18ba114966b98bc2f86fbcca71.mp4",
+            "activeroll_img": "shopify:\/\/shop_images\/6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "ec078e30-dcc5-40fa-8b54-640cd88e5f39",
+        "8366772f-d1d3-4248-a20a-350336d51b43",
+        "539b2b43-a280-4464-93c6-6f758a933955",
+        "e33fa511-34cb-411c-b55c-7fa009aed2ba",
+        "1378bc88-03e0-40bc-84e3-33ebf171fe50",
+        "69d131af-49e5-4ce0-abc5-b9e5191b8ad3"
+      ],
+      "settings": {
+        "activeroll_color": "#ffffff",
+        "activeroll_mobile_color": "#ffffff",
+        "first_img_pc": "shopify:\/\/shop_images\/pageview.png"
+      }
+    },
+    "5da9e5ba-295c-472b-a9ad-d04706ceb85e": {
+      "type": "fb-key-specifications",
+      "blocks": {
+        "41b30afa-b6bf-4382-a18a-2e114229d173": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "MEASUREMENTS",
+            "spe_box_label": "<p><strong>Dimensions<\/strong><\/p><p><strong>Screen<\/strong><\/p><p><strong>Flywheel<\/strong><\/p><p><strong>Weight<\/strong><\/p>",
+            "spe_box_desc": "<p>49.3\" L × 58.8\" H × 22.6\" W<\/p><p>21.5\" diagonal<\/p><p>28.6 lbs<\/p><p>113.3 lbs (N.W)<\/p>"
+          }
+        },
+        "7e1ef87d-7b2e-42e6-a9ba-3b9ba57d27d8": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "USER REQUIREMENT",
+            "spe_box_label": "<p><strong>Height range<\/strong><\/p><p><strong>Weight maximum<\/strong><\/p><p><strong>Age minimum<\/strong><\/p>",
+            "spe_box_desc": "<p>5'0\"\" - 6'7\"\"<\/p><p>300lbs<\/p><p>14+\"<\/p>"
+          }
+        },
+        "a88b3fb5-349c-4765-82ae-e82dd642abef": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "POWER",
+            "spe_box_label": "<p><strong>Input<\/strong><\/p><p><strong>Output<\/strong><\/p>",
+            "spe_box_desc": "<p>100V to 240V, 50Hz - 60Hz, 1.5A Max<\/p><p>12.5V, 4.0A<\/p>"
+          }
+        },
+        "e63f3957-7e72-49a6-91c8-acaf0c15ba0c": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "CONSTRUCTION",
+            "spe_box_label": "<p><strong>Frame<\/strong><\/p><p><strong>Resistance<\/strong><\/p><p><strong>Drive<\/strong><\/p><p><strong>Saddle<\/strong><\/p>",
+            "spe_box_desc": "<p>Welded steel<\/p><h2>Auto Resistance System<\/h2><p>Power transmission belt drive<\/p><h2>Smart Saddle Detection+<\/h2>"
+          }
+        },
+        "07515453-98ea-418c-bb66-68fa3f9410f0": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "CONTROLS",
+            "spe_box_label": "<p><\/p>",
+            "spe_box_desc": "<p>Vertical and horizontal seat adjustment<\/p><p>Adjustable non-slip multi-position handlebar<\/p><p>Rotatable touchscreen with 180° of movement<\/p>"
+          }
+        },
+        "1d2c5a9c-fe2f-450b-987e-dc3e8be4e829": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "DISPLAY AND SOUND",
+            "spe_box_label": "",
+            "spe_box_desc": "<p>21.5\"\" Screen 1080p HD<\/p><p>10-Point multi-touch touchscreen<\/p><p>4-Core 1.8GHz CPU<\/p><p>2GB RAM<\/p><p>8GB internal flash storage<\/p><p>2-Channel 3 watts rear-facing stereo-speaker system<\/p><p>Type-C port × 1<\/p><p>USB port × 1<\/p>"
+          }
+        },
+        "53102b41-f6fa-47a1-b622-9fb0c10db435": {
+          "type": "box",
+          "settings": {
+            "spe_box_title": "CONNECTION",
+            "spe_box_label": "<p><\/p>",
+            "spe_box_desc": "<p>802.11 a\/b\/g\/n - 2.4GHz & 5GHz<\/p><p>Bluetooth® 5.0<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "41b30afa-b6bf-4382-a18a-2e114229d173",
+        "7e1ef87d-7b2e-42e6-a9ba-3b9ba57d27d8",
+        "a88b3fb5-349c-4765-82ae-e82dd642abef",
+        "e63f3957-7e72-49a6-91c8-acaf0c15ba0c",
+        "07515453-98ea-418c-bb66-68fa3f9410f0",
+        "1d2c5a9c-fe2f-450b-987e-dc3e8be4e829",
+        "53102b41-f6fa-47a1-b622-9fb0c10db435"
+      ],
+      "settings": {
+        "specail_color": "#eeeeee",
+        "specail_title": "Key Specifications"
+      }
+    },
+    "26f162e3-00be-44b6-89e1-5963112de0fd": {
+      "type": "fb-bury-freebeat",
+      "blocks": {
+        "2a2ffd70-8790-48b2-a6c9-e5a8853a8f78": {
+          "type": "choose_bury_title",
+          "settings": {
+            "bury_freebeat_title": "<h2>Why Invest in a Moonbow Beige Spin Bike From freebeat™?<\/h2>",
+            "bury_freebeat_info1": "<p>This is the decade of home workouts, but most gym equipment doesn’t work in every home. That’s part of the beauty of the freebeat™ Moonbow Beige Lit Bike. It features a sleek Swiss design that can fit on a yoga mat so that it won’t crowd your space. Plus, it comes in an ethereal shade of Moonbow Beige, like the LBD of home decor — it goes with everything! Aesthetics is just a fraction of what makes your freebeat™ Lit Bike Moonbow Beige so unique. Working out will feel like you’re in a real-life video game thanks to your bike’s high-tech visuals, pumping tunes, and first-class fitness instruction. You can even bring the social element of gaming into your workout by connecting with other freebeat™ cyclists or challenging your squad to some friendly competition.<\/p>",
+            "bury_freebeat_info2": "",
+            "bury_freebeat_info3": ""
+          }
+        },
+        "af78ad37-3da6-432c-a875-6aa8c20c6830": {
+          "type": "choose_bury_title",
+          "settings": {
+            "bury_freebeat_title": "<h2>How Does freebeat™ Deliver an Authentic Cycling Experience at Home?<\/h2>",
+            "bury_freebeat_info1": "<p>our beige cycling bike delivers a massive range of heart-pumping, immersive workouts. You can choose from thousands of gamified classes and workout experiences with their own soundtrack and choreography. The freebeat™ also features an auto-resistance system, so you don’t need to adjust programming during your workout. You can track your progress and stats in real-time without taking your eyes off the screen.<\/p>",
+            "bury_freebeat_info2": "",
+            "bury_freebeat_info3": ""
+          }
+        },
+        "ac0f7d65-3cea-4e17-b800-8b729424425c": {
+          "type": "choose_bury_title",
+          "settings": {
+            "bury_freebeat_title": "<h2>What Can I Expect From the freebeat™ Moonbow Beige Cycling Bike?<\/h2>",
+            "bury_freebeat_info1": "<p>The freebeat™ Moonbow Beige cycling bike is one of our Premium Lit home cardio machines and offers the following:<\/p>",
+            "bury_freebeat_info2": "<p>Modern Swiss Design: Freebeat™ Lit bikes were engineered in Switzerland, home to some of the sleekest, most appealing designs in history. There’s nothing clunky about our bikes; they look like a statement piece in your home. Gamified Workouts: Love gaming? The freebeat™ Moonbow makes you the main character. Our interactive workouts feature artist-generated backgrounds, unforgettable soundtracks, and endless opportunities to revolutionize how you work out.<\/p>",
+            "bury_freebeat_info3": "<p>22” Interactive HD Touch Screen: Your freebeat™ bike features a 180-degree rotating HD touch screen, so you can seamlessly immerse yourself into thousands of interactive classes. Auto Resistance System: No need to choose settings. Depending on your unique needs and abilities, your Moonbow beige cycling bike will intuitively set your ideal resistance level. Prefer to choose your resistance manually? You got it! Smart Saddle Detection+: Safety first! Your Moonbow beige cycling bike isn’t just elegant — it’s smart. Thanks to innovative, smart saddle sensors, it can also detect when you get off the bike.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2a2ffd70-8790-48b2-a6c9-e5a8853a8f78",
+        "af78ad37-3da6-432c-a875-6aa8c20c6830",
+        "ac0f7d65-3cea-4e17-b800-8b729424425c"
+      ],
+      "settings": {
+        "bury_color": "#ffffff",
+        "bury_freebeat_bigtitle": "FAQs About freebeat™",
+        "bury_freebeat_desc": "<p> You asked, and we have answers. <\/p>"
+      }
+    },
+    "66cfb8e3-dc95-440b-b3bc-3a090f200c56": {
+      "type": "fb-stage-description-new",
+      "settings": {
+        "fb_stage_backgroundImage": "",
+        "fb_stage_backgroundcolor": "#ffffff",
+        "fb_stage_desc": "<p>1) Monthly payment for freebeat bike is based on 36 months at 0% APR and $0 down. Financing does not include the cost of freebeat all-access membership (approximately $39\/mo). Subject to credit check and approval. In cases of partial approval, a down payment may be required. Offer subject to change at any time. Previous purchases are ineligible. See <a href=\"https:\/\/www.klarna.com\/us\/what-is-klarna\/\" title=\"https:\/\/www.klarna.com\/us\/what-is-klarna\/\">What is Klarna<\/a> for details.<\/p>",
+        "fb_stage_color": "#6a6a6a",
+        "fb_stage_desc_seconds": "<p>2) freebeat membership ($39\/mo) required to access full content on freebeat bikes.<\/p>",
+        "fb_stage_color_seconds": "#6a6a6a",
+        "fb_stage_desc_third": "",
+        "fb_stage_color_third": "#000000",
+        "fb_stage_desc_four": "",
+        "fb_stage_desc_five": "",
+        "fb_stage_desc_six": ""
+      }
+    }
+  },
+  "order": [
+    "cd1465af-d91f-4402-9d36-da4ce1b072ea",
+    "cb30ccaf-1306-459d-b1c0-6be81eab04a9",
+    "5df2fc69-40f8-4b2a-a3f3-168e96cd6bf5",
+    "5bfa46a8-9416-4c7d-a985-21675487d12d",
+    "e572e311-dd82-466a-a78d-9945c3374188",
+    "64b9fdcc-767d-4e1d-8ff2-3098146c747a",
+    "059be1d3-7558-4981-97fb-414e17200dd8",
+    "ec95daa8-b3f8-4444-9427-a0ddcf7beab4",
+    "efbb2679-14c7-4513-8637-dfecfb3d197c",
+    "d0a7b552-4dfb-48cc-a399-a5cc9e43fc52",
+    "94069461-18bc-426a-91e4-86ab991cc70e",
+    "5cba4598-56e2-4065-8c17-31ab531f7ad9",
+    "78a7d0dc-3d3e-453d-8efd-1cd228d70025",
+    "376b5096-be09-49b9-94d5-4fd9c7538bc4",
+    "dafafc4e-05c7-467e-baf9-1114f21f5b08",
+    "e53601f0-558b-4f7c-8e80-efb4410ccafb",
+    "907333dc-5566-4ed8-bb22-0a2b494d8261",
+    "884aee2e-b658-4303-a01b-eec6d14286c5",
+    "16d6d9dc-5196-4654-b638-cd29cb4ed39d",
+    "924d01bd-f34b-4104-990a-87d26cb90450",
+    "5da9e5ba-295c-472b-a9ad-d04706ceb85e",
+    "26f162e3-00be-44b6-89e1-5963112de0fd",
+    "66cfb8e3-dc95-440b-b3bc-3a090f200c56"
+  ]
+}

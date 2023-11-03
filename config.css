@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    @apply h-1 w-0 rounded-sm bg-121212/20 fb-md:h-1.5 fb-md:rounded-md;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply w-1 rounded-sm bg-121212/10;
+  }
+
+  .flex-half-center {
+    @apply flex h-full w-full basis-1/2 items-center justify-center;
+  }
+
+  .flex-half-center-col {
+    @apply flex h-full w-full basis-1/2 flex-col items-center justify-center;
+  }
+
+  .flex-half-start {
+    @apply flex h-full w-full basis-1/2 flex-col items-center justify-start;
+  }
+}
+
+@layer components {
+  .fb-center-translate {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
+  }
+  .fb-y-translate {
+    @apply absolute top-1/2  -translate-y-1/2  transform;
+  }
+  .fb-x-translate {
+    @apply absolute left-1/2  -translate-x-1/2  transform;
+  }
+  .fb-flex-xy-center {
+    @apply flex items-center justify-center;
+  }
+  .fb-flex-y-center {
+    @apply flex items-center justify-center flex-col;
+  }
+  .fb-flex-x-start {
+    @apply flex items-center justify-start;
+  }
+  .fb-flex-start-between {
+    @apply flex items-start justify-between;
+  }
+  .fb-flex-x-end {
+    @apply flex items-center justify-end;
+  }
+  .fb-flex-x-between {
+    @apply flex items-center justify-between;
+  }
+  .dark-btn-normal {
+    @apply rounded-lg bg-black px-4 py-3 font-bold text-white;
+  }
+  .fb-popup-fixed {
+    @apply fixed left-0 top-0 z-[888] hidden h-full w-full bg-[rgba(0,0,0,0.4)];
+  }
+  .fb-popup-fixed-white {
+    @apply fixed left-0 top-0 h-full w-full;
+  }
+  .dark-btn-click {
+    @apply rounded-lg bg-666666 px-4 py-3 font-bold text-white;
+  }
+
+  .dark-btn-unclick {
+    @apply rounded-lg bg-cccccc px-4 py-3 font-bold text-white;
+  }
+
+  .btn-normal {
+    @apply rounded-lg border border-121212 bg-white px-4 py-3 font-bold text-121212;
+  }
+
+  .btn-click {
+    @apply rounded-lg border border-121212 bg-e6e6e6 px-4 py-3 font-bold text-121212;
+  }
+
+  .btn-unclick {
+    @apply rounded-lg border border-cccccc bg-white px-4 py-3 font-bold text-cccccc;
+  }
+  /* .bike-Tuscany-Yellow-color{
+    @apply border border-[#FAF297] bg-[#FAF297]
+  }
+  .bike-Mist-Grey-color{
+    @apply border border-[#797D81] bg-[#797D81]
+  }
+  .bike-Arctic-White-color{
+    @apply border border-black bg-white
+  }
+  .bike-Aurora-Pink-color{
+    @apply border border-[#E37D97] bg-[#E37D97]
+  }
+  .bike-Space-Black-color{
+    @apply border border-black bg-black
+  }
+  .bike-Snowpeak-White-color{
+    @apply border border-black bg-white
+  }
+  .bike-Moonbow-Beige-color{
+    @apply border border-[#ECD0B5] bg-[#ECD0B5]
+  }
+  .ebike-Midnight-Black{
+    @apply border border-black bg-border-black
+  }
+  .ebike-Sage-Green{
+    @apply border border-[#8a9b8e] bg-[#8a9b8e]
+  } */
+  .ebike-Sahara-Sand {
+    @apply border border-[#dbd5cd] bg-[#dbd5cd];
+  }
+  .m-color-yuan:before {
+    @apply absolute left-1/2 top-1/2 hidden h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 transform rounded-full border content-[''];
+  }
+  .m-beidge.clicked::before {
+    @apply border-[#ECD0B5];
+  }
+
+  .m-white.clicked::before {
+    @apply border-black;
+  }
+  .m-pink.clicked::before {
+    @apply border-[#E788A1];
+  }
+
+  .m-beidge.clicked::before {
+    @apply border-[#ECD0B5];
+  }
+
+  .m-grey.clicked::before {
+    @apply border-[#797D80];
+  }
+
+  .m-yellow.clicked::before {
+    @apply border-[#FAF297];
+  }
+
+  .m-Green.clicked::before {
+    @apply border-[#8A9B8E];
+  }
+
+  .m-Sand.clicked::before {
+    @apply border-[#DBD5CD];
+  }
+
+  .m-color-yuan.clicked::before {
+    @apply block;
+  }
+  .HorizontalList__Item svg {
+    @apply inline h-[1em] w-[1em] stroke-[1px];
+  }
+  /* ebike 公共部分 */
+  .ebike-ebl-nav-hide {
+    @apply invisible;
+  }
+  .ebike-pcshow-mobhide {
+    @apply hidden fb-769:block;
+  }
+  .ebike-mobshow-pchide {
+    @apply block fb-769:hidden;
+  }
+  .ebike-mob-paddingleft {
+    @apply px-6 fb-769:px-0;
+  }
+  .ebike-product,
+  .ebike-main-bottom-fixed {
+    @apply w-full fb-769:px-[2%];
+  }
+  .ebike-content-width,
+  .ebike-mbf-section {
+    @apply fb-769:w-full fb-769:max-w-full fb-1120:w-[1200px] fb-1120:max-w-[1200px];
+  }
+  .ebike-wrapper-left,
+  .ebike-mbf-section .ebike-mbf-left,
+  .ebike-fbm-top-box .abmtc-left {
+    @apply fb-769:w-1/2 fb-1120:w-[57%];
+  }
+  .ebike-wrapper-right,
+  .ebike-mbf-section .ebike-mbf-right,
+  .ebike-fbm-top-box .abmtc-right {
+    @apply fb-769:w-[45%] fb-1120:w-[38.33%];
+  }
+  .ebike-ebl-nav-hide {
+    @apply inline-block fb-md:hidden;
+  }
+  .ebike-cfm-common{
+    @apply fb-max-768:mb-6 fb-max-768:flex-shrink-0 fb-max-768:mr-2.5
+  }
+  .ebike-cfm-size{
+    @apply fb-max-768:w-[150px] fb-769:h-45 fb-769:mr-[13px] fb-769:mb-5 fb-769:flex-shrink-0
+  }
+  .ebike-cfm-size, .ebike-cfm-size2, .ebike-cfm-size3 {
+    @apply fb-769:h-11 fb-769:relative cursor-pointer
+  }
+  .ebike-cfm-frame, .ebike-choose-size-mob{
+    @apply w-full flex items-center justify-between cursor-pointer
+  }
+  .ebike-cfm-frame{
+    @apply h-10 leading-10 bg-white rounded-lg border border-[#cccccc] relative pl-[10px]
+  }
+  .ebike-cfm-frame .span1{
+    @apply font-medium text-[#12121280] text-[12px] fb-769:text-[14px]
+  }
+  .ebike-cfm-frame .span2{
+    @apply font-medium text-[#121212] text-[12px] text-right fb-769:text-[14px]
+  }
+  .ebike-choose-form-mob .span3-img{
+    @apply w-6 flex items-center justify-center fb-769:w-7
+  }
+  .ebike-cfm-value .ebike-choose-size-mob, .ebike-cfm-value2 .ebike-choose-size-mob{
+    @apply text-[12px] font-medium text-[#12121299] h-8 text-left
+  }
+  /* .ebike-main-product-klarna .ebike-main-product-klarna-box {
+    @apply fb-769:w-full fb-769:flex fb-769:items-center fb-769:justify-start fb-769:flex-wrap
+  } */
+  /* .HorizontalList__Item svg{
+    @apply w-auto h-full text-white
+  } */
+}

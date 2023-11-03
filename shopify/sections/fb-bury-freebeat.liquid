@@ -1,0 +1,115 @@
+<section id="section-{{ section.id }}" class="fb-bury-freebeat" style="background:{{ section.settings.bury_color }}">
+  <div class="items-center mx-auto px-5 pt-10 fb-sm:px-10 fb-sm:pt-15 fb-md:px-0 fb-md:pt-5r">
+    <div class=" mb-1r mx-auto w-full text-center text-20 font-bold uppercase text-121212 fb-md:text-32 fb-md:mb-5">
+      {{ section.settings.bury_freebeat_bigtitle }}
+    </div>
+    <div class=" mb-3 text-center text-14 text-121212 fb-md:text-16">{{ section.settings.bury_freebeat_desc }}</div>
+    <div class="divide-y divide-e6e6e6 fb-md:max-w-75r mx-auto">
+      {%- for block in section.blocks -%}
+        <div class="freebeat-item py-5 fb-md:py-6">
+          <div class=" flex items-center justify-between">
+            <div class="text-14 font-bold text-121212 fb-md:text-20">{{ block.settings.bury_freebeat_title }}</div>
+            <div class="h-auto w-4  fb-sm:w-5 fb-md:w-7 ">
+              {% render 'icon-caret' %}
+            </div>
+          </div>
+          <div class="item-info-content mt-2 hidden">
+            <div class="text-12 text-121212 fb-md:text-16">{{ block.settings.bury_freebeat_info1 }}</div>
+            {%- if block.settings.bury_freebeat_info2 != blank -%}
+              <div class="mt-2 text-12 text-121212 fb-md:text-16">{{ block.settings.bury_freebeat_info2 }}</div>
+            {%- endif -%}
+            {%- if block.settings.bury_freebeat_info3 != blank -%}
+              <div class="mt-5 text-12 text-121212 fb-md:text-16">{{ block.settings.bury_freebeat_info3 }}</div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  $(function () {
+    $('.freebeat-item').click(function () {
+      $(this).children('.item-info-content').toggle();
+      // find freebeat-item-image icon-caret
+      if ($(this).find('.icon-caret').css('transform') == 'none')
+        $(this).find('.icon-caret').css('transform', 'rotate(180deg)');
+      else {
+        $(this).find('.icon-caret').css('transform', 'none');
+      }
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "FbBuryFreebeat",
+  "presets": [
+    {
+      "name": "fb-Bury-freebeat",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "bury_color",
+      "label": "Bury Color",
+      "default": "#F7F7F7"
+    },
+    {
+      "type": "text",
+      "id": "bury_freebeat_bigtitle",
+      "label": "Bury Bigtitle",
+      "default": "FAQs About freebeat™"
+    },
+    {
+      "type": "richtext",
+      "id": "bury_freebeat_desc",
+      "label": "Bury Desc",
+      "default": "<p> You asked, and we have answers. <\/p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "bury_freebeat_img1",
+      "label": "Bury Icon1"
+    },
+    {
+      "type": "image_picker",
+      "id": "bury_freebeat_img2",
+      "label": "Bury Icon2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "choose_bury_title",
+      "name": "Choose Bury",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "bury_freebeat_title",
+          "label": "Bury Title",
+          "default": "<p> Why Invest in Indoor Exercise Bikes From freebeat™?<\/p>"
+        },
+        {
+          "type": "richtext",
+          "id": "bury_freebeat_info1",
+          "label": "Bury Info1",
+          "default": "<p> Our indoor exercise bikes are a sleek, attractive, and easy addition to any home — even ones short on space. That’s thanks to our unique compact design. These bikes are bonafide beauties and come in a lovely range of colors matching your home aesthetic.<\/p>"
+        },
+        {
+          "type": "richtext",
+          "id": "bury_freebeat_info2",
+          "label": "Bury Info2",
+          "default": "<p> Our freebeat™ bikes might be pretty and compact, but don’t be fooled by appearances. They also contain an entire home gym with instructors and friends with whom you can compete. With the simple tap of your 180-degree rotating HD touch screen, you can choose from thousands of interactive workout classes and exercise experiences taught by rockstar instructors across the country. Your freebeat™ workout will be tailored to your unique needs with real-time performance tracking and technology that intuitively matches your resistance level with your abilities and pace.<\/p>"
+        },
+        {
+          "type": "richtext",
+          "id": "bury_freebeat_info3",
+          "label": "Bury Info3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

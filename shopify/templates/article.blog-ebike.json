@@ -1,0 +1,152 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "9e9f4f2e-d205-4d37-95ea-cd5386ff7eea": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike-moonbow-beige",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-Beige-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Moonbow Beige",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike-moonbow-beige"
+          }
+        },
+        "cebb4d4b-a3b0-458a-999d-ac3e64bb2c20": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike-snowpeak-white",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-White-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Snowpeak White",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike-snowpeak-white"
+          }
+        },
+        "af7c5138-bc96-42e8-9ce8-362d5c9fce12": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-Black-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Space Black",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike"
+          }
+        },
+        "1cde0b51-0679-4528-a123-b4067d0a1347": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike-klarna-limited-edition",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-Pink-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Aurora Pink",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike-klarna-limited-edition"
+          }
+        },
+        "53249a28-71ac-4549-88cd-5f836732804c": {
+          "type": "product_blog",
+          "settings": {
+            "product": "boom-bike-arctic-white",
+            "blog_selector_bike": "2",
+            "blog_product_image": "shopify:\/\/shop_images\/Boom-White-Blacksister.jpg",
+            "blog_bikes_title": "Boom Bike Arctic White",
+            "blog_link_page_url": "shopify:\/\/products\/boom-bike-arctic-white"
+          }
+        },
+        "ff5ddebc-ec79-46c0-a09c-04ef61ffe102": {
+          "type": "product_blog",
+          "settings": {
+            "product": "boom-bike-tuscany-yellow",
+            "blog_selector_bike": "2",
+            "blog_product_image": "shopify:\/\/shop_images\/Boom-Yellow-Blacksister.jpg",
+            "blog_bikes_title": "Boom Bike Tuscany Yellow",
+            "blog_link_page_url": "shopify:\/\/products\/boom-bike-tuscany-yellow"
+          }
+        },
+        "9a5c9068-fbe0-411e-804a-5c300e630052": {
+          "type": "product_blog",
+          "settings": {
+            "product": "boom-bike-mist-grey",
+            "blog_selector_bike": "2",
+            "blog_product_image": "shopify:\/\/shop_images\/Boom-Grey-Blacksister.jpg",
+            "blog_bikes_title": "Boom Bike Mist Grey",
+            "blog_link_page_url": "shopify:\/\/products\/boom-bike-mist-grey"
+          }
+        },
+        "0865d267-99f9-435c-889b-0f8d86429703": {
+          "type": "product_blog",
+          "settings": {
+            "product": "morphrover-2-in-1-ebike-for-electrify-expo",
+            "blog_selector_bike": "3",
+            "blog_product_image": "shopify:\/\/shop_images\/Group_16_2x_c610367d-e338-465f-8535-241ce851f96e.png",
+            "blog_bikes_title": "MorphRover Midnight Black",
+            "blog_link_page_url": "\/products\/morphrover-2-in-1-ebike?variant=43286594912441"
+          }
+        },
+        "3cd10c9a-0be7-4862-a763-e85c0f1d8514": {
+          "type": "product_blog",
+          "settings": {
+            "product": "morphrover-2-in-1-ebike-for-electrify-expo",
+            "blog_selector_bike": "3",
+            "blog_product_image": "shopify:\/\/shop_images\/Group_18_2x_598d28f8-59aa-40e8-aa89-9b8ae0472304.png",
+            "blog_bikes_title": "MorphRover Sage Green",
+            "blog_link_page_url": "\/products\/morphrover-2-in-1-ebike?variant=43286594945209"
+          }
+        },
+        "70bf986e-a2ef-4452-a202-f6ff30da4614": {
+          "type": "product_blog",
+          "settings": {
+            "product": "morphrover-2-in-1-ebike-for-electrify-expo",
+            "blog_selector_bike": "3",
+            "blog_product_image": "shopify:\/\/shop_images\/Group_17_2x_b57f5a53-3d14-437a-9581-5fb670661573.png",
+            "blog_bikes_title": "MorphRover Sahara Sand",
+            "blog_link_page_url": "\/products\/morphrover-2-in-1-ebike?variant=43286594977977"
+          }
+        }
+      },
+      "block_order": [
+        "9e9f4f2e-d205-4d37-95ea-cd5386ff7eea",
+        "cebb4d4b-a3b0-458a-999d-ac3e64bb2c20",
+        "af7c5138-bc96-42e8-9ce8-362d5c9fce12",
+        "1cde0b51-0679-4528-a123-b4067d0a1347",
+        "53249a28-71ac-4549-88cd-5f836732804c",
+        "ff5ddebc-ec79-46c0-a09c-04ef61ffe102",
+        "9a5c9068-fbe0-411e-804a-5c300e630052",
+        "0865d267-99f9-435c-889b-0f8d86429703",
+        "3cd10c9a-0be7-4862-a763-e85c0f1d8514",
+        "70bf986e-a2ef-4452-a202-f6ff30da4614"
+      ],
+      "settings": {
+        "show_article_image": true,
+        "show_date": true,
+        "show_category": false,
+        "show_author": true,
+        "show_share_buttons": true,
+        "show_prev_next": true,
+        "lit_choose_color_img1": "shopify:\/\/shop_images\/1_2215e4e1-6e97-4cb2-b1c4-892a4634a03f.png",
+        "lit_choose_color_active_img1": "shopify:\/\/shop_images\/beige_back_active.png",
+        "lit_choose_color_img2": "shopify:\/\/shop_images\/2_dc818804-d471-4874-b0a7-a285b75eeeba.png",
+        "lit_choose_color_active_img2": "shopify:\/\/shop_images\/pcwhiteactive_small_48092d90-fb0d-4857-a6af-f91739aa9ee5.png",
+        "lit_choose_color_img3": "shopify:\/\/shop_images\/3_5e7a0f38-b8c8-4e7d-ae57-bcdf030c148e.png",
+        "lit_choose_color_active_img3": "shopify:\/\/shop_images\/blackactive_small_4ab9c64d-86e4-4e3d-8b4e-91089c12cbd3.webp",
+        "lit_choose_color_img4": "shopify:\/\/shop_images\/4_612e0320-e229-4bb8-b7c3-380287ef87b1.png",
+        "lit_choose_color_active_img4": "shopify:\/\/shop_images\/pink_back_active.webp",
+        "boom_choose_color_img1": "shopify:\/\/shop_images\/7_b4364c53-b575-4285-9d46-9aea11d01d4f.png",
+        "boom_choose_color_active_img1": "shopify:\/\/shop_images\/pcwhiteactive_small_48092d90-fb0d-4857-a6af-f91739aa9ee5.png",
+        "boom_choose_color_img2": "shopify:\/\/shop_images\/5_d345c9a6-cc4f-4459-8780-204d073ea76e.png",
+        "boom_choose_color_active_img2": "shopify:\/\/shop_images\/yellow-active_e1bafa42-7b0a-41be-81e9-036c9827e6e6.png",
+        "boom_choose_color_img3": "shopify:\/\/shop_images\/6_e40c3b15-40f3-4e74-96eb-cc7da1f07023.png",
+        "boom_choose_color_active_img3": "shopify:\/\/shop_images\/grey-active_9825dc75-f72f-4e4b-b85a-8b65da745b09.png",
+        "ebike_choose_color_img1": "shopify:\/\/shop_images\/1-1_2x_9fe96762-2bf4-4278-b961-042cb3cb3fbf.png",
+        "ebike_choose_color_active_img1": "shopify:\/\/shop_images\/1-2_2x_03bf9717-a58c-4184-aec6-f8da68354c1b.png",
+        "ebike_choose_color_img2": "shopify:\/\/shop_images\/2-1_2x_ee9c936b-0153-4307-aeee-1d20be571e07.png",
+        "ebike_choose_color_active_img2": "shopify:\/\/shop_images\/2-2_2x_1337f6b4-388d-4d31-87ca-d6b00ecbd9da.png",
+        "ebike_choose_color_img3": "shopify:\/\/shop_images\/3-1_2x_5c26c04b-5da4-4fef-ac63-1bf97c9744a2.png",
+        "ebike_choose_color_active_img3": "shopify:\/\/shop_images\/3-2_2x_2c839bb8-1ea6-4617-b0ff-b25fd7965468.png"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

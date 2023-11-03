@@ -1,0 +1,61 @@
+{%- if navimg_item -%}
+  {%- assign bike_product = navimg_item -%}
+{%- else -%}
+  {%- assign bike_product = block.settings.bike_product -%}
+{%- endif -%}
+
+  <a
+    href="{{ block.settings.bike_btn_url | default: bike_product.url }}"
+    class="w-30 inline-block relative"
+  >
+    {%- if block.settings.bike_img_pc == blank -%}
+      {% assign imgdefault = bike_product.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+    {%- else -%}
+      {% assign imgdefault = block.settings.bike_img_pc | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+    {%- endif -%}
+    <img
+      alt="{{ bike_product.featured_media.alt | default:block.settings.bike_img_pc.alt }}"
+      data-src="{{ imgdefault }}"
+      data-sizes="auto"
+      data-optimumx="1.2"
+      data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+      class="u-lit-bike w-30 h-30 Image--lazyLoad Image--fadeIn cursor-pointer"
+    >
+    <span class="Image__Loader"></span>
+    {%- capture offType -%}
+      {%- render 'customer-price-control', cpc_product: bike_product, type: 'offTypeVal' -%}
+    {%- endcapture -%}
+    {%- if offType!=blank -%}
+      <div class="absolute z-1 left-0 top-0 fb-flex-x-start w-19 h-4.5">
+          <img 
+            alt=""
+            data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Rectangle_312_2x_f5197d32-f8d4-455e-b1da-f30ac9dcf222.png?v=1698663058"
+            class="w-full h-full object-cover Image--lazyLoad Image--fadeIn absolute"
+          >
+          <span class="w-full h-full text-h-10 font-bold text-121212 text-left absolute left-0 top-0 pl-2 leading-[18px]" >
+            {{ offType }}
+          </span>
+      </div>
+    {%- endif -%}
+  </a>
+  <div class="centerbox-right ml-6 flex flex-col items-start justify-center">
+    <a  href="{{ block.settings.bike_btn_url | default: bike_product.url }}">
+      <div class="m-name mt-[6px] flex items-center">
+        <div class="u-name text-h-16 font-bold text-121212 cursor-pointer">
+          {{ block.settings.bike_name_1 }}
+        </div>
+        <img
+          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1_2x_1.png?v=1686191891"
+          alt="right arrow"
+          class="u-right w-4 h-4 cursor-pointer"
+          loading="lazy"
+        >
+      </div>
+      <div class="u-bike-color py-2 text-12 font-semibold text-666666 text-left">
+        {{ block.settings.bike_name_2 }}
+      </div>
+      <div class="u-bike-subtit text-12 text-left w-[134px] text-[#888888] font-normal">
+        {{ block.settings.bike_name_desc }}
+      </div>
+    </a>
+  </div>

@@ -1,0 +1,311 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+<section
+  class="Drawer Drawer--fromRight annoucement-offer-container bg-white w-67 fb-md:w-82"
+  data-section-type="sidebar-annoucement-offer"
+  aria-hidden="true"
+  id="sidebar-annoucement-offer"
+>
+  <div class="w-full h-full relative">
+    <div class="border-b border-e6e6e6 flex items-center justify-between h-11 px-4 fb-md:h-16 fb-md:px-6">
+      <div class="w-55 text-12 font-bold text-121212 fb-md:w-65 fb-md:text-16">{{ section.settings.an_offer_title }}</div>
+      <div class="w-4 h-4 fb-md:w-5 fb-md:h-5">
+        <svg
+          class="w-full h-full cursor-pointer"
+          data-action="close-modal"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path d="M0.800049 0.799999L15.2 15.2M0.800049 15.2L15.2 0.799999" stroke="#333333" stroke-width="1.2"/>
+        </svg>
+      </div>
+    </div>
+    <div class="Drawer__Content__fb w-full flex relative flex-col overflow-hidden">
+      <div class="Drawer__Main w-full overflow-auto touch-auto" data-drawer-animated-right data-scrollable>
+        <div class="w-full px-4 pb-8 fb-md:px-6 fb-md:pb-12">
+          {%- for block in section.blocks -%}
+            {%- assign annou_title = block.settings.annou_title | strip_html -%}
+            {%- assign annou_desc = block.settings.annou_desc | strip_html- %}
+            {%- assign additional_desc = block.settings.additional_desc | strip_html -%}
+            <a
+              class="annou-box-li annou-box-number-{{ forloop.index }} w-59 h-[198px] relative block rounded-lg bg-a2a2a2 mt-4
+              fb-md:w-70 fb-md:h-64 fb-md:rounded-xl fb-md:mt-6
+              "
+              href="{{ block.settings.annou_link }}"
+            >
+              <div class="annou-box-img absolute rounded-lg w-full h-full left-0 top-0 overflow-hidden fb-md:rounded-xl">
+                {% assign annou_back_img = block.settings.annou_back_img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}  
+                {% comment %} {{
+                  block.settings.annou_back_img
+                  | image_url: width: 1000
+                  | image_tag:
+                    sizes: "(min-width: 1200px) 600px, (min-width: 640px) calc((100vw - 80px) / 2), calc((100vw - 40px) / 2)",
+                    class: 'w-full h-full object-cover',
+                    widths: '375, 550, 750, 1100, 1500',
+                    loading: 'lazy'
+                }} {% endcomment %}
+                  <img class="Image--lazyLoad Image--fadeIn w-full h-full object-cover" 
+                      data-src="{{ annou_back_img }}" 
+                      alt="{{ block.settings.annou_back_img.alt }}"
+                      data-sizes="auto"
+                      data-optimumx="1.2"
+                      data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                  >
+                  <span class="Image__Loader"></span>
+              </div>
+              <div class="{{ block.settings.annou_text_position}} absolute w-full h-full left-0 top-0 overflow-hidden p-4 fb-md:p-5 ">
+                {%- if annou_title != blank -%}
+                  <div class="an-box-title text-12 font-bold fb-md:text-16">
+                    <object>{{ block.settings.annou_title }}</object>
+                  </div>
+                {%- endif -%}
+                {%- if annou_desc != blank -%}
+                  <div class="an-box-desc mt-2 text-10 font-blod fb-md:text-12">
+                    <object>{{ block.settings.annou_desc }}</object>
+                  </div>
+                {%- endif -%}
+                {%- if additional_desc != blank -%}
+                  <div class="an-box-additional">
+                    <object>{{ block.settings.additional_desc }}</object>
+                  </div>
+                {%- endif -%}
+              </div>
+            </a>
+          {%- endfor -%}
+          <div class="invisible w-full h-25 fb-md:hidden"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  {%- for block in section.blocks -%}
+      {%- assign annou_desc = block.settings.annou_desc | strip_html-%}
+      {%- assign additional_desc = block.settings.additional_desc | strip_html -%}
+      .annou-box-number-{{ forloop.index }} .an-box-title{
+          color: {{ block.settings.annou_title_color }};
+      }
+      .annou-box-number-{{ forloop.index }} .an-box-title em {
+          color: {{ block.settings.annou_color_italic }};
+          font-style: normal!important;
+      }
+
+      .annou-box-number-{{ forloop.index }} .an-box-desc{
+          color: {{ block.settings.annou_title_color }};
+      }
+      .annou-box-number-{{ forloop.index }} .an-box-additional{
+          color: {{ block.settings.additional_desc_color }};
+      }
+      @media only screen and (min-width: 769px) {
+          .annou-box-number-{{ forloop.index }} .an-box-title em{
+              font-size: {{ block.settings.annou_title_font_size_pc }}px;
+          }
+      }
+      @media only screen and (max-width: 768px) {
+          .annou-box-number-{{ forloop.index }} .an-box-title em{
+              font-size: {{ block.settings.annou_title_font_size_mob }}px;
+          }
+      }
+     
+  {%- endfor -%}
+  @media only screen and (min-width: 1281px) {
+    .an-box-additional ul{
+      padding-top: 2px;
+    }
+    .an-box-additional ul li{
+        /* list-style: disc; */
+        font-size: 10px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 10px;
+        position: relative;
+        padding-left: 7px;
+        margin-top: 6px;
+    }
+    .an-box-additional ul li::before{
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 4px;
+        background: #FFFFFF;
+        position: absolute;
+        left: 0px;
+        top: 3px;
+    }
+    .an-box-additional ul li::marker{
+      position: absolute;
+      left: 0; 
+      top: 0;
+    }
+    .Drawer__Content__fb{
+      height: calc(100% - 64px);
+      max-height: calc(100% - 64px);
+    }
+  }
+  @media only screen and (max-width: 1280px) {
+    .an-box-additional ul{
+      padding-top: 2px;
+    }
+    .an-box-additional ul li{
+        /* list-style: disc; */
+        font-size: 8px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 8px;
+        position: relative;
+        padding-left: 6px;
+        margin-top: 4px;
+    }
+    .an-box-additional ul li::before{
+        content: "";
+        width: 2px;
+        height: 2px;
+        border-radius: 2px;
+        background: #FFFFFF;
+        position: absolute;
+        left: 0px;
+        top: 4px;
+    }
+    .an-box-additional ul li::marker{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .Drawer__Content__fb{
+      height: calc(100% - 44px);
+      max-height: calc(100% - 44px);
+    }
+  }
+  .annou-left-center{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .annou-box-text{
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+  }
+</style>
+{% schema %}
+{
+  "name": "annoucement-offer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "an_offer_title",
+      "label": "Title",
+      "default": "YOUR OFFERS"
+    }
+  ],
+  "max_blocks": 9,
+  "blocks": [
+    {
+      "type": "Offers",
+      "name": "Offers",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "annou_back_img",
+          "label": "Img Background"
+        },
+        {
+          "type": "url",
+          "id": "annou_link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "annou_text_position",
+          "label": "Text Position",
+          "options": [
+            {
+              "value": "annou-left-center",
+              "label": "Left Center"
+            },
+            {
+              "value": "announ-left-top",
+              "label": "Left Top"
+            }
+          ],
+          "default": "announ-left-top"
+        },
+        {
+          "type": "header",
+          "content": "Title Settings"
+        },
+        {
+          "type": "color",
+          "id": "annou_title_color",
+          "label": "Default Title Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "annou_title",
+          "label": "Title",
+          "info": "Supports up to 4 rows"
+        },
+        {
+          "type": "color",
+          "id": "annou_color_italic",
+          "label": "Title italic Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "annou_title_font_size_pc",
+          "min": 10,
+          "max": 30,
+          "unit": "px",
+          "label": "Used Italic Font Size pc",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "annou_title_font_size_mob",
+          "min": 10,
+          "max": 30,
+          "unit": "px",
+          "label": "Used Italic Font Size Mob",
+          "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Desc Settings",
+          "info": "Italic represents color change, h6 represents font size selection"
+        },
+        {
+          "type": "color",
+          "id": "annou_desc_color",
+          "label": "Desc Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "annou_desc",
+          "label": "Desc",
+          "info": "Supports up to 2 rows"
+        },
+        {
+          "type": "header",
+          "content": "Additional Benefit Points"
+        },
+        {
+          "type": "color",
+          "id": "additional_desc_color",
+          "label": "Additional Desc Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "additional_desc",
+          "info": "Supports up to 6 rows",
+          "label": "Desc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

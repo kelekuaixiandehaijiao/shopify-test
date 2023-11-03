@@ -1,0 +1,110 @@
+<div
+  class="w-full px-5 py-10  fb-sm:py-15  fb-md:py-20 fb-sm:px-10 fb-md:px-0 mx-auto fb-md:max-w-75r"
+  id="section-{{ section.id }}"
+>
+  <div class="text-20 font-bold text-center text-121212 fb-md:text-32">
+    {{ section.settings.fbex_fit }}
+  </div>
+  <div class="w-full text-center mt-8 fb-md:mt-10">
+    <a
+      href="{{- section.settings.fbex_btn_url -}}"
+      class="inline-block bg-black rounded-[6px] w-60 h-10 leading-10 text-white text-12 font-bold text-center fb-md:rounded-lg fb-md:w-80 fb-md:h-12 fb-md:leading-[48px] fb-md:text-16 "
+    >
+      {{ section.settings.fbex_btn_text }}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FbExerciseFit",
+  "presets": [
+    {
+      "name": "fb-exercise-fit",
+      "category": "My Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "fbex_fit",
+      "label": "title",
+      "default": "<p>Not Sure? Find the Perfect Fit!</p>"
+    },
+    {
+      "type": "text",
+      "id": "fbex_btn_text",
+      "label": "Button text",
+      "default": "COMPARE BIKES"
+    },
+    {
+      "type": "url",
+      "id": "fbex_btn_url",
+      "label": "Button Url"
+    }
+  ],
+  "blocks": []
+}
+{% endschema %}
+<style>
+  .fb-exercise-fit {
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .fbex-fit-title {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .fbex-fit-title p,
+  .fbex-fit-title h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+  }
+  .fbex-fit-btn {
+    text-align: center;
+    width: 100%;
+  }
+  .fbex-fit-btn a {
+    display: inline-block;
+    width: 380px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #181a1d;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  @media only screen and (max-width: 768px) {
+    .fb-exercise-fit {
+      padding: 0px 15px 34px 15px;
+    }
+    .fbex-fit-title {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 33px 58px 0px;
+      border-top: 1px solid rgba(0, 0, 0, 0.15);
+    }
+    .fbex-fit-title p,
+    .fbex-fit-title h2 {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: bold;
+      color: #333333;
+    }
+    .fbex-fit-btn a {
+      display: inline-block;
+      width: 180px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 12px;
+    }
+  }
+</style>

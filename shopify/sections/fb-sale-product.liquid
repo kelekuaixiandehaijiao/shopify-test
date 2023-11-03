@@ -1,0 +1,776 @@
+<div class="fb-sale-product  w-full bg-[#f5f5f5]" id="section-{{ section.id }}">
+  {%- assign sale_pd_index = 1 -%}
+  {% assign showLitBike = false %}
+  {% assign showLitOther = false %}
+  {% assign showBoomBike= false %}
+  {% assign showEbike = false %}
+  {% assign showhighEbike = false %}
+  {% assign showstepEbike = false %}
+
+
+  <div class=" pt-5 fb-sm:pt-0
+          w-full px-3.5 pb-[45px]
+           fb-sm:pb-9 fb-sm:px-10 fb-sm:flex fb-sm:items-center fb-sm:justify-center fb-md:justify-center
+        ">
+    <div class=" fb-md:max-w-75r 
+            fb-sm:pb-[24px] fb-md:grid-cols-3  fb-sm:grid fb-sm:gap-x-5 {% if blockCount>3 %} fb-sm:gap-y-16 {% endif %} fb-sm:grid-cols-2
+          ">
+      {% comment %} lit bike {% endcomment %}
+      {%- for block in section.blocks -%}
+
+
+      {%- if block.settings.introcardtype == '1' -%}
+      {% if showLitBike == false %}
+        <div class="
+                  introcard-bike-kinds fb-sm:mb-6
+                  relative bg-white rounded-lg w-full px-5 py-5 mt-[15px] first:mt-[0] h-[530px]
+                  fb-sm:w-[386px] fb-sm:h-[555px]  fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+                  fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+                ">
+          {%- assign lit_index = 1 -%}
+          {%- assign lit_off = 1 -%}
+          {%- assign lit_index2 = 1 -%}
+    
+          <div class="w-full text-right flex items-start justify-end">
+       
+            <h2 class="
+                      inline-block w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] font-semibold
+                      fb-md:w-30 fb-md:h-[30px] mb-[6px] fb-md:mb-[0px] fb-md:leading-[30px] fb-md:text-[14px]
+                    ">
+              {{ section.settings.introcdbike_kinds1 }}
+            </h2>
+          </div>
+          {%- for block in section.blocks -%}
+          {%- if block.settings.introcardtype == '1' -%}
+          <div class="
+                        fic-card-box hidden {% if lit_index == 1 %}fic-card-selected{% endif %}
+                        w-full text-center relative
+                      " data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}">
+            {%- render 'fb-sale-intro-item', block: block -%}
+          </div>
+          {%- assign lit_index = lit_index | plus: 1 -%}
+          {%- endif -%}
+          {%- endfor -%}
+          <div class="
+                    w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px]
+                    fb-md:top-[340px] fb-md:h-6
+                  ">
+            {%- for block in section.blocks -%}
+            {%- if block.settings.introcardtype == '1' -%}
+            <div class="
+                          js-select-bikecolor
+                          w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                          mr-[11px] relative
+                          fb-md:w-6 fb-md:h-6  {% if lit_index2==1 %}bike_{{block.settings.bike_name_2 | replace: ' ' , '_'}}  {% endif %}
+                        "
+              data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-'}}">
+              <span class="
+                            introcard-position-span
+                            inline-block w-[14px] h-[14px] rounded-full
+                            border border-solid cursor-pointer
+                            fb-md:w-[18px] fb-md:h-[18px]
+                            absoulte fb-center-translate
+                          "
+                style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};">
+              </span>
+            </div>
+            {%- assign lit_index2 = lit_index2 | plus: 1 -%}
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {% assign showLitBike = true %}
+      {% endif %}
+      {%- assign sale_pd_index = sale_pd_index | plus: 1 -%}
+      {%- endif -%}
+      {% comment %} boom bike {% endcomment %}
+      {%- if block.settings.introcardtype == '2' -%}
+      {% if showBoomBike == false %}
+        <div class="
+            introcard-bike-kinds fb-sm:mb-6
+            relative bg-white rounded-lg w-full px-5 py-5 mt-[15px]
+            fb-sm:w-[386px] h-[530px] fb-sm:h-[555px] fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+            fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+          ">
+          {%- assign boom_index = 1 -%}
+          {%- assign boom_index2 = 1 -%}
+        
+          <div class="w-full text-right flex items-start justify-end">
+            
+            <h2 class="
+                inline-block
+                w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] mb-[6px] font-semibold
+                fb-md:w-30 fb-md:h-[30px] fb-md:leading-[30px] fb-md:text-[14px] fb-md:mb-[0px]
+              ">
+              {{ section.settings.introcdbike_kinds2 }}
+            </h2>
+          </div>
+          {%- for block in section.blocks -%}
+          {%- if block.settings.introcardtype == '2' -%}
+          <div class="
+                  fic-card-box hidden {% if boom_index == 1 %}fic-card-selected{% endif %}
+                  w-full text-center relative
+                " data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}">
+            {%- render 'fb-sale-intro-item', block: block -%}
+          </div>
+          {%- assign boom_index = boom_index | plus: 1 -%}
+          {%- endif -%}
+          {%- endfor -%}
+          <div class="
+              w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px]
+              fb-md:top-[340px] fb-md:h-6
+            ">
+            {%- for block in section.blocks -%}
+            {%- if block.settings.introcardtype == '2' -%}
+            <div class="
+                    js-select-bikecolor
+                    w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                    mr-[11px] relative
+                    fb-md:w-6 fb-md:h-6 {% if boom_index2==1 %}bike_{{block.settings.bike_name_2 | replace: ' ' , '_'}}  {% endif %}
+                  "
+              data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}">
+              <span
+                class="introcard-position-span inline-block w-[14px] h-[14px] rounded-full border border-solid cursor-pointer fb-md:w-[18px] fb-md:h-[18px] absoulte fb-center-translate"
+                style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};"></span>
+            </div>
+            {%- assign boom_index2 = boom_index2 | plus: 1 -%}
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {% assign showBoomBike = true %}
+      {% endif %}
+      {%- endif -%}
+      {% comment %}high ebike 男车 {% endcomment %}
+  {%- if block.settings.introcardtype == '3' -%}
+      <div class="
+      introcard-bike-kinds fb-sm:mb-6
+      relative bg-white rounded-lg w-full px-5 py-5 mt-[15px]
+      fb-sm:w-[386px] h-[530px] fb-sm:h-[555px] fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+      fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+    ">
+    {% capture pd_high_step %} 
+    {%- assign variable_product = block.settings.bike_product -%}
+      {%- for navimg_item in variable_product.variants -%}
+        {%- if navimg_item.option1 == 'High-Step' -%}
+          {{navimg_item.id}}
+        {%- endif -%}
+      {%- endfor -%}
+  {% endcapture %} 
+  {%- assign pd_high_step_array = pd_high_step | split: " " -%}
+
+    {%- assign ebike_index = 1 -%}
+    {%- assign ebike_index2 = 1 -%}
+    {%- assign high_step = block.settings.high_step -%}
+    {%- assign High_Step_black = block.settings.High_Step_black -%}
+    {%- if High_Step_black ==true  -%} 
+    {%- assign High_Step_black_id =  pd_high_step_array.first -%}
+    {%- assign High_Step_black_color = 'Midnight Black' -%}
+    {%- endif -%}
+    {%- assign High_Step_Green = block.settings.High_Step_Green -%}
+    {%- if High_Step_Green ==true  -%} 
+    {%- assign High_Step_Green_id =  pd_high_step_array[1] -%}
+    {%- assign High_Step_Green_color = 'Sage Green' -%}
+    {%- endif -%}
+    {%- assign High_Step_Sand = block.settings.High_Step_Sand -%}
+    {%- if High_Step_Sand ==true -%} 
+    {%- assign High_Step_Sand_id = pd_high_step_array.last -%}
+    {%- assign High_Step_Sand_color = 'Sahara Sand' -%}
+    {%- endif -%}
+    <!-- 男款车的所有索引 -->
+    <!-- {% capture ebike_high_step %} 
+      {% for block in section.blocks %}
+        {%- if block.settings.introcardtype == '3' -%}
+          {{ block.settings.show_index }}
+        {%- endif -%}
+      {% endfor %}
+    {% endcapture %} -->
+
+    {%- capture high_step_colors -%}
+    {%- if High_Step_black == true -%}{{ 'Midnight Black' | append: ',' }}{%- endif -%}
+    {%- if High_Step_Green == true -%}{{ 'Sage Green' | append: ',' }}{%- endif -%}
+    {%- if High_Step_Sand == true -%}{{ 'Sahara Sand' | append: ',' }}{%- endif -%}
+  {%- endcapture -%}
+  {%- capture high_step_id -%}
+    {%- if High_Step_black == true -%}{{ High_Step_black_id | append: ',' }}{%- endif -%}
+    {%- if High_Step_Green == true -%}{{ High_Step_Green_id | append: ',' }}{%- endif -%}
+    {%- if High_Step_Sand == true -%}{{ High_Step_Sand_id | append: ',' }}{%- endif -%}
+  {%- endcapture -%}
+  {%- assign high_step_colors_array = high_step_colors | split: "," -%}
+
+    {% assign show_index_array = ebike_high_step | split: " " %}
+
+        <div class="w-full text-right flex items-start justify-end">
+
+      <h2 class="
+          inline-block
+          w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] mb-[6px] font-semibold
+          fb-md:w-30 fb-md:h-[30px] fb-md:leading-[30px] fb-md:text-[14px] fb-md:mb-[0px]
+        ">
+        {{ section.settings.introcdbike_kinds3 }}
+      </h2>
+    </div>
+
+    {%- assign variable_product = block.settings.bike_product -%}
+    {%- assign high_step_id_array = high_step_id | split: "," -%}
+      {%- for navimg_item in variable_product.variants -%}
+      {%- if high_step_id contains navimg_item.id -%}
+        {%- assign found_index = forloop.index -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+
+    {%- for navimg_item in variable_product.variants -%}
+      {%- if navimg_item.option1 == 'High-Step'  -%}
+        {%- if high_step_id contains navimg_item.id -%}
+          <div class="
+                fic-card-box hidden {% if ebike_index==found_index %}fic-card-selected{% endif %}
+                w-full text-center relative
+              " data-name="{{ navimg_item.option2 | replace: ' ' , '-' }}">
+          {%- render 'fb-sale-intro-item', block: block, navimg_item: navimg_item -%}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+      {%- assign ebike_index = ebike_index | plus: 1 -%}
+    {%- endfor -%}
+      <div class="
+          w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px]
+          fb-md:top-[340px] fb-md:h-6
+        ">
+
+        {% for it in high_step_colors_array %}
+        <div class="
+                        js-select-bikecolor
+                        w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                        mr-[11px] relative
+                        fb-md:w-6 fb-md:h-6 {% if ebike_index2==1 %} ebike_{{it | replace: ' ' , '_'}}{% endif
+                          %} " data-name="{{ it | replace: ' ' , '-' }}">
+                        <span class="
+                                    introcard-position-span
+                                    inline-block w-[14px] h-[14px] rounded-full
+                                    border border-solid cursor-pointer
+                                    ebike-{{it | replace: ' ' , '-'}}
+                                    fb-md:w-[18px] fb-md:h-[18px] absoulte fb-center-translate
+                                  "></span>
+                        </div>
+                        <!-- {%- assign productIndex = productIndex | plus: 1 -%} -->
+                        {%- assign ebike_index2 = ebike_index2 | plus: 1 -%}
+        {%- endfor -%}
+
+        {%- if high_step != blank -%}
+        <div class="absolute right-6 text-sm leading-4 text-black">{{high_step}}</div>
+        {%- endif -%}
+      </div>
+      </div>
+      {%- endif -%}
+      {% comment %}step ebike {% endcomment %}
+      {%- if block.settings.introcardtype == '4' -%}
+      <div class="
+      introcard-bike-kinds fb-sm:mb-6
+      relative bg-white rounded-lg w-full px-5 py-5 mt-[15px]
+      fb-sm:w-[386px] h-[530px] fb-sm:h-[555px] fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+      fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+    ">
+    {% capture pd_high_step %} 
+    {%- assign variable_product = block.settings.bike_product -%}
+      {%- for navimg_item in variable_product.variants -%}
+        {%- if navimg_item.option1 == 'Step-Thru' -%}
+          {{navimg_item.id}}
+        {%- endif -%}
+      {%- endfor -%}
+  {% endcapture %} 
+  {%- assign pd_high_step_array = pd_high_step | split: " " -%}
+    {%- assign ebike_index_step = 1 -%}
+    {%- assign ebike_index2 = 1 -%}
+    {%- assign high_step = block.settings.high_step -%}
+    {%- assign High_Step_black = block.settings.Step_Black -%}
+    {%- if High_Step_black ==true  -%} 
+    {%- assign High_Step_black_id = pd_high_step_array.first -%}
+    {%- assign High_Step_black_color = 'Midnight Black' -%}
+    {%- endif -%}
+    {%- assign High_Step_Green = block.settings.Step_Green -%}
+    {%- if High_Step_Green ==true  -%} 
+    {%- assign High_Step_Green_id = pd_high_step_array[1] -%}
+    {%- assign High_Step_Green_color = 'Sage Green' -%}
+    {%- endif -%}
+    {%- assign High_Step_Sand = block.settings.Step_Sand -%}
+    {%- if High_Step_Sand ==true -%} 
+    {%- assign High_Step_Sand_id = pd_high_step_array.last -%}
+    {%- assign High_Step_Sand_color = 'Sahara Sand' -%}
+    {%- endif -%}
+    {%- capture high_step_colors -%}
+    {%- if High_Step_black == true -%}{{ 'Midnight Black' | append: ',' }}{%- endif -%}
+    {%- if High_Step_Green == true -%}{{ 'Sage Green' | append: ',' }}{%- endif -%}
+      {%- if High_Step_Sand == true -%}{{ 'Sahara Sand' | append: ',' }}{%- endif -%}
+    {%- endcapture -%}
+    {%- assign high_step_colors_array = high_step_colors | split: "," -%}
+    {%- capture high_step_id -%}
+      {%- if High_Step_black == true -%}{{ High_Step_black_id | append: ',' }}{%- endif -%}
+      {%- if High_Step_Green == true -%}{{ High_Step_Green_id | append: ',' }}{%- endif -%}
+      {%- if High_Step_Sand == true -%}{{ High_Step_Sand_id | append: ',' }}{%- endif -%}
+    {%- endcapture -%}
+
+    {%- assign high_step = block.settings.high_step -%}
+    <div class="w-full text-right flex items-start justify-end">
+
+      <h2 class="
+          inline-block
+          w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] mb-[6px] font-semibold
+          fb-md:w-30 fb-md:h-[30px] fb-md:leading-[30px] fb-md:text-[14px] fb-md:mb-[0px]
+        ">
+        {{ section.settings.introcdbike_kinds3 }}
+      </h2>
+    </div>
+    {%- assign variable_product = block.settings.bike_product -%}
+
+    {%- assign high_step_id_array3 = high_step_id | split: "," -%}
+      {%- for navimg_item in variable_product.variants -%}
+      {%- if navimg_item.option1 == 'Step-Thru' -%}
+        {%- if high_step_id contains navimg_item.id -%}
+          {%- assign found_index = forloop.index -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign find_index=found_index | minus:3 -%}
+    {%- for navimg_item in variable_product.variants -%}
+      {%- if navimg_item.option1 == 'Step-Thru' -%}
+      {%- if high_step_id contains navimg_item.id -%} 
+      <div class="
+            fic-card-box hidden {% if ebike_index_step == find_index %}fic-card-selected{% endif %}
+            w-full text-center relative
+          " data-name="{{ navimg_item.option2 | replace: ' ' , '-' }}">
+      {%- render 'fb-sale-intro-item', block: block, navimg_item: navimg_item -%}
+      </div>
+    {%- endif -%}
+        {%- assign ebike_index_step = ebike_index_step | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+      <div class="
+          w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px]
+          fb-md:top-[340px] fb-md:h-6
+        ">
+        {% for it in high_step_colors_array %}
+        <div class="
+                        js-select-bikecolor
+                        w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                        mr-[11px] relative
+                        fb-md:w-6 fb-md:h-6  {% if ebike_index2==1 %} ebike_{{it | replace: ' ' , '_'}}{% endif
+                          %}" data-name="{{ it | replace: ' ' , '-' }}">
+                        <span class="
+                                    introcard-position-span
+                                    inline-block w-[14px] h-[14px] rounded-full
+                                    border border-solid cursor-pointer
+                                    ebike-{{it | replace: ' ' , '-'}}
+                                    fb-md:w-[18px] fb-md:h-[18px] absoulte fb-center-translate
+                                  "></span>
+                        </div>
+                        {%- assign ebike_index2 = ebike_index2 | plus: 1 -%}
+        {%- endfor -%}
+        {%- if high_step != blank -%}
+        <div class="absolute right-6 text-sm leading-4 text-black">{{high_step}}</div>
+        {%- endif -%}
+      </div>
+      </div>
+      {%- endif -%}
+
+      {% comment %} card {% endcomment %}
+      {%- if block.settings.introcardtype == '5' -%}
+      <a href="{{block.settings.bike_btn_url}}" class="cursor-pointer">
+        <div class="
+         introcard-bike-kinds pt-8 px-5 fb-sm:mb-6 fb-sm:px-10 fb-sm:pt-10 
+        bg-white rounded-lg w-full mt-[15px]
+         fb-sm:w-[386px] h-[530px] fb-sm:h-[555px] fb-sm:mt-0 fb-sm:shrink-0
+         fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl relative
+       ">
+          {% assign card_bg = block.settings.card_bg | img_url: '' %}
+          <img src="{{ card_bg }}" z-0 class="h-full w-full absolute top-0 left-0 object-cover rounded-xl" alt="{{ item.image.alt | escape }}">
+          <div class="absolute inset-0 card-sale to-transparent rounded-xl"></div>
+          <!-- <div class="absolute inset-0 bg-gradient-to-t from-[#00000099] to-transparent rounded-xl"></div> -->
+          <div class="flex-col z-1 relative">
+            <div class="fb-sm:text-base fb-sm:leading-4 fb-sm:font-semibold text-white">{{block.settings.card_text_one}}
+            </div>
+            <div class="text-4xl fb-sm:leading-9 font-bold my-2 text-white">{{block.settings.card_text_two}}</div>
+            <div class="fb-sm:text-base fb-sm:leading-4 font-medium text-white">{{block.settings.card_text_three}}</div>
+          </div>
+        </div>
+      </a>
+
+      {%- endif -%}
+
+
+      {%- if block.settings.introcardtype == '6' -%}
+      {% if showLitOther == false %}
+        <div class="
+                  introcard-bike-kinds fb-sm:mb-6
+                  relative bg-white rounded-lg w-full px-5 py-5 mt-[15px] first:mt-[0]
+                  fb-sm:w-[386px] h-[530px] fb-sm:h-[555px] fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+                  fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+                ">
+          {%- assign lit_pink_index = 1 -%}
+          {%- assign lit_off = 1 -%}
+          {%- assign lit_pink_index2 = 1 -%}
+    
+          <div class="w-full text-right flex items-start justify-end">
+       
+            <h2 class="
+                      inline-block w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] font-semibold
+                      fb-md:w-30 fb-md:h-[30px] mb-[6px] fb-md:mb-[0px] fb-md:leading-[30px] fb-md:text-[14px]
+                    ">
+              {{ section.settings.introcdbike_kinds1 }}
+            </h2>
+          </div>
+          <div class="
+          fic-card-box hidden {% if lit_pink_index == 1 %}fic-card-selected{% endif %}
+          w-full text-center relative
+        " data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}">
+{%- render 'fb-sale-intro-item', block: block -%}
+</div>
+          <div class="
+                    w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px]
+                    fb-md:top-[340px] fb-md:h-6
+                  ">
+                  <div class="
+                  js-select-bikecolor
+                  w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                  mr-[11px] relative
+                  fb-md:w-6 fb-md:h-6 {% if lit_pink_index2==1 %}bike_{{block.settings.bike_name_2 | replace: ' ' , '_'}}  {% endif %}
+                "
+      data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-'}}">
+      <span class="
+                    introcard-position-span
+                    inline-block w-[14px] h-[14px] rounded-full
+                    border border-solid cursor-pointer
+                    fb-md:w-[18px] fb-md:h-[18px]
+                    absoulte fb-center-translate
+                  "
+        style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};">
+      </span>
+    </div>
+          </div>
+        </div>
+      {% assign showLitOther = true %}
+      {% endif %}
+      {%- endif -%}
+      {%- endfor -%}
+
+    </div>
+  </div>
+</div>
+<style>
+.fb-sale-product .card-sale{
+  background: linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.1) 58%, rgba(0,0,0,0) 100%);
+}
+</style>
+{% schema %}
+{
+"name": "FbSaleProduct",
+"presets": [
+{
+"name": "fb-sale-product",
+"category": "My Sections",
+"blocks": []
+}
+],
+"settings": [
+{
+"type": "text",
+"id": "introcardbike",
+"label": "Lit Bike",
+"default": "Lit Bike"
+},
+{
+"type": "text",
+"id": "introcdbike_kinds1",
+"label": "Lit Bike Title",
+"default": "Exercise Bike"
+},
+{
+"type": "text",
+"id": "introcdbike_kinds2",
+"label": "Boom Bike Ttle",
+"default": "Exercise Bike"
+},
+{
+"type": "text",
+"id": "introcdbike_kinds3",
+"label": "Ebike Title 3",
+"default": "2-in-1 eBike"
+}
+],
+"blocks": [
+{
+"type": "goods",
+"name": "goods",
+"settings": [
+{
+"type": "select",
+"id": "introcardtype",
+"label": "Bike Type",
+"options": [
+{
+"value": "1",
+"label": "lit-bike"
+},
+{
+"value": "2",
+"label": "boom-bike"
+},
+{
+"value": "3",
+"label": "ebike-high-step"
+},
+{
+"value": "4",
+"label": "ebike-step-thru"
+},
+{
+"value": "5",
+"label": "card"
+},
+{
+"value": "6",
+"label": "lit-pink"
+}
+],
+"default": "1"
+},
+{
+"type": "color",
+"id": "bike_color",
+"label": "Bike Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "bike_border_color",
+"label": "Bike border Color",
+"default": "#000000"
+},
+{
+"type": "product",
+"id": "bike_product",
+"label": "Product"
+},
+{
+"type": "image_picker",
+"id": "bike_img_pc",
+"label": "Bike Pc"
+},
+{
+"type": "text",
+"id": "bike_desc_text",
+"label": "Bike Desc Text"
+},
+{
+"type": "text",
+"id": "bike_name_1",
+"label": "Bike Name 1"
+},
+{
+"type": "text",
+"id": "bike_name_2",
+"label": "Bike Name 2"
+},
+{
+"type": "text",
+"id": "bike_name_desc",
+"label": "Bike Name Desc"
+},
+{
+"type": "text",
+"id": "bike_new",
+"label": "New Launch"
+},
+{
+"type": "checkbox",
+"id": "open_sold_out",
+"label": "Choose Sold Out",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "High_Step_black",
+"label": "High-Step Midnight Black ",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "High_Step_Green",
+"label": "High-Step Sage Green ",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "High_Step_Sand",
+"label": "High-Step Sahara Sand ",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "Step_Black",
+"label": "Step-Thru Midnight Black ",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "Step_Green",
+"label": "Step-Thru Sage Green ",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "Step_Sand",
+"label": "Step-Thru Sahara Sand ",
+"default": false
+},
+{
+"type": "text",
+"id": "bike_sold_out_text",
+"label": "Sold Out Desc",
+"default": "Sold out"
+},
+{
+"type": "text",
+"id": "high_step",
+"label": "High Step"
+},
+{
+"type": "text",
+"id": "bike_btn_desc",
+"label": "Button Desc",
+"default": "SHOP NOW"
+},
+{
+"type": "text",
+"id": "card_text_one",
+"label": "Card One ",
+"default": "WHEELIN DEAL OF THE DAY"
+},
+{
+"type": "text",
+"id": "card_text_two",
+"label": "Card Two ",
+"default": "Select Ebikes At $999"
+},
+{
+"type": "text",
+"id": "card_text_three",
+"label": "Card Three ",
+"default": "Budget-Friendly Home Studio Bike"
+},
+{
+"type": "image_picker",
+"id": "card_bg",
+"label": "Card Bg"
+},
+{
+"type": "url",
+"id": "bike_btn_url",
+"label": "Button Url"
+}
+]
+}
+]
+}
+{% endschema %}
+<style>
+  .fic-card-selected {
+    display: block;
+  }
+
+  @media only screen and (min-width: 1220px) {
+    .fic-card-rate .stamped-main-badge {
+      width: 150px;
+      position: relative;
+      display: block;
+    }
+
+    .fic-card-rate .stamped-badge {
+      height: 20px;
+      line-height: 20px;
+      padding-left: 34px;
+      text-align: left;
+    }
+
+    .fic-card-rate .stampedRating-pdp {
+      position: absolute;
+      left: 0px;
+      top: 4px;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 600;
+      color: #121212;
+    }
+
+    .fic-card-rate .stamped-badge-caption {
+      position: absolute;
+      top: 24px;
+      left: 1px;
+      font-weight: 400;
+      color: #666666;
+      line-height: 12px;
+      font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 1219px) {
+    .fic-card-rate {
+      padding-left: 33px;
+    }
+
+    .fic-card-rate .stamped-main-badge {
+      position: relative;
+      display: block;
+    }
+
+    .fic-card-rate .stamped-badge {
+      height: 14px;
+      line-height: 14px;
+      padding-left: 29px;
+      text-align: left;
+    }
+
+    .fic-card-rate .stampedRating-pdp {
+      position: absolute;
+      left: 0px;
+      top: 2px;
+      font-size: 14px;
+      line-height: 12px;
+      font-weight: 500;
+      color: #121212;
+    }
+
+    .fic-card-rate .stamped-badge-caption {
+      position: absolute;
+      top: 20px;
+      left: 1px;
+      font-weight: 400;
+      color: #666666;
+      line-height: 12px;
+      font-size: 12px;
+    }
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    $('.js-select-bikecolor').click(function () {
+      let _name = $(this).attr('data-name');
+      let _parent = $(this).parents('.introcard-bike-kinds');
+      let _border_color = $(this).find('.introcard-position-span').css('border-color');
+      $(this).siblings().css('border-color', '#fff');
+      $(this).css('border-color', _border_color);
+      _parent
+        .find(`.fic-card-box[data-name=${_name}]`)
+        .addClass('fic-card-selected')
+        .siblings()
+        .removeClass('fic-card-selected');
+    });
+    $('.fic-card-box').each(function (i, docEle) {
+      // console.log(i,'元素')
+      // console.log( $(this).find(".stamped-badge").attr("data-rating"),'ahahha')
+      $(this).find('.stampedRating-pdp').text($(this).find('.stamped-badge').attr('data-rating'));
+    });
+  });
+</script>

@@ -1,0 +1,373 @@
+/* pc端 */
+@media screen and (min-width: 769px){
+    /* .user-manual-exercise{
+        display:block!important;
+    }
+    .user-manual-inebike{
+        display: none;
+    } */
+    .ebike-manual-pc{
+        display: block;
+    }
+    .ebike-manual-mob{
+        display: none;
+    }
+    .user-manual-content{
+        border-bottom:1px solid #E6E6E6;
+    }
+    .user-manual-bigtitle{
+        font-size: 48px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 48px;
+        padding-top: 60px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .user-manual-bigdesc{
+        font-size: 16px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 19px;
+        text-align: center;
+    }
+    .user-manual-tabs{
+        width:1200px;
+        height:46px;
+        display:flex;
+        justify-content:space-between;
+        margin:0 auto;
+        margin-top:40px;
+    }
+    .manual-tabs-title{
+        width:600px;
+        font-size: 24px;
+        font-weight: 600;
+        color: rgba(18,18,18,0.5);
+        line-height: 24px;
+        text-align:center;
+        cursor:pointer;
+    }
+    .select-tab-title{
+        color: #121212;
+        font-weight: 800;
+        border-bottom: 3px solid #121212;
+    }
+    .user-manual-con{
+        max-width: 1280px;
+        padding-top: 20px;
+        padding-bottom: 150px;
+        margin: auto;
+    }
+    .user-manual-item{
+        padding-top: 100px;
+        display: flex;
+    }
+    .user-manual-item:nth-of-type(2){
+        flex-direction: row-reverse;
+    }
+    .user-manual-item:nth-of-type(2) .user-manual-right{
+        padding-left: 0;
+        padding-right: 92px;
+    }
+    .user-manual-img{
+        width: 47%;
+        height: auto;
+    }
+    .user-manual-right{
+        width: 47%;
+        padding-left: 9.375%;
+        display: flex;
+        flex-direction: column;
+    }
+    .user-manual-item:nth-of-type(1) .user-manual-right{
+        padding-top: 98px;
+        padding-bottom: 131px;
+    }
+    .user-manual-item:nth-of-type(2) .user-manual-right{
+        padding-top: 118px;
+        padding-bottom: 171px;
+    }
+    .user-manual-item:nth-of-type(3) .user-manual-right{
+        padding-top: 138px;
+        padding-bottom: 187px;
+    }
+    .user-manual-sign{
+        font-size: 120px;
+        font-family: DINCond-Bold, DINCond;
+        font-weight: bold;
+        color: #02C0D9;
+        line-height: 120px;
+        opacity: 0.15;
+        margin-left: -28px;
+        margin-bottom: -41px;
+    }
+    .user-manual-title{
+        font-size: 48px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 48px;
+        padding-bottom: 24px;
+    }
+    .user-manual-desc{
+        font-size: 16px;
+        font-weight: 400;
+        color: #1C1B1B;
+        line-height: 24px;
+        padding-bottom: 60px;
+    }
+    .user-manual-link{
+        display: block;
+    }
+    .user-manual-link-title{
+        font-size: 16px;
+        font-weight: 500;
+        color: #02C0D9;
+        line-height: 16px;
+        padding-bottom: 20px;
+    }
+    .ebike-manual-main{
+        /* width:1200px; */
+        width: 1280px;
+        margin:0 auto;
+        margin-top:120px;
+        margin-bottom: 120px;
+        /* margin: 120px auto; */
+        display:none;
+    }
+    .ebike-manual-left{
+        width:600px;
+        height:600px;
+        /* margin-left: 17%; */
+        /* margin-left: 320px; */
+    }
+    .ebike-manual-left img{
+        width:100%;
+        height:100%;
+    }
+    .ebike-manual-mobimg{
+        display:none;
+    }
+    .ebike-manual-pcimg{
+        display:block;
+    }
+    .ebike-manual-right{
+        margin-left:120px;
+    }
+    .ebike-manual-title{
+        width:386px;
+        margin-top:140px;
+        font-size: 48px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 48px;
+    }
+    .ebike-manual-desc{
+        margin-top:24px;
+        width:427px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #1C1B1B;
+        line-height: 24px;
+    }
+    .ebike-manual-link{
+        margin-top:60px;
+    }
+    .manual-link-text{
+        margin-bottom:12px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #00CC45;
+        line-height: 16px;
+    }
+}
+@media screen and (max-width: 1210px){
+    .user-manual-tabs{
+        width:100%;
+        padding:0 5px;
+    }
+    .user-tabs-title{
+        width:50%;
+    }
+    .ebike-manual-main{
+        width:100%;
+    }
+    .ebike-manual-left{
+        width: 47%;
+        margin-left: 10%;
+    }
+    .ebike-manual-left img{
+        width: 100%;
+        height: 100%;
+    }
+}
+/* mob端 */
+@media screen and (max-width: 768px){
+    .ebike-manual-pc{
+        display: none;
+    }
+    .ebike-manual-mob{
+        display: block;
+    }
+    .user-manual-content{
+        border-bottom:none;
+    }
+    .user-manual-bigtitle{
+        /* font-size: 24px; */
+        font-size: 30px;
+        font-weight: bold;
+        color: #1C1B1B;
+        /* line-height: 24px; */
+        line-height: 36px;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 12px;
+    }
+    .user-manual-bigdesc{
+        font-size: 12px;
+        font-weight: 500;
+        color: #1C1B1B;
+        line-height: 18px;
+        text-align: center;
+        /* padding-bottom: 30px; */
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .user-manual-tabs{
+        width:327px;
+        height:44px;
+        border-radius:36px;
+        background: rgba(18,18,18,0.1);
+        padding-bottom:0px;
+        display:flex;
+        margin:0 auto;
+        margin-top:24px;
+    }
+    .manual-tabs-title{
+        width:160px;
+        height:36px;
+        font-size: 12px;
+        color: rgba(18,18,18,0.5);
+        line-height: 36px;
+        text-align:center;
+        margin:0 auto;
+        margin-top:4px;
+        font-weight: 600;
+    }
+    .select-tab-title{
+        color: #FFFFFF;
+        border-bottom: none;
+        background: #121212;
+        border-radius:27px;
+        text-align:center;
+        line-height:36px;
+        margin-top:4px;
+    }
+    .user-manual-con{
+        padding-bottom: 80px;
+        margin-top:40px;
+    }
+    .user-manual-img{
+        width: 100%;
+        height: auto;
+    }
+    .user-manual-item:nth-of-type(2) .user-manual-img{
+        padding-top: 46px;
+    }
+    .user-manual-item:nth-of-type(3) .user-manual-img{
+        padding-top: 46px;
+    }
+    .user-manual-right{
+        padding-top: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: center;
+    }
+    .user-manual-sign{
+        font-size: 60px;
+        font-weight: bold;
+        font-family: DINCond-Bold, DINCond;
+        color: #02C0D9;
+        line-height: 60px;
+        opacity: 0.15;
+        margin-bottom: -22px;
+    }
+    .user-manual-title{
+        font-size: 24px;
+        font-weight: bold;
+        color: #1C1B1B;
+        line-height: 24px;
+        padding-bottom: 16px;
+    }
+    .user-manual-desc{
+        font-size: 14px;
+        font-weight: 400;
+        color: #1C1B1B;
+        line-height: 18px;
+        padding-bottom: 30px;
+    }
+    .user-manual-link{
+        display: block;
+    }
+    .user-manual-link-title{
+        font-size: 14px;
+        font-weight: 500;
+        color: #02C0D9;
+        line-height: 14px;
+        padding-bottom: 14px;
+    }
+    .ebike-manual-main{
+        width:100%;
+        margin:0;
+        margin-top:40px;
+        display:none;
+    }
+    .ebike-manual-left{
+        width:100%;
+        height:375px;
+        margin-left: 0px;
+    }
+    .ebike-manual-left img{
+        width:100%;
+        height:100%;    
+    }
+    .ebike-manual-mobimg{
+        display:block;
+    }
+    .ebike-manual-pcimg{
+        display:none;
+    }
+    .ebike-manual-right{
+        margin-left:0px;
+    }
+    .ebike-manual-title{
+        width:187px;
+        margin: 0 auto;
+        margin-top:24px;
+        font-size: 24px;
+        line-height: 24px;
+        text-align:center;
+        font-weight: bold;
+    }
+    .ebike-manual-desc{
+        margin:0 auto;
+        margin-top:16px;
+        width:325px;
+        font-size: 14px;
+        line-height: 24px;
+        text-align:center;
+        font-weight: 400;
+    }
+    .ebike-manual-link{
+        margin-top:32px;
+        padding-bottom: 26px;
+    }
+    .manual-link-text{
+        margin-bottom:14px;
+        font-size: 14px;
+        line-height: 14px;
+        text-align:center;
+        font-weight: 500;
+        color: #00CC45;
+    }
+}

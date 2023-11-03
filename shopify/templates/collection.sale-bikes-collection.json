@@ -1,0 +1,672 @@
+{
+  "sections": {
+    "5b311492-b0a7-4657-a3e1-1a5dfdfbfe04": {
+      "type": "fb-img-video-banner",
+      "blocks": {
+        "template--16402643943609__5b311492-b0a7-4657-a3e1-1a5dfdfbfe04-image_banner-1": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": true,
+            "image": "shopify:\/\/shop_images\/BlackFriday_SalesCollection_Banner_PC.webp",
+            "mobile_image": "shopify:\/\/shop_images\/BlackFriday_SalesCollection_Banner_Mobile.webp",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "",
+            "banner_title_color": "",
+            "banner_title_mob": "",
+            "banner_title_color_mob": "",
+            "banner_desc": "",
+            "banner_desc_color": "",
+            "banner_desc_mob": "",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16402643943609__5b311492-b0a7-4657-a3e1-1a5dfdfbfe04-image_banner-1"
+      ],
+      "settings": {
+        "additional_class": "",
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "c8da0901-969f-49e4-8528-aed5d8ae06e1": {
+      "type": "fb-sale-top",
+      "disabled": true,
+      "settings": {
+        "one_des": "ONE TREE PLANTED FOR EVERY eBIKE PURCHASED",
+        "two_des": "Select Ebikes At $999",
+        "pc_bg": "shopify:\/\/shop_images\/blog-Tips-for-Fasted-Cardio-with-an-E-Mountain-Bike.jpg",
+        "mb_bg": "shopify:\/\/shop_images\/product-MorphRover-Step-Thru-SaharaSand-9indoor1.webp",
+        "play_link": "https:\/\/www.baidu.com"
+      }
+    },
+    "1e6f17fa-75b3-4a3e-9758-44b37dfc3000": {
+      "type": "fb-sale-des",
+      "blocks": {
+        "21448875-d83c-4725-8c70-f87b598d35ce": {
+          "type": "TextBlock",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/Group_1000004638_2x_2795991b-f50a-40fb-be8c-b321bf78855d.png",
+            "icon_info": "Product Warranty"
+          }
+        },
+        "3fbbf47c-92aa-4712-82c2-bd1fe298c2fb": {
+          "type": "TextBlock",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/Group_1000004639_2x_c2745093-3fff-4cba-8f94-c5ccdb69594f.png",
+            "icon_info": "Free Shipping"
+          }
+        },
+        "61a678bf-93e0-4d00-b7f9-a341d8e6051e": {
+          "type": "TextBlock",
+          "settings": {
+            "icon_img": "shopify:\/\/shop_images\/Group_1000004640_2x_4365fd78-64f3-4ecb-8ed3-93c9a49cf688.png",
+            "icon_info": "Customer Service"
+          }
+        }
+      },
+      "block_order": [
+        "21448875-d83c-4725-8c70-f87b598d35ce",
+        "3fbbf47c-92aa-4712-82c2-bd1fe298c2fb",
+        "61a678bf-93e0-4d00-b7f9-a341d8e6051e"
+      ],
+      "settings": {
+        "one_des": "Black Friday Super Sale",
+        "two_des": "Buy a freebeat bike today during our blowout Black Friday Super Sale! These deals won't last long!"
+      }
+    },
+    "9745649e-e426-436b-adb5-b2015958a0eb": {
+      "type": "fb-sale-product",
+      "blocks": {
+        "ff9e741d-be57-456c-9495-bac4c02e21d2": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "6",
+            "bike_color": "#e788a1",
+            "bike_border_color": "#e788a1",
+            "bike_product": "lit-bike-klarna-limited-edition",
+            "bike_desc_text": "",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Aurora Pink",
+            "bike_name_desc": "Premium Home Gym with Gamified Techs",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "",
+            "card_text_two": "",
+            "card_text_three": "",
+            "bike_btn_url": ""
+          }
+        },
+        "aebe7d88-891a-4eea-b315-19363df19876": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "2",
+            "bike_color": "#ffffff",
+            "bike_border_color": "#000000",
+            "bike_product": "boom-bike-arctic-white",
+            "bike_desc_text": "",
+            "bike_name_1": "Boom Bike",
+            "bike_name_2": "Arctic White",
+            "bike_name_desc": "Value-Packed Full Body Workout",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "shop now",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "ac21ed0d-7400-4a01-a148-316f8c24ea69": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "2",
+            "bike_color": "#797d80",
+            "bike_border_color": "#797d80",
+            "bike_product": "boom-bike-mist-grey",
+            "bike_desc_text": "",
+            "bike_name_1": "Boom Bike",
+            "bike_name_2": "Mist Grey",
+            "bike_name_desc": "Value-Packed Full Body Workout",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "d0527cba-3d83-439e-8a64-ddab011c22d6": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "2",
+            "bike_color": "#faf297",
+            "bike_border_color": "#faf297",
+            "bike_product": "boom-bike-tuscany-yellow",
+            "bike_desc_text": "",
+            "bike_name_1": "Boom Bike",
+            "bike_name_2": "",
+            "bike_name_desc": "Value-Packed Full Body Workout",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "",
+            "card_text_two": "",
+            "card_text_three": "",
+            "bike_btn_url": ""
+          }
+        },
+        "9ebbfe0e-e981-4bfb-9c6a-627eb0c9c8b5": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "1",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "bike_product": "lit-bike",
+            "bike_desc_text": "",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Space Black",
+            "bike_name_desc": "Premium Home Gym with Gamified Techs",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "2a77508f-4654-4636-9b05-ec0f6e999002": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "1",
+            "bike_color": "#ecd0b5",
+            "bike_border_color": "#ecd0b5",
+            "bike_product": "lit-bike-moonbow-beige",
+            "bike_desc_text": "",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Moonbow Beige",
+            "bike_name_desc": "Premium Home Gym with Gamified Techs",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "8ac78862-c04c-45bc-8840-6058c5d87c25": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "1",
+            "bike_color": "#ffffff",
+            "bike_border_color": "#121212",
+            "bike_product": "lit-bike-snowpeak-white",
+            "bike_desc_text": "",
+            "bike_name_1": "Lit Bike",
+            "bike_name_2": "Snowpeak White",
+            "bike_name_desc": "Premium Home Gym with Gamified Techs",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "61cb2941-542f-461b-91d0-92b0eeaa1b20": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "3",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "bike_product": "morphrover-2-in-1-ebike",
+            "bike_desc_text": "Indoor Fitness+Outdoor Exploration 2-in-1",
+            "bike_name_1": "MorphRover",
+            "bike_name_2": "",
+            "bike_name_desc": "World's 1st All-Terrain 2-in-1 Fat Tire eBike",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": true,
+            "High_Step_Green": true,
+            "High_Step_Sand": true,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "shop now",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "a410e5d7-cb29-4daf-b771-fe2db4203861": {
+          "type": "goods",
+          "disabled": true,
+          "settings": {
+            "introcardtype": "3",
+            "bike_color": "#dbd5cd",
+            "bike_border_color": "#121212",
+            "bike_product": "morphrover-2-in-1-ebike",
+            "bike_desc_text": "Indoor Fitness+Outdoor Exploration 2-in-1",
+            "bike_name_1": "MorphRover",
+            "bike_name_2": "",
+            "bike_name_desc": "World's Ist Allroad 2-in-1 Fat Tire eBik",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": true,
+            "High_Step_Sand": true,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "High Step",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "bdc98d77-e02c-46e3-8200-5b117deca9f0": {
+          "type": "goods",
+          "disabled": true,
+          "settings": {
+            "introcardtype": "4",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "bike_product": "morphrover-2-in-1-ebike",
+            "bike_desc_text": "Indoor Fitness+Outdoor Exploration 2-in-1",
+            "bike_name_1": "MorphRover",
+            "bike_name_2": "",
+            "bike_name_desc": "World's Ist Allroad 2-in-1 Fat Tire eBik",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": true,
+            "Step_Green": true,
+            "Step_Sand": true,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "Step Thru",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "f2331b73-19c5-4d22-8def-6ef557331530": {
+          "type": "goods",
+          "disabled": true,
+          "settings": {
+            "introcardtype": "4",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "bike_product": "morphrover-2-in-1-ebike",
+            "bike_desc_text": "Indoor Fitness+Outdoor Exploration 2-in-1",
+            "bike_name_1": "MorphRover",
+            "bike_name_2": "",
+            "bike_name_desc": "World's Ist Allroad 2-in-1 Fat Tire eBik",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": true,
+            "Step_Green": false,
+            "Step_Sand": true,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        },
+        "dd17d06d-ab3b-4d10-8fcd-88881c09ebfb": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "5",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "bike_product": "",
+            "bike_desc_text": "",
+            "bike_name_1": "",
+            "bike_name_2": "",
+            "bike_name_desc": "",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "",
+            "high_step": "",
+            "bike_btn_desc": "",
+            "card_text_one": "BLACK FRIDAY SUPER SALE",
+            "card_text_two": "EXTRA FREE GIFTS",
+            "card_text_three": "With Every Bike Purchase",
+            "card_bg": "shopify:\/\/shop_images\/BlackFriday_SalesCollection_ADCard_IndoorBikes_PC.webp",
+            "bike_btn_url": ""
+          }
+        },
+        "43583c7b-c703-45c9-8f06-c34e0404eb1e": {
+          "type": "goods",
+          "settings": {
+            "introcardtype": "5",
+            "bike_color": "#000000",
+            "bike_border_color": "#000000",
+            "bike_product": "",
+            "bike_desc_text": "",
+            "bike_name_1": "",
+            "bike_name_2": "",
+            "bike_name_desc": "",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": false,
+            "High_Step_Sand": false,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "TWO IS BETTER THAN ONE",
+            "card_text_two": "EXTRA $300 OFF FOR TWO EBIKES",
+            "card_text_three": "Coupon Code: BUYTWO",
+            "card_bg": "shopify:\/\/shop_images\/BlackFriday_SalesCollection_ADCard_eBikes_PC.webp",
+            "bike_btn_url": "shopify:\/\/products\/morphrover-2-in-1-ebike"
+          }
+        },
+        "931028f6-46b4-45b1-9f59-86c370143570": {
+          "type": "goods",
+          "disabled": true,
+          "settings": {
+            "introcardtype": "3",
+            "bike_color": "#ecd0b5",
+            "bike_border_color": "#ecd0b5",
+            "bike_product": "morphrover-2-in-1-ebike",
+            "bike_desc_text": "",
+            "bike_name_1": "MorphRover",
+            "bike_name_2": "World's 1st",
+            "bike_name_desc": "",
+            "bike_new": "",
+            "open_sold_out": false,
+            "High_Step_black": false,
+            "High_Step_Green": true,
+            "High_Step_Sand": true,
+            "Step_Black": false,
+            "Step_Green": false,
+            "Step_Sand": false,
+            "bike_sold_out_text": "Sold out",
+            "high_step": "",
+            "bike_btn_desc": "SHOP NOW",
+            "card_text_one": "WHEELIN DEAL OF THE DAY",
+            "card_text_two": "Select Ebikes At $999",
+            "card_text_three": "Budget-Friendly Home Studio Bike",
+            "bike_btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "ff9e741d-be57-456c-9495-bac4c02e21d2",
+        "aebe7d88-891a-4eea-b315-19363df19876",
+        "ac21ed0d-7400-4a01-a148-316f8c24ea69",
+        "d0527cba-3d83-439e-8a64-ddab011c22d6",
+        "9ebbfe0e-e981-4bfb-9c6a-627eb0c9c8b5",
+        "2a77508f-4654-4636-9b05-ec0f6e999002",
+        "8ac78862-c04c-45bc-8840-6058c5d87c25",
+        "61cb2941-542f-461b-91d0-92b0eeaa1b20",
+        "a410e5d7-cb29-4daf-b771-fe2db4203861",
+        "bdc98d77-e02c-46e3-8200-5b117deca9f0",
+        "f2331b73-19c5-4d22-8def-6ef557331530",
+        "dd17d06d-ab3b-4d10-8fcd-88881c09ebfb",
+        "43583c7b-c703-45c9-8f06-c34e0404eb1e",
+        "931028f6-46b4-45b1-9f59-86c370143570"
+      ],
+      "settings": {
+        "introcardbike": "Lit Bike",
+        "introcdbike_kinds1": "Exercise Bike",
+        "introcdbike_kinds2": "Exercise Bike",
+        "introcdbike_kinds3": "2-in-1 eBike"
+      }
+    },
+    "2a7bf6f9-f043-4a78-92c9-5635ab2e5f16": {
+      "type": "fb-dealmatch-guarantee",
+      "settings": {
+        "fb_dealmatch_guarantee_heading": "LOW PRICE GUARANTEE",
+        "fb_dealmatch_guarantee_desc": "<p>We've launched our Low Price Guarantee.<\/p><p>Starting 11\/1\/23, you can place your order now with confidence! You'll be getting all freebeat bikes at the season's lowest price - guaranteed.<\/p>",
+        "fb_dealmatch_guarantee_img": "shopify:\/\/shop_images\/BlackFriday_LowPriceGuarantee.png",
+        "fb_dealmatch_guarantee_url_btn": "LEARN MORE",
+        "fb_dealmatch_guarantee_url": "shopify:\/\/pages\/freebeat-black-friday-cyber-monday-low-price-guarantee"
+      }
+    },
+    "5d851aa3-c64e-4ec1-b65e-0a463bcc5c81": {
+      "type": "fb-sale-card",
+      "blocks": {
+        "e68d33d8-b58e-4f2f-94d5-d4054dff900d": {
+          "type": "TextBlock",
+          "settings": {
+            "one_des": "TUV Certified testte sttestte stte sttesttestte",
+            "two_des": "in accordance with UL 2849 test test test  test testtest testtest testtesttes ttest",
+            "btn_des": "learn more",
+            "pc_bg": "shopify:\/\/shop_images\/blog-Lower-Body-Workouts.jpg",
+            "mb_bg": "shopify:\/\/shop_images\/blog-indoor-cycling-for-athletics.jpg",
+            "play_link": "https:\/\/www.baidu.com"
+          }
+        },
+        "543ef322-f9ee-49fd-9463-8bfff0a77186": {
+          "type": "TextBlock",
+          "disabled": true,
+          "settings": {
+            "one_des": "WHEELIN DEAL OF THE DAY",
+            "two_des": "Select Ebikes At $999",
+            "btn_des": "learn more",
+            "pc_bg": "shopify:\/\/shop_images\/blog-mountain-biking-for-beginners.jpg",
+            "mb_bg": "shopify:\/\/shop_images\/blog-downhill-mountain-biking-with-Brake-Modulation.jpg",
+            "play_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "e68d33d8-b58e-4f2f-94d5-d4054dff900d",
+        "543ef322-f9ee-49fd-9463-8bfff0a77186"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "a6e704cd-f97d-424a-9850-7f470e1a9c3d": {
+      "type": "fb-sale-card",
+      "blocks": {
+        "cda0e36c-87ad-48fd-ad15-d7d8885c59c7": {
+          "type": "TextBlock",
+          "settings": {
+            "one_des": "We are in over 1,000+",
+            "two_des": "rides & service tes ttesttestt esttestte sttest testtesttesttest test testte sttetestte sttetestte stte",
+            "btn_des": "learn more",
+            "pc_bg": "shopify:\/\/shop_images\/BikeRide-giveaway-freebeat-ebike.jpg",
+            "mb_bg": "shopify:\/\/shop_images\/BikeRide-giveaway-freebeat-ebike.jpg",
+            "play_link": "https:\/\/www.freebeatfit.com\/collections\/accessories"
+          }
+        },
+        "d2d04103-8720-4a09-bdcd-b55b64c37eab": {
+          "type": "TextBlock",
+          "settings": {
+            "one_des": "WHEELIN DEAL OF THE DAY",
+            "two_des": "Select Ebikes At $999",
+            "btn_des": "learn more",
+            "pc_bg": "shopify:\/\/shop_images\/blog-freebeat-cycling-bike-pink-exercise-bike.jpg",
+            "mb_bg": "shopify:\/\/shop_images\/blog-freebeat-cycling-bike-pink-exercise-bike.jpg",
+            "play_link": "https:\/\/www.freebeatfit.com\/collections\/accessories\/products\/pedals"
+          }
+        }
+      },
+      "block_order": [
+        "cda0e36c-87ad-48fd-ad15-d7d8885c59c7",
+        "d2d04103-8720-4a09-bdcd-b55b64c37eab"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "cc4ef109-0461-46c9-8f6f-9918ce46cc41": {
+      "type": "fb-sale-footer",
+      "blocks": {
+        "67a738bb-c855-41cb-a998-8588d1f306fc": {
+          "type": "TextBlock",
+          "settings": {
+            "pc_icon_img": "shopify:\/\/shop_images\/Group_1000004634_2x_f7153626-f0a5-4082-b8b0-85190d38a19a.png",
+            "mb_icon_img": "shopify:\/\/shop_images\/Group_1000004638_2x_2795991b-f50a-40fb-be8c-b321bf78855d.png",
+            "icon_info": "Product Warranty"
+          }
+        },
+        "25557bd5-a6d1-4578-8859-71486acaa584": {
+          "type": "TextBlock",
+          "settings": {
+            "pc_icon_img": "shopify:\/\/shop_images\/Group_1000004635_2x_9129c4ec-cf9a-47f2-804f-2a5216f68385.png",
+            "mb_icon_img": "shopify:\/\/shop_images\/Group_1000004639_2x_c2745093-3fff-4cba-8f94-c5ccdb69594f.png",
+            "icon_info": "Free Shipping"
+          }
+        },
+        "f295108e-91b0-4706-9f11-94e526da218f": {
+          "type": "TextBlock",
+          "settings": {
+            "pc_icon_img": "shopify:\/\/shop_images\/Group_1000004636_2x_d4eadcd2-78bb-4537-ac17-42bbc4fc88d8.png",
+            "mb_icon_img": "shopify:\/\/shop_images\/Group_1000004640_2x_e5fce25d-81b2-4c67-a508-2cc42193fb02.png",
+            "icon_info": "Customer Service"
+          }
+        }
+      },
+      "block_order": [
+        "67a738bb-c855-41cb-a998-8588d1f306fc",
+        "25557bd5-a6d1-4578-8859-71486acaa584",
+        "f295108e-91b0-4706-9f11-94e526da218f"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "5b311492-b0a7-4657-a3e1-1a5dfdfbfe04",
+    "c8da0901-969f-49e4-8528-aed5d8ae06e1",
+    "1e6f17fa-75b3-4a3e-9758-44b37dfc3000",
+    "9745649e-e426-436b-adb5-b2015958a0eb",
+    "2a7bf6f9-f043-4a78-92c9-5635ab2e5f16",
+    "5d851aa3-c64e-4ec1-b65e-0a463bcc5c81",
+    "a6e704cd-f97d-424a-9850-7f470e1a9c3d",
+    "cc4ef109-0461-46c9-8f6f-9918ce46cc41"
+  ]
+}

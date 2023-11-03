@@ -1,0 +1,434 @@
+/* bootstrap rest css */
+.form-control, .form-control-textrea{
+    display: block;
+    width: 100%;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form-control{
+    padding:0px 16px;
+}
+.form-control-textrea{
+    padding: 16px;
+}
+.is-invalid {
+    border-color: #F74D50!important;
+    background-image: none;
+}
+input::-webkit-input-placeholder {color: #999999;}
+input:-moz-placeholder { color: #999999; }
+input::-moz-placeholder {color: #999999; }
+
+input:-ms-input-placeholder { color: #999999; }
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0px 12px 0px 16px;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form-check-label{
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #444;
+}
+.form-control, .form-select, .form-control-textrea{
+    color: #121212;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid rgba(18, 18, 18, 0.4);
+    background-color: #fff;
+    border-radius: 4px;
+}
+.form-control, .form-select {
+    height: 48px;
+}
+.form-control-textrea{
+    height: 200px;
+    line-height: 24px;
+}
+button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button i {
+    display: none;
+    background: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/detailloading.gif?v=1656666966') no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+}
+button[disabled], html input[disabled]{
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+button[disabled] i {
+    display: inline-block;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(1.5rem * .5);
+    padding-left: calc(1.5rem * .5);
+    margin-top: var(0);
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+.m-0 {
+    margin: 0;
+}
+.col {
+    flex: 1 0 0%;
+}
+.form-control:focus, .form-select:focus{
+    border-color: #121212;
+    box-shadow: none;
+}
+
+.form-check {
+    width: 100%;
+    margin-top: 13px;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    height: 16px;
+}
+.form-check img{
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+.dealer-email-nocheck{
+    display: none;
+}
+.form-check-special{
+    margin-bottom: 0px;
+}
+.form-check-input {
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+ }
+label {
+    display: inline-block;
+}
+
+input::placeholder {
+   text-align: left;
+   color: #999!important;
+ }
+.form-control.is-valid ,.was-validated .form-control:valid, .form-control.is-valid:focus, .was-validated .form-control:valid:focus{ 
+    border-color: #121212;
+    box-shadow: none;
+}
+.fb-form-label, .fb-form-label-2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+    line-height: 16px; 
+   
+}
+.fb-form-label {
+    margin-bottom: 12px;
+}
+.form-select{
+    background-image: url("https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dealer-down.png?v=1680773732");
+    background-size: 24px 24px;
+}
+/* .form-select:focus{
+    background-image: url('https://cdn.shopify.com/s/files/1/0592/3766/2905/files/pull-up.png?v=1680833666');
+} */
+.fb-dlex-row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+.fb-dlex-row .fb-md-3:first-child {
+    margin-right: 40px;
+}
+.fb-md-3{
+    position: relative;
+    /* width: 480px; */
+    flex: 1 0 0%;
+    /* padding-bottom: 40px; */
+}
+.fb-md-8{
+    position: relative;
+    /* padding-bottom: 80px; */
+}
+.fb-md-12{
+    width: 100%;
+    position: relative;
+}
+.fb-organization-form{
+    margin-top: 36px;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #F74D50;
+    /* background-image: none; */
+    padding-right: 0;
+}
+.form-select.is-invalid {
+    border-color: #F74D50;
+}
+.pleasSpecify-input.is-invalid {
+    border-bottom: 1px solid  #F74D50;
+}
+/* .form-control.is-valid, .was-validated .form-control:valid {
+    background-image: none;
+    padding-right: 0px;
+    border-color: #02C0D9;
+} */
+.js-fb-addImage{
+    display: none;
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.fb-invalid-feedback, .fb-invalid-specify{
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+    color: #F74D50;
+    display: none;
+}
+.fb-md-3 .fb-invalid-feedback, .fb-invalid-specify{
+    bottom: -20px;
+}
+.fb-md-8 .fb-invalid-feedback{
+    bottom: 50px;
+}
+.btn-continue-next{
+    width: 236px;
+    height: 48px;
+}
+.fb-btn-black{
+    width: 320px;
+    height: 48px;
+    background: #121212;
+    color: #fff;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    border: 0;
+}
+.fb-btn-black:focus, .fb-btn-black:active, .fb-btn-black:hover{
+    background-color: #121212;
+    border-color: none;
+    border: none;
+    box-shadow: none;
+   
+}
+.fb-dealer-application{
+    padding-top: 80px;
+    max-width: 1520px;
+    margin: 0 auto;
+    background-color: #fff;
+   
+}
+@media only screen and (min-width: 1520px) {
+    .fb-dealer-application{
+      border-radius: 16px; 
+    }
+}
+.fbad-title{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.fbad-title p {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: bold;
+    color: #121212;
+}
+.fbad-sub-title{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.fbad-sub-title p {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #121212;
+}
+.fb-dealer-form{
+    margin: 0 auto;
+    max-width: 1040px;
+    padding: 0px 20px 0px 20px;
+
+}
+.fb-md-btn{
+    padding-top: 60px;
+    padding-bottom: 80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fb-dealer-desc p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 20px;
+}
+.fb-dealer-desc  p a{
+    font-weight: 600;
+    color: #666666;
+    text-decoration: underline;
+}
+.fb-show-like {
+    display: block;
+}
+/* .hidden, */
+.fb-hide-like, .fb-hide-next{
+    display: none;
+}
+@media only screen and (min-width: 769px) and (max-width: 1150px) {
+    .fb-md-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .form-control, .form-select{
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+    }
+    .form-control{
+        padding: 0px 12px;
+    }
+    .form-select{
+        padding: 0px 12px;
+    }
+    .form-control-textrea{
+        padding: 12px;  
+        height: 168px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 18px;
+    }
+    .form-check-input {
+        margin-right: 6px;
+    }
+    .fb-dealer-application{
+        padding-top: 40px;
+        /* margin-bottom: 80px; */
+    }
+    .fbad-title {
+        margin-bottom: 28px;
+    }
+    .fbad-title p{
+        font-size: 20px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 20px;
+    }
+    .fbad-sub-title{
+        margin-bottom: 20px;
+    }
+    .fbad-sub-title p{
+        font-size: 14px;
+        font-weight: 600;
+        color: #121212;
+        line-height: 14px;
+    }
+    .fb-dealer-form{
+       padding: 0px 24px;
+    }
+    .fb-dlex-row{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .fb-dlex-row .fb-md-3{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .fb-dlex-row{
+        padding-bottom: 0px;
+    }
+    .fb-dlex-row .fb-md-3:first-child {
+        margin-right: 0px!important;
+    }
+    .fb-form-label, .form-check-label{
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 500;
+        color: #444;
+    }
+    .fb-form-label{
+        margin-bottom: 8px;
+    }
+    .fb-md-3{
+        padding-bottom: 16px;
+    }
+    .fb-invalid-feedback, .fb-invalid-specify{
+        font-size: 12px;
+    }
+    .fb-md-3 .fb-invalid-feedback{
+        bottom: -4px;
+    }
+    .fb-md-btn{
+        padding: 28px 0px  40px 0px;
+    }
+    .fb-organization-form{
+        margin-top: 12px;
+    }
+    .form-select{
+        background-size: 20px 20px;
+    }
+    .fb-btn-black{
+        height: 40px;
+        line-height: 40px;
+        width: 375px;
+        font-size: 12px;
+    }
+    .form-check img{
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+    }
+}

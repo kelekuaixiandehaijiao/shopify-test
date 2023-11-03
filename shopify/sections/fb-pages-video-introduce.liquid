@@ -1,0 +1,82 @@
+<div class="fb-pages-video-introduce w-full js-prodcutpage-overview prodcutNavOverView relative" id="section-{{ section.id }}" style="background-color: {{ section.settings.backgroundColor }}">
+  <video
+    class="Image--lazyLoad js-videoAutoPlayer hidden h-full w-full object-cover fb-sm:block"
+    x-webkit-airplay="allow"
+    webkit-playsinline="true"
+    playsinline="true"
+    autoplay="autoplay"
+    muted="muted"
+    loop="loop"
+    data-src="{{ section.settings.video_url }}"
+  ></video>
+  <video
+    class="Image--lazyLoad js-videoAutoPlayer aspect-[750/1080] w-full h-full object-cover fb-sm:hidden"
+    x-webkit-airplay="allow"
+    webkit-playsinline="true"
+    playsinline="true"
+    autoplay="autoplay"
+    muted="muted"
+    loop="loop"
+    data-src="{{ section.settings.mob_video_url }}"
+  ></video>
+  {%- assign video_introduce_title_oprichtext = section.settings.video_introduce_title -%}
+  {%- if video_introduce_title_oprichtext != blank -%}
+    <div class="fb-x-translate top-0 h-full w-full max-w-75r">
+      <div class="flex h-full w-full flex-col items-center justify-center px-1/20">
+        <div class=" text-center text-24 font-bold text-white fb-sm:text-40">
+          {{ section.settings.video_introduce_title }}
+        </div>
+        <div class=" mt-4 text-center text-16 text-white fb-md:text-20 fb-md:mt-6">
+          {{ section.settings.video_introduce_desc }}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+<!-- 粉车: https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20222101734.mp4?v=1644485743 -->
+<!-- 黑车背景: https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221615191-2.png?v=1642763323 -->
+<!-- 黑车: https://cdn.shopifycdn.net/s/files/1/0592/3766/2905/files/20221241707.mp4?v=1643015289 -->
+{% schema %}
+{
+  "name": "FbPagesVideoIntroduce",
+  "presets": [
+    {
+      "name": "fb-pages-video-introduce",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "backgroundColor",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "backgroundImage",
+      "label": "Background Image"
+    },
+    {
+      "type": "richtext",
+      "id": "video_introduce_title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "video_introduce_desc",
+      "label": "Desc"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video Url"
+    },
+    {
+      "type": "url",
+      "id": "mob_video_url",
+      "label": "Mobile Video Url"
+    }
+  ]
+}
+{% endschema %}

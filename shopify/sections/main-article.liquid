@@ -1,0 +1,833 @@
+{%- assign share_url = shop.url | append: article.url -%}
+{%- assign twitter_text = article.title -%}
+{%- assign pinterest_description = article.description | strip_html | truncatewords: 15 | url_param_escape -%}
+{%- assign pinterest_image = article.image | img_url: '750x' | prepend: 'https:' -%}
+
+<article class="Article" data-section-id="{{ section.id }}" data-section-type="article">
+  {%- if article.image and section.settings.show_article_image -%}
+    <div
+      class="Article__ImageWrapper aspect-video w-full bg-cover bg-scroll fb-sm:h-38r"
+      style="background-image: url({{ article.image | img_url: '1x1' }})"
+    >
+      <div class="h-full w-full bg-cover" style="background-image: url({{ article.image | img_url: '' }})"></div>
+    </div>
+  {%- endif -%}
+  <div class="wrapper-content ">
+    <div class="Article__Wrapper relative max-w-screen-md">
+      <div class="Article__Content bg-white px-5 py-5 fb-sm:px-10 fb-sm:py-10">
+        <header class="Article__Header mb-8">
+          {%- capture article_meta -%}
+            {%- if section.settings.show_date -%}
+              <span class="Article__MetaItem text-16 font-bold text-666666">{{ article.published_at | date: format: 'month_day_year' }}</span>
+            {%- endif -%}
+
+            {%- if section.settings.show_category and article.tags != empty -%}
+              <span class="Article__MetaItem text-16 font-bold text-666666">{{ article.tags.first }}</span>
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- if article_meta != blank -%}
+            <div class="mb-4">
+              {{- article_meta -}}
+            </div>
+          {%- endif -%}
+
+          <h1 class="Article__Title text-24 font-bold text-121212">{{ article.title }}</h1>
+        </header>
+
+        <div class="Article__Body Rte">
+          {{ article.content }}
+        </div>
+
+        {%- capture article_footer -%}
+          {%- if section.settings.show_author -%}
+            <span class="Article__Author text-16 font-bold text-666666">Written by {{article.author}}</span>
+          {%- endif -%}
+
+          {%- if section.settings.show_share_buttons -%}
+            <div class="Article__ShareButtons mt-8 grid h-12 grid-cols-3 fb-sm:mt-0 fb-sm:w-20r">
+              <a class="ShareButtons__Item flex w-full items-center justify-center border" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'facebook' -%}</a>
+              <a class="ShareButtons__Item flex w-full items-center justify-center border" href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'twitter' -%}</a>
+              <a class="ShareButtons__Item flex w-full items-center justify-center border" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener">{%- render 'icon' with 'pinterest' -%}</a>
+            </div>
+          {%- endif -%}
+        {%- endcapture -%}
+
+        {%- if article_footer != blank -%}
+          <footer class="Article__Footer mt-10 fb-sm:flex fb-sm:flex-row fb-sm:items-center fb-sm:justify-between">
+            {{ article_footer }}
+          </footer>
+        {%- endif -%}
+      </div>
+
+      {%- if template == 'article.blog-boom-ebike'
+        or template == 'article.blog-lit-boom-ebike'
+        or template == 'article.blog-ebike'
+        or template == 'article.blog-lit-ebike'
+        or template == 'article.blog-litbike'
+        or template == 'article.blog-boombike'
+        or template == 'article.blog-lit-boom'
+        or template == 'article'
+      -%}
+        <div class="bike-content px-5">
+          <div class="bike-title">Featured Products</div>
+          <div class="lit-bike">
+            {%- if template == 'article.blog-lit-boom-ebike'
+              or template == 'article.blog-lit-ebike'
+              or template == 'article.blog-litbike'
+              or template == 'article.blog-lit-boom'
+              or template == 'article'
+            -%}
+              {%- for block in section.blocks -%}
+                {%- assign product1 = block.settings.product -%}
+                {%- if block.settings.blog_selector_bike == '1' -%}
+                  <div class="litbike-content choose-select-litbike{{ forloop.index }}">
+                    <div class="lit-bike-img">
+                      {% assign image_url = block.settings.blog_product_image | img_url: '' %}
+                      <a href="{{ block.settings.blog_link_page_url }}">
+                        <img
+                          class="Image--lazyLoad Image--fadeIn"
+                          src="{{ image_url }}"
+                          data-sizes="auto"
+                          alt="{{ image_url.alt }}"
+                        >
+                      </a>
+                    </div>
+                    <div class="lit-bike-title">{{ block.settings.blog_bikes_title }}</div>
+                    <div class="lit-bike-desc">Premium Home Gym With Gamified Techs</div>
+                    <div class="lit-bike-price">
+                      {% render 'customer-price-control', type: 'sale', cpc_product: product1 %}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+              <div class="lit-bike-wrapper" style="display:block;">
+                <ul class="lit-change-color-wrapper">
+                  <li class="lit-choose-item" data-index="1">
+                    <div class="lit-choose-color">
+                      {% assign litImg1 = section.settings.lit_choose_color_img1 | img_url: '' %}
+                      {% assign litActiveImg1 = section.settings.lit_choose_color_active_img1 | img_url: '' %}
+                      <a class="lit-choose-a">
+                        <img class="lit-image normal" loading="lazy" src="{{ litImg1 }}" alt="{{ litImg1.alt }}">
+                        <img class="lit-image-active active" loading="lazy" src="{{ litActiveImg1 }}" alt="{{ litActiveImg1.alt }}">
+                      </a>
+                    </div>
+                  </li>
+                  <li class="lit-choose-item" data-index="2">
+                    <div class="lit-choose-color">
+                      {% assign litImg2 = section.settings.lit_choose_color_img2 | img_url: '' %}
+                      {% assign litActiveImg2 = section.settings.lit_choose_color_active_img2 | img_url: '' %}
+                      <a class="lit-choose-a">
+                        <img class="lit-image" loading="lazy" src="{{ litImg2 }}" alt="{{ litImg2.alt }}">
+                        <img class="lit-image-active normal" loading="lazy" src="{{ litActiveImg2 }}" alt="{{ litActiveImg2.alt }}">
+                      </a>
+                    </div>
+                  </li>
+                  <li class="lit-choose-item" data-index="3">
+                    <div class="lit-choose-color">
+                      {% assign litImg3 = section.settings.lit_choose_color_img3 | img_url: '' %}
+                      {% assign litActiveImg3 = section.settings.lit_choose_color_active_img3 | img_url: '' %}
+                      <a class="lit-choose-a">
+                        <img class="lit-image" loading="lazy" src="{{ litImg3 }}" alt="{{ litImg3.alt }}">
+                        <img class="lit-image-active normal" loading="lazy" src="{{ litActiveImg3 }}" alt="{{ litActiveImg3.alt }}">
+                      </a>
+                    </div>
+                  </li>
+                  <li class="lit-choose-item" data-index="4">
+                    <div class="lit-choose-color">
+                      {% assign litImg4 = section.settings.lit_choose_color_img4 | img_url: '' %}
+                      {% assign litActiveImg4 = section.settings.lit_choose_color_active_img4 | img_url: '' %}
+                      <a class="lit-choose-a">
+                        <img class="lit-image" loading="lazy" src="{{ litImg4 }}" alt="{{ litImg4.alt }}">
+                        <img class="lit-image-active normal" loading="lazy" src="{{ litActiveImg4 }}" alt="{{ litActiveImg4.alt }}">
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="boom-bike">
+            {%- if template == 'article.blog-boom-ebike'
+              or template == 'article.blog-lit-boom-ebike'
+              or template == 'article.blog-boombike'
+              or template == 'article.blog-lit-boom'
+              or template == 'article'
+            -%}
+              {%- for block in section.blocks -%}
+                {%- assign product2 = block.settings.product -%}
+                {%- if block.settings.blog_selector_bike == '2' -%}
+                  <div class="boombike-content choose-select-boombike{{ forloop.index }}">
+                    <div class="boom-bike-img">
+                      {% assign boom_image_url = block.settings.blog_product_image | img_url: '' %}
+                      <a href="{{ block.settings.blog_link_page_url }}">
+                        <img src="{{boom_image_url}}" loading="lazy" alt="{{ boom_image_url.alt }}">
+                      </a>
+                    </div>
+                    <div class="boom-bike-title">{{ block.settings.blog_bikes_title }}</div>
+                    <div class="boom-bike-desc">Value-Packed Full Body Workout</div>
+                    <div class="boom-bike-price text-00cc45">
+                      {% render 'customer-price-control', type: 'sale', cpc_product: product2 %}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {% endfor %}
+              <div class="boom-bike-wrapper">
+                <ul class="boom-change-color-wrapper">
+                  <li class="boom-choose-item" data-index="5">
+                    <div class="boom-choose-color">
+                      {% assign boomImg1 = section.settings.boom_choose_color_img1 | img_url: '' %}
+                      {% assign boomActiveImg1 = section.settings.boom_choose_color_active_img1 | img_url: '' %}
+                      <a class="boom-choose-a">
+                        <img class="boom-image normal" loading="lazy" src="{{ boomImg1 }}" alt="{{ boomImg1.alt }}">
+                        <img class="boom-image-active active" loading="lazy" src="{{ boomActiveImg1 }}" alt="{{ boomActiveImg1.alt }}">
+                      </a>
+                    </div>
+                  </li>
+                  <li class="boom-choose-item" data-index="6">
+                    <div class="boom-choose-color">
+                      {% assign boomImg2 = section.settings.boom_choose_color_img2 | img_url: '' %}
+                      {% assign boomActiveImg2 = section.settings.boom_choose_color_active_img2 | img_url: '' %}
+                      <a class="boom-choose-a">
+                        <img class="boom-image" loading="lazy" src="{{ boomImg2 }}" alt="{{ boomImg2.alt }}">
+                        <img class="boom-image-active normal" loading="lazy" src="{{ boomActiveImg2 }}" alt="{{ boomActiveImg2.alt }}">
+                      </a>
+                    </div>
+                  </li>
+                  <li class="boom-choose-item" data-index="7">
+                    <div class="boom-choose-color">
+                      {% assign boomImg3 = section.settings.boom_choose_color_img3 | img_url: '' %}
+                      {% assign boomActiveImg3 = section.settings.boom_choose_color_active_img3 | img_url: '' %}
+                      <a class="boom-choose-a">
+                        <img class="boom-image" loading="lazy" src="{{ boomImg3 }}" alt="{{ boomImg3.alt }}">
+                        <img class="boom-image-active normal" loading="lazy" src="{{ boomActiveImg3 }}" alt="{{ boomActiveImg3.alt }}">
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            {%- endif -%}
+          </div>
+          {%- if template == 'article.blog-boom-ebike'
+            or template == 'article.blog-lit-boom-ebike'
+            or template == 'article.blog-ebike'
+            or template == 'article.blog-lit-ebike'
+          -%}
+            <div class="e-bike">
+              {%- for block in section.blocks -%}
+                {%- assign product3 = block.settings.product -%}
+                {%- if block.settings.blog_selector_bike == '3' -%}
+                  <div class="boombike-content choose-select-ebike{{ forloop.index }}">
+                    <div class="boom-bike-img">
+                      {% assign boom_image_url = block.settings.blog_product_image | img_url: '' %}
+                      <a href="{{ block.settings.blog_link_page_url }}">
+                        <img src="{{boom_image_url}}" loading="lazy" alt="{{ boom_image_url.alt }}">
+                      </a>
+                    </div>
+                    <div class="boom-bike-title">{{ block.settings.blog_bikes_title }}</div>
+                    <div class="boom-bike-desc">World's 1st All-Terrain 2-in-1 Fat Tire eBike</div>
+                    <div class="boom-bike-price text-00cc45">
+                      {% render 'customer-price-control', type: 'sale', cpc_product: product3 %}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {% endfor %}
+              <div class="e-bike-wrapper">
+                <ul class="ebike-change-color-wrapper">
+                  <li class="e-bike-choose-item" data-index="8">
+                    <div class="boom-choose-color">
+                      {% assign ebike1 = section.settings.ebike_choose_color_img1 | img_url: '' %}
+                      {% assign ebikeActiveImg1 = section.settings.ebike_choose_color_active_img1 | img_url: '' %}
+                      <a class="boom-choose-a">
+                        <img class="ebike-image normal" loading="lazy" src="{{ ebike1 }}" alt="{{ ebike1.alt }}">
+                        <img
+                          class="ebike-image-active active"
+                          loading="lazy"
+                          src="{{ ebikeActiveImg1 }}"
+                          alt="{{ ebikeActiveImg1.alt }}"
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="e-bike-choose-item" data-index="9">
+                    <div class="boom-choose-color">
+                      {% assign ebike2 = section.settings.ebike_choose_color_img2 | img_url: '' %}
+                      {% assign ebikeActiveImg2 = section.settings.ebike_choose_color_active_img2 | img_url: '' %}
+                      <a class="boom-choose-a">
+                        <img class="ebike-image" loading="lazy" src="{{ ebike2 }}" alt="{{ ebike2.alt }}">
+                        <img
+                          class="ebike-image-active normal"
+                          loading="lazy"
+                          src="{{ ebikeActiveImg2 }}"
+                          alt="{{ ebikeActiveImg2.alt }}"
+                        >
+                      </a>
+                    </div>
+                  </li>
+                  <li class="e-bike-choose-item" data-index="10">
+                    <div class="boom-choose-color">
+                      {% assign ebike3 = section.settings.ebike_choose_color_img3 | img_url: '' %}
+                      {% assign ebikeActiveImg3 = section.settings.ebike_choose_color_active_img3 | img_url: '' %}
+                      <a class="boom-choose-a">
+                        <img class="ebike-image" src="{{ ebike3 }}" loading="lazy" alt="{{ ebike3.alt }}">
+                        <img
+                          class="ebike-image-active normal"
+                          src="{{ ebikeActiveImg3 }}"
+                          loading="lazy"
+                          alt="{{ ebikeActiveImg3.alt }}"
+                        >
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.settings.show_prev_next and blog.next_article or blog.previous_article -%}
+    <aside class="ArticleNav mx-auto w-full bg-black px-5 py-10 fb-sm:mt-10 fb-sm:px-10 fb-md:mt-20 fb-md:px-20">
+      <div class="Container Container--narrow mx-auto max-w-7xl px-6">
+        <div class="grid fb-sm:grid-cols-2 fb-sm:gap-8 fb-md:gap-10">
+          {%- if blog.next_article -%}
+            <div>
+              {%- render 'article-item', article: blog.next_article, isBlog: true -%}
+            </div>
+          {%- elsif blog.articles_count > 3 -%}
+            <div>
+              {%- render 'article-item', article: blog.articles.last, isBlog: true -%}
+            </div>
+          {%- endif -%}
+
+          {%- if blog.previous_article -%}
+            <div>
+              {%- render 'article-item', article: blog.previous_article, isBlog: true -%}
+            </div>
+          {%- elsif blog.articles_count > 3 -%}
+            <div>
+              {%- render 'article-item', article: blog.articles.first, isBlog: true -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </aside>
+  {%- endif -%}
+</article>
+<script>
+  $('.lit-choose-item').click(function () {
+    $(this).find('.lit-image').addClass('normal');
+    $(this).find('.lit-image').removeClass('active');
+    $(this).find('.lit-image-active').addClass('active');
+    $(this).find('.lit-image-active').removeClass('normal');
+    $(this).siblings().find('.lit-image').addClass('active');
+    $(this).siblings().find('.lit-image').removeClass('normal');
+    $(this).siblings().find('.lit-image-active').removeClass('active');
+    $(this).siblings().find('.lit-image-active').addClass('normal');
+    let currentIndex = $(this).attr('data-index');
+    $(`.choose-select-litbike${currentIndex}`).css('display', 'block');
+    $(`.choose-select-litbike${currentIndex}`).siblings().css('display', 'none');
+    $('.lit-bike-wrapper').css('display', 'block');
+  });
+  $('.boom-choose-item').click(function () {
+    let currentIndex = $(this).attr('data-index');
+    $(this).find('.boom-image').addClass('normal');
+    $(this).find('.boom-image').removeClass('active');
+    $(this).find('.boom-image-active').addClass('active');
+    $(this).find('.boom-image-active').removeClass('normal');
+    $(this).siblings().find('.boom-image').addClass('active');
+    $(this).siblings().find('.boom-image').removeClass('normal');
+    $(this).siblings().find('.boom-image-active').removeClass('active');
+    $(this).siblings().find('.boom-image-active').addClass('normal');
+
+    $(`.choose-select-boombike${currentIndex}`).css('display', 'block');
+    $(`.choose-select-boombike${currentIndex}`).siblings().css('display', 'none');
+    $('.boom-bike-wrapper').css('display', 'block');
+  });
+  $('.e-bike-choose-item').click(function () {
+    let currentIndex = $(this).attr('data-index');
+    $(this).find('.ebike-image').addClass('normal');
+    $(this).find('.ebike-image').removeClass('active');
+    $(this).find('.ebike-image-active').addClass('active');
+    $(this).find('.ebike-image-active').removeClass('normal');
+    $(this).siblings().find('.ebike-image').addClass('active');
+    $(this).siblings().find('.ebike-image').removeClass('normal');
+    $(this).siblings().find('.ebike-image-active').removeClass('active');
+    $(this).siblings().find('.ebike-image-active').addClass('normal');
+
+    $(`.choose-select-ebike${currentIndex}`).css('display', 'block');
+    $(`.choose-select-ebike${currentIndex}`).siblings().css('display', 'none');
+    $('.e-bike-wrapper').css('display', 'block');
+  });
+</script>
+<style>
+   :root {
+     --link-color:#00cc45;
+   }
+
+   .Article__Wrapper{
+     {%- if template == 'article.blog-boom-ebike' or template == 'article.blog-lit-boom-ebike' or template == 'article.blog-ebike' or template == 'article.blog-lit-ebike' or  template == 'article.blog-litbike' or template == 'article.blog-boombike' or template == 'article.blog-lit-boom' or template == 'article'-%}
+       margin-left:0px!important;
+     {%- else-%}
+       margin:0 auto!important;
+     {%- endif -%}
+
+   }
+   .wrapper-content{
+     width:1200px;
+     min-height:1282px;
+     {% comment %} height:100%; {% endcomment %}
+     margin:0 auto;
+     margin-top:-70px;
+   }
+
+   .Rte p:not(:last-child), .Rte ul:not(:last-child), .Rte ol:not(:last-child) {
+     margin-bottom: 1rem;
+   }
+   .Rte h2 {
+     color:#121212;
+     font-size: 22px;
+     margin:2rem 0 1rem;
+     font-weight:900;
+   }
+
+   .Rte h3 {
+     color:#121212;
+     font-size: 20px;
+     margin:2rem 0 1rem;
+     font-weight:900;
+   }
+
+   .Rte a:not(.Button) {
+     color: var(--link-color);
+     text-decoration: underline;
+     -webkit-text-decoration-color: rgba(var(--link-color-rgb),.6);
+     text-decoration-color: rgba(var(--link-color-rgb),.6);
+     text-underline-position: under;
+   }
+
+   .Rte img, .Rte blockquote, .Rte .VideoWrapper, .Rte .Form {
+     margin-top: 2.4em;
+     margin-bottom: 2.4em;
+   }
+
+   .ShareButtons__Item svg {
+     width:18px;
+     height:18px;
+
+   }
+
+   .bike-content{
+     width: 400px;
+     background: #FFFFFF;
+     position:absolute;
+     top:0px;
+     right:-444px;
+   }
+   .bike-title{
+     font-size: 20px;
+     font-weight: bold;
+     color: #121212;
+     line-height: 20px;
+     margin-top:40px;
+     margin-left:24px;
+   }
+   .lit-bike,.boom-bike,.e-bike{
+      margin-top:32px;
+   }
+   .lit-bike-img,.boom-bike-img{
+     width:352px;
+     margin-left:24px;
+   }
+   .lit-bike-img img,.boom-bike-img img{
+     width:100%;
+     height:100%;
+   }
+   .lit-bike-title,.boom-bike-title{
+     font-size: 20px;
+     font-weight: bold;
+     color: #121212;
+     line-height: 20px;
+     margin-left:24px;
+     margin-top:20px;
+   }
+   .lit-bike-desc,.boom-bike-desc{
+     margin-top:12px;
+     margin-left:24px;
+     font-size: 16px;
+     font-weight: 400;
+     color: #666666;
+     line-height: 16px;
+   }
+   .lit-bike-price,.boom-bike-price{
+     font-size: 24px;
+     font-weight: bold;
+     color: #00cc45;
+     line-height: 24px;
+     margin-left:24px;
+     margin-top:20px;
+   }
+   .lit-bike-wrapper,.boom-bike-wrapper,.e-bike-wrapper{
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     margin-top: 16px;
+     margin-left:24px;
+   }
+   .lit-change-color-wrapper,.boom-change-color-wrapper,.ebike-change-color-wrapper{
+     list-style: none;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     display: inline-flex;
+   }
+   .lit-choose-color,.boom-choose-color{
+     width:32px;
+     height:32px;
+     border-radius:50%;
+     margin-right:16px;
+     cursor: pointer;
+   }
+   .lit-choose-color img,.boom-choose-color img{
+     width:100%;
+     height:100%;
+     cursor: pointer;
+   }
+   .lit-choose-a .normal, .boom-choose-a .normal{
+     display:none
+   }
+   .lit-choose-a .active, .boom-choose-a .active{
+     display:block
+   }
+   .choose-select-litbike2,.choose-select-boombike2,.choose-select-ebike2{
+     display:none
+   }
+   .choose-select-litbike3,.choose-select-boombike3,.choose-select-ebike3{
+     display:none
+   }
+   .choose-select-litbike4,.choose-select-boombike4,.choose-select-ebike4{
+     display:none
+   }
+   .choose-select-litbike5{
+     display:none
+   }
+   .choose-select-litbike6,.choose-select-boombike6,.choose-select-ebike6{
+     display:none
+   }
+   .choose-select-litbike7,.choose-select-boombike7,.choose-select-ebike7{
+     display:none
+   }
+  .choose-select-ebike9{
+     display:none
+   }
+  .choose-select-ebike10{
+     display:none
+   }
+   @media only screen and (max-width: 1800px){
+     {% comment %} .Article__Wrapper{
+       margin-left:130px!important;
+     } {% endcomment %}
+   }
+   @media only screen and (min-width: 769px) and (max-width: 1200px){
+     .wrapper-content{
+       width:100%;
+       height:100%;
+       display:flex;
+       justify-content:center;
+     }
+     .Article__Wrapper{
+       margin:0 auto!important;
+     }
+     .bike-content{
+       width: 100%;
+       background: #FFFFFF;
+       position:static;
+     }
+     .lit-bike,.boom-bike ,.e-bike{
+       margin-bottom:40px;
+     }
+   }
+   @media only screen and (max-width: 768px){
+     .Article__Wrapper{
+       margin-left:0px!important;
+       {% comment %} margin-left:360px!important; {% endcomment %}
+     }
+     .wrapper-content{
+       width:100%;
+       height:100%;
+       margin:0 auto;
+       margin-top:0px;
+     }
+     .bike-content{
+       width: 100%;
+       background: #FFFFFF;
+       position:static;
+     }
+     .bike-title{
+       font-size: 16px;
+       font-weight: bold;
+       color: #121212;
+       line-height: 16px;
+       margin-top:40px;
+       margin-left:0px;
+     }
+     .lit-bike,.boom-bike,.e-bike{
+       margin-top:24px;
+     }
+     .e-bike{
+       margin-bottom:24px;
+     }
+     .lit-bike-img,.boom-bike-img{
+       width:327px;
+       height:327px;
+       margin:0 auto;
+     }
+     .lit-bike-img img,.boom-bike-img img{
+       width:100%;
+       height:100%;
+     }
+     .lit-bike-title,.boom-bike-title{
+       font-size: 16px;
+       font-weight: bold;
+       color: #121212;
+       line-height: 16px;
+       margin-left:0px;
+       margin-top:20px;
+     }
+     .lit-bike-desc,.boom-bike-desc{
+       margin-top:8px;
+       margin-left:0px;
+       font-size: 12px;
+       font-weight: 400;
+       color: #666666;
+       line-height: 12px;
+     }
+     .lit-bike-price,.boom-bike-price{
+       font-size: 20px;
+       font-weight: bold;
+       color: #00cc45;
+       line-height: 20px;
+       margin-left:0px;
+       margin-top:16px;
+     }
+     .lit-bike-wrapper,.boom-bike-wrapper,.e-bike-wrapper{
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+       margin-top: 12px;
+       margin-left:0px;
+     }
+     .lit-change-color-wrapper,.boom-change-color-wrapper,.ebike-change-color-wrapper{
+       list-style: none;
+       width: 100%;
+       display: flex;
+       align-items: center;
+       display: inline-flex;
+     }
+     .lit-choose-color,.boom-choose-color{
+       width:28px;
+       height:28px;
+       border-radius:50%;
+       margin-right:12px;
+     }
+     .lit-choose-color img,.boom-choose-color img{
+       width:100%;
+       height:100%;
+       cursor: pointer;
+     }
+   }
+</style>
+{% schema %}
+{
+  "name": "Blog post page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_article_image",
+      "label": "Show article image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show article date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show article category",
+      "info": "The first article's tag is used as the main category.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_prev_next",
+      "label": "Show prev/next articles",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_img1",
+      "label": "Lit choose color img1"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_active_img1",
+      "label": "Lit choose color active img1"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_img2",
+      "label": "Lit choose color img2"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_active_img2",
+      "label": "Lit choose color active img2"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_img3",
+      "label": "Lit choose color img3"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_active_img3",
+      "label": "Lit choose color active img3"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_img4",
+      "label": "Lit choose color img4"
+    },
+    {
+      "type": "image_picker",
+      "id": "lit_choose_color_active_img4",
+      "label": "Lit choose color active img4"
+    },
+    {
+      "type": "image_picker",
+      "id": "boom_choose_color_img1",
+      "label": "Boom choose color img1"
+    },
+    {
+      "type": "image_picker",
+      "id": "boom_choose_color_active_img1",
+      "label": "Boom choose color active img1"
+    },
+    {
+      "type": "image_picker",
+      "id": "boom_choose_color_img2",
+      "label": "Boom choose color img2"
+    },
+    {
+      "type": "image_picker",
+      "id": "boom_choose_color_active_img2",
+      "label": "Boom choose color active img2"
+    },
+    {
+      "type": "image_picker",
+      "id": "boom_choose_color_img3",
+      "label": "Boom choose color img3"
+    },
+    {
+      "type": "image_picker",
+      "id": "boom_choose_color_active_img3",
+      "label": "Boom choose color active img3"
+    },
+    {
+      "type": "image_picker",
+      "id": "ebike_choose_color_img1",
+      "label": "Ebike choose color img1"
+    },
+    {
+      "type": "image_picker",
+      "id": "ebike_choose_color_active_img1",
+      "label": "Ebike choose color active img1"
+    },
+    {
+      "type": "image_picker",
+      "id": "ebike_choose_color_img2",
+      "label": "Ebike choose color img2"
+    },
+    {
+      "type": "image_picker",
+      "id": "ebike_choose_color_active_img2",
+      "label": "Ebike choose color active img2"
+    },
+    {
+      "type": "image_picker",
+      "id": "ebike_choose_color_img3",
+      "label": "Ebike choose color img3"
+    },
+    {
+      "type": "image_picker",
+      "id": "ebike_choose_color_active_img3",
+      "label": "Ebike choose color active img3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_blog",
+      "name": "Product Blog",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "select",
+          "id": "blog_selector_bike",
+          "label": "Blog Selector Bike",
+          "options": [
+            {
+              "value": "1",
+              "label": "Lit Bike"
+            },
+            {
+              "value": "2",
+              "label": "Boom Bike"
+            },
+            {
+              "value": "3",
+              "label": "Ebike"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "image_picker",
+          "id": "blog_product_image",
+          "label": "Blog Product Image"
+        },
+        {
+          "type": "text",
+          "id": "blog_bikes_title",
+          "label": "Blog Bike Title"
+        },
+        {
+          "type": "url",
+          "id": "blog_link_page_url",
+          "label": "Blog Link page Url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

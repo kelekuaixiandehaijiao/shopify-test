@@ -1,0 +1,234 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- assign an_number = 0 -%}
+{%- if section.settings.enable_bar -%}
+  <section
+    id="section-{{ section.id }}"
+    class="js-announcementbar-old w-full"
+    data-section-id="{{ section.id }}"
+    data-section-type="announcement-bar"
+  >
+    <div class="AnnouncementBar w-full relative bg-black overflow-hidden">
+      <div class="w-full h-full overflow-hidden relative">
+        <div id="headerBanner" class="w-full h-full text-center overflow-hidden absolute left-0 top-0 z-1">
+          <div class="swiper-wrapper overflow-hidden">
+            {%- for block in section.blocks -%}
+              {%- assign pc_text = block.settings.announcement_text -%}
+              {%- assign mobile_text = block.settings.announcement_text_mobile | default: pc_text -%}
+              <a
+                class="swiper-slide annou-bar-swiper-slide flex items-center justify-start h-full w-full bg-black fb-md:justify-center"
+                {% if block.settings.announcement_link != blank %}
+                  href="{{ block.settings.announcement_link }}"
+                {%- else -%}
+                  href="javascript:void(0);"
+                {% endif %}
+                style="color: {{ block.settings.announcement_text_color }};"
+                data-type="{{ block.type }}"
+                data-number="{{ forloop.index }}"
+                data-length="{{ forloop.length }}"
+              >
+                {%- if block.type == 'scrollBar' -%}
+                  <div class="hidden fb-md:inline-block overflow-hidden whitespace-nowrap text-ellipsis text-16 w-160 font-bold">
+                    <object>{{ pc_text }}</object>
+                  </div>
+                  <div class="inline-block fb-md:hidden ml-4 text-left text-12 font-bold">
+                    <object>{{ mobile_text }}</object>
+                  </div>
+                  {%- if section.settings.is_view_offer -%}
+                    <button
+                      class="annou-button-offer text-10 min-w-22 fb-md:min-w-[154px] fb-md:ml-6 fb-md:h-full"
+                    ></button>
+                  {%- endif -%}
+                {%- else -%}
+                {% assign pc_img = block.settings.announcement_pc_img | img_url: '' %} 
+                {%- if section.settings.is_view_offer -%}
+                    {%- if section.settings.is_show_two_line -%}
+                        {% assign mob_img = block.settings.announcement_offer_mob_img | img_url: '' %}  
+                    {%- else -%}
+                        {% assign mob_img = block.settings.announcement_mob_img | img_url: '' %}
+                    {%- endif -%} 
+                {%- else -%}
+                    {% assign mob_img = block.settings.announcement_mob_img | img_url: '' %}
+                {%- endif -%} 
+                  <div class="relative w-full h-full hidden text-center fb-md:inline-block overflow-hidden">
+                    <img class="w-full h-full object-cover inline-block" 
+                      src="{{ pc_img }}" 
+                      alt="{{ block.settings.announcement_pc_img.alt}}"
+                      data-sizes="auto"
+                    >
+        
+                  </div>
+                  <div class="w-full relative h-full inline-block text-center overflow-hidden fb-md:hidden">
+                    <img class="w-auto h-full object-fill inline-block" 
+                      src="{{ mob_img }}"
+                      alt="{{ block.settings.announcement_mob_img.alt}}"
+                      data-sizes="auto"
+                    >
+                  </div>
+                {%- endif -%}
+              </a>
+              {%- assign an_number = an_number | plus: 1 -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- if section.settings.is_view_offer -%}
+        <button
+          class="
+            annou-button-offer-position absolute flex items-center justify-center h-full w-26 right-[7px] text-10 top-0
+            fb-md:h-[30px] fb-md:left-1/2 fb-md:top-1/2 fb-md:transform fb-md:-translate-y-1/2 fb-md:ml-64 fb-md:min-w-[154px]
+          "
+          aria-expanded="false"
+          data-action="open-modal"
+          aria-controls="sidebar-annoucement-offer"
+          aria-label="Open OK"
+        >
+          <span class="text-a1f200 font-bold underline text-10 fb-md:text-16">
+            {{- section.settings.view_offer_text -}}
+          </span>
+          <span class="js-view-annou-number inline-block w-[10px] h-[10px] bg-a1f200 rounded-[10px] text-center font-bold text-black ml-1 text-[8px] leading-[10px] fb-md:w-4 fb-md:h-4 fb-md:leading-4 fb-md:text-h-12-s fb-md:ml-2"
+            >1</span
+          >
+        </button>
+      {%- endif -%}
+      <div class="announcement-left hidden fb-md:flex absolute w-6 h-6 bg-[rgba(255,255,255,0.2)] text-white justify-center items-center rounded-[50%] z-[5] top-1/2 transform fb-md:-translate-y-1/2 left-[12px]">
+        <img
+          class="w-[7px] h-auto Image--lazyLoad Image--fadeIn"
+          data-src="//www.freebeatfit.com/cdn/shop/files/header-left.png?v=1685439233"
+          alt="left arrow"
+        >
+      </div>
+      <div class="announcement-right  hidden fb-md:flex absolute w-6 h-6 bg-[rgba(255,255,255,0.2)] text-white justify-center items-center rounded-[50%] z-[5] top-1/2 transform fb-md:-translate-y-1/2 right-3">
+        <img
+          class="w-[7px] h-auto Image--lazyLoad Image--fadeIn"
+          data-src="//www.freebeatfit.com/cdn/shop/files/header-right.png?v=1685439266"
+          alt="right arrow"
+        >
+      </div>
+      {%- if template contains 'product.ebike' -%}
+        <div
+          class="
+            annou-bar-deal-size1 hidden fb-md:block w-42 h-6
+            absolute top-1/2 rounded-md	 mt-[-12px] border border-a1f200 right-15
+          "
+        >
+          <a href="{{ section.settings.delear_address_link }}" class="w-full h-full flex items-center">
+            <div class="w-3.5 h-[14px] ml-2">
+              <img
+                class="w-full h-full Image--lazyLoad Image--fadeIn"
+                data-src="https://www.freebeatfit.com/cdn/shop/files/weizhi.png?v=1690945273"
+                alt="location"
+              >
+            </div>
+            <div class="ml-1.5 text-16 font-bold text-a1f200">FIND A DEALER</div>
+          </a>
+        </div>
+        <div class="annou-bar-deal-size2 hidden">
+          <a href="{{ section.settings.delear_address_link }}" class="announcement-delear-icon-link ">
+            <img
+              class="delear-address-img Image--lazyLoad Image--fadeIn"
+              data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/ditu222.png?v=1693296380"
+              alt="map"
+            >
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable bar",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "delear_address_link",
+      "label": "Delear Address Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_view_offer",
+      "label": "Open Offer",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "is_show_two_line",
+      "label": "Show Two Line",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "view_offer_text",
+      "label": "View Offer Text",
+      "default": "VIEW OFFERS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "scrollBar",
+      "name": "scrollBar",
+      "settings": [
+        {
+          "type": "color",
+          "id": "announcement_text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "url",
+          "id": "announcement_link",
+          "label": "Link"
+        },
+        {
+          "type": "richtext",
+          "id": "announcement_text",
+          "label": "Pc text"
+        },
+        {
+          "type": "richtext",
+          "id": "announcement_text_mobile",
+          "label": "Mobile text"
+        }
+      ]
+    },
+    {
+      "type": "scrollBarImg",
+      "name": "scrollBarImg",
+      "settings": [
+        {
+          "type": "url",
+          "id": "announcement_link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "announcement_pc_img",
+          "label": "PC Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "announcement_mob_img",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "announcement_offer_mob_img",
+          "label": "Mobile Offer Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<script>
+  document.documentElement.style.setProperty(
+    '--announcement-bar-height',
+    document.getElementById('shopify-section-announcement').offsetHeight + 'px'
+  );
+</script>

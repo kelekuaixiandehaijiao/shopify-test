@@ -1,0 +1,24 @@
+@media screen and (min-width: 1200px){
+    .affiliate_program_public{
+        width: 1200px;
+        margin: auto;
+    }
+    .banner_text{
+        padding: 133px 0 106px 0;
+    }
+    .alliance_entrance{
+        margin-top: -222px;
+    }
+    .start_earning_today_con{
+        padding: 133px 0 106px 0;
+    }
+    .simple_apply_con{
+        padding: 60px;
+    }
+    .program_get_started_con{
+        padding: 60px 80px;
+    }
+    .why_item_con{
+        padding: 40px 40px;
+    }
+}

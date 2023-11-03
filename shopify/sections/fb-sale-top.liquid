@@ -1,0 +1,61 @@
+<div class="fb-sale-top w-full relative pl-5 pt-5 h-20 fb-sm:h-40 fb-sm:pl-25 fb-sm:pt-12 ">
+      <!-- bg -->
+      {% assign pc_bg = section.settings.pc_bg | img_url: '' %}
+      {% assign mb_bg = section.settings.mb_bg | img_url: '' %}
+      <a href="{{ section.settings.play_link}}">
+            <div class="h-20 fb-sm:h-40 w-full absolute top-0 left-0 z-1">
+                  <img class="h-full w-full object-cover hidden fb-sm:block" src="{{ pc_bg }}" loading="lazy" alt="{{ item.image.alt | escape }}">
+                  <img class="h-full w-full object-cover fb-sm:hidden" src="{{ mb_bg }}" loading="lazy" alt="{{ item.image.alt | escape }}">
+            </div>
+      </a>
+      <div class="m-tit z-2 text-white relative text-xs fb-sm:text-base font-semibold">
+            {{ section.settings.one_des}}
+      </div>
+      <div class="m-des z-2 text-white relative text-xl fb-sm:text-3xl font-bold">
+            {{ section.settings.two_des}}
+      </div>
+
+</div>
+
+</div>
+{% schema %}
+{
+"name": "FbSaleTop",
+"presets": [
+{
+"name": "fb-sale-top",
+"category": "Fb Sections",
+"blocks": []
+}
+],
+"settings": [
+{
+"type": "text",
+"id": "one_des",
+"label": "Label One Des",
+"default": "WHEELIN DEAL OF THE DAY"
+},
+{
+"type": "text",
+"id": "two_des",
+"label": "Label Two Des",
+"default": "Select Ebikes At $999"
+},
+{
+"type": "image_picker",
+"id": "pc_bg",
+"label": "PC Bg"
+},
+{
+"type": "image_picker",
+"id": "mb_bg",
+"label": "MB Bg"
+},
+{
+"type": "url",
+"id": "play_link",
+"label": "Content link"
+}
+]
+}
+{% endschema %}

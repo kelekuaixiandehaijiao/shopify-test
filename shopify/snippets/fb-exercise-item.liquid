@@ -1,0 +1,87 @@
+
+{%- if navimg_item -%}
+    {%- assign exerise_product =  navimg_item  -%} 
+{%- else -%}
+    {%- assign exerise_product =  block.settings.exerise_product  -%} 
+{%- endif -%}
+
+{%- capture has_bike_default_url -%}
+    {%- render 'customer-price-control', cpc_product: exerise_product, type: 'bikeDefaultPdpUrl' -%}
+{%- endcapture -%}
+    <a class="exbb-img"
+        {% if has_bike_default_url != '' %}
+            href="{{ has_bike_default_url }}"
+        {% else %}
+            href="{{ block.settings.bike_btn_url | default: exerise_product.url }}"
+        {% endif %}
+    >
+        {%- if block.settings.bike_img_pc == blank -%}
+            {% assign imgdefault = exerise_product.featured_media | img_url: '' %}
+        {%- else -%}
+            {% assign imgdefault = block.settings.bike_img_pc | img_url: '' %}
+        {%- endif -%}
+        {%- capture offType -%}
+            {%- render 'customer-price-control', cpc_product: exerise_product, type: 'offTypeVal' -%}
+        {%- endcapture -%}
+        {%- if offType!=blank -%}
+            <div class="sale-box-excise">
+                {%- if offType contains 'OFF' -%}
+                <img  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1000004651_2x_b07cb53a-1d24-431c-906a-cead1c9400aa.png?v=1698138899" alt="{{ item.image.alt | escape }}" class="sale-img">
+                {%- else -%}
+                <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Rectangle_312_2x_1.png?v=1698731197"
+                alt="{{ item.image.alt | escape }}" class="sale-img">
+                {%- endif -%}
+                <span class="{%- if offType contains 'OFF' -%} sale-box-des {%- else -%} sale-box-des1 {%- endif -%} " >
+                    {{offType}}
+                </span>
+            </div>
+        {%- endif -%}
+        <img 
+            src="{{ imgdefault }}"
+            alt="{{ block.settings.bike_img_pc.alt | default: exerise_product.featured_media.alt }}"
+            loading="lazy"
+          >
+        {%- if block.settings.open_sold_out or has_bike_default_url != '' -%}
+            <div class="exbb-sold-out">
+                {{ block.settings.bike_sold_out_text }}
+            </div>
+        {%- endif -%}
+    </a>
+    <div class="exbb-color">
+    </div>
+    <div class="exbb-name">
+        <h4 class="exbb-span1"> {{ block.settings.bike_name_1 | default: section.settings.exerise_bike }} </h4>
+        {% comment %} <span class="exbb-span2">
+            {%- if navimg_item -%}
+                {{ navimg_item.option2 }}
+            {%- else -%}
+                {{ block.settings.bike_name_2 }} 
+            {%- endif -%}
+        </span> {% endcomment %}
+    </div>
+    {%- if block.settings.bike_new  != blank -%}
+        <div class="exbb-rate-new">
+            <span> 
+                {{ block.settings.bike_new }}
+            </span>
+        </div>
+    {%- else -%}
+        <div class="exbb-rate">
+            {%- render 'fb-pdp-star', product: block.settings.exerise_product -%}    
+        </div>  
+    {%- endif -%}
+    <div class="exbb-size">
+        {{ block.settings.bike_name_size }}
+    </div>
+    <div class="exbb-price">
+        {%- capture origin_price -%}
+            {%- render 'customer-price-control', type:'origin', cpc_product: exerise_product -%}
+        {%- endcapture -%}
+        {%- if origin_price != blank -%}<span class="exbb-price-origin">{{- origin_price -}}</span>{%- endif -%}
+        <span class="exbb-price-real"> {%- render 'customer-price-control', type:'sale', cpc_product: exerise_product -%}</span>
+    </div>
+    {%- if has_bike_default_url != '' -%}
+        <a  class="exbb-button" href="{{ has_bike_default_url }}"> {{ block.settings.bike_btn_desc }}</a>    
+    {%- else -%}
+        <a class="exbb-button" href="{{ block.settings.bike_btn_url | default: exerise_product.url }}"> {{ block.settings.bike_btn_desc }}</a>    
+    {%- endif -%}

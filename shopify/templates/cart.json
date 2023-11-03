@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart",
+      "settings": {
+        "show_shipping_estimator": false,
+        "shipping_estimator_default_country": "United States",
+        "is_payments_show": true,
+        "payments_title_show": "<p>Flexible payments available with<\/p>",
+        "payments_des_show": "Pay as low as",
+        "shipping_and_taxes_notice": "Free shipping on all items"
+      }
+    }
+  },
+  "order": [
+    "cart-items"
+  ]
+}

@@ -1,0 +1,302 @@
+<div
+  id="section-{{ section.id }}"
+  class="js-online-reviewers mx-auto h-auto w-full py-20 fb-sm:pb-30 fb-sm:pt-15 fb-md:py-20"
+  data-type="video-yutube"
+>
+  <div class="mx-auto flex w-full max-w-75r flex-col">
+    <div class="max-w-80 mx-auto mb-8 px-5 text-center text-20 font-bold uppercase text-121212 fb-md:mb-10 fb-md:text-32">
+      {{ section.settings.online_reviewers_max_title }}
+    </div>
+    {%- if section.settings.fb_show_reviewers_tab -%}
+      <div class="mx-auto mb-5 flex h-11 w-80 justify-around self-center rounded-full bg-121212/5 p-1 text-12 fb-md:h-12 fb-md:w-96 fb-md:text-14">
+        <div
+          id="exercise-bike-tab"
+          class="flex h-full w-1/2 cursor-pointer items-center justify-center rounded-full bg-121212 font-bold uppercase text-white"
+        >
+          exercise bike
+        </div>
+        <div
+          id="ebike-tab"
+          class="flex w-1/2 cursor-pointer items-center justify-center font-bold uppercase"
+        >
+          2-in-1 ebike
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div
+      id="exercise-bike-layout"
+      class="relative mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto fb-sm:mx-10 fb-md:mx-0 fb-md:gap-10"
+    >
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'OnlineReviewersBlock' -%}
+            <div class="w-80 shrink-0 snap-start fb-md:w-96">
+              <div class="online_reviews_top flex flex-row items-center">
+                <img
+                  class="h-5 w-5 object-contain fb-md:h-6 fb-md:w-6"
+                  data-sizes="auto"
+                  data-optimumx="1.2"
+                  data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                  loading="lazy"
+                  src="{{ block.settings.online_reviews_icon | img_url:'' }}"
+                  alt="{{ block.settings.online_reviews_icon.alt | escape }}"
+                >
+                <span class="whitespace-nowrap pl-2 text-16 font-bold text-121212 fb-md:pl-3 fb-md:text-20">
+                  {{- block.settings.online_reviews_title -}}
+                </span>
+              </div>
+
+              <div class="online_reviews_middle w-full">
+                <iframe
+                  class="Image--lazyLoad mt-4 aspect-video h-auto w-80 rounded-xl fb-md:w-96"
+                  data-src="{{ block.settings.online_reviews_url }}"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="online_reviews_bottom my-5 fb-md:my-6">
+                <div class="flex flex-row items-center">
+                  {%- assign online_reviews_circle = block.settings.online_reviews_circle | img_url: '1x1' | replace: '_1x1.','_{width}x.' -%}
+                  <img
+                    class="Image--lazyLoad Image--fadeIn h-5 w-5 object-contain fb-md:h-6 fb-md:w-6"
+                    data-sizes="auto"
+                    loading="lazy"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    data-src="{{online_reviews_circle}}"
+                    alt="{{ block.settings.online_reviews_circle.alt | escape }}"
+                  >
+                  <p class="pl-2 text-16 font-bold text-121212 fb-md:pl-3 fb-md:text-20">
+                    {{ block.settings.online_reviews_color }}
+                  </p>
+                </div>
+                <div class="online_reviews_bottom2 mt-3 flex flex-row items-start">
+                  {%- assign online_reviews_talk = block.settings.online_reviews_talk | img_url: '1x1' | replace: '_1x1.','_{width}x.' -%}
+                  <img
+                    class="Image--lazyLoad Image--fadeIn h-5 w-5 object-contain fb-md:h-6 fb-md:w-6"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    data-src="{{ online_reviews_talk }}"
+                    alt="{{ block.settings.online_reviews_talk.alt | escape }}"
+                  >
+                  <p class="pl-2 text-12 fb-md:pl-3 fb-md:text-16">{{ block.settings.online_reviews_text }}</p>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {%- endfor -%}
+    </div>
+
+    <div
+      id="ebike-layout"
+      class="relative mx-5 hidden snap-x snap-mandatory gap-5 overflow-x-auto fb-sm:mx-10 fb-md:mx-0 fb-md:gap-10"
+    >
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'EbikeOnlineReviewersBlock' -%}
+            <div class="w-80 shrink-0 snap-start fb-md:w-96">
+              <div class="online_reviews_top flex flex-row items-center">
+                <img
+                  class="h-5 w-5 object-contain fb-md:h-6 fb-md:w-6"
+                  loading="lazy"
+                  src="{{ block.settings.online_reviews_icon | img_url:'' }}"
+                  alt="{{ block.settings.online_reviews_icon.alt | escape }}"
+                >
+                <span class="whitespace-nowrap pl-2 text-16 font-bold text-121212 fb-md:pl-3 fb-md:text-20">
+                  {{- block.settings.online_reviews_title -}}
+                </span>
+              </div>
+
+              <div class="online_reviews_middle w-full">
+                <iframe
+                  class="Image--lazyLoad mt-4 aspect-video h-auto w-80 rounded-xl fb-md:w-96"
+                  data-src="{{ block.settings.online_reviews_url }}"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="online_reviews_bottom my-5 fb-md:my-6">
+                <div class="flex flex-row items-center">
+                  <img
+                    class="Image--lazyLoad Image--fadeIn h-5 w-5 object-contain fb-md:h-6 fb-md:w-6"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    src="{{ block.settings.online_reviews_circle | img_url:'' }}"
+                    alt="{{ block.settings.online_reviews_circle.alt | escape }}"
+                  >
+                  <p class="pl-2 text-16 font-bold text-121212 fb-md:pl-3 fb-md:text-20">
+                    {{ block.settings.online_reviews_color }}
+                  </p>
+                </div>
+                <div class="online_reviews_bottom2 mt-3 flex flex-row items-start">
+                  <img
+                    class="Image--lazyLoad Image--fadeIn fb-md:h-6 h-5 w-5 object-contain fb-md:w-6"
+                    data-sizes="auto"
+                    loading="lazy"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    src="{{ block.settings.online_reviews_talk | img_url }}"
+                    alt="{{ block.settings.online_reviews_talk.alt | escape }}"
+                  >
+                  <p class="pl-2 text-12 fb-md:pl-3 fb-md:text-16">{{ block.settings.online_reviews_text }}</p>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.fb_show_reviewers_button == true-%}
+      <a
+        class="mx-auto mt-8 inline-block fb-md:mt-10"
+        href="/pages/compare-bikes-peloton-vs-freebeat-bike-which-one-is-better-for-you"
+      >
+        <div id="reviewer-jump-btn" class="btn-normal px-16 py-3 text-12 fb-md:px-20 fb-md:text-16">
+          {{ section.settings.online_reviewers_btn }}
+        </div>
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+<script src="{{ "online-reviewers-index.js" | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Online Reviewers Index",
+  "presets": [
+    {
+      "name": "online-reviewers-index",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "online_reviewers_max_title",
+      "label": "Online Reviewers Max Title",
+      "default": "<p>Online Reviewers Max Title</p>"
+    },
+    {
+      "type": "text",
+      "id": "online_reviewers_btn",
+      "label": "Online Reviewers Btn",
+      "default": "COMPARE BIKES"
+    },
+    {
+      "type": "checkbox",
+      "id": "fb_show_reviewers_tab",
+      "label": "show reviewers tab",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "fb_show_reviewers_button",
+      "label": "show reviewers Button",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "OnlineReviewersBlock",
+      "name": "OnlineReviewersBlock",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "online_reviews_icon",
+          "label": "Online Reviews Icon"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_title",
+          "label": "Online Reviews Title"
+        },
+        {
+          "type": "url",
+          "id": "online_reviews_url",
+          "label": "Online Reviews Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_img_url",
+          "label": "Online Reviews Img Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_reviews_circle",
+          "label": "Online Reviews Circle"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_color",
+          "label": "Online Reviews Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_reviews_talk",
+          "label": "Online Reviews Talk"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_text",
+          "label": "Online Reviews Text"
+        }
+      ]
+    },
+    {
+      "type": "EbikeOnlineReviewersBlock",
+      "name": "EbikeOnlineReviewersBlock",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "online_reviews_icon",
+          "label": "Online Reviews Icon"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_title",
+          "label": "Online Reviews Title"
+        },
+        {
+          "type": "url",
+          "id": "online_reviews_url",
+          "label": "Online Reviews Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_img_url",
+          "label": "Online Reviews Img Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_reviews_circle",
+          "label": "Online Reviews Circle"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_color",
+          "label": "Online Reviews Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "online_reviews_talk",
+          "label": "Online Reviews Talk"
+        },
+        {
+          "type": "text",
+          "id": "online_reviews_text",
+          "label": "Online Reviews Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

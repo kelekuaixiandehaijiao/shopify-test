@@ -1,0 +1,183 @@
+{
+  "sections": {
+    "1629189692d2e4e7a8": {
+      "type": "fb-img-video-banner",
+      "blocks": {
+        "1629189692d2e4e7a8-1": {
+          "type": "image_banner",
+          "settings": {
+            "product": "",
+            "banner_href": true,
+            "image": "shopify:\/\/shop_images\/ABOUT-US-PAGE-0819-PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/about-us-page-mb.png",
+            "apply_overlay": true,
+            "content_position_pc": "middleLeft",
+            "content_position_mobile": "bottomLeft",
+            "pc_gift_img": "",
+            "mb_gift_img": "",
+            "banner_sub_title": "",
+            "banner_sub_title_color": "",
+            "banner_sub_title_mob": "",
+            "banner_sub_title_color_mob": "",
+            "banner_title": "",
+            "banner_title_color": "",
+            "banner_title_mob": "",
+            "banner_title_color_mob": "",
+            "banner_desc": "",
+            "banner_desc_color": "",
+            "banner_desc_mob": "",
+            "banner_desc_color_mob": "",
+            "button_1_text": "",
+            "button_1_text_color": "",
+            "button_1_text_backgroundcolor": "",
+            "button_1_text_bordercolor": "",
+            "button_1_open_dialog": false,
+            "button_1_link": "",
+            "button_1_text_mob": "",
+            "button_1_text_color_mob": "",
+            "button_1_text_backgroundcolor_mob": "",
+            "button_1_text_bordercolor_mob": "",
+            "button_1_open_dialog_mob": false,
+            "button_1_link_mob": "",
+            "button_2_text": "",
+            "button_2_text_color": "",
+            "button_2_text_backgroundcolor": "",
+            "button_2_text_bordercolor": "",
+            "button_2_open_dialog": false,
+            "button_2_link": "",
+            "button_2_text_mob": "",
+            "button_2_text_color_mob": "",
+            "button_2_text_backgroundcolor_mob": "",
+            "button_2_text_bordercolor_mob": "",
+            "button_2_open_dialog_mob": false,
+            "button_2_link_mob": "",
+            "banner_more": "",
+            "banner_more_color": "",
+            "banner_more_mob": "",
+            "banner_more_color_mob": ""
+          }
+        }
+      },
+      "block_order": [
+        "1629189692d2e4e7a8-1"
+      ],
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
+    "1629190141b8b13177": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "",
+        "title": "MANIFESTO.",
+        "image": "shopify:\/\/shop_images\/Bnner2_2x_1.png",
+        "image_position": "left",
+        "content": "<p>Our mission is to create an oasis where our members can ride for an average of 12 hours each month with confidence, courage, and strength.<\/p><p>From the world's top-notch studios, freebeat's rockstar instructors will guide you through an inspiring fitness journey designed to benefit your mind and body with a one-of-a-kind gamified indoor cycling experience. Get ready to immerse yourself in high-energy music specially curated by instructors, and follow our signature choreography to move in sync with the beat. <\/p><p>It’s a ride. It’s a rhythm game. It’s fun.<\/p>",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "16291903787ffccefc": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "",
+        "title": "WHO ARE WE?",
+        "image": "shopify:\/\/shop_images\/WHO_WE_ARE-2_a3366975-f24a-4da7-8b9b-77da55349001.jpg",
+        "image_position": "right",
+        "content": "<p>We aspire to excel in all aspects of our products and service. Our products provide a wide range of fitness crosstraining courses including indoor cycling, HIIT, and more. We are responsive to the needs of our clients, proactively improving every step of their journey to a healthier lifestyle. <\/p><p>Our corporate duties and goals are always to provide a better experience for our customers when working out with our freebeat products. We believe everyone is capable of withhold incredible discipline, dedication and determination. We believe you will be surprised by yourself and you will be stronger than you ever thought possible.<\/p><p>Game on. Change your body. Find your beat.<\/p>",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "16291959515b936658": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "",
+        "title": "BRAND PHILOSOPHY",
+        "image_position": "right",
+        "content": "",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "162919093427809d6b": {
+      "type": "timeline",
+      "blocks": {
+        "162919093427809d6b-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_979c80d4-9394-4f79-ad23-c64620c89c8a.jpg",
+            "apply_overlay": true,
+            "title": "1",
+            "subheading": "Ride with authenticity.",
+            "heading": "Authenticity",
+            "content": "<p>We score combos to the beat with every rhythm of the pedal. The gamification system allows you to connect and compete with your friends and family while nurturing deep bonds within the freebeat community. Free your mind, connect with our genuine and best selves. We believe in the power of giving and would like to share our passion by offering all freebeat products at affordable and reasonable prices. Each session: we laugh, sweat, grow, and ride with the best as a community, as a family.<\/p>"
+          }
+        },
+        "162919093427809d6b-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3.jpg",
+            "apply_overlay": true,
+            "title": "2",
+            "subheading": "Ride with sophistication.",
+            "heading": "SOPHISTICATION",
+            "content": "<p>Every drop of sweat counts, and freebeat’s sensors would never miss a single pedal from you. Choose your favourite music genre and whenever you feel the vibe, give yourself another push. Our system records your performance and tracks your hard work. Each session is a new challenge to do better than before. Our smart tracking device will recommend the best workout program that suits your needs. Freebeat knows what you like, and every smart class recommendation could be your new favorite.<\/p>"
+          }
+        },
+        "162919093427809d6b-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/12.jpg",
+            "apply_overlay": true,
+            "title": "3",
+            "subheading": "Ride with excitement.",
+            "heading": "EXCITEMENT",
+            "content": "<p>Freebeat creates an innovative alternative to replace the traditional boring fitness routine. We have developed a fun interactive game to bring the experience of studio cycling and strength training to the comfort of your own home. The beat-matching gamification system simulates dancing on a smart bike instead of simply exercising on a stationary bike. Our tech team creates distinctive computer-generated animations and special effects that flow perfectly throughout each class to give each member an unique and unforgettable experience.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "162919093427809d6b-0",
+        "162919093427809d6b-1",
+        "162919093427809d6b-2"
+      ],
+      "settings": {
+        "text_color": "#ffffff"
+      }
+    },
+    "16291945328e3c41d7": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "",
+        "title": "OUR TEAM",
+        "image": "shopify:\/\/shop_images\/Our_team_PC-img.jpg",
+        "image_position": "right",
+        "content": "<p>We are a group of qualified, competent and passionate professionals, whose clear priorities bring a healthier lifestyle to everyone around the world. We aim to improve our staff's quality of life through fulfilling cheerful work environment and career development. The founding team comes from a variety field of expertise across global companies, including Bridgewater, Apple, Microsoft, NBA, Esquire, Soulcycle, Diesel, G-Star RAW, and Macquarie Group. Prior to their career paths, the founding team received educations from world’s top schools, including Stanford, Williams College, UPenn, Washington University in St.Louis, UC Berkeley and University of Toronto.<br\/><br\/><\/p>",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "16624304472fa8ae5b": {
+      "type": "fb-key-content",
+      "settings": {
+        "fb_customerkey_h1": "about us"
+      }
+    }
+  },
+  "order": [
+    "1629189692d2e4e7a8",
+    "1629190141b8b13177",
+    "16291903787ffccefc",
+    "16291959515b936658",
+    "162919093427809d6b",
+    "16291945328e3c41d7",
+    "16624304472fa8ae5b"
+  ]
+}

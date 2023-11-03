@@ -1,8 +1,0 @@
-{
-  "parent": "product.boom-bike-first.json",
-  "context": {
-    "market": "英国"
-  },
-  "sections": {
-  }
-}

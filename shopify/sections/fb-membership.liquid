@@ -1,0 +1,1072 @@
+{{ 'custom-style.css' | asset_url | stylesheet_tag }}
+{{ 'payment-info.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-js.js' | asset_url }}" defer></script>
+<script src="{{ 'payment-info.js' | asset_url }}" defer></script>
+<div id="section-{{ section.id }}" class="fb-membership">
+  <h1 style="display: none">Membership log in</h1>
+  <div class="membership-Container">
+    <div class="login-centent" id="loginModel">
+      <div class="form-box login" id="login">
+        <div>
+          <h3 class="login-text font-bold text-121212">freebeat Membership Login</h3>
+          <p class="peyeap">Please enter your e-mail and password:</p>
+          <form>
+            <p class="Form__Alert Alert Alert--error mb-5 bg-red-200 px-5 py-2 text-red-500" id="errorMSg1"></p>
+
+            <div class="Form__Item relative">
+              <input
+                id="memberLoginEmail"
+                type="email"
+                class="Form__Input peer w-full border border-121212/50 bg-666666/10 px-4 py-3"
+                placeholder="Email"
+                required="required"
+              >
+              <label class="Form__FloatingLabel absolute -top-3 left-2 bg-white peer-placeholder-shown:hidden"
+                >Email</label
+              >
+            </div>
+            <div class="Form__Item relative mt-5">
+              <input
+                id="memberLoginPassword"
+                type="password"
+                class="Form__Input peer w-full border border-121212/50 bg-666666/10 px-4 py-3"
+                placeholder="Password"
+                required="required"
+              >
+              <label class="Form__FloatingLabel absolute -top-3 left-2 bg-white peer-placeholder-shown:hidden"
+                >Password</label
+              >
+              <span class="shou_password" onclick="showPassword(this)" id="shou_password">
+                <svg
+                  t="1631610951720"
+                  class="icon"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="3505"
+                  width="30"
+                  height="30"
+                >
+                  <path
+                      d="M1005.482 511.921c0 95.008-203.483 297.684-493.455 297.684-282.593 0-493.456-199.34-493.456-297.684 0-98.328 211.774-297.365 493.456-297.365 292.251 0 493.524 199.037 493.455 297.365zM512.461 268.855c-131.33 0-237.794 108.902-237.794 243.228 0 134.327 106.463 243.228 237.794 243.228 131.37 0 237.837-108.902 237.837-243.228 0-134.326-106.466-243.228-237.837-243.228z m-0.434 87.945c-83.635 0-151.436 69.337-151.436 154.876 0 85.531 67.801 154.88 151.436 154.88s151.407-69.349 151.407-154.88c0-85.54-67.773-154.876-151.407-154.876z"
+                      p-id="3506"></path>
+                </svg>
+              </span>
+              <span class="hidden_password" onclick="hiddenPassword(this)" id="hidden_password">
+                <svg
+                  t="1631610998077"
+                  class="icon"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="3652"
+                  width="30"
+                  height="30"
+                >
+                  <path
+                      d="M941.677 391.71c9.338-14.006 6.225-32.681-6.225-43.575-14.006-10.894-32.681-7.781-43.575 6.225-1.557 1.556-174.3 205.426-379.728 205.426-199.2 0-379.727-205.426-381.283-206.982-10.895-12.45-31.125-14.006-43.576-3.113-12.45 10.894-14.006 31.125-3.113 43.576 3.113 4.668 40.463 46.687 99.6 93.375l-79.37 82.482c-12.45 12.45-10.893 32.681 1.557 43.575 3.113 6.225 10.894 9.338 18.676 9.338 7.78 0 15.562-3.113 21.787-9.338l85.594-88.706c40.463 28.013 88.707 54.47 141.62 73.144l-32.682 110.495c-4.668 17.118 4.67 34.237 21.788 38.906h9.337c14.006 0 26.457-9.338 29.569-23.344l32.681-110.495c24.9 4.669 51.357 7.782 77.813 7.782s52.913-3.113 77.814-7.782l32.68 108.939c3.114 14.006 17.12 23.343 29.57 23.343 3.113 0 6.225 0 7.782-1.556 17.118-4.67 26.456-21.787 21.788-38.906L649.099 595.58c52.914-18.676 101.157-45.132 141.62-73.144l84.038 87.15c6.225 6.225 14.006 9.338 21.787 9.338 7.781 0 15.563-3.113 21.787-9.337 12.45-12.451 12.45-31.125 1.557-43.576l-79.37-82.481c63.808-46.689 101.16-91.82 101.16-91.82z"
+                      fill="#BFBFBF" p-id="3653"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="Form__Item custom_Form__Item mt-5">
+              <button
+                type="button"
+                class="Form__ItemHelp Link Link--primary custom_Form__ItemHelp"
+                onclick="forGotPassword()"
+              >
+                Forgot password?
+              </button>
+            </div>
+
+            <button
+              class="Form__Submit fb-md:te16 relative mt-5 h-12 w-full bg-121212 text-14 font-bold uppercase text-white"
+              onclick="memberLogin(event, this)"
+            >
+              LOGIN
+              <span
+                class="absolute left-0 top-0 hidden h-full w-full items-center justify-center bg-white/80 text-center"
+                id="loadingbeLoading"
+              >
+                <svg
+                  class="text-center"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="40px"
+                  height="40px"
+                  viewBox="0 0 50 50"
+                  style="enable-background:new 0 0 50 50"
+                  xml:space="preserve"
+                >
+                  <path fill="#02c0D9"
+                      d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+                      transform="rotate(275.098 25 25)">
+                      <animateTransform attributeType="xml" attributeName="transform" type="rotate"
+                          from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite">
+                      </animateTransform>
+                  </path>
+                </svg>
+              </span>
+            </button>
+            <div class="Form__Hint Form__Hint--center dont-account mt-5 px-3 text-center text-666666">
+              <span class="Text--subdued"
+                >If you don't have a freebeat membership account yet, please register on your bike.
+              </span>
+            </div>
+            <div class="Form__Help mt-8" style="text-align: center;" onclick="TidioShowFun()">
+              <p
+                style="margin:0;padding-top:8px;padding-bottom: 6px;font-size: 14px;font-weight: 600;color: #666666;"
+              >
+                Need assistance?
+              </p>
+              <p
+                class="Text--subdued"
+                style="font-size: 14px;font-weight: 400;color: #02C0D9;text-decoration:underline;cursor: pointer;"
+              >
+                Talk to a Specialist
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="form-box Register" id="Register">
+        <div>
+          <h3 class="login-text">Register</h3>
+          <p class="peyeap">Please fill in the information below:</p>
+          <form>
+            <p class="Form__Alert Alert Alert--error" id="errorMSg2"></p>
+            <div class="Form__Item">
+              <input
+                id="memberUsername"
+                type="text"
+                class="Form__Input"
+                placeholder="UserName"
+                required="required"
+                pattern="^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{4,16}$"
+                oninvalid="setCustomValidity('Please enter 4-16 characters, letters and numbers only')"
+                oninput="setCustomValidity('')"
+              >
+              <label class="Form__FloatingLabel">UserName</label>
+            </div>
+            <div class="Form__Item">
+              <input
+                id="memberEmail"
+                type="email"
+                class="Form__Input"
+                placeholder="Email"
+                required="required"
+              >
+              <label class="Form__FloatingLabel">Email</label>
+            </div>
+            <div class="Form__Item">
+              <input
+                id="memberPassword"
+                type="password"
+                class="Form__Input"
+                placeholder="Password"
+                required="required"
+                pattern="^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$"
+                oninvalid="setCustomValidity('Please enter 6-16 characters, letters and numbers only')"
+                oninput="setCustomValidity('')"
+              >
+              <label class="Form__FloatingLabel">Password</label>
+            </div>
+            <button
+              class="Form__Submit Button Button--primary Button--full"
+              onclick="createUser(event, this)"
+            >
+              Create my account
+              <span class="loading" id="createUsergbeLoading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="40px"
+                  height="40px"
+                  viewBox="0 0 50 50"
+                  style="enable-background:new 0 0 50 50"
+                  xml:space="preserve"
+                >
+                  <path fill="#02c0D9"
+                      d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+                      transform="rotate(275.098 25 25)">
+                      <animateTransform attributeType="xml" attributeName="transform" type="rotate"
+                          from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite">
+                      </animateTransform>
+                  </path>
+                </svg>
+              </span>
+            </button>
+            <div class="Form__Hint Form__Hint--center dont-account">
+              <span class="Text--subdued">Remember your password?</span>
+              <a
+                class="Link Link--secondary"
+                onclick="BackLogin()"
+              >
+                Back to login</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="form-box forgot" id="forgot">
+        <div>
+          <h3 class="login-text text-121212">Recover password</h3>
+          <p class="peyeap">Please enter your email:</p>
+
+          <form>
+            <p class="Form__Alert Alert Alert--error" id="errorMSg3"></p>
+            <p class="Form__Alert Alert Alert--success" id="success1"></p>
+            <div class="Form__Item">
+              <input
+                id="forgotPassword"
+                type="email"
+                class="Form__Input peer w-full border border-121212/50 bg-666666/10 px-4 py-3"
+                placeholder="Email"
+                required="required"
+              >
+              <label class="Form__FloatingLabel  absolute -top-3 left-2 bg-white peer-placeholder-shown:hidden">Email</label>
+            </div>
+            <button
+              type="submit"
+              class="Form__Submit fb-md:te16 relative mt-5 h-12 w-full bg-121212 text-14 font-bold uppercase text-white"
+              onclick="forgetPassword(event)"
+            >
+              Confirm
+            </button>
+            <div class="Form__Hint Form__Hint--center dont-account mt-6">
+              <span class="Text--subdued">Remember your password?</span>
+              <a
+                class="Link Link--secondary text-121212"
+                onclick="BackLogin()"
+              >
+                Back to login</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="ship-centent" id="memeberShip">
+      <div class="payment-content" id="paymentInfo">
+        <div class="payment-box">
+          <div class="payment-title">Payment Info</div>
+          <div class="payment-desc">Manage the payment method used for your freebeat memberships.</div>
+
+          <!-- 45days -->
+          <div class="free-trial">
+            <div class="free-left">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Frame_4_2x_a108d57f-292d-4d37-bb09-4f266a6374e8.png?v=1690182681"
+                alt="free logo"
+                class="free-img"
+              >
+              <img
+                src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Frame_5_2x_e5706e35-696c-4d39-aa19-faffa73a962b.png?v=1690182681"
+                alt="free logo"
+                class="free-mb-img"
+              >
+              <div class="free-left-des">Your <span class="free-color">free 45-day </span> trial is now available.</div>
+            </div>
+            <div class="free-line"></div>
+            <div class="free-right">
+              <div class="free-tit">
+                <span class="des">Just one step to activate your trail membership!</span>
+              </div>
+              <div class="free-right-des">
+                Simply <span class="free-payment thirtyNinePointNineTop">update your payment</span> (no fees will be
+                charged) and you'll be all set to enjoy your freebeat membership for the next 45 days.
+              </div>
+              <div class="free-btn thirtyNinePointNineTop">START 45-DAY TRIAL</div>
+            </div>
+          </div>
+          <div class="payment-prompt" id="payment-prompt">
+            No payment method found on this account. Please update your payment.
+          </div>
+
+          <table class="payment-table">
+            <tr>
+              <th>CREDIT CARD ON FILE</th>
+            </tr>
+          </table>
+          <div class="payment-footer">
+            <div class="payment-account" id="payment-account-one">No payment found.</div>
+            <div class="payment-account" id="payment-account-two" style="display: none;">0</div>
+            <div class="subscribe">
+              <button
+                id="Subscribe"
+                class="Form__Submit Button Button--primary"
+                onclick="createOrder('2',1)"
+              >
+                Update Payment
+                <span class="loading" id="SubscribeLoading">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="40px"
+                    height="40px"
+                    viewBox="0 0 50 50"
+                    style="enable-background:new 0 0 50 50"
+                    xml:space="preserve"
+                  >
+                    <path fill="#02c0D9"
+                        d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+                        transform="rotate(275.098 25 25)">
+                        <animateTransform attributeType="xml" attributeName="transform"
+                            type="rotate" from="0 25 25" to="360 25 25" dur="0.6s"
+                            repeatCount="indefinite">
+                        </animateTransform>
+                    </path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ship-box">
+        <div class="title u-h1 Membership">My Membership</div>
+        <div class="table-ship">
+          <table id="table1">
+            <tr id="border_bottom_1">
+              <th>NAME</th>
+              <th class="th_right">NEXT BILL DATE</th>
+            </tr>
+          </table>
+          <div id="started_on"></div>
+        </div>
+        <div class="footer-url" id="footer-url">
+          Need help? Please contact
+          <a
+            href="mailto:customerservice@freebeatfit.com"
+            >customerservice@freebeatfit.com</a
+          >
+        </div>
+        <div class="title u-h1">Membership Shared With Me</div>
+        <div class="table-ship">
+          <table id="table2" class="table2">
+            <tr id="border_bottom_2">
+              <th>NAME</th>
+              <th id="tr_ower">OWNER</th>
+              <th>PRICE</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <button class="Form__Submit Button Button--primary Button--full logout-btn" onclick="logout()">Logout</button>
+        <div id="unsubscribeConfirmation-outside">
+          <div class="unsubscribeConfirmation-showhide">
+            <div id="unsubscribeConfirmation">
+              <div class="unsubscribeConfirm-title">Unsubscribe</div>
+              <div class="unsubscribeConfirm-button">
+                <button
+                  class="unsubscribeConfirm_button1 "
+                  onclick="unsubscribeConfirmFun('CONFIRM')"
+                >
+                  CONFIRM
+                </button>
+                <button
+                  class="unsubscribeConfirm_button2"
+                  onclick="unsubscribeConfirmFun('CANCEL')"
+                >
+                  CANCEL
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 取消订阅逻辑 -->
+
+      <div id="cancelConfirm">
+        <div class="unsubscribeConfirmation-showhide" id="confirmUnsubscribe">
+          <!-- 立减优惠弹窗 -->
+          <div class="preferential-box">
+            <div id="cancelBox">
+              <div class="cancelBox-tit">Wait! Get a $3 Discount!</div>
+              <img
+                class="m-coupon"
+                src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_158_2x_1.png?v=1689156497"
+                alt="coupon logo"
+              >
+              <img
+                class="m-coupon-mb"
+                src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1268_2x_605a4263-429d-4765-bede-2d0c440467e4.png?v=1689234329"
+                alt="coupon logo"
+              >
+              <div class="m-moneny">
+                <span>$</span>
+                <span id="membership-money" class="u-money">3</span>
+              </div>
+              <div class="cance-des" id="cupon-des">
+                No goodbyes here! Enjoy a <span class="u-cupon-money">$3</span> discount on your next billing cycle as
+                our way of saying thanks. There's still so much more to discover in freebeat!
+              </div>
+              <div class="cancel-redeem" onclick="receiveRetentionCoupons('CONFIRM')">REDEEM $3 OFF NOW</div>
+              <div class="cancel-btn" onclick="unsubscribeConfirmFun('CONFIRM')">CONTINUE TO CANCEL</div>
+            </div>
+            <div class="fb-subscription-close person-close-pc">
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" alt="close logo">
+            </div>
+            <div class="fb-subscription-close person-close-mb">
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" alt="close logo">
+            </div>
+            <!--
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Mask_group_2x_9de76b76-eea6-4427-a6e0-b541e9d2efa1.png?v=1694140971" alt="" class="u-preferential-pc">
+            -->
+          </div>
+
+          <!-- 领取成功优惠券未使用再次点击取消订阅 -->
+          <div id="notUseBox">
+            <div class="fb-subscription-close" style="position: absolute;">
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" alt="close logo">
+            </div>
+            <div class="cancelBox-tit noUseTit">
+              Wait! Don't Forget Your $<span class="title-money">3 </span>Discount!
+            </div>
+            <img
+              class="not-m-coupon"
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1263_2x_acaa5089-5e68-4a3c-a8ad-5ac5da7c322f.png?v=1689145141"
+              alt="coupon logo"
+            >
+            <div class="m-moneny notUseMoney">
+              <span>$</span>
+              <span class="u-money">3</span>
+            </div>
+            <div class="cance-des" id="notUseBox-des">
+              The <span class="u-cupon-money">$3</span> discount coupon you have already received has not been used and
+              will expire if you cancel your membership. Please take this into consideration and make your decision
+              carefully.
+            </div>
+            <div class="cancel-redeem" onclick="unsubscribeConfirmFun('CANCEL')">REDEEM $3 OFF NOW</div>
+            <div class="cancel-btn" onclick="unsubscribeConfirmFun('CONFIRM')">CONTINUE TO CANCEL</div>
+          </div>
+          <!-- 挽留文案 -->
+          <div id="u-retention">
+            <div class="fb-subscription-close" style="position: absolute;">
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" alt="close logo">
+            </div>
+            <div class="cancelBox-tit">Wait! Don't Give Up Easily!</div>
+            <div class="cance-des retention-des" id="retention-des">
+              Goodbyes aren't our thing! From professional cycling classes to a plethora of engaging activities, there's
+              a whole world waiting to be explored.
+            </div>
+            <div class="cancel-redeem" onclick="unsubscribeConfirmFun('CANCEL')">GIVE IT ANOTHER THOUGHT</div>
+            <div class="cancel-btn" onclick="unsubscribeConfirmFun('CONFIRM')">CONTINUE TO CANCEL</div>
+          </div>
+          <!-- 领取成功 -->
+          <div id="u-getSuccess">
+            <div class="fb-subscription-close" style="position: absolute;">
+              <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" alt="close logo">
+            </div>
+            <div class="cancelBox-tit" id="gotIt">Claim Successful!</div>
+            <!--
+              <div class="cance-des retention-des">
+                  Your charge will be only <span style="color: rgba(161, 242, 0, 1);font-weight: 700;">$36 </span><span style="color: rgba(136, 136, 136, 1);text-decoration: line-through;">$39</span> on your next billing cycle. Thank you for your support of freebeat!
+              </div>
+            -->
+            <div class="cancel-redeem" id="u-got" onclick="unsubscribeConfirmFun('CANCEL')">GOT IT</div>
+          </div>
+        </div>
+      </div>
+      <!-- 会员订阅 -->
+      <div id="member-Subscription">
+        <div class="unsubscribeConfirmation-showhide">
+          <!-- 立减优惠弹窗 -->
+          <div id="subscription-box">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/card_2x_025ae923-8782-4b37-b68c-d53c95587021.png?v=1689931633"
+              alt="freebeat membership card"
+              class="membership-card"
+              id="card-blue"
+            >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/1_2x_1_2x_327c155d-10fd-4ef5-92a6-49800941bf0f.png?v=1690269340"
+              alt="freebeat membership card"
+              class="membership-card"
+              id="card-grey"
+            >
+            <img
+              class="u-cancel"
+              src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_567a46a4-941a-420d-b3d7-62654e8a3797.png?v=1689909249"
+              alt="close logo"
+            >
+            <div class="u-title">Choose the plan that's right for you</div>
+            <div class="content-box">
+              <div class="left-box-sub common-box" id="thirtyNinePointNine">
+                <div class="top-class">most popular choice</div>
+                <div class="box-tit">Family Plan</div>
+                <!-- second -->
+                <div class="second-class">
+                  Worth up to <span>$199.90</span> for only <span>$39</span> per month! This Plan offers the best bang
+                  for your buck.
+                </div>
+                <!-- three -->
+                <div class="third-des">
+                  <div class="top-des">
+                    <span>$39</span>
+                    <div class="off-box">80% OFF</div>
+                  </div>
+                  <div class="bot-des">/mo billed monthly</div>
+                </div>
+                <!-- four -->
+                <div class="four-box">
+                  <div class="four-tit">START 45-DAY TRIAL</div>
+                  <!-- <div class="four-des">most popular choice</div> -->
+                </div>
+                <!-- five 1 -->
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des">
+                      Benefits of <span>10</span> accounts worth up to <span>$199.9</span
+                      ><img
+                        onmouseover="showTips(this)"
+                        onmouseout="hideTips()"
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                        alt="tips logo"
+                        class="five-tips"
+                      >
+                    </div>
+                  </div>
+                  <div class="m-tips-box">Our $39 Family Plan, equivalent to 10 accounts × $19.99 Individual Plan.</div>
+                </div>
+                <!-- 2 -->
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des">Up to <span>10</span> accounts access</div>
+                  </div>
+                </div>
+                <!-- 3 -->
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des">Access to all contents and features</div>
+                  </div>
+                </div>
+                <!-- 4 -->
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des">
+                      Connect with your family<img
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                        alt="tips logo"
+                        class="five-tips"
+                        onmouseover="showTips(this)"
+                        onmouseout="hideTips()"
+                      >
+                    </div>
+                  </div>
+                  <div class="tips-box-one">
+                    You can challenge family for the best score. Climb up the leaderboard to make the most of your home
+                    fitness adventure.
+                  </div>
+                </div>
+                <!-- 5 -->
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des">
+                      Performance tracking for whole family<img
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                        alt="tips logo"
+                        class="five-tips"
+                        onmouseover="showTips(this)"
+                        onmouseout="hideTips()"
+                      >
+                    </div>
+                  </div>
+                  <div class="m-tips-box m-tips-box-last">
+                    You can enjoy the benefit of tracking the performance of all your family members. Stay on top of
+                    everyone's progress and achievements with ease.
+                  </div>
+                </div>
+                <!-- 6 -->
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d230dadc-264d-44f1-881c-57eec67d70bb.png?v=1689927368"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des">
+                      Personalized training algorithm for whole family<img
+                        onmouseover="showTips(this)"
+                        onmouseout="hideTips()"
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_b4d3b6d5-f4fc-436f-895e-700bfc35db8e.png?v=1689927367"
+                        alt="tips logo"
+                        class="five-tips"
+                      >
+                    </div>
+                  </div>
+                  <div class="m-tips-box m-tips-box-last">
+                    Evaluates each rider's performance and applies the perfect balance of a challenging yet fun
+                    intensity to push every rider at the right speed, level, and time.
+                  </div>
+                </div>
+              </div>
+              <div class="right-box-sub common-box" id="eighteenPointEight">
+                <div class="box-tit u-tit-color">Individual Plan</div>
+                <!-- second -->
+                <div class="second-class u-tit-color">
+                  This plan provides you the access to all our features, ensuring you can enjoy the full experience.
+                </div>
+                <!-- three -->
+                <div class="third-des">
+                  <div class="top-des ">
+                    <span class="price-val">$19.99</span>
+                  </div>
+                  <div class="bot-des bott-des">/mo billed monthly</div>
+                </div>
+                <!-- four -->
+                <div class="four-box bg">
+                  <div class="four-tit tit">SELECT PLAN</div>
+                </div>
+                <!-- five -->
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des comm">Benefits of 10 accounts worth up to $199.9</div>
+                  </div>
+                </div>
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_1_aa312eee-bb00-47f3-9d48-bea02f543d40.png?v=1689927367"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des commo">
+                      Only <span style="color: rgba(136, 136, 136, 1);font-weight: bold;">1</span> account access
+                      <img
+                        onmouseover="showTips(this)"
+                        onmouseout="hideTips()"
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_1_daf897fb-1fa0-47a4-84d5-9617d1c8da74.png?v=1689927367"
+                        alt="tips logo"
+                        class="five-tips"
+                      >
+                    </div>
+                  </div>
+                  <div class="tips-box-one">
+                    This plan includes only 1 user login. When you're ready to have multiple users, upgrade to the
+                    Family Plan.
+                  </div>
+                </div>
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_1_aa312eee-bb00-47f3-9d48-bea02f543d40.png?v=1689927367"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des commo">Access to all contents and features</div>
+                  </div>
+                </div>
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des comm">Connect with your family</div>
+                  </div>
+                </div>
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des comm">Performance tracking for whole family</div>
+                  </div>
+                </div>
+                <div class="five-box">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_28dd9552-352d-4aca-9899-c2b4c650fece.png?v=1689927367"
+                    alt="done logo"
+                    class="five-done"
+                  >
+                  <div class="five-right">
+                    <div class="five-des comm">Personalized training algorithm for whole family</div>
+                  </div>
+                </div>
+              </div>
+              <div class="content-box-mb"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% comment %} popup {% endcomment %}
+  <div class="fb-subscription" id="fb-subscription">
+    <div class="fb-subscription-showhide">
+      <div class="fb-subscription-box">
+        <div class="fb-subscription-close" id="fb-subscription-close" onclick="subscriptionQuit()">
+          <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/dialog_cloce.png?v=1668164967" alt="close logo">
+        </div>
+        <div class="fb-subscription-title">My Membership</div>
+        <div class="fb-subscription-con">
+          <div class="fb-subscription-table">
+            <table id="subscription_table" class="subscription_table">
+              <tr>
+                <th>NAME</th>
+                <th>STATUS</th>
+                <th>STARTED ON</th>
+                <th>NEXT BILL DATE</th>
+              </tr>
+            </table>
+          </div>
+          <div class="footer-url2" id="footer-url2">
+            To cancel your membership, please click
+            <button
+              id="Unsubscribe"
+              class="Link Link--underline colse"
+              onclick="unsubscribeTrigger()"
+            >
+              Unsubscribe
+              <span class="loading" id="UnsubscribeLoading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="40px"
+                  height="40px"
+                  viewBox="0 0 50 50"
+                  style="enable-background:new 0 0 50 50"
+                  xml:space="preserve"
+                >
+                  <path fill="#02c0D9"
+                      d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+                      transform="rotate(275.098 25 25)">
+                      <animateTransform attributeType="xml" attributeName="transform" type="rotate"
+                          from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite">
+                      </animateTransform>
+                  </path>
+                </svg>
+              </span></button
+            >.
+            <div class="Unsubscribe-success">
+              <p class="Form__Alert Alert Alert--success" id="UnsubscribeSuccess"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .Button {
+    position: relative;
+  }
+  .fb-subscription {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+  }
+
+  .fb-subscription-showhide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-url2 .Link--underline {
+    position: initial !important;
+  }
+
+  #subscription_link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 641px) {
+    .fb-subscription-box {
+      width: 520px;
+      background: #ffffff;
+      border-radius: 16px 16px 16px 16px;
+      opacity: 1;
+    }
+
+    .fb-subscription-close {
+      width: 100%;
+      height: 48px;
+      line-height: 48px;
+      text-align: right;
+      overflow: hidden;
+      cursor: pointer;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .fb-subscription-close img {
+      width: 24px;
+      height: 24px;
+      margin-top: 16px;
+      margin-right: 16px;
+    }
+    .person-close-pc {
+      position: absolute;
+      /* right: 280px; */
+      top: 0;
+    }
+    .person-close-mb {
+      display: none;
+    }
+    .fb-subscription-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333333;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .fb-subscription-con {
+      padding: 0 40px 48px 40px;
+    }
+
+    #subscription_table {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #subscription_table th {
+      display: block;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 600;
+      color: #000000;
+      line-height: 18px;
+      padding-top: 20px;
+    }
+
+    #subscription_table td {
+      display: block;
+      text-align: right;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333333;
+      line-height: 18px;
+      padding-top: 20px;
+    }
+
+    .u-tr-w {
+      width: 200px;
+    }
+
+    #subscription_table th::after {
+      content: '';
+      width: 242px;
+      height: 1px;
+      display: block;
+      margin: 0 auto;
+      border-bottom: 1px solid #d9d9d9;
+      padding-top: 20px;
+    }
+
+    #subscription_table td::after {
+      content: '';
+      height: 1px;
+      display: block;
+      margin: 0 auto;
+      border-bottom: 1px solid #d9d9d9;
+      padding-top: 20px;
+    }
+
+    #subscription_table th:nth-of-type(4)::after {
+      display: none;
+    }
+
+    #subscription_table td:nth-of-type(4)::after {
+      display: none;
+    }
+
+    .footer-url2 {
+      padding-top: 32px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #666666;
+      line-height: 16px;
+      position: initial !important;
+    }
+
+    .footer-url2 #Unsubscribe {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      line-height: 16px;
+      text-decoration: underline;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    .fb-subscription-box {
+      width: 311px;
+      background: #ffffff;
+      border-radius: 12px;
+      opacity: 1;
+    }
+
+    .u-tr-w {
+      width: 135px;
+    }
+
+    .fb-subscription-close {
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      text-align: right;
+      overflow: hidden;
+      cursor: pointer;
+      cursor: pointer;
+    }
+    .person-close-pc {
+      display: none;
+    }
+    .person-close-mb {
+      position: absolute;
+      z-index: 3;
+    }
+    .person-close-mb img {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    .fb-subscription-close img {
+      width: 20px;
+      height: 20px;
+      margin-top: 12px;
+      margin-right: 12px;
+    }
+
+    .fb-subscription-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333333;
+      line-height: 18px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .fb-subscription-con {
+      padding: 0 24px 32px 24px;
+    }
+
+    #subscription_table {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #subscription_table th {
+      display: block;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      color: #000000;
+      line-height: 12px;
+      padding-top: 16px;
+    }
+
+    #subscription_table td {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      font-weight: 500;
+      color: #333333;
+      line-height: 12px;
+      padding-top: 16px;
+    }
+
+    #subscription_table th::after {
+      content: '';
+      width: 131px;
+      height: 1px;
+      display: block;
+      margin: 0 auto;
+      border-bottom: 1px solid #d9d9d9;
+      padding-top: 16px;
+    }
+
+    #subscription_table td::after {
+      content: '';
+      height: 1px;
+      display: block;
+      margin: 0 auto;
+      border-bottom: 1px solid #d9d9d9;
+      padding-top: 16px;
+    }
+
+    #subscription_table th:nth-of-type(4)::after {
+      display: none;
+    }
+
+    #subscription_table td:nth-of-type(4)::after {
+      display: none;
+    }
+
+    .footer-url2 {
+      padding-top: 24px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #666666;
+      line-height: 16px;
+      position: initial !important;
+    }
+
+    .footer-url2 #Unsubscribe {
+      font-size: 12px !important;
+      font-weight: 500;
+      color: #333;
+      line-height: 16px;
+      text-decoration: underline;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "Fb Membership",
+  "presets": [
+    {
+      "name": "fb-membership",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

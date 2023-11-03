@@ -1,0 +1,1520 @@
+{%- assign share_buttons_block = section.blocks | where: 'type', 'share_buttons' | first -%}
+{%- assign inventory_block = section.blocks | where: 'type', 'inventory' | first -%}
+{%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
+{%- assign fb-pdp-gift-remake = section.blocks | where: 'type', 'pdpGiftRemake' | first -%}
+{%- assign fb-customer-service = section.blocks | where: 'type', 'customerService' | first- %}
+{%- if product -%}
+{%- else -%}
+  {%- assign product = section.settings.customer_product -%}
+{%- endif -%}
+{%- capture origin_price -%}
+    {%- render 'customer-price-control', type:'origin', cpc_product: product -%}
+{%- endcapture -%}
+{%- capture has_bike_default_url -%}
+    {%- render 'customer-price-control', cpc_product: product, type: 'bikeDefaultPdpUrl' -%}
+{%- endcapture -%}
+{%- assign single_product = true -%}
+{%- for number_vari in product.variants -%}
+  {%- if forloop.length > 1 -%}
+    {%- assign single_product = false -%}
+  {%- endif -%}
+{%- endfor -%}
+{% capture star_dom %}
+    {%- for block in section.blocks -%}
+        {%- case block.type -%}
+            {%- when 'fbStampStar' -%}
+                <a href="#stamped-main-widget" class="ebike-fbm-stamp-container relative inline-block w-full">
+                    {%- assign star_product = block.settings.show_custom_product_star | default: product -%}
+                    {%- render 'ebike-product-model-item', pdptype: 'stamp', product: star_product -%}
+                </a>
+        {%- endcase -%}
+    {%- endfor -%}
+{% endcapture %}
+{%- capture show_expected_ship_date -%}
+    <div class="ebike-mbf-right-date mt-[10px] text-center leading-3">
+        <span>Expected Ship Date: </span>
+        {%- for option in product.options_with_values -%}
+            {%- if option.name == 'Style' -%}
+                {%- for value in option.values -%}
+                    <span class="js-ebike-ship-date">{{ value | remove: 'Regular / ' }}</span>
+                {%- endfor -%} 
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+{%- endcapture -%}
+<div
+  class="js-open-minicart"
+  data-action="open-drawer"
+  data-drawer-id="sidebar-cart"
+  aria-label="Open cart"
+  aria-expanded="false"
+  style="display: none;"
+></div>
+{% comment %} data-section-type="product"  {% endcomment %}
+<section
+  class="w-max-[1330px] Product w-full bg-white Product--{{ section.settings.image_size }} ebike-product {% if template contains 'lit-bike' or  template contains 'boom-bike' %}litboom-product{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="customer-product"
+  id="section-{{ section.id }}"
+>
+  <div class="ebike-content-width pb-6 fb-769:mx-auto fb-769:my-0 fb-769:mb-[105px]">
+    <div class="ebike-fbm-top-box ebike-pcshow-mobhide w-full">
+      {%- render 'ebike-product-model-item', pdptype: 'top_desc', section: section, product: product -%}
+    </div>
+    <div class="ebike-product-wrapper fb-769:fb-flex-start-between w-full fb-max-768:overflow-x-hidden">
+      <div class="Product__Wrapper ebike-wrapper-left fb-769:sticky fb-769:top-[120px] fb-max-768:relative fb-max-768:w-full">
+        <div class="ebike-more-imgarr customer-meida-warpper min-h-[375px] w-full fb-769:min-h-145 {% if section.settings.enable_image_zoom %}Product__Slideshow--zoomable{% endif %}">
+          {%- for navimg_item in product.variants -%}
+            {%- capture img_title -%}
+                            {{ navimg_item.option1 }}-{{ navimg_item.option2 }}
+                        {%- endcapture -%}
+            <div
+              class="ebike-img-sliditem hidden w-full flex-col justify-start fb-769:relative fb-769:h-full fb-769:flex-row-reverse fb-769:justify-start"
+              id="ebike-product-{{ navimg_item.id }}"
+              data-id="ebike-product-{{ navimg_item.id }}"
+              data-title="{{ navimg_item.title }}"
+              data-imgtitle="{{ img_title }}"
+            >
+              {%- render 'ebike-product-navimg',
+                section: section,
+                product: product,
+                option1: navimg_item.option1,
+                option2: navimg_item.option2,
+                single_product: single_product
+              -%}
+            </div>
+          {%- endfor -%}
+        </div>
+        {%- if section.settings.show_bike_dimensions != blank -%}
+          <div class="ebike-dimens-section fb-max-768:absolute fb-max-768:left-0 fb-max-768:top-[339px] fb-max-768:z-2 fb-max-768:hidden fb-max-768:w-full">
+            <div class="ebike-fbcu-dimens text-center fb-769:w-full fb-769:pt-5 fb-769:text-center fb-769:leading-4">
+              <span
+                class="
+                  js-open-dimessdilaog-ebike text-block inline-block cursor-pointer bg-white text-center text-[10px] font-semibold
+                  leading-6 fb-769:text-[16px] fb-769:leading-4 fb-769:underline	 fb-max-768:h-6 fb-max-768:w-30
+                  fb-max-768:rounded-md fb-max-768:border fb-max-768:border-[#121212]
+                "
+              >
+                {{ section.settings.show_bike_dimensions }}
+              </span>
+            </div>
+          </div>
+        {%- endif -%}
+        <div class="ebike-fbm-stamp fb-769:min-h-15 absolute bottom-5 right-6 z-2 h-[46px] w-[130px] fb-769:w-auto">
+          {{ star_dom }}
+        </div>
+        <div class="Product__InfoWrapper" style="display: none;">
+          <div class="Product__Info {% if media_count == 0 %}Product__Info--noGallery{% endif %}">
+            <div class="Container">
+              {%- form 'product', product, class: 'ProductForm' -%}
+                {%- for block in section.blocks -%}
+                  {%- case block.type -%}
+                    {%- when 'variant_selector' -%}
+                      {%- render 'product-form', block: block, product: product -%}
+                  {%- endcase -%}
+                {%- endfor -%}
+              {%- endform -%}
+            </div>
+          </div>
+        </div>
+        {%- if section.settings.show_bike_left_icon_info -%}
+          <div class="ebike-icon-info-mb-box relative h-auto w-full fb-max-768:bg-black">
+            <div class="ebkie-left-icon-info w-full fb-769:pt-[10px] fb-max-768:overflow-x-auto fb-max-768:overflow-y-hidden fb-max-768:py-2 fb-max-768:pl-[24px]">
+              <div class="elii-content flex flex-nowrap items-start justify-start fb-769:ml-26 fb-769:w-[85%] fb-769:flex-wrap fb-769:items-center fb-max-768:w-full fb-1211:w-[628px]">
+                {%- for block in section.blocks -%}
+                  {%- case block.type -%}
+                    {%- when 'bike_left_icon_info' -%}
+                      {% render 'ebike-product-model-item', pdptype: 'bike_icon_info', block: block %}
+                  {%- endcase -%}
+                {%- endfor -%}
+                <div class="elii-padding-1 ebike-mobshow-pchide vis h-full w-[11px] opacity-0">11</div>
+              </div>
+            </div>
+            {% capture left_icon %}absolute top-0 w-19 h-11 hidden z-1{% endcapture %}
+            <div
+              class="ebkie-left-icon-info-left {{left_icon}} left-0"
+              style="background: linear-gradient(90deg,#000000 0%,rgba(0,0,0,0) 100%);"
+            ></div>
+            <div
+              class="ebkie-left-icon-info-right {{left_icon}} right-0"
+              style="background: linear-gradient(90deg,rgba(0,0,0,0) 0%,#000000 100%)"
+            ></div>
+          </div>
+        {%- endif -%}
+        <div class="ebkie-product-title ebike-mob-paddingleft ebike-mobshow-pchide relative mt-3 w-full pb-5 text-left">
+          <div class="abmtc-title text-[20px] font-bold leading-5 text-121212">
+            {{ section.settings.product_big_title }}
+          </div>
+          <div class="abmtc-desc mt-[10px] text-11 font-medium text-121212">
+            {{ section.settings.product_desc_title }}
+          </div>
+        </div>
+      </div>
+      <div class="ebike-wrapper-right fb-max-768:w-full">
+        <div class="ebkie-product-mob-price ebike-mob-paddingleft ebike-mobshow-pchide w-full">
+          {%- render 'ebike-product-model-item', pdptype: 'top_mob_desc', section: section, product: product -%}
+        </div>
+        <div class="ebike-fbm-test-box w-full">
+          <div
+            class="js-keep-ebike-product"
+            data-variantid="{{ product.selected_or_first_available_variant.id }}"
+            data-price="{{ product.price | money }}"
+            data-title="{{ product.title }}"
+            style="display: none;"
+          ></div>
+          <div class="ebike-fbm-test-container ebike-mob-paddingleft">
+            {%- if section.settings.product_build_title != blank -%}
+              <div class="ebkie-fbm-bulid ebike-pcshow-mobhide w-full border-b border-e6e6e6 pb-5">
+                <span class="text-[18px] font-bold leading-[18px] text-121212">
+                  {{- section.settings.product_build_title -}}
+                </span>
+              </div>
+            {%- endif -%}
+            {%- render 'ebike-product-form',
+              pdptype: 'choose_color',
+              section: section,
+              single_product: single_product,
+              product: product
+            -%}
+            {%- if section.settings.show_gift -%}
+              <div class="ebike-pdp-gift-section w-full py-5 fb-769:py-6">
+                <div class="ebike-gift-ul rounded-[10px] border border-e6e6e6 px-5">
+                  {%- render 'ebike-product-model-item', pdptype: 'gift', section: section -%}
+                </div>
+              </div>
+            {%- endif -%}
+            {%- if section.settings.show_protection -%}
+              <div class="ebike-protection w-full fb-769:min-h-[94px] fb-max-768:min-h-[108px]">
+                {% comment %}
+                  <div class="ebkie-protection-title">
+                      {{ section.settings.show_protection_title }}
+                  </div>
+                {% endcomment %}
+                <div class="ebkie-protection-box"></div>
+              </div>
+            {%- endif -%}
+            {%- if section.settings.show_bike_discount_desc -%}
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'bike_discount_desc' -%}
+                    {%- render 'ebike-product-model-item', pdptype: 'bike_discount_desc', block: block- %}
+                {%- endcase -%}
+              {%- endfor -%}
+            {%- endif -%}
+            <div class="ebike-width-100 ebike-mobshow-pchide relative w-full">
+              {%- render 'ebike-product-model-item', pdptype: 'intro', section: section -%}
+            </div>
+            <div class="ebike-main-product-buy-bottom w-full">
+              <button
+                class="js-ebike-addtocart fb-flex-xy-center h-12 w-full rounded-lg bg-black text-center text-white fb-769:h-13 fb-769:text-h-16"
+                id="js-addtocart-button-scroll"
+                data-variantid="{{ product.selected_or_first_available_variant.id }}"
+                data-price="{{ product.price | money }}"
+                data-title="{{ product.title }}"
+                data-soldout="SOLD OUT"
+                data-soldout-style="true"
+                data-origintext="{{ section.settings.product_but_text }}"
+              >
+                <span class="text-14 font-bold fb-769:text-h-16">{{ section.settings.product_but_text }}</span>
+              </button>
+              {%- if section.settings.show_expected_ship_date -%}
+                {{ show_expected_ship_date }}
+              {%- endif -%}
+            </div>
+            {%- if section.settings.show_shop_payments -%}
+              {% capture pay_item %}mr-2.5 h-6 leading-6{% endcapture %}
+              <ul class="ebike-shop-payment fb-flex-x-start py-5 fb-769:py-6">
+                {%- for type in shop.enabled_payment_types -%}
+                  <li class="ebike-shop-payment-item {{ pay_item }}">{{ type | payment_type_svg_tag }}</li>
+                {%- endfor -%}
+                <li class="ebike-shop-payment-item {{ pay_item}}">{{ 'klarna' | payment_type_svg_tag }}</li>
+              </ul>
+            {%- endif -%}
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'customerService' -%}
+                  {%- render 'ebike-product-model-item', pdptype: 'customer_service', block: block- %}
+              {%- endcase -%}
+            {%- endfor -%}
+            <div class="ebike-width-100 ebike-pcshow-mobhide w-full">
+              {%- render 'ebike-product-model-item', pdptype: 'intro', section: section -%}
+            </div>
+            {%- if section.settings.show_size_fit -%}
+              <div class="ebike-size-config w-full">
+                {%- render 'ebike-size-config', section: section, type: 'item' -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="ebike-fbm-test-show-fixed ebike-main-bottom-fixed fixed bottom-0 left-0 z-10 min-h-[82px] w-full border-t border-e6e6e6 bg-white">
+  <div class="ebike-mbf-section ebike-mbf-section-pc fb-769:fb-flex-x-between mx-auto my-0 hidden h-[82px]">
+    <div class="ebike-mbf-left">
+      <div class="ebike-mbf-price mr-[32px] h-5 w-full leading-5">
+        <span class="ebike-span1 mr-3 text-[18px] font-semibold text-333333">Est. Total</span>
+        <span class="ebike-span2 mr-2.5 text-[18px] font-semibold text-333333">
+          {%- render 'customer-price-control', cpc_product: product, type: 'sale' -%}
+        </span>
+        {%- if origin_price != blank -%}
+          <span class="ebike-span3 text-[18px] font-medium text-[#888888] line-through">
+            {%- render 'customer-price-control', cpc_product: product, type: 'origin' -%}
+          </span>
+        {%- endif -%}
+      </div>
+      <div class="ebike-main-product-klarna mt-[10px] w-full">
+        {%- render 'ebike-product-model-item', pdptype: 'bike_klara', product: product -%}
+      </div>
+    </div>
+    <div class="ebike-mbf-right flex flex-col items-center text-right">
+      <button
+        class="js-ebike-addtocart ebike-mbf-right-button leading-11 h-11 w-full rounded-lg bg-black text-[14px] font-bold text-white"
+        data-soldout="SOLD OUT"
+        data-soldout-style="true"
+        data-origintext="{{ section.settings.product_but_text }}"
+      >
+        {{ section.settings.product_but_text }}
+      </button>
+      {%- if section.settings.show_expected_ship_date -%}
+        {{ show_expected_ship_date }}
+      {%- endif -%}
+    </div>
+  </div>
+  <div class="ebike-mbf-section ebike-mbf-section-mob block w-full px-6 py-3 fb-769:hidden">
+    <div class="ebike-mbf-price w-full text-center leading-4">
+      <span class="ebike-span1 text-h-16 font-bold text-333333">
+        {%- render 'customer-price-control', cpc_product: product, type: 'sale' -%}
+      </span>
+      {%- if origin_price != blank -%}
+        <span class="ebike-span2 ml-3 text-h-16 font-semibold line-through">
+          {%- render 'customer-price-control', cpc_product: product, type: 'origin' -%}
+        </span>
+      {%- endif -%}
+    </div>
+    <div class="ebike-main-product-klarna mb-[9px] mt-[10px]">
+      {%- render 'ebike-product-model-item', pdptype: 'bike_klara', product: product -%}
+    </div>
+    <div class="ebike-mbf-right w-full">
+      <button
+        class="js-ebike-addtocart ebike-mbf-right-button h-10 w-full rounded-lg bg-black text-center leading-10 text-white"
+        data-soldout="SOLD OUT"
+        data-soldout-style="true"
+        data-origintext="{{ section.settings.product_but_text }}"
+      >
+        {% comment %} <span class="ebike-main-btn-dian"> </span> {% endcomment %}
+        <span class="ebike-span3 text-[12px] font-bold text-white"> {{ section.settings.product_but_text }} </span>
+      </button>
+    </div>
+    {%- if section.settings.show_expected_ship_date -%}
+      {{ show_expected_ship_date }}
+    {%- endif -%}
+  </div>
+</div>
+{%- if section.settings.show_size_fit -%}
+  {%- render 'ebike-size-config', section: section, type: 'dialog' -%}
+{%- endif -%}
+{%- if section.settings.enable_image_zoom -%}
+  {% comment %}
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Background of PhotoSwipe -->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. Do not remove as content is dynamically added -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Main UI bar -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <button class="pswp__button pswp__button--prev RoundButton" data-animate-left title="{{ 'product.slideshow.previous' | t }}">{% render 'icon' with 'arrow-left' %}</button>
+          <button class="pswp__button pswp__button--close RoundButton RoundButton--large" data-animate-bottom title="{{ 'product.slideshow.close' | t }}">{% render 'icon' with 'close' %}</button>
+          <button class="pswp__button pswp__button--next RoundButton" data-animate-right title="{{ 'product.slideshow.next' | t }}">{% render 'icon' with 'arrow-right' %}</button>
+        </div>
+      </div>
+    </div>
+  {% endcomment %}
+
+  <div class="ebike-zoom-box js-ebike-zoom-popup fb-popup-fixed-white">
+    <div class="ebike-zoom-swiper fbEbikeZoomSwiper relative h-full w-full">
+      <div class="ebike-zoom-warpper  swiper-wrapper">
+        <div class="swiper-slide"></div>
+      </div>
+    </div>
+    <div class="ebike-zoom-done">
+      {%- capture css_button_icon -%}rounded-full border-none relative bg-white text-black z-1 cursor-pointer  fb-flex-xy-center{%- endcapture -%}
+      <button class="RoundButton ebike-zoom-button ebike-zoom-prev h-[45px] w-[45px] {{ css_button_icon }}">
+        {% render 'icon' with 'arrow-left' %}
+      </button>
+      <button class="RoundButton ebike-zoom-close js-ebike-zoom-close !h-[55px] !w-[55px] {{ css_button_icon}}">
+        {% render 'icon' with 'close' %}
+      </button>
+      <button class="RoundButton ebike-zoom-button ebike-zoom-next h-[45px] w-[45px] {{ css_button_icon}}">
+        {% render 'icon' with 'arrow-right' %}
+      </button>
+    </div>
+  </div>
+{%- endif -%}
+<div class="ebike-popup js-ebike-popup fb-popup-fixed">
+  <div class="ebike-popup-container fb-flex-xy-center h-full w-full bg-transparent">
+    <div class="ebike-popup-content pd-[10px] w-75 rounded-[10px] bg-white px-2.5">
+      <div class="ebike-popup-top relative h-9 w-full">
+        <div class="ebike-popup-close absolute right-2 top-2 h-[12px] w-3">
+          <svg
+            class="js-ebike-popup-close"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path d="M0.800049 0.799999L15.2 15.2M0.800049 15.2L15.2 0.799999" stroke="#333333" stroke-width="1.2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="ebike-popup-text pb-5 text-center text-16 font-medium text-121212"></div>
+    </div>
+  </div>
+</div>
+{% comment %} dismess block {% endcomment %}
+{%- if section.settings.show_bike_dimensions != blank -%}
+  <div class="ebike-dismess-block">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'bike_dismess' -%}
+          {% render 'ebike-product-model-item', pdptype: 'dimens', block: block %}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+{% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %}
+
+<script type="text/javascript">
+  window.ShopifyXR=window.ShopifyXR||function(){(ShopifyXR.q=ShopifyXR.q||[]).push(arguments)};
+  ShopifyXR('addModels', {{ product.media | where: 'media_type', 'model' | json }});
+  var _learnq = _learnq || [];
+  var item = {
+      Name: {{ product.title|json }},
+      ProductID: {{ product.id|json }},
+      Categories: {{ product.collections|map:'title'|json }},
+      ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+      URL: "{{ shop.secure_url }}{{ product.url }}",
+      Brand: {{ product.vendor|json }},
+      Price: {{ product.price|money|json }},
+      CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+      Title: item.Name,
+      ItemId: item.ProductID,
+      Categories: item.Categories,
+      ImageUrl: item.ImageURL,
+      Url: item.URL,
+      Metadata: {
+          Brand: item.Brand,
+          Price: item.Price,
+          CompareAtPrice: item.CompareAtPrice
+      }
+  }]);
+  if(document.querySelector('.Product__Aside')){
+      document.querySelector('.Product__Gallery').classList.remove("productSticky");
+  }
+</script>
+{% schema %}
+{
+  "name": "Product page",
+  "class": "shopify-section--bordered",
+  "presets": [
+    {
+      "name": "ebike-product-model",
+      "category": "Fb Sections",
+      "blocks": [
+        {
+          "type": "variant_selector"
+        },
+        {
+          "type": "pdpGiftRemake"
+        },
+        {
+          "type": "customerService"
+        },
+        {
+          "type": "bike_dismess"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "variant_selector",
+      "name": "Variant selector",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "selector_mode",
+          "label": "Selector type",
+          "options": [
+            {
+              "value": "block",
+              "label": "Block"
+            },
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            }
+          ],
+          "default": "dropdown"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_color_swatch",
+          "label": "Show color swatch",
+          "default": false,
+          "info": "Some colors appear white? [Learn more](http://support.maestrooo.com/article/80-product-uploading-custom-color-for-color-swatch)."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_color_carousel",
+          "label": "Show color carousel",
+          "info": "A pop-up selector with variant images for choosing colors. Only enables when color swatch is disabled.",
+          "default": false
+        },
+        {
+          "type": "page",
+          "id": "size_chart",
+          "label": "Size chart",
+          "info": "Show along option named Size."
+        }
+      ]
+    },
+    {
+      "type": "share_buttons",
+      "name": "Share buttons",
+      "limit": 1
+    },
+    {
+      "type": "inventory",
+      "name": "Inventory",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "inventory_quantity_threshold",
+          "label": "Inventory quantity threshold",
+          "info": "Only show inventory quantity if below threshold. Choose 0 to always show.",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_price_in_button",
+          "label": "Show price in add to cart button",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "bike_discount_desc",
+      "name": "Bike Discount Des",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "fpc_desc_disount",
+          "label": "Tips",
+          "default": " <p>Use code <strong>SAVE500</strong> at checkout to get <br/> $500 off your bike.</p>"
+        }
+      ]
+    },
+    {
+      "type": "bike_left_icon_info",
+      "name": "Bike left icon desc",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bike_left_icon_img",
+          "label": "PC Icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "bike_left_icon_img_mob",
+          "label": "Mob Icon"
+        },
+        {
+          "type": "text",
+          "id": "bike_left_icon_title",
+          "label": "TItle"
+        },
+        {
+          "type": "richtext",
+          "id": "bike_left_icon_desc",
+          "label": "Desc"
+        },
+        {
+          "type": "text",
+          "id": "bike_icon_hover",
+          "label": "Desc"
+        }
+      ]
+    },
+    {
+      "type": "introduce_service",
+      "name": "introduce Service",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "intoduce_service_img",
+          "label": "Img"
+        },
+        {
+          "type": "richtext",
+          "id": "intoduce_service_desc",
+          "label": "desc"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_tip_or_dialog",
+          "label": "show tip  or dialog",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "intoduce_service_tip",
+          "label": "Hover tips"
+        },
+        {
+          "type": "text",
+          "id": "fbcur_intro_dialog_title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "fbcur_intro_dialog_desc1",
+          "label": "Desc1"
+        },
+        {
+          "type": "text",
+          "id": "fbcur_intro_dialog_desc2",
+          "label": "Desc2"
+        },
+        {
+          "type": "text",
+          "id": "fbcur_intro_dialog_desc3",
+          "label": "Desc3"
+        },
+        {
+          "type": "image_picker",
+          "id": "fbcur_intro_dialog_item_img1",
+          "label": "Item Img1"
+        },
+        {
+          "type": "url",
+          "id": "fbcur_intro_dialog_item_img_url_1",
+          "label": "Item Img1 Url "
+        },
+        {
+          "type": "image_picker",
+          "id": "fbcur_intro_dialog_item_img2",
+          "label": "Item Img2"
+        },
+        {
+          "type": "url",
+          "id": "fbcur_intro_dialog_item_img_url_2",
+          "label": "Item Img2 Url "
+        },
+        {
+          "type": "text",
+          "id": "fbcur_intro_dialog_title_bottom",
+          "label": "Title Bottom"
+        },
+        {
+          "type": "image_picker",
+          "id": "fbcur_intro_dialog_item_img3",
+          "label": "Item Img3"
+        },
+        {
+          "type": "url",
+          "id": "fbcur_intro_dialog_item_img_url_3",
+          "label": "Item Img3 Url "
+        }
+      ]
+    },
+    {
+      "type": "customerService",
+      "name": "Customer Service",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "customer_img",
+          "label": "Customer Img"
+        },
+        {
+          "type": "text",
+          "id": "customer_title",
+          "label": "Customer Title"
+        },
+        {
+          "type": "text",
+          "id": "customer_desc",
+          "label": "Customer Desc"
+        }
+      ]
+    },
+    {
+      "type": "quantity_selector",
+      "name": "Quantity selector",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_label",
+          "label": "Show label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "pdpGiftRemake",
+      "name": "Configure gifts product",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "gift_is_free",
+          "label": "Gift Free",
+          "default": false
+        },
+        {
+          "type": "product",
+          "id": "gift_service_product",
+          "label": "Gift product"
+        },
+        {
+          "type": "image_picker",
+          "id": "gift_customer_img",
+          "label": "Customer Img"
+        },
+        {
+          "type": "text",
+          "id": "gift_name",
+          "label": "Gift Name"
+        },
+        {
+          "type": "richtext",
+          "id": "gift_name_hover",
+          "label": "Gift Hover Desc"
+        }
+      ]
+    },
+    {
+      "type": "fbStampStar",
+      "name": "Stamp Star",
+      "settings": [
+        {
+          "type": "product",
+          "id": "show_custom_product_star",
+          "label": "choose custom stamp star",
+          "info": "If you do not select, the default is the main product of the current page"
+        }
+      ]
+    },
+    {
+      "type": "size_fit_table",
+      "name": "Configure Size Fit Table",
+      "settings": [
+        {
+          "type": "text",
+          "id": "size_fit_title",
+          "label": "title"
+        },
+        {
+          "type": "image_picker",
+          "id": "size_product_img",
+          "label": "Img"
+        },
+        {
+          "type": "richtext",
+          "id": "size_fit_desc",
+          "label": "Desc"
+        }
+      ]
+    },
+    {
+      "type": "choose_single_bikeColor",
+      "name": "Bike Color",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Current Bike Name"
+        },
+        {
+          "type": "text",
+          "id": "bike_color_title",
+          "label": "Color Name",
+          "default": "Moonbow Beige"
+        },
+        {
+          "type": "header",
+          "content": "BIKE 1"
+        },
+        {
+          "type": "product",
+          "id": "color_product1",
+          "label": "Product 1"
+        },
+        {
+          "type": "text",
+          "id": "is_color_title1",
+          "label": "Title1"
+        },
+        {
+          "type": "header",
+          "content": "BIKE 2"
+        },
+        {
+          "type": "text",
+          "id": "is_color_title2",
+          "label": "Title2"
+        },
+        {
+          "type": "product",
+          "id": "color_product2",
+          "label": "Product 2"
+        },
+        {
+          "type": "url",
+          "id": "bike_color_url2",
+          "label": "BikeColorPage2"
+        },
+        {
+          "type": "header",
+          "content": "BIKE 3"
+        },
+        {
+          "type": "text",
+          "id": "is_color_title3",
+          "label": "Title3"
+        },
+        {
+          "type": "product",
+          "id": "color_product3",
+          "label": "Product 3"
+        },
+        {
+          "type": "url",
+          "id": "bike_color_url3",
+          "label": "BikeColorPage3"
+        },
+        {
+          "type": "header",
+          "content": "BIKE 4"
+        },
+        {
+          "type": "text",
+          "id": "is_color_title4",
+          "label": "Title4"
+        },
+        {
+          "type": "product",
+          "id": "color_product4",
+          "label": "Product 4"
+        },
+        {
+          "type": "url",
+          "id": "bike_color_url4",
+          "label": "BikeColorPage4"
+        }
+      ]
+    },
+    {
+      "type": "bike_dismess",
+      "name": "bike dismess",
+      "settings": [
+        {
+          "type": "text",
+          "id": "fpc_dimension_title",
+          "label": "Dimension Title",
+          "default": "Bike dimensions"
+        },
+        {
+          "type": "image_picker",
+          "id": "fpc_dimension_img",
+          "label": "Dimension Image"
+        },
+        {
+          "type": "richtext",
+          "id": "fpc_dimension_desc",
+          "label": "Dimension Desc"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "customer_product",
+      "label": "customer product"
+    },
+    {
+      "type": "text",
+      "id": "product_big_title",
+      "label": "Bike Name",
+      "default": "E-Bike"
+    },
+    {
+      "type": "text",
+      "id": "product_desc_title",
+      "label": "Bike Desc",
+      "default": "Revolutionary Morph 2-in-1 eBike"
+    },
+    {
+      "type": "text",
+      "id": "product_build_title",
+      "label": "Build Name"
+    },
+    {
+      "type": "text",
+      "id": "product_but_text",
+      "label": "Button text",
+      "default": "ADD TO CART"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "fill",
+          "label": "Fill screen"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_images",
+      "label": "Stack images on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumbnails",
+      "label": "Show thumbnails on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": "Enable zoom",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gift",
+      "label": "IS Show Gift",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_protection",
+      "label": "Show Protection",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "show_protection_title",
+      "label": "Protection Title",
+      "default": "Add protection powered by"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shop_payments",
+      "label": "Show Shop payments",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_size_fit",
+      "label": "Show Size Fit Table",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bike_discount_desc",
+      "label": "Show Bike Discount Desc",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bike_left_icon_info",
+      "label": "Show Bike Left Icon Info",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "show_bike_dimensions",
+      "label": "Show Bike Dimensions"
+    },
+    {
+      "type": "header",
+      "content": "Promotion Description Icon"
+    },
+    {
+      "type": "header",
+      "content": "--------------US--------------"
+    },
+    {
+      "type": "richtext",
+      "id": "bike_promotion_desc",
+      "label": "US Show Bike Promotion",
+      "info": "If empty, do not display this module"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_expected_ship_date",
+      "label": "Show Expected Ship Date",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "--------------CA--------------"
+    },
+    {
+      "type": "richtext",
+      "id": "ca_bike_promotion_desc",
+      "label": "CA Show Bike Promotion",
+      "info": "If empty, do not display this module",
+      "default": "<p>teemo test</p>"
+    },
+    {
+      "type": "header",
+      "content": "--------------GB--------------"
+    },
+    {
+      "type": "richtext",
+      "id": "gb_bike_promotion_desc",
+      "label": "GB Show Bike Promotion",
+      "info": "If empty, do not display this module"
+    },
+    {
+      "type": "header",
+      "content": "--------------AU--------------"
+    },
+    {
+      "type": "richtext",
+      "id": "au_bike_promotion_desc",
+      "label": "AU Show Bike Promotion",
+      "info": "If empty, do not display this module"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+    #section-{{ section.id }} .main_product_payBtn{
+        text-align: center;
+        font-weight: 700;
+        position: absolute;
+        top: 2px;
+        right: 0px;
+        font-size: 16px;
+        width: 180px;
+        height: 48px;
+        line-height: 48px;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 640px){
+      #section-{{ section.id }} .main_product_payBtn{
+        width: 120px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 12px;
+        top: 20px;
+      }
+    }
+    {%- assign bike_promotion_desc = section.settings.bike_promotion_desc | strip_html -%}
+    {%- if bike_promotion_desc != blank -%}
+      @media only screen and (min-width: 769px) {
+          .ebike-main-top-container{
+              margin-top: 8px;
+              margin-bottom: 20px;
+          }
+      }
+      @media only screen and (min-width: 768px) and (max-width: 1060px) {
+          .ebike-main-top-container{
+              height: 180px;
+          }
+      }
+    {%- endif -%}
+    {%- if section.settings.show_expected_ship_date -%}
+        @media screen and (min-width: 769px) {
+            .ebike-shop-payment{
+                padding-top: 14px;
+            }
+        }
+    {%- endif -%}
+    {% comment %} 图片选中效果 {% endcomment %}
+    .ebike-thumbnails-box .swiper-slide-thumb-active, .ebike-thumbnails-box .is-selected {
+      opacity: 1;
+      border: 1px solid #333333;
+    }
+    .ebike-choose-item-checked .ebike-choose-icon{
+      display: inline-block;
+    }
+    .egl-checkbox-default {
+      border: 1px solid #121212;
+      background-color: #fff;
+      cursor: pointer;
+    }
+    .egl-checkbox-disabled {
+      background: rgba(18,18,18,.1);
+      border: 1px solid #121212;
+    }
+    .egl-checkbox-default.egl-checkbox-checked {
+      background-color: #121212!important;
+    }
+    .egl-price-youhui .egl-price-1 {
+      text-decoration: line-through;
+    }
+    .egl-price-youhui .egl-price-free {
+      display: inline !important;
+    }
+    .ebike-add-quantity.disabled {
+      cursor: not-allowed;
+      color: #12121266;
+    }
+    .ebike-cfm-common.ebike-cfm-focus .ebike-cfm-value{
+      display: block!important;
+    }
+    .ebike-choose-size-mob:hover, .ebike-choose-size-mob.ebike-choose-item-checked {
+      background: rgba(18,18,18,.08);
+      color: #121212;
+  }
+  .ebike-sizeli-door-button.dooractive{
+    color: #00cc45;
+    border-bottom: 2px solid #00CC45;
+  }
+    {% comment %} 评价 dom渲染 {% endcomment %}
+    @media only screen and (min-width: 769px) {
+        .fbm-pdp-videobox .stamped-badge-caption,
+        .ebike-fbm-stamp-container.ebike-video-color {
+            color: #ccc !important;
+        }
+        .elii-item-desc:hover .elii-item-hover-desc {
+          display: block;
+        }
+        .stamped-badge-caption {
+            display: block;
+            text-decoration: unset;
+        }
+        .stampedRating {
+            position: absolute;
+            right: 0;
+            top: 3px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .ebike-fbm-stamp {
+            position: absolute;
+            top: 24px;
+            left: 124px;
+            z-index: 1;
+        }
+
+        .ebike-fbm-stamp-container {
+            display: inline-block;
+            height: 35px;
+            position: relative;
+        }
+
+        .ebike-fbm-stamp-container .stampedRating2 {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .ebike-fbm-stamp-container .stamped-badge-caption {
+            font-size: 16px;
+            /* color: #666; */
+            bottom: -18px;
+            left: 0px;
+            position: absolute;
+        }
+
+        .ebike-fbm-stamp-container .stamped-badge {
+            padding-left: 38px;
+            padding-right: 0;
+        }
+
+        .ebike-fbm-stamp-container .stampedRating {
+            left: 0;
+            top: -6px;
+            font-size: 24px;
+        }
+
+        .ebike-fbm-stamp-container .stamped-fa-star-half-o:before,
+        .ebike-fbm-stamp-container .stamped-fa-star:before {
+            font-size: 20px !important;
+        }
+
+        /* .stamped-badge-caption{
+            position: absolute;
+            font-size: 14px;
+            font-weight: bold;
+        } */
+    }
+    @media only screen and (max-width: 768px) {
+      .ebkie-left-icon-info::-webkit-scrollbar {
+        display: none;
+        /* Chrome Safari */
+      }
+      .stamped-badge-caption {
+          display: block;
+          text-decoration: unset;
+      }
+
+      .stampedRating {
+          position: absolute;
+          right: 0;
+          top: 3px;
+          font-size: 15px;
+          font-weight: bold;
+      }
+
+      .stamped-badge {
+
+          text-align: right;
+      }
+
+      .ebike-fbm-stamp {
+          position: absolute;
+          right: 24px;
+          bottom: 20px;
+          width: 130px;
+          height: 46px;
+          z-index: 2;
+      }
+
+      .stamped-badge-starrating {
+          padding-right: 32px;
+          line-height: 26px;
+      }
+
+      .ebike-fbm-stamp-container {
+          display: inline-block;
+          width: 100%;
+          position: relative;
+      }
+
+      .ebike-fbm-stamp-container .stampedRating2 {
+          position: absolute;
+          right: 0;
+          top: 4px;
+          font-size: 14px;
+          line-height: 14px;
+          font-weight: bold;
+      }
+
+      .ebike-fbm-stamp-container .stamped-badge-caption {
+          font-size: 11px;
+          line-height: 11px;
+          color: rgba(18, 18, 18, 0.8);
+          bottom: 0px;
+          font-weight: 500;
+          margin-top: 4px;
+      }
+      .ebike-main-pro-box p {
+        margin: 6px 14px 6px 8px;
+          display: inline-block;
+      }
+    }
+    /* drawer start */
+    .Drawer__Content__fb_litboom ul{
+      width: 100%;
+    }
+    .Drawer__Content__fb_litboom ul li, .Drawer__Content__fb_litboom p{
+      font-weight: 500;
+      line-height: 20px;
+      color:rgba(18,18,18,0.7);
+      position: relative;
+      padding-left: 14px;
+      list-style: none;
+    }
+    .Drawer__Content__fb_litboom ul li::before, .Drawer__Content__fb_litboom p::before{
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 6px;
+      background: #00CC45;
+      position: absolute;
+      left: 0px;
+      top: 7px;
+    }
+    .Drawer__Content__fb_litboom ul li::marker{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    @media only screen and (min-width: 769px){
+      .Drawer__Content__fb_litboom ul li {
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .Drawer__Content__fb_ebike{
+        height: calc(100% - 110px);
+        max-height: calc(100% - 110px);
+        overflow:hidden;
+      }
+      .Drawer__Content__fb_ebike2{
+        height: calc(100% - 85px);
+        max-height: calc(100% - 85px);
+        overflow:hidden;
+      }
+      .Drawer__Content__fb_litboom{
+        height: calc(100% - 81px);
+        max-height: calc(100% - 81px);
+      }
+    }
+    @media only screen and (max-width: 768px){
+      .Drawer__Content__fb_ebike{
+        height: calc(100% - 92px);
+        max-height: calc(100% - 92px);
+      }
+      .Drawer__Content__fb_ebike2, .Drawer__Content__fb_litboom {
+        height: calc(100% - 61px);
+        max-height: calc(100% - 61px);
+      }
+      .Drawer__Content__fb_litboom ul li {
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+    }
+    /* drawer end */
+    @keyframes ebikezoomhide {
+      0% {
+          opacity: 1;
+      }
+      10% {
+          opacity: 0.8;
+      }
+      100% {
+          opacity: 0;
+      }
+    }
+    @keyframes ebikezoomshow {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+    }
+    {% comment %} show 条件不同 show_expected_ship_date {% endcomment %}
+    @media screen and (min-width: 769px) {
+      .ebike-main-product-buy-bottom .ebike-mbf-right-date{
+          text-align: center;
+          margin-top: 12px;
+          line-height: 14px;
+      }
+      .ebike-main-product-buy-bottom .ebike-mbf-right-date span{
+          font-size: 14px;
+          line-height: 14px;
+          font-weight: 500;
+          color: rgba(18,18,18,0.8);
+      }
+      .ebike-main-bottom-fixed .ebike-mbf-right-date{
+        margin-top: 6px;
+        line-height: 12px;
+      }
+      .ebike-main-bottom-fixed .ebike-mbf-right-date span{
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18,18,18,0.8);
+        line-height: 12px;
+      }
+      .ebike-zoom-box{
+        touch-action: none;
+        -webkit-text-size-adjust: 100%;
+        -webkit-backface-visibility: hidden;
+        outline: none;
+        z-index: -9999;
+        visibility: hidden;
+        animation: ebikezoomhide .3s 1;
+        background: #fff;
+        overflow: hidden;
+      }
+      .ebike-zoom-box.ebike-zoom-popup-show {
+        visibility: visible;
+        z-index: 9999;
+        animation: ebikezoomshow .3s 1;
+      }
+      .ebike-zoom-relative img {
+        cursor: var(--cursor-zoom-in-svg) 18 18,zoom-in;
+        cursor: -webkit-image-set(var(--cursor-zoom-in-svg) 1x,var(--cursor-zoom-in-2x-svg) 2x),zoom-in;
+      }
+      .ebike-zoom-relative img {
+        width: 100%;
+        height: auto;
+      }
+      .ebike-zoom-done {
+        position: absolute;
+        width: 100%;
+        bottom: 90px;
+        transform: translateY(35px);
+        left: 0;
+        text-align: center;
+        transition: all .15s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+      .ebike-zoom-close {
+        margin: 0px 18px;
+        cursor: pointer;
+      }
+      .ebike-zoom-button.swiper-button-disabled {
+        /* display: none; */
+        visibility: hidden;
+      }
+      .ebike-zoom-button {
+        cursor: pointer;
+      }
+      .ebike-zoom-relative img {
+        width: 100%;
+        height: auto;
+      }
+      .RoundButton,.flickity-prev-next-button {
+          box-shadow: 0 2px 10px rgba(54, 54, 54, 0.15);
+          transform: scale(1.001);
+          transition: background 0.15s ease-in-out, opacity 0.15s ease-in-out, transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .RoundButton svg, .flickity-prev-next-button svg {
+          height: 15px;
+          width: 15px;
+          fill: currentColor;
+        }
+        .RoundButton:hover {
+          transform: scale(1.1);
+        }
+    }
+    @media screen and (max-width: 768px) {
+      .ebike-zoom-box {
+          display: none !important;
+      }
+    }
+    @media screen and (max-width: 768px) {
+        .ebike-mbf-right-date{
+            margin-top: 10px;
+            line-height: 12px;
+            text-align: center;
+        }
+        .ebike-main-product-buy-bottom .ebike-mbf-right-date{
+            margin-top: 12px;
+        }
+        .ebike-mbf-right-date span{
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(18,18,18,0.8);
+            line-height: 12px;
+        }
+        .ebike-main-product-buy-bottom .ebike-mbf-right-date span{
+            font-size: 14px;
+        }
+    }
+    @media screen and (min-width: 1008px){
+      .Product__Slideshow--zoomable .Product__SlideItem--image {
+        cursor: var(--cursor-zoom-in-svg) 18 18, zoom-in;
+        cursor: -webkit-image-set(var(--cursor-zoom-in-svg) 1x, var(--cursor-zoom-in-2x-svg) 2x), zoom-in;
+      }
+    }
+    {% comment %} klarna分期有区分 css {% endcomment %}
+    @media only screen and (min-width: 769px) {
+      .abmtc-right .ebike-main-product-klarna-box{
+        min-height: 18px;
+      }
+      .abmtc-right .ebike-main-product-klarna-box span {
+        font-size: 18px;
+        color: #121212;
+        line-height: 18px;
+        font-weight: 600;
+      }
+      .abmtc-right .ebike-main-product-klarna-box img {
+        width: auto;
+        height: 18px;
+      }
+      .ebike-main-pro-box p {
+        margin: 6px 14px 6px 6px;
+        display: inline-block;
+      }
+      .ebike-thu-scroll-left.swiper-button-disabled, .ebike-thu-scroll-right.swiper-button-disabled{
+        display: none;
+      }
+    }
+    {% comment %} size config {% endcomment %}
+    .ebike-sizeli-desc p:first-child {
+      margin-bottom: 24px;
+    }
+    .ebike-sizeli-desc p {
+      font-size: 16px;
+      font-weight: 500;
+      color: #121212;
+      line-height: 24px;
+    }
+    @media only screen and (max-width: 768px){
+      .ebike-sizeli-desc p {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 0;
+      }
+    }
+    .ebike-fbcur-introduce-ul li a {
+      text-decoration: underline;
+    }
+</style>

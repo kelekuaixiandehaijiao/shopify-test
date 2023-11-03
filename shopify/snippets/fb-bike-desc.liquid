@@ -1,0 +1,94 @@
+<div class="learn-more-product absolute left-5 top-2 fb-sm:top-0">
+  {%- if section.settings.learn_more_img_mob -%}
+    <div class="learn-image-content relative flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-xl fb-sm:h-20 fb-sm:w-20">
+      <div class="learn-image">
+        {% assign imgPc = section.settings.learn_more_img | img_url: '' %}
+        {% assign imgMob = section.settings.learn_more_img_mob | img_url %}
+        <img
+          class="hidden h-full w-full cursor-pointer rounded-full fb-sm:block"
+          src="{{imgPc}}"
+          loading="lazy"
+          alt="{{ section.settings.learn_more_img.alt }}"
+        >
+        <img
+          class="h-full w-full cursor-pointer rounded-full px-2 py-2 fb-sm:hidden"
+          src="{{imgMob}}"
+          loading="lazy"
+          alt="{{ section.settings.learn_more_img_mob.alt }}"
+        >
+      </div>
+    </div>
+  {%- endif -%}
+  <div class="learn-desc">
+    <div class="triangle "></div>
+    <div class="learn-desc-text">{{ section.settings.learn_more_desc }}</div>
+  </div>
+</div>
+<style>
+  .learn-desc {
+    display: none;
+    width: 528px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    opacity: 1;
+    position: absolute;
+    top: 95px;
+    left: 0px;
+    padding: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 20px;
+    background: #ffffff;
+  }
+  .triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #ffffff;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 8px solid transparent;
+    position: absolute;
+    left: 32px;
+    top: -15px;
+    filter: drop-shadow(0px -1px 1px rgba(0, 0, 0, 0.2));
+  }
+
+  @media screen and (max-width: 768px) {
+    .learn-desc {
+      display: none;
+      width: 264px;
+      position: static;
+      top: 0;
+      bottom: 0;
+      background: #ffffff;
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 10px;
+      font-weight: 400;
+      color: #000000;
+      line-height: 16px;
+      margin-top: 13px;
+    }
+    .triangle {
+      width: 0;
+      height: 0;
+      border-bottom: 8px solid #ffffff;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-top: 8px solid transparent;
+      position: absolute;
+      top: 61px;
+      left: 24px;
+      filter: drop-shadow(0px -3px 2px rgba(0, 0, 0, 0.2));
+    }
+  }
+</style>
+<script type="text/javascript">
+  $('.learn-image').click(function () {
+    if ($('.learn-desc-text').text()) {
+      $('.learn-desc').toggle();
+    }
+  });
+</script>

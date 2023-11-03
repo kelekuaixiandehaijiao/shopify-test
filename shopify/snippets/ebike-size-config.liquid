@@ -1,0 +1,366 @@
+{% if type == 'item' %}
+  <div class="ebike-size-ul">
+    {%- assign sizeconfig_index = 1 -%}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'size_fit_table' -%}
+          <div
+            class="ebike-size-li fb-flex-x-between w-full cursor-pointer border-b border-e6e6e6 py-[20px] text-left text-h-14 font-medium text-121212 fb-769:py-6 fb-769:text-h-16 fb-769:font-semibold {% if template contains 'ebike' %}js-open-ebikedilaog{% else %}js-open-litboomdialog{% endif %}"
+            data-name="{{ block.settings.size_fit_title | strip_html }}"
+            data-img="{{ block.settings.size_product_img | img_url: '' }}"
+            data-index="{{ sizeconfig_index }}"
+            aria-expanded="false"
+            data-action="open-modal"
+            aria-controls="ebike-sizeli-dialog"
+            aria-label="Open OK"
+          >
+            <span class="cursor-pointer font-semibold">{{ block.settings.size_fit_title }} </span>
+            {% if template contains 'ebike' %}
+              <span class="span-svg h-[14px] w-3.5 fb-769:h-5 fb-769:w-5">
+                <img
+                  loading="lazy"
+                  class="h-auto w-full"
+                  alt="plus logo"
+                  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/open-line-item.png?v=1689144600"
+                >
+              </span>
+            {% else %}
+              <svg
+                class="span-svg2 mr-2 h-[14px] w-3.5 fb-769:h-5 fb-769:w-5"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Frame">
+                    <path id="Vector" d="M7.22054 5.66996C7.3719 5.54736 7.56076 5.48047 7.75554 5.48047C7.95032 5.48047 8.13919 5.54736 8.29054 5.66996L12.7905 9.52996C12.8576 9.58531 12.9116 9.65481 12.9487 9.73347C12.9857 9.81212 13.0049 9.898 13.0049 9.98496C13.0049 10.0719 12.9857 10.1578 12.9487 10.2365C12.9116 10.3151 12.8576 10.3846 12.7905 10.44L8.29054 14.3C8.13919 14.4226 7.95032 14.4894 7.75554 14.4894C7.56076 14.4894 7.3719 14.4226 7.22054 14.3C7.15348 14.2446 7.09949 14.1751 7.06243 14.0964C7.02536 14.0178 7.00614 13.9319 7.00614 13.845C7.00614 13.758 7.02536 13.6721 7.06243 13.5935C7.09949 13.5148 7.15348 13.4453 7.22054 13.39L11.2205 9.98996L7.22054 6.58996C7.1517 6.53467 7.09615 6.46464 7.05798 6.38503C7.01982 6.30541 7 6.21825 7 6.12996C7 6.04167 7.01982 5.9545 7.05798 5.87489C7.09615 5.79528 7.1517 5.72524 7.22054 5.66996Z" fill="#121212" fill-opacity="0.5"/>
+                </g>
+              </svg>
+            {% endif %}
+            {% comment %} ebike专属 {% endcomment %}
+            <div class="size-fit-config-desc-hide" style="display: none;">
+              {{ block.settings.size_fit_desc }}
+            </div>
+          </div>
+          {%- assign sizeconfig_index = sizeconfig_index | plus: 1 -%}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+{%- elsif type == 'dialog' -%}
+  {%- capture cloes_dom -%}
+    <div class="ebike-sizeli-close fb-flex-xy-center absolute right-0 top-[22px] z-2 h-[16px] w-4 fb-769:top-[32px]">
+        <svg class="js-sizeli-close h-full w-full cursor-pointer" data-action="close-modal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <g id="Frame">
+            <path id="Vector" d="M12.6954 13.4765C12.4954 13.4765 12.2956 13.4003 12.1429 13.2478L2.70543 3.81027C2.40027 3.50512 2.40027 3.01059 2.70543 2.70543C3.01059 2.40027 3.50512 2.40027 3.81027 2.70543L13.2478 12.1429C13.5529 12.4481 13.5529 12.9426 13.2478 13.2478C13.0953 13.4003 12.8953 13.4765 12.6954 13.4765Z" fill="#121212" fill-opacity="0.5"/>
+            <path id="Vector_2" d="M3.25793 13.4765C3.05793 13.4765 2.85809 13.4003 2.70543 13.2478C2.40027 12.9426 2.40027 12.4481 2.70543 12.1429L12.1429 2.70543C12.4481 2.40027 12.9426 2.40027 13.2478 2.70543C13.5529 3.01059 13.5529 3.50512 13.2478 3.81027L3.81027 13.2478C3.65777 13.4003 3.45777 13.4765 3.25793 13.4765Z" fill="#121212" fill-opacity="0.5"/>
+            </g>
+        </svg>
+    </div> 
+{%- endcapture -%}
+  {%- capture ios_li_space -%}
+    <li class="ios-li-space invisible h-25 w-full fb-769:hidden">
+        1
+    </li>
+{%- endcapture -%}
+  <div
+    class="Drawer Drawer--fromRight w-[327px] bg-white fb-769:w-[420px]"
+    data-section-type="ebike-sizeli-dialog"
+    aria-hidden="true"
+    id="ebike-sizeli-dialog"
+  >
+    <div class="ebike-sizeli-content relative h-full w-full fb-769:px-6">
+      {%- if template contains 'ebike' -%}
+        <div
+          class="ebike-sizeli-public-top ebike-sizeli-door-top w-full px-[20px] fb-769:px-0"
+          data-index="1"
+          style="display: none;"
+        >
+          <div class="ebike-sizeli-title ebike-sizeli-title1 ebike-sizeli-top-textclose relative w-full pb-6 pt-5 text-[20px] font-bold leading-5 text-121212 fb-769:mb-5 fb-769:pb-0 fb-769:pt-[30px] fb-769:text-[24px] fb-769:leading-6">
+            <span class="js-sizelipopup-title font-bold"></span>
+            {{ cloes_dom }}
+          </div>
+          <div class="ebike-sizeli-door fb-flex-x-start border-b border-e6e6e6">
+            {% capture btn_cor_icon %}font-bold inline-block mr-[47px] text-[14px] leading-[14px] text-[#12121280] border-b-[2px] border-transparent cursor-pointer{% endcapture %}
+            <a
+              class="ebike-sizeli-door-button dooractive pb-[11px] {{ btn_cor_icon }}"
+              data-type="outdoor"
+              href="javascript:void(0);"
+            >
+              OUTDOOR
+            </a>
+            <a
+              class="ebike-sizeli-door-button mb-[11px] {{ btn_cor_icon }}"
+              data-type="indoor"
+              href="javascript:void(0);"
+            >
+              INDOOR
+            </a>
+          </div>
+        </div>
+        <div class="ebike-sizeli-public-top w-full px-[20px] fb-769:px-0" data-index="2" style="display: none;">
+          <div
+            class="
+              ebike-sizeli-top-textclose ebike-sizeli-title ebike-sizeli-title2
+              relative border-b border-e6e6e6 py-[20px] text-[20px] font-bold leading-5 text-121212
+            "
+            data-index="2"
+          >
+            <span class="js-sizelipopup-title font-bold"></span>
+            {{ cloes_dom }}
+          </div>
+        </div>
+        {% comment %} ebike1 {% endcomment %}
+        {% capture ebike_sizeli_tr2 %}py-[14px] border-b border-e6e6e6 w-full fb-flex-x-start fb-769:pt-[17px] fb-769:pb-[18px]{% endcapture %}
+        {% capture tr2_span1 %}w-[116px] text-left font-semibold text-121212 text-h-12-s{% endcapture %}
+        {% capture tr2_span2 %}w-45 text-[12px] text-left font-medium leading-[14px] text-121212{% endcapture %}
+        <div class="Drawer__Content__fb_ebike ebike-sizeli-modelshow flex w-full flex-col" data-index="1">
+          <div class="Drawer__Main w-full px-[20px] fb-769:px-0" data-scrollable>
+            <ul class="ebike-sizeli-table2 js-ebike-sizeli-doorcontent w-full" data-type="outdoor">
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">MOTOR</span>
+                <span class="tr2-span2 {{tr2_span2}}">48V, 750W Brushless Hub Motor, Max Torque 85Nm</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">DISPLAY</span>
+                <span class="tr2-span2 {{tr2_span2}}"
+                  >3.5" Backlit LCD Display with Speed, Trip, Battery, Assist Level and More</span
+                >
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">BATTERY</span>
+                <span class="tr2-span2 {{tr2_span2}}"
+                  >Removable Internal Lithium-ion Battery, 48V, 15Ah (720Wh). 21700 LG Cells with UL2271 Certification.</span
+                >
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">SPEED</span>
+                <span class="tr2-span2 {{tr2_span2}}">28MPH ( Unlockable )</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">SENSOR</span>
+                <span class="tr2-span2 {{tr2_span2}}">Cadence Sensor</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">THROTTLE</span>
+                <span class="tr2-span2 {{tr2_span2}}">Removable Thumb-Control</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">CHARGER</span>
+                <span class="tr2-span2 {{tr2_span2}}"
+                  >48V, 2A, Operates on 100V-240V AC, 50-60HZ, 6-7 Hour Charging</span
+                >
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">RANGE</span>
+                <span class="tr2-span2 {{tr2_span2}}">Up to 60 Miles</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">FRAME</span>
+                <span class="tr2-span2 {{tr2_span2}}"
+                  >Aluminum Alloy, Fully Integrated & Lockable Down Tube Battery, Internal Cable Routing, Front and Rear
+                  Fenders</span
+                >
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">WEIGHT</span>
+                <span class="tr2-span2 {{tr2_span2}}">77lbs ( 35kg )</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">PEDALS</span>
+                <span class="tr2-span2 {{tr2_span2}}"
+                  >9/16" Inner Hexagon Locking, BS/CPSC Reflective Sheet with R/L Label</span
+                >
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">WEIGHT LIMIT</span>
+                <span class="tr2-span2 {{tr2_span2}}">Max Load 400lbs ( 181kg )</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">FORK</span>
+                <span class="tr2-span2 {{tr2_span2}}"
+                  >Hydraulic Suspension with 80mm Travel, with Lock-out, WB-355-26" ALLOY
+                </span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">CRANKSET</span>
+                <span class="tr2-span2 {{tr2_span2}}">Aluminum Alloy, 170mm</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">BRAKE LEVER</span>
+                <span class="tr2-span2 {{tr2_span2}}">Hydraulic Disc Brake</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">REAR DERAILLEUR</span>
+                <span class="tr2-span2 {{tr2_span2}}">8-Speed Direct Attachment</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">SHIFT LEVER</span>
+                <span class="tr2-span2 {{tr2_span2}}">SHIMANO M315-8R, 8 Speed Trigger</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">CHAIN</span>
+                <span class="tr2-span2 {{tr2_span2}}">1/2*3/32*L126</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">SPOKES</span>
+                <span class="tr2-span2 {{tr2_span2}}">13G Steel Bed</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">TIRE</span>
+                <span class="tr2-span2 {{tr2_span2}}">26 x 4", Puncture-Resistant Liner</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">SADDLE</span>
+                <span class="tr2-span2 {{tr2_span2}}">Freebeat Urban Comfort Ergonomic Seat, 220mm Wide</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">LIGHTING</span>
+                <span class="tr2-span2 {{tr2_span2}}">High Output Integrated LED, Adjustable Angle</span>
+              </li>
+              {{ ios_li_space }}
+            </ul>
+            <ul class="ebike-sizeli-table2 js-ebike-sizeli-doorcontent" data-type="indoor" style="display: none;">
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">MAXIMUM POWER OUTPUT</span>
+                <span class="tr2-span2 {{tr2_span2}}">1000W</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">DRIVETRAIN</span>
+                <span class="tr2-span2 {{tr2_span2}}">Chain Drive</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}"
+                  >RESISTANCE <br>
+                  TYPE</span
+                >
+                <span class="tr2-span2 {{tr2_span2}}">Electromagnetic</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}"
+                  >POWER <br>
+                  CONTROL ACCURACY</span
+                >
+                <span class="tr2-span2 {{tr2_span2}}">+ / -1%</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}">CONNECTIVITY</span>
+                <span class="tr2-span2 {{tr2_span2}}">Bluetooth</span>
+              </li>
+              <li class="ebike-sizeli-tr2 {{ebike_sizeli_tr2}}">
+                <span class="tr2-span1 {{tr2_span1}}"
+                  >MAXIMUM <br>
+                  RIDER WEIGHT</span
+                >
+                <span class="tr2-span2 {{tr2_span2}}">250lbs ( 113kg )</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% comment %} ebike 2 {% endcomment %}
+        <div class="Drawer__Content__fb_ebike2 ebike-sizeli-modelshow flex w-full flex-col" data-index="2">
+          <div class="Drawer__Main w-full px-[20px] fb-769:px-0" data-drawer-animated-right data-scrollable>
+            <div class="ebike-sizeli-desc pt-5"></div>
+            <div class="ebike-sizeli-img js-ebike-sizeli-img relative mt-5 h-[184px] w-full bg-[#d9d9d9] fb-769:h-[240px]">
+              <img class="h-auto w-full" src="">
+            </div>
+            <ul class="ebike-sizeli-table mt-6 w-full fb-769:mt-[72px]">
+              {% capture li_class1 %}min-w-[110px] font-semibold text-h-12-s w-[33.3%] text-[#1c1b1b]{% endcapture %}
+              {% capture li_class2 %}text-center font-medium text-h-12-s w-[33.3%] text-[#1c1b1b]{% endcapture %}
+              {% capture ebike_sizeli_tr %}h-10 border-b border-e6e6e6 fb-flex-x-between fb-769:h-12{% endcapture %}
+              <li class="ebike-sizeli-header fb-flex-x-between w-full pb-[14px]">
+                <span class="w-[33.3%] min-w-[110px] text-left text-h-12-s font-bold text-121212 fb-769:text-h-16 fb-769:font-semibold"
+                  >Frame Size</span
+                >
+                <span class="w-[33.3%] text-center text-h-12-s font-bold text-121212 fb-769:text-h-16 fb-769:font-semibold"
+                  >High Step</span
+                >
+                <span class="w-[33.3%] text-center text-h-12-s font-bold text-121212 fb-769:text-h-16 fb-769:font-semibold"
+                  >Step Thru</span
+                >
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Rider Heights</span>
+                <span class="{{li_class2}}">5'6"-6'4"</span>
+                <span class="{{li_class2}}">5'1"-6'</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Reach</span>
+                <span class="{{li_class2}}">404</span>
+                <span class="{{li_class2}}">404</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Handlebar height</span>
+                <span class="{{li_class2}}">1100</span>
+                <span class="{{li_class2}}">1100</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Standover height</span>
+                <span class="{{li_class2}}">462.7</span>
+                <span class="{{li_class2}}">462.7</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Seat tube length</span>
+                <span class="{{li_class2}}">480</span>
+                <span class="{{li_class2}}">435</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Total length</span>
+                <span class="{{li_class2}}">1919</span>
+                <span class="{{li_class2}}">1919</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Wheelbase</span>
+                <span class="{{li_class2}}">1183</span>
+                <span class="{{li_class2}}">1183</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Min seat height</span>
+                <span class="{{li_class2}}">859</span>
+                <span class="{{li_class2}}">811.8</span>
+              </li>
+              <li class="ebike-sizeli-tr {{ebike_sizeli_tr}}">
+                <span class="{{li_class1}}">Max seat height</span>
+                <span class="{{li_class2}}">1038.2</span>
+                <span class="{{li_class2}}">898.2</span>
+              </li>
+              {{ ios_li_space }}
+            </ul>
+          </div>
+        </div>
+      {%- else -%}
+        {%- assign sizeconfig_index2 = 1 -%}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'size_fit_table' -%}
+              <div
+                class="lit-boom-size-config"
+                data-index="{{ sizeconfig_index2 }}"
+              >
+                <div class="ebike-sizeli-public-top  w-full px-[20px] fb-769:px-0">
+                  <div
+                    class="
+                      ebike-sizeli-top-textclose ebike-sizeli-title3 relative w-full border-b border-e6e6e6 py-[20px] text-[20px] font-bold leading-5 text-121212
+                      fb-769:pb-5 fb-769:pt-[30px] fb-769:text-[20px] fb-769:leading-5
+                    "
+                    data-index="2"
+                  >
+                    <span class="js-sizelipopup-title">{{ block.settings.size_fit_title }}</span>
+                    {{ cloes_dom }}
+                  </div>
+                </div>
+
+                <div class="Drawer__Content__fb_litboom relative flex w-full flex-col overflow-hidden pt-5">
+                  <div class="Drawer__Main w-full fb-max-768:px-[20px]" data-drawer-animated-right data-scrollable>
+                    {{ block.settings.size_fit_desc }}
+                  </div>
+                </div>
+              </div>
+              {%- assign sizeconfig_index2 = sizeconfig_index | plus: 1 -%}
+          {%- endcase -%}
+        {%- endfor -%}
+        {% comment %} 默认版本 {% endcomment %}
+      {%- endif -%}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,125 @@
+<section id="section-{{ section.id }}" class="px-5   fb-sm:px-10 fb-md:px-0 fb-md:mx-auto fb-md:max-w-75r">
+  <div class="class-take-online w-full border-t border-[#e6e6e6] py-10 fb-sm:py-15 fb-md:py-20">
+    <div class="take-online-content w-full text-121212">
+      <div class="online-content-name text-20 font-bold fb-md:text-32 fb-sm:w-[584px] fb-md:w-[683px]">{{ section.settings.fb_online_name }}</div>
+      <div class="online-content-para mt-4 text-12 fb-md:mt-6 fb-md:text-16">{{ section.settings.fb_online_para }}</div>
+      <div class="online-content-para para-teshu mt-2 text-12 fb-md:mt-3 fb-md:text-16">{{ section.settings.fb_online_para1 }}</div>
+      <div class="online-content-link more-link mt-3 text-12 font-bold text-00cc45 underline fb-md:mt-4 fb-md:text-16">{{ section.settings.fb_online_link1 }}</div>
+      <div class="online-content-main hidden"> 
+        {% capture item_title %}mt-4 text-16 fb-md:text-20 fb-md:mt-6 font-bold{% endcapture %}
+        {% capture item_desc %}mt-3 text-12 fb-md:text-16 fb-md:mt-4 {% endcapture %}
+        <div class="main-item">
+          <div class="item-title {{item_title}} ">{{ section.settings.fb_online_title1 }}</div>
+          <div class="item-desc {{ item_desc}}">{{ section.settings.fb_online_desc1 }}</div>
+        </div>
+        <div class="main-item">
+        <div class="item-title {{item_title}}">{{ section.settings.fb_online_title2 }}</div>
+          <div class="item-desc {{ item_desc}}">{{ section.settings.fb_online_desc2 }}</div>
+        </div>
+        <div class="main-item">
+          <div class="item-title {{item_title}}">{{ section.settings.fb_online_title3 }}</div>
+          <div class="item-desc {{ item_desc}}">{{ section.settings.fb_online_desc3 }}</div>
+          <div class="item-desc item-desc-teshu mt-2 text-12 fb-md:text-16 fb-md:mt-3 ">{{ section.settings.fb_online_desc4 }}</div>
+          <div class="item-desc item-desc-teshu mt-2  text-12 fb-md:text-16 fb-md:mt-3 ">{{ section.settings.fb_online_desc5 }}</div>
+        </div>
+      </div>
+      <div class="online-content-link close-link hidden mt-3 text-12 font-bold text-00cc45 underline">{{ section.settings.fb_online_link2 }}</div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  $('.more-link').click(function(){
+    $('.online-content-main').css('display','block')
+    $('.close-link').css('display','block')
+    $('.more-link').css('display','none')
+  })
+  $('.close-link').click(function(){
+    $('.online-content-main').css('display','none')
+    $('.close-link').css('display','none')
+    $('.more-link').css('display','block')
+  })
+</script>
+{% schema %}
+  {
+    "name": "FbContentClass",
+    "presets": [
+      {
+        "name": "fb-content-class",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "Text position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "text",
+        "id": "fb_online_name",
+        "label": "Online name"
+      },
+      {
+        "type": "text",
+        "id": "fb_online_para",
+        "label": "Online Para"
+      },
+      {
+        "type": "text",
+        "id": "fb_online_para1",
+        "label": "Online Para1"
+      }, {
+        "type": "text",
+        "id": "fb_online_title1",
+        "label": "Title1"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc1",
+        "label": "Desc1"
+      }, {
+        "type": "text",
+        "id": "fb_online_title2",
+        "label": "Title2"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc2",
+        "label": "Desc2"
+      }, {
+        "type": "text",
+        "id": "fb_online_title3",
+        "label": "Title3"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc3",
+        "label": "Desc3"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc4",
+        "label": "Desc4"
+      }, {
+        "type": "text",
+        "id": "fb_online_desc5",
+        "label": "Desc5"
+      }, {
+        "type": "text",
+        "id": "fb_online_link1",
+        "label": "Link1"
+      }, {
+        "type": "text",
+        "id": "fb_online_link2",
+        "label": "Link2"
+      }
+    ]
+  }
+{% endschema %}

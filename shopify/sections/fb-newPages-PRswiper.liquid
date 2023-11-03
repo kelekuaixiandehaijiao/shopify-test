@@ -1,0 +1,98 @@
+{%- assign newSwiperContent = section.blocks | where: 'type', 'newSwiperContent' | first -%}
+<div
+  class="fb_newPages_PR_swiper h-11r fb-md:h-18r w-full"
+  style="background:{{section.settings.PR_swiper_background}}"
+  id="section-{{ section.id }}"
+>
+  <div class="swiper newPages_PRswiper h-full w-full max-w-75r mx-auto">
+    <div class="swiper-wrapper h-full w-full">
+      {%- for block in section.blocks -%}
+        <div class="swiper-slide h-full w-full fb-sm:w-1/2 fb-md:w-1/3">
+          <div class="flex h-full w-full flex-col items-center justify-between">
+            <div class="newPages_imgWrapper flex max-h-18 w-full basis-1/2 items-center justify-center pt-10 fb-md:max-h-36 relative">
+              <img class="swiperImg h-auto w-34 Image--lazyLoad Image--fadeIn" 
+                data-src="{{ block.settings.swiperImg | img_url:'' }}"
+                alt="{{ block.settings.swiperImg.alt | escape }}"
+              >
+              <span class="Image__Loader"></span>
+            </div>
+            <div class="h-18 w-full px-4 text-center text-14 text-121212 fb-md:h-28 fb-md:text-16">
+              {{ block.settings.swiperDes }}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    var swiper = new Swiper('.newPages_PRswiper', {
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        1280: {
+          slidesPerView: 3,
+          loopedSlides: 4,
+        },
+        640: {
+          slidesPerView: 2,
+          loopedSlides: 3,
+        },
+      },
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+      // scrollbar: {
+      //     el: ".swiper-scrollbar",
+      // },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FbNewPRSwiper",
+  "presets": [
+    {
+      "name": "fb-newPages-PR-swiper",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "PR_swiper_background",
+      "label": "Background color",
+      "default": "#fafafa"
+    },
+    {
+      "type": "color",
+      "id": "textColor",
+      "label": "Text Color",
+      "default": "#666"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "newSwiperContent",
+      "name": "New Swiper Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "swiperImg",
+          "label": "Swiper Image"
+        },
+        {
+          "type": "text",
+          "id": "swiperDes",
+          "label": "Swiper Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

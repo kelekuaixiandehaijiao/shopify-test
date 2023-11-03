@@ -1,0 +1,268 @@
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- if product == blank -%}
+    {%- assign product = section.settings.nav_product -%}
+{%- endif -%}
+{%- assign single_product = true -%}
+{%- for number_vari in product.variants -%}
+{%- if forloop.length > 1 -%}
+{%- assign single_product = false -%}
+{%- endif -%}
+{%- endfor -%}
+<div id="section-{{ section.id }}" class="fb-ebike-nav-bar overflow-hidden relative bg-[rgba(255,255,255,.8)] w-full h-0 fb-md:px-10">
+    <div class="ebike-eb-content w-full h-full relative fb-md:fb-flex-x-between">
+        <div class="ebike-eb-left w-full h-auto fb-md:w-[60%] fb-md:fb-flex-x-start fb-md:h-full fb-md:mb-1">
+            <div class="ebike-ebl-1 w-full fb-flex-x-between fb-md:block h-10 px-5 fb-sm:px-10 fb-md:px-0 fb-md:w-39 fb-md:h-full flex-shrink-0">
+              <div class="ebike-ebl-1-1 js-ebike-mobtop-open text-left cursor-pointer leading-6 fb-md:w-full fb-md:text-[16px] fb-md:h-[28px] fb-md:leading-[28px] fb-md:mt-[14px]">
+                    <span class="text-12 text-121212 font-bold fb-md:text-[20px] fb-md:leading-[28px]"> 
+                      {{ section.settings.bike_type }} 
+                    </span>
+                    <span class="ebike-ebl-nav-hide text-12 text-121212 font-bold"> &#8226; </span>
+                    <span class="ebike-ebl-mob-1 ebike-ebl-nav-hide js-current-navtitle text-[12px] text-121212 font-semibold">
+                    </span>
+                    <img
+                        class="ebike-ebl-nav-icon-img ebike-ebl-nav-hide vertical-align-middle ml-1.5 w-[10px] h-auto"
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/updaown.png?v=1668668770"
+                        alt=""
+                        loading="lazy"
+                        width="10"
+                        height="10"
+                    >
+                </div>
+                <ul class="ebike-ebl-1-2 fb-flex-x-end fb-md:fb-flex-x-start fb-md:min-w-[130px]">
+                    {%- if single_product -%}
+                        {%- for block in section.blocks -%}
+                            {% assign product_box = block.settings.is_colorlitbike_product %}
+                            {%- assign img_circle = block.settings.colorlitbike_default_img | img_url: '' -%}
+                            <a  href="{{ colorlitbike_url | default:  product_box.url }}" 
+                                class="fb-flex-xy-center ebike-choose-imgdefalut-top bike-{{- block.settings.is_colorlitbike_name | replace: ' ' , '-' -}}-color 
+                                {% if product_box.title == product.title %}ebike-choose-item-checked{% endif %}"
+                            >
+                                {%- if product_box.title contains 'White' -%}
+                                  <img class="ebike-choose-icon w-2.5 hidden" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/bike-bloak.png?v=1692607977" >
+                                {%- else -%}
+                                  <img class="ebike-choose-icon w-2.5 hidden" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector-checked.png?v=1687681663">
+                                {%- endif -%}
+                            </a>
+                        {%- endfor -%}   
+                    {%- else -%}
+                        {%- for option in product.options_with_values -%}
+                            {%- if option.name == 'Color' -%}
+                                {%- for value in option.values -%}
+                                    <li class="ebike-choose-imgdefalut-top fb-flex-xy-center ebike-{{value | replace: ' ' , '-'}} {% if forloop.index == 1 %}ebike-choose-item-checked{% endif %} js-ebike-productcolor"
+                                        data-color="{{ value }}"
+                                        data-type="nav"
+                                    >
+                                        <img class="ebike-choose-icon-top w-[10px] hidden"  loading="lazy" src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector-checked.png?v=1687681663">
+                                    </li>
+                                {%- endfor -%} 
+                            {%- endif -%}
+                        
+                        {%- endfor -%}   
+                    {%- endif -%}
+                </ul>
+            </div>
+            <div class="ebike-ebl-2 fb_ebike_top_frame js-ebike-mobtop-frame w-full bg-[rgba(255,255,255,.8)] fb-md:bg-transparent fb-md:min-w-[152px]">
+                <div class="ebike-ebl-2-1 border-b-[0.5px] border-[#dddddd]  fb-md:border-none js-ebike-eblt-abox fb-md:min-w-[142px] px-5 fb-sm:px-10 fb-md:px-0 fb-md:pb-0">
+                </div>
+            </div>
+        </div>
+        
+        <div class="ebike-eb-right min-w-[336px] h-12 hidden fb-md:fb-flex-xy-center fb-md:h-[56px] fb-md:overflow-hidden">
+            <div class="ebike-ebr-flex flex items-center justify-start mt-[-7px]  fb-md:w-full fb-md:justify-end fb-md:h-11 fb-md:mt-0">
+                <div class="ebike-ebr-1 h-full mr-2 flex items-center flex-col justify-center fb-md:mr-5 fb-md:h-11">
+                    <div class="ebike-ebr-1-1 w-full text-right leading-3 text-[12px] fb-md:text-[16px] fb-md:leading-6">
+                        <span class="ab-origin line-through font-medium text-[#888888]">{%- render 'customer-price-control', type:'origin', cpc_product: product -%}</span>
+                        <span class="ab-current font-bold text-333333">
+                            {% render 'customer-price-control', type:'sale', cpc_product: product %}
+                        </span>
+                    </div>
+                    <div class="ebike-ebr-1-2 leading-[10px] fb-md:leading-5">
+                        <span class="text-right font-normal text-[10px] text-666666 fb-md:text-[14px]">
+                          MSPR
+                        </span>
+                    </div>
+                </div>
+                <div class="ebike-ebr-2 h-10 fb-flex-xy-center">
+                    <button class="js-ebike-addtocart w-24 rounded-[6px] leading-6 h-6 text-center bg-[#1c1b1b] text-[10px] text-white font-bold cursor-pointer
+                      fb-md:h-10 fb-md:leading-10 fb-md:w-[128px] fb-md:text-[12px] fb-md:rounded-md	
+                      " 
+                        data-origintext="{{ section.settings.bike_button_text }}"
+                    > {{ section.settings.bike_button_text }} </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+  "name": "FbEbikeNavBarLitc",
+  "presets": [
+    {
+      "name": "fb-ebike-nav-bar-litc",
+      "category": "fb-ebike-nav-bar-litc"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "TOP NAV SECTION"
+    },
+    {
+        "type": "product",
+        "id": "nav_product",
+        "label": "Product"
+    },
+    {
+        "type": "text",
+        "id": "bike_type",
+        "label": "Bike Type",
+        "default": "E-Bike"
+    },
+    {
+        "type": "text",
+        "id": "bike_button_text",
+        "label": "Button Text",
+        "default": "ADD TO CART"
+    }
+
+  ],
+  "blocks": [
+    {
+        "type": "colorArr",
+        "name": "add lit bike color",
+        "settings": [
+            {
+                "type": "text",
+                "id": "is_colorlitbike_name",
+                "label": "Litbike Color Name"
+            },
+            {
+                "type": "product",
+                "id": "is_colorlitbike_product",
+                "label": "Product"
+            },
+            {
+                "type": "image_picker",
+                "id": "colorlitbike_default_img",
+                "label": "Mob Default Image"
+            },
+            {
+                "type": "url",
+                "id": "colorlitbike_url",
+                "label": "Link"
+            }
+        ]
+    }
+
+  ]
+}
+{% endschema %}
+<style>
+  
+    #shopify-section-{{ section.id }}{
+        position: sticky;
+        top: 90px;
+        left:0;
+        z-index: 4;
+    }
+    .fb-ebike-nav-bar{
+      transition: height .3s;
+    }
+    .ebike-ebl-nav-icon-img{
+      transform: rotate(180deg);
+      transition: all .4s;
+    }
+    .ebike-ebl-nav-icon-img.navi-open{
+      transform: rotate(0deg);
+    }
+    .js-ebike-eblt-abox, .ebike-ebl-nav-hide {
+      visibility: hidden;
+    }
+    @media screen and (min-width: 1280px) {
+      .fb-ebike-nav-bar.ebike_nav_show{
+        height: 56px;
+        border-bottom: 0.5px solid #e6e6e6;
+        overflow: unset!important;
+      }
+    }
+    @media screen and (max-width: 1279px) {
+      .fb-ebike-nav-bar.ebike_nav_show{
+        height: 40px;
+        border-bottom: 0.5px solid #e6e6e6;
+        overflow: unset!important;
+      }
+    }
+    @media screen and (min-width: 1280px){
+      .ebike-ebl-2-1 a{
+          display: inline-block;
+          font-size: 14px;
+          line-height: 14px;
+          cursor: pointer; 
+          margin-right: 24px;
+          color:#999;
+          font-weight: 700;
+      }
+      .ebike-ebl-2-1 a.ebike-eblt-select{
+          color: #121212;
+      }
+      .ebike-choose-imgdefalut-top{
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        border-radius: 16px;
+        margin-right: 16px;
+        cursor: pointer;
+      }
+      {% comment %} .ebike-choose-imgdefalut-top.ebike-choose-item-checked{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 20px;
+      } {% endcomment %}
+    }
+    .ebike-choose-imgdefalut-top.ebike-choose-item-checked .ebike-choose-icon-top{
+        display: inline-block;
+    }
+    .ebike-choose-item-checked .ebike-choose-icon {
+      display: inline-block;
+    }
+    @media screen and (max-width: 1279px){
+        .ebike-ebl-2-1{
+            width: 100%;
+        }
+        .fb_ebike_top_frame {
+          display: none;
+        }
+        .ebike-ebl-2-1 a{
+            display: block;
+            width: 100%;
+            {% comment %} border-bottom: 0.5px solid #e6e6e6; {% endcomment %}
+            line-height: 40px;
+            font-size: 12px;
+            color: #999;
+            line-height: 16px;
+            font-weight: 600;
+            {% comment %} margin: 6px 0px; {% endcomment %}
+            margin-bottom: 12px;
+        }
+        .ebike-ebl-2-1 a.ebike-eblt-select {
+          color: #121212;
+        }
+        .ebike-choose-imgdefalut-top{
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          text-align: center;
+          border-radius: 16px;
+          margin-right: 12px;
+          cursor: pointer;
+        }
+        .ebike-choose-imgdefalut-top.ebike-choose-item-checked{
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 20px;
+        }
+    }
+</style>

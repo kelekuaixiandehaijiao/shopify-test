@@ -1,0 +1,251 @@
+{% capture m_color_yuan %}m-color-yuan w-4 h-4 rounded-[50%] cursor-pointer relative{% endcapture %}
+{%- assign fb_lit_index = 1 -%}
+{%- assign fb_lit_index2 = 1 -%}
+{%- assign fb_boom_index = 1 -%}
+{%- assign fb_boom_index2 = 1 -%}
+{%- assign ebike_index = 1 -%}
+{%- assign ebike_index2 = 1 -%}
+{% capture css_color_box %} w-1/2 absolute bottom-2 left-[146px] fb-flex-x-start{% endcapture %}
+{% capture css_color_dom %} js-select-bikecolor-header h-5 w-5 rounded-full bg-white border border-solid border-white cursor-pointer fb-flex-xy-center mr-3{% endcapture %}
+{% capture css_color_item %} header-position-span inline-block w-4 h-4 rounded-full border border-solid{% endcapture %}
+{% capture css_header_w %} w-80{% endcapture %}
+{%- if section.settings.show_our_ebike -%}
+  {%- assign css_dom_left = ' -left-43' -%}
+{%- else -%}
+  {%- assign css_dom_left = ' left-0' -%}
+{%- endif -%}
+<div
+  class="DropdownMenu hidden absolute bg-white text-left border border-[#dddddd] top-full h-107 w-auto{{css_dom_left}} rounded-b-md"
+  aria-hidden="true"
+>
+  <div class="w-full flex justify-between items-start h-full">
+    {%- if section.settings.show_our_ebike -%}
+      <div class="h-full w-69 text-left py-8 pl-9">
+        <div class="w-full h-full border-r border-[#d9d9d9]">
+          <div class="text-h-20 text-black font-bold">
+            {{ section.settings.our_ebike_desc }}
+          </div>
+          <ul class="list-none">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'ebike_collection' -%}
+                  <li class="text-h-12-s mt-8 text-[rgba(18,18,18,0.50)]">
+                    <a
+                      class="font-medium hover:text-121212 cursor-pointer"
+                      href="{{ block.settings.bike_btn_url }}"
+                    >
+                      {{ block.settings.bike_name_desc }}
+                    </a>
+                  </li>
+              {%- endcase -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    {%- endif -%}
+    <div class="w-160 px-5 py-6 h-full">
+      <div class="seriesBox flex justify-between">
+        <div class="seriesdesleft fb-flex-y-center {{css_header_w}}">
+          <div class="seriesTitle text-h-12-s font-bold text-121212 uppercase">Exercise Bike</div>
+          <div class="menu_line w-10 h-[3px] bg-a1f200 opacity-80 mt-2 rounded-xl"></div>
+        </div>
+        <div class="seriesdesleft fb-flex-y-center {{css_header_w}}">
+          <div class="seriesTitle text-h-12-s font-bold text-121212 uppercase">2-in-1 eBike</div>
+          <div class="menu_line w-10 h-[3px] bg-a1f200 opacity-80 mt-2 rounded-xl"></div>
+        </div>
+      </div>
+      <div class="centerBox flex w-full justify-between mt-6">
+        <div class="seriesleft{{css_header_w}} flex flex-col justify-start border-r border-[#f6f6f6]">
+          <div class="header-bike-kinds left-box mb-10 relative h-30">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'goods' -%}
+                  {%- if block.settings.introcardtype == '1' -%}
+                    {%- assign bike_product = block.settings.bike_product -%}
+                    <div
+                      class="fb-header-card-box hidden {% if fb_lit_index == 1 %}fb-header-card-selected{% endif %} w-full  h-full flex items-start justify-start"
+                      data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}"
+                      data-url="{{ block.settings.bike_btn_url | default: bike_product.url }}"
+                    >
+                      {%- render 'header-item-product', block: block -%}
+                    </div>
+                    {%- assign fb_lit_index = fb_lit_index | plus: 1 -%}
+                  {%- endif -%}
+              {%- endcase -%}
+            {%- endfor -%}
+            <div class="{{css_color_box}}">
+              {%- for block in section.blocks -%}
+                {%- if block.settings.introcardtype == '1' -%}
+                  <div
+                    class="{{css_color_dom}}"
+                    {% if fb_lit_index2 == 1 %}
+                      style="border-color:{{ block.settings.bike_border_color}};"
+                    {% endif %}
+                    data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-'}}"
+                    data-border="{{ block.settings.bike_border_color}}"
+                  >
+                    <span
+                      class="{{css_color_item}}"
+                      style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};"
+                    >
+                    </span>
+                  </div>
+                  {%- assign fb_lit_index2 = fb_lit_index2 | plus: 1 -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+          <div class="header-bike-kinds left-box relative h-30">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'goods' -%}
+                  {%- if block.settings.introcardtype == '2' -%}
+                    {%- assign bike_product = block.settings.bike_product -%}
+                    <div
+                      class="fb-header-card-box hidden {% if fb_boom_index == 1 %}fb-header-card-selected{% endif %} w-full  h-full flex items-start justify-start"
+                      data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}"
+                      data-url="{{ block.settings.bike_btn_url | default: bike_product.url }}"
+                    >
+                      {%- render 'header-item-product', block: block -%}
+                    </div>
+                    {%- assign fb_boom_index = fb_boom_index | plus: 1 -%}
+                  {%- endif -%}
+              {%- endcase -%}
+            {%- endfor -%}
+            <div class="{{css_color_box}}">
+              {%- for block in section.blocks -%}
+                {%- if block.settings.introcardtype == '2' -%}
+                  <div
+                    class="{{css_color_dom}}"
+                    {% if fb_boom_index2 == 1 %}
+                      style="border-color:{{ block.settings.bike_border_color}};"
+                    {% endif %}
+                    data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-'}}"
+                  >
+                    <span
+                      class="{{css_color_item}}"
+                      style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};"
+                    >
+                    </span>
+                  </div>
+                  {%- assign fb_boom_index2 = fb_boom_index2 | plus: 1 -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+        {% comment %} ebike {% endcomment %}
+        <div class="seriesright{{css_header_w}} flex justify-end">
+          <div class="header-bike-kinds bottom-box mb-10 relative h-30 flex flex-col justify-start">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'goods' -%}
+                  {%- if block.settings.introcardtype == '3' -%}
+                    {%- assign variable_product = block.settings.bike_product -%}
+                    {%- for navimg_item in variable_product.variants -%}
+                      {%- if navimg_item.option1 == 'High-Step' -%}
+                        <div
+                          class="fb-header-card-box hidden {% if ebike_index == 1 %}fb-header-card-selected {% endif %} w-full flex items-start justify-start"
+                          data-name="{{ navimg_item.option2 | replace: ' ' , '-' }}"
+                          data-url="{{ navimg_item.url }}"
+                        >
+                          {%- render 'header-item-product', block: block, navimg_item: navimg_item -%}
+                        </div>
+                        {%- assign ebike_index = ebike_index | plus: 1 -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+              {%- endcase -%}
+            {%- endfor -%}
+            <div class="{{css_color_box}}">
+              {%- for block in section.blocks -%}
+                {%- assign variable_product = block.settings.bike_product -%}
+                {%- if block.settings.introcardtype == '3' -%}
+                  {%- for option in variable_product.options_with_values -%}
+                    {%- if option.name == 'Color' -%}
+                      {%- for value in option.values -%}
+                        <div
+                          class="{{css_color_dom}}"
+                          {% if ebike_index2 == 1 %}
+                            style="border-color:{{ block.settings.bike_border_color}};"
+                          {% endif %}
+                          data-name="{{ value | replace: ' ' , '-' }}"
+                          data-border="{{ block.settings.bike_border_color}}"
+                        >
+                          <span class="{{ css_color_item }} ebike-{{value | replace: ' ' , '-'}}"></span>
+                        </div>
+                        {%- assign ebike_index2 = ebike_index2 | plus: 1 -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="top-box flex justify-center mt-7 mx-2 w-full  h-8 bg-[#f9f9f9] rounded-3xl">
+        <div class="top-des flex items-center justify-start">
+          <img
+            class="w-5 h-5 mr-2.5"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_3a227573-f739-4a2c-b890-ec03db5afcab.png?v=1691560226"
+            alt=""
+            loading="lazy"
+          >
+          <div class="des text-h-12 text-121212 font-normal">Delivered in 3-7 business days</div>
+        </div>
+        <div class="top-des flex items-center justify-start ml-10">
+          <img
+            class="w-5 h-5 mr-2.5"
+            alt=""
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/2x_d0719a5c-350c-4e86-8553-0b4c0eda1894.png?v=1691560226"
+          >
+          <div class="des text-h-12 text-121212 font-normal">Give back to charity with every order</div>
+        </div>
+      </div>
+    </div>
+    {%- if section.settings.show_adv -%}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'adv_sapce' -%}
+            <a class="w-70 h-full px-6 py-6 fb-flex-xy-center relative cursor-pointer" href="{{block.settings.adv_btn_url}}">
+              <div class="w-58 h-95 rounded-md bg-808080 absolute left-6 top-6 overflow-hidden">
+                {%- if block.settings.adv_img_back -%}
+                  {% assign adv_img_back = block.settings.adv_img_back
+                    | img_url: '1x1'
+                    | replace: '_1x1.', '_{width}x.'
+                  %}
+                  <img
+                    data-src="{{ adv_img_back }}"
+                    alt="{{ block.settings.adv_img_back.alt | escape }}"
+                    data-sizes="auto"
+                    data-optimumx="1.2"
+                    data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                    class="Image--lazyLoad Image--fadeIn cursor-pointer w-full h-full object-cover rounded-md"
+                  >
+                  <span class="Image__Loader"></span>
+                {%- endif -%}
+              </div>
+              <div class="w-full h-full px-8 py-6 relative z-2" style="color:{{ block.settings.text_color }}">
+                <div class="text-12 mb-2.5 w-full font-semibold">
+                  {{ block.settings.adv_name1 }}
+                </div>
+                <div class="text-h-20 mb-2.5 w-full font-bold">
+                  {{ block.settings.adv_name2 }}
+                </div>
+                <div class="text-12 mb-2.5 w-full font-medium">
+                  {{ block.settings.adv_name3 }}
+                </div>
+              </div>
+            </a>
+        {%- endcase -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</div>
+<style>
+  .fb-header-card-selected {
+    display: flex;
+  }
+</style>

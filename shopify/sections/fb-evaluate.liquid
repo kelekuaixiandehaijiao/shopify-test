@@ -1,0 +1,49 @@
+
+{%- comment -%} {%- if product == blank and section.settings.product != blank -%}
+    {%- assign product = section.settings.product-%}
+{%- endif -%} {%- endcomment -%}
+{%- if section.settings.product != blank -%}
+    {%- assign newproduct = section.settings.product-%}
+{%- else -%}
+    {%- assign newproduct = product-%}
+{%- endif -%}
+<div id="section-{{ section.id }}" class="fb-evalute-class">
+
+
+<!-- Stamped - Begin main-widget -->
+<div id="stamped-main-widget" class="stamped-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: " ? ", " % 3F" | replace: "& "," % 26"}}" data-description="{{ product.description | escape }}" data-product-sku="{{product.handle}}" data-product-type="{{product.type}}">  </div>
+<!-- Stamped - End main-widget -->
+
+</div>
+{% schema %}
+  {
+    "name": "FbEvaluate",
+    "presets": [
+      {
+        "name": "fb-evaluate",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "fb_evaluate",
+            "label": "show evaluate",
+            "default": true
+        },
+        {
+            "type": "product",
+            "id": "product",
+            "label": "Product",
+            "info": "If you do not select, the default is the main product of the current page"
+        }
+    ]
+  }
+{% endschema %}
+<style>
+ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-container {
+   max-width: 90%;
+ }
+
+</style>

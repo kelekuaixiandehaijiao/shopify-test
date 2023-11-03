@@ -1,0 +1,169 @@
+{%- if navimg_item -%}
+  {%- assign bike_product = navimg_item -%}
+{%- else -%}
+  {%- assign bike_product = block.settings.bike_product -%}
+{%- endif -%}
+
+{%- capture has_bike_default_url -%}
+{%- render 'customer-price-control', cpc_product: bike_product, type: 'bikeDefaultPdpUrl' -%}
+{%- endcapture -%}
+{%- if block.settings.bike_desc_text != blank -%}
+  <div
+    class="w-full absolute right-0 z-1 text-12 text-[#12121280] text-right fb-md:top-[6px]"
+  >
+    {{ block.settings.bike_desc_text }}
+  </div>
+{%- endif -%}
+  {%- if settings.percentage_off  -%}  
+    {%- assign product1 =  block.settings.bike_product  -%}
+      {%- capture percentage_off -%}
+      {%- render 'customer-price-control', type:'offInt', cpc_product: product1 -%}
+      {%- endcapture -%}
+      {%- capture origin_price -%}
+      {%- render 'customer-price-control', type:'originInt', cpc_product: product1 -%}
+      {%- endcapture -%}
+      {%- assign result = percentage_off | times: 100 | divided_by: origin_price | round -%}
+  {%- else -%}
+   {%- assign result =  null  -%}
+  {% endif %}
+   {%- if settings.num_off  -%}  
+      {%- assign product1 =  block.settings.bike_product  -%}
+      {%- capture product_off -%}
+      {%- render 'customer-price-control', type:'offInt', cpc_product: product1 -%}
+      {%- endcapture -%}
+      {%- assign num_off =  product_off  -%}
+   {%- else -%}
+    {%- assign num_off =  '0'  -%}
+   {% endif %}
+   {%- if result  -%}
+    <div class="w-26 h-6 absolute -top-4 flex items-center">
+      <img class="w-full h-full z-0 absolute -top-4 object-cover" 
+      src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1000004651_2x_b07cb53a-1d24-431c-906a-cead1c9400aa.png?v=1698138899"
+      alt="{{ item.image.alt | escape }}">
+      <div class="text-xs relative left-8 z-3 font-bold  mb-8">{{result }}% OFF</div>
+    </div>
+  {% endif %}
+  {%- if num_off !='0' -%}
+    <div class="w-26 h-6 absolute -top-4 flex items-center object-cover">
+      <img class="w-full h-full z-0 absolute -top-4" 
+        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1000004651_2x_b07cb53a-1d24-431c-906a-cead1c9400aa.png?v=1698138899"
+        alt="{{ item.image.alt | escape }}">
+      <div class="text-xs left-8 z-3 relative font-bold mb-8">${{num_off}} OFF</div>
+    </div>
+  {% endif %}
+  <div class="w-26 h-6 absolute -top-4 flex items-center">
+    {%- if settings.on_sale -%} 
+    <img class="w-full h-full z-0 absolute -top-4 object-cover" 
+      src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_1000004651_2x_b07cb53a-1d24-431c-906a-cead1c9400aa.png?v=1698138899"
+      alt="{{ item.image.alt | escape }}">
+      <div class="text-xs relative left-8 z-3 font-bold mb-8">ON SALE</div>
+    {% endif %}
+  </div>
+  <!-- sold out logo -->
+  {%- if has_bike_default_url != '' -%}
+  <img class="absolute top-62 fb-sm:top-65 left-30 z-2 w-24 h-6"
+  src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Group_51_2x_6a7c19b6-c8e5-46d1-95ee-399c9b9d3566.png?v=1698288898"
+  alt="{{ item.image.alt | escape }}">
+  {% endif %}
+<a
+  class="
+    fic-card-img
+    block relative cursor-pointer w-full h-[260px] text-center
+    fb-md:h-[280px] fb-md:leading-[280px]
+  "
+  {% if has_bike_default_url != '' %}
+    href="{{ has_bike_default_url }}"
+  {% else %}
+    href="{{ block.settings.bike_btn_url | default: bike_product.url }}"
+  {% endif %}
+>
+  {%- if block.settings.bike_img_pc == blank -%}
+    {% assign imgdefault = bike_product.featured_media %}
+  {%- else -%}
+    {% assign imgdefault = block.settings.bike_img_pc %}
+  {%- endif -%}
+    {{
+      imgdefault
+      | image_url: width: 750
+      | image_tag:
+        loading: 'lazy',
+        sizes: '(min-width: 1200px) 600px, (min-width: 640px) calc((100vw - 80px) / 2), calc((100vw - 40px) / 2)',
+        class: 'h-auto w-65 object-center inline-block fb-md:w-70',
+        widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+        alt: imgdefault.alt 
+    }}
+</a>
+<div
+  class="
+    fic-card-color w-full h-5 my-[10px]
+    fb-sm:h-[24px] fb-md:my-[8px]
+  "
+></div>
+<div class="w-full flex justify-between items-start">
+  <div class="w-1/2 flex justify-between items-start flex-col text-left">
+    <h2
+      class="
+        font-bold text-[20px] leading-5 text-121212
+        fb-md:text-[24px] fb-md:leading-6
+      "
+    >
+      {{ block.settings.bike_name_1 | default: section.settings.bike_bike }}
+    </h2>
+    <span class="text-12 font-medium text-[#12121280] mt-[6px]">{{ block.settings.bike_name_desc }} </span>
+  </div>
+  <div
+    class="fic-card-rate pl-[33px] w-1/2 relative"
+  >
+    {%- render 'fb-pdp-star', product: block.settings.bike_product -%}
+  </div>
+</div>
+<div
+  class="
+    w-full flex items-center text-left justify-between divide-x mt-2 mb-[16px]
+    fb-sm:mt-5 fb-sm:mb-6
+  "
+>
+  <div class="flex items-center text-left w-1/2">
+    <div
+      class="
+        text-h-24 font-bold text-00cc45 fb-sm:text-3xl
+        fb-md:text-[28px] fb-md:leading-[28px]
+      "
+    >
+      {%- render 'customer-price-control', type: 'sale', cpc_product: bike_product -%}
+    </div>
+    {%- capture origin_price -%}
+        {%- render 'customer-price-control', type:'origin', cpc_product: bike_product -%}
+        {%- endcapture -%}
+    {%- if origin_price != blank -%}
+      <div class="flex flex-col items-start justify-between ml-[6px]">
+        <div class="text-00cc45 text-h-12-s font-medium">
+          {% render 'customer-price-control', type: 'off', cpc_product: bike_product %} OFF
+        </div>
+        <div
+          class="
+            font-medium line-through text-h-12-s mt-[2px] text-999999
+            fb-md:mt-1
+          "
+        >
+          {{ origin_price }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+  <div class="w-1/2 flex flex-col items-start divide-x- justify-between pl-[33px]">
+    <div class="text-h-12-s text-999999 font-medium">Pay as low as</div>
+    <div class="font-semibold text-h-18 text-121212 mt-[6px] fb-md:text-[20px]">
+      ${% render 'customer-price-control', type: 'mo', cpc_product: block.settings.bike_product %}/MO<sup>1</sup>
+    </div>
+  </div>
+</div>
+<a
+  class="
+    w-full block h-11 text-center leading-[44px] uppercase text-h-14 bg-black text-white font-bold rounded-[4px] 
+    fb-md:h-[44px]  fb-md:leading-[44px] fb-md:rounded-md	
+  "
+  href="{{ block.settings.bike_btn_url | default: bike_product.url }}"
+>
+  {{ block.settings.bike_btn_desc }}
+</a>

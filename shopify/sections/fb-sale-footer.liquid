@@ -1,0 +1,66 @@
+{%- assign sale_des_index = 1 -%}
+<div
+      class="fb-sale-footer w-full relative  px-4 h-30 bg-white fb-sm:px-0 fb-sm:pt-0 fb-sm:flex-row  flex fb-sm:items-center fb-sm:justify-center">
+      <div class="flex flex-row items-center w-full fb-sm:w-auto justify-between  fb-sm:justify-between fb-sm:px-4">
+            {%- for block in section.blocks -%}
+            <div class="flex flex-col  items-center justify-center   fb-sm:flex-row fb-sm:even:mx-20">
+                  {% assign pc_icon_img = block.settings.pc_icon_img | img_url: '' %}
+                  {% assign mb_icon_img = block.settings.mb_icon_img | img_url: '' %}
+                  <img src="{{ pc_icon_img }}" class="w-11 h-11 mr-3 hidden fb-sm:block" loading="lazy" alt="{{ item.image.alt | escape }}">
+                  <img src="{{ mb_icon_img }}" class="w-5 h-5 mb-2 fb-sm:hidden" loading="lazy" alt="{{ item.image.alt | escape }}">
+
+                  <div class="font-medium fb-sm:text-base fb-sm:font-semibold text-xs text-black ">
+                        {{block.settings.icon_info}}
+                  </div>
+            </div>
+            {%- assign sale_des_index = sale_des_index | plus: 1 -%}
+            {% endfor %}
+      </div>
+
+</div>
+<script>
+      $(document).ready(function () {
+            if ($(".Footer").length) {
+                  $(".Footer").css({
+                        "margin-top": 0
+                  })
+            }
+
+      })
+
+</script>
+
+{% schema %}
+{
+"name": "FbSaleFooter",
+"presets": [
+{
+"name": "fb-sale-footer",
+"category": "Fb Sections",
+"blocks": []
+}
+],
+"blocks": [
+{
+"type": "TextBlock",
+"name": "imgBlock",
+"settings": [
+{
+"type": "image_picker",
+"id": "pc_icon_img",
+"label": "PC Icon img"
+},
+{
+"type": "image_picker",
+"id": "mb_icon_img",
+"label": "MB Icon img"
+},
+{
+"type": "text",
+"id": "icon_info",
+"label": " Icon Info"
+}
+]
+}]
+}
+{% endschema %}

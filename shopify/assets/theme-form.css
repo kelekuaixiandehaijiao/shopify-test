@@ -1,0 +1,404 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Basic form
+ * ----------------------------------------------------------------------------
+ */
+ .Form {
+  width: 100%;
+}
+
+.Form__Item {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.Form__Input:focus,
+.Form__Textarea:focus,
+.spr-form-input-text:focus,
+.spr-form-input-email:focus,
+.spr-form-input-textarea:focus {
+  border-color: rgba(var(--text-color-rgb), 0.8);
+  outline: none;
+}
+
+.Form__Input::-moz-placeholder,
+.Form__Textarea::-moz-placeholder,
+.spr-form-input-text::-moz-placeholder,
+.spr-form-input-email::-moz-placeholder,
+.spr-form-input-textarea::-moz-placeholder {
+  color: #888888;
+}
+
+.Form__Input:-ms-input-placeholder,
+.Form__Textarea:-ms-input-placeholder,
+.spr-form-input-text:-ms-input-placeholder,
+.spr-form-input-email:-ms-input-placeholder,
+.spr-form-input-textarea:-ms-input-placeholder {
+  color: #888888;
+}
+
+.Form__Input::placeholder,
+.Form__Textarea::placeholder,
+.spr-form-input-text::placeholder,
+.spr-form-input-email::placeholder,
+.spr-form-input-textarea::placeholder {
+  color: #888888;
+}
+
+.Form__FloatingLabel {
+  position: absolute;
+  bottom: calc(100% - 8px);
+  left: 10px;
+  padding: 0 5px;
+  line-height: normal;
+  color: #888888;
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));
+  opacity: 0;
+  background: rgba(var(--background-rgb), 0);
+  pointer-events: none;
+  transform: translateY(3px);
+  transition: all 0.3s ease-in-out;
+}
+
+.Form__Input:not(:-moz-placeholder-shown)~.Form__FloatingLabel,
+.Form__Textarea:not(:-moz-placeholder-shown)~.Form__FloatingLabel {
+  opacity: 1;
+  background: var(--background);
+  transform: translateY(0);
+}
+
+.Form__Input:not(:-ms-input-placeholder)~.Form__FloatingLabel,
+.Form__Textarea:not(:-ms-input-placeholder)~.Form__FloatingLabel {
+  opacity: 1;
+  background: var(--background);
+  transform: translateY(0);
+}
+
+.Form__Input:not(:placeholder-shown)~.Form__FloatingLabel,
+.Form__Textarea:not(:placeholder-shown)~.Form__FloatingLabel {
+  opacity: 1;
+  background: var(--background);
+  transform: translateY(0);
+}
+
+.Form__Checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.Form__Checkbox~label::before {
+  display: inline-block;
+  content: '';
+  width: 1em;
+  height: 1em;
+  margin-right: 10px;
+  border: 1px solid var(--border-color);
+  vertical-align: -2px;
+}
+
+.Form__Checkbox~svg {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+  will-change: transform;
+}
+
+.Form__Checkbox:checked~label::before {
+  border-color: var(--text-color);
+}
+
+.Form__Checkbox:checked~svg {
+  transform: scale(1);
+}
+
+.Form__Alert,
+.spr-form-message {
+  margin-bottom: 20px;
+}
+
+.Form__Submit {
+  display: block;
+  margin-top: 12px;
+}
+
+.Form__Label,
+.spr-form-label {
+  display: block;
+  padding-bottom: 8px;
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 11px));
+  text-transform: uppercase;
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  letter-spacing: 0.2em;
+  line-height: normal;
+}
+
+.Form--small .Form__Input,
+.Form--small .Form__Textarea {
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 13px));
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.Form--spacingTight .Form__Item {
+  margin-bottom: 15px;
+}
+
+.Form--spacingTight .Form__Alert {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 641px) {
+
+  .Form__Item,
+  .Form__Alert {
+    margin-bottom: 30px;
+  }
+
+  .Form__Group {
+    display: flex;
+  }
+
+  .Form__Group>.Form__Item {
+    flex: 1;
+  }
+
+  .Form__Group> :nth-child(2) {
+    margin-left: 30px;
+  }
+
+  .Form--spacingTight .Form__Group> :nth-child(2) {
+    margin-left: 15px;
+  }
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Form elements
+ * ----------------------------------------------------------------------------
+ */
+
+.Form__Header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.Form__Hint {
+  margin: 24px 0 0 0;
+}
+
+.Form__Hint:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.Form__Hint--center {
+  text-align: center;
+}
+
+.Form__ItemHelp {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));
+  color: var(--text-color-light);
+  transform: translateY(-50%);
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Styled select
+ * ----------------------------------------------------------------------------
+ */
+select::-ms-expand {
+  display: none;
+}
+
+.Select {
+  position: relative;
+  color: currentColor;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.Select svg {
+  position: absolute;
+  line-height: normal;
+  pointer-events: none;
+  vertical-align: baseline;
+  fill: currentColor;
+}
+
+.Select select {
+  /* Disable built-in styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 0;
+  line-height: normal;
+  /* Remove the ugly blue background on IE when a value is selected */
+}
+
+.Select select:focus::-ms-value {
+  background: var(--background);
+  color: var(--text-color);
+}
+
+/* Make sure to have something easy to read... */
+.Select option {
+  background: white;
+  color: black;
+}
+
+.Select--primary::after {
+  content: '';
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  height: calc(100% - 2px);
+  width: 55px;
+  background: linear-gradient(to right, rgba(var(--background-rgb), 0), rgba(var(--background-rgb), 0.7) 20%, var(--background) 40%);
+  pointer-events: none;
+}
+
+.Select--primary select {
+  width: 100%;
+  height: 45px;
+  padding-left: 14px;
+  padding-right: 28px;
+  border: 1px solid var(--border-color);
+  background: var(--background);
+}
+
+.Select--primary select:active,
+.Select--primary select:focus {
+  border-color: var(--text-color);
+  outline: none;
+}
+
+.Select--primary svg {
+  top: calc(50% - 5px);
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  z-index: 1;
+}
+
+.Select--transparent select {
+  padding-right: 15px;
+  background: transparent;
+  border: none;
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  font-size: inherit;
+  text-transform: uppercase;
+}
+
+.features--heading-uppercase .Select--transparent select {
+  letter-spacing: 0.2em;
+}
+
+.Select--transparent svg {
+  top: calc(50% - 3px);
+  right: 0;
+  height: 6px;
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Select button (emulate a select button without the actual select)
+ * ----------------------------------------------------------------------------
+ */
+
+.SelectButton {
+  position: relative;
+  color: currentColor;
+  padding: 2px 18px 2px 0;
+  background: transparent;
+  border: none;
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  text-transform: uppercase;
+}
+
+.features--heading-uppercase .SelectButton {
+  letter-spacing: 0.2em;
+}
+
+.SelectButton svg {
+  position: absolute;
+  top: calc(50% - 3px);
+  right: 0;
+  height: 6px;
+}
+
+/*
+ * INPUT PREFIX (allow to create small input with a prefixed value)
+ */
+
+.input-prefix {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.input-prefix__field {
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: textfield;
+  min-width: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: end;
+}
+
+.input-prefix__field::-webkit-outer-spin-button,
+.input-prefix__field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-prefix__field::-moz-placeholder {
+  color: var(--text-color-light);
+}
+
+.input-prefix__field:-ms-input-placeholder {
+  color: var(--text-color-light);
+}
+
+.input-prefix__field::placeholder {
+  color: var(--text-color-light);
+}
+@media screen and (min-width: 641px) {
+
+  .Form__Input,
+  .Form__Textarea,
+  .spr-form-input-text,
+  .spr-form-input-email,
+  .spr-form-input-textarea {
+    -webkit-appearance: none;
+    display: block;
+    padding: 12px 14px;
+    border-radius: 0;
+    color: #888888;
+    border: 1px solid #cccccc;
+    width: 100%;
+    line-height: normal;
+    resize: none;
+    transition: border-color 0.1s ease-in-out;
+    background: #ffffff;
+  }
+}

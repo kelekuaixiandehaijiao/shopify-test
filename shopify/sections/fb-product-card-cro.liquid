@@ -1,0 +1,155 @@
+<div
+  id="fb-product-card"
+  class="fb-product-card js-prodcutpage-overview pb-10 bg-f5f5f5 flex flex-col w-full overflow-hidden fb-sm:hidden"
+  data-type="productSwiperCard"
+>
+  <div class="max-w-xs self-center pb-6 pt-10 text-center text-20 font-bold uppercase text-121212">
+    {{ section.settings.fpc_big_title }}
+  </div>
+  <div class="fpc-box-ul fpc-box-ul-mob flex h-31r w-full items-center">
+    <div class="fbcardproductSwiperMob h-full w-full">
+      <div class="swiper-wrapper h-full w-full px-5">
+        {%- for block in section.blocks -%}
+          <div
+            class="swiper-slide mr-4 last:mr-0 fpc-box_item relative h-full w-70 overflow-hidden{% if block.settings.selector_order == '3'%} fpb-pc-allcard {% endif %}"
+          >
+            <div class="h-full w-full rounded-2xl {% if block.settings.selector_order != '3'%} bg-d1d1d1 {% endif %}">
+              {%- if forloop.index == 1 -%}
+                <video
+                  class="Image--lazyLoad js_product_mob_video h-full w-full rounded-2xl object-cover"
+                  data-index="{{ forloop.index }}"
+                  x-webkit-airplay="allow"
+                  webkit-playsinline="true"
+                  playsinline="true"
+                  autoplay="true"
+                  muted="muted"
+                  loop="loop"
+                  data-src="{{ block.settings.fpc_video_mob }}"
+                ></video>
+                {%- else -%}
+                <video
+                  class="Image--lazyLoad js_product_mob_video h-full w-full rounded-2xl object-cover"
+                  data-index="{{ forloop.index }}"
+                  x-webkit-airplay="allow"
+                  webkit-playsinline="true"
+                  playsinline="true"
+                  muted="muted"
+                  loop="loop"
+                  data-src="{{ block.settings.fpc_video_mob }}"
+                ></video>
+              {%- endif -%}
+            </div>
+            <div class=" absolute left-0 top-0 px-5 pt-5 z-1 h-full">
+              <div class=" text-20 font-bold uppercase" style="color: {{ block.settings.fpc_video_title_color }}">
+                {{ block.settings.fpc_video_title }}
+              </div>
+              <div class=" mt-4 text-12 " style="color: {{ block.settings.fpc_video_desc_color }}">
+                {{ block.settings.fpc_video_desc }}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+        
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .fpb-pc-allcard {
+    background: linear-gradient(135deg, #808793 0%, #3b414b 53%, #17181c 100%);
+    border-radius: 16px;
+  }
+  .fpb-pc-allcard video {
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 13px;
+    left: 0;
+    height: auto;
+    width: 100%;
+    padding: 30px 0px;
+    border-radius: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FbProductCard-Mobile",
+  "presets": [
+    {
+      "name": "fb-product-card-mobile",
+      "category": "Fb Sections"
+    }
+  ],
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "fpc_big_title",
+      "label": "Card Big title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_and_text",
+      "name": "video and text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "selector_order",
+          "label": "Selector Order",
+          "options": [
+            {
+              "value": "1",
+              "label": "left video and right text"
+            },
+            {
+              "value": "2",
+              "label": "right video and pc text"
+            },
+            {
+              "value": "3",
+              "label": "Personal Trainer"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "url",
+          "id": "fpc_video_pc",
+          "label": "Pc Video Url"
+        },
+        {
+          "type": "url",
+          "id": "fpc_video_mob",
+          "label": "Mob Video Url"
+        },
+        {
+          "type": "color",
+          "id": "fpc_video_title_color",
+          "label": "MOB Title color",
+          "default": "#fff"
+        },
+        {
+          "type": "richtext",
+          "id": "fpc_video_title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "fpc_video_desc_color",
+          "label": "MOB desc color",
+          "default": "#fff"
+        },
+        {
+          "type": "richtext",
+          "id": "fpc_video_desc",
+          "label": "Desc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

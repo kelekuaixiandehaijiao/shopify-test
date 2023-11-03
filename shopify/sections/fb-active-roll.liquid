@@ -1,0 +1,238 @@
+<div
+  class="fb-activeroll-section w-full relative mt-6 pb-10 px-5 fb-sm:mt-8 fb-sm:pb-15 fb-sm:px-10 fb-md:mt-10 fb-md:pb-[80px] fb-md:px-0"
+  id="section-{{ section.id }}"
+  data-type="activeroll"
+>
+  <div class="fb-activeroll-content fbActiveRollSwiper w-full overflow-hidden relative h-[266px] fb-sm:h-[314px] fb-md:h-[405px]  mx-auto fb-md:max-w-75r">
+    <div
+      class="
+          swiper-wrapper w-full flex justify-start space-x-[20px] h-[238px]
+          fb-sm:space-x-[32px] fb-sm:h-71
+          fb-md:space-x-[39px] fb-md:h-[367px]
+          overflow-hidden
+      "
+    >
+      <div
+        class="
+          fb-activeroll_item swiper-slide h-full w-[135px]
+          overflow-hidden rounded-lg
+          fb-sm:w-40 fb-sm:rounded-[10px]
+          fb-md:w-[207px] fb-md:rounded-xl
+        "
+      >
+        {% assign firstImgPc = section.settings.first_img_pc | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}  
+        <div class="h-full w-full relative">
+          <img class="Image--lazyLoad Image--fadeIn activeroll-img-block2 h-full w-full object-center" 
+            data-src="{{ firstImgPc }}" 
+            data-sizes="auto"
+            data-optimumx="1.2"
+            alt="{{ section.settings.first_img_pc.alt }}"
+            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+          >
+          <span class="Image__Loader"></span>
+        </div>
+      </div>
+      {%- for block in section.blocks -%}
+        <div
+          class="
+            fb-activeroll_item js-activeroll-box swiper-slide relative w-[135px]
+            overflow-hidden rounded-lg
+            fb-sm:w-40 fb-sm:rounded-[10px]
+            fb-md:w-[207px] fb-md:rounded-xl
+          "
+          data-showvideo="false"
+          data-length="{{ forloop.length }}"
+          data-index="{{ forloop.index }}"
+        >
+          {% assign imgPiker = block.settings.activeroll_img | img_url: '1x1' | replace: '_1x1.','_{width}x.' %}
+          <div class="js-activeimg-box relative z-2 h-full w-full">
+            <img
+              data-src="{{imgPiker}}"
+              alt="{{  block.settings.activeroll_img.alt | escape }}"
+              data-sizes="auto"
+              data-optimumx="1.2"
+              data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+              class="Image--lazyLoad Image--fadeIn swiperImg h-auto w-full object-center"
+              alt="{{ imgPiker.alt }}"
+            >
+            <div
+              class="
+                fb-img-box-active absolute left-1/2 top-1/2 z-2 -ml-5 -mt-5
+                h-10 w-10 cursor-pointer  bg-transparent
+                fb-md:ml-[-24px] fb-md:mt-[-24px] fb-md:h-12 fb-md:w-12
+              "
+            >
+              <img
+                src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/playcircle.png?v=1652856289"
+                class="js-activeroll-icon-btn h-full w-full"
+                loading="lazy"
+                alt="playcircle logo"
+              >
+            </div>
+          </div>
+          <div
+            class="
+              js-activevideo-box absolute left-0 top-0 h-full w-full overflow-hidden
+              rounded-lg
+              fb-sm:rounded-[10px]
+              fb-md:rounded-xl
+            "
+            data-media-type="video"
+          >
+            <video
+              class="Image--lazyLoad js-active-video hidden h-full w-full fb-md:block"
+              x-webkit-airplay="allow"
+              webkit-playsinline="true"
+              playsinline="true"
+              controls="controls"
+              data-index="{{ forloop.index }}"
+              data-src="{{ block.settings.video_url_mobile }}"
+            ></video>
+            <video
+              class="Image--lazyLoad js-active-video h-full  w-full fb-md:hidden"
+              x-webkit-airplay="allow"
+              webkit-playsinline="true"
+              playsinline="true"
+              muted="muted"
+              controls="controls"
+              data-index="{{ forloop.index }}"
+              data-src="{{ block.settings.video_url_pc }}"
+            ></video>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="swiper-scrollbar left-0 h-1 w-full bg-[rgba(0,0,0,0.06)]"></div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbActiveRoll",
+  "presets": [
+    {
+      "name": "fb-active-roll",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "activeroll_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "activeroll_mobile_color",
+      "label": "Background Mobile color",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_img_pc",
+      "label": "background Pc Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_img_mobile",
+      "label": "background Mobile Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "first_img_pc",
+      "label": "First Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "activerollImgBlock",
+      "name": "activerollImgBlock",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url_pc",
+          "label": "PC Video Url"
+        },
+        {
+          "type": "url",
+          "id": "video_url_mobile",
+          "label": "Mobile Video Url"
+        },
+        {
+          "type": "image_picker",
+          "id": "activeroll_img",
+          "label": "Image Pc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+   {%- if section.settings.background_img_pc != blank -%}
+      {% assign image_pc_url = section.settings.background_img_pc | img_url: '1000x' %}
+      #section-{{ section.id }} {
+         background: url("{{ image_pc_url }}") no-repeat;
+         background-size: 100% 100%;
+      }
+      #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+          background: rgba(255, 255, 255, 0.15);
+      }
+       #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+         background: rgba(255, 255, 255, 0.3);
+      }
+  {%- else -%}
+      #section-{{ section.id }} {
+          background-color: {{ section.settings.activeroll_color }};
+      }
+      #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+          background: rgba(0, 0, 0, 0.06);
+      }
+       #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+         background: rgba(0, 0, 0, 0.15);
+      }
+  {%- endif -%}
+
+  @media only screen and (max-width: 768px){
+      {%- if section.settings.background_img_mobile != blank -%}
+          {% assign image_mobile_url = section.settings.background_img_mobile | img_url: '800x'  %}
+          #section-{{ section.id }} {
+              background: url("{{ image_mobile_url }}") no-repeat;
+              background-size: 100% 100%;
+          }
+          #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+              background: rgba(255, 255, 255, 0.15);
+          }
+          #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+              background: rgba(255, 255, 255, 0.3);
+          }
+      {%- else -%}
+          #section-{{ section.id }} {
+              background-color: {{ section.settings.activeroll_mobile_color }};
+          }
+           #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar{
+              background: rgba(0, 0, 0, 0.06);
+          }
+          #section-{{ section.id }} .fb-activeroll-content .swiper-scrollbar-drag{
+              background: rgba(0, 0, 0, 0.15);
+          }
+      {%- endif -%}
+  }
+    .fb-activeroll-content .swiper-scrollbar{
+        left: 0;
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        z-index: 2;
+        cursor: pointer;
+    }
+    .fb-activeroll-content .swiper-scrollbar-drag{
+        border-radius: 3px;
+    }
+    @media only screen and (max-width: 639px){
+        .fb-activeroll-content .swiper-scrollbar{
+            height: 3px;
+        }
+    }
+</style>

@@ -1,0 +1,837 @@
+<div class="fb-exercise-bikes" id="section-{{ section.id }}" data-freebeat-type="{{ section.settings.freebeat_type }}">
+    {%- assign country_code_var = localization.country.iso_code | downcase -%}
+    <div class="exercies-bike-block">
+        <div class="exercies-bike-mob-title fb-exeries-mob-show">
+            <h3>{{ section.settings.exerise_bike_kinds1 }}</h3>
+        </div>
+        <div class="exercies-bike-conetent">
+            {% comment %}  lit bike {% endcomment %}
+            <div class="exercies-bike-kinds">
+                {%- assign lit_index = 1 -%}
+                {%- assign lit_index2 = 1 -%}
+                <div class="exercies-bike-kinds-title fb-exeries-pc-show">
+                    <h3>{{ section.settings.exerise_bike_kinds1 }}</h3>
+                </div>
+                {%- for block in section.blocks  -%}
+                    {%- if block.settings.exerise_type == '1' -%}
+                        <div class="exbb-box exbb-common-show {% if lit_index == 1 %}exbb-selected{% endif %}" 
+                            data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}">
+                            {%- render 'fb-exercise-item', block: block -%}
+                        </div>  
+                        {%- assign lit_index = lit_index | plus: 1 -%} 
+                    {%- endif -%}
+                {%- endfor -%}
+                <div class="exercies-color-position">
+                    {%- for block in section.blocks  -%}
+                        {%- if block.settings.exerise_type == '1' -%}
+                            <div class="ec-position-item js-select-bikecolor" 
+                                {% if lit_index2 == 1 %}style="border-color:{{ block.settings.bike_border_color}};"{% endif %} 
+                                data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-'}}"
+                            >
+                                <span class="ec-position-span" 
+                                    style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};">
+                                </span>
+                            </div>
+                            {%- assign lit_index2 = lit_index2 | plus: 1 -%} 
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            </div>
+            {% comment %} boom bike {% endcomment %}
+            <div class="exercies-bike-kinds">
+                {%- assign boom_index = 1 -%}
+                {%- assign boom_index2 = 1 -%}
+                <div class="exercies-bike-kinds-title fb-exeries-pc-show">
+                   <h3>{{ section.settings.exerise_bike_kinds2 }}</h3>
+                </div>
+                {%- for block in section.blocks  -%}
+                    {%- if block.settings.exerise_type == '2' -%}
+                        <div class="exbb-box exbb-common-show {% if boom_index == 1 %}exbb-selected{% endif %}" 
+                            data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}">
+                            {%- render 'fb-exercise-item', block: block -%}
+                        </div> 
+                        {%- assign boom_index = boom_index | plus: 1 -%}   
+                    {%- endif -%}
+                {%- endfor -%}
+                <div class="exercies-color-position">
+                    {%- for block in section.blocks  -%}
+                        {%- if block.settings.exerise_type == '2' -%}
+                            <div class="ec-position-item js-select-bikecolor" {% if boom_index2 == 1 %}style="border-color:{{ block.settings.bike_border_color}};"{% endif %} 
+                                data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}">
+                                <span class="ec-position-span" style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};"></span>
+                            </div>
+                            {%- assign boom_index2 = boom_index2 | plus: 1 -%}   
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            </div>
+            <div class="exercies-bike-line fb-exeries-mob-show">
+            </div>
+            <div class="exercies-bike-mob-title exbkt-mob fb-exeries-mob-show">
+                <h3>{{ section.settings.exerise_bike_kinds3 }}</h3>
+            </div>
+            {% comment %} ebike {% endcomment %}
+            <div class="exercies-bike-kinds">
+                {%- assign ebike_index = 1 -%}
+                {%- assign ebike_index2 = 1 -%}
+                <div class="exercies-bike-kinds-title fb-exeries-pc-show">
+                    <h3>{{ section.settings.exerise_bike_kinds3 }}</h3>
+                </div>
+                {%- for block in section.blocks  -%}
+                    {%- if block.settings.exerise_type == '3' -%}
+                        {%- assign variable_product = block.settings.exerise_product -%}
+                        {%- for navimg_item in variable_product.variants -%}
+                            {%- if navimg_item.option1 == "High-Step" -%}
+                                <div class="exbb-box exbb-common-show {% if ebike_index == 1 %}exbb-selected{% endif %}" 
+                                    data-name="{{ navimg_item.option2 | replace: ' ' , '-' }}">
+                                    {%- render 'fb-exercise-item', block: block, navimg_item: navimg_item -%}
+                                </div>   
+                                {%- assign ebike_index = ebike_index | plus: 1 -%}  
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                <div class="exercies-color-position">
+                    {%- for block in section.blocks  -%}
+                        {%- assign variable_product = block.settings.exerise_product -%}
+                        {%- if block.settings.exerise_type == '3' -%}
+                            {%- for option in variable_product.options_with_values -%}
+                                {%- if option.name == 'Color' -%}
+                                    {%- for value in option.values -%}
+                                        <div class="ec-position-item js-select-bikecolor"
+                                            {% if ebike_index2 == 1 %}style="border-color:{{ block.settings.bike_border_color}};"{% endif %}
+                                            data-name="{{ value | replace: ' ' , '-' }}">
+                                            <span class="ec-position-span ebike-{{value | replace: ' ' , '-'}}"></span>
+                                        </div> 
+                                        {%- assign ebike_index2 = ebike_index2 | plus: 1 -%}   
+                                    {%- endfor -%} 
+                                {%- endif -%}
+                            {%- endfor -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "FbExerciseBike",
+    "presets": [
+      {
+          "name": "fb-exercise-bikes",
+          "category": "My Sections",
+          "blocks": []
+      }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "exerise_bike",
+            "label": "Lit Bike",
+            "default": "Lit Bike"
+        },
+        {
+            "type": "text",
+            "id": "exerise_bike_kinds1",
+            "label": "Lit Bike Title",
+            "default": "Exercise Bike"
+        },
+        {
+            "type": "text",
+            "id": "exerise_bike_kinds2",
+            "label": "Boom Bike Ttle",
+            "default": "Exercise Bike"
+        },
+        {
+            "type": "text",
+            "id": "exerise_bike_kinds3",
+            "label": "Ebike Title 3",
+            "default": "2-in-1 eBike"
+        },
+        {
+            "type": "text",
+            "id": "exerise_bike_icon",
+            "label": "Lit Bike Icon",
+            "default": "PREMIUM DESIGN"
+        },
+        {
+            "type": "richtext",
+            "id": "exerise_bike_desc",
+            "label": "Lit Bike Desc",
+            "default": "<p>Raw performance and sleek designs add grace and modernity to your home.</p>"
+        }
+       
+    ],
+    "blocks": [
+        {
+            "type": "goods",
+            "name": "goods",
+            "settings": [ 
+                {
+                    "type": "select",
+                    "id": "exerise_type",
+                    "label": "Bike Type",
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "lit-bike"
+                        },
+                        {
+                            "value": "2",
+                            "label": "boom-bike"
+                        },
+                        {
+                            "value": "3",
+                            "label": "ebike"
+                        }
+                    ],
+                    "default": "1"
+                },
+                {
+                    "type": "color",
+                    "id": "bike_color",
+                    "label": "Bike Color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "color",
+                    "id": "bike_border_color",
+                    "label": "Bike border Color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "product",
+                    "id": "exerise_product",
+                    "label": "Product"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "bike_img_pc",
+                    "label": "Bike Pc"
+                },
+                {
+                    "type": "text",
+                    "id": "bike_name_1",
+                    "label": "Bike Name 1"
+                },
+                {
+                    "type": "text",
+                    "id": "bike_name_2",
+                    "label": "Bike Name 2"
+                },
+                {
+                    "type": "richtext",
+                    "id": "bike_name_size",
+                    "label": "Bike Name Size"
+                },
+                {
+                    "type": "text",
+                    "id": "bike_new",
+                    "label": "New Launch"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "open_sold_out",
+                    "label": "Choose Sold Out",
+                    "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "bike_sold_out_text",
+                    "label": "Sold Out Desc",
+                    "default": "Sold out"
+                },
+                {
+                    "type": "text",
+                    "id": "bike_btn_desc",
+                    "label": "Button Desc",
+                    "default": "VIEW PRODUCT"
+                },
+                {
+                    "type": "url",
+                    "id": "bike_btn_url",
+                    "label": "Button Url"
+                }
+            ]
+        
+        }
+    ]
+  }
+{% endschema %}
+<script>
+    $(document).ready(function(){
+        $('.js-select-bikecolor').click(function() {
+            let _name = $(this).attr('data-name')
+            let _parent = $(this).parents('.exercies-bike-kinds')
+            let _border_color = $(this).find('.ec-position-span').css('border-color')
+            $(this).siblings().css('border-color', '#fff')
+            $(this).css('border-color', _border_color)
+            _parent.find(`.exbb-common-show[data-name=${_name}]`).addClass('exbb-selected').siblings().removeClass('exbb-selected')
+        })
+    })
+</script>
+<style>
+  .fb-exercise-bikes{
+    width: 100%;
+}
+.fb-exercise-bikes p {
+    margin: 0;
+    padding: 0;
+}
+.fb-exercies-title{
+    width: 100%;
+    text-align: center;
+}
+.ec-position-item{
+  position: relative;
+}
+.ec-position-item span{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+}
+.exercies-default-color{
+    color: #333;
+    border: 1px solid #333333;
+}
+.exercies-boom-color{
+   color: #06B8D4; 
+   border: 1px solid #06B8D4;
+
+}
+.exbb-img{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.sale-box-excise{
+    z-index: 2;
+    position: absolute;
+    top:18px;
+    display: flex;
+    justify-content: flex-start;
+}
+.sale-img{
+    width: 100px!important;
+    height: 24px!important;
+    margin: 0!important;
+}
+.sale-box-des{
+    position: absolute;
+    left: 31px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #121212;
+    line-height:24px;
+}
+.sale-box-des1{
+    position: absolute;
+    left: 21px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #121212;
+    line-height:24px;
+}
+.exbb-sold-out{
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+}
+/* .exbb-box{
+    display: none;
+}
+.exbb-litbox-1, .exbb-boombox-1, .exbb-ebikebox-1 {
+    display: block;
+} */
+.exbb-common-show{
+    display: none;
+}
+.exbb-selected {
+    display: block!important;
+}
+@media only screen and (min-width: 1340px) {
+    .exercies-bike-block {
+        max-width: 1280px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .fb-exeries-mob-show{
+        display: none;
+    }
+    .fb-exeries-pc-show{
+        display: block;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .fb-exeries-mob-show{
+        display: block;
+    }
+    .fb-exeries-pc-show{
+        display: none;
+    }
+}
+@media only screen and (min-width: 769px) {
+    .fb-exercies-title{
+        margin-top: 80px;
+    }
+    .exercies-bike-block{
+        margin: 76px auto 0px auto;
+        text-align: center;
+        max-width: 1280px;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
+    .fb-exercies-title p, .fb-exercies-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #333333;
+        line-height: 36px;
+    }
+  
+
+    .exercies-bike-conetent{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+    }
+    .exercies-bike-kinds{
+        width: 310px;
+        position: relative;
+        margin: 0px 44px 60px 44px;
+    }
+    .exercies-color-position{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        position: absolute;
+        top: 362px;
+        left: 0;
+    }
+    .ec-position-item{
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 24px;
+        background-color: #fff;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #fff;
+        text-align: center;
+        margin: 0px 5px;
+        cursor: pointer;
+    }
+    .ec-position-item span{
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
+        border-width: 1px;
+        border-style: solid;
+    }
+    .exercies-bike-kinds-title{
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    .exbb-box{
+        width: 100%;
+        text-align: center;
+    }
+    .exbb-img{
+        width: 100%;
+        height: 310px;
+        text-align: center;
+    }
+    .exbb-img img {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+    .exbb-sold-out{
+        width: 92px;
+        height: 24px;
+        background: #888888;
+        border-radius: 12px 12px 12px 12px;
+        line-height: 24px;
+        text-align: center;
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .exbb-name{
+        margin-top: 14px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .exbb-span1{
+        font-size: 20px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 20px;
+    }
+    .exbb-span2{
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(18,18,18,0.8);
+        line-height: 14px;
+    }
+    .exbb-rate{
+        padding-top: 10px;
+        position: relative;
+        height: 42px;
+        /* margin-bottom: 14px; */
+    }
+    .exbb-rate-new{
+        width: 100%;
+        height: 42px;
+        padding-top: 9px;
+    }
+    .exbb-rate-new span{
+        border-radius: 16px;
+        line-height: 12px;
+        padding: 4px 22px;
+        border: 1px solid rgba(18,18,18,0.8); 
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(18,18,18,0.8);
+        display: inline-block;
+    }
+    .exbb-rate, .fbet-rate{
+        width: 100%;
+    }
+    .exbb-color{
+        height: 36px;
+        width: 100%;
+    }
+    .exbb-size{
+        min-height: 66px;
+        text-align: center;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(18,18,18,0.6);
+        line-height: 22px;
+        margin-bottom: 16px;
+    }
+    .exbb-rate .stamped-badge, .fbet-rate .stamped-badge{
+        font-size: 16px;
+        color: #666;
+        font-weight: 400;
+        line-height: 19px;
+    }
+    .exbb-price{
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    .exbb-price-origin{
+        font-size: 20px;
+        font-weight: 400;
+        color: #888888;
+        line-height: 20px;
+        text-decoration-line: line-through;
+        margin-right: 8px;
+    }
+    .exbb-price-real{
+        font-size: 20px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 20px;
+    }
+    .exbb-button{
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        background: #121212;
+        display: block;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .fa-star-half-o:before, .fa-star-o:before, .fa-star:before, .stamped-fa-star-half-o:before, .stamped-fa-star-o:before, .stamped-fa-star:before {
+        font-size: 20px;
+        margin-right: 2px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1339px) {
+    .exercies-bike-block{
+        width: 98%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .fb-exercies-title{
+        margin-top: 40px;
+    }
+    .sale-box-excise{
+        z-index: 2;
+        position: absolute;
+        top:2px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .sale-img{
+        width: 84px!important;
+        height: 20px!important;
+        margin: 0!important;
+    }
+    .sale-box-des{
+        position: absolute;
+        left: 25px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #121212;
+        line-height:21px;
+    }
+    .sale-box-des1{
+        position: absolute;
+        left: 14px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #121212;
+        line-height:21px;
+    }
+    .exercies-bike-mob-title{
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333333;
+        line-height: 16px;
+        margin-bottom: 20px;
+    }
+    .exercies-bike-block{
+        margin: 20px auto 0px auto;
+        width: 100%;
+        /* border-bottom: 1px solid rgba(0,0,0,0.15); */
+        padding: 0px 15px 64px 15px;
+    }
+    .fb-exercies-title{
+        padding: 0px 51px;
+    }
+    .fb-exercies-title p, .fb-exercies-title h2{
+        font-size: 20px;
+        font-weight: bold;
+        color: #333333;
+        line-height: 26px;
+    }
+
+    .exercies-bike-conetent{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .exercies-bike-kinds{
+        width: 165px;
+        position: relative;
+    }
+    .exercies-bike-kinds:nth-child(2){
+        margin-left: 15px!important;
+    }
+    .exercies-bike-line{
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    }
+    .exbkt-mob{
+        margin-top: 32px;
+    }
+    .exercies-color-position{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        position: absolute;
+        top: 175px;
+        left: 0;
+    }
+    .ec-position-item{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 20px;
+        background-color: #fff;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #fff;
+        text-align: center;
+        margin: 0px 4px;
+        cursor: pointer;
+    }
+    .ec-position-item span{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 14px;
+        border-width: 1px;
+        border-style: solid;
+    }
+    .exercies-bike-kinds-title{
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    .exbb-box{
+        width: 100%;
+        text-align: center;
+    }
+    .exbb-img{
+        width: 100%;
+        height: 165px;
+        text-align: center;
+    }
+    .exbb-img img {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+    .exbb-sold-out{
+        width: 64px;
+        height: 20px;
+        background: #888888;
+        border-radius: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+        font-weight: 500;
+        font-size: 12px;
+        bottom: 6px;
+    }
+    .exbb-name{
+        margin-top: 10px;
+        width: 100%;
+        /* min-height: 32px; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .exbb-span1{
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        line-height: 14px;
+    }
+    .exbb-span2{
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(18,18,18,0.8);
+        line-height: 12px;
+        margin-top: 6px;
+    }
+    .exbb-rate{
+        padding-top: 12px;
+        position: relative;
+        height: 26px;
+        /* margin-bottom: 14px; */
+    }
+    .exbb-rate-new{
+        width: 100%;
+        height: 26px;
+        padding-top: 2px;
+    }
+    .exbb-rate-new span{
+        /* width: 135px; */
+        /* height: 24px; */
+        padding: 4px 14px; 
+        border-radius: 16px;
+        opacity: 1;
+        border: 1px solid rgba(18,18,18,0.8); 
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 500;
+        color: rgba(18,18,18,0.8);
+        display: inline-block;
+    }
+    .exbb-rate, .fbet-rate{
+        width: 100%;
+    }
+    .exbb-color{
+        height: 30px;
+        width: 100%;
+    }
+    .exbb-size{
+        /* height: 54px; */
+        text-align: center;
+        width: 100%;
+        margin-top: 12px;
+    }
+    .exbb-size p {
+        font-size: 12px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 14px;
+    }  
+    .exbb-size p {
+        margin-bottom: 6px;
+    } 
+    .exbb-size p:last-child{
+        margin-bottom: 0px!important;
+    }
+    .exbb-rate .stamped-badge, .fbet-rate .stamped-badge{
+        font-size: 12px;
+        color: #666;
+        font-weight: 400;
+        line-height: 14px;
+    }
+    .exbb-price{
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: 14px;
+        line-height: 14px;
+    }
+    .exbb-price-origin{
+        font-size: 14px;
+        font-weight: 400;
+        color: #888888;
+        line-height: 14px;
+        margin-right: 6px;
+        text-decoration-line: line-through;
+    }
+    .exbb-price-real{
+        font-size: 14px;
+        font-weight: bold;
+        color: #121212;
+        line-height: 14px;
+    }
+    .exbb-button{
+        width: 100%;
+        height: 36px;
+        line-height: 36px;
+        background: #121212;
+        display: block;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .fa-star-half-o:before, .fa-star-o:before, .fa-star:before, .stamped-fa-star-half-o:before, .stamped-fa-star-o:before, .stamped-fa-star:before {
+        font-size: 13px;
+        margin-right: 2px;
+    }
+}
+</style>

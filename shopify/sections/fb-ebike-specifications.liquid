@@ -1,0 +1,1641 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-ebike-speciafication">
+    <div class="spec-box">
+      {%- for block in section.blocks -%}
+      {%- if block.type == 'section_image' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" data-sizes="auto" alt="{{section.settings.ebike_icon_open.alt}}">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_close.alt}}">
+          </div>
+          <div class="outer-title">{{ block.settings.ebike_imgtype_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="image-inner">
+            {%- assign imgTypePc = block.settings.ebike_imgtype_pcimg | img_url: '' -%}
+            {%- assign imgTypeMob = block.settings.ebike_imgtype_mobimg | img_url: '' -%}
+            <img class="ebike-imgtype-pc" loading="lazy" src="{{ imgTypePc }}" data-sizes="auto" alt="{{block.settings.ebike_imgtype_pcimg.alt}}">
+            <img class="ebike-imgtype-mob" loading="lazy" src="{{ imgTypeMob }}" data-sizes="auto" alt="{{block.settings.ebike_imgtype_mobimg.alt}}">
+          </div>
+        </div>
+      </div>
+      <!-- one indoor -->
+      {%- elsif block.type == 'one_has_label' -%}
+      <div class="content-type">
+        <div class="content-type-outer outer-btn">
+          <div class="text-info-left">
+            <div class="outer-icon">
+              {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+              {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+              <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_open.alt}}">
+              <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_close.alt}}">
+            </div>
+            <div class="outer-title">{{ block.settings.oneLabTitle }}</div>
+          </div>
+          <div class="text-info-right text-info-pcbtn oneLabelBox">
+            <div class="outdoor-btn">OUTDOOR</div>
+            <div class="indoor-btn">INDOOR</div>
+          </div>
+        </div>
+        <div class="content-type-inner">
+          <div class="text-info-right text-info-mobbtn oneLabelBox">
+            <div class="outdoor-btn">OUTDOOR</div>
+            <div class="indoor-btn">INDOOR</div>
+
+          </div>
+          <div class="text-info-wrapper" id="oneOutdoor">
+            {%- for block in section.blocks -%}
+            {%- case block.type -%}
+            {%- when 'one_ourdoor' -%}
+            <div class="text-info-item">
+              <div class="info-item-text">{{ block.settings.textinfo_children_title1 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.textinfo_children_info1 }}</div>
+            </div>
+            {% endcase %}
+            {%- endfor -%}
+          </div>
+          <div class="text-info-wrapper" id="oneIndoor">
+            {%- for block in section.blocks -%}
+            {%- case block.type -%}
+            {%- when 'one_indoor' -%}
+            <div class="text-info-item">
+              <div class="info-item-text">{{ block.settings.textinfo_children_title1 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.textinfo_children_info1 }}</div>
+            </div>
+            {% endcase %}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      <!-- two indoor -->
+      {%- elsif block.type == 'two_has_label'-%}
+      <div class="content-type">
+        <div class="content-type-outer outer-btn">
+          <div class="text-info-left">
+            <div class="outer-icon">
+              {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+              {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+              <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_open.alt}}">
+              <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_close.alt}}">
+            </div>
+            <div class="outer-title">{{ block.settings.twoLabTitle }}</div>
+          </div>
+          <div class="text-info-right text-info-pcbtn twoLabelBox">
+            <div class="outdoor-btn">OUTDOOR</div>
+            <div class="indoor-btn">INDOOR</div>
+          </div>
+        </div>
+        <div class="content-type-inner">
+          <div class="text-info-right text-info-mobbtn twoLabelBox">
+            <div class="outdoor-btn">OUTDOOR</div>
+            <div class="indoor-btn">INDOOR</div>
+          </div>
+          <div class="text-info-wrapper" id="twoOutdoor">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'two_outdoor' -%}
+            <div class="text-info-item">
+              <div class="info-item-text">{{ block.settings.textinfo_children_title2 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.textinfo_children_info2 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <div class="text-info-wrapper" id="twoIndoor">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'two_indoor' -%}
+            <div class="text-info-item">
+              <div class="info-item-text">{{ block.settings.textinfo_children_title2 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.textinfo_children_info2 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      <!-- three indoor -->
+      {%- elsif block.type == 'three_has_label'-%}
+      <div class="content-type">
+        <div class="content-type-outer outer-btn">
+          <div class="text-info-left">
+            <div class="outer-icon">
+              {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+              {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+              <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_open.alt}}">
+              <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_close.alt}}">
+            </div>
+            <div class="outer-title">{{ block.settings.threeLabTitle }}</div>
+          </div>
+          <div class="text-info-right text-info-pcbtn threeLabelBox">
+            <div class="outdoor-btn">OUTDOOR</div>
+            <div class="indoor-btn">INDOOR</div>
+          </div>
+        </div>
+        <div class="content-type-inner">
+          <div class="text-info-right text-info-mobbtn threeLabelBox">
+            <div class="outdoor-btn">OUTDOOR</div>
+            <div class="indoor-btn">INDOOR</div>
+          </div>
+          <div class="text-info-wrapper" id="threeOutdoor">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'three_outdoor' -%}
+            <div class="text-info-item">
+              <div class="info-item-text">{{ block.settings.textinfo_children_title3 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.textinfo_children_info3 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <div class="text-info-wrapper" id="threeIndoor">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'three_indoor' -%}
+            <div class="text-info-item">
+              <div class="info-item-text">{{ block.settings.textinfo_children_title3 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.textinfo_children_info3 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- elsif block.type == 'one_NoLabel' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" data-sizes="auto" alt="{{section.settings.ebike_icon_open.alt}}">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto" alt="{{section.settings.ebike_icon_close.alt}}">
+          </div>
+          <div class="outer-title">{{ block.settings.one_Nolabel_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="introduce-wrapper">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'one_nolabel_content' -%}
+            <div class="introduce-item">
+              <div class="introduce-item-title">{{ block.settings.introduce_children_title }}</div>
+              <div class="introduce-item-desc">{{ block.settings.introduce_children_info }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- elsif block.type == 'twoNoLabel' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" alt="{{section.settings.ebike_icon_open.alt}}" data-sizes="auto">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto"  alt="{{section.settings.ebike_icon_close.alt}}">
+          </div>
+          <div class="outer-title">{{ block.settings.two_Nolabel_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="introduce-wrapper">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'two_nolabel_content' -%}
+            <div class="introduce-item">
+              <div class="introduce-item-title">{{ block.settings.introduce_children_title2 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.introduce_children_info2 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- elsif block.type == 'threeNoLabel' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" data-sizes="auto" alt="{{section.settings.ebike_icon_open.alt}}">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto" alt="{{section.settings.ebike_icon_close.alt}}>
+          </div>
+          <div class="outer-title">{{ block.settings.three_Nolabel_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="introduce-wrapper">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'three_nolabel_content' -%}
+            <div class="introduce-item">
+              <div class="introduce-item-title">{{ block.settings.introduce_children_title3 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.introduce_children_info3 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- elsif block.type == 'fourNoLabel' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" data-sizes="auto" alt="{{section.settings.ebike_icon_open.alt}}">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" data-sizes="auto" alt="{{section.settings.ebike_icon_close.alt}}">
+          </div>
+          <div class="outer-title">{{ block.settings.four_Nolabel_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="introduce-wrapper">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'four_nolabel_content' -%}
+            <div class="introduce-item">
+              <div class="introduce-item-title">{{ block.settings.introduce_children_title4 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.introduce_children_info4 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- elsif block.type == 'fiveNoLabel' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}"  alt="{{section.settings.ebike_icon_open.alt}}" data-sizes="auto">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}"  alt="{{section.settings.ebike_icon_close.alt}}" data-sizes="auto">
+          </div>
+          <div class="outer-title">{{ block.settings.five_Nolabel_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="introduce-wrapper">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'five_nolabel_content' -%}
+            <div class="introduce-item">
+              <div class="introduce-item-title">{{ block.settings.introduce_children_title5 }}</div>
+              <div class="introduce-item-desc">{{ block.settings.introduce_children_info5 }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- elsif block.type == 'section_geometry' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" alt="{{section.settings.ebike_icon_open.alt}}" data-sizes="auto">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" alt="{{section.settings.ebike_icon_close.alt}}" data-sizes="auto">
+          </div>
+          <div class="outer-title">{{ block.settings.ebike_text_img_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="text-image-content pccontent-show">
+            <div class="text-image-left">
+              <table class="table-box">
+                <thead>
+                  <tr class="head-box-border text-top-title">
+                    <td>Frame Size</td>
+                    <td align="center">High Step</td>
+                    <td align="center">Step Thru</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Reach</td>
+                    <td align="center" class="text-top-number">404</td>
+                    <td align="center" class="text-top-number">404</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Handlebar height</td>
+                    <td align="center" class="text-top-number">1100</td>
+                    <td align="center" class="text-top-number">1100</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Standover height</td>
+                    <td align="center" class="text-top-number">462.7</td>
+                    <td align="center" class="text-top-number">462.7</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Seat tube length</td>
+                    <td align="center" class="text-top-number">480</td>
+                    <td align="center" class="text-top-number">435</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Total length</td>
+                    <td align="center" class="text-top-number">1919</td>
+                    <td align="center" class="text-top-number">1919</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Wheelbase</td>
+                    <td align="center" class="text-top-number">1183</td>
+                    <td align="center" class="text-top-number">1183</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Min seat height</td>
+                    <td align="center" class="text-top-number">859</td>
+                    <td align="center" class="text-top-number">811.8</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Max seat height</td>
+                    <td align="center" class="text-top-number">1038.2</td>
+                    <td align="center" class="text-top-number">898.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text-image-right">
+              {%- assign geometryPcImg = block.settings.spec_geometry_pcimg | img_url: '' -%}
+              <img class="" loading="lazy" src="{{ geometryPcImg }}" alt="{{block.settings.spec_geometry_pcimg.alt}}" data-sizes="auto">
+            </div>
+          </div>
+          <div class="text-image-content mobcontent-show">
+            <div class="text-image-right">
+              {%- assign geometryMobImg = block.settings.spec_geometry_mobimg |  img_url: '' -%}
+              <img
+                class=""
+                loading="lazy"
+                src="{{ geometryMobImg }}"
+                alt="{{block.settings.spec_geometry_mobimg.alt}}"
+                data-sizes="auto"
+              >
+            </div>
+            <div class="text-image-left">
+              <table class="table-box">
+                <thead>
+                  <tr class="head-box-border text-top-title">
+                    <td>Frame Size</td>
+                    <td align="center">High Step</td>
+                    <td align="center">Step Thru</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Reach</td>
+                    <td align="center" class="text-top-number">404</td>
+                    <td align="center" class="text-top-number">404</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Handlebar height</td>
+                    <td align="center" class="text-top-number">1100</td>
+                    <td align="center" class="text-top-number">1100</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Standover height</td>
+                    <td align="center" class="text-top-number">462.7</td>
+                    <td align="center" class="text-top-number">462.7</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Seat tube length</td>
+                    <td align="center" class="text-top-number">480</td>
+                    <td align="center" class="text-top-number">435</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Total length</td>
+                    <td align="center" class="text-top-number">1919</td>
+                    <td align="center" class="text-top-number">1919</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Wheelbase</td>
+                    <td align="center" class="text-top-number">1183</td>
+                    <td align="center" class="text-top-number">1183</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Min seat height</td>
+                    <td align="center" class="text-top-number">859</td>
+                    <td align="center" class="text-top-number">811.8</td>
+                  </tr>
+                  <tr class="body-box-border">
+                    <td class="text-top-desc">Max seat height</td>
+                    <td align="center" class="text-top-number">1038.2</td>
+                    <td align="center" class="text-top-number">898.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {%- elsif block.type == 'section_FAQ' -%}
+      <div class="content-type">
+        <div class="content-type-outer">
+          <div class="outer-icon">
+            {%- assign openIcon = section.settings.ebike_icon_open | img_url: '' -%}
+            {%- assign closeIcon = section.settings.ebike_icon_close | img_url: '' -%}
+            <img class="ebike-open-icon" loading="lazy" src="{{ openIcon }}" alt="{{section.settings.ebike_icon_open.alt}}" data-sizes="auto">
+            <img class="ebike-close-icon" loading="lazy" src="{{ closeIcon }}" alt="{{section.settings.ebike_icon_close.alt}}" data-sizes="auto">
+          </div>
+          <div class="outer-title">{{ block.settings.ebike_section_FAQ_title }}</div>
+        </div>
+        <div class="content-type-inner">
+          <div class="write-content">
+            {%- for block in section.blocks -%}
+            {%- if block.type == 'FAQ_content' -%}
+            <div class="write-wrapper">
+              <div class="write-title">{{ block.settings.write_children_title }}</div>
+              <div class="write-info">{{ block.settings.write_children_info }}</div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<script type='text/javascript'>
+  $('.fb-ebike-speciafication .content-type-outer').click(function (event) {
+    $(this).siblings().toggle()
+    if ($(this).siblings('.content-type-inner').css('display') == 'block') {
+      $(this).find('.ebike-open-icon').css('display', 'none')
+      $(this).find('.ebike-close-icon').css('display', 'block')
+    } else {
+      $(this).find('.ebike-open-icon').css('display', 'block')
+      $(this).find('.ebike-close-icon').css('display', 'none')
+    }
+  })
+  $('.fb-ebike-speciafication .outer-btn').click(function (event) {
+    if (window.screen.width > 768) {
+      if ($(this).children('.text-info-pcbtn').css('display') == 'none') {
+        $(this).children('.text-info-pcbtn').css('display', 'flex')
+      } else {
+        $(this).children('.text-info-pcbtn').css('display', 'none')
+      }
+    } else {
+      $(this).children('.text-info-pcbtn').css('display', 'none')
+    }
+  })
+  $('.fb-ebike-speciafication .outdoor-btn').click(function (event) {
+    event.stopPropagation()
+    $(this).css('background', '#121212')
+    $(this).css('color', '#FFFFFF')
+    $(this).siblings('.indoor-btn').css('background', 'none')
+    $(this).siblings('.indoor-btn').css('color', 'rgba(18,18,18,0.5)')
+    var grandparent = $(this).parent()
+    if (grandparent.hasClass("oneLabelBox")) {
+      $('.fb-ebike-speciafication #oneOutdoor').css('display', 'flex')
+      $('.fb-ebike-speciafication #oneIndoor').css('display', 'none')
+    } else if (grandparent.hasClass("twoLabelBox")) {
+      $('.fb-ebike-speciafication #twoOutdoor').css('display', 'flex')
+      $('.fb-ebike-speciafication #twoIndoor').css('display', 'none')
+    }
+    else if (grandparent.hasClass("threeLabelBox")) {
+      $('.fb-ebike-speciafication #threeOutdoor').css('display', 'flex')
+      $('.fb-ebike-speciafication #threeIndoor').css('display', 'none')
+    }
+  })
+  $('.fb-ebike-speciafication .indoor-btn').click(function (event) {
+    event.stopPropagation()
+    $(this).siblings('.outdoor-btn').css('background', 'none')
+    $(this).siblings('.outdoor-btn').css('color', 'rgba(18,18,18,0.5)')
+    $(this).css('background', '#121212')
+    $(this).css('color', '#FFFFFF')
+    var grandparent = $(this).parent()
+    if (grandparent.hasClass("oneLabelBox")) {
+      $('.fb-ebike-speciafication #oneOutdoor').css('display', 'none')
+      $('.fb-ebike-speciafication #oneIndoor').css('display', 'flex')
+    } else if (grandparent.hasClass("twoLabelBox")) {
+      $('.fb-ebike-speciafication #twoOutdoor').css('display', 'none')
+      $('.fb-ebike-speciafication #twoIndoor').css('display', 'flex')
+    }else if (grandparent.hasClass("threeLabelBox")) {
+      $('.fb-ebike-speciafication #threeOutdoor').css('display', 'none')
+      $('.fb-ebike-speciafication #threeIndoor').css('display', 'flex')
+    }
+  })
+</script>
+<style>
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ebike-close-icon {
+    display: none
+  }
+
+  .fb-ebike-speciafication {
+    width: 100%;
+  }
+
+  #oneIndoor {
+    display: none;
+  }
+
+  #oneOutdoor {
+    display: flex;
+  }
+
+  #twoIndoor {
+    display: none;
+  }
+
+  #twoOutdoor {
+    display: flex;
+  }
+  #threeIndoor {
+    display: none;
+  }
+
+  #threeOutdoor {
+    display: flex;
+  }
+
+  .spec-box {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 26px;
+  }
+
+  .content-type {
+    width: 100%;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 34px 0px;
+  }
+
+  .content-type-outer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .outer-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(18, 18, 18, 0.05)
+  }
+
+  .outer-title {
+    margin-left: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #121212;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  .content-type-inner {
+    display: none;
+  }
+
+  .image-inner {
+    width: 1000px;
+    /* height:500px; */
+    margin-left: 60px;
+  }
+
+  .ebike-imgtype-pc {
+    display: block;
+  }
+
+  .ebike-imgtype-mob {
+    display: none;
+  }
+
+    {
+    % comment %
+  }
+
+  Electronics类型 {
+    % endcomment %
+  }
+
+  .outer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .text-info-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .text-info-right {
+    width: 338px;
+    height: 48px;
+    background: rgba(18, 18, 18, 0.05);
+    border-radius: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .text-info-pcbtn {
+    display: none;
+  }
+
+  .text-info-mobbtn {
+    display: none;
+  }
+
+  .outdoor-btn {
+    width: 160px;
+    height: 40px;
+    background: #121212;
+    border-radius: 27px;
+    margin-left: 4px;
+    color: #FFFFFF;
+  }
+
+  .indoor-btn {
+    width: 160px;
+    height: 40px;
+    color: rgba(18, 18, 18, 0.5);
+    border-radius: 27px;
+    margin-right: 4px;
+  }
+
+  .text-info-wrapper {
+    width: 100%;
+    /* margin-left:60px;
+  margin-top:46px; */
+    padding: 46px 24px 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .text-info-outwrapper {
+    display: none;
+  }
+
+  .text-info-item {
+    width: 240px;
+    margin-right: 48px;
+    margin-bottom: 40px;
+  }
+
+  .text-info-item:nth-child(4n) {
+    margin-right: 0px;
+  }
+
+  .info-item-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(18, 18, 18, 0.5);
+    line-height: 14px;
+  }
+
+  .introduce-item-desc {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 22px;
+  }
+
+    {
+    % comment %
+  }
+
+  component类型 {
+    % endcomment %
+  }
+
+  .introduce-wrapper {
+    width: 100%;
+    /* margin-left:60px;
+  margin-top:36px; */
+    padding: 36px 24px 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .introduce-item {
+    width: 240px;
+    margin-right: 48px;
+    margin-bottom: 40px;
+  }
+
+  .introduce-item:nth-child(4n) {
+    margin-right: 0px;
+  }
+
+  .introduce-item:last-child {
+    margin-bottom: 0px;
+    margin-right: 0px;
+  }
+
+  .introduce-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(18, 18, 18, 0.5);
+    line-height: 14px;
+  }
+
+  .introduce-item-desc {
+    margin-top: 20px;
+    width: 240px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    line-height: 20px;
+  }
+
+    {
+    % comment %
+  }
+
+  Geometry 类型 {
+    % endcomment %
+  }
+
+  .text-image-content {
+    margin-left: 60px;
+    margin-top: 36px;
+    display: flex;
+  }
+
+  .pccontent-show {
+    display: flex;
+  }
+
+  .mobcontent-show {
+    display: none;
+  }
+
+  .text-image-left {
+    width: 372px;
+  }
+
+  .table-box {
+    width: 372px;
+  }
+
+  .head-box-border {
+    border-bottom: 1px solid #E6E6E6;
+    height: 40px;
+  }
+
+  .body-box-border {
+    border-bottom: 1px solid #E6E6E6;
+    height: 48px;
+  }
+
+  .text-top-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #121212;
+    line-height: 16px;
+    vertical-align: top;
+  }
+
+  .text-top-desc {
+    font-size: 12px;
+    font-weight: 600;
+    color: #121212;
+    line-height: 12px;
+  }
+
+  .text-top-number {
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    line-height: 12px;
+  }
+
+  .text-image-right {
+    margin-left: 116px;
+    width: 652px;
+    height: 420px;
+  }
+
+    {
+    % comment %
+  }
+
+  文本类型 {
+    % endcomment %
+  }
+
+  .write-content {
+    margin-left: 60px;
+  }
+
+  .write-wrapper {
+    margin-top: 40px;
+  }
+
+  .write-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 18px;
+  }
+
+  .write-info {
+    margin-top: 20px;
+    width: 1080px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(18, 18, 18, 0.8);
+    line-height: 22px;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1210px) {
+    .spec-box {
+      width: 100%;
+      margin: 0px;
+      padding: 0 5px;
+      padding-top: 26px;
+    }
+
+    .image-inner {
+      width: 80%;
+      /* height:500px; */
+      margin-left: 60px;
+    }
+
+    .text-info-wrapper {
+      width: 92%;
+    }
+
+    .text-info-item {
+      width: 138px;
+      margin-right: 52px;
+      margin-bottom: 40px;
+    }
+
+    .text-info-item:nth-child(4n) {
+      margin-right: 0px;
+    }
+
+    .text-info-item:nth-child(5n) {
+      margin-right: 52px;
+    }
+
+    .introduce-wrapper {
+      width: 92%;
+    }
+
+    .introduce-item {
+      width: 240px;
+      margin-right: 48px;
+      margin-bottom: 40px;
+    }
+
+    .introduce-item:nth-child(4n) {
+      margin-right: 48px;
+    }
+
+    .write-info {
+      width: 92%;
+    }
+  }
+
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
+    .text-info-wrapper {
+      width: 91%;
+    }
+
+    .text-info-item {
+      width: 138px;
+      margin-right: 52px;
+      margin-bottom: 40px;
+    }
+
+    .text-info-item:nth-child(4n) {
+      margin-right: 52px;
+    }
+
+    .text-info-item:nth-child(5n) {
+      margin-right: 0px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .ebike-close-icon {
+      display: none
+    }
+
+    .fb-ebike-speciafication {
+      width: 100%;
+      height: 100%;
+    }
+
+    .spec-box {
+      width: 327px;
+      margin: 0 auto;
+      padding-top: 31px;
+    }
+
+    .content-type {
+      width: 100%;
+      border-bottom: 1px solid #E6E6E6;
+      padding: 30px 0px;
+    }
+
+    .content-type-outer {
+      display: flex;
+      align-items: center;
+    }
+
+    .outer-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(18, 18, 18, 0.05)
+    }
+
+    .outer-title {
+      margin-left: 12px;
+      height: 18px;
+      font-size: 18px;
+      color: #121212;
+      line-height: 18px;
+      font-weight: bold;
+    }
+
+    .content-type-inner {
+      display: none;
+    }
+
+    .image-inner {
+      width: 327px;
+      /* height:327px; */
+      margin-left: 0px;
+    }
+
+    .ebike-imgtype-pc {
+      display: none;
+    }
+
+    .ebike-imgtype-mob {
+      display: block;
+    }
+
+      {
+      % comment %
+    }
+
+    Electronics类型 {
+      % endcomment %
+    }
+
+    .outer-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .text-info-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .text-info-right {
+      margin-top: 23px;
+      width: 327px;
+      height: 44px;
+      background: rgba(18, 18, 18, 0.05);
+      border-radius: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .text-info-pcbtn {
+      display: none;
+    }
+
+    .text-info-mobbtn {
+      display: flex;
+    }
+
+    .outdoor-btn {
+      width: 156px;
+      height: 36px;
+      background: #121212;
+      border-radius: 27px;
+      margin-left: 4px;
+      line-height: 36px;
+    }
+
+    .indoor-btn {
+      width: 156px;
+      height: 36px;
+      background: none;
+      border-radius: 27px;
+      margin-right: 4px;
+      line-height: 36px;
+    }
+
+    .text-info-wrapper {
+      width: 100%;
+      margin-left: 0px;
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    .text-info-item {
+      width: auto;
+      margin-bottom: 30px;
+      margin-right: 0px;
+    }
+
+    .info-item-text {
+      width: 130px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(18, 18, 18, 0.5);
+      line-height: 16px;
+    }
+
+    .introduce-item-desc {
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #121212;
+      line-height: 18px;
+    }
+
+      {
+      % comment %
+    }
+
+    component类型 {
+      % endcomment %
+    }
+
+    .introduce-wrapper {
+      width: 327px;
+      margin-left: 0px;
+      margin-top: 27px;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      justify-content: space-between;
+    }
+
+    .introduce-item {
+      width: 130px;
+      margin-bottom: 38px;
+      margin-right: 0px;
+    }
+
+    .introduce-item:last-child {
+      margin-bottom: 0px;
+      margin-right: 0px;
+    }
+
+    .introduce-item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(18, 18, 18, 0.5);
+      line-height: 14px;
+    }
+
+    .introduce-item-desc {
+      margin-top: 14px;
+      width: 130px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #121212;
+      line-height: 20px;
+    }
+
+      {
+      % comment %
+    }
+
+    Geometry 类型 {
+      % endcomment %
+    }
+
+    .text-image-content {
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+
+    .pccontent-show {
+      display: none;
+    }
+
+    .mobcontent-show {
+      display: block;
+    }
+
+    .text-image-left {
+      width: 327px;
+      margin-top: 20px;
+    }
+
+    .table-box {
+      width: 327px;
+    }
+
+    .head-box-border {
+      border-bottom: 1px solid #E6E6E6;
+      height: 40px;
+    }
+
+    .body-box-border {
+      border-bottom: 1px solid #E6E6E6;
+      height: 40px;
+    }
+
+    .text-top-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #121212;
+      line-height: 12px;
+      vertical-align: top;
+    }
+
+    .text-top-desc {
+      font-size: 12px;
+      font-weight: 600;
+      color: #121212;
+      line-height: 12px;
+    }
+
+    .text-top-number {
+      font-size: 12px;
+      font-weight: 500;
+      color: #121212;
+      line-height: 12px;
+    }
+
+    .text-image-right {
+      margin-left: 0px;
+      margin-top: 27px;
+      width: 327px;
+      height: 211px;
+    }
+
+      {
+      % comment %
+    }
+
+    文本类型 {
+      % endcomment %
+    }
+
+    .write-content {
+      margin-left: 0px;
+      margin-top: 21px;
+    }
+
+    .write-wrapper {
+      margin-top: 0px;
+      margin-bottom: 30px;
+    }
+
+    .write-title {
+      width: 310px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #121212;
+      line-height: 20px;
+    }
+
+    .write-info {
+      margin-top: 14px;
+      width: 327px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(18, 18, 18, 0.8);
+      line-height: 18px;
+    }
+  }
+</style>
+{% schema %}
+{
+  "name": "FbEbikeSpecifications",
+  "presets": [
+  {
+  "name": "fb-ebike-specifications",
+  "category": "Fb Sections",
+  "blocks": [
+  {
+  "type": "section_image"
+  },
+  {
+  "type": "one_has_label"
+  },
+  {
+  "type": "two_has_label"
+  },
+  {
+  "type": "three_has_label"
+  },
+  {
+  "type": "one_NoLabel"
+  },
+  {
+  "type": "twoNoLabel"
+  },
+  {
+  "type": "threeNoLabel"
+  },
+  {
+  "type": "fourNoLabel"
+  },
+  {
+  "type": "fiveNoLabel"
+  },
+  {
+  "type": "section_FAQ"
+  },
+  {
+  "type": "FAQ_content"
+  },
+  {
+  "type": "section_geometry"
+  },
+  {
+  "type": "one_nolabel_content"
+  },
+  {
+  "type": "two_nolabel_content"
+  },
+  {
+  "type": "one_ourdoor"
+  },
+  {
+  "type": "one_indoor"
+  },
+  {
+  "type": "two_outdoor"
+  },
+  {
+  "type": "two_indoor"
+  },
+  {
+  "type": "three_outdoor"
+  },
+  {
+  "type": "three_indoor"
+  }
+  ]
+  }
+  ],
+  "settings":[
+  {
+  "type": "image_picker",
+  "id": "ebike_icon_open",
+  "label": "eBike Icon Open"
+  },
+  {
+  "type": "image_picker",
+  "id": "ebike_icon_close",
+  "label": "eBike Icon Close"
+  }
+  ],
+  "blocks":[
+  {
+  "type": "section_image",
+  "name": "Picture Section",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "ebike_imgtype_title",
+  "label": "Title"
+  },
+  {
+  "type": "image_picker",
+  "id": "ebike_imgtype_pcimg",
+  "label": "ImgPc"
+  },
+  {
+  "type": "image_picker",
+  "id": "ebike_imgtype_mobimg",
+  "label": "ImgMob"
+  }
+  ]
+  },
+  {
+  "type": "one_has_label",
+  "name": "One Label Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "oneLabTitle",
+  "label": "Title"
+  }
+  ]
+  },
+  {
+  "type": "two_has_label",
+  "name": "Two Label Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "twoLabTitle",
+  "label": "Title"
+  }
+  ]
+  },
+  {
+  "type": "three_has_label",
+  "name": "Three Label Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "threeLabTitle",
+  "label": "Title"
+  }
+  ]
+  },
+  {
+  "type": "one_NoLabel",
+  "name": "one Nolabel Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "one_Nolabel_title",
+  "label": "One No Label Title"
+  }
+  ]
+  },
+  {
+  "type": "twoNoLabel",
+  "name": "two Nolabel Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "two_Nolabel_title",
+  "label": "Two No Label Title"
+  }
+  ]
+  },
+  {
+  "type": "threeNoLabel",
+  "name": "three Nolabel Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "three_Nolabel_title",
+  "label": "Three No Label Title"
+  }
+  ]
+  },
+  {
+  "type": "fourNoLabel",
+  "name": "four Nolabel Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "four_Nolabel_title",
+  "label": "Four No Label Title"
+  }
+  ]
+  },
+  {
+  "type": "fiveNoLabel",
+  "name": "five Nolabel Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "five_Nolabel_title",
+  "label": "Five No Label Title"
+  }
+  ]
+  },
+  {
+  "type": "section_geometry",
+  "name": "Section Geometry Section",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "ebike_text_img_title",
+  "label": "Title"
+  },
+  {
+  "type": "image_picker",
+  "id": "spec_geometry_pcimg",
+  "label": "Imgpc"
+  
+  },
+  {
+  "type": "image_picker",
+  "id": "spec_geometry_mobimg",
+  "label": "ImgMob"
+  
+  }
+  ]
+  },
+  {
+  "type": "section_FAQ",
+  "name": "Section FAQ Title",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "ebike_section_FAQ_title",
+  "label": "eBike Write Type Title"
+  }
+  ]
+  },
+  {
+  "type": "FAQ_content",
+  "name": "FAQ Content",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "write_children_title",
+  "label": "Write Children Title"
+  },
+  {
+  "type": "richtext",
+  "id": "write_children_info",
+  "label": "Write Children Info"
+  }
+  ]
+  },
+  {
+  "type": "one_nolabel_content",
+  "name": "one NoLabel Content",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "introduce_children_title",
+  "label": "Title"
+  },
+  {
+  "type": "richtext",
+  "id": "introduce_children_info",
+  "label": "Info"
+  }
+  ]
+  },
+  {
+  "type": "two_nolabel_content",
+  "name": "two NoLabel Content",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "introduce_children_title2",
+  "label": "Title"
+  },
+  {
+  "type": "richtext",
+  "id": "introduce_children_info2",
+  "label": "Info"
+  }
+  ]
+  },
+  {
+  "type": "three_nolabel_content",
+  "name": "three NoLabel Content",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "introduce_children_title3",
+  "label": "Title"
+  },
+  {
+  "type": "richtext",
+  "id": "introduce_children_info3",
+  "label": "Info"
+  }
+  ]
+  },
+  {
+  "type": "four_nolabel_content",
+  "name": "four NoLabel Content",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "introduce_children_title4",
+  "label": "Title"
+  },
+  {
+  "type": "richtext",
+  "id": "introduce_children_info4",
+  "label": "Info"
+  }
+  ]
+  },
+  {
+  "type": "five_nolabel_content",
+  "name": "five NoLabel Content",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "introduce_children_title5",
+  "label": "Title"
+  },
+  {
+  "type": "richtext",
+  "id": "introduce_children_info5",
+  "label": "Info"
+  }
+  ]
+  },
+  {
+  "type": "one_ourdoor",
+  "name": "One Outdoor",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "textinfo_children_title1",
+  "label": "TextInfo Children Title"
+  },
+  {
+  "type": "richtext",
+  "id": "textinfo_children_info1",
+  "label": "TextInfo Children Info"
+  }
+  ]
+  },
+  {
+  "type": "one_indoor",
+  "name": "One Indoor",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "textinfo_children_title1",
+  "label": "TextInfo Children Title"
+  },
+  {
+  "type": "richtext",
+  "id": "textinfo_children_info1",
+  "label": "TextInfo Children Info"
+  }
+  ]
+  },
+  
+  {
+  "type": "two_outdoor",
+  "name": "Two Outdoor",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "textinfo_children_title2",
+  "label": "TextInfo Children Title2"
+  },
+  {
+  "type": "richtext",
+  "id": "textinfo_children_info2",
+  "label": "TextInfo Children Info2"
+  }
+  ]
+  },
+  {
+  "type": "two_indoor",
+  "name": "Two Indoor",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "textinfo_children_title2",
+  "label": "TextInfo Children Title2"
+  },
+  {
+  "type": "richtext",
+  "id": "textinfo_children_info2",
+  "label": "TextInfo Children Info2"
+  }
+  ]
+  },
+    {
+  "type": "three_outdoor",
+  "name": "Three Outdoor",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "textinfo_children_title3",
+  "label": "TextInfo Children Title"
+  },
+  {
+  "type": "richtext",
+  "id": "textinfo_children_info3",
+  "label": "TextInfo Children Info"
+  }
+  ]
+  },
+  {
+  "type": "three_indoor",
+  "name": "Three Indoor",
+  "settings":[
+  {
+  "type": "richtext",
+  "id": "textinfo_children_title3",
+  "label": "TextInfo Children Title"
+  },
+  {
+  "type": "richtext",
+  "id": "textinfo_children_info3",
+  "label": "TextInfo Children Info"
+  }
+  ]
+  }
+    
+  ]
+  }
+{% endschema %}

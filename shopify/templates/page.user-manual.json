@@ -1,0 +1,146 @@
+{
+  "sections": {
+    "e7ec1591-9ec5-4241-8a98-e66efa63726c": {
+      "type": "fb-user-manual",
+      "blocks": {
+        "f40d986f-b134-432f-a07b-59fa6dfd1c19": {
+          "type": "user-manual",
+          "settings": {
+            "user-manual-img": "shopify:\/\/shop_images\/img.webp",
+            "user-manual-sign": "01",
+            "user-manual-title": "LIT BIKE",
+            "user-manual-desc": "<p>We prepared a guide to help you with the installation process and to ensure it's safe and secure in the best condition. Watch video to learn more about it.<\/p>",
+            "user-manual-link1": "https:\/\/static.freebeatfit.com\/LitBike_User_Manual.pdf",
+            "user-manual-link1-title": "LIT BIKE-USER MANUAL",
+            "user-manual-link2": "https:\/\/youtu.be\/OQL3i7uA2TQ",
+            "user-manual-link2-title": "ASSEMBLY GUIDE",
+            "user-manual-link3": "https:\/\/youtu.be\/gqgtZBKjDfo",
+            "user-manual-link3-title": "HANDLEBAR INSTALLATION"
+          }
+        },
+        "38bfdb63-ce5c-45cb-9a87-de2504e74f73": {
+          "type": "user-manual",
+          "settings": {
+            "user-manual-img": "shopify:\/\/shop_images\/boom.png",
+            "user-manual-sign": "02",
+            "user-manual-title": "BOOM BIKE",
+            "user-manual-desc": "<p>Before you get started, download user manual and watch video to learn how to assemble Boom Bike.<\/p>",
+            "user-manual-link1": "https:\/\/static.freebeatfit.com\/Boombike+User+Manual.pdf",
+            "user-manual-link1-title": "BOOM BIKE-USER MANUAL",
+            "user-manual-link2": "https:\/\/youtu.be\/I0fK6nyljTk",
+            "user-manual-link2-title": "ASSEMBLY GUIDE",
+            "user-manual-link3": "https:\/\/static.freebeatfit.com\/saddle-installation.mp4",
+            "user-manual-link3-title": "SADDLE INSTALLATION"
+          }
+        },
+        "2dbf1d00-1975-441e-b205-b3ae1ab1e923": {
+          "type": "user-manual",
+          "disabled": true,
+          "settings": {
+            "user-manual-img": "shopify:\/\/shop_images\/xbike.jpg",
+            "user-manual-sign": "03",
+            "user-manual-title": "X BIKE",
+            "user-manual-desc": "<p>For more information of X Bike, please refer to the following user manual.<\/p>",
+            "user-manual-link1": "https:\/\/static.freebeatfit.com\/manual.pdf",
+            "user-manual-link1-title": "X BIKE-USER MANUAL",
+            "user-manual-link2": "",
+            "user-manual-link2-title": "",
+            "user-manual-link3": "",
+            "user-manual-link3-title": ""
+          }
+        },
+        "087aa727-b405-426c-bcbe-2d874c0fe5cb": {
+          "type": "ebikelist",
+          "settings": {
+            "ebike-manual-img": "shopify:\/\/shop_images\/pc-manual.png",
+            "ebike-manual-mobimg": "shopify:\/\/shop_images\/mob-manual.png",
+            "ebike-manual-title": "MORPHROVER",
+            "ebike-manual-desc": "<p>We have prepared a comprehensive user manual to assist you in the installation process and ensure that your eBike is set up safely and securely in the best condition.<\/p>",
+            "ebike-manual-link1": "https:\/\/static.freebeatfit.com\/ebike\/freebeat_quick+start+guide_Print+copy_V2.0_0721.pdf",
+            "ebike-manual-text1": "ASSEMBLY GUIDE",
+            "ebike-manual-link2": "https:\/\/youtu.be\/6i5AYhJ9vEk",
+            "ebike-manual-text2": "ASSEMBLY VIDEO",
+            "ebike-manual-link3": "https:\/\/static.freebeatfit.com\/ebike\/freebeat+owner's+manual_Print+Copy_V2.0_0724.pdf",
+            "ebike-manual-text3": "MORPHROVER-USER MANUAL",
+            "ebike-manual-link4": "",
+            "ebike-manual-text4": ""
+          }
+        }
+      },
+      "block_order": [
+        "f40d986f-b134-432f-a07b-59fa6dfd1c19",
+        "38bfdb63-ce5c-45cb-9a87-de2504e74f73",
+        "2dbf1d00-1975-441e-b205-b3ae1ab1e923",
+        "087aa727-b405-426c-bcbe-2d874c0fe5cb"
+      ],
+      "settings": {
+        "user-manual-bigtitle": "USER MANUAL",
+        "user-manual-bigdesc": "Download User Manual & Video Walkthrough to Get Started.",
+        "ebike-manual-tabtitle1": "EXERCISE BIKE",
+        "ebike-manual-tabtitle2": "2-IN-1 E-BIKE"
+      }
+    },
+    "b8898fd4-79f6-475e-8c3c-5c65f7f4fa40": {
+      "type": "fb-download",
+      "blocks": {
+        "2fa84a7c-4b83-4336-9058-e4a52b3691c1": {
+          "type": "indoorlist",
+          "settings": {
+            "download_progress_title": "Diverse Classes",
+            "download_progress_Info": "Experience studio fitness from the comfort of your own home with thousands of on-demand classes to choose from every day.",
+            "download_progress_pc_image": "shopify:\/\/shop_images\/pc-down.png",
+            "download_progress_mobile_image": "shopify:\/\/shop_images\/FbDownload-Indoor_List-Mobile_Image-1Diverse_Classes-mob.webp"
+          }
+        },
+        "a3f8b1eb-070d-4bf6-9591-1260958c63d2": {
+          "type": "indoorlist",
+          "settings": {
+            "download_progress_title": "Connect with the Community",
+            "download_progress_Info": "Earn rewards and fame by riding with friends in freebeat fitness challenges, events, and games, discovering who will emerge victorious in the Events.",
+            "download_progress_pc_image": "shopify:\/\/shop_images\/0915down_pc.png",
+            "download_progress_mobile_image": "shopify:\/\/shop_images\/FbDownload-Indoor_List-Mobile_Image-2Community-mob.webp"
+          }
+        },
+        "f6ac1831-edbe-41d9-9671-33e2cafaace1": {
+          "type": "indoorlist",
+          "settings": {
+            "download_progress_title": "Performance Tracking",
+            "download_progress_Info": "Our sensors won't miss a single pedal and receive instant performance tracking results at every beat.",
+            "download_progress_pc_image": "shopify:\/\/shop_images\/Group_220-2.png",
+            "download_progress_mobile_image": "shopify:\/\/shop_images\/FbDownload-Indoor_List-Mobile_Image-3Performance_Tracking-mob.webp"
+          }
+        },
+        "a5299e87-d2d8-4c33-a9ca-7b7186eb9403": {
+          "type": "indoorlist",
+          "disabled": true,
+          "settings": {
+            "download_progress_title": "Recharge",
+            "download_progress_Info": "During indoor classes, your efforts directly recycle energy",
+            "download_progress_pc_image": "shopify:\/\/shop_images\/indoor4_33638ad8-b62c-4c91-b893-40bfc4ef0cd7.png",
+            "download_progress_mobile_image": "shopify:\/\/shop_images\/Group_4006_2bc3f3d6-27f5-4390-970b-612dadc1e9d2.png"
+          }
+        }
+      },
+      "block_order": [
+        "2fa84a7c-4b83-4336-9058-e4a52b3691c1",
+        "a3f8b1eb-070d-4bf6-9591-1260958c63d2",
+        "f6ac1831-edbe-41d9-9671-33e2cafaace1",
+        "a5299e87-d2d8-4c33-a9ca-7b7186eb9403"
+      ],
+      "settings": {
+        "download-title": "DISCOVER APP",
+        "download_bg_background": "#e9edf3",
+        "download-store-app": "shopify:\/\/shop_images\/PC-APP.png",
+        "download-store-app-link": "https:\/\/apps.apple.com\/us\/app\/freebeatfit\/id6450832508",
+        "download-google-play-link": "https:\/\/play.google.com\/store\/apps\/details?id=com.freebeat.freebeatapp",
+        "download-google-play": "shopify:\/\/shop_images\/PC-GOOGLE.png",
+        "download-mob-store-app": "shopify:\/\/shop_images\/M-APP.png",
+        "download-mob-google-play": "shopify:\/\/shop_images\/M-GOOGLE.png"
+      }
+    }
+  },
+  "order": [
+    "e7ec1591-9ec5-4241-8a98-e66efa63726c",
+    "b8898fd4-79f6-475e-8c3c-5c65f7f4fa40"
+  ]
+}

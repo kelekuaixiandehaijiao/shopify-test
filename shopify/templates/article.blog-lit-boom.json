@@ -1,0 +1,113 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "9e9f4f2e-d205-4d37-95ea-cd5386ff7eea": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike-moonbow-beige",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-Beige-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Moonbow Beige",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike-moonbow-beige"
+          }
+        },
+        "cebb4d4b-a3b0-458a-999d-ac3e64bb2c20": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike-snowpeak-white",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-White-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Snowpeak White",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike-snowpeak-white"
+          }
+        },
+        "af7c5138-bc96-42e8-9ce8-362d5c9fce12": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-Black-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Space Black",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike"
+          }
+        },
+        "1cde0b51-0679-4528-a123-b4067d0a1347": {
+          "type": "product_blog",
+          "settings": {
+            "product": "lit-bike-klarna-limited-edition",
+            "blog_selector_bike": "1",
+            "blog_product_image": "shopify:\/\/shop_images\/Lit-Pink-Blacksister.jpg",
+            "blog_bikes_title": "Lit Bike Aurora Pink",
+            "blog_link_page_url": "shopify:\/\/products\/lit-bike-klarna-limited-edition"
+          }
+        },
+        "53249a28-71ac-4549-88cd-5f836732804c": {
+          "type": "product_blog",
+          "settings": {
+            "product": "boom-bike-arctic-white",
+            "blog_selector_bike": "2",
+            "blog_product_image": "shopify:\/\/shop_images\/Boom-White-Blacksister.jpg",
+            "blog_bikes_title": "Boom Bike Arctic White",
+            "blog_link_page_url": "shopify:\/\/products\/boom-bike-arctic-white"
+          }
+        },
+        "ff5ddebc-ec79-46c0-a09c-04ef61ffe102": {
+          "type": "product_blog",
+          "settings": {
+            "product": "boom-bike-tuscany-yellow",
+            "blog_selector_bike": "2",
+            "blog_product_image": "shopify:\/\/shop_images\/Boom-Yellow-Blacksister.jpg",
+            "blog_bikes_title": "Boom Bike Tuscany Yellow",
+            "blog_link_page_url": "shopify:\/\/products\/boom-bike-tuscany-yellow"
+          }
+        },
+        "9a5c9068-fbe0-411e-804a-5c300e630052": {
+          "type": "product_blog",
+          "settings": {
+            "product": "boom-bike-mist-grey",
+            "blog_selector_bike": "2",
+            "blog_product_image": "shopify:\/\/shop_images\/Boom-Grey-Blacksister.jpg",
+            "blog_bikes_title": "Boom Bike Mist Grey",
+            "blog_link_page_url": "shopify:\/\/products\/boom-bike-mist-grey"
+          }
+        }
+      },
+      "block_order": [
+        "9e9f4f2e-d205-4d37-95ea-cd5386ff7eea",
+        "cebb4d4b-a3b0-458a-999d-ac3e64bb2c20",
+        "af7c5138-bc96-42e8-9ce8-362d5c9fce12",
+        "1cde0b51-0679-4528-a123-b4067d0a1347",
+        "53249a28-71ac-4549-88cd-5f836732804c",
+        "ff5ddebc-ec79-46c0-a09c-04ef61ffe102",
+        "9a5c9068-fbe0-411e-804a-5c300e630052"
+      ],
+      "settings": {
+        "show_article_image": true,
+        "show_date": true,
+        "show_category": false,
+        "show_author": true,
+        "show_share_buttons": true,
+        "show_prev_next": true,
+        "lit_choose_color_img1": "shopify:\/\/shop_images\/1_2215e4e1-6e97-4cb2-b1c4-892a4634a03f.png",
+        "lit_choose_color_active_img1": "shopify:\/\/shop_images\/beige_back_active.png",
+        "lit_choose_color_img2": "shopify:\/\/shop_images\/2_dc818804-d471-4874-b0a7-a285b75eeeba.png",
+        "lit_choose_color_active_img2": "shopify:\/\/shop_images\/pcwhiteactive_small_48092d90-fb0d-4857-a6af-f91739aa9ee5.png",
+        "lit_choose_color_img3": "shopify:\/\/shop_images\/3_5e7a0f38-b8c8-4e7d-ae57-bcdf030c148e.png",
+        "lit_choose_color_active_img3": "shopify:\/\/shop_images\/blackactive_small_4ab9c64d-86e4-4e3d-8b4e-91089c12cbd3.webp",
+        "lit_choose_color_img4": "shopify:\/\/shop_images\/4_612e0320-e229-4bb8-b7c3-380287ef87b1.png",
+        "lit_choose_color_active_img4": "shopify:\/\/shop_images\/pink_back_active.webp",
+        "boom_choose_color_img1": "shopify:\/\/shop_images\/2_dc818804-d471-4874-b0a7-a285b75eeeba.png",
+        "boom_choose_color_active_img1": "shopify:\/\/shop_images\/pcwhiteactive_small_48092d90-fb0d-4857-a6af-f91739aa9ee5.png",
+        "boom_choose_color_img2": "shopify:\/\/shop_images\/5_d345c9a6-cc4f-4459-8780-204d073ea76e.png",
+        "boom_choose_color_active_img2": "shopify:\/\/shop_images\/yellow-active_e1bafa42-7b0a-41be-81e9-036c9827e6e6.png",
+        "boom_choose_color_img3": "shopify:\/\/shop_images\/6_e40c3b15-40f3-4e74-96eb-cc7da1f07023.png",
+        "boom_choose_color_active_img3": "shopify:\/\/shop_images\/grey-active_9825dc75-f72f-4e4b-b85a-8b65da745b09.png"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

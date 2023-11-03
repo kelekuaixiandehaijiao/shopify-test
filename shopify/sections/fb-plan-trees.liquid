@@ -1,0 +1,274 @@
+<div class="fb-planTree-content" id="fb-planTree">
+      <!-- bg -->
+      {% assign pc_bg = section.settings.pc_bg | img_url: '' %}
+      {% assign logo_img_mb = section.settings.logo_img_mb | img_url: '' %}
+      {% assign trees_mb = section.settings.trees_mb | img_url: '' %}
+      {% assign logo_img = section.settings.logo_img | img_url: '' %}
+      {% assign trees = section.settings.trees | img_url: '' %}
+      <img class="planTree-bg-img" src="{{ pc_bg }}" loading="lazy" alt="{{ pc_bg.alt }}">
+      <div class="planTree-des-box">
+            <div class="planTree-top">
+                  <img class="planTree-logo" loading="lazy" src="{{ logo_img }}" alt="{{section.settings.logo_img.alt}}">
+                  <img class="planTree-logo-mb" loading="lazy" src="{{ logo_img_mb }}" alt="{{section.settings.logo_img_mb}}">
+                  <span>X</span>
+                  <img class="planTree-img" loading="lazy" src="{{ trees }}" alt="{{section.settings.trees}}">
+                  <img class="planTree-img-mb" loading="lazy" src="{{ trees_mb }}" alt="{{section.settings.trees_mb}}">
+            </div>
+
+            <div class="m-tit">
+                  {{ section.settings.content_des | replace: '  ', '<br>' }}
+            </div>
+            <a href="{{ section.settings.play_link}}" target="_blank">
+                  <div class="m-btn">
+                        {{section.settings.btn_des}}
+                  </div>
+            </a>
+
+      </div>
+
+</div>
+<style>
+      #fb-planTree {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+      }
+
+      .fb-planTree-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+      }
+
+      .fb-planTree-content .planTree-bg-img {
+            display: block;
+            width: 100%;
+            height: 700px;
+            object-fit: fill;
+            z-index: -1;
+            position: relative;
+
+      }
+
+      .fb-planTree-content::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.20);
+            z-index: 1;
+      }
+
+      .fb-planTree-content .planTree-des-box {
+            position: absolute;
+            top: 212px;
+            left: calc(calc(100% - 654px)/2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+      }
+
+      .planTree-top {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+      }
+
+      .planTree-logo {
+            display: block;
+            width: 137px;
+            height: 28px;
+      }
+
+      .planTree-img {
+            display: block;
+            width: 173px;
+            height: 40px;
+      }
+
+      .planTree-img-mb {
+            display: none;
+      }
+
+      .planTree-logo-mb {
+            display: none;
+      }
+
+      .planTree-top span {
+            margin: 0 24px 0 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 16px;
+      }
+
+      .fb-planTree-content .m-tit {
+            /* width: 654px; */
+            font-size: 40px;
+            font-weight: 800;
+            color: #FFFFFF;
+            line-height: 40px;
+            text-align: center;
+            margin-top: 20px;
+      }
+
+      .fb-planTree-content .m-des {
+            width: 654px;
+            height: 88px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #FFFFFF;
+            line-height: 44px;
+            margin-top: 20px;
+      }
+
+      .fb-planTree-content .m-btn {
+            width: 400px;
+            height: 48px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #121212;
+            line-height: 48px;
+            cursor: pointer;
+      }
+
+
+
+      @media screen and (max-width: 768px) {
+            .fb-planTree-content .planTree-bg-img {
+                  display: block;
+                  width: 100%;
+                  height: 708px;
+                  object-fit: cover;
+
+            }
+
+            .fb-planTree-content .planTree-des-box {
+                  position: absolute;
+                  top: 218px;
+                  left: 0;
+            }
+
+            .planTree-logo {
+                  display: none;
+            }
+
+            .planTree-img {
+                  display: none;
+            }
+
+            .planTree-img-mb {
+                  display: block;
+                  width: 156px;
+                  height: 36px;
+            }
+
+            .planTree-logo-mb {
+                  display: block;
+                  width: 128px;
+                  height: 26px;
+            }
+
+            .planTree-top span {
+                  margin: 12px 14px 0 11px;
+                  font-size: 14px;
+                  font-weight: 600;
+                  color: #FFFFFF;
+                  line-height: 14px;
+            }
+
+            .fb-planTree-content .m-tit {
+                  /* width: calc( 100% - 24px ); */
+                  font-size: 30px;
+                  font-weight: 800;
+                  color: #FFFFFF;
+                  line-height: 36px;
+
+            }
+
+
+            .fb-planTree-content .m-btn {
+                  width: 345px;
+                  height: 48px;
+                  border-radius: 8px 8px 8px 8px;
+                  margin-top: 60px;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #121212;
+                  line-height: 48px
+            }
+
+
+      }
+</style>
+
+{% schema %}
+{
+"name": "FbPlantree",
+"presets": [
+{
+"name": "fb-plan-tree",
+"category": "Fb Sections",
+"blocks": []
+}
+],
+"settings": [
+{
+      "type": "text",
+      "id": "content_des",
+      "label": "Content DES",
+      "default": "ONE TREE PLANTED FOR EVERY eBIKE PURCHASED"
+      },
+{
+"type": "text",
+"id": "btn_des",
+"label": "btn Des",
+"default": "READ MORE"
+},
+{
+"type": "image_picker",
+"id": "pc_bg",
+"label": "PC Bg"
+},
+{
+"type": "image_picker",
+"id": "logo_img",
+"label": "logo"
+},
+{
+"type": "image_picker",
+"id": "trees",
+"label": "tress img"
+},
+{
+"type": "image_picker",
+"id": "logo_img_mb",
+"label": "logo mb"
+},
+{
+"type": "image_picker",
+"id": "trees_mb",
+"label": "tress img mb"
+},
+{
+"type": "url",
+"id": "play_link",
+"label": "Content link"
+}
+]
+}
+{% endschema %}

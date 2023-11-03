@@ -1,0 +1,185 @@
+{%- assign prboom = section.blocks | where: 'type', 'prboom' | first -%}
+{%- assign fb_boompr_prduct = section.settings.fb_boompr_prduct -%}
+{%- assign country_code_var = localization.country.iso_code | downcase -%}
+{%- capture has_bike_default_url -%}
+    {%- render 'customer-price-control', cpc_product: fb_boompr_prduct, type: 'bikeDefaultPdpUrl' -%}
+{%- endcapture -%}
+<div
+  class="fb_value_prboom px-5 py-10 fb-md:py-15 fb-sm:px-10 flex justify-center fb-md:block" style="background:{{ section.settings.swiper_background }}"
+  id="section-{{ section.id }}"
+>
+  <div class="relative mx-auto fb-md:max-w-75r flex snap-x snap-mandatory gap-5 overflow-x-auto py-5 fb-md:items-center fb-md:justify-center">
+    {%- for block in section.blocks -%}
+      <div class="prboom-box h-18r w-16r fb-md:w-71 fb-md:h-20r shrink-0 snap-start rounded-xl bg-white px-5 py-5 fb-md:hover:bg-gradient-to-br from-[#B0FF4A] to-[#2FDF13]">
+        <div class="prboom_pc_item relative flex h-full w-full flex-col justify-between">
+          <div class="flex-1">
+            <div class="prboom_imgWrapper h-7 w-7 fb-md:w-9 fb-md:h-9 fb-md:relative">
+              {% assign imgPikerHover = block.settings.iconHover | img_url: '1x1' | replace: '_1x1.','_{width}x.'
+              %}
+              <img class="Image--lazyLoad Image--fadeIn iconHover w-full h-full " 
+                data-src="{{ imgPikerHover }}" 
+                data-sizes="auto" 
+                data-optimumx="1.2"
+                alt="{{block.settings.iconHover.alt | escape }}"
+                data-widths="[1000, 1200, 1400, 1600, 1800, 2000, 2200]">
+            </div>
+            <div class="prboom_title mt-3 text-14 fb-md:text-16 font-bold text-121212">
+              <h2>{{ block.settings.prop_title }}</h2>
+            </div>
+            <div class="prboom_des mt-3 text-14 fb-md:text-16 text-121212">
+              {{ block.settings.prop_des }}
+            </div>
+          </div>
+          {%- if country_code_var == 'gb' -%}
+          {%- else -%}
+            <a
+              {% if has_bike_default_url != '' %}
+                href="{{ has_bike_default_url }}"
+              {% else %}
+                data-url="{{section.settings.btn_url}}"
+                href="javascript:void(0);"
+                data-keep-biketype="{%- render 'customer-price-control', cpc_product: fb_boompr_prduct, type: 'bikeType' -%}"
+                class="js-keep-biketype text-14 font-bold uppercase text-00cc45 underline fb-md:group-hover:text-white fb-md:hidden"
+              {% endif %}
+            >
+              <div class="prboom_button">
+                {%- if has_bike_default_url != '' -%}
+                  EXPLORE OTHER BIKES
+                {%- else -%}
+                  {{ block.settings.prop_button }}
+                {%- endif -%}
+              </div>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+  {%- if country_code_var == 'gb' -%}
+  {%- else -%}
+    <div class="prboom_button_pc hidden fb-md:block w-full mt-5">
+      <div class="text-white bg-black rounded-lg flex justify-center font-bold text-center items-center text-14 w-15r h-12 mx-auto">
+        {%- if has_bike_default_url != '' -%}
+          <a href="{{ has_bike_default_url }}">
+            <span>EXPLORE OTHER BIKES</span>
+          </a>
+        {%- else -%}
+          <a
+            href="javascript:void(0);"
+            data-url="{{section.settings.btn_url}}"
+            class="js-keep-biketype"
+            data-keep-biketype="{%- render 'customer-price-control', cpc_product: fb_boompr_prduct, type: 'bikeType' -%}"
+          >
+            <span>{{ section.settings.btn_txt }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+<style>
+  .prboom_pc::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+{% schema %}
+{
+  "name": "Fbprboomwiper",
+  "presets": [
+    {
+      "name": "fb-prboom-swiper",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "fb_boompr_prduct",
+      "label": "product"
+    },
+    {
+      "type": "color",
+      "id": "swiper_background",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1c1b1b"
+    },
+    {
+      "type": "color",
+      "id": "des_color",
+      "label": "Des Color",
+      "default": "#333"
+    },
+    {
+      "type": "color",
+      "id": "prop_btn_txtcolor",
+      "label": "Button Text Color",
+      "default": "#1C1B1B"
+    },
+    {
+      "type": "color_background",
+      "id": "prop_btn_background",
+      "label": "Button Background"
+    },
+    {
+      "type": "text",
+      "id": "lit_bike_background",
+      "label": "LitBike Page Background"
+    },
+    {
+      "type": "text",
+      "id": "btn_txt",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "prboomSwiper",
+      "name": "prboom Swiper",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "iconPic",
+          "label": "Swiper Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "iconHover",
+          "label": "Swiper Hover Image"
+        },
+        {
+          "type": "text",
+          "id": "prop_title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "prop_des",
+          "label": "Desciption"
+        },
+        {
+          "type": "text",
+          "id": "prop_button",
+          "label": "Button"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,129 @@
+<section class="Section Section--spacingNormal" id="section-{{ section.id }}" data-section-type="article-list" data-section-id="{{ section.id }}">
+  <div class="px-5 pb-10 max-w-75r mx-auto fb-sm:px-10 fb-sm:pb-14 fb-md:px-0 fb-md:py-20">
+    {%- if section.settings.title != blank -%}
+      <header class="SectionHeader m-auto text-center">
+        <p class=" text-20 text-121212 font-bold fb-md:text-32 uppercase">{{ section.settings.title | escape }}</p>
+      </header>
+    {%- endif -%}
+
+    <div class="ArticleListWrapper">
+      <div class="grid fb-md:grid-cols-3 fb-sm:grid-cols-2 grid-cols-1 fb-sm:gap-8 fb-md:gap-10">
+        {%- assign block = section.blocks.first -%}
+
+        {%- case block.type -%}
+          {%- when 'article' -%}
+            {%- for i in (1..3) -%}
+              {%- assign article_option = 'article_' | append: i -%}
+              {%- assign article = articles[block.settings[article_option]] -%}
+
+              {%- unless article == empty -%}
+                <div class="{% if forloop.index == 3 %}fb-sm:hidden{% endif %} fb-md:block">
+                  {%- render 'article-item', block: block, article: article -%}
+                </div>
+
+              {%- endunless -%}
+            {%- endfor -%}
+
+          {%- when 'blog' -%}
+            {%- assign blog = blogs[block.settings.blog] -%}
+
+            {%- for article in blog.articles limit: 3 -%}
+              <div class="{% if forloop.index == 3 %}fb-sm:hidden{% endif %} fb-md:block">
+                {%- render 'article-item', block: block, article: article -%}
+              </div>
+
+            {%- endfor -%}
+        {%- endcase -%}
+      </div>
+    </div>
+
+    {%- if section.settings.button_text != blank -%}
+      <div class="SectionFooter mt-4 text-center fb-sm:mt-10 fb-md:mt-20">
+        <a href="{{ section.settings.button_link }}" class="dark-btn-normal m-auto uppercase">{{ section.settings.button_text | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "shopify-section--bordered",
+  "max_blocks": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show article category",
+      "info": "The first article's tag is used as the main category.",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "View all articles"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article_1",
+          "label": "Article 1"
+        },
+        {
+          "type": "article",
+          "id": "article_2",
+          "label": "Article 2"
+        },
+        {
+          "type": "article",
+          "id": "article_3",
+          "label": "Article 3"
+        }
+      ]
+    },
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blog"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Blog",
+      "name": "Blog posts",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "blog",
+          "settings": {
+            "blog": "news"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

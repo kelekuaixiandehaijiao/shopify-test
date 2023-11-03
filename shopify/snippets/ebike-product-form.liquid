@@ -1,0 +1,244 @@
+{% comment %} mob {% endcomment %}
+{%- if single_product -%}
+  {% capture css_ebike_open %}w-6 h-[24px] mr-6 rounded-full fb-flex-xy-center cursor-pointer fb-769:w-8 fb-769:h-8 fb-769:mr-10{% endcapture %}
+  {% capture css_ebike_color %}w-[10px] h-auto hidden{% endcapture %}
+  {% capture ebike_choose_item %}{% endcapture %}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'choose_single_bikeColor' -%}
+        {% assign imgactive = block.settings.bike_img_active | img_url %}
+        {%- assign textactive = block.settings.bike_color_title -%}
+        {%- capture show_product1 -%}
+          {%- render 'customer-price-control', type:'showProduct', cpc_product: block.settings.color_product1 -%}
+        {%- endcapture -%}
+        {%- if show_product1 == 'true' -%}
+          {%- assign product1 = block.settings.color_product1 -%}
+          {% assign imgdefault1 = block.settings.bike_img_defalut1 | img_url %}
+          {% assign text1 = block.settings.is_color_title1 %}
+        {%- endif -%}
+        {%- capture show_product2 -%}
+          {%- render 'customer-price-control', type:'showProduct', cpc_product: block.settings.color_product2 -%}
+        {%- endcapture -%} 
+        {%- if show_product2 == 'true' -%}       
+          {%- assign product2 = block.settings.color_product2 -%}
+          {% assign imgdefault2 = block.settings.bike_img_defalut2 | img_url %}
+          {% assign text2 = block.settings.is_color_title2 %}
+        {%- endif -%}
+        {%- capture show_product3 -%}
+          {%- render 'customer-price-control', type:'showProduct', cpc_product: block.settings.color_product3 -%}
+        {%- endcapture -%} 
+        {%- if show_product3 == 'true' -%}     
+          {%- assign product3 = block.settings.color_product3 -%}
+          {% assign imgdefault3 = block.settings.bike_img_defalut3 | img_url %}
+          {% assign text3 = block.settings.is_color_title3 %}
+        {%- endif -%}
+        {%- capture show_product4 -%}
+          {%- render 'customer-price-control', type:'showProduct', cpc_product: block.settings.color_product4 -%}
+        {%- endcapture -%} 
+        {%- if show_product4 == 'true' -%}   
+          {%- assign product4 = block.settings.color_product4 -%}
+          {% assign imgdefault4 = block.settings.bike_img_defalut4 | img_url %}
+          {% assign text4 = block.settings.is_color_title4 %}
+        {%- endif -%}  
+        <div class="ebike-choose-form-mob w-full border-t border-e6e6e6 pb-0 pt-5 fb-769:border-none fb-769:p-0">
+          <div class="ebike-choose-color-box flex w-full items-center justify-between fb-769:text-h-16 fb-769:font-semibold">
+            <div class="ebike-choose-color-left fb-max-768:min-w-50 fb-769:w-full">
+              <div class="ebike-choose-title text-h-14 font-semibold text-121212">
+                Color - <span class="js-ebike-color"> {{ textactive }}</span>
+              </div>
+              <div
+                class="
+                  ebike-choose-ul mt-5 flex h-[24px] w-full items-center justify-start
+                  fb-769:mt-4 fb-769:h-8
+                "
+              >
+                {%- if product1 -%}
+                  <a
+                    class="ebike-choose-item {{ebike_choose_item}} {% if product1.title == product.title %}ebike-choose-item-checked{% endif %}"
+                    href="{{ block.settings.bike_color_url1 | default: product1.url }}"
+                  >
+                    <div class="ebike-choose-imgdefalut {{css_ebike_open}} bike-{{- block.settings.is_color_title1 | replace: ' ' , '-' -}}-color h-[24px] w-6">
+                      {%- if product1.title contains 'White' -%}
+                        <img
+                          class="ebike-choose-icon {{css_ebike_color}}"
+                          loading="lazy"
+                          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/bike-bloak.png?v=1692607977"
+                          alt="check logo"
+                        >
+                      {%- else -%}
+                        <img
+                          class="ebike-choose-icon {{css_ebike_color}}"
+                          loading="lazy"
+                          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector-checked.png?v=1687681663"
+                          alt="check logo"
+                        >
+                      {%- endif -%}
+                    </div>
+                  </a>
+                {%- endif -%}
+                {%- if product2 -%}
+                  <a
+                    class="ebike-choose-item {{ebike_choose_item}} {% if  product2.title == product.title  %}ebike-choose-item-checked{% endif %}"
+                    href="{{ block.settings.bike_color_url2 | default: product2.url }}"
+                  >
+                    <div class="ebike-choose-imgdefalut {{css_ebike_open}} bike-{{- block.settings.is_color_title2 | replace: ' ' , '-' -}}-color">
+                      {%- if product2.title contains 'White' -%}
+                        <img
+                          class="ebike-choose-icon {{css_ebike_color}} hidden"
+                          loading="lazy"
+                          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/bike-bloak.png?v=1692607977"
+                          alt="check logo"
+                        >
+                      {%- else -%}
+                        <img
+                          class="ebike-choose-icon {{css_ebike_color}} hidden"
+                          loading="lazy"
+                          src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector-checked.png?v=1687681663"
+                          alt="check logo"
+                        >
+                      {%- endif -%}
+                    </div>
+                  </a>
+                {%- endif -%}
+                {%- if product3 -%}
+                  <a
+                    class="ebike-choose-item {{ebike_choose_item}} {% if  product3.title == product.title  %}ebike-choose-item-checked{% endif %}"
+                    href="{{ block.settings.bike_color_url3 | default: product3.url }}"
+                  >
+                    <div class="ebike-choose-imgdefalut {{css_ebike_open}} bike-{{- block.settings.is_color_title3 | replace: ' ' , '-' -}}-color">
+                      <img
+                        class="ebike-choose-icon {{css_ebike_color}}"
+                        loading="lazy"
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector-checked.png?v=1687681663"
+                        alt="check logo"
+                      >
+                    </div>
+                  </a>
+                {%- endif -%}
+                {%- if product4 -%}
+                  <a
+                    class="ebike-choose-item {{ebike_choose_item}} {% if  product4.title == product.title  %}ebike-choose-item-checked{% endif %}"
+                    href="{{ block.settings.bike_color_url4 | default: product4.url }}"
+                  >
+                    <div class="ebike-choose-imgdefalut {{css_ebike_open}} bike-{{- block.settings.is_color_title4 | replace: ' ' , '-' -}}-color">
+                      <img
+                        class="ebike-choose-icon {{css_ebike_color}}"
+                        loading="lazy"
+                        src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector-checked.png?v=1687681663"
+                        alt="check logo"
+                      >
+                    </div>
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+{%- else -%}
+  <div
+    class="ebike-choose-form-mob w-full border-y border-e6e6e6 py-[20px]"
+    style="-webkit-tap-highlight-color:transparent;"
+  >
+    {%- capture open_svg -%}
+           <img src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/up_low_down.png?v=1690525154">
+        {%- endcapture -%}
+    <div class="ebike-cfm-select fb-flex-x-start w-full cursor-pointer select-none flex-wrap">
+      <div class="ebike-cfm-size ebike-cfm-common js-ebike-mobcfm-box js-other-target-box1 relative">
+        <div class="ebike-cfm-frame js-ebike-mobcfm-title">
+          <span class="span1 span-1-1">Frame:</span>
+          <span class="span2 span-2-1 js-sizemob-name">High Step</span>
+          <span class="span3-img">{{ open_svg }}</span>
+        </div>
+        <ul
+          class="
+            ebike-cfm-value ebike-cfm-value-1 js-render-size border-ccccc absolute left-0 top-12 hidden h-auto w-[150px] rounded-lg border bg-white py-[7px]
+            fb-769:top-[54px] fb-769:pb-[10px] fb-769:pt-[10px]
+          "
+        >
+          {%- for option in product.options_with_values -%}
+            {%- if option.name == 'Size' -%}
+              {%- for size in option.values -%}
+                <li
+                  class="ebike-choose-size-mob js-ebike-productsize px-[18px]"
+                  data-size="{{ size }}"
+                >
+                  <span class="span-2-1">{{ size }}</span>
+                </li>
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="ebike-cfm-size2 ebike-cfm-common js-ebike-mobcfm-box js-other-target-box2" style="display:none;">
+        <div class="ebike-cfm-frame js-ebike-mobcfm-title">
+          <span class="span1 span-1-1">Size:</span>
+          <span class="span2 span-2-1 js-sizemob-name2">Regular</span>
+          <span class="span3-img">{{ open_svg }}</span>
+        </div>
+        <ul class="ebike-cfm-value ebike-cfm-value-2 js-ebike-mobcfm-sizevalue"></ul>
+      </div>
+
+      <div class="ebike-cfm-size3 ebike-cfm-common" style="display:none;">
+        <img
+          class="Image--lazyLoad Image--fadeIn"
+          data-src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/zhichi.png?v=1690791789"
+          alt="rule logo"
+        >
+        <span class="ebike-size-tool">Sizing Tool</span>
+      </div>
+      <div class="ebike-cfm-size4 ebike-cfm-common mb-6 flex-shrink-0 text-h-12-s font-medium text-[#12121280] fb-769:text-h-14">
+        <span> Rider Heights:</span> <span class="js-ebike-single-style"></span>
+      </div>
+    </div>
+    <div class="ebike-choose-color-box fb-flex-x-between w-full">
+      <div class="ebike-choose-color-left min-w-50">
+        <div class="ebike-choose-title text-h-12-s font-medium text-121212 fb-769:text-h-14">
+          Color - <span class="js-ebike-color">Black</span>
+        </div>
+        <ul class="ebike-choose-ul fb-flex-x-start mt-3 h-[24px] w-full fb-769:mt-4 fb-769:h-8">
+          {%- for option in product.options_with_values -%}
+            {%- if option.name == 'Color' -%}
+              {%- for value in option.values -%}
+                {%- assign loopindex4 = forloop.index -%}
+                <li
+                  class="ebike-choose-item js-ebike-productcolor mr-[34px] flex h-[24px] w-6 flex-shrink-0 flex-col items-center fb-769:mr-10 fb-769:h-8 fb-769:w-8 {% if loopindex4 == 1 %}ebike-choose-item-checked{% endif %}"
+                  data-color="{{ value }}"
+                >
+                  <div
+                    class="
+                      ebike-choose-imgdefalut {{css_ebike_open}} ebike-{{value | replace: ' ' , '-'}}
+                      fb-flex-xy-center h-full w-full cursor-pointer rounded-full
+                    "
+                  >
+                    <img
+                      class="ebike-choose-icon h-auto w-[10px] {{css_ebike_color}} hidden"
+                      src="https://cdn.shopify.com/s/files/1/0592/3766/2905/files/Vector-checked.png?v=1687681663"
+                      alt="check logo"
+                    >
+                  </div>
+                </li>
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="ebike-choose-color-right min-w-20 text-center">
+        <div class="ebike-choose-title text-h-12-s font-medium text-121212 fb-769:text-h-14">
+          <span class="js-ebike-mobcfm-title">Quantity</span>
+        </div>
+        {% capture ebike_quantity_number %}w-[9px] text-center fb-769:w-[10px]{% endcapture %}
+        <div class="ebike-choose-quantity fb-flex-x-between mt-3 h-[24px] w-20 select-none rounded-[22px] border border-121212 bg-white px-[10px] leading-6 fb-769:mt-4 fb-769:h-8 fb-769:leading-[32px]">
+          <span class="ebike-add-quantity cursor-pointer {{ ebike_quantity_number}} js-reduce-quantity disabled">
+            -
+          </span>
+          <span class="ebike-quantity-number js-qiantity-number inline-block text-[14px] font-medium text-black">
+            1
+          </span>
+          <span class="ebike-add-quantity  cursor-pointer {{ ebike_quantity_number}} js-add-quantity"> + </span>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

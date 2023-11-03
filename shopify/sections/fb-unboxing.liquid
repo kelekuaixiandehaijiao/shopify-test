@@ -1,0 +1,183 @@
+<div class="fb-unboxing-content" id="fb-unboxing">
+  <!-- bg -->
+  {% assign pc_bg = section.settings.pc_bg | img_url: '' %}
+  <img
+    class="unboxing-img"
+    src="{{ pc_bg }}"
+    loading="lazy"
+    alt="{{section.settings.pc_bg.alt}}"
+  >
+  <div class="des-box">
+    <div class="m-tit">
+      {{ section.settings.content_title }}
+    </div>
+    <div class="m-des">
+      {{ section.settings.content_des }}
+    </div>
+    <a
+      href="{{ section.settings.paly_video}}" target="_blank"
+    >
+      <div class="m-btn">
+        {{ section.settings.btn_des }}
+      </div>
+    </a>
+  </div>
+</div>
+<style>
+  #fb-unboxing {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .fb-unboxing-content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .fb-unboxing-content .unboxing-img {
+    display: block;
+    width: 100%;
+    height: 328px;
+    object-fit: cover;
+  }
+
+  .fb-unboxing-content .des-box {
+    position: absolute;
+    z-index: 2;
+    top: 80px;
+    left: calc(calc(100% - 1200px) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .fb-unboxing-content .m-tit {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 40px;
+  }
+
+  .fb-unboxing-content .m-des {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 20px;
+    margin-top: 20px;
+  }
+
+  .fb-unboxing-content .m-btn {
+    width: 280px;
+    height: 48px;
+    border-radius: 8px 8px 8px 8px;
+    border: 2px solid #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 16px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    .fb-unboxing-content .unboxing-img {
+      display: block;
+      width: 100%;
+      height: 234px;
+      object-fit: cover;
+    }
+
+    .fb-unboxing-content .des-box {
+      position: absolute;
+      z-index: 2;
+      top: 60px;
+      left: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .fb-unboxing-content .m-tit {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 24px;
+    }
+
+    .fb-unboxing-content .m-des {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 14px;
+      margin-top: 16px;
+    }
+
+    .fb-unboxing-content .m-btn {
+      width: 200px;
+      height: 40px;
+      border-radius: 8px 8px 8px 8px;
+      border: 1px solid #ffffff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 12px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FbUnboxing",
+  "presets": [
+    {
+      "name": "fb-unboxing",
+      "category": "Fb Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "content_title",
+      "label": "Content Title",
+      "default": "EASY TO ASSEMBLE"
+    },
+    {
+      "type": "text",
+      "id": "content_des",
+      "label": "Content Des",
+      "default": "Morph Rover"
+    },
+    {
+      "type": "text",
+      "id": "btn_des",
+      "label": "btn Des",
+      "default": "WATCH UNBOXING VIDEO"
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_bg",
+      "label": "PC Bg"
+    },
+    {
+      "type": "url",
+      "id": "paly_video",
+      "label": "Content Video"
+    }
+  ]
+}
+{% endschema %}

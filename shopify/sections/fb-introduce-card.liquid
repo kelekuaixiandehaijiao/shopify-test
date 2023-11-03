@@ -1,0 +1,462 @@
+<div class="fb-introcard-bikes w-full bg-[#f5f5f5]" id="section-{{ section.id }}">
+  <div
+    class="
+      w-full pt-10 px-3.5 pb-[45px]
+      fb-sm:pt-15 fb-sm:pb-9 fb-sm:px-10 fb-sm:flex fb-sm:items-center fb-sm:justify-center
+      fb-md:pt-[80px] fb-md:pb-[54px]
+    "
+  >
+    <div
+      class="
+        fb-sm:pb-6
+        fb-sm:overflow-x-auto fb-sm:flex fb-sm:items-center fb-sm:justify-start fb-sm:space-x-[20px]
+      "
+    >
+      {% comment %}  lit bike {% endcomment %}
+      <div
+        class="
+          introcard-bike-kinds
+          relative bg-white rounded-lg w-full px-5 py-5 mt-[15px]
+          fb-sm:w-[345px] h-[530px] fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+          fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+        "
+      >
+        {%- assign lit_index = 1 -%}
+        {%- assign lit_index2 = 1 -%}
+        <div class="w-full text-right">
+          <h2
+            class="
+              inline-block w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] mb-[6px] font-semibold
+              fb-md:w-30 fb-md:h-[30px] fb-md:leading-[30px] fb-md:text-[14px]
+            "
+          >
+            {{ section.settings.introcdbike_kinds1 }}
+          </h2>
+        </div>
+        {%- for block in section.blocks -%}
+          {%- if block.settings.introcardtype == '1' -%}
+            <div
+              class="
+                fic-card-box hidden {% if lit_index == 1 %}fic-card-selected{% endif %}
+                w-full text-center relative
+              "
+              data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}"
+            >
+              {%- render 'fb-introcard-item', block: block -%}
+            </div>
+            {%- assign lit_index = lit_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <div class="w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px] fb-md:top-[340px] fb-md:h-6">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.introcardtype == '1' -%}
+              <div
+                class="
+                  js-select-bikecolor
+                  w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                  mr-[11px] relative
+                  fb-md:w-6 fb-md:h-6
+                "
+                {% if lit_index2 == 1 %}
+                  style="border-color:{{ block.settings.bike_border_color}};"
+                {% endif %}
+                data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-'}}"
+              >
+                <span
+                  class="
+                    introcard-position-span
+                    inline-block w-4 h-4 rounded-full
+                    border border-solid cursor-pointer
+                    fb-md:w-[18px] fb-md:h-[18px]
+                    absoulte fb-center-translate
+                  "
+                  style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};"
+                >
+                </span>
+              </div>
+              {%- assign lit_index2 = lit_index2 | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+      {% comment %} boom bike {% endcomment %}
+      <div
+        class="
+          introcard-bike-kinds
+          relative bg-white rounded-lg w-full px-5 py-5 mt-[15px]
+          fb-sm:w-[345px] h-[530px] fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+          fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+        "
+      >
+        {%- assign boom_index = 1 -%}
+        {%- assign boom_index2 = 1 -%}
+        <div class="w-full text-right">
+          <h2
+            class="
+              inline-block
+              w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] mb-[6px] font-semibold
+              fb-md:w-30 fb-md:h-[38px] fb-md:leading-[38px] fb-md:text-[14px] fb-md:mb-[0px]
+            "
+          >
+            {{ section.settings.introcdbike_kinds2 }}
+          </h2>
+        </div>
+        {%- for block in section.blocks -%}
+          {%- if block.settings.introcardtype == '2' -%}
+            <div
+              class="
+                fic-card-box hidden {% if boom_index == 1 %}fic-card-selected{% endif %}
+                w-full text-center relative
+              "
+              data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}"
+            >
+              {%- render 'fb-introcard-item', block: block -%}
+            </div>
+            {%- assign boom_index = boom_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <div
+          class="
+            w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px]
+            fb-md:top-[340px] fb-md:h-6
+          "
+        >
+          {%- for block in section.blocks -%}
+            {%- if block.settings.introcardtype == '2' -%}
+              <div
+                class="
+                  js-select-bikecolor
+                  w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                  mr-[11px] relative
+                  fb-md:w-6 fb-md:h-6
+                "
+                {% if boom_index2 == 1 %}
+                  style="border-color:{{ block.settings.bike_border_color}};"
+                {% endif %}
+                data-name="{{ block.settings.bike_name_2 | replace: ' ' , '-' }}"
+              >
+                <span
+                  class="introcard-position-span inline-block w-[14px] h-[14px] rounded-full border border-solid cursor-pointer fb-md:w-[18px] fb-md:h-[18px]
+                    absoulte fb-center-translate
+                  "
+                  style="background-color:{{ block.settings.bike_color}};border-color:{{ block.settings.bike_border_color}};"
+                ></span>
+              </div>
+              {%- assign boom_index2 = boom_index2 | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+      {% comment %} ebike {% endcomment %}
+      <div
+        class="
+          introcard-bike-kinds
+          relative bg-white rounded-lg w-full px-5 py-5 mt-[15px]
+          fb-sm:w-[345px] h-[530px] fb-sm:px-5 fb-sm:py-5 fb-sm:mt-0 fb-sm:shrink-0
+          fb-md:w-[386px] fb-md:h-[570px] fb-md:rounded-xl
+        "
+      >
+        {%- assign ebike_index = 1 -%}
+        {%- assign ebike_index2 = 1 -%}
+        <div class="w-full text-right">
+          <h2
+            class="
+              inline-block
+              w-[100px] h-6 text-center bg-[rgba(18,18,18,.05)] text-121212 text-[12px] leading-6 rounded-[40px] mb-[6px] font-semibold
+              fb-md:w-30 fb-md:h-[38px] fb-md:leading-[38px] fb-md:text-[14px] fb-md:mb-[0px]
+            "
+          >
+            {{ section.settings.introcdbike_kinds3 }}
+          </h2>
+        </div>
+        {%- for block in section.blocks -%}
+          {%- if block.settings.introcardtype == '3' -%}
+            {%- assign variable_product = block.settings.bike_product -%}
+            {%- for navimg_item in variable_product.variants -%}
+              {%- if navimg_item.option1 == 'High-Step' -%}
+                <div
+                  class="
+                    fic-card-box hidden {% if ebike_index == 1 %}fic-card-selected {% endif %}
+                    w-full text-center relative
+                  "
+                  data-name="{{ navimg_item.option2 | replace: ' ' , '-' }}"
+                >
+                  {%- render 'fb-introcard-item', block: block, navimg_item: navimg_item -%}
+                </div>
+                {%- assign ebike_index = ebike_index | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <div
+          class="
+            w-full flex items-center justify-start h-5 absolute top-[320px] left-0 pl-[20px]
+            fb-md:top-[340px] fb-md:h-6
+          "
+        >
+          {%- for block in section.blocks -%}
+            {%- assign variable_product = block.settings.bike_product -%}
+            {%- if block.settings.introcardtype == '3' -%}
+              {%- for option in variable_product.options_with_values -%}
+                {%- if option.name == 'Color' -%}
+                  {%- for value in option.values -%}
+                    <div
+                      class="
+                        js-select-bikecolor
+                        w-5 h-5 bg-white rounded-full border border-solid border-[#fff] cursor-pointer
+                        mr-[11px] relative
+                        fb-md:w-6 fb-md:h-6
+                      "
+                      {% if ebike_index2 == 1 %}
+                        style="border-color:{{ block.settings.bike_border_color}};"
+                      {% endif %}
+                      data-name="{{ value | replace: ' ' , '-' }}"
+                    >
+                      <span
+                        class="
+                          introcard-position-span
+                          inline-block w-[14px] h-[14px] rounded-full
+                          border border-solid cursor-pointer
+                          ebike-{{value | replace: ' ' , '-'}}
+                          fb-md:w-[18px] fb-md:h-[18px]
+                          absoulte fb-center-translate
+                        "
+                      ></span>
+                    </div>
+                    {%- assign ebike_index2 = ebike_index2 | plus: 1 -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FbintrocardBike",
+  "presets": [
+    {
+      "name": "fb-introcard-bikes",
+      "category": "My Sections",
+      "blocks": []
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "introcardbike",
+      "label": "Lit Bike",
+      "default": "Lit Bike"
+    },
+    {
+      "type": "text",
+      "id": "introcdbike_kinds1",
+      "label": "Lit Bike Title",
+      "default": "introcard Bike"
+    },
+    {
+      "type": "text",
+      "id": "introcdbike_kinds2",
+      "label": "Boom Bike Ttle",
+      "default": "introcard Bike"
+    },
+    {
+      "type": "text",
+      "id": "introcdbike_kinds3",
+      "label": "Ebike Title 3",
+      "default": "2-in-1 eBike"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "goods",
+      "name": "goods",
+      "settings": [
+        {
+          "type": "select",
+          "id": "introcardtype",
+          "label": "Bike Type",
+          "options": [
+            {
+              "value": "1",
+              "label": "lit-bike"
+            },
+            {
+              "value": "2",
+              "label": "boom-bike"
+            },
+            {
+              "value": "3",
+              "label": "ebike"
+            }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "color",
+          "id": "bike_color",
+          "label": "Bike Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "bike_border_color",
+          "label": "Bike border Color",
+          "default": "#000000"
+        },
+        {
+          "type": "product",
+          "id": "bike_product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "bike_img_pc",
+          "label": "Bike Pc"
+        },
+        {
+          "type": "text",
+          "id": "bike_desc_text",
+          "label": "Bike Desc Text"
+        },
+        {
+          "type": "text",
+          "id": "bike_name_1",
+          "label": "Bike Name 1"
+        },
+        {
+          "type": "text",
+          "id": "bike_name_2",
+          "label": "Bike Name 2"
+        },
+        {
+          "type": "text",
+          "id": "bike_name_desc",
+          "label": "Bike Name Desc"
+        },
+        {
+          "type": "text",
+          "id": "bike_new",
+          "label": "New Launch"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_sold_out",
+          "label": "Choose Sold Out",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "bike_sold_out_text",
+          "label": "Sold Out Desc",
+          "default": "Sold out"
+        },
+        {
+          "type": "text",
+          "id": "bike_btn_desc",
+          "label": "Button Desc",
+          "default": "VIEW PRODUCT"
+        },
+        {
+          "type": "url",
+          "id": "bike_btn_url",
+          "label": "Button Url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .fic-card-selected {
+    display: block;
+  }
+  @media only screen and (min-width: 1220px) {
+    .fic-card-rate .stamped-main-badge {
+      width: 150px;
+      position: relative;
+      display: block;
+    }
+    .fic-card-rate .stamped-badge {
+      height: 20px;
+      line-height: 20px;
+      padding-left: 34px;
+      text-align: left;
+    }
+    .fic-card-rate .stampedRating-pdp {
+      position: absolute;
+      left: 0px;
+      top: 4px;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 600;
+      color: #121212;
+    }
+    .fic-card-rate .stamped-badge-caption {
+      position: absolute;
+      top: 24px;
+      left: 1px;
+      font-weight: 400;
+      color: #666666;
+      line-height: 12px;
+      font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: 1219px) {
+    .fic-card-rate {
+      padding-left: 33px;
+    }
+    .fic-card-rate .stamped-main-badge {
+      position: relative;
+      display: block;
+    }
+    .fic-card-rate .stamped-badge {
+      height: 14px;
+      line-height: 14px;
+      padding-left: 29px;
+      text-align: left;
+    }
+    .fic-card-rate .stampedRating-pdp {
+      position: absolute;
+      left: 0px;
+      top: 2px;
+      font-size: 14px;
+      line-height: 12px;
+      font-weight: 500;
+      color: #121212;
+    }
+    .fic-card-rate .stamped-badge-caption {
+      position: absolute;
+      top: 20px;
+      left: 1px;
+      font-weight: 400;
+      color: #666666;
+      line-height: 12px;
+      font-size: 12px;
+    }
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    $('.js-select-bikecolor').click(function () {
+      let _name = $(this).attr('data-name');
+      let _parent = $(this).parents('.introcard-bike-kinds');
+      let _border_color = $(this).find('.introcard-position-span').css('border-color');
+      $(this).siblings().css('border-color', '#fff');
+      $(this).css('border-color', _border_color);
+      _parent
+        .find(`.fic-card-box[data-name=${_name}]`)
+        .addClass('fic-card-selected')
+        .siblings()
+        .removeClass('fic-card-selected');
+    });
+    $('.fic-card-box').each(function (i, docEle) {
+      // console.log(i,'元素')
+      // console.log( $(this).find(".stamped-badge").attr("data-rating"),'ahahha')
+      $(this).find('.stampedRating-pdp').text($(this).find('.stamped-badge').attr('data-rating'));
+    });
+  });
+</script>

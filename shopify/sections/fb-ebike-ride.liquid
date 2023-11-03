@@ -1,0 +1,726 @@
+<section id="section-{{ section.id }}">
+  <div class="fb-ebike-ride">
+    <div class="ebkike-ride-pccontent">
+      <div class="ebike-ride-left">
+          {%- assign imagePc = section.settings.ebike_image_pc |  img_url: '' -%}
+          <img
+            class="Image--lazyLoad Image--fadeIn ebike-image ebike-pc"
+            data-src="{{ imagePc }}"
+            data-sizes="auto"
+            alt="{{section.settings.ebike_image_pc.alt}}"
+          >
+      </div>
+      <div class="ebike-ride-right">
+        <div class="ebike-ride-text">{{ section.settings.ebike_ride_text }}</div>
+        <div class="ebike-ride-title"><h2>{{ section.settings.ebike_ride_title }}</h2></div>
+        <div class="ebike-ride-info">{{ section.settings.ebike_ride_info }}</div>
+        <div class="ebike-ride-target">
+          <div class="ride-target-wrapper">
+            <div class="ride-wrapper-top">
+              <span class="top-number">{{ section.settings.ebike_ride_number1 }}</span>
+              <span class="top-unit">{{ section.settings.ebike_ride_unit1 }}</span>
+              {%- if section.settings.ebike_ride_tips1 != blank -%}
+                <div class="ebike-aske-icon">?</div>
+              {%- endif -%}
+              <div class="ride-item-toast">{{ section.settings.ebike_ride_tips1 }}</div>
+            </div>
+            <div class="ride-wrapper-bottom">
+              <div class="bottom-text">{{ section.settings.ebike_ride_text1 }}</div>
+            </div>
+            
+          </div>
+          <div class="ride-target-wrapper">
+            <div class="ride-wrapper-top">
+              <span class="top-number">{{ section.settings.ebike_ride_number2 }}</span>
+              <span class="top-unit">{{ section.settings.ebike_ride_unit2 }}</span>
+              {%- if section.settings.ebike_ride_tips2 != blank -%}
+                <div class="ebike-aske-icon">?</div>
+              {%- endif -%}
+              <div class="ride-item-toast">{{ section.settings.ebike_ride_tips2 }}</div>
+            </div>
+            <div class="ride-wrapper-bottom">
+              <div class="bottom-text">{{ section.settings.ebike_ride_text2 }}</div>
+            </div>
+          </div>
+          <div class="ride-target-wrapper">
+            <div class="ride-wrapper-top">
+              <span class="top-number">{{ section.settings.ebike_ride_number3 }}</span>
+              <span class="top-unit">{{ section.settings.ebike_ride_unit3 }}</span>
+              {%- if section.settings.ebike_ride_tips3 != blank -%}
+                <div class="ebike-aske-icon">?</div>
+              {%- endif -%}
+              <div class="ride-item-toast">{{ section.settings.ebike_ride_tips3 }}</div>
+            </div>
+            <div class="ride-wrapper-bottom">
+              <div class="bottom-text">{{ section.settings.ebike_ride_text3 }}</div>
+            </div>
+          </div>
+          <div class="ride-target-wrapper">
+            <div class="ride-wrapper-top">
+              <span class="top-number">{{ section.settings.ebike_ride_number4 }}</span>
+              <span class="top-unit">{{ section.settings.ebike_ride_unit4 }}</span>
+              {%- if section.settings.ebike_ride_tips4 != blank -%}
+                <div class="ebike-aske-icon">?</div>
+              {%- endif -%}
+              <div class="ride-item-toast">{{ section.settings.ebike_ride_tips4 }}</div>
+            </div>
+            <div class="ride-wrapper-bottom">
+              <div class="bottom-text">{{ section.settings.ebike_ride_text4 }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="ride-list">
+          {%- for block in section.blocks -%}
+            <div class="ride-item">
+              <div class="ride-item-image">
+                {%- assign rideIcon = block.settings.ebike_ride_icon |  img_url: '' -%}
+                <img
+                  class="Image--lazyLoad Image--fadeIn ebike-item-image"
+                  data-src="{{ rideIcon }}"
+                  alt="{{ block.settings.ebike_ride_icon.alt |escape }}"
+                  data-sizes="auto"
+                >
+              </div>
+              <div class="ride-item-desc">{{ block.settings.ebike_ride_desc }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+    <div class="ebkike-ride-mobcontent">
+      <div class="ebike-ride-text">{{ section.settings.ebike_ride_text }}</div>
+      <div class="ebike-ride-title"><h2>{{ section.settings.ebike_ride_title }}</h2></div>
+      <div class="ebike-ride-info">{{ section.settings.ebike_ride_info }}</div>
+      <div class="ebike-ride-left">
+          {%- assign imageMob = section.settings.ebike_image_mob |  img_url: '' -%}
+          <img
+            class="Image--lazyLoad Image--fadeIn ebike-image ebike-mob"
+            data-src="{{ imageMob }}"
+            data-sizes="auto"
+            alt="{{ section.settings.ebike_image_mob.alt }}"
+          >
+      </div>
+      <div class="ebike-ride-target">
+        <div class="ride-target-wrapper">
+          <div class="ride-wrapper-top">
+            <span class="top-number">{{ section.settings.ebike_ride_number1 }}</span>
+            <span class="top-unit">{{ section.settings.ebike_ride_unit1 }}</span>
+          </div>
+          <div class="ride-wrapper-bottom">
+            <div class="bottom-text">{{ section.settings.ebike_ride_text1 }}</div>
+            {%- if section.settings.ebike_ride_tips1 !=blank  -%}
+              <div class="ebike-aske-icon">?</div>
+            {%- endif -%}
+            <div class="ride-item-toast">{{ section.settings.ebike_ride_tips1 }}</div>
+          </div>
+        </div>
+        <div class="ride-target-wrapper">
+          <div class="ride-wrapper-top">
+            <span class="top-number">{{ section.settings.ebike_ride_number2 }}</span>
+            <span class="top-unit">{{ section.settings.ebike_ride_unit2 }}</span>   
+          </div>
+          <div class="ride-wrapper-bottom">
+            <div class="bottom-text">{{ section.settings.ebike_ride_text2 }}</div>
+            {% comment %} {%- if section.settings.ebike_ride_tips2 != blank -%}
+              <div class="ebike-aske-icon">?</div>
+            {%- endif -%} {% endcomment %}
+            <div class="ride-item-toast">{{ section.settings.ebike_ride_tips2 }}</div>
+          </div>
+        </div>
+        <div class="ride-target-wrapper">
+          <div class="ride-wrapper-top">
+            <div class="top-number">{{ section.settings.ebike_ride_number3 }}</div>
+            <div class="top-unit">{{ section.settings.ebike_ride_unit3 }}</div>
+          </div>
+          <div class="ride-wrapper-bottom">
+            <div class="bottom-text">{{ section.settings.ebike_ride_text3 }}</div>
+            {%- if section.settings.ebike_ride_tips3 != blank -%}
+              <div class="ebike-aske-icon">?</div>
+            {%- endif -%}
+            <div class="ride-item-toast">{{ section.settings.ebike_ride_tips3 }}</div>
+          </div>
+        </div>
+        <div class="ride-target-wrapper">
+          <div class="ride-wrapper-top">
+            <div class="top-number">{{ section.settings.ebike_ride_number4 }}</div>
+            <div class="top-unit">{{ section.settings.ebike_ride_unit4 }}</div>
+            {%- if section.settings.ebike_ride_tips4 != blank -%}
+              <div class="ebike-aske-icon">?</div>
+            {%- endif -%}
+            <div class="ride-item-toast">{{ section.settings.ebike_ride_tips4 }}</div>
+          </div>
+          <div class="ride-wrapper-bottom">
+            <div class="bottom-text">{{ section.settings.ebike_ride_text4 }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="ride-list">
+        {%- for block in section.blocks -%}
+          <div class="ride-item">
+            {% comment %} <div class="ride-item-image">
+              {%- assign rideIcon = block.settings.ebike_ride_icon |  img_url: '' -%}
+              <img
+                class="Image--lazyLoad Image--fadeIn ebike-item-image"
+                data-src="{{ rideIcon }}"
+                data-sizes="auto"
+              >
+            </div> {% endcomment %}
+            <div class="ride-item-desc">{{ block.settings.ebike_ride_desc }}</div>
+          </div>
+        {%- endfor -%}
+          <div style="padding-left:24px;"></div>
+      </div> 
+    </div>
+  </div>
+</section>
+<script>
+  $('.ebike-aske-icon').click(function(){
+    if(window.screen.width > 768){
+      $(this).siblings('.ride-item-toast').toggle()
+      $(this).parent().parent().siblings().find('.ride-item-toast').css('display','none')
+    }else{
+      $(this).siblings('.ride-item-toast').toggle()
+      $(this).parent().parent().siblings().find('.ride-item-toast').css('display','none')
+    } 
+  })
+</script>
+<style>
+  @font-face{
+    font-family:DINCond-Bold-Regular;
+    src: url('https://freebeat-shopify.s3.us-east-2.amazonaws.com/DINCond-Bold.otf');
+  }
+  .fb-ebike-ride{
+    width:100%;
+    height:644px;
+    background: #E9EDF3;
+  }
+  .ebkike-ride-pccontent{
+    {% comment %} width:1280px; {% endcomment %}
+    width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+  }
+  .ebkike-ride-mobcontent{
+    display:none
+  }
+  .ebike-ride-left{
+    {% comment %} width:625px;
+    height:580px; {% endcomment %}
+    width:562.5px;
+    height:522px;
+    margin-top:61px;
+    {% comment %} margin-top:165px; {% endcomment %}
+  }
+  .ebike-mob{
+    display:none;
+  }
+  .ebike-ride-left img{
+    width: 100%;
+    height:auto;
+    {% comment %} height:580px; {% endcomment %}
+    {% comment %} height:auto;  {% endcomment %}
+  }
+  .ebike-ride-right{
+    margin-top:80px;
+    width:566px;
+  }
+  .ebike-ride-text{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 24px;
+    background: linear-gradient(90deg, #707070 0%, #545454 0%, #AEAEAE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ebike-ride-title{
+    margin-top:12px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #121212;
+    line-height: 40px;
+  }
+  .ebike-ride-info{
+    margin-top:10px;
+    width: 572px;
+    {% comment %} width: 536px; {% endcomment %}
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(18,18,18,0.8);
+    line-height: 20px;
+    {% comment %} line-height: 16px; {% endcomment %}
+  }
+  .ebike-ride-target{
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    margin-top:27px;
+    {% comment %} margin-top:36px; {% endcomment %}
+  }
+  .ride-wrapper-top{
+    display:flex;
+    align-items:center;
+    position:relative
+  }
+  .ride-wrapper-top .top-number{
+    font-size: 24px;
+    font-family: DINCond-Bold-Regular, DINCond-Bold;
+    font-weight: 400;
+    color: #121212;
+    font-size: 24px;
+  }
+  .ride-wrapper-top .top-unit{
+    font-size: 24px;
+    font-family: DINCond-Bold-Regular, DINCond-Bold;
+    font-weight: 400;
+    color: #383838;
+    font-size: 24px;
+  }
+  .ride-wrapper-bottom{
+    display:flex;
+    {% comment %} position:relative; {% endcomment %}
+  }
+  .ride-item-toast{
+    display:none;
+    width:340px;
+    {% comment %} height: 68px; {% endcomment %}
+    position:absolute;
+    top:34px;
+    right:-63px;
+    line-height: 16px;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    z-index:10;
+    {% comment %} text-align:center; {% endcomment %}
+    padding:18px 18px;
+    {% comment %} padding-top:18px; {% endcomment %}
+  }
+  .bottom-text{
+    height: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(18,18,18,0.5);
+    line-height: 12px;
+  }
+  .ebike-aske-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left:6px;
+    width: 14px;
+    height: 14px;
+    border-radius:50%;
+    background: #FFFFFF;
+    font-size: 10px;
+    font-weight: 500;
+    color: #000000;
+    cursor:pointer;
+  }
+  .ride-list{
+    {% comment %} margin-top:36px; {% endcomment %}
+    margin-top:27px;
+    width:572px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
+  .ride-item{
+    width:128px;
+    height:120px;
+    background:rgba(255,255,255,0.5);
+    border-radius:10px;
+    margin-bottom:20px;
+  }
+  .ride-item-image{
+    width:44px;
+    height:44px;
+    margin:0 auto;
+    margin-top:18px;
+  }
+  .ride-item-image .ebike-item-image{
+    width:100%;
+    height:100%;
+  }
+  .ride-item-desc{
+    width: 118px;
+    height: 48px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    line-height: 16px;
+    margin:0 auto;
+    margin-top:10px;
+    text-align:center;
+  }
+  @media screen and (min-width: 769px) and (max-width: 1290px){
+    .ebkike-ride-pccontent{
+      width:100%;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+    }
+    .ebike-ride-left{
+      width:50%;
+      height:580px;
+    }
+  }
+  @media screen and (max-width: 768px){
+    ::-webkit-scrollbar {
+      display: none; 
+    }
+    .fb-ebike-ride{
+      width:100%;
+      height:100%;
+      background: #E9EDF3;
+      padding-bottom:40px;
+    }
+    .ebkike-ride-pccontent{
+      display:none;
+    }
+    .ebkike-ride-mobcontent{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .ebike-ride-text{
+      padding-top:64px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 18px;
+      background: linear-gradient(90deg, #707070 0%, #545454 0%, #AEAEAE 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align:center;
+    }
+    .ebike-ride-title{
+      width: 335px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #121212;
+      {% comment %} color: rgba(18,18,18,0.8); {% endcomment %}
+      line-height: 28px;
+      margin:0 auto;
+      margin-top:6px;
+      text-align:center;
+    }
+    .ebike-ride-info{
+      width: 345px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(18,18,18,0.8);
+      line-height: 20px;
+      margin:0 auto;
+      text-align:center;
+      margin-top:10px;
+    }
+    .ebike-ride-left{
+      width:302px;
+      height:320px;
+      {% comment %} height:280px; {% endcomment %}
+      {% comment %} height:363px; {% endcomment %}
+      {% comment %} height:412px; {% endcomment %}
+      {% comment %} height:412px; {% endcomment %}
+      margin:0 auto;
+      margin-top:24px;
+    }
+    .ebike-ride-left img{
+      width:100%;
+      height:100%;
+    }
+    .ebike-pc{
+      display:none;
+    }
+    .ebike-mob{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .ebike-ride-target{
+      height:100%;
+      width:347px;
+      {% comment %} width:327px; {% endcomment %}
+      margin:0 auto;
+      display:flex;
+      justify-content:flex-start;
+      {% comment %} justify-content:space-between; {% endcomment %}
+      margin-top:24px;
+    }
+    .ride-target-wrapper{
+      width:100%;
+      margin-right:15px;
+      {% comment %} width:88px; {% endcomment %}
+      {% comment %} width:72px;
+      margin-right:5px; {% endcomment %}
+    }
+    .ride-target-wrapper:nth-child(4){
+      margin-right:0px;
+    }
+    .ride-wrapper-top{
+      display:flex;
+      justify-content:center;
+      {% comment %} background:pink; {% endcomment %}
+    }
+    .ride-wrapper-top .top-number{
+      {% comment %} font-size: 36px; {% endcomment %}
+      font-size: 24px;
+      font-family: DINCond-Bold-Regular, DINCond-Bold;
+      font-weight: 400;
+      color: #121212;
+      line-height: 24px;
+      text-align:center;
+      {% comment %} line-height: 36px; {% endcomment %}
+    }
+    .ride-wrapper-top .top-unit{
+      text-align:center;
+      {% comment %} margin-left:4px; {% endcomment %}
+      font-size: 24px;
+      {% comment %} font-size: 16px; {% endcomment %}
+      font-family: DINCond-Bold-Regular, DINCond-Bold;
+      font-weight: 400;
+      color: #383838;
+      line-height: 24px;
+      {% comment %} line-height: 16px; {% endcomment %}
+    }
+    .ebike-aske-icon{
+      margin-left:6px;
+      width: 14px;
+      height: 14px;
+      border-radius:50%;
+      background: #FFFFFF;
+      font-size: 10px;
+      font-weight: 500;
+      color: #000000;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .ride-wrapper-bottom{
+      position:relative;
+      margin-top:10px;
+    }
+    .bottom-text{
+      height:100%;
+      {% comment %} width:80px; {% endcomment %}
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(18,18,18,0.5);
+      line-height: 11px;
+      text-align:center;
+      {% comment %} white-space: nowrap; {% endcomment %}
+    }
+    .ride-item-toast{
+      display:none;
+      position:absolute;
+      {% comment %} top:22px; {% endcomment %}
+      top:26px;
+      right:0;
+      width:230px;
+      {% comment %} height:80px; {% endcomment %}
+      {% comment %} height:54px; {% endcomment %}
+      background: #FFFFFF;
+      box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+      border-radius:8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #121212;
+      line-height: 16px;
+      {% comment %} padding:18px 0px; {% endcomment %}
+      padding-bottom:18px;
+      padding:18px 0px;
+      padding-left:16px;
+      {% comment %} line-height: 54px; {% endcomment %}
+    }
+    .ride-target-wrapper:first-child .ride-item-toast{
+      position:absolute;
+      left:0;
+    }
+    .ride-target-wrapper:nth-child(2) .ride-item-toast{
+      position:absolute;
+      left:0;
+    }
+    .ride-list{
+      padding-left:24px;
+      margin-top:25px;
+      display: flex;
+      flex-wrap:nowrap;
+      width: 100%;
+      overflow-x: scroll;
+    }
+    .ride-item{
+      width:140px;
+      height:82px;
+      background:rgba(255,255,255,0.5);
+      border-radius:10px;
+      margin-bottom:0px;
+      margin-right:15px;
+      flex-shrink:0;
+      display:flex;
+      align-items:center;
+    }
+    .ride-item-image{
+      width:36px;
+      height:36px;
+      margin:0 auto;
+      margin-top:14px;
+    }
+    .ride-item-image .ebike-item-image{
+      width:100%;
+      height:100%;
+    }
+    .ride-item-desc{
+      width: 86px;
+      {% comment %} width: 96px; {% endcomment %}
+      font-size: 12px;
+      font-weight: 500;
+      color: #121212;
+      line-height: 16px;
+      margin:0 auto;
+      {% comment %} margin-top:17px; {% endcomment %}
+      text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "FbEbikeRide",
+    "presets": [
+      {
+        "name": "fb-ebike-ride",
+        "category": "Fb Sections",
+        "blocks": []
+      }
+    ],
+    "settings":[
+      {
+        "type": "image_picker",
+        "id": "ebike_image_pc",
+        "label": "Ebike Image PC"
+      },
+      {
+        "type": "image_picker",
+        "id": "ebike_image_mob",
+        "label": "Ebike Image Mob"
+      },
+      {
+        "type": "text",
+        "id": "ebike_ride_text",
+        "label": "Ebike Text"
+      },
+      {
+        "type": "text",
+        "id": "ebike_ride_title",
+        "label": "Ebike Title"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_info",
+        "label": "Ebike Info"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_number1",
+        "label": "Ebike Number1"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_unit1",
+        "label": "Ebike Unit1"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_text1",
+        "label": "Ebike Text1"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_tips1",
+        "label": "Ebike Tips1"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_number2",
+        "label": "Ebike Number2"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_unit2",
+        "label": "Ebike Unit2"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_text2",
+        "label": "Ebike Text2"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_tips2",
+        "label": "Ebike Tips2"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_number3",
+        "label": "Ebike Number3"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_unit3",
+        "label": "Ebike Unit3"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_text3",
+        "label": "Ebike Text3"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_tips3",
+        "label": "Ebike Tips3"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_number4",
+        "label": "Ebike Number4"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_unit4",
+        "label": "Ebike Unit4"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_text4",
+        "label": "Ebike Text4"
+      },
+      {
+        "type": "richtext",
+        "id": "ebike_ride_tips4",
+        "label": "Ebike Tips4"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "ride_list",
+        "name": "ride list",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "ebike_ride_icon",
+            "label": "Ride Icon"
+          },
+          {
+            "type": "richtext",
+            "id": "ebike_ride_desc",
+            "label": "Ride Desc"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,674 @@
+/* payment-content 开始 */
+.Form__Submit {
+  display: block;
+  margin-top: 12px;
+}
+@media screen and (min-width: 641px) {
+  .payment-box {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .payment-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    line-height: 36px;
+    text-align: center;
+    padding-bottom: 48px;
+    padding-top: 80px;
+  }
+
+  .payment-desc {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    line-height: 18px;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  .payment-prompt {
+    /* height: 66px; */
+    background: rgba(255, 128, 0, 0.1);
+    font-size: 18px;
+    font-weight: 500;
+    color: #FF8000;
+    line-height: 66px;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 16px;
+  }
+  .thirtyNinePointNineTop{
+    cursor: pointer;
+  }
+  .free-trial {
+    background: #333333;
+    border-radius: 16px;
+    display: none;
+    flex-direction: row;
+    margin-bottom: 40px;
+    padding: 24px 24px 24px 4px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .free-trial-two {
+    background: linear-gradient(121deg, rgba(0, 188, 227, .1) 0%, rgba(150, 0, 255, .1) 100%);
+    border-radius: 16px;
+    display: none;
+    flex-direction: row;
+    margin-bottom: 40px;
+    padding: 24px 24px 24px 4px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tips-top {
+    margin-bottom: 12px;
+  }
+
+  .free-tips span {
+    text-align: left;
+  }
+
+  .free-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .free-left-des {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 24px;
+    width: 202px;
+    
+  }
+
+  .free-left-two-des {
+    font-size: 18px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 24px;
+    width: 202px;
+  }
+
+  .free-color {
+    color: rgba(161, 242, 0, 1);
+  }
+
+  .free-two-color {
+    color: rgba(2, 192, 217, 1);
+  }
+
+  .free-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .free-line {
+    height: 124px;
+    width: 1px;
+    background: #666666;
+  }
+
+  .free-two-line {
+    height: 124px;
+    width: 1px;
+    background: #FFFFFF;
+  }
+
+  .free-img {
+    width: 148px;
+    height: 108px;
+    display: block;
+  }
+
+  .free-mb-img {
+    display: none;
+  }
+
+  .free-tit {
+    width: 574px;
+    height: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .free-two-tit {
+    width: 574px;
+    height: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* .u-tips {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+  } */
+
+  .free-right-des {
+    width: 574px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #CCCCCC;
+    text-align: center;
+    margin-top: 4px;
+    line-height: 18px;
+
+  }
+
+  .free-right-two-des {
+    width: 574px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666666;
+    text-align: center;
+    margin-top: 4px;
+    line-height: 18px;
+  }
+
+  .free-two-btn {
+    width: 240px;
+    height: 48px;
+    background: linear-gradient(95deg, #00BCE3 0%, #9600FF 100%);
+    border-radius: 12px 12px 12px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 48px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .free-btn {
+    width: 240px;
+    height: 48px;
+    background: #A1F200;
+    border-radius: 12px 12px 12px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 48px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .free-payment {
+    color: rgba(161, 242, 0, 1);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .free-two-payment {
+    color: rgba(2, 192, 217, 1);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+
+
+  .payment-table {
+    width: 100%;
+    border-bottom: 1px solid #808080;
+  }
+
+  .payment-table th {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    line-height: 18px;
+    text-align: left;
+    padding-bottom: 20px;
+  }
+
+  .payment-footer {
+    padding-top: 30px;
+    overflow: hidden;
+  }
+
+  .payment-account {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+    line-height: 18px;
+    float: left;
+  }
+
+  .payment-footer .subscribe {
+    float: right;
+    margin-top: 0 !important;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .payment-footer .subscribe button {
+    width: auto;
+  }
+
+  .payment-footer .Button--primary {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #000;
+    line-height: 18px;
+    text-decoration: underline;
+    letter-spacing: 0 !important;
+  }
+
+  .payment-footer .Button--primary::before {
+    background: none;
+  }
+
+  .footer-url {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 18px;
+  }
+
+  .footer-url2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 18px;
+    padding-top: 30px;
+    position: relative;
+  }
+
+  /* .footer-url2 .Link--underline{
+        font-size: 18px!important;
+        color: #000;
+        line-height: 18px;
+        text-decoration: underline;
+        position: absolute;
+        top: 30px;
+        left: 370px;
+        overflow: hidden;
+    } */
+  .payment-footer .Form__Submit {
+    margin-top: 0;
+    border: none;
+    text-transform: none;
+    padding: 0;
+  }
+
+  .payment-footer .Link--underline {
+    display: none;
+  }
+
+  .ship-centent .logout-btn {
+    width: 322px;
+    height: 50px;
+    z-index: 1;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border: 1px solid #000;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #000 !important;
+    letter-spacing: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ship-centent .logout-btn::before {
+    background: none;
+  }
+
+  .ship-centent {
+    padding: 0 !important;
+  }
+
+  .ship-centent .title {
+    padding-top: 80px !important;
+  }
+
+  .shopify-section--bordered>.Section--spacingNormal {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .payment-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    line-height: 18px;
+    text-align: center;
+    padding-bottom: 32px;
+    padding-top: 60px;
+  }
+
+  .payment-desc {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    line-height: 18px;
+    text-align: center;
+    padding-bottom: 24px;
+  }
+
+  .payment-prompt {
+    height: 60px;
+    background: rgba(255, 128, 0, 0.1);
+    font-size: 12px;
+    font-weight: 500;
+    color: #FF8000;
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 12px 20px;
+    border-radius: 12px;
+  }
+
+  .free-trial {
+    height: auto;
+    background: #333333;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 24px;
+    padding: 4px 0 14px 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .free-trial-two {
+    height: auto;
+    background: linear-gradient(121deg, rgba(0, 188, 227, .1) 0%, rgba(150, 0, 255, .1) 100%);
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 24px;
+    padding: 4px 0 14px 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .free-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -12px;
+  }
+
+  .free-left-des {
+    width: 177px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 18px
+  }
+
+  .free-left-two-des {
+    width: 177px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 18px
+  }
+
+  .free-color {
+    color: rgba(161, 242, 0, 1);
+  }
+
+  .free-two-color {
+    color: rgba(2, 192, 217, 1);
+  }
+
+  .free-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 16px;
+  }
+
+  .free-line {
+    width: calc(100% - 32px);
+    height: 1px;
+    background: rgba(102, 102, 102, 1);
+    margin: 4px 16px 16px;
+  }
+
+  .free-two-line {
+    width: calc(100% - 32px);
+    height: 1px;
+    background: #FFFFFF;
+    margin: 4px 16px 16px;
+  }
+
+  .free-img {
+    display: none;
+  }
+
+  .free-mb-img {
+    display: flex;
+    width: 100px;
+    height: 72px;
+    margin-right: 4px;
+  }
+
+  .free-tit {
+    width: 236px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 18px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .free-two-tit {
+    width: 236px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #121212;
+    line-height: 18px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  /* .u-tips {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    margin-top: 4px;
+  } */
+
+  .free-right-des {
+    font-size: 12px;
+    font-weight: 500;
+    color: #CCCCCC;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  .free-right-two-des {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  .free-two-btn {
+    width: 200px;
+    height: 40px;
+    background: linear-gradient(95deg, #00BCE3 0%, #9600FF 100%);
+    border-radius: 8px 8px 8px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .free-btn {
+    width: 200px;
+    height: 40px;
+    background: #A1F200;
+    border-radius: 8px 8px 8px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .free-payment {
+    color: rgba(161, 242, 0, 1);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .free-two-payment {
+    color: rgba(2, 192, 217, 1);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .payment-table {
+    width: 100%;
+    border-bottom: 1px solid #808080;
+  }
+
+  .payment-table th {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    line-height: 12px;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  .payment-footer {
+    padding-top: 16px;
+    overflow: hidden;
+  }
+
+  .payment-account {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    line-height: 12px;
+    float: left;
+  }
+
+  .payment-footer .subscribe {
+    float: right;
+    margin-top: 0 !important;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .payment-footer .subscribe button {
+    width: auto;
+  }
+
+  .footer-url {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 18px;
+  }
+
+  .footer-url2 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 18px;
+    padding-top: 16px;
+    position: relative;
+  }
+
+  .payment-footer .Button--primary {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #000;
+    line-height: 12px;
+    text-decoration: underline;
+    letter-spacing: 0 !important;
+  }
+
+  .payment-footer .Button--primary::before {
+    background: none;
+  }
+
+  /* .footer-url2 .Link--underline{
+    font-size: 12px!important;
+    color: #000;
+    line-height: 12px;
+    text-decoration: underline;
+    position: absolute;
+    top: 19px;
+    left: 246px;
+    overflow: hidden;
+  } */
+  .payment-footer .Form__Submit {
+    margin-top: 0;
+    border: none;
+    text-transform: none;
+    padding: 0;
+  }
+
+  .payment-footer .Link--underline {
+    display: none;
+  }
+
+  .ship-centent .logout-btn {
+    width: 182px !important;
+    height: 38px;
+    z-index: 1;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: 1px solid #000;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #000 !important;
+    letter-spacing: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ship-centent .logout-btn::before {
+    background: none;
+  }
+
+  .ship-centent {
+    padding: 0 !important;
+  }
+
+  .shopify-section--bordered>.Section--spacingNormal {
+    padding: 0 !important;
+  }
+}
+
+/* payment-content 结束 */
